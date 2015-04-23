@@ -1,0 +1,181 @@
+// WP2RDF
+// Conversion from GPML pathways to RDF
+// Copyright 2015 BiGCaT Bioinformatics
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+// http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+//
+package org.wikipathways.wp2rdf.converter;
+
+import java.util.Set;
+
+import org.bridgedb.DataSource;
+import org.bridgedb.IDMapper;
+import org.bridgedb.IDMapperException;
+import org.bridgedb.Xref;
+import org.pathvisio.core.biopax.PublicationXref;
+import org.pathvisio.core.model.PathwayElement;
+import org.wikipathways.wp2rdf.ontologies.Gpml;
+import org.wikipathways.wp2rdf.ontologies.Skos;
+import org.wikipathways.wp2rdf.ontologies.Wp;
+import org.wikipathways.wp2rdf.utils.DataStorage;
+import org.wikipathways.wp2rdf.utils.Utils;
+
+import com.hp.hpl.jena.rdf.model.Model;
+import com.hp.hpl.jena.rdf.model.Resource;
+import com.hp.hpl.jena.vocabulary.DC;
+import com.hp.hpl.jena.vocabulary.DCTerms;
+import com.hp.hpl.jena.vocabulary.RDF;
+import com.hp.hpl.jena.vocabulary.RDFS;
+
+/**
+ * 
+ * @author mkutmon
+ * @author ryanmiller
+ *
+ */
+public class DataNodeConverter {
+
+	public static void parseDataNodes(PathwayElement elem, Model model, IDMapper geneMapper, IDMapper metMapper, DataStorage data) {
+		
+		String name = elem.getTextLabel().replace("\n", " ");
+		
+		Resource datanodeRes = model.createResource(data.getPathwayRes().getURI() + "/DataNode/" + elem.getGraphId());
+		datanodeRes.addProperty(DCTerms.isPartOf, data.getPathwayRes());
+		datanodeRes.addProperty(RDF.type, Gpml.DataNode);
+		datanodeRes.addProperty(RDF.type, Skos.Concept);
+		
+		// why this one?
+		datanodeRes.addProperty(RDFS.isDefinedBy, Gpml.DataNode);
+		datanodeRes.addLiteral(RDFS.label, model.createLiteral(name, "en"));
+		
+		// GPML RELATED PROPERTIES
+		datanodeRes.addLiteral(Gpml.graphid, elem.getGraphId());
+		datanodeRes.addLiteral(Gpml.height, elem.getMHeight());
+		datanodeRes.addLiteral(Gpml.width, elem.getMWidth());
+		datanodeRes.addLiteral(Gpml.zorder, elem.getZOrder());
+		datanodeRes.addLiteral(Gpml.centerx, elem.getMCenterX());
+		datanodeRes.addLiteral(Gpml.centery, elem.getMCenterY());
+
+		// TODO: Add all font related with a central font resource
+
+		// PUBLICATION REFERENCES
+		for(PublicationXref xref : elem.getBiopaxReferenceManager().getPublicationXRefs()) {
+			PublicationXrefConverter.parsePublicationXref(xref, datanodeRes, model);
+		}
+		
+		// IDENTIFIERS
+		if(elem.getXref() != null && !elem.getXref().getId().equals("") && elem.getXref().getDataSource() != null) {
+			// TODO: fix issue with some of the identifiers.org URIs
+			Resource idRes = model.createResource(elem.getXref().getDataSource().getIdentifiersOrgUri(elem.getXref().getId()));
+			datanodeRes.addProperty(DC.identifier, idRes);
+			datanodeRes.addLiteral(DCTerms.identifier, elem.getXref().getId());
+			// TODO: why not use DCTerms for source as well?
+			datanodeRes.addLiteral(DC.source, elem.getXref().getDataSource().getFullName());
+			
+			// TODO: mapping to unified ids
+			try {
+				switch (elem.getDataNodeType()) {
+				case "GeneProduct":
+					mapGeneProduct(elem, geneMapper, datanodeRes, model);
+					break;
+				case "Protein":
+					mapGeneProduct(elem, geneMapper, datanodeRes, model);
+					break;
+				case "Metabolite":
+					mapMetabolite(elem, metMapper, datanodeRes, model);
+					break;
+				case "Rna":
+					mapGeneProduct(elem, geneMapper, datanodeRes, model);
+					break;
+				default:
+					break;
+				}
+			} catch (IDMapperException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		switch (elem.getDataNodeType()) {
+		case "GeneProduct":
+			datanodeRes.addProperty(RDF.type, Wp.GeneProduct);
+			break;
+		case "Protein":
+			datanodeRes.addProperty(RDF.type, Wp.Protein);
+			break;
+		case "Metabolite":
+			datanodeRes.addProperty(RDF.type, Wp.Metabolite);
+			break;
+		case "Pathway":
+			datanodeRes.addProperty(RDF.type, Wp.Pathway);
+			break;
+		case "Rna":
+			datanodeRes.addProperty(RDF.type, Wp.RNA);
+			break;
+		default:
+			break;
+		}
+		
+		// GROUP 
+		if(elem.getGroupRef() != null) {
+			Resource res = model.getResource(data.getPathwayRes().getURI() + "/Group/" + elem.getGroupRef());
+			if(res != null) {
+				datanodeRes.addProperty(DCTerms.isPartOf, res);
+			} else {
+				System.out.println("ERRRORRRR!!!");
+			}
+		}
+		
+		// TODO: subClass of resource missing (not sure what that is)
+		
+		
+		data.getPathwayElements().put(elem, datanodeRes);
+	}
+	
+	private static void mapMetabolite(PathwayElement elem, IDMapper metMapper, Resource datanodeRes, Model model) throws IDMapperException {
+		Set<Xref> resCs = metMapper.mapID(elem.getXref(), DataSource.getExistingBySystemCode("Cs"));
+		for(Xref x : resCs) {
+			Resource res = model.createResource(Utils.IDENTIFIERS_ORG_URL + "/chemspider/" + x.getId());
+			datanodeRes.addProperty(Wp.bdbChemspider, res);
+		}
+		Set<Xref> resCh = metMapper.mapID(elem.getXref(), DataSource.getExistingBySystemCode("Ch"));
+		for(Xref x : resCh) {
+			Resource res = model.createResource(Utils.IDENTIFIERS_ORG_URL + "/hmdb/" + x.getId());
+			datanodeRes.addProperty(Wp.bdbHmdb, res);
+		}
+	}
+	
+	
+	private static void mapGeneProduct(PathwayElement elem, IDMapper geneMapper, Resource datanodeRes, Model model) throws IDMapperException {
+		Set<Xref> resEn = geneMapper.mapID(elem.getXref(), DataSource.getExistingBySystemCode("En"));
+		for(Xref x : resEn) {
+			Resource res = model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ensembl/" + x.getId());
+			datanodeRes.addProperty(Wp.bdbEnsembl, res);
+		}
+		Set<Xref> resS = geneMapper.mapID(elem.getXref(), DataSource.getExistingBySystemCode("S"));
+		for(Xref x : resS) {
+			Resource res = model.createResource(Utils.IDENTIFIERS_ORG_URL + "/uniprot/" + x.getId());
+			datanodeRes.addProperty(Wp.bdbUniprot, res);
+		}
+		Set<Xref> resH = geneMapper.mapID(elem.getXref(), DataSource.getExistingBySystemCode("H"));
+		for(Xref x : resH) {
+			Resource res = model.createResource(Utils.IDENTIFIERS_ORG_URL + "/hgnc.symbol/" + x.getId());
+			datanodeRes.addProperty(Wp.bdbHgncSymbol, res);
+		}
+		Set<Xref> resL = geneMapper.mapID(elem.getXref(), DataSource.getExistingBySystemCode("L"));
+		for(Xref x : resL) {
+			Resource res = model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ncbigene/" + x.getId());
+			datanodeRes.addProperty(Wp.bdbEntrezGene, res);
+		}
+	}
+}

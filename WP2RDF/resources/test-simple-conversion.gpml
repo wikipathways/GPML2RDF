@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Pathway xmlns="http://pathvisio.org/GPML/2013a" Name="Test Simple Conversion" Version="20150422" Organism="Homo sapiens">
+  <Graphics BoardWidth="787.1687840290381" BoardHeight="323.12159709618874" />
+  <DataNode TextLabel="TP53" GraphId="b4b9d" Type="GeneProduct">
+    <Graphics CenterX="557.1687840290381" CenterY="283.12159709618874" Width="80.0" Height="20.0" ZOrder="32768" FontSize="10" Valign="Middle" />
+    <Xref Database="Ensembl" ID="ENSG00000141510" />
+  </DataNode>
+  <DataNode TextLabel="BRCA1" GraphId="ff264" Type="GeneProduct">
+    <Graphics CenterX="717.1687840290381" CenterY="283.12159709618874" Width="80.0" Height="20.0" ZOrder="32768" FontSize="10" Valign="Middle" />
+    <Xref Database="Ensembl" ID="ENSG00000012048" />
+  </DataNode>
+  <Interaction>
+    <Graphics ZOrder="12288" LineThickness="1.0">
+      <Point X="597.1687840290381" Y="283.12159709618874" GraphRef="b4b9d" RelX="1.0" RelY="0.0" />
+      <Point X="677.1687840290381" Y="283.12159709618874" GraphRef="ff264" RelX="-1.0" RelY="0.0" ArrowHead="mim-conversion" />
+    </Graphics>
+    <Xref Database="" ID="" />
+  </Interaction>
+  <InfoBox CenterX="0.0" CenterY="0.0" />
+  <Biopax />
+</Pathway>
+

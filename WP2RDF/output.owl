@@ -1,0 +1,211 @@
+@prefix dc:    <http://purl.org/dc/elements/1.1/> .
+@prefix cas:   <http://identifiers.org/cas/> .
+@prefix wprdf: <http://rdf.wikipathways.org/> .
+@prefix prov:  <http://www.w3.org/ns/prov#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix hmdb:  <http://identifiers.org/hmdb/> .
+@prefix freq:  <http://purl.org/cld/freq/> .
+@prefix pubmed: <http://www.ncbi.nlm.nih.gov/pubmed/> .
+@prefix wp:    <http://vocabularies.wikipathways.org/wp#> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix biopax: <http://www.biopax.org/release/biopax-level3.owl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix pav:   <http://purl.org/pav/> .
+@prefix ncbigene: <http://identifiers.org/ncbigene/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix gpml:  <http://vocabularies.wikipathways.org/gpml#> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+
+<http://rdf.wikipathways.org/Pathway/WP2447_r75221/Point/f4f5b>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2447_r75221/Line/id9e01884f> ;
+        gpml:arrowHead    "mim-conversion"^^xsd:string ;
+        gpml:graphref     "a56ca"^^xsd:string ;
+        gpml:relX         "-1.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "697.1687840290381"^^xsd:double ;
+        gpml:y            "370.12159709618874"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2447_r75221/Line/ad25c/Anchor/e0b4d>
+        a                    gpml:Anchor ;
+        dcterms:isPartOf     <http://rdf.wikipathways.org/Pathway/WP2447_r75221/Line/ad25c> ;
+        gpml:anchorPosition  "0.4"^^xsd:double ;
+        gpml:anchorShape     "None"^^<java:org.pathvisio.core.model.AnchorType> ;
+        gpml:graphid         "e0b4d"^^xsd:string .
+
+<http://rdf.wikipathways.org/Pathway/WP2447_r75221/Point/a8742>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2447_r75221/Line/id9e01884f> ;
+        gpml:arrowHead    "Line"^^xsd:string ;
+        gpml:graphref     "e0b4d"^^xsd:string ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "618.1687840290381"^^xsd:double ;
+        gpml:y            "293.12159709618874"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2447_r75221/Point/aaac8>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2447_r75221/Line/id4abed426> ;
+        gpml:arrowHead    "Line"^^xsd:string ;
+        gpml:graphref     "f2170"^^xsd:string ;
+        gpml:relX         "1.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "573.0"^^xsd:double ;
+        gpml:y            "357.0"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2447_r75221>
+        a                   skos:Collection , wp:Pathway ;
+        dc:identifier       <http://identifiers.org/wikipathways/WP2447> ;
+        dc:title            "Advanced conversion example"@en ;
+        dcterms:identifier  "WP2447"^^xsd:string ;
+        pav:version         "75221"^^xsd:string ;
+        gpml:height         "410.12159709618874"^^xsd:double ;
+        gpml:width          "807.1687840290381"^^xsd:double ;
+        wp:organism         <http://purl.obolobrary.org/obo/NCBITaxon_9606> ;
+        foaf:page           <http://www.wikipathways.org/instance/WP2447_r75221> .
+
+<http://rdf.wikipathways.org/Pathway/WP2447_r75221/DataNode/a4275>
+        a                   skos:Concept , gpml:DataNode , wp:GeneProduct ;
+        rdfs:isDefinedBy    gpml:DataNode ;
+        rdfs:label          "BRCA1"@en ;
+        dc:identifier       <http://identifiers.org/ensembl/ENSG00000012048> ;
+        dc:source           "Ensembl"^^xsd:string ;
+        dcterms:identifier  "ENSG00000012048"^^xsd:string ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2447_r75221> ;
+        gpml:centerx        "727.1687840290381"^^xsd:double ;
+        gpml:centery        "293.12159709618874"^^xsd:double ;
+        gpml:graphid        "a4275"^^xsd:string ;
+        gpml:height         "20.0"^^xsd:double ;
+        gpml:width          "80.0"^^xsd:double ;
+        gpml:zorder         "32770"^^xsd:long ;
+        wp:bdbEnsembl       <http://identifiers.org/ensembl/ENSG00000012048> ;
+        wp:bdbEntrezGene    ncbigene:672 ;
+        wp:bdbHgncSymbol    <http://identifiers.org/hgnc.symbol/BRCA1> ;
+        wp:bdbUniprot       <http://identifiers.org/uniprot/H0Y881> , <http://identifiers.org/uniprot/G4V500> , <http://identifiers.org/uniprot/G4V503> , <http://identifiers.org/uniprot/E7EP70> , <http://identifiers.org/uniprot/G3XAC3> , <http://identifiers.org/uniprot/G1UI37> , <http://identifiers.org/uniprot/Q4EW25> , <http://identifiers.org/uniprot/C9IZW4> , <http://identifiers.org/uniprot/K4JUB1> , <http://identifiers.org/uniprot/E9PH68> , <http://identifiers.org/uniprot/E9PC22> , <http://identifiers.org/uniprot/K7EPC7> , <http://identifiers.org/uniprot/Q3YB50> , <http://identifiers.org/uniprot/G4V4Z7> , <http://identifiers.org/uniprot/B7ZA85> , <http://identifiers.org/uniprot/E9PFZ0> , <http://identifiers.org/uniprot/Q7KYU6> , <http://identifiers.org/uniprot/Q3B891> , <http://identifiers.org/uniprot/E7EWN5> , <http://identifiers.org/uniprot/F8W8H7> , <http://identifiers.org/uniprot/H0Y8B8> , <http://identifiers.org/uniprot/Q3YB53> , <http://identifiers.org/uniprot/P38398> , <http://identifiers.org/uniprot/B4DES0> , <http://identifiers.org/uniprot/E7EN90> , <http://identifiers.org/uniprot/K4K7U9> , <http://identifiers.org/uniprot/G4V502> , <http://identifiers.org/uniprot/Q3LRH8> , <http://identifiers.org/uniprot/K7EJW3> , <http://identifiers.org/uniprot/C6YB45> , <http://identifiers.org/uniprot/E7ETR2> , <http://identifiers.org/uniprot/K4JXS7> , <http://identifiers.org/uniprot/G4V4Z8> , <http://identifiers.org/uniprot/Q9UE29> , <http://identifiers.org/uniprot/Q9NQR3> , <http://identifiers.org/uniprot/Q92897> , <http://identifiers.org/uniprot/E7ENB7> , <http://identifiers.org/uniprot/E7EQW4> , <http://identifiers.org/uniprot/K4K7V3> , <http://identifiers.org/uniprot/Q3YB49> , <http://identifiers.org/uniprot/E7EMP0> , <http://identifiers.org/uniprot/C4PFY7> , <http://identifiers.org/uniprot/E9PFC7> , <http://identifiers.org/uniprot/E7EUM2> .
+
+<http://rdf.wikipathways.org/Pathway/WP2447_r75221/Point/ff6f2>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2447_r75221/Line/ad25c> ;
+        gpml:arrowHead    "mim-conversion"^^xsd:string ;
+        gpml:graphref     "a4275"^^xsd:string ;
+        gpml:relX         "-1.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "687.1687840290381"^^xsd:double ;
+        gpml:y            "293.12159709618874"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2447_r75221/Point/dc464>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2447_r75221/Line/id4abed426> ;
+        gpml:arrowHead    "Line"^^xsd:string ;
+        gpml:graphref     "e0b4d"^^xsd:string ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "618.1687840290381"^^xsd:double ;
+        gpml:y            "293.12159709618874"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2447_r75221/DataNode/f2170>
+        a                   skos:Concept , wp:GeneProduct , gpml:DataNode ;
+        rdfs:isDefinedBy    gpml:DataNode ;
+        rdfs:label          "SREBF1"@en ;
+        dc:identifier       <http://identifiers.org/ensembl/ENSG00000072310> ;
+        dc:source           "Ensembl"^^xsd:string ;
+        dcterms:identifier  "ENSG00000072310"^^xsd:string ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2447_r75221> ;
+        gpml:centerx        "533.0"^^xsd:double ;
+        gpml:centery        "357.0"^^xsd:double ;
+        gpml:graphid        "f2170"^^xsd:string ;
+        gpml:height         "20.0"^^xsd:double ;
+        gpml:width          "80.0"^^xsd:double ;
+        gpml:zorder         "32768"^^xsd:long ;
+        wp:bdbEnsembl       <http://identifiers.org/ensembl/ENSG00000072310> ;
+        wp:bdbEntrezGene    ncbigene:6720 ;
+        wp:bdbHgncSymbol    <http://identifiers.org/hgnc.symbol/SREBF1> ;
+        wp:bdbUniprot       <http://identifiers.org/uniprot/K7EIW8> , <http://identifiers.org/uniprot/K7EMT8> , <http://identifiers.org/uniprot/F6V242> , <http://identifiers.org/uniprot/K7EMD1> , <http://identifiers.org/uniprot/B0I4X3> , <http://identifiers.org/uniprot/P36956> , <http://identifiers.org/uniprot/B5MD58> , <http://identifiers.org/uniprot/J3QLB6> .
+
+<http://rdf.wikipathways.org/Pathway/WP2447_r75221/Line/ad25c>
+        a                   gpml:Interaction ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2447_r75221/Interaction/b026c> , <http://rdf.wikipathways.org/Pathway/WP2447_r75221> ;
+        gpml:color          "java.awt.Color[r=0,g=0,b=0]"^^<java:java.awt.Color> ;
+        gpml:graphid        "ad25c"^^xsd:string ;
+        gpml:hasAnchor      <http://rdf.wikipathways.org/Pathway/WP2447_r75221/Line/ad25c/Anchor/e0b4d> ;
+        gpml:linestyle      "0"^^xsd:long ;
+        gpml:linethickness  "1.0"^^xsd:double ;
+        gpml:zorder         "32769"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2447_r75221/Line/id4abed426>
+        a                   gpml:Interaction ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2447_r75221/Interaction/b026c> , <http://rdf.wikipathways.org/Pathway/WP2447_r75221> ;
+        gpml:color          "java.awt.Color[r=0,g=0,b=0]"^^<java:java.awt.Color> ;
+        gpml:graphid        "id4abed426"^^xsd:string ;
+        gpml:linestyle      "0"^^xsd:long ;
+        gpml:linethickness  "1.0"^^xsd:double ;
+        gpml:zorder         "12288"^^xsd:long .
+
+<http://purl.obolobrary.org/obo/NCBITaxon_9606>
+        rdfs:label  "Homo sapiens"^^xsd:string .
+
+<http://rdf.wikipathways.org/Pathway/WP2447_r75221/DataNode/c2b8c>
+        a                   skos:Concept , gpml:DataNode , wp:GeneProduct ;
+        rdfs:isDefinedBy    gpml:DataNode ;
+        rdfs:label          "TP53"@en ;
+        dc:identifier       <http://identifiers.org/ensembl/ENSG00000141510> ;
+        dc:source           "Ensembl"^^xsd:string ;
+        dcterms:identifier  "ENSG00000141510"^^xsd:string ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2447_r75221> ;
+        gpml:centerx        "532.1687840290381"^^xsd:double ;
+        gpml:centery        "293.12159709618874"^^xsd:double ;
+        gpml:graphid        "c2b8c"^^xsd:string ;
+        gpml:height         "20.0"^^xsd:double ;
+        gpml:width          "80.0"^^xsd:double ;
+        gpml:zorder         "32771"^^xsd:long ;
+        wp:bdbEnsembl       <http://identifiers.org/ensembl/ENSG00000141510> ;
+        wp:bdbEntrezGene    ncbigene:7157 ;
+        wp:bdbHgncSymbol    <http://identifiers.org/hgnc.symbol/TP53> ;
+        wp:bdbUniprot       <http://identifiers.org/uniprot/E7ESS1> , <http://identifiers.org/uniprot/J3KP33> , <http://identifiers.org/uniprot/A2I9Z1> , <http://identifiers.org/uniprot/A4GW74> , <http://identifiers.org/uniprot/A4GWB5> , <http://identifiers.org/uniprot/E7EQX7> , <http://identifiers.org/uniprot/L0EQ05> , <http://identifiers.org/uniprot/A4GW67> , <http://identifiers.org/uniprot/Q761V2> , <http://identifiers.org/uniprot/A4GWD0> , <http://identifiers.org/uniprot/A4GW97> , <http://identifiers.org/uniprot/Q0PKT5> , <http://identifiers.org/uniprot/G4Y083> , <http://identifiers.org/uniprot/L0ES54> , <http://identifiers.org/uniprot/E7EMR6> , <http://identifiers.org/uniprot/H2EHT1> , <http://identifiers.org/uniprot/A4GW76> , <http://identifiers.org/uniprot/K7PPA8> , <http://identifiers.org/uniprot/Q6IT77> , <http://identifiers.org/uniprot/E9PFT5> , <http://identifiers.org/uniprot/E9PCY9> , <http://identifiers.org/uniprot/B5AKF6> , <http://identifiers.org/uniprot/A2I9Z0> , <http://identifiers.org/uniprot/A4GW75> , <http://identifiers.org/uniprot/Q1HGV1> , <http://identifiers.org/uniprot/A4GWB8> , <http://identifiers.org/uniprot/P04637> , <http://identifiers.org/uniprot/B4DNI2> .
+
+<http://rdf.wikipathways.org/Pathway/WP2447_r75221/Point/eb3c4>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2447_r75221/Line/ad25c> ;
+        gpml:arrowHead    "Line"^^xsd:string ;
+        gpml:graphref     "c2b8c"^^xsd:string ;
+        gpml:relX         "1.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "572.1687840290381"^^xsd:double ;
+        gpml:y            "293.12159709618874"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2447_r75221/Interaction/b026c>
+        a                  wp:DirectedInteraction , wp:Relation , wp:Conversion , wp:Interaction ;
+        dcterms:isPartOf   <http://rdf.wikipathways.org/Pathway/WP2447_r75221> ;
+        wp:hasParticipant  <http://rdf.wikipathways.org/Pathway/WP2447_r75221/DataNode/a56ca> , <http://rdf.wikipathways.org/Pathway/WP2447_r75221/DataNode/f2170> , <http://rdf.wikipathways.org/Pathway/WP2447_r75221/DataNode/c2b8c> , <http://rdf.wikipathways.org/Pathway/WP2447_r75221/DataNode/a4275> ;
+        wp:source          <http://rdf.wikipathways.org/Pathway/WP2447_r75221/DataNode/f2170> , <http://rdf.wikipathways.org/Pathway/WP2447_r75221/DataNode/c2b8c> ;
+        wp:target          <http://rdf.wikipathways.org/Pathway/WP2447_r75221/DataNode/a56ca> , <http://rdf.wikipathways.org/Pathway/WP2447_r75221/DataNode/a4275> .
+
+<http://rdf.wikipathways.org/Pathway/WP2447_r75221/Line/id9e01884f>
+        a                   gpml:Interaction ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2447_r75221/Interaction/b026c> , <http://rdf.wikipathways.org/Pathway/WP2447_r75221> ;
+        gpml:color          "java.awt.Color[r=0,g=0,b=0]"^^<java:java.awt.Color> ;
+        gpml:graphid        "id9e01884f"^^xsd:string ;
+        gpml:linestyle      "0"^^xsd:long ;
+        gpml:linethickness  "1.0"^^xsd:double ;
+        gpml:zorder         "12288"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2447_r75221/DataNode/a56ca>
+        a                   gpml:DataNode , skos:Concept , wp:GeneProduct ;
+        rdfs:isDefinedBy    gpml:DataNode ;
+        rdfs:label          "BRCA2"@en ;
+        dc:identifier       <http://identifiers.org/ensembl/ENSG00000139618> ;
+        dc:source           "Ensembl"^^xsd:string ;
+        dcterms:identifier  "ENSG00000139618"^^xsd:string ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2447_r75221> ;
+        gpml:centerx        "737.1687840290381"^^xsd:double ;
+        gpml:centery        "370.12159709618874"^^xsd:double ;
+        gpml:graphid        "a56ca"^^xsd:string ;
+        gpml:height         "20.0"^^xsd:double ;
+        gpml:width          "80.0"^^xsd:double ;
+        gpml:zorder         "32772"^^xsd:long ;
+        wp:bdbEnsembl       <http://identifiers.org/ensembl/ENSG00000139618> ;
+        wp:bdbEntrezGene    ncbigene:675 ;
+        wp:bdbHgncSymbol    <http://identifiers.org/hgnc.symbol/BRCA2> ;
+        wp:bdbUniprot       <http://identifiers.org/uniprot/K4K7W0> , <http://identifiers.org/uniprot/Q8IU64> , <http://identifiers.org/uniprot/K4JXT6> , <http://identifiers.org/uniprot/Q8IU77> , <http://identifiers.org/uniprot/E9PIQ1> , <http://identifiers.org/uniprot/Q8IU82> , <http://identifiers.org/uniprot/P51587> , <http://identifiers.org/uniprot/Q9H4L3> , <http://identifiers.org/uniprot/K4JTT2> , <http://identifiers.org/uniprot/H0YD86> .
