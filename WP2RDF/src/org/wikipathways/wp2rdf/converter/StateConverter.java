@@ -1,9 +1,13 @@
 package org.wikipathways.wp2rdf.converter;
 
 import org.pathvisio.core.biopax.PublicationXref;
+import org.pathvisio.core.model.LineStyle;
 import org.pathvisio.core.model.PathwayElement;
+import org.pathvisio.core.model.PathwayElement.Comment;
 import org.wikipathways.wp2rdf.ontologies.Gpml;
+import org.wikipathways.wp2rdf.ontologies.GpmlNew;
 import org.wikipathways.wp2rdf.utils.DataStorage;
+import org.wikipathways.wp2rdf.utils.Utils;
 
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.Resource;
@@ -14,6 +18,49 @@ import com.hp.hpl.jena.vocabulary.RDFS;
 
 public class StateConverter {
 
+	public static void parseStateGpml(PathwayElement elem, Model model, DataStorage data) {
+		Resource stateRes = model.createResource(data.getPathwayRes().getURI() + "/State/" + elem.getGraphId());
+		
+		stateRes.addProperty(DC.type, GpmlNew.STATE);
+		
+		data.getPathwayRes().addProperty(GpmlNew.HAS_STATE, stateRes);
+		stateRes.addProperty(DCTerms.isPartOf, data.getPathwayRes());
+		
+		stateRes.addLiteral(GpmlNew.LINE_THICKNESS, elem.getLineThickness());
+		stateRes.addLiteral(GpmlNew.GRAPH_ID, elem.getGraphId());
+		stateRes.addLiteral(GpmlNew.COLOR, Utils.colorToHex(elem.getColor()));
+		stateRes.addLiteral(GpmlNew.HEIGHT, elem.getMHeight());
+		stateRes.addLiteral(GpmlNew.LINE_STYLE, elem.getLineStyle() != LineStyle.DASHED ? "Solid" : "Broken");
+		stateRes.addLiteral(GpmlNew.GRAPH_REF, elem.getGraphRef());
+		stateRes.addLiteral(GpmlNew.TEXTLABEL, elem.getTextLabel());
+		stateRes.addLiteral(GpmlNew.REL_X, elem.getRelX());
+		stateRes.addLiteral(GpmlNew.REL_Y, elem.getRelY());
+		stateRes.addLiteral(GpmlNew.WIDTH, elem.getMWidth());
+		stateRes.addLiteral(GpmlNew.FILL_COLOR, Utils.colorToHex(elem.getFillColor()));
+		stateRes.addLiteral(GpmlNew.ZORDER, elem.getZOrder());
+		stateRes.addLiteral(GpmlNew.SHAPE_TYPE, elem.getShapeType().getName());
+		stateRes.addLiteral(GpmlNew.STATE_TYPE, elem.getDataNodeType());
+
+		if(elem.getXref() != null && elem.getXref().getId() != null && elem.getXref().getDataSource() != null) {
+			stateRes.addLiteral(GpmlNew.XREF_ID, elem.getXref().getId());
+			stateRes.addLiteral(GpmlNew.XREF_DATASOURCE, elem.getXref().getDataSource().getFullName());
+		}
+		
+		for(String s : elem.getBiopaxRefs()) {
+			stateRes.addLiteral(GpmlNew.BIOPAX_REF, s);
+		}
+		
+		for(Comment c : elem.getComments()) {
+			CommentConverter.parseCommentGpml(c, model, stateRes, data);
+		}
+		
+		for(PublicationXref xref : elem.getBiopaxReferenceManager().getPublicationXRefs()) {
+			PublicationXrefConverter.parsePublicationXrefGpml(xref, stateRes, model, data);
+		}
+	
+		data.getPathwayElements().put(elem, stateRes);
+	}
+	
 	public static void parseState(PathwayElement elem, Model model, DataStorage data) {
 		Resource stateRes = model.createResource(data.getPathwayRes().getURI() + "/State/" + elem.getGraphId());
 		stateRes.addProperty(DCTerms.isPartOf, data.getPathwayRes());

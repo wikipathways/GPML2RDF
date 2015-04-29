@@ -17,12 +17,17 @@
 package org.wikipathways.wp2rdf.converter;
 
 import org.pathvisio.core.biopax.PublicationXref;
+import org.pathvisio.core.model.LineStyle;
 import org.pathvisio.core.model.PathwayElement;
+import org.pathvisio.core.model.PathwayElement.Comment;
 import org.wikipathways.wp2rdf.ontologies.Gpml;
+import org.wikipathways.wp2rdf.ontologies.GpmlNew;
 import org.wikipathways.wp2rdf.utils.DataStorage;
+import org.wikipathways.wp2rdf.utils.Utils;
 
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.Resource;
+import com.hp.hpl.jena.vocabulary.DC;
 import com.hp.hpl.jena.vocabulary.DCTerms;
 import com.hp.hpl.jena.vocabulary.RDF;
 import com.hp.hpl.jena.vocabulary.RDFS;
@@ -34,6 +39,51 @@ import com.hp.hpl.jena.vocabulary.RDFS;
  *
  */
 public class LabelConverter {
+	
+	public static void parseLabelGpml(PathwayElement elem, Model model, DataStorage data) {
+		Resource labelRes = model.createResource(data.getPathwayRes().getURI() + "/Label/" + elem.getGraphId());
+
+		labelRes.addProperty(DC.type, GpmlNew.LABEL);
+		data.getPathwayRes().addProperty(GpmlNew.HAS_LABEL, labelRes);
+		labelRes.addProperty(DCTerms.isPartOf, data.getPathwayRes());		
+		
+		labelRes.addLiteral(GpmlNew.FONT_STYLE, elem.isItalic() ? "Italic" : "Normal");
+		labelRes.addLiteral(GpmlNew.LINE_THICKNESS, elem.getLineThickness());
+		labelRes.addLiteral(GpmlNew.FONT_SIZE, elem.getMFontSize());
+		labelRes.addLiteral(GpmlNew.FONT_NAME, elem.getFontName());
+		labelRes.addLiteral(GpmlNew.ALIGN, elem.getAlign().getGpmlName());
+		labelRes.addLiteral(GpmlNew.GRAPH_ID, elem.getGraphId());
+		if(elem.getGroupRef() != null) labelRes.addLiteral(GpmlNew.GROUP_REF, elem.getGroupRef());
+		labelRes.addLiteral(GpmlNew.COLOR, Utils.colorToHex(elem.getColor()));
+		labelRes.addLiteral(GpmlNew.CENTER_Y, elem.getMCenterY());
+		labelRes.addLiteral(GpmlNew.VALIGN, elem.getValign().getGpmlName());
+		labelRes.addLiteral(GpmlNew.FONT_WEIGHT, elem.isBold() ? "Bold" : "Normal");
+		labelRes.addLiteral(GpmlNew.FONT_DECORATION, elem.isUnderline() ? "Underline" : "Normal");
+		labelRes.addLiteral(GpmlNew.FONT_STRIKETHRU, elem.isStrikethru() ? "Strikethru" : "Normal");
+		labelRes.addLiteral(GpmlNew.HEIGHT, elem.getMHeight());
+		if(elem.getHref() != null) labelRes.addLiteral(GpmlNew.HREF, elem.getHref());
+		labelRes.addLiteral(GpmlNew.LINE_STYLE, elem.getLineStyle() != LineStyle.DASHED ? "Solid" : "Broken");
+		labelRes.addLiteral(GpmlNew.CENTER_X, elem.getMCenterX());
+		labelRes.addLiteral(GpmlNew.TEXTLABEL, elem.getTextLabel());
+		labelRes.addLiteral(GpmlNew.WIDTH, elem.getMWidth());
+		labelRes.addLiteral(GpmlNew.FILL_COLOR, Utils.colorToHex(elem.getFillColor()));
+		labelRes.addLiteral(GpmlNew.ZORDER, elem.getZOrder());
+		labelRes.addLiteral(GpmlNew.SHAPE_TYPE, elem.getShapeType().getName());
+		
+		for(String s : elem.getBiopaxRefs()) {
+			labelRes.addLiteral(GpmlNew.BIOPAX_REF, s);
+		}
+		
+		for(Comment c : elem.getComments()) {
+			CommentConverter.parseCommentGpml(c, model, labelRes, data);
+		}
+		
+		for(PublicationXref xref : elem.getBiopaxReferenceManager().getPublicationXRefs()) {
+			PublicationXrefConverter.parsePublicationXrefGpml(xref, labelRes, model, data);
+		}
+		
+		data.getPathwayElements().put(elem, labelRes);
+	}
 	
 	public static void parseLabel(PathwayElement elem, Model model, DataStorage data) {
 		// TODO: currently this is called GpmlLabel, why??

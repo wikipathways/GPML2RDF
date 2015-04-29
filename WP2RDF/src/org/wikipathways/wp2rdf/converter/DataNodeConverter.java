@@ -23,8 +23,11 @@ import org.bridgedb.IDMapper;
 import org.bridgedb.IDMapperException;
 import org.bridgedb.Xref;
 import org.pathvisio.core.biopax.PublicationXref;
+import org.pathvisio.core.model.LineStyle;
 import org.pathvisio.core.model.PathwayElement;
+import org.pathvisio.core.model.PathwayElement.Comment;
 import org.wikipathways.wp2rdf.ontologies.Gpml;
+import org.wikipathways.wp2rdf.ontologies.GpmlNew;
 import org.wikipathways.wp2rdf.ontologies.Skos;
 import org.wikipathways.wp2rdf.ontologies.Wp;
 import org.wikipathways.wp2rdf.utils.DataStorage;
@@ -45,6 +48,69 @@ import com.hp.hpl.jena.vocabulary.RDFS;
  */
 public class DataNodeConverter {
 
+//	 gpml:height
+//	 gpml:lineStyle
+//	 gpml:centerX
+//	 gpml:textlabel
+//	 gpml:width
+//	 gpml:fillColor
+//	 gpml:zorder
+//	 gpml:shapeType
+//	 gpml:type
+	
+	public static void parseDataNodesGpml(PathwayElement elem, Model model, DataStorage data) {
+		
+		Resource datanodeRes = model.createResource(data.getPathwayRes().getURI() + "/DataNode/" + elem.getGraphId());
+
+		datanodeRes.addLiteral(GpmlNew.FONT_STYLE, elem.isItalic() ? "Italic" : "Normal");
+		datanodeRes.addLiteral(GpmlNew.LINE_THICKNESS, elem.getLineThickness());
+		datanodeRes.addLiteral(GpmlNew.FONT_SIZE, elem.getMFontSize());
+		datanodeRes.addLiteral(GpmlNew.FONT_NAME, elem.getFontName());
+		datanodeRes.addLiteral(GpmlNew.ALIGN, elem.getAlign().getGpmlName());
+		datanodeRes.addLiteral(GpmlNew.GRAPH_ID, elem.getGraphId());
+		if(elem.getGroupRef() != null) datanodeRes.addLiteral(GpmlNew.GROUP_REF, elem.getGroupRef());
+		datanodeRes.addLiteral(GpmlNew.COLOR, Utils.colorToHex(elem.getColor()));
+		datanodeRes.addLiteral(GpmlNew.CENTER_Y, elem.getMCenterY());
+		datanodeRes.addLiteral(GpmlNew.VALIGN, elem.getValign().getGpmlName());
+		datanodeRes.addLiteral(GpmlNew.FONT_WEIGHT, elem.isBold() ? "Bold" : "Normal");
+		datanodeRes.addLiteral(GpmlNew.FONT_DECORATION, elem.isUnderline() ? "Underline" : "Normal");
+		datanodeRes.addLiteral(GpmlNew.FONT_STRIKETHRU, elem.isStrikethru() ? "Strikethru" : "Normal");
+		datanodeRes.addLiteral(GpmlNew.HEIGHT, elem.getMHeight());
+		datanodeRes.addLiteral(GpmlNew.LINE_STYLE, elem.getLineStyle() != LineStyle.DASHED ? "Solid" : "Broken");
+		datanodeRes.addLiteral(GpmlNew.CENTER_X, elem.getMCenterX());
+		datanodeRes.addLiteral(GpmlNew.TEXTLABEL, elem.getTextLabel());
+		datanodeRes.addLiteral(GpmlNew.WIDTH, elem.getMWidth());
+		datanodeRes.addLiteral(GpmlNew.FILL_COLOR, Utils.colorToHex(elem.getFillColor()));
+		datanodeRes.addLiteral(GpmlNew.ZORDER, elem.getZOrder());
+		datanodeRes.addLiteral(GpmlNew.SHAPE_TYPE, elem.getShapeType().getName());
+		datanodeRes.addLiteral(GpmlNew.TYPE, elem.getDataNodeType());
+		
+		if(elem.getXref() != null && elem.getXref().getId() != null && elem.getXref().getDataSource() != null) {
+			datanodeRes.addLiteral(GpmlNew.XREF_ID, elem.getXref().getId());
+			datanodeRes.addLiteral(GpmlNew.XREF_DATASOURCE, elem.getXref().getDataSource().getFullName());
+		}
+		
+		for(String s : elem.getBiopaxRefs()) {
+			datanodeRes.addLiteral(GpmlNew.BIOPAX_REF, s);
+		}
+		
+		for(Comment c : elem.getComments()) {
+			CommentConverter.parseCommentGpml(c, model, datanodeRes, data);
+		}
+		
+		for(PublicationXref xref : elem.getBiopaxReferenceManager().getPublicationXRefs()) {
+			PublicationXrefConverter.parsePublicationXrefGpml(xref, datanodeRes, model, data);
+		}
+		
+		datanodeRes.addProperty(DC.type, GpmlNew.DATA_NODE);
+		
+		datanodeRes.addProperty(DCTerms.isPartOf, data.getPathwayRes());
+		data.getPathwayRes().addProperty(GpmlNew.HAS_DATA_NODE, datanodeRes);
+		data.getPathwayElements().put(elem, datanodeRes);
+		
+	}
+
+	
 	public static void parseDataNodes(PathwayElement elem, Model model, IDMapper geneMapper, IDMapper metMapper, DataStorage data) {
 		
 		String name = elem.getTextLabel().replace("\n", " ");

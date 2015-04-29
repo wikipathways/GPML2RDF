@@ -19,10 +19,12 @@ package org.wikipathways.wp2rdf.converter;
 import org.pathvisio.core.model.LineType;
 import org.pathvisio.core.model.PathwayElement.MPoint;
 import org.wikipathways.wp2rdf.ontologies.Gpml;
+import org.wikipathways.wp2rdf.ontologies.GpmlNew;
 import org.wikipathways.wp2rdf.utils.DataStorage;
 
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.Resource;
+import com.hp.hpl.jena.vocabulary.DC;
 import com.hp.hpl.jena.vocabulary.DCTerms;
 import com.hp.hpl.jena.vocabulary.RDF;
 
@@ -34,6 +36,32 @@ import com.hp.hpl.jena.vocabulary.RDF;
  */
 public class PointConverter {
 
+	public static void parsePointGpml(MPoint point, Model model, Resource lineRes, DataStorage data, String arrowHead) {
+		String graphId = point.getGraphId();
+		if(graphId == null) {
+			graphId = data.getPathway().getUniqueGraphId();
+		}
+		Resource pointRes = model.createResource(lineRes.getURI() + "/Point/" + graphId);
+
+		pointRes.addProperty(DC.type, GpmlNew.POINT);
+		pointRes.addProperty(DCTerms.isPartOf, lineRes);
+		pointRes.addProperty(DCTerms.isPartOf, data.getPathwayRes());
+		
+		lineRes.addProperty(GpmlNew.HAS_POINT, pointRes);
+		
+		// TODO: make sure that every point has a graph id!!!
+		if(point.getGraphId() != null) pointRes.addLiteral(GpmlNew.GRAPH_ID, point.getGraphId());
+		if(point.getGraphRef() != null) pointRes.addLiteral(GpmlNew.GRAPH_REF, point.getGraphRef());
+		pointRes.addLiteral(GpmlNew.REL_X, point.getRelX());
+		pointRes.addLiteral(GpmlNew.REL_Y, point.getRelY());
+		pointRes.addLiteral(GpmlNew.X, point.getX());
+		pointRes.addLiteral(GpmlNew.Y, point.getY());
+		
+		if(arrowHead != null) pointRes.addLiteral(GpmlNew.ARROW_HEAD, arrowHead);
+		
+		data.getPoints().put(point, pointRes);
+	}
+	
 	public static void parsePoint(MPoint p, LineType lineType, String id, Model model, Resource lineRes, DataStorage data) {
 		Resource pointRes = model.createResource(data.getPathwayRes().getURI() + "/Point/" + id);
 		// TODO: shouldn't this be part of the pathway as well?

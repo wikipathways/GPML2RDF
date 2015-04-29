@@ -30,6 +30,7 @@ import org.pathvisio.core.model.Pathway;
 import org.pathvisio.core.model.PathwayElement;
 import org.pathvisio.core.view.MIMShapes;
 import org.wikipathways.wp2rdf.converter.DataNodeConverter;
+import org.wikipathways.wp2rdf.converter.GpmlConverter;
 import org.wikipathways.wp2rdf.converter.GroupConverter;
 import org.wikipathways.wp2rdf.converter.InteractionConverter;
 import org.wikipathways.wp2rdf.converter.LabelConverter;
@@ -54,9 +55,9 @@ public class WP2RDF {
 
 	public static void main(String[] args) {
 //		File pathwayFile = new File("resources/WP2447_75221.gpml");
-//		File pathwayFile = new File("resources/WP2059_79765.gpml");
+		File pathwayFile = new File("resources/WP2059_79765.gpml");
 //		File pathwayFile = new File("resources/test-simple-conversion.gpml");
-		File pathwayFile = new File("resources/test-advanced-conversion.gpml");
+//		File pathwayFile = new File("resources/test-advanced-conversion.gpml");
 
 		File bridgeDbFile = new File("/home/tina/Data/BridgeDb/Hs_Derby_20130701.bridge");
 		File bridgeDbFileMet = new File("/home/tina/Data/BridgeDb/metabolites_20140516.bridge");
@@ -75,36 +76,39 @@ public class WP2RDF {
 			// TODO: get revision
 			String revision = "75221";
 			
-			Model pathwayModel = ModelFactory.createDefaultModel();
-			Utils.setModelPrefix(pathwayModel);
 			
-			Resource pathwayRes = PathwayConverter.parsePathwayInfo(p, wpId, revision, pathwayModel);
-			DataStorage data = new DataStorage(p, pathwayRes);
+			Model pathwayModel = GpmlConverter.convert(p, wpId, revision);
+//			Model pathwayModel = ModelFactory.createDefaultModel();
 			
-			for(PathwayElement element : p.getDataObjects()) {
-				if(element.getObjectType().equals(ObjectType.DATANODE)) {
-					DataNodeConverter.parseDataNodes(element, pathwayModel, geneMapper, metMapper, data);
-				} else if (element.getObjectType().equals(ObjectType.LABEL)) {
-					LabelConverter.parseLabel(element, pathwayModel, data);
-				} else if (element.getObjectType().equals(ObjectType.LINE)) {
-					LineConverter.parseLineGpml(element, pathwayModel, data);
-				} else if (element.getObjectType().equals(ObjectType.SHAPE)) {
-					ShapeConverter.parseShape(element, pathwayModel, data);
-				} else if (element.getObjectType().equals(ObjectType.STATE)) {
-					StateConverter.parseState(element, pathwayModel, data);
-				} else if (element.getObjectType().equals(ObjectType.GROUP)) {
-					GroupConverter.parseGroup((MGroup) element, pathwayModel, data);
-				}
-			}
+//			Utils.setModelPrefix(pathwayModel);
+//			
+//			Resource pathwayRes = PathwayConverter.parsePathwayInfo(p, wpId, revision, pathwayModel);
+//			DataStorage data = new DataStorage(p, pathwayRes);
+//			
+//			for(PathwayElement element : p.getDataObjects()) {
+//				if(element.getObjectType().equals(ObjectType.DATANODE)) {
+//					DataNodeConverter.parseDataNodes(element, pathwayModel, geneMapper, metMapper, data);
+//				} else if (element.getObjectType().equals(ObjectType.LABEL)) {
+//					LabelConverter.parseLabel(element, pathwayModel, data);
+//				} else if (element.getObjectType().equals(ObjectType.LINE)) {
+//					LineConverter.parseLineGpml(element, pathwayModel, data);
+//				} else if (element.getObjectType().equals(ObjectType.SHAPE)) {
+//					ShapeConverter.parseShape(element, pathwayModel, data);
+//				} else if (element.getObjectType().equals(ObjectType.STATE)) {
+//					StateConverter.parseState(element, pathwayModel, data);
+//				} else if (element.getObjectType().equals(ObjectType.GROUP)) {
+//					GroupConverter.parseGroup((MGroup) element, pathwayModel, data);
+//				}
+//			}
+//			
+//			// retrieve semantic interactions
+//			for(PathwayElement element : p.getDataObjects()) {
+//				if (element.getObjectType().equals(ObjectType.LINE)) {
+//					InteractionConverter.parseInteractionSemantics((MLine)element, pathwayModel, data);
+//				}
+//			}
 			
-			// retrieve semantic interactions
-			for(PathwayElement element : p.getDataObjects()) {
-				if (element.getObjectType().equals(ObjectType.LINE)) {
-					InteractionConverter.parseInteractionSemantics((MLine)element, pathwayModel, data);
-				}
-			}
-			
-			pathwayModel.write(new FileWriter(new File("output.owl")), "TURTLE");
+			pathwayModel.write(new FileWriter(new File("output-new.owl")), "TURTLE");
 		} catch (ConverterException e) {
 			System.out.println("couldn't read pathway file " + pathwayFile.getAbsolutePath());
 			// TODO Auto-generated catch block

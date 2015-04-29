@@ -22,6 +22,7 @@ import org.pathvisio.core.biopax.PublicationXref;
 import org.pathvisio.core.model.Pathway;
 import org.pathvisio.core.model.PathwayElement.Comment;
 import org.wikipathways.wp2rdf.ontologies.Gpml;
+import org.wikipathways.wp2rdf.ontologies.GpmlNew;
 import org.wikipathways.wp2rdf.ontologies.Pav;
 import org.wikipathways.wp2rdf.ontologies.Skos;
 import org.wikipathways.wp2rdf.ontologies.Wp;
@@ -43,6 +44,31 @@ import com.hp.hpl.jena.vocabulary.RDFS;
  */
 public class PathwayConverter {
 
+	public static Resource parsePathwayInfoNew(Pathway p, String wpId, String revision, Model model) {
+
+		Resource pwyRes = model.createResource(Utils.WP_RDF_URL + "/Pathway/" + wpId + "_r" + revision);
+		
+		// Required Attributes
+		pwyRes.addLiteral(GpmlNew.ORGANISM, p.getMappInfo().getOrganism());
+		pwyRes.addLiteral(GpmlNew.BOARD_HEIGHT, p.getMappInfo().getMBoardHeight());
+		pwyRes.addLiteral(GpmlNew.BOARD_WIDTH, p.getMappInfo().getMBoardWidth());
+		pwyRes.addLiteral(GpmlNew.NAME, p.getMappInfo().getMapInfoName());
+		
+		// Optional Attributes
+		if(p.getMappInfo().getVersion() != null) pwyRes.addLiteral(GpmlNew.VERSION, p.getMappInfo().getVersion());
+		if(p.getMappInfo().getCopyright() != null) pwyRes.addLiteral(GpmlNew.LICENSE, p.getMappInfo().getCopyright());
+		if(p.getMappInfo().getAuthor() != null) pwyRes.addLiteral(GpmlNew.AUTHOR, p.getMappInfo().getAuthor());
+		if(p.getMappInfo().getEmail() != null) pwyRes.addLiteral(GpmlNew.EMAIL, p.getMappInfo().getEmail());
+		if(p.getMappInfo().getMaintainer() != null) pwyRes.addLiteral(GpmlNew.MAINTAINER, p.getMappInfo().getMaintainer());
+		if(p.getMappInfo().getLastModified() != null) pwyRes.addLiteral(GpmlNew.LAST_MODIFIED, p.getMappInfo().getLastModified());
+		if(p.getMappInfo().getMapInfoDataSource() != null) pwyRes.addLiteral(GpmlNew.DATA_SOURCE, p.getMappInfo().getMapInfoDataSource());
+		
+		for(String s : p.getMappInfo().getBiopaxRefs()) {
+			pwyRes.addLiteral(GpmlNew.BIOPAX_REF, s);
+		}
+		return pwyRes;
+	}
+	
 	public static Resource parsePathwayInfo(Pathway p, String wpId, String revision, Model model) {
 		// TODO check if pathway has name and organism
 		Xref orgTaxId = Organism.fromLatinName(p.getMappInfo().getOrganism()).taxonomyID();

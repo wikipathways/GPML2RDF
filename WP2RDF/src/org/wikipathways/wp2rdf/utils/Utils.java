@@ -16,6 +16,7 @@
 //
 package org.wikipathways.wp2rdf.utils;
 
+import java.awt.Color;
 import java.io.File;
 
 import org.bridgedb.BridgeDb;
@@ -75,6 +76,21 @@ public class Utils {
 		model.setNsPrefix("hmdb", "http://identifiers.org/hmdb/");
 		model.setNsPrefix("freq", Freq.getURI());
 	}
+	
+	public static String colorToHex(Color color) {
+		String red = padding(Integer.toBinaryString(color.getRed()), 8, '0');
+		String green = padding(Integer.toBinaryString(color.getGreen()), 8, '0');
+		String blue = padding(Integer.toBinaryString(color.getBlue()), 8, '0');
+		String hexBinary = Integer.toHexString(Integer.valueOf(red + green + blue, 2));
+		return hexBinary;
+	}
+	
+	private static String padding(String s, int n, char c) {
+    	while(s.length() < n) {
+    		s = c + s;
+    	}
+    	return s;
+    }
 	
 	public static IDMapper setUpIDMapper(File file) throws IDMapperException, ClassNotFoundException {
 		Class.forName("org.bridgedb.rdb.IDMapperRdb");  
