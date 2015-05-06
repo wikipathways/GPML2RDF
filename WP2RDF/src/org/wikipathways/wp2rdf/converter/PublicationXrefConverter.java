@@ -20,7 +20,7 @@ import org.pathvisio.core.biopax.PublicationXref;
 import org.wikipathways.wp2rdf.ontologies.Gpml;
 import org.wikipathways.wp2rdf.ontologies.GpmlNew;
 import org.wikipathways.wp2rdf.ontologies.Wp;
-import org.wikipathways.wp2rdf.utils.DataStorage;
+import org.wikipathways.wp2rdf.utils.DataHandler;
 import org.wikipathways.wp2rdf.utils.Utils;
 
 import com.hp.hpl.jena.rdf.model.Model;
@@ -37,7 +37,10 @@ import com.hp.hpl.jena.vocabulary.RDF;
  */
 public class PublicationXrefConverter {
 	
-	public static void parsePublicationXrefGpml(PublicationXref xref, Resource parent, Model model, DataStorage data) {
+	/**
+	 * conversion only GPML vocabulary
+	 */
+	public static void parsePublicationXrefGpml(PublicationXref xref, Resource parent, Model model, DataHandler data) {
 		Resource pubXrefRes = model.createResource(Utils.IDENTIFIERS_ORG_URL + "/pubmed/" + xref.getPubmedId());
 		pubXrefRes.addProperty(RDF.type, GpmlNew.PUBLICATION_XREF);
 		pubXrefRes.addLiteral(GpmlNew.ID, xref.getPubmedId());
@@ -49,6 +52,9 @@ public class PublicationXrefConverter {
 		data.getPubXrefs().put(xref, pubXrefRes);
 	}
 	
+	/**
+	 * old conversion GPML + WP
+	 */
 	public static void parsePublicationXref(PublicationXref xref, Resource parent, Model model) {
 		Resource pubXrefRes = model.createResource(Utils.IDENTIFIERS_ORG_URL + "/pubmed/" + xref.getPubmedId());
 		pubXrefRes.addProperty(RDF.type, Wp.PublicationReference);

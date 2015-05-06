@@ -1,3 +1,19 @@
+// WP2RDF
+// Conversion from GPML pathways to RDF
+// Copyright 2015 BiGCaT Bioinformatics
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+// http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+//
 package org.wikipathways.wp2rdf.converter;
 
 import java.util.ArrayList;
@@ -17,7 +33,7 @@ import org.pathvisio.core.view.MIMShapes;
 import org.wikipathways.wp2rdf.ontologies.Gpml;
 import org.wikipathways.wp2rdf.ontologies.GpmlNew;
 import org.wikipathways.wp2rdf.ontologies.Wp;
-import org.wikipathways.wp2rdf.utils.DataStorage;
+import org.wikipathways.wp2rdf.utils.DataHandler;
 import org.wikipathways.wp2rdf.utils.Utils;
 
 import com.hp.hpl.jena.rdf.model.Model;
@@ -26,9 +42,18 @@ import com.hp.hpl.jena.vocabulary.DC;
 import com.hp.hpl.jena.vocabulary.DCTerms;
 import com.hp.hpl.jena.vocabulary.RDF;
 
+/**
+ * 
+ * @author mkutmon
+ * @author ryanmiller
+ *
+ */
 public class InteractionConverter {
 
-	public static void parseInteractionGpml(MLine e, Model model, DataStorage data) {
+	/**
+	 * conversion only GPML vocabulary
+	 */
+	public static void parseInteractionGpml(MLine e, Model model, DataHandler data) {
 		Resource intRes = model.createResource(data.getPathwayRes().getURI() + "/Interaction/" + e.getGraphId());
 		
 		intRes.addProperty(DC.type, GpmlNew.INTERACTION);
@@ -80,7 +105,11 @@ public class InteractionConverter {
 		data.getPathwayElements().put(e, intRes);
 	}
 	
-	public static void parseInteractionSemantics(MLine e, Model model, DataStorage data) {
+	/**
+	 * first try of resolving complex interactions
+	 * still work in progress!!
+	 */
+	public static void parseInteractionSemantics(MLine e, Model model, DataHandler data) {
 	
 		List<MLine> participatingLines = new ArrayList<MLine>();
 		participatingLines.add(e);
@@ -195,65 +224,9 @@ public class InteractionConverter {
 				System.out.println("ERRRORRRR!!!");
 			}
 		}
-		
-//		System.out.println(e.getGraphId() + "\t" + participants.size());
-		
-//		System.out.println("Regulating Lines\t" + regLines.size());
-//		for(MLine l : regLines) {
-//			System.out.println("\t>> " + l.getGraphId());
-//		}
-		
-		
-		
-//		if(e.getStartGraphRef() != null && e.getEndGraphRef() != null) {
-//			Resource start = data.getPathwayElements().get(data.getPathway().getElementById(e.getStartGraphRef()));
-//			Resource end = data.getPathwayElements().get(data.getPathway().getElementById(e.getEndGraphRef()));
-//			if(start != null && end != null) {
-//				if(start.getProperty(DC.identifier) != null && end.getProperty(DC.identifier) != null) {
-//					System.out.println(e.getGraphId() + "\t" + e.getStartLineType() + "\t" + e.getEndLineType());
-//
-//					LineType startLine = e.getStartLineType();
-//					LineType endLine = e.getEndLineType();
-//						
-//					Resource interaction1 = null;
-//					Resource interaction2 = null;
-//					if(startLine.equals(LineType.LINE) && endLine.equals(LineType.LINE)) {
-//						interaction1 = model.createResource(data.getPathwayRes().getURI() + "/Interaction/" + data.getPathway().getUniqueGraphId());
-//						interaction1.addProperty(RDF.type, Wp.Interaction);
-//						interaction1.addProperty(RDF.type, Wp.Relation);
-//						interaction1.addProperty(DCTerms.isPartOf, data.getPathwayRes());
-//						interaction1.addProperty(Wp.hasParticipant, start);
-//						interaction1.addProperty(Wp.hasParticipant, end);
-//						interaction1.addProperty(RDF.type, Wp.UndirectedInteraction);
-//						data.getPathwayElements().get(e).addProperty(DCTerms.isPartOf, interaction1);
-//					} else {					
-//						if(!startLine.equals(LineType.LINE)) {
-//							// TODO: get better id!!!
-//							interaction1 = model.createResource(data.getPathwayRes().getURI() + "/Interaction/" + data.getPathway().getUniqueGraphId());
-//							createInteraction(startLine, end, start, interaction1, data);
-//							data.getPathwayElements().get(e).addProperty(DCTerms.isPartOf, interaction1);
-//						} 
-//						if(!endLine.equals(LineType.LINE)) {
-//							// TODO: get better id!!!
-//							interaction2 = model.createResource(data.getPathwayRes().getURI() + "/Interaction/" + data.getPathway().getUniqueGraphId());
-//							createInteraction(startLine, start, end, interaction2, data);
-//							data.getPathwayElements().get(e).addProperty(DCTerms.isPartOf, interaction2);
-//						}
-//					}
-//					
-//					
-//				} else {
-////					System.out.println("not identified");
-//				}
-//			} else {
-////				System.out.println("No datanode");
-//			}
-//		} else {
-////			System.out.println("no graph refs at start / end " + e.getGraphId());
-//		}
 	}	
 	
-	private static void createInteraction(LineType lineType, List<Resource> source, List<Resource> target, Resource intRes, DataStorage data) {
+	private static void createInteraction(LineType lineType, List<Resource> source, List<Resource> target, Resource intRes, DataHandler data) {
 		intRes.addProperty(RDF.type, Wp.Interaction);
 		intRes.addProperty(RDF.type, Wp.Relation);
 		intRes.addProperty(DCTerms.isPartOf, data.getPathwayRes());

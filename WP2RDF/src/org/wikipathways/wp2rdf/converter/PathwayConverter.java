@@ -44,6 +44,9 @@ import com.hp.hpl.jena.vocabulary.RDFS;
  */
 public class PathwayConverter {
 
+	/**
+	 * conversion only GPML vocabulary
+	 */
 	public static Resource parsePathwayInfoNew(Pathway p, String wpId, String revision, Model model) {
 
 		Resource pwyRes = model.createResource(Utils.WP_RDF_URL + "/Pathway/" + wpId + "_r" + revision);
@@ -69,6 +72,9 @@ public class PathwayConverter {
 		return pwyRes;
 	}
 	
+	/**
+	 * old conversion GPML + WP
+	 */
 	public static Resource parsePathwayInfo(Pathway p, String wpId, String revision, Model model) {
 		// TODO check if pathway has name and organism
 		Xref orgTaxId = Organism.fromLatinName(p.getMappInfo().getOrganism()).taxonomyID();

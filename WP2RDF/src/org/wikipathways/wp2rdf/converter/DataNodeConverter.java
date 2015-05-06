@@ -30,7 +30,7 @@ import org.wikipathways.wp2rdf.ontologies.Gpml;
 import org.wikipathways.wp2rdf.ontologies.GpmlNew;
 import org.wikipathways.wp2rdf.ontologies.Skos;
 import org.wikipathways.wp2rdf.ontologies.Wp;
-import org.wikipathways.wp2rdf.utils.DataStorage;
+import org.wikipathways.wp2rdf.utils.DataHandler;
 import org.wikipathways.wp2rdf.utils.Utils;
 
 import com.hp.hpl.jena.rdf.model.Model;
@@ -48,17 +48,10 @@ import com.hp.hpl.jena.vocabulary.RDFS;
  */
 public class DataNodeConverter {
 
-//	 gpml:height
-//	 gpml:lineStyle
-//	 gpml:centerX
-//	 gpml:textlabel
-//	 gpml:width
-//	 gpml:fillColor
-//	 gpml:zorder
-//	 gpml:shapeType
-//	 gpml:type
-	
-	public static void parseDataNodesGpml(PathwayElement elem, Model model, DataStorage data) {
+	/**
+	 * conversion only GPML vocabulary
+	 */
+	public static void parseDataNodesGpml(PathwayElement elem, Model model, DataHandler data) {
 		
 		Resource datanodeRes = model.createResource(data.getPathwayRes().getURI() + "/DataNode/" + elem.getGraphId());
 
@@ -110,8 +103,10 @@ public class DataNodeConverter {
 		
 	}
 
-	
-	public static void parseDataNodes(PathwayElement elem, Model model, IDMapper geneMapper, IDMapper metMapper, DataStorage data) {
+	/**
+	 * old conversion GPML + WP
+	 */
+	public static void parseDataNodes(PathwayElement elem, Model model, IDMapper geneMapper, IDMapper metMapper, DataHandler data) {
 		
 		String name = elem.getTextLabel().replace("\n", " ");
 		

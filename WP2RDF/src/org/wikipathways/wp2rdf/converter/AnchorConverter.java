@@ -20,7 +20,7 @@ package org.wikipathways.wp2rdf.converter;
 import org.pathvisio.core.model.PathwayElement.MAnchor;
 import org.wikipathways.wp2rdf.ontologies.Gpml;
 import org.wikipathways.wp2rdf.ontologies.GpmlNew;
-import org.wikipathways.wp2rdf.utils.DataStorage;
+import org.wikipathways.wp2rdf.utils.DataHandler;
 
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.Resource;
@@ -36,7 +36,10 @@ import com.hp.hpl.jena.vocabulary.RDF;
  */
 public class AnchorConverter {
 
-	public static void parseAnchorGpml(MAnchor anchor, Model model, Resource lineRes, DataStorage data) {
+	/**
+	 * conversion only GPML vocabulary
+	 */
+	public static void parseAnchorGpml(MAnchor anchor, Model model, Resource lineRes, DataHandler data) {
 		Resource anchorRes = model.createResource(lineRes.getURI() + "/Anchor/" + anchor.getGraphId());
 
 		anchorRes.addProperty(DC.type, GpmlNew.ANCHOR);
@@ -52,7 +55,11 @@ public class AnchorConverter {
 		data.getAnchors().put(anchor, anchorRes);
 	}
 	
-	public static Resource parseAnchor(MAnchor anchor, Model model, Resource lineRes, DataStorage data) {
+	
+	/**
+	 * old conversion
+	 */
+	public static Resource parseAnchor(MAnchor anchor, Model model, Resource lineRes, DataHandler data) {
 		// TODO: currently the URI is depending on the line - this is not the case for the Point, so I wouldn't do it for Anchors either
 		Resource anchorRes = model.createResource(lineRes.getURI() + "/Anchor/" + anchor.getGraphId());
 		
