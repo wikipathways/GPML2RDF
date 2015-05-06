@@ -33,7 +33,7 @@ import com.hp.hpl.jena.rdf.model.Model;
  * @author ryanmiller
  *
  */
-public class WP2RDF {
+public class WP2RDFMain {
 
 	public static void main(String[] args) {
 		// TODO: get all pathways from webservice
