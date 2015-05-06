@@ -59,8 +59,8 @@ public class WP2RDF {
 //		File pathwayFile = new File("resources/test-simple-conversion.gpml");
 //		File pathwayFile = new File("resources/test-advanced-conversion.gpml");
 
-		File bridgeDbFile = new File("/home/tina/Data/BridgeDb/Hs_Derby_20130701.bridge");
-		File bridgeDbFileMet = new File("/home/tina/Data/BridgeDb/metabolites_20140516.bridge");
+//		File bridgeDbFile = new File("/home/martina/Data/BridgeDb/Hs_Derby_20130701.bridge");
+//		File bridgeDbFileMet = new File("/home/martina/Data/BridgeDb/metabolites_20140516.bridge");
 
 		
 		try {	
@@ -68,8 +68,8 @@ public class WP2RDF {
 			Pathway p = PathwayReader.readPathway(pathwayFile);
 			
 			
-			IDMapper geneMapper = Utils.setUpIDMapper(bridgeDbFile);
-			IDMapper metMapper = Utils.setUpIDMapper(bridgeDbFileMet);
+//			IDMapper geneMapper = Utils.setUpIDMapper(bridgeDbFile);
+//			IDMapper metMapper = Utils.setUpIDMapper(bridgeDbFileMet);
 			
 			// TODO: get pathway id
 			String wpId = "WP2447";
@@ -116,12 +116,12 @@ public class WP2RDF {
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IDMapperException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+//		} catch (ClassNotFoundException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		} catch (IDMapperException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
 		}
 		
 	}
