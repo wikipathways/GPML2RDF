@@ -1,5 +1,11 @@
 # GPML2RDF
-GPML2RDF converter
+GPML2RDF converter:
+
+Work in progress
+
+## Status:
+- [x] Conversion to GPML vocabulary is finished
+- [] Conversion to WP vocabulary work in progress
 
 
 ###Setup:
