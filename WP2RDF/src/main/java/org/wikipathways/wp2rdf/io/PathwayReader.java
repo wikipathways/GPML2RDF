@@ -17,6 +17,7 @@
 package org.wikipathways.wp2rdf.io;
 
 import java.io.File;
+import java.io.InputStream;
 
 import org.pathvisio.core.model.ConverterException;
 import org.pathvisio.core.model.Pathway;
@@ -34,5 +35,10 @@ public class PathwayReader {
 		pathway.readFromXml(file, true);
 		return pathway;
 	}
-	
+
+	public static Pathway readPathway(InputStream input) throws ConverterException {
+		Pathway pathway = new Pathway();
+		pathway.readFromXml(input, true);
+		return pathway;
+	}
 }
