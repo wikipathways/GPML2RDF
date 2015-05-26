@@ -56,7 +56,7 @@ public class InteractionConverter {
 	public static void parseInteractionGpml(MLine e, Model model, DataHandler data) {
 		Resource intRes = model.createResource(data.getPathwayRes().getURI() + "/Interaction/" + e.getGraphId());
 		
-		intRes.addProperty(DC.type, GpmlNew.INTERACTION);
+		intRes.addProperty(RDF.type, GpmlNew.INTERACTION);
 		data.getPathwayRes().addProperty(GpmlNew.HAS_INTERACTION, intRes);
 		intRes.addProperty(DCTerms.isPartOf, data.getPathwayRes());
 		

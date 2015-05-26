@@ -24,6 +24,7 @@ import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.Resource;
 import com.hp.hpl.jena.vocabulary.DC;
 import com.hp.hpl.jena.vocabulary.DCTerms;
+import com.hp.hpl.jena.vocabulary.RDF;
 
 /**
  * 
@@ -39,7 +40,7 @@ public class CommentConverter {
 	public static void parseCommentGpml(Comment comment, Model model, Resource parent, DataHandler data) {
 		Resource commentRes = model.createResource(data.getPathwayRes().getURI() + "/Comment/" + data.getPathway().getUniqueGraphId());
 		
-		commentRes.addProperty(DC.type, GpmlNew.COMMENT);
+		commentRes.addProperty(RDF.type, GpmlNew.COMMENT);
 		
 		if(comment.getSource() != null) commentRes.addLiteral(GpmlNew.SOURCE, comment.getSource());
 		commentRes.addLiteral(GpmlNew.COMMENT_TEXT, comment.getComment());

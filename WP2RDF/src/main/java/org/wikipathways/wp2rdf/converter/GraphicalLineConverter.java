@@ -30,6 +30,7 @@ import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.Resource;
 import com.hp.hpl.jena.vocabulary.DC;
 import com.hp.hpl.jena.vocabulary.DCTerms;
+import com.hp.hpl.jena.vocabulary.RDF;
 
 /**
  * 
@@ -45,7 +46,7 @@ public class GraphicalLineConverter {
 	public static void parseInteractionGpml(MLine e, Model model, DataHandler data) {
 		Resource intRes = model.createResource(data.getPathwayRes().getURI() + "/GraphicalLine/" + e.getGraphId());
 		
-		intRes.addProperty(DC.type, GpmlNew.GRAPHICAL_LINE);
+		intRes.addProperty(RDF.type, GpmlNew.GRAPHICAL_LINE);
 		data.getPathwayRes().addProperty(GpmlNew.HAS_GRAPHICAL_LINE, intRes);
 		intRes.addProperty(DCTerms.isPartOf, data.getPathwayRes());
 		

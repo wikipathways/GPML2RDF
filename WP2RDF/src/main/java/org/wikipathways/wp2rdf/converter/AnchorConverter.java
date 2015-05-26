@@ -42,7 +42,7 @@ public class AnchorConverter {
 	public static void parseAnchorGpml(MAnchor anchor, Model model, Resource lineRes, DataHandler data) {
 		Resource anchorRes = model.createResource(lineRes.getURI() + "/Anchor/" + anchor.getGraphId());
 
-		anchorRes.addProperty(DC.type, GpmlNew.ANCHOR);
+		anchorRes.addProperty(RDF.type, GpmlNew.ANCHOR);
 		anchorRes.addProperty(DCTerms.isPartOf, lineRes);
 		anchorRes.addProperty(DCTerms.isPartOf, data.getPathwayRes());
 		

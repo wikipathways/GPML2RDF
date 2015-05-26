@@ -52,7 +52,7 @@ public class GroupConverter {
 		
 		Resource groupRes = model.createResource(data.getPathwayRes().getURI() + "/Group/" + graphId);
 	
-		groupRes.addProperty(DC.type, GpmlNew.GROUP);
+		groupRes.addProperty(RDF.type, GpmlNew.GROUP);
 		data.getPathwayRes().addProperty(GpmlNew.HAS_GROUP, groupRes);
 		groupRes.addProperty(DCTerms.isPartOf, data.getPathwayRes());	
 		

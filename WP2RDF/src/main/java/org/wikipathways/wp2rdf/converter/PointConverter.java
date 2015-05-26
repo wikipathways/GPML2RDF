@@ -46,7 +46,7 @@ public class PointConverter {
 		}
 		Resource pointRes = model.createResource(lineRes.getURI() + "/Point/" + graphId);
 
-		pointRes.addProperty(DC.type, GpmlNew.POINT);
+		pointRes.addProperty(RDF.type, GpmlNew.POINT);
 		pointRes.addProperty(DCTerms.isPartOf, lineRes);
 		pointRes.addProperty(DCTerms.isPartOf, data.getPathwayRes());
 		

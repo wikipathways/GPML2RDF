@@ -46,7 +46,7 @@ public class StateConverter {
 	public static void parseStateGpml(PathwayElement elem, Model model, DataHandler data) {
 		Resource stateRes = model.createResource(data.getPathwayRes().getURI() + "/State/" + elem.getGraphId());
 		
-		stateRes.addProperty(DC.type, GpmlNew.STATE);
+		stateRes.addProperty(RDF.type, GpmlNew.STATE);
 		
 		data.getPathwayRes().addProperty(GpmlNew.HAS_STATE, stateRes);
 		stateRes.addProperty(DCTerms.isPartOf, data.getPathwayRes());

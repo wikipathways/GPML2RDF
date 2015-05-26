@@ -47,7 +47,7 @@ public class ShapeConverter {
 	
 		Resource shapeRes = model.createResource(data.getPathwayRes().getURI() + "/Shape/" + elem.getGraphId());
 
-		shapeRes.addProperty(DC.type, GpmlNew.SHAPE);
+		shapeRes.addProperty(RDF.type, GpmlNew.SHAPE);
 		data.getPathwayRes().addProperty(GpmlNew.HAS_SHAPE, shapeRes);
 		shapeRes.addProperty(DCTerms.isPartOf, data.getPathwayRes());
 		

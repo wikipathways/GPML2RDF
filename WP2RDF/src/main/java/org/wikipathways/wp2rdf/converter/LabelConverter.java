@@ -46,7 +46,7 @@ public class LabelConverter {
 	public static void parseLabelGpml(PathwayElement elem, Model model, DataHandler data) {
 		Resource labelRes = model.createResource(data.getPathwayRes().getURI() + "/Label/" + elem.getGraphId());
 
-		labelRes.addProperty(DC.type, GpmlNew.LABEL);
+		labelRes.addProperty(RDF.type, GpmlNew.LABEL);
 		data.getPathwayRes().addProperty(GpmlNew.HAS_LABEL, labelRes);
 		labelRes.addProperty(DCTerms.isPartOf, data.getPathwayRes());		
 		

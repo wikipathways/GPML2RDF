@@ -95,7 +95,7 @@ public class DataNodeConverter {
 			PublicationXrefConverter.parsePublicationXrefGpml(xref, datanodeRes, model, data);
 		}
 		
-		datanodeRes.addProperty(DC.type, GpmlNew.DATA_NODE);
+		datanodeRes.addProperty(RDF.type, GpmlNew.DATA_NODE);
 		
 		datanodeRes.addProperty(DCTerms.isPartOf, data.getPathwayRes());
 		data.getPathwayRes().addProperty(GpmlNew.HAS_DATA_NODE, datanodeRes);
