@@ -29,5 +29,15 @@ public class GpmlConvertorTest {
 		Assert.assertTrue(turtle.contains("gpml:DataNode"));
 		Assert.assertTrue(turtle.contains("gpml:centerX"));
 	}
-	
+
+	@Test
+	public void isPartOfAPathway() throws Exception {
+		InputStream input = this.getClass().getClassLoader().getResourceAsStream("gpmlParts/datanode.gpml");
+		String sparql = ResourceHelper.resourceAsString("structure/isPartOfAPathway.rq");
+		Pathway pathway = PathwayReader.readPathway(input);
+		Model model = GpmlConverter.convert(pathway, "WP4", "42");
+		StringMatrix table = SPARQLHelper.sparql(model, sparql);
+		Assert.assertNotNull(table);
+		Assert.assertEquals("Found data nodes that are not part of a pathway:\n" + table, 0, table.getRowCount());
+	}
 }

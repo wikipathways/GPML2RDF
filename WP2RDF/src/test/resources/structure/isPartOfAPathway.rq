@@ -1,0 +1,8 @@
+prefix gpml:      <http://vocabularies.wikipathways.org/gpml#>
+prefix dcterms: <http://purl.org/dc/terms/>
+
+select distinct ?mb where {
+  ?mb a gpml:DataNode .
+  OPTIONAL { ?mb dcterms:isPartOf ?pw . } 
+  FILTER (!bound(?pw))
+}
