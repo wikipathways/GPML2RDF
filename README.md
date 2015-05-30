@@ -1,6 +1,5 @@
 # GPML2RDF
 GPML2RDF converter:
-
 Work in progress
 
 ## Status:
