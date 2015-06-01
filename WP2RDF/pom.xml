@@ -137,10 +137,10 @@
       		<optional>true</optional>
     	</dependency>
     	<dependency> 
-      		<groupId>derby</groupId> 
-      		<artifactId>derby</artifactId> 
-      		<version>10.4</version> 
-      		<optional>true</optional>
+            <groupId>org.apache.derby</groupId>
+            <artifactId>derby</artifactId>
+            <version>10.4.2.0</version>
+            <optional>true</optional>
     	</dependency> 
 		<dependency>
     		<groupId>org.apache.jena</groupId>
