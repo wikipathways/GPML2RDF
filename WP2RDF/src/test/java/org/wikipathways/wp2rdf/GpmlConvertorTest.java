@@ -40,4 +40,38 @@ public class GpmlConvertorTest {
 		Assert.assertNotNull(table);
 		Assert.assertEquals("Found data nodes that are not part of a pathway:\n" + table, 0, table.getRowCount());
 	}
+
+	@Test
+	public void noIdentifierURIs() throws Exception {
+		InputStream input = this.getClass().getClassLoader().getResourceAsStream("WP2447_75221.gpml");
+		String sparql = ResourceHelper.resourceAsString("structure/noIdentifierURIs.rq");
+		Pathway pathway = PathwayReader.readPathway(input);
+		Model model = GpmlConverter.convert(pathway, "WP2447", "75221");
+		StringMatrix table = SPARQLHelper.sparql(model, sparql);
+		Assert.assertNotNull(table);
+		Assert.assertEquals("Data nodes with a 'noIdentifier' URI:\n" + table, 0, table.getRowCount());
+	}
+
+	@Test
+	public void dataNodeWithoutGraphId() throws Exception {
+		InputStream input = this.getClass().getClassLoader().getResourceAsStream("WP2447_75221.gpml");
+		String sparql = ResourceHelper.resourceAsString("structure/dataNodeWithoutGraphId.rq");
+		Pathway pathway = PathwayReader.readPathway(input);
+		Model model = GpmlConverter.convert(pathway, "WP2447", "75221");
+		StringMatrix table = SPARQLHelper.sparql(model, sparql);
+		Assert.assertNotNull(table);
+		Assert.assertEquals("Data nodes without @GraphId:\n" + table, 0, table.getRowCount());
+	}
+
+	@Test
+	public void groupsHaveDetail() throws Exception {
+		InputStream input = this.getClass().getClassLoader().getResourceAsStream("WP2447_75221.gpml");
+		String sparql = ResourceHelper.resourceAsString("structure/groupDetails.rq");
+		Pathway pathway = PathwayReader.readPathway(input);
+		Model model = GpmlConverter.convert(pathway, "WP2447", "75221");
+		StringMatrix table = SPARQLHelper.sparql(model, sparql);
+		Assert.assertNotNull(table);
+		Assert.assertEquals("Expected details for things of type gpml:Group: " + table, 0, table.getRowCount());
+	}
+
 }

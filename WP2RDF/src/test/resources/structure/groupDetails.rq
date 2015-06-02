@@ -1,0 +1,12 @@
+prefix wp:      <http://vocabularies.wikipathways.org/wp#>
+prefix gpml:    <http://vocabularies.wikipathways.org/gpml#>
+prefix xsd:     <http://www.w3.org/2001/XMLSchema#>
+prefix dcterms: <http://purl.org/dc/terms/>
+
+select ?group ?pathway where {
+  ?group a gpml:Group .
+  OPTIONAL { ?group dcterms:isPartOf ?pathway . }
+  OPTIONAL { ?group gpml:graphid ?id . }
+  FILTER (!BOUND(?pathway))
+  FILTER (!BOUND(?id))
+} limit 50

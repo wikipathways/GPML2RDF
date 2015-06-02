@@ -1,0 +1,8 @@
+prefix wp:      <http://vocabularies.wikipathways.org/wp#>
+prefix gpml:    <http://vocabularies.wikipathways.org/gpml#>
+prefix xsd:     <http://www.w3.org/2001/XMLSchema#>
+
+select ?mb where {
+  ?mb a gpml:DataNode ;
+      gpml:graphid ""^^xsd:string .
+}
