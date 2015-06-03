@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Pathway xmlns="http://pathvisio.org/GPML/2013a" Name="New Pathway" Version="20150603" Organism="Homo sapiens">
-  <Graphics BoardWidth="819.0" BoardHeight="287.0" />
+  <Graphics BoardWidth="819.0" BoardHeight="281.0" />
   <DataNode TextLabel="GeneProduct" GraphId="ff1ff" Type="GeneProduct">
     <Graphics CenterX="433.0" CenterY="241.0" Width="80.0" Height="20.0" ZOrder="32768" FontSize="10" Valign="Middle" />
     <Xref Database="Entrez Gene" ID="1234" />
@@ -9,10 +9,22 @@
     <Graphics CenterX="749.0" CenterY="241.0" Width="80.0" Height="20.0" ZOrder="32768" FontSize="10" Valign="Middle" />
     <Xref Database="Entrez Gene" ID="0987" />
   </DataNode>
-  <Interaction>
+  <DataNode TextLabel="SREBF1" GraphId="accd7" Type="GeneProduct">
+    <Graphics CenterX="594.0" CenterY="101.0" Width="80.0" Height="20.0" ZOrder="32769" FontSize="10" Valign="Middle" />
+    <Xref Database="Ensembl" ID="ENSG00000072310" />
+  </DataNode>
+  <Interaction GraphId="ida63436e4">
     <Graphics ZOrder="12288" LineThickness="1.0">
       <Point X="473.0" Y="241.0" GraphRef="ff1ff" RelX="1.0" RelY="0.0" ArrowHead="mim-conversion" />
       <Point X="709.0" Y="241.0" GraphRef="cc39f" RelX="-1.0" RelY="0.0" ArrowHead="mim-conversion" />
+      <Anchor Position="0.4" Shape="None" GraphId="d47ba" />
+    </Graphics>
+    <Xref Database="" ID="" />
+  </Interaction>
+  <Interaction>
+    <Graphics ZOrder="12288" LineThickness="1.0">
+      <Point X="594.0" Y="111.0" GraphRef="accd7" RelX="0.0" RelY="1.0" />
+      <Point X="567.4" Y="241.0" GraphRef="d47ba" RelX="0.0" RelY="0.0" ArrowHead="mim-catalysis" />
     </Graphics>
     <Xref Database="" ID="" />
   </Interaction>
