@@ -22,7 +22,7 @@ import org.pathvisio.core.model.PathwayElement;
 import org.pathvisio.core.model.PathwayElement.Comment;
 import org.wikipathways.wp2rdf.ontologies.Gpml;
 import org.wikipathways.wp2rdf.ontologies.GpmlNew;
-import org.wikipathways.wp2rdf.utils.DataHandler;
+import org.wikipathways.wp2rdf.utils.DataHandlerGpml;
 import org.wikipathways.wp2rdf.utils.Utils;
 
 import com.hp.hpl.jena.rdf.model.Model;
@@ -42,7 +42,7 @@ public class ShapeConverter {
 	/**
 	 * conversion only GPML vocabulary
 	 */
-	public static void parseShapeGpml(PathwayElement elem, Model model, DataHandler data) {
+	public static void parseShapeGpml(PathwayElement elem, Model model, DataHandlerGpml data) {
 	
 		Resource shapeRes = model.createResource(data.getPathwayRes().getURI() + "/Shape/" + elem.getGraphId());
 
@@ -92,7 +92,7 @@ public class ShapeConverter {
 	/**
 	 * old conversion GPML + WP
 	 */
-	public static void parseShape(PathwayElement elem, Model model, DataHandler data) {
+	public static void parseShape(PathwayElement elem, Model model, DataHandlerGpml data) {
 		// TODO: currently this is called GpmlLabel, why??
 		Resource shapeRes = model.createResource(data.getPathwayRes().getURI() + "/Shape/" + elem.getGraphId());
 		shapeRes.addProperty(DCTerms.isPartOf, data.getPathwayRes());

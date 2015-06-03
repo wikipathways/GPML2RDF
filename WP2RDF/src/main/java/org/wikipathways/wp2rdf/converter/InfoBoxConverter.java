@@ -18,7 +18,7 @@ package org.wikipathways.wp2rdf.converter;
 
 import org.pathvisio.core.model.PathwayElement;
 import org.wikipathways.wp2rdf.ontologies.GpmlNew;
-import org.wikipathways.wp2rdf.utils.DataHandler;
+import org.wikipathways.wp2rdf.utils.DataHandlerGpml;
 
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.Resource;
@@ -36,7 +36,7 @@ public class InfoBoxConverter {
 	/**
 	 * conversion only GPML vocabulary
 	 */
-	public static void parseInfoBoxGpml(PathwayElement e, Model model, DataHandler data) {
+	public static void parseInfoBoxGpml(PathwayElement e, Model model, DataHandlerGpml data) {
 		String graphId = e.getGraphId();
 		if(e.getGraphId() == null) {
 			graphId = data.getPathway().getUniqueGraphId();

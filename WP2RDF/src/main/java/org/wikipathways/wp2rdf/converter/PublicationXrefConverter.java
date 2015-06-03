@@ -20,7 +20,7 @@ import org.pathvisio.core.biopax.PublicationXref;
 import org.wikipathways.wp2rdf.ontologies.Gpml;
 import org.wikipathways.wp2rdf.ontologies.GpmlNew;
 import org.wikipathways.wp2rdf.ontologies.WpOld;
-import org.wikipathways.wp2rdf.utils.DataHandler;
+import org.wikipathways.wp2rdf.utils.DataHandlerGpml;
 import org.wikipathways.wp2rdf.utils.Utils;
 
 import com.hp.hpl.jena.rdf.model.Model;
@@ -41,14 +41,14 @@ public class PublicationXrefConverter {
 	 * conversion only WP vocabulary
 	 * semantic information about a publication xref
 	 */
-	public static void parsePublicationXrefWp(PublicationXref xref, Resource parent, Model model, DataHandler data) {
+	public static void parsePublicationXrefWp(PublicationXref xref, Resource parent, Model model, DataHandlerGpml data) {
 		// TODO
 	}
 	
 	/**
 	 * conversion only GPML vocabulary
 	 */
-	public static void parsePublicationXrefGpml(PublicationXref xref, Resource parent, Model model, DataHandler data) {
+	public static void parsePublicationXrefGpml(PublicationXref xref, Resource parent, Model model, DataHandlerGpml data) {
 		Resource pubXrefRes = model.createResource(Utils.IDENTIFIERS_ORG_URL + "/pubmed/" + xref.getPubmedId());
 		pubXrefRes.addProperty(RDF.type, GpmlNew.PUBLICATION_XREF);
 		pubXrefRes.addLiteral(GpmlNew.ID, xref.getPubmedId());

@@ -20,7 +20,7 @@ import org.pathvisio.core.model.LineType;
 import org.pathvisio.core.model.PathwayElement.MPoint;
 import org.wikipathways.wp2rdf.ontologies.Gpml;
 import org.wikipathways.wp2rdf.ontologies.GpmlNew;
-import org.wikipathways.wp2rdf.utils.DataHandler;
+import org.wikipathways.wp2rdf.utils.DataHandlerGpml;
 
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.Resource;
@@ -38,7 +38,7 @@ public class PointConverter {
 	/**
 	 * conversion only GPML vocabulary
 	 */
-	public static void parsePointGpml(MPoint point, Model model, Resource lineRes, DataHandler data, String arrowHead) {
+	public static void parsePointGpml(MPoint point, Model model, Resource lineRes, DataHandlerGpml data, String arrowHead) {
 		String graphId = point.getGraphId();
 		if(graphId == null) {
 			graphId = data.getPathway().getUniqueGraphId();
@@ -67,7 +67,7 @@ public class PointConverter {
 	/**
 	 * old conversion GPML + WP
 	 */
-	public static void parsePoint(MPoint p, LineType lineType, String id, Model model, Resource lineRes, DataHandler data) {
+	public static void parsePoint(MPoint p, LineType lineType, String id, Model model, Resource lineRes, DataHandlerGpml data) {
 		Resource pointRes = model.createResource(data.getPathwayRes().getURI() + "/Point/" + id);
 		// TODO: shouldn't this be part of the pathway as well?
 		pointRes.addProperty(DCTerms.isPartOf, lineRes);

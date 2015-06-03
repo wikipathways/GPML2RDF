@@ -23,7 +23,7 @@ import org.pathvisio.core.model.PathwayElement.Comment;
 import org.pathvisio.core.model.PathwayElement.MAnchor;
 import org.pathvisio.core.model.PathwayElement.MPoint;
 import org.wikipathways.wp2rdf.ontologies.GpmlNew;
-import org.wikipathways.wp2rdf.utils.DataHandler;
+import org.wikipathways.wp2rdf.utils.DataHandlerGpml;
 import org.wikipathways.wp2rdf.utils.Utils;
 
 import com.hp.hpl.jena.rdf.model.Model;
@@ -42,7 +42,7 @@ public class GraphicalLineConverter {
 	/**
 	 * conversion only GPML vocabulary
 	 */
-	public static void parseInteractionGpml(MLine e, Model model, DataHandler data) {
+	public static void parseInteractionGpml(MLine e, Model model, DataHandlerGpml data) {
 		Resource intRes = model.createResource(data.getPathwayRes().getURI() + "/GraphicalLine/" + e.getGraphId());
 		
 		intRes.addProperty(RDF.type, GpmlNew.GRAPHICAL_LINE);

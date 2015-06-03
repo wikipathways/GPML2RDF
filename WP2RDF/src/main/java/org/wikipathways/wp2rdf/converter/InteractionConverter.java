@@ -33,7 +33,7 @@ import org.pathvisio.core.view.MIMShapes;
 import org.wikipathways.wp2rdf.ontologies.Gpml;
 import org.wikipathways.wp2rdf.ontologies.GpmlNew;
 import org.wikipathways.wp2rdf.ontologies.WpOld;
-import org.wikipathways.wp2rdf.utils.DataHandler;
+import org.wikipathways.wp2rdf.utils.DataHandlerGpml;
 import org.wikipathways.wp2rdf.utils.Utils;
 
 import com.hp.hpl.jena.rdf.model.Model;
@@ -54,14 +54,14 @@ public class InteractionConverter {
 	 * conversion only WP vocabulary
 	 * semantic information about interactions
 	 */
-	public static void parseInteractionWp(MLine e, Model model, DataHandler data) {
+	public static void parseInteractionWp(MLine e, Model model, DataHandlerGpml data) {
 		// TODO
 	}
 	
 	/**
 	 * conversion only GPML vocabulary
 	 */
-	public static void parseInteractionGpml(MLine e, Model model, DataHandler data) {
+	public static void parseInteractionGpml(MLine e, Model model, DataHandlerGpml data) {
 		Resource intRes = model.createResource(data.getPathwayRes().getURI() + "/Interaction/" + e.getGraphId());
 		
 		intRes.addProperty(RDF.type, GpmlNew.INTERACTION);
@@ -117,7 +117,7 @@ public class InteractionConverter {
 	 * first try of resolving complex interactions
 	 * still work in progress!!
 	 */
-	public static void parseInteractionSemantics(MLine e, Model model, DataHandler data) {
+	public static void parseInteractionSemantics(MLine e, Model model, DataHandlerGpml data) {
 	
 		List<MLine> participatingLines = new ArrayList<MLine>();
 		participatingLines.add(e);
@@ -234,7 +234,7 @@ public class InteractionConverter {
 		}
 	}	
 	
-	private static void createInteraction(LineType lineType, List<Resource> source, List<Resource> target, Resource intRes, DataHandler data) {
+	private static void createInteraction(LineType lineType, List<Resource> source, List<Resource> target, Resource intRes, DataHandlerGpml data) {
 		intRes.addProperty(RDF.type, WpOld.Interaction);
 		intRes.addProperty(RDF.type, WpOld.Relation);
 		intRes.addProperty(DCTerms.isPartOf, data.getPathwayRes());

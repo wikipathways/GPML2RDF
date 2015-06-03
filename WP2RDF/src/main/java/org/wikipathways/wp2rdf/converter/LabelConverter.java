@@ -22,7 +22,7 @@ import org.pathvisio.core.model.PathwayElement;
 import org.pathvisio.core.model.PathwayElement.Comment;
 import org.wikipathways.wp2rdf.ontologies.Gpml;
 import org.wikipathways.wp2rdf.ontologies.GpmlNew;
-import org.wikipathways.wp2rdf.utils.DataHandler;
+import org.wikipathways.wp2rdf.utils.DataHandlerGpml;
 import org.wikipathways.wp2rdf.utils.Utils;
 
 import com.hp.hpl.jena.rdf.model.Model;
@@ -42,7 +42,7 @@ public class LabelConverter {
 	/**
 	 * conversion only GPML vocabulary
 	 */
-	public static void parseLabelGpml(PathwayElement elem, Model model, DataHandler data) {
+	public static void parseLabelGpml(PathwayElement elem, Model model, DataHandlerGpml data) {
 		Resource labelRes = model.createResource(data.getPathwayRes().getURI() + "/Label/" + elem.getGraphId());
 
 		labelRes.addProperty(RDF.type, GpmlNew.LABEL);
@@ -90,7 +90,7 @@ public class LabelConverter {
 	/**
 	 * old conversion GPML + WP
 	 */
-	public static void parseLabel(PathwayElement elem, Model model, DataHandler data) {
+	public static void parseLabel(PathwayElement elem, Model model, DataHandlerGpml data) {
 		// TODO: currently this is called GpmlLabel, why??
 		Resource labelRes = model.createResource(data.getPathwayRes().getURI() + "/Label/" + elem.getGraphId());
 		labelRes.addProperty(DCTerms.isPartOf, data.getPathwayRes());

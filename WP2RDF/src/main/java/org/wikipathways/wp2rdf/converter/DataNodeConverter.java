@@ -22,6 +22,7 @@ import org.bridgedb.DataSource;
 import org.bridgedb.IDMapper;
 import org.bridgedb.IDMapperException;
 import org.bridgedb.Xref;
+import org.bridgedb.bio.DataSourceTxt;
 import org.pathvisio.core.biopax.PublicationXref;
 import org.pathvisio.core.model.LineStyle;
 import org.pathvisio.core.model.PathwayElement;
@@ -30,7 +31,7 @@ import org.wikipathways.wp2rdf.ontologies.Gpml;
 import org.wikipathways.wp2rdf.ontologies.GpmlNew;
 import org.wikipathways.wp2rdf.ontologies.Skos;
 import org.wikipathways.wp2rdf.ontologies.WpOld;
-import org.wikipathways.wp2rdf.utils.DataHandler;
+import org.wikipathways.wp2rdf.utils.DataHandlerGpml;
 import org.wikipathways.wp2rdf.utils.Utils;
 
 import com.hp.hpl.jena.rdf.model.Model;
@@ -52,14 +53,26 @@ public class DataNodeConverter {
 	 * conversion only WP vocabulary
 	 * semantic information about a data node
 	 */
-	public static void parseDataNodeWp(PathwayElement elem, Model model, DataHandler data) {
+	public static void parseDataNodeWp(PathwayElement elem, Model model, DataHandlerGpml data) {
+		
+		if(elem.getXref() != null && elem.getXref().getId() != null && elem.getXref().getDataSource() != null) {
+			String url = elem.getDataSource().getIdentifiersOrgUri(elem.getXref().getId());
+			if(!url.equals("")) {
+				Resource datanodeRes = model.createResource(url);
+				datanodeRes.addLiteral(RDFS.label, elem.getTextLabel().replace("\n", ""));
+				datanodeRes.addLiteral(DC.identifier, url);
+				
+			}
+			System.out.println(url);
+		}
+		
 		// TODO
 	}
 	
 	/**
 	 * conversion only GPML vocabulary
 	 */
-	public static void parseDataNodesGpml(PathwayElement elem, Model model, DataHandler data) {
+	public static void parseDataNodesGpml(PathwayElement elem, Model model, DataHandlerGpml data) {
 		
 		Resource datanodeRes = model.createResource(data.getPathwayRes().getURI() + "/DataNode/" + elem.getGraphId());
 
@@ -114,7 +127,7 @@ public class DataNodeConverter {
 	/**
 	 * old conversion GPML + WP
 	 */
-	public static void parseDataNodes(PathwayElement elem, Model model, IDMapper geneMapper, IDMapper metMapper, DataHandler data) {
+	public static void parseDataNodes(PathwayElement elem, Model model, IDMapper geneMapper, IDMapper metMapper, DataHandlerGpml data) {
 		
 		String name = elem.getTextLabel().replace("\n", " ");
 		

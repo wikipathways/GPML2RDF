@@ -23,7 +23,7 @@ import org.pathvisio.core.model.PathwayElement.Comment;
 import org.wikipathways.wp2rdf.ontologies.Gpml;
 import org.wikipathways.wp2rdf.ontologies.GpmlNew;
 import org.wikipathways.wp2rdf.ontologies.WpOld;
-import org.wikipathways.wp2rdf.utils.DataHandler;
+import org.wikipathways.wp2rdf.utils.DataHandlerGpml;
 
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.Resource;
@@ -43,14 +43,14 @@ public class GroupConverter {
 	 * conversion only WP vocabulary
 	 * semantic information about a complex group
 	 */
-	public static void parseComplexWp(MGroup group, Model model, DataHandler data) {
+	public static void parseComplexWp(MGroup group, Model model, DataHandlerGpml data) {
 		// TODO - for now only convert groups of type complex
 	}
 	
 	/**
 	 * conversion only GPML vocabulary
 	 */
-	public static void parseGroupGpml(MGroup group, Model model, DataHandler data) {
+	public static void parseGroupGpml(MGroup group, Model model, DataHandlerGpml data) {
 		
 		String graphId = group.getGraphId();
 		if(graphId == null) {
@@ -93,7 +93,7 @@ public class GroupConverter {
 	/**
 	 * old conversion GPML + WP
 	 */
-	public static void parseGroup(MGroup group, Model model, DataHandler data) {
+	public static void parseGroup(MGroup group, Model model, DataHandlerGpml data) {
 		
 		// TODO: should this contain the groupId or graphId?
 		Resource groupRes = model.createResource(data.getPathwayRes().getURI() + "/Group/" + group.getGroupId());

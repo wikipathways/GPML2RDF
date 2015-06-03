@@ -22,7 +22,7 @@ import org.pathvisio.core.model.PathwayElement;
 import org.pathvisio.core.model.PathwayElement.Comment;
 import org.wikipathways.wp2rdf.ontologies.Gpml;
 import org.wikipathways.wp2rdf.ontologies.GpmlNew;
-import org.wikipathways.wp2rdf.utils.DataHandler;
+import org.wikipathways.wp2rdf.utils.DataHandlerGpml;
 import org.wikipathways.wp2rdf.utils.Utils;
 
 import com.hp.hpl.jena.rdf.model.Model;
@@ -43,7 +43,7 @@ public class StateConverter {
 	/**
 	 * conversion only GPML vocabulary
 	 */
-	public static void parseStateGpml(PathwayElement elem, Model model, DataHandler data) {
+	public static void parseStateGpml(PathwayElement elem, Model model, DataHandlerGpml data) {
 		Resource stateRes = model.createResource(data.getPathwayRes().getURI() + "/State/" + elem.getGraphId());
 		
 		stateRes.addProperty(RDF.type, GpmlNew.STATE);
@@ -89,7 +89,7 @@ public class StateConverter {
 	/**
 	 * old conversion GPML + WP
 	 */
-	public static void parseState(PathwayElement elem, Model model, DataHandler data) {
+	public static void parseState(PathwayElement elem, Model model, DataHandlerGpml data) {
 		Resource stateRes = model.createResource(data.getPathwayRes().getURI() + "/State/" + elem.getGraphId());
 		stateRes.addProperty(DCTerms.isPartOf, data.getPathwayRes());
 		stateRes.addProperty(RDF.type, Gpml.State);

@@ -46,7 +46,7 @@ public class WP2RDFMain {
 //		File pathwayFile = new File("resources/test-simple-conversion.gpml");
 //		File pathwayFile = new File("resources/test-advanced-conversion.gpml");
 
-		File outputFile = new File("output-new.owl");
+		File outputFile = new File("output-test.owl");
 		
 		try {	
 			MIMShapes.registerShapes();

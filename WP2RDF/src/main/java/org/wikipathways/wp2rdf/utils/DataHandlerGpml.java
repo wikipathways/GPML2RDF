@@ -34,7 +34,7 @@ import com.hp.hpl.jena.rdf.model.Resource;
  * @author ryanmiller
  *
  */
-public class DataHandler {
+public class DataHandlerGpml {
 	private Map<PathwayElement, Resource> pathwayElements;
 	private Map<MPoint, Resource> points;
 	private Map<MAnchor, Resource> anchors;
@@ -44,7 +44,7 @@ public class DataHandler {
 	private Pathway pathway;
 	private Resource pathwayRes;
 
-	public DataHandler(Pathway p, Resource pathwayRes) {
+	public DataHandlerGpml(Pathway p, Resource pathwayRes) {
 		pathway = p;
 		this.pathwayRes = pathwayRes;
 		pathwayElements = new HashMap<PathwayElement, Resource>();
