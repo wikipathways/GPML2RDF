@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Pathway xmlns="http://pathvisio.org/GPML/2013a" Name="New Pathway" Version="20150603" Organism="Bacillus subtilis">
+  <Graphics BoardWidth="781.0" BoardHeight="521.0" />
+  <DataNode TextLabel="1234" GraphId="cd0d4" Type="GeneProduct">
+    <Graphics CenterX="362.0" CenterY="252.0" Width="80.0" Height="20.0" ZOrder="32768" FontSize="10" Valign="Middle" />
+    <Xref Database="Entrez Gene" ID="1234" />
+  </DataNode>
+  <DataNode TextLabel="2345" GraphId="f5d3e" Type="GeneProduct">
+    <Graphics CenterX="698.0" CenterY="252.0" Width="80.0" Height="20.0" ZOrder="32768" FontSize="10" Valign="Middle" />
+    <Xref Database="Entrez Gene" ID="2345" />
+  </DataNode>
+  <DataNode TextLabel="9876" GraphId="f5e9b" Type="GeneProduct">
+    <Graphics CenterX="543.0" CenterY="372.0" Width="80.0" Height="20.0" ZOrder="32768" FontSize="10" Valign="Middle" />
+    <Xref Database="Entrez Gene" ID="9876" />
+  </DataNode>
+  <DataNode TextLabel="1234" GraphId="ab05f" Type="GeneProduct">
+    <Graphics CenterX="371.0" CenterY="480.0" Width="80.0" Height="20.0" ZOrder="32770" FontSize="10" Valign="Middle" />
+    <Xref Database="Entrez Gene" ID="1234" />
+  </DataNode>
+  <DataNode TextLabel="2345" GraphId="b7b3e" Type="GeneProduct">
+    <Graphics CenterX="707.0" CenterY="480.0" Width="80.0" Height="20.0" ZOrder="32771" FontSize="10" Valign="Middle" />
+    <Xref Database="Entrez Gene" ID="2345" />
+  </DataNode>
+  <Interaction GraphId="id5fd68409">
+    <Graphics ZOrder="12288" LineThickness="1.0">
+      <Point X="402.0" Y="252.0" GraphRef="cd0d4" RelX="1.0" RelY="0.0" />
+      <Point X="658.0" Y="252.0" GraphRef="f5d3e" RelX="-1.0" RelY="0.0" />
+    </Graphics>
+    <Xref Database="" ID="" />
+  </Interaction>
+  <Interaction>
+    <Graphics ZOrder="12288" LineThickness="1.0">
+      <Point X="543.0" Y="382.0" GraphRef="f5e9b" RelX="0.0" RelY="1.0" />
+      <Point X="543.0" Y="480.0" GraphRef="e3adc" RelX="0.0" RelY="0.0" ArrowHead="mim-catalysis" />
+    </Graphics>
+    <Xref Database="" ID="" />
+  </Interaction>
+  <Interaction GraphId="cf09e">
+    <Graphics ZOrder="32769" LineThickness="1.0">
+      <Point X="411.0" Y="480.0" GraphRef="ab05f" RelX="1.0" RelY="0.0" />
+      <Point X="667.0" Y="480.0" GraphRef="b7b3e" RelX="-1.0" RelY="0.0" />
+      <Anchor Position="0.515625" Shape="None" GraphId="e3adc" />
+    </Graphics>
+    <Xref Database="" ID="" />
+  </Interaction>
+  <InfoBox CenterX="0.0" CenterY="0.0" />
+  <Biopax />
+</Pathway>
+
