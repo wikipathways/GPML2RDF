@@ -61,6 +61,7 @@ public class PathwayConverter {
 		pwyRes.addProperty(RDF.type, Skos.Collection);
 		pwyRes.addProperty(DC.identifier, model.createResource(url));
 		pwyRes.addLiteral(DC.title, model.createLiteral(name, "en"));
+		pwyRes.addLiteral(DC.source, "Wikipathways");
 		
 		return pwyRes;
 	}
