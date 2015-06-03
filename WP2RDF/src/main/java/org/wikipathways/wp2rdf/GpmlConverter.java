@@ -53,7 +53,11 @@ public class GpmlConverter {
 	public static Model convertGpml(Pathway p, String wpId, String revision) {
 		Model pathwayModel = ModelFactory.createDefaultModel();
 		Utils.setModelPrefix(pathwayModel);
-		
+		convertGpml(p, wpId, revision, pathwayModel);
+		return pathwayModel;
+	}
+	
+	public static void convertGpml(Pathway p, String wpId, String revision, Model pathwayModel) {
 		Resource pathwayRes = PathwayConverter.parsePathwayInfoGpml(p, wpId, revision, pathwayModel);
 		DataHandlerGpml data = new DataHandlerGpml(p, pathwayRes);
 		
@@ -76,24 +80,34 @@ public class GpmlConverter {
 				InfoBoxConverter.parseInfoBoxGpml(e, pathwayModel, data);
 			}
 		}
-		
-		return pathwayModel;
 	}
 	
 	public static Model convertWp(Pathway p, String wpId, String revision) {
 		Model pathwayModel = ModelFactory.createDefaultModel();
 		Utils.setModelPrefix(pathwayModel);
-		
+		convertWp(p, wpId, revision, pathwayModel);
+		return pathwayModel;
+	}
+	
+	public static void convertWp(Pathway p, String wpId, String revision, Model pathwayModel) {
 		Resource pathwayRes = PathwayConverter.parsePathwayInfoWp(p, wpId, revision, pathwayModel);
-		DataHandlerWp data = new DataHandlerWp(p, pathwayRes);
+		DataHandlerWp data = new DataHandlerWp(p, wpId, revision, pathwayRes);
 		
 		for(PathwayElement e : p.getDataObjects()) {
 			if(e.getObjectType().equals(ObjectType.DATANODE)) {
 				DataNodeConverter.parseDataNodeWp(e, pathwayModel, data);
 			}
 		}
-		
-		return pathwayModel;
+		for(PathwayElement e : p.getDataObjects()) {
+			if(e.getObjectType().equals(ObjectType.GROUP)) {
+				GroupConverter.parseComplexWp((MGroup) e, pathwayModel, data);
+			}
+		}
+		for(PathwayElement e : p.getDataObjects()) {
+			if(e.getObjectType().equals(ObjectType.LINE)) {
+				InteractionConverter.parseInteractionWp((MLine)e, pathwayModel, data);
+			}
+		}
 	}
 	
 }

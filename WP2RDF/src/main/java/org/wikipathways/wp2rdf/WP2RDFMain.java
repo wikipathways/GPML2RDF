@@ -24,8 +24,10 @@ import org.pathvisio.core.model.ConverterException;
 import org.pathvisio.core.model.Pathway;
 import org.pathvisio.core.view.MIMShapes;
 import org.wikipathways.wp2rdf.io.PathwayReader;
+import org.wikipathways.wp2rdf.utils.Utils;
 
 import com.hp.hpl.jena.rdf.model.Model;
+import com.hp.hpl.jena.rdf.model.ModelFactory;
 
 /**
  * 
@@ -41,10 +43,11 @@ public class WP2RDFMain {
 		// change file location if you 
 		// want to try a different pathway
 		
-		File pathwayFile = new File("resources/WP2059_79765.gpml");
+//		File pathwayFile = new File("resources/WP2059_79765.gpml");
 //		File pathwayFile = new File("resources/WP2447_75221.gpml");
-//		File pathwayFile = new File("resources/test-simple-conversion.gpml");
-//		File pathwayFile = new File("resources/test-advanced-conversion.gpml");
+//		File pathwayFile = new File("resources/complex.gpml");
+		File pathwayFile = new File("resources/test-simple-conversion.gpml");
+//		File pathwayFile = new File("resources/test-advanced-conversion-withRegulators.gpml");
 
 		File outputFile = new File("output-test.owl");
 		
@@ -53,15 +56,17 @@ public class WP2RDFMain {
 			Pathway p = PathwayReader.readPathway(pathwayFile);
 
 			// TODO: get pathway id
-			String wpId = "WP2059";
+			String wpId = "WP2447";
 			// TODO: get revision
-			String revision = "79765";
+			String revision = "75221";
 			
+			Model pathwayModel = ModelFactory.createDefaultModel();
+			Utils.setModelPrefix(pathwayModel);
 			// New conversion of the pathway in GPML vocabulary
-//			Model pathwayModel = GpmlConverter.convertGpml(p, wpId, revision);
+			GpmlConverter.convertGpml(p, wpId, revision, pathwayModel);
 			
 			// New conversion of the pathway in WP vocabulary
-			Model pathwayModel = GpmlConverter.convertWp(p, wpId, revision);
+			GpmlConverter.convertWp(p, wpId, revision, pathwayModel);
 		
 			// TODO: conversion in WP vocabulary
 			

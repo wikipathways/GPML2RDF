@@ -28,6 +28,7 @@ Source: KEGG (http://www.genome.jp/kegg/pathway/hsa/hsa05010.html)</Comment>
     <Xref Database="Ensembl" ID="ENSG00000142192" />
   </DataNode>
   <DataNode TextLabel="APPBP1" GraphId="c8929" Type="GeneProduct">
+    <BiopaxRef>ff2</BiopaxRef>
     <Graphics CenterX="413.375" CenterY="205.25" Width="51.25" Height="20.0" ZOrder="32768" FontSize="10" Valign="Middle" />
     <Xref Database="Ensembl" ID="ENSG00000159593" />
   </DataNode>

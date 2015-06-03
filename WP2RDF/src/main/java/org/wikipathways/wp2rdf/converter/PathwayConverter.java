@@ -54,7 +54,9 @@ public class PathwayConverter {
 		String url = Utils.IDENTIFIERS_ORG_URL + "/wikipathways/" + wpId + "_r" + revision;
 		Resource pwyRes = model.createResource(url);
 		
-		pwyRes.addLiteral(GpmlNew.ORGANISM, p.getMappInfo().getOrganism());
+		pwyRes.addLiteral(Wp.organism, p.getMappInfo().getOrganism());
+		
+		pwyRes.addProperty(Wp.isAbout, model.createResource(Utils.WP_RDF_URL + "/Pathway/" + wpId + "_r" + revision));
 		
 		pwyRes.addProperty(FOAF.page, model.createResource(Utils.WP_URL + "/instance/" + wpId + "_r" + revision));
 		pwyRes.addProperty(RDF.type, Wp.Pathway);
