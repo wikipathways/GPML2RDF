@@ -81,7 +81,7 @@ public class GpmlConverter {
 			}
 		}
 	}
-	
+		
 	public static Model convertWp(Pathway p, String wpId, String revision) {
 		Model pathwayModel = ModelFactory.createDefaultModel();
 		Utils.setModelPrefix(pathwayModel);

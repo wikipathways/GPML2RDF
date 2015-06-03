@@ -1,0 +1,2250 @@
+@prefix dc:    <http://purl.org/dc/elements/1.1/> .
+@prefix wprdf: <http://rdf.wikipathways.org/> .
+@prefix prov:  <http://www.w3.org/ns/prov#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix freq:  <http://purl.org/cld/freq/> .
+@prefix pubmed: <http://www.ncbi.nlm.nih.gov/pubmed/> .
+@prefix wp:    <http://vocabularies.wikipathways.org/wp#> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix biopax: <http://www.biopax.org/release/biopax-level3.owl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix pav:   <http://purl.org/pav/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix gpml:  <http://vocabularies.wikipathways.org/gpml#> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id6763e0ca/Point/fda7d>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2622_r78385> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id6763e0ca> ;
+        gpml:graphRef     "b0a22"^^xsd:string ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "702.2338944421178"^^xsd:double ;
+        gpml:y            "330.5078152969071"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/iddd54a00b>
+        a                   gpml:Interaction ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2622_r78385> ;
+        gpml:color          "0"^^xsd:string ;
+        gpml:connectorType  "Elbow"^^xsd:string ;
+        gpml:graphId        "iddd54a00b"^^xsd:string ;
+        gpml:hasAnchor      <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/iddd54a00b/Anchor/b0a22> ;
+        gpml:hasPoint       <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/iddd54a00b/Point/b51be> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/iddd54a00b/Point/d935b> ;
+        gpml:lineStyle      "Solid"^^xsd:string ;
+        gpml:lineThickness  "1.0"^^xsd:double ;
+        gpml:zorder         "12288"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id11c9ccc4/Anchor/f3d89>
+        a                 gpml:Anchor ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2622_r78385> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id11c9ccc4> ;
+        gpml:graphId      "f3d89"^^xsd:string ;
+        gpml:position     "0.5869247639589645"^^xsd:double ;
+        gpml:shape        "None"^^xsd:string .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idddad5ecb/Point/eaecb>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2622_r78385> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idddad5ecb> ;
+        gpml:graphRef     "f07c5"^^xsd:string ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "809.5797389461438"^^xsd:double ;
+        gpml:y            "436.8359505242233"^^xsd:double .
+
+<http://identifiers.org/uniprot/P55229>
+        a                   wp:Protein , wp:DataNode ;
+        rdfs:label          "ADP-glucose pyrophosphorylase LSU1"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/uniprot/P55229> ;
+        dcterms:identifier  "P55229"^^xsd:string ;
+        dcterms:isPartOf    <http://identifiers.org/wikipathways/WP2622_r78385> ;
+        dcterms:source      "Uniprot-TrEMBL"^^xsd:string ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/a8159> .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/c4f09/Point/fd008>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2622_r78385> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/c4f09> ;
+        gpml:graphRef     "c7d2d"^^xsd:string ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "279.58063027367064"^^xsd:double ;
+        gpml:y            "330.50781529690624"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/c561b>
+        a                    gpml:DataNode ;
+        dcterms:isPartOf     <http://rdf.wikipathways.org/Pathway/WP2622_r78385> ;
+        gpml:align           "Center"^^xsd:string ;
+        gpml:centerX         "749.1845904290351"^^xsd:double ;
+        gpml:centerY         "732.2528689493511"^^xsd:double ;
+        gpml:color           "ff"^^xsd:string ;
+        gpml:fillColor       "ffffff"^^xsd:string ;
+        gpml:fontDecoration  "Normal"^^xsd:string ;
+        gpml:fontName        "Arial"^^xsd:string ;
+        gpml:fontSize        "10.0"^^xsd:double ;
+        gpml:fontStrikethru  "Normal"^^xsd:string ;
+        gpml:fontStyle       "Normal"^^xsd:string ;
+        gpml:fontWeight      "Normal"^^xsd:string ;
+        gpml:graphId         "c561b"^^xsd:string ;
+        gpml:height          "20.0"^^xsd:double ;
+        gpml:lineStyle       "Solid"^^xsd:string ;
+        gpml:lineThickness   "1.0"^^xsd:double ;
+        gpml:shapeType       "Rectangle"^^xsd:string ;
+        gpml:textlabel       "Pi"^^xsd:string ;
+        gpml:type            "Metabolite"^^xsd:string ;
+        gpml:valign          "Middle"^^xsd:string ;
+        gpml:width           "36.0"^^xsd:double ;
+        gpml:xrefDataSource  "ChEBI"^^xsd:string ;
+        gpml:xrefId          "CHEBI:18367"^^xsd:string ;
+        gpml:zorder          "32822"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/WP/Interaction/id13a9bb97>
+        a                 wp:Interaction , wp:Conversion , wp:DirectedInteraction ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP2622_r78385> ;
+        wp:isAbout        <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id13a9bb97> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/bb765> ;
+        wp:participants   <http://identifiers.org/hmdb/HMDB01586> , <http://identifiers.org/chebi/CHEBI:18367> , <http://identifiers.org/kegg.compound/C00369> ;
+        wp:source         <http://identifiers.org/kegg.compound/C00369> , <http://identifiers.org/chebi/CHEBI:18367> ;
+        wp:target         <http://identifiers.org/hmdb/HMDB01586> .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/WP/Interaction/id11c9ccc4_1>
+        a                 wp:Conversion , wp:DirectedInteraction , wp:Interaction ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP2622_r78385> ;
+        wp:isAbout        <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id11c9ccc4> ;
+        wp:participants   <http://identifiers.org/hmdb/HMDB01401> , <http://identifiers.org/hmdb/HMDB01586> ;
+        wp:source         <http://identifiers.org/hmdb/HMDB01586> ;
+        wp:target         <http://identifiers.org/hmdb/HMDB01401> .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/WP/Interaction/id1b7c2a87_1>
+        a                 wp:Catalysis , wp:DirectedInteraction , wp:Interaction ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP2622_r78385> ;
+        wp:isAbout        <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id1b7c2a87> ;
+        wp:participants   <http://identifiers.org/uniprot/Q9SCY0> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/WP/Interaction/id11c9ccc4_1> ;
+        wp:source         <http://identifiers.org/uniprot/Q9SCY0> ;
+        wp:target         <http://rdf.wikipathways.org/Pathway/WP2622_r78385/WP/Interaction/id11c9ccc4_1> .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id53842606/Point/e11ac>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2622_r78385> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id53842606> ;
+        gpml:graphRef     "aabfc"^^xsd:string ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "1.0"^^xsd:double ;
+        gpml:x            "655.4820506084287"^^xsd:double ;
+        gpml:y            "832.3235771241192"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/c2c4a>
+        a                    gpml:DataNode ;
+        dcterms:isPartOf     <http://rdf.wikipathways.org/Pathway/WP2622_r78385> ;
+        gpml:align           "Center"^^xsd:string ;
+        gpml:centerX         "520.775914726979"^^xsd:double ;
+        gpml:centerY         "613.0105613254563"^^xsd:double ;
+        gpml:color           "0"^^xsd:string ;
+        gpml:fillColor       "ffffff"^^xsd:string ;
+        gpml:fontDecoration  "Normal"^^xsd:string ;
+        gpml:fontName        "Arial"^^xsd:string ;
+        gpml:fontSize        "10.0"^^xsd:double ;
+        gpml:fontStrikethru  "Normal"^^xsd:string ;
+        gpml:fontStyle       "Normal"^^xsd:string ;
+        gpml:fontWeight      "Normal"^^xsd:string ;
+        gpml:graphId         "c2c4a"^^xsd:string ;
+        gpml:height          "20.000000000000032"^^xsd:double ;
+        gpml:lineStyle       "Solid"^^xsd:string ;
+        gpml:lineThickness   "1.0"^^xsd:double ;
+        gpml:shapeType       "Rectangle"^^xsd:string ;
+        gpml:textlabel       "glucose-6-phosphate isomerase 1"^^xsd:string ;
+        gpml:type            "Protein"^^xsd:string ;
+        gpml:valign          "Middle"^^xsd:string ;
+        gpml:width           "158.7694100991191"^^xsd:double ;
+        gpml:xrefDataSource  "Uniprot-TrEMBL"^^xsd:string ;
+        gpml:xrefId          "Q8H103"^^xsd:string ;
+        gpml:zorder          "32768"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id8e46d36e/Point/b4730>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2622_r78385> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id8e46d36e> ;
+        gpml:graphRef     "e8e43"^^xsd:string ;
+        gpml:relX         "-1.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "742.4063056549023"^^xsd:double ;
+        gpml:y            "760.0026433809757"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id549bab92/Point/a4d75>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2622_r78385> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id549bab92> ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "809.5797389461438"^^xsd:double ;
+        gpml:y            "394.93581652918726"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idc5f5060e/Point/d8eb1>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2622_r78385> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idc5f5060e> ;
+        gpml:graphRef     "fef8e"^^xsd:string ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "-1.0"^^xsd:double ;
+        gpml:x            "438.9164179142275"^^xsd:double ;
+        gpml:y            "424.43130307263607"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id2ed7a7c3/Point/a0e95>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2622_r78385> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id2ed7a7c3> ;
+        gpml:graphRef     "d3abd"^^xsd:string ;
+        gpml:relX         "-1.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "828.0542153758693"^^xsd:double ;
+        gpml:y            "330.1380271550157"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Shape/b0b3b>
+        a                    gpml:shape ;
+        dcterms:isPartOf     <http://rdf.wikipathways.org/Pathway/WP2622_r78385> ;
+        gpml:align           "Center"^^xsd:string ;
+        gpml:centerX         "590.1647171162565"^^xsd:double ;
+        gpml:centerY         "583.5574653192218"^^xsd:double ;
+        gpml:color           "c0c0c0"^^xsd:string ;
+        gpml:fontDecoration  "Normal"^^xsd:string ;
+        gpml:fontName        "Arial"^^xsd:string ;
+        gpml:fontSize        "10.0"^^xsd:double ;
+        gpml:fontStrikethru  "Normal"^^xsd:string ;
+        gpml:fontStyle       "Normal"^^xsd:string ;
+        gpml:fontWeight      "Normal"^^xsd:string ;
+        gpml:graphId         "b0b3b"^^xsd:string ;
+        gpml:height          "954.8022598870057"^^xsd:double ;
+        gpml:lineStyle       "Solid"^^xsd:string ;
+        gpml:lineThickness   "3.0"^^xsd:double ;
+        gpml:shape           "0.0"^^xsd:double ;
+        gpml:shapeType       "Oval"^^xsd:string ;
+        gpml:textlabel       ""^^xsd:string ;
+        gpml:valign          "Middle"^^xsd:string ;
+        gpml:width           "979.2843691148776"^^xsd:double ;
+        gpml:zorder          "16384"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/d3abd>
+        a                    gpml:DataNode ;
+        dcterms:isPartOf     <http://rdf.wikipathways.org/Pathway/WP2622_r78385> ;
+        gpml:align           "Center"^^xsd:string ;
+        gpml:centerX         "868.0542153758693"^^xsd:double ;
+        gpml:centerY         "330.1380271550157"^^xsd:double ;
+        gpml:color           "0"^^xsd:string ;
+        gpml:fillColor       "ffffff"^^xsd:string ;
+        gpml:fontDecoration  "Normal"^^xsd:string ;
+        gpml:fontName        "Arial"^^xsd:string ;
+        gpml:fontSize        "10.0"^^xsd:double ;
+        gpml:fontStrikethru  "Normal"^^xsd:string ;
+        gpml:fontStyle       "Normal"^^xsd:string ;
+        gpml:fontWeight      "Normal"^^xsd:string ;
+        gpml:graphId         "d3abd"^^xsd:string ;
+        gpml:height          "20.0"^^xsd:double ;
+        gpml:lineStyle       "Solid"^^xsd:string ;
+        gpml:lineThickness   "1.0"^^xsd:double ;
+        gpml:shapeType       "Rectangle"^^xsd:string ;
+        gpml:textlabel       "amylase 1"^^xsd:string ;
+        gpml:type            "Protein"^^xsd:string ;
+        gpml:valign          "Middle"^^xsd:string ;
+        gpml:width           "80.0"^^xsd:double ;
+        gpml:xrefDataSource  "Uniprot-TrEMBL"^^xsd:string ;
+        gpml:xrefId          "Q9LIR6"^^xsd:string ;
+        gpml:zorder          "32768"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/e94b3>
+        a                    gpml:DataNode ;
+        dcterms:isPartOf     <http://rdf.wikipathways.org/Pathway/WP2622_r78385> ;
+        gpml:align           "Center"^^xsd:string ;
+        gpml:centerX         "655.4820506084287"^^xsd:double ;
+        gpml:centerY         "985.7875249603235"^^xsd:double ;
+        gpml:color           "14961e"^^xsd:string ;
+        gpml:fillColor       "ffffff"^^xsd:string ;
+        gpml:fontDecoration  "Normal"^^xsd:string ;
+        gpml:fontName        "Arial"^^xsd:string ;
+        gpml:fontSize        "20.0"^^xsd:double ;
+        gpml:fontStrikethru  "Normal"^^xsd:string ;
+        gpml:fontStyle       "Normal"^^xsd:string ;
+        gpml:fontWeight      "Bold"^^xsd:string ;
+        gpml:graphId         "e94b3"^^xsd:string ;
+        gpml:height          "54.93779588241738"^^xsd:double ;
+        gpml:lineStyle       "Solid"^^xsd:string ;
+        gpml:lineThickness   "1.0"^^xsd:double ;
+        gpml:shapeType       "None"^^xsd:string ;
+        gpml:textlabel       "Calvin-Benson Cycle"^^xsd:string ;
+        gpml:type            "Pathway"^^xsd:string ;
+        gpml:valign          "Middle"^^xsd:string ;
+        gpml:width           "235.58381952671743"^^xsd:double ;
+        gpml:xrefDataSource  "WikiPathways"^^xsd:string ;
+        gpml:xrefId          "WP2619"^^xsd:string ;
+        gpml:zorder          "32968"^^xsd:long .
+
+<http://identifiers.org/uniprot/Q9SCY0>
+        a                   wp:Protein , wp:DataNode ;
+        rdfs:label          "phosphoglucomutase"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/uniprot/Q9SCY0> ;
+        dcterms:identifier  "Q9SCY0"^^xsd:string ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2622_r78385/WP/Interaction/id1b7c2a87_2> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/WP/Interaction/id1b7c2a87_1> , <http://identifiers.org/wikipathways/WP2622_r78385> ;
+        dcterms:source      "Uniprot-TrEMBL"^^xsd:string ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/dc12d> .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/d6aa7>
+        a                    gpml:DataNode ;
+        dcterms:isPartOf     <http://rdf.wikipathways.org/Pathway/WP2622_r78385> ;
+        gpml:align           "Center"^^xsd:string ;
+        gpml:centerX         "778.7240300493593"^^xsd:double ;
+        gpml:centerY         "289.78068839860566"^^xsd:double ;
+        gpml:color           "ff"^^xsd:string ;
+        gpml:fillColor       "ffffff"^^xsd:string ;
+        gpml:fontDecoration  "Normal"^^xsd:string ;
+        gpml:fontName        "Arial"^^xsd:string ;
+        gpml:fontSize        "10.0"^^xsd:double ;
+        gpml:fontStrikethru  "Normal"^^xsd:string ;
+        gpml:fontStyle       "Normal"^^xsd:string ;
+        gpml:fontWeight      "Normal"^^xsd:string ;
+        gpml:graphId         "d6aa7"^^xsd:string ;
+        gpml:height          "20.0"^^xsd:double ;
+        gpml:lineStyle       "Solid"^^xsd:string ;
+        gpml:lineThickness   "1.0"^^xsd:double ;
+        gpml:shapeType       "Rectangle"^^xsd:string ;
+        gpml:textlabel       "H2O"^^xsd:string ;
+        gpml:type            "Metabolite"^^xsd:string ;
+        gpml:valign          "Middle"^^xsd:string ;
+        gpml:width           "80.0"^^xsd:double ;
+        gpml:xrefDataSource  "HMDB"^^xsd:string ;
+        gpml:xrefId          "HMDB02111"^^xsd:string ;
+        gpml:zorder          "32831"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id4492708e/Point/c7832>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2622_r78385> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id4492708e> ;
+        gpml:graphRef     "a2c73"^^xsd:string ;
+        gpml:relX         "-1.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "479.7008262461761"^^xsd:double ;
+        gpml:y            "388.51961295388264"^^xsd:double .
+
+<http://identifiers.org/wikipathways/WP2623>
+        a                   wp:DataNode ;
+        rdfs:label          "Sucrose Metabolism "^^xsd:string ;
+        dc:identifier       <http://identifiers.org/wikipathways/WP2623> ;
+        dcterms:identifier  "WP2623"^^xsd:string ;
+        dcterms:isPartOf    <http://identifiers.org/wikipathways/WP2622_r78385> ;
+        dcterms:source      "WikiPathways"^^xsd:string ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/cc91a> .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id4492708e>
+        a                   gpml:Interaction ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2622_r78385> ;
+        gpml:color          "0"^^xsd:string ;
+        gpml:connectorType  "Straight"^^xsd:string ;
+        gpml:graphId        "id4492708e"^^xsd:string ;
+        gpml:hasAnchor      <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id4492708e/Anchor/b75f6> ;
+        gpml:hasPoint       <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id4492708e/Point/e8d01> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id4492708e/Point/c7832> ;
+        gpml:lineStyle      "Solid"^^xsd:string ;
+        gpml:lineThickness  "1.0"^^xsd:double ;
+        gpml:zorder         "12288"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id2c7f193a/Point/f5c89>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2622_r78385> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id2c7f193a> ;
+        gpml:graphRef     "f07c5"^^xsd:string ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "809.5797389461438"^^xsd:double ;
+        gpml:y            "436.8359505242233"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/ffd6d>
+        a                    gpml:DataNode ;
+        dcterms:isPartOf     <http://rdf.wikipathways.org/Pathway/WP2622_r78385> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Group/ce20d> ;
+        gpml:align           "Center"^^xsd:string ;
+        gpml:centerX         "390.885415480641"^^xsd:double ;
+        gpml:centerY         "330.293734810989"^^xsd:double ;
+        gpml:color           "0"^^xsd:string ;
+        gpml:fillColor       "ffffff"^^xsd:string ;
+        gpml:fontDecoration  "Normal"^^xsd:string ;
+        gpml:fontName        "Arial"^^xsd:string ;
+        gpml:fontSize        "10.0"^^xsd:double ;
+        gpml:fontStrikethru  "Normal"^^xsd:string ;
+        gpml:fontStyle       "Normal"^^xsd:string ;
+        gpml:fontWeight      "Normal"^^xsd:string ;
+        gpml:graphId         "ffd6d"^^xsd:string ;
+        gpml:groupRef        "cfe35"^^xsd:string ;
+        gpml:height          "20.000000000000068"^^xsd:double ;
+        gpml:lineStyle       "Solid"^^xsd:string ;
+        gpml:lineThickness   "1.0"^^xsd:double ;
+        gpml:shapeType       "Rectangle"^^xsd:string ;
+        gpml:textlabel       "starch synthase 2"^^xsd:string ;
+        gpml:type            "Protein"^^xsd:string ;
+        gpml:valign          "Middle"^^xsd:string ;
+        gpml:width           "85.78596958847201"^^xsd:double ;
+        gpml:xrefDataSource  "Uniprot-TrEMBL"^^xsd:string ;
+        gpml:xrefId          "Q9MAC8"^^xsd:string ;
+        gpml:zorder          "33608"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/d0e12>
+        a                    gpml:DataNode ;
+        dcterms:isPartOf     <http://rdf.wikipathways.org/Pathway/WP2622_r78385> ;
+        gpml:align           "Center"^^xsd:string ;
+        gpml:centerX         "894.6180697844588"^^xsd:double ;
+        gpml:centerY         "411.9118030115957"^^xsd:double ;
+        gpml:color           "ff"^^xsd:string ;
+        gpml:fillColor       "ffffff"^^xsd:string ;
+        gpml:fontDecoration  "Normal"^^xsd:string ;
+        gpml:fontName        "Arial"^^xsd:string ;
+        gpml:fontSize        "10.0"^^xsd:double ;
+        gpml:fontStrikethru  "Normal"^^xsd:string ;
+        gpml:fontStyle       "Normal"^^xsd:string ;
+        gpml:fontWeight      "Normal"^^xsd:string ;
+        gpml:graphId         "d0e12"^^xsd:string ;
+        gpml:height          "20.0"^^xsd:double ;
+        gpml:lineStyle       "Solid"^^xsd:string ;
+        gpml:lineThickness   "1.0"^^xsd:double ;
+        gpml:shapeType       "Rectangle"^^xsd:string ;
+        gpml:textlabel       "ATP"^^xsd:string ;
+        gpml:type            "Metabolite"^^xsd:string ;
+        gpml:valign          "Middle"^^xsd:string ;
+        gpml:width           "80.0"^^xsd:double ;
+        gpml:xrefDataSource  "HMDB"^^xsd:string ;
+        gpml:xrefId          "HMDB00538"^^xsd:string ;
+        gpml:zorder          "32817"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/WP/Interaction/idc67e696b>
+        a                 wp:Catalysis , wp:DirectedInteraction , wp:Interaction ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP2622_r78385> ;
+        wp:isAbout        <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idc67e696b> ;
+        wp:participants   <http://identifiers.org/uniprot/Q8H103> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/WP/Interaction/id604d39ff> ;
+        wp:source         <http://identifiers.org/uniprot/Q8H103> ;
+        wp:target         <http://rdf.wikipathways.org/Pathway/WP2622_r78385/WP/Interaction/id604d39ff> .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/c4f09>
+        a                   gpml:Interaction ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2622_r78385> ;
+        gpml:color          "0"^^xsd:string ;
+        gpml:connectorType  "Straight"^^xsd:string ;
+        gpml:graphId        "c4f09"^^xsd:string ;
+        gpml:hasPoint       <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/c4f09/Point/c8703> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/c4f09/Point/fd008> ;
+        gpml:lineStyle      "Solid"^^xsd:string ;
+        gpml:lineThickness  "1.0"^^xsd:double ;
+        gpml:zorder         "32958"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id2c7f193a>
+        a                   gpml:Interaction ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2622_r78385> ;
+        gpml:color          "0"^^xsd:string ;
+        gpml:connectorType  "Straight"^^xsd:string ;
+        gpml:graphId        "id2c7f193a"^^xsd:string ;
+        gpml:hasPoint       <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id2c7f193a/Point/da65f> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id2c7f193a/Point/f5c89> ;
+        gpml:lineStyle      "Solid"^^xsd:string ;
+        gpml:lineThickness  "1.0"^^xsd:double ;
+        gpml:zorder         "12288"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id4492708e/Point/e8d01>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2622_r78385> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id4492708e> ;
+        gpml:graphRef     "ebecd"^^xsd:string ;
+        gpml:relX         "1.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "319.58063027367064"^^xsd:double ;
+        gpml:y            "388.27082911141974"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/c4f09/Point/c8703>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2622_r78385> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/c4f09> ;
+        gpml:graphRef     "a701e"^^xsd:string ;
+        gpml:relX         "-1.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "319.4021333109625"^^xsd:double ;
+        gpml:y            "259.0050593697009"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/e7ca1>
+        a                    gpml:DataNode ;
+        dcterms:isPartOf     <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Group/ccd20> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385> ;
+        gpml:align           "Center"^^xsd:string ;
+        gpml:centerX         "376.86478513993575"^^xsd:double ;
+        gpml:centerY         "554.2003098450931"^^xsd:double ;
+        gpml:color           "0"^^xsd:string ;
+        gpml:fillColor       "ffffff"^^xsd:string ;
+        gpml:fontDecoration  "Normal"^^xsd:string ;
+        gpml:fontName        "Arial"^^xsd:string ;
+        gpml:fontSize        "10.0"^^xsd:double ;
+        gpml:fontStrikethru  "Normal"^^xsd:string ;
+        gpml:fontStyle       "Normal"^^xsd:string ;
+        gpml:fontWeight      "Normal"^^xsd:string ;
+        gpml:graphId         "e7ca1"^^xsd:string ;
+        gpml:groupRef        "d595f"^^xsd:string ;
+        gpml:height          "20.000000000000078"^^xsd:double ;
+        gpml:lineStyle       "Solid"^^xsd:string ;
+        gpml:lineThickness   "1.0"^^xsd:double ;
+        gpml:shapeType       "Rectangle"^^xsd:string ;
+        gpml:textlabel       "ADP-glucose pyrophosphorylase SSU"^^xsd:string ;
+        gpml:type            "Protein"^^xsd:string ;
+        gpml:valign          "Middle"^^xsd:string ;
+        gpml:width           "181.1110916857045"^^xsd:double ;
+        gpml:xrefDataSource  "Uniprot-TrEMBL"^^xsd:string ;
+        gpml:xrefId          "P55228"^^xsd:string ;
+        gpml:zorder          "33615"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idc093c8c2/Point/a85cb>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2622_r78385> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idc093c8c2> ;
+        gpml:graphRef     "c7d2d"^^xsd:string ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "279.58063027367064"^^xsd:double ;
+        gpml:y            "330.50781529690624"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id13a9bb97/Anchor/abd19>
+        a                 gpml:Anchor ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2622_r78385> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id13a9bb97> ;
+        gpml:graphId      "abd19"^^xsd:string ;
+        gpml:position     "0.6204100705106068"^^xsd:double ;
+        gpml:shape        "None"^^xsd:string .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id13a9bb97>
+        a                   gpml:Interaction ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2622_r78385> ;
+        gpml:color          "0"^^xsd:string ;
+        gpml:connectorType  "Elbow"^^xsd:string ;
+        gpml:graphId        "id13a9bb97"^^xsd:string ;
+        gpml:hasAnchor      <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id13a9bb97/Anchor/abd19> ;
+        gpml:hasPoint       <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id13a9bb97/Point/b8411> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id13a9bb97/Point/a16d0> ;
+        gpml:lineStyle      "Solid"^^xsd:string ;
+        gpml:lineThickness  "1.0"^^xsd:double ;
+        gpml:zorder         "12288"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/bb765/Point/d53b4>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2622_r78385> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/bb765> ;
+        gpml:graphRef     "ce7ec"^^xsd:string ;
+        gpml:relX         "1.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "629.705632545599"^^xsd:double ;
+        gpml:y            "289.78068839860566"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idfd276f96/Point/e831a>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2622_r78385> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idfd276f96> ;
+        gpml:graphRef     "e75b7"^^xsd:string ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "-1.0"^^xsd:double ;
+        gpml:x            "327.83197223580703"^^xsd:double ;
+        gpml:y            "424.43130307263607"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idad2c0c30>
+        a                   gpml:Interaction ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2622_r78385> ;
+        gpml:color          "0"^^xsd:string ;
+        gpml:connectorType  "Straight"^^xsd:string ;
+        gpml:graphId        "idad2c0c30"^^xsd:string ;
+        gpml:hasPoint       <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idad2c0c30/Point/f629e> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idad2c0c30/Point/cb8cc> ;
+        gpml:lineStyle      "Solid"^^xsd:string ;
+        gpml:lineThickness  "1.0"^^xsd:double ;
+        gpml:zorder         "12288"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id3dd5cd4c/Point/c8ac9>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2622_r78385> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id3dd5cd4c> ;
+        gpml:graphRef     "abd19"^^xsd:string ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "662.2338944421178"^^xsd:double ;
+        gpml:y            "329.3517459327445"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idaaf9b17f/Point/b25e8>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2622_r78385> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idaaf9b17f> ;
+        gpml:graphRef     "aabfc"^^xsd:string ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "-1.0"^^xsd:double ;
+        gpml:x            "655.4820506084287"^^xsd:double ;
+        gpml:y            "812.3235771241192"^^xsd:double .
+
+<http://identifiers.org/uniprot/Q9FNF2>
+        a                   wp:Protein , wp:DataNode ;
+        rdfs:label          "starch synthase 1"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/uniprot/Q9FNF2> ;
+        dcterms:identifier  "Q9FNF2"^^xsd:string ;
+        dcterms:isPartOf    <http://identifiers.org/wikipathways/WP2622_r78385> ;
+        dcterms:source      "Uniprot-TrEMBL"^^xsd:string ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/f0552> .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idcd052ef>
+        a                   gpml:Interaction ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2622_r78385> ;
+        gpml:color          "0"^^xsd:string ;
+        gpml:connectorType  "Straight"^^xsd:string ;
+        gpml:graphId        "idcd052ef"^^xsd:string ;
+        gpml:hasPoint       <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idcd052ef/Point/dd476> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idcd052ef/Point/b3c08> ;
+        gpml:lineStyle      "Solid"^^xsd:string ;
+        gpml:lineThickness  "1.0"^^xsd:double ;
+        gpml:zorder         "12288"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id50e8a68b/Point/d6531>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2622_r78385> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id50e8a68b> ;
+        gpml:graphRef     "b75f6"^^xsd:string ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "376.38932906542266"^^xsd:double ;
+        gpml:y            "388.35909459401483"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id11c9ccc4/Point/df3b6>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2622_r78385> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id11c9ccc4> ;
+        gpml:graphRef     "c0815"^^xsd:string ;
+        gpml:relX         "-1.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "628.6690796273033"^^xsd:double ;
+        gpml:y            "484.22130195538864"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/WP/Interaction/id604d39ff>
+        a                 wp:Conversion , wp:DirectedInteraction , wp:Interaction ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP2622_r78385> ;
+        wp:isAbout        <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id604d39ff> ;
+        wp:participants   <http://identifiers.org/hmdb/HMDB01401> , <http://identifiers.org/hmdb/HMDB00124> ;
+        wp:source         <http://identifiers.org/hmdb/HMDB00124> ;
+        wp:target         <http://identifiers.org/hmdb/HMDB01401> .
+
+<http://identifiers.org/uniprot/Q9LIR6>
+        a                   wp:Protein , wp:DataNode ;
+        rdfs:label          "amylase 1"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/uniprot/Q9LIR6> ;
+        dcterms:identifier  "Q9LIR6"^^xsd:string ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2622_r78385/WP/Interaction/id2ed7a7c3> , <http://identifiers.org/wikipathways/WP2622_r78385> ;
+        dcterms:source      "Uniprot-TrEMBL"^^xsd:string ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/d3abd> .
+
+<http://identifiers.org/hmdb/HMDB01401>
+        a                   wp:Metabolite , wp:DataNode ;
+        rdfs:label          "glucose 6-phosphate"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/hmdb/HMDB01401> ;
+        dcterms:identifier  "HMDB01401"^^xsd:string ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2622_r78385/WP/Interaction/id11c9ccc4_1> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/WP/Interaction/id604d39ff> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/WP/Interaction/id11c9ccc4_2> , <http://identifiers.org/wikipathways/WP2622_r78385> ;
+        dcterms:source      "HMDB"^^xsd:string ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/c0815> .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idcd052ef/Point/b3c08>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2622_r78385> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idcd052ef> ;
+        gpml:graphRef     "ddf7b"^^xsd:string ;
+        gpml:relX         "-1.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "709.1845904290349"^^xsd:double ;
+        gpml:y            "788.6022945328435"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id2ed7a7c3>
+        a                   gpml:Interaction ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2622_r78385> ;
+        gpml:color          "0"^^xsd:string ;
+        gpml:connectorType  "Straight"^^xsd:string ;
+        gpml:graphId        "id2ed7a7c3"^^xsd:string ;
+        gpml:hasPoint       <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id2ed7a7c3/Point/a0e95> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id2ed7a7c3/Point/a9983> ;
+        gpml:lineStyle      "Solid"^^xsd:string ;
+        gpml:lineThickness  "1.0"^^xsd:double ;
+        gpml:zorder         "12288"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/bb765>
+        a                   gpml:Interaction ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2622_r78385> ;
+        gpml:color          "0"^^xsd:string ;
+        gpml:connectorType  "Straight"^^xsd:string ;
+        gpml:graphId        "bb765"^^xsd:string ;
+        gpml:hasPoint       <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/bb765/Point/d9a6b> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/bb765/Point/d53b4> ;
+        gpml:lineStyle      "Solid"^^xsd:string ;
+        gpml:lineThickness  "1.0"^^xsd:double ;
+        gpml:zorder         "32813"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/ce66b>
+        a                        gpml:DataNode ;
+        dcterms:isPartOf         <http://rdf.wikipathways.org/Pathway/WP2622_r78385> ;
+        gpml:align               "Center"^^xsd:string ;
+        gpml:biopaxRef           "ae5"^^xsd:string ;
+        gpml:centerX             "959.7137872035054"^^xsd:double ;
+        gpml:centerY             "436.0972129983619"^^xsd:double ;
+        gpml:color               "0"^^xsd:string ;
+        gpml:fillColor           "ffffff"^^xsd:string ;
+        gpml:fontDecoration      "Normal"^^xsd:string ;
+        gpml:fontName            "Arial"^^xsd:string ;
+        gpml:fontSize            "10.0"^^xsd:double ;
+        gpml:fontStrikethru      "Normal"^^xsd:string ;
+        gpml:fontStyle           "Normal"^^xsd:string ;
+        gpml:fontWeight          "Normal"^^xsd:string ;
+        gpml:graphId             "ce66b"^^xsd:string ;
+        gpml:hasPublicationXref  <http://identifiers.org/pubmed/PMC2953952> ;
+        gpml:height              "20.0"^^xsd:double ;
+        gpml:lineStyle           "Solid"^^xsd:string ;
+        gpml:lineThickness       "1.0"^^xsd:double ;
+        gpml:shapeType           "Rectangle"^^xsd:string ;
+        gpml:textlabel           "hexokinase 3"^^xsd:string ;
+        gpml:type                "Protein"^^xsd:string ;
+        gpml:valign              "Middle"^^xsd:string ;
+        gpml:width               "80.0"^^xsd:double ;
+        gpml:xrefDataSource      "Uniprot-TrEMBL"^^xsd:string ;
+        gpml:xrefId              "Q9LPS1"^^xsd:string ;
+        gpml:zorder              "32768"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id13a9bb97/Point/b8411>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2622_r78385> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id13a9bb97> ;
+        gpml:graphRef     "ec6f2"^^xsd:string ;
+        gpml:relX         "-0.5"^^xsd:double ;
+        gpml:relY         "1.0"^^xsd:double ;
+        gpml:x            "662.2338944421178"^^xsd:double ;
+        gpml:y            "249.41194354185282"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/e75b7>
+        a                    gpml:DataNode ;
+        dcterms:isPartOf     <http://rdf.wikipathways.org/Pathway/WP2622_r78385> ;
+        gpml:align           "Center"^^xsd:string ;
+        gpml:centerX         "327.83197223580703"^^xsd:double ;
+        gpml:centerY         "434.43130307263607"^^xsd:double ;
+        gpml:color           "ff"^^xsd:string ;
+        gpml:fillColor       "ffffff"^^xsd:string ;
+        gpml:fontDecoration  "Normal"^^xsd:string ;
+        gpml:fontName        "Arial"^^xsd:string ;
+        gpml:fontSize        "10.0"^^xsd:double ;
+        gpml:fontStrikethru  "Normal"^^xsd:string ;
+        gpml:fontStyle       "Normal"^^xsd:string ;
+        gpml:fontWeight      "Normal"^^xsd:string ;
+        gpml:graphId         "e75b7"^^xsd:string ;
+        gpml:height          "20.0"^^xsd:double ;
+        gpml:lineStyle       "Solid"^^xsd:string ;
+        gpml:lineThickness   "1.0"^^xsd:double ;
+        gpml:shapeType       "Rectangle"^^xsd:string ;
+        gpml:textlabel       "PPi"^^xsd:string ;
+        gpml:type            "Metabolite"^^xsd:string ;
+        gpml:valign          "Middle"^^xsd:string ;
+        gpml:width           "44.02144772117941"^^xsd:double ;
+        gpml:xrefDataSource  "ChEBI"^^xsd:string ;
+        gpml:xrefId          "CHEBI:35782"^^xsd:string ;
+        gpml:zorder          "32825"^^xsd:long .
+
+<http://identifiers.org/uniprot/Q9LPS1>
+        a                              wp:Protein , wp:DataNode ;
+        rdfs:label                     "hexokinase 3"^^xsd:string ;
+        dc:identifier                  <http://identifiers.org/uniprot/Q9LPS1> ;
+        dcterms:bibliographicCitation  <http://identifiers.org/pubmed/PMC2953952> ;
+        dcterms:identifier             "Q9LPS1"^^xsd:string ;
+        dcterms:isPartOf               <http://identifiers.org/wikipathways/WP2622_r78385> ;
+        dcterms:source                 "Uniprot-TrEMBL"^^xsd:string ;
+        wp:isAbout                     <http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/ce66b> .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id6763e0ca/Point/fbeb7>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2622_r78385> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id6763e0ca> ;
+        gpml:graphRef     "d6aa7"^^xsd:string ;
+        gpml:relX         "-1.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "738.7240300493593"^^xsd:double ;
+        gpml:y            "289.78068839860566"^^xsd:double .
+
+<http://identifiers.org/hmdb/HMDB00124>
+        a                   wp:Metabolite , wp:DataNode ;
+        rdfs:label          "fructose 6-phosphate"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/hmdb/HMDB00124> ;
+        dcterms:identifier  "HMDB00124"^^xsd:string ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2622_r78385/WP/Interaction/id604d39ff> , <http://identifiers.org/wikipathways/WP2622_r78385> ;
+        dcterms:source      "HMDB"^^xsd:string ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/ff2bf> .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Group/c5ffa>
+        a                 gpml:Group ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2622_r78385> ;
+        gpml:graphId      "c5ffa"^^xsd:string ;
+        gpml:groupId      "d4537"^^xsd:string ;
+        gpml:style        "Group"^^xsd:string .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/ff2bf>
+        a                    gpml:DataNode ;
+        dcterms:isPartOf     <http://rdf.wikipathways.org/Pathway/WP2622_r78385> ;
+        gpml:align           "Center"^^xsd:string ;
+        gpml:centerX         "654.4560970593891"^^xsd:double ;
+        gpml:centerY         "699.6911424105833"^^xsd:double ;
+        gpml:color           "ff"^^xsd:string ;
+        gpml:fillColor       "ffffff"^^xsd:string ;
+        gpml:fontDecoration  "Normal"^^xsd:string ;
+        gpml:fontName        "Arial"^^xsd:string ;
+        gpml:fontSize        "10.0"^^xsd:double ;
+        gpml:fontStrikethru  "Normal"^^xsd:string ;
+        gpml:fontStyle       "Normal"^^xsd:string ;
+        gpml:fontWeight      "Normal"^^xsd:string ;
+        gpml:graphId         "ff2bf"^^xsd:string ;
+        gpml:height          "19.999999999999982"^^xsd:double ;
+        gpml:lineStyle       "Solid"^^xsd:string ;
+        gpml:lineThickness   "1.0"^^xsd:double ;
+        gpml:shapeType       "Rectangle"^^xsd:string ;
+        gpml:textlabel       "fructose 6-phosphate"^^xsd:string ;
+        gpml:type            "Metabolite"^^xsd:string ;
+        gpml:valign          "Middle"^^xsd:string ;
+        gpml:width           "131.43518518518553"^^xsd:double ;
+        gpml:xrefDataSource  "HMDB"^^xsd:string ;
+        gpml:xrefId          "HMDB00124"^^xsd:string ;
+        gpml:zorder          "32821"^^xsd:long .
+
+<http://identifiers.org/wikipathways/WP2621>
+        a                   wp:DataNode ;
+        rdfs:label          "Glycolysis"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/wikipathways/WP2621> ;
+        dcterms:identifier  "WP2621"^^xsd:string ;
+        dcterms:isPartOf    <http://identifiers.org/wikipathways/WP2622_r78385> ;
+        dcterms:source      "WikiPathways"^^xsd:string ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/c09e5> .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idc67e696b/Point/dc054>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2622_r78385> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idc67e696b> ;
+        gpml:graphRef     "c2c4a"^^xsd:string ;
+        gpml:relX         "1.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "600.1606197765385"^^xsd:double ;
+        gpml:y            "613.0105613254563"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idfd276f96/Point/bede8>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2622_r78385> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idfd276f96> ;
+        gpml:graphRef     "b75f6"^^xsd:string ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "376.38932906542266"^^xsd:double ;
+        gpml:y            "388.35909459401483"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idc67e696b>
+        a                   gpml:Interaction ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2622_r78385> ;
+        gpml:color          "0"^^xsd:string ;
+        gpml:connectorType  "Straight"^^xsd:string ;
+        gpml:graphId        "idc67e696b"^^xsd:string ;
+        gpml:hasPoint       <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idc67e696b/Point/dc054> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idc67e696b/Point/e354d> ;
+        gpml:lineStyle      "Solid"^^xsd:string ;
+        gpml:lineThickness  "1.0"^^xsd:double ;
+        gpml:zorder         "12288"^^xsd:long .
+
+<http://identifiers.org/kegg.compound/C00008>
+        a                   wp:Metabolite , wp:DataNode ;
+        rdfs:label          "ADP"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/kegg.compound/C00008> ;
+        dcterms:identifier  "C00008"^^xsd:string ;
+        dcterms:isPartOf    <http://identifiers.org/wikipathways/WP2622_r78385> ;
+        dcterms:source      "KEGG Compound"^^xsd:string ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/a701e> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/d30f4> .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/b8380>
+        a                    gpml:DataNode ;
+        dcterms:isPartOf     <http://rdf.wikipathways.org/Pathway/WP2622_r78385> ;
+        gpml:align           "Center"^^xsd:string ;
+        gpml:centerX         "520.0423501357302"^^xsd:double ;
+        gpml:centerY         "330.1380271550157"^^xsd:double ;
+        gpml:color           "0"^^xsd:string ;
+        gpml:fillColor       "ffffff"^^xsd:string ;
+        gpml:fontDecoration  "Normal"^^xsd:string ;
+        gpml:fontName        "Arial"^^xsd:string ;
+        gpml:fontSize        "10.0"^^xsd:double ;
+        gpml:fontStrikethru  "Normal"^^xsd:string ;
+        gpml:fontStyle       "Normal"^^xsd:string ;
+        gpml:fontWeight      "Normal"^^xsd:string ;
+        gpml:graphId         "b8380"^^xsd:string ;
+        gpml:height          "20.0"^^xsd:double ;
+        gpml:lineStyle       "Solid"^^xsd:string ;
+        gpml:lineThickness   "1.0"^^xsd:double ;
+        gpml:shapeType       "Rectangle"^^xsd:string ;
+        gpml:textlabel       "starch phosphorylase"^^xsd:string ;
+        gpml:type            "Protein"^^xsd:string ;
+        gpml:valign          "Middle"^^xsd:string ;
+        gpml:width           "101.55495978552298"^^xsd:double ;
+        gpml:xrefDataSource  "Uniprot-TrEMBL"^^xsd:string ;
+        gpml:xrefId          "Q9LIB2"^^xsd:string ;
+        gpml:zorder          "32768"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idc093c8c2/Point/a199b>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2622_r78385> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idc093c8c2> ;
+        gpml:graphRef     "ce20d"^^xsd:string ;
+        gpml:relX         "-1.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "339.99243068640493"^^xsd:double ;
+        gpml:y            "330.293734810989"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idc67e696b/Point/e354d>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2622_r78385> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idc67e696b> ;
+        gpml:graphRef     "bc8a9"^^xsd:string ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "654.8444002095297"^^xsd:double ;
+        gpml:y            "613.4380590080644"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idcd052ef/Point/dd476>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2622_r78385> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idcd052ef> ;
+        gpml:graphRef     "cb00b"^^xsd:string ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "654.9554123046188"^^xsd:double ;
+        gpml:y            "759.6407130860607"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id9d99d709/Point/e5175>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2622_r78385> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id9d99d709> ;
+        gpml:graphRef     "cb00b"^^xsd:string ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "654.9554123046188"^^xsd:double ;
+        gpml:y            "759.6407130860607"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id470fe3a8/Point/dd986>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2622_r78385> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id470fe3a8> ;
+        gpml:graphRef     "c5ffa"^^xsd:string ;
+        gpml:relX         "-1.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "1172.5742082500497"^^xsd:double ;
+        gpml:y            "601.4886840406352"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idaaf9b17f>
+        a                   gpml:Interaction ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2622_r78385> ;
+        gpml:color          "0"^^xsd:string ;
+        gpml:connectorType  "Straight"^^xsd:string ;
+        gpml:graphId        "idaaf9b17f"^^xsd:string ;
+        gpml:hasAnchor      <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idaaf9b17f/Anchor/cb00b> ;
+        gpml:hasPoint       <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idaaf9b17f/Point/cda92> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idaaf9b17f/Point/b25e8> ;
+        gpml:lineStyle      "Solid"^^xsd:string ;
+        gpml:lineThickness  "1.0"^^xsd:double ;
+        gpml:zorder         "12288"^^xsd:long .
+
+<http://identifiers.org/uniprot/P55230>
+        a                   wp:Protein , wp:DataNode ;
+        rdfs:label          "ADP-glucose pyrophosphorylase LSU2"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/uniprot/P55230> ;
+        dcterms:identifier  "P55230"^^xsd:string ;
+        dcterms:isPartOf    <http://identifiers.org/wikipathways/WP2622_r78385> ;
+        dcterms:source      "Uniprot-TrEMBL"^^xsd:string ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/b02aa> .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id11c9ccc4/Anchor/f3740>
+        a                 gpml:Anchor ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2622_r78385> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id11c9ccc4> ;
+        gpml:graphId      "f3740"^^xsd:string ;
+        gpml:position     "0.6158618239012212"^^xsd:double ;
+        gpml:shape        "None"^^xsd:string .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id549bab92>
+        a                   gpml:Interaction ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2622_r78385> ;
+        gpml:color          "0"^^xsd:string ;
+        gpml:connectorType  "Elbow"^^xsd:string ;
+        gpml:graphId        "id549bab92"^^xsd:string ;
+        gpml:hasAnchor      <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id549bab92/Anchor/f07c5> ;
+        gpml:hasPoint       <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id549bab92/Point/a4d75> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id549bab92/Point/b581a> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id549bab92/Point/bf364> ;
+        gpml:lineStyle      "Solid"^^xsd:string ;
+        gpml:lineThickness  "1.0"^^xsd:double ;
+        gpml:zorder         "12288"^^xsd:long .
+
+<http://identifiers.org/uniprot/Q9MAC8>
+        a                   wp:Protein , wp:DataNode ;
+        rdfs:label          "starch synthase 2"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/uniprot/Q9MAC8> ;
+        dcterms:identifier  "Q9MAC8"^^xsd:string ;
+        dcterms:isPartOf    <http://identifiers.org/wikipathways/WP2622_r78385> ;
+        dcterms:source      "Uniprot-TrEMBL"^^xsd:string ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/ffd6d> .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/WP/Interaction/id11c9ccc4_2>
+        a                 wp:Conversion , wp:DirectedInteraction , wp:Interaction ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP2622_r78385> ;
+        wp:isAbout        <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id11c9ccc4> ;
+        wp:participants   <http://identifiers.org/hmdb/HMDB01401> , <http://identifiers.org/hmdb/HMDB01586> ;
+        wp:source         <http://identifiers.org/hmdb/HMDB01401> ;
+        wp:target         <http://identifiers.org/hmdb/HMDB01586> .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/WP/Interaction/id1b7c2a87_2>
+        a                 wp:Catalysis , wp:DirectedInteraction , wp:Interaction ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP2622_r78385> ;
+        wp:isAbout        <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id1b7c2a87> ;
+        wp:participants   <http://identifiers.org/uniprot/Q9SCY0> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/WP/Interaction/id11c9ccc4_2> ;
+        wp:source         <http://identifiers.org/uniprot/Q9SCY0> ;
+        wp:target         <http://rdf.wikipathways.org/Pathway/WP2622_r78385/WP/Interaction/id11c9ccc4_2> .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id13a9bb97/Point/a16d0>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2622_r78385> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id13a9bb97> ;
+        gpml:graphRef     "a2c73"^^xsd:string ;
+        gpml:relX         "1.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "590.7464026536832"^^xsd:double ;
+        gpml:y            "388.51961295388264"^^xsd:double .
+
+<http://identifiers.org/uniprot/Q8H103>
+        a                   wp:Protein , wp:DataNode ;
+        rdfs:label          "glucose-6-phosphate isomerase 1"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/uniprot/Q8H103> ;
+        dcterms:identifier  "Q8H103"^^xsd:string ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2622_r78385/WP/Interaction/idc67e696b> , <http://identifiers.org/wikipathways/WP2622_r78385> ;
+        dcterms:source      "Uniprot-TrEMBL"^^xsd:string ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/c2c4a> .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id604d39ff/Anchor/bc8a9>
+        a                 gpml:Anchor ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2622_r78385> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id604d39ff> ;
+        gpml:graphId      "bc8a9"^^xsd:string ;
+        gpml:position     "0.3901015278108722"^^xsd:double ;
+        gpml:shape        "None"^^xsd:string .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idc5f5060e/Point/c8c77>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2622_r78385> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idc5f5060e> ;
+        gpml:graphRef     "b75f6"^^xsd:string ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "376.38932906542266"^^xsd:double ;
+        gpml:y            "388.35909459401483"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id50e8a68b/Point/cf438>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2622_r78385> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id50e8a68b> ;
+        gpml:graphRef     "ccd20"^^xsd:string ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "-1.0"^^xsd:double ;
+        gpml:x            "376.864785139936"^^xsd:double ;
+        gpml:y            "476.20030984509407"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/WP/Interaction/id4492708e>
+        a                 wp:DirectedInteraction , wp:Conversion , wp:Interaction ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP2622_r78385> ;
+        wp:isAbout        <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id4492708e> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idc5f5060e> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idfd276f96> ;
+        wp:participants   <http://identifiers.org/chebi/CHEBI:35782> , <http://identifiers.org/hmdb/HMDB01586> , <http://identifiers.org/hmdb/HMDB06557> , <http://identifiers.org/hmdb/HMDB00538> ;
+        wp:source         <http://identifiers.org/hmdb/HMDB00538> , <http://identifiers.org/hmdb/HMDB01586> ;
+        wp:target         <http://identifiers.org/hmdb/HMDB06557> , <http://identifiers.org/chebi/CHEBI:35782> .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idad2c0c30/Point/f629e>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2622_r78385> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idad2c0c30> ;
+        gpml:graphRef     "f07c5"^^xsd:string ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "809.5797389461438"^^xsd:double ;
+        gpml:y            "436.8359505242233"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idbff9632d/Anchor/c7d2d>
+        a                 gpml:Anchor ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2622_r78385> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idbff9632d> ;
+        gpml:graphId      "c7d2d"^^xsd:string ;
+        gpml:position     "0.09523799939735159"^^xsd:double ;
+        gpml:shape        "None"^^xsd:string .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idbff9632d/Point/eec8c>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2622_r78385> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idbff9632d> ;
+        gpml:graphRef     "ebecd"^^xsd:string ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "-1.0"^^xsd:double ;
+        gpml:x            "279.58063027367064"^^xsd:double ;
+        gpml:y            "378.27082911141974"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/WP/Interaction/id3dd5cd4c>
+        a                 wp:Catalysis , wp:DirectedInteraction , wp:Interaction ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP2622_r78385> ;
+        wp:isAbout        <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id3dd5cd4c> ;
+        wp:participants   <http://identifiers.org/uniprot/Q9LIB2> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/WP/Interaction/id13a9bb97> ;
+        wp:source         <http://identifiers.org/uniprot/Q9LIB2> ;
+        wp:target         <http://rdf.wikipathways.org/Pathway/WP2622_r78385/WP/Interaction/id13a9bb97> .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id604d39ff/Point/caa76>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2622_r78385> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id604d39ff> ;
+        gpml:graphRef     "ff2bf"^^xsd:string ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "-1.0"^^xsd:double ;
+        gpml:x            "654.4560970593891"^^xsd:double ;
+        gpml:y            "689.6911424105833"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id53842606>
+        a                   gpml:Interaction ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2622_r78385> ;
+        gpml:color          "0"^^xsd:string ;
+        gpml:connectorType  "Straight"^^xsd:string ;
+        gpml:graphId        "id53842606"^^xsd:string ;
+        gpml:hasPoint       <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id53842606/Point/e11ac> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id53842606/Point/e53af> ;
+        gpml:lineStyle      "Broken"^^xsd:string ;
+        gpml:lineThickness  "1.0"^^xsd:double ;
+        gpml:zorder         "12288"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/a701e>
+        a                    gpml:DataNode ;
+        dcterms:isPartOf     <http://rdf.wikipathways.org/Pathway/WP2622_r78385> ;
+        gpml:align           "Center"^^xsd:string ;
+        gpml:centerX         "359.4021333109625"^^xsd:double ;
+        gpml:centerY         "259.0050593697009"^^xsd:double ;
+        gpml:color           "ff"^^xsd:string ;
+        gpml:fillColor       "ffffff"^^xsd:string ;
+        gpml:fontDecoration  "Normal"^^xsd:string ;
+        gpml:fontName        "Arial"^^xsd:string ;
+        gpml:fontSize        "10.0"^^xsd:double ;
+        gpml:fontStrikethru  "Normal"^^xsd:string ;
+        gpml:fontStyle       "Normal"^^xsd:string ;
+        gpml:fontWeight      "Normal"^^xsd:string ;
+        gpml:graphId         "a701e"^^xsd:string ;
+        gpml:height          "20.0"^^xsd:double ;
+        gpml:lineStyle       "Solid"^^xsd:string ;
+        gpml:lineThickness   "1.0"^^xsd:double ;
+        gpml:shapeType       "Rectangle"^^xsd:string ;
+        gpml:textlabel       "ADP"^^xsd:string ;
+        gpml:type            "Metabolite"^^xsd:string ;
+        gpml:valign          "Middle"^^xsd:string ;
+        gpml:width           "80.0"^^xsd:double ;
+        gpml:xrefDataSource  "KEGG Compound"^^xsd:string ;
+        gpml:xrefId          "C00008"^^xsd:string ;
+        gpml:zorder          "32957"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idbff9632d>
+        a                   gpml:Interaction ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2622_r78385> ;
+        gpml:color          "0"^^xsd:string ;
+        gpml:connectorType  "Elbow"^^xsd:string ;
+        gpml:graphId        "idbff9632d"^^xsd:string ;
+        gpml:hasAnchor      <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idbff9632d/Anchor/c7d2d> ;
+        gpml:hasPoint       <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idbff9632d/Point/e72a3> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idbff9632d/Point/eec8c> ;
+        gpml:lineStyle      "Solid"^^xsd:string ;
+        gpml:lineThickness  "1.0"^^xsd:double ;
+        gpml:zorder         "12288"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Group/ce20d>
+        a                 gpml:Group ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2622_r78385> ;
+        gpml:graphId      "ce20d"^^xsd:string ;
+        gpml:groupId      "cfe35"^^xsd:string ;
+        gpml:style        "None"^^xsd:string .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/fef8e>
+        a                    gpml:DataNode ;
+        dcterms:isPartOf     <http://rdf.wikipathways.org/Pathway/WP2622_r78385> ;
+        gpml:align           "Center"^^xsd:string ;
+        gpml:centerX         "438.91641791422745"^^xsd:double ;
+        gpml:centerY         "434.43130307263607"^^xsd:double ;
+        gpml:color           "ff"^^xsd:string ;
+        gpml:fillColor       "ffffff"^^xsd:string ;
+        gpml:fontDecoration  "Normal"^^xsd:string ;
+        gpml:fontName        "Arial"^^xsd:string ;
+        gpml:fontSize        "10.0"^^xsd:double ;
+        gpml:fontStrikethru  "Normal"^^xsd:string ;
+        gpml:fontStyle       "Normal"^^xsd:string ;
+        gpml:fontWeight      "Normal"^^xsd:string ;
+        gpml:graphId         "fef8e"^^xsd:string ;
+        gpml:height          "20.0"^^xsd:double ;
+        gpml:lineStyle       "Solid"^^xsd:string ;
+        gpml:lineThickness   "1.0"^^xsd:double ;
+        gpml:shapeType       "Rectangle"^^xsd:string ;
+        gpml:textlabel       "ATP"^^xsd:string ;
+        gpml:type            "Metabolite"^^xsd:string ;
+        gpml:valign          "Middle"^^xsd:string ;
+        gpml:width           "80.00000000000003"^^xsd:double ;
+        gpml:xrefDataSource  "HMDB"^^xsd:string ;
+        gpml:xrefId          "HMDB00538"^^xsd:string ;
+        gpml:zorder          "32824"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idaaf9b17f/Point/cda92>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2622_r78385> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idaaf9b17f> ;
+        gpml:graphRef     "ff2bf"^^xsd:string ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "1.0"^^xsd:double ;
+        gpml:x            "654.4560970593891"^^xsd:double ;
+        gpml:y            "709.6911424105833"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idc5f5060e>
+        a                   gpml:Interaction ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2622_r78385> ;
+        gpml:color          "0"^^xsd:string ;
+        gpml:connectorType  "Straight"^^xsd:string ;
+        gpml:graphId        "idc5f5060e"^^xsd:string ;
+        gpml:hasPoint       <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idc5f5060e/Point/c8c77> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idc5f5060e/Point/d8eb1> ;
+        gpml:lineStyle      "Solid"^^xsd:string ;
+        gpml:lineThickness  "1.0"^^xsd:double ;
+        gpml:zorder         "12288"^^xsd:long .
+
+<http://identifiers.org/uniprot/P25851>
+        a                   wp:Protein , wp:DataNode ;
+        rdfs:label          "fructose-1,6-bisphosphatase"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/uniprot/P25851> ;
+        dcterms:identifier  "P25851"^^xsd:string ;
+        dcterms:isPartOf    <http://identifiers.org/wikipathways/WP2622_r78385> ;
+        dcterms:source      "Uniprot-TrEMBL"^^xsd:string ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/e8e43> .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id549bab92/Point/bf364>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2622_r78385> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id549bab92> ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "809.5797389461438"^^xsd:double ;
+        gpml:y            "439.57855924228795"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/d30f4>
+        a                    gpml:DataNode ;
+        dcterms:isPartOf     <http://rdf.wikipathways.org/Pathway/WP2622_r78385> ;
+        gpml:align           "Center"^^xsd:string ;
+        gpml:centerX         "894.6180697844597"^^xsd:double ;
+        gpml:centerY         "461.94809519460375"^^xsd:double ;
+        gpml:color           "ff"^^xsd:string ;
+        gpml:fillColor       "ffffff"^^xsd:string ;
+        gpml:fontDecoration  "Normal"^^xsd:string ;
+        gpml:fontName        "Arial"^^xsd:string ;
+        gpml:fontSize        "10.0"^^xsd:double ;
+        gpml:fontStrikethru  "Normal"^^xsd:string ;
+        gpml:fontStyle       "Normal"^^xsd:string ;
+        gpml:fontWeight      "Normal"^^xsd:string ;
+        gpml:graphId         "d30f4"^^xsd:string ;
+        gpml:height          "20.0"^^xsd:double ;
+        gpml:lineStyle       "Solid"^^xsd:string ;
+        gpml:lineThickness   "1.0"^^xsd:double ;
+        gpml:shapeType       "Rectangle"^^xsd:string ;
+        gpml:textlabel       "ADP"^^xsd:string ;
+        gpml:type            "Metabolite"^^xsd:string ;
+        gpml:valign          "Middle"^^xsd:string ;
+        gpml:width           "80.0"^^xsd:double ;
+        gpml:xrefDataSource  "KEGG Compound"^^xsd:string ;
+        gpml:xrefId          "C00008"^^xsd:string ;
+        gpml:zorder          "32818"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id50e8a68b>
+        a                   gpml:Interaction ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2622_r78385> ;
+        gpml:color          "0"^^xsd:string ;
+        gpml:connectorType  "Straight"^^xsd:string ;
+        gpml:graphId        "id50e8a68b"^^xsd:string ;
+        gpml:hasPoint       <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id50e8a68b/Point/d6531> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id50e8a68b/Point/cf438> ;
+        gpml:lineStyle      "Solid"^^xsd:string ;
+        gpml:lineThickness  "1.0"^^xsd:double ;
+        gpml:zorder         "12288"^^xsd:long .
+
+<http://identifiers.org/pubmed/PMC2953952>
+        a                 gpml:PublicationXref ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/ce66b> ;
+        gpml:database     "Pubmed"^^xsd:string ;
+        gpml:id           "PMC2953952"^^xsd:string .
+
+<http://identifiers.org/hmdb/HMDB00122>
+        a                   wp:Metabolite , wp:DataNode ;
+        rdfs:label          "glucose"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/hmdb/HMDB00122> ;
+        dcterms:identifier  "HMDB00122"^^xsd:string ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2622_r78385/WP/Interaction/iddd54a00b> , <http://identifiers.org/wikipathways/WP2622_r78385> ;
+        dcterms:source      "HMDB"^^xsd:string ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/f5996> .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/dc12d>
+        a                    gpml:DataNode ;
+        dcterms:isPartOf     <http://rdf.wikipathways.org/Pathway/WP2622_r78385> ;
+        gpml:align           "Center"^^xsd:string ;
+        gpml:centerX         "559.0619402996128"^^xsd:double ;
+        gpml:centerY         "540.5231590477472"^^xsd:double ;
+        gpml:color           "0"^^xsd:string ;
+        gpml:fillColor       "ffffff"^^xsd:string ;
+        gpml:fontDecoration  "Normal"^^xsd:string ;
+        gpml:fontName        "Arial"^^xsd:string ;
+        gpml:fontSize        "10.0"^^xsd:double ;
+        gpml:fontStrikethru  "Normal"^^xsd:string ;
+        gpml:fontStyle       "Normal"^^xsd:string ;
+        gpml:fontWeight      "Normal"^^xsd:string ;
+        gpml:graphId         "dc12d"^^xsd:string ;
+        gpml:height          "20.000000000000032"^^xsd:double ;
+        gpml:lineStyle       "Solid"^^xsd:string ;
+        gpml:lineThickness   "1.0"^^xsd:double ;
+        gpml:shapeType       "Rectangle"^^xsd:string ;
+        gpml:textlabel       "phosphoglucomutase"^^xsd:string ;
+        gpml:type            "Protein"^^xsd:string ;
+        gpml:valign          "Middle"^^xsd:string ;
+        gpml:width           "115.06702412868603"^^xsd:double ;
+        gpml:xrefDataSource  "Uniprot-TrEMBL"^^xsd:string ;
+        gpml:xrefId          "Q9SCY0"^^xsd:string ;
+        gpml:zorder          "32768"^^xsd:long .
+
+<http://identifiers.org/chebi/CHEBI:35782>
+        a                   wp:Metabolite , wp:DataNode ;
+        rdfs:label          "PPi"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/chebi/CHEBI:35782> ;
+        dcterms:identifier  "CHEBI:35782"^^xsd:string ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2622_r78385/WP/Interaction/id4492708e> , <http://identifiers.org/wikipathways/WP2622_r78385> ;
+        dcterms:source      "ChEBI"^^xsd:string ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/e75b7> .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id1b7c2a87/Point/bdc30>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2622_r78385> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id1b7c2a87> ;
+        gpml:graphRef     "dc12d"^^xsd:string ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "-1.0"^^xsd:double ;
+        gpml:x            "559.0619402996128"^^xsd:double ;
+        gpml:y            "530.5231590477472"^^xsd:double .
+
+<http://identifiers.org/wikipathways/WP2619>
+        a                   wp:DataNode ;
+        rdfs:label          "Calvin-Benson Cycle"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/wikipathways/WP2619> ;
+        dcterms:identifier  "WP2619"^^xsd:string ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2622_r78385/WP/Interaction/id53842606> , <http://identifiers.org/wikipathways/WP2622_r78385> ;
+        dcterms:source      "WikiPathways"^^xsd:string ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/e94b3> .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id470fe3a8/Point/cb638>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2622_r78385> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id470fe3a8> ;
+        gpml:graphRef     "c0815"^^xsd:string ;
+        gpml:relX         "0.5"^^xsd:double ;
+        gpml:relY         "1.0"^^xsd:double ;
+        gpml:x            "709.0163018495251"^^xsd:double ;
+        gpml:y            "494.22130195538864"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id470fe3a8>
+        a                   gpml:Interaction ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2622_r78385> ;
+        gpml:color          "0"^^xsd:string ;
+        gpml:connectorType  "Elbow"^^xsd:string ;
+        gpml:graphId        "id470fe3a8"^^xsd:string ;
+        gpml:hasPoint       <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id470fe3a8/Point/cb638> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id470fe3a8/Point/dd986> ;
+        gpml:lineStyle      "Broken"^^xsd:string ;
+        gpml:lineThickness  "1.0"^^xsd:double ;
+        gpml:zorder         "12288"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Group/ccd20>
+        a                 gpml:Group ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2622_r78385> ;
+        gpml:graphId      "ccd20"^^xsd:string ;
+        gpml:groupId      "d595f"^^xsd:string ;
+        gpml:style        "None"^^xsd:string .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/ddf7b>
+        a                    gpml:DataNode ;
+        dcterms:isPartOf     <http://rdf.wikipathways.org/Pathway/WP2622_r78385> ;
+        gpml:align           "Center"^^xsd:string ;
+        gpml:centerX         "749.1845904290349"^^xsd:double ;
+        gpml:centerY         "788.6022945328435"^^xsd:double ;
+        gpml:color           "ff"^^xsd:string ;
+        gpml:fillColor       "ffffff"^^xsd:string ;
+        gpml:fontDecoration  "Normal"^^xsd:string ;
+        gpml:fontName        "Arial"^^xsd:string ;
+        gpml:fontSize        "10.0"^^xsd:double ;
+        gpml:fontStrikethru  "Normal"^^xsd:string ;
+        gpml:fontStyle       "Normal"^^xsd:string ;
+        gpml:fontWeight      "Normal"^^xsd:string ;
+        gpml:graphId         "ddf7b"^^xsd:string ;
+        gpml:height          "20.0"^^xsd:double ;
+        gpml:lineStyle       "Solid"^^xsd:string ;
+        gpml:lineThickness   "1.0"^^xsd:double ;
+        gpml:shapeType       "Rectangle"^^xsd:string ;
+        gpml:textlabel       "H2O"^^xsd:string ;
+        gpml:type            "Metabolite"^^xsd:string ;
+        gpml:valign          "Middle"^^xsd:string ;
+        gpml:width           "80.0"^^xsd:double ;
+        gpml:xrefDataSource  "HMDB"^^xsd:string ;
+        gpml:xrefId          "HMDB02111"^^xsd:string ;
+        gpml:zorder          "32823"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385>
+        gpml:boardHeight     "1117.323943661972"^^xsd:double ;
+        gpml:boardWidth      "1458.1690140845071"^^xsd:double ;
+        gpml:hasDataNode     <http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/aabfc> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/c48ff> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/e8e43> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/c0815> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/fef8e> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/ff2bf> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/c561b> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/c2c4a> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/c09e5> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/d0e12> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/ce7ec> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/a8159> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/e7ca1> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/e94b3> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/f5996> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/e75b7> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/b8380> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/d3abd> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/cc91a> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/ffd6d> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/ce66b> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/ddf7b> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/b02aa> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/f0552> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/ec6f2> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/dc12d> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/a2c73> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/a701e> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/d6aa7> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/d30f4> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/ebecd> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/f156f> ;
+        gpml:hasGroup        <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Group/f92c3> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Group/ce20d> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Group/df8e5> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Group/c5ffa> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Group/ccd20> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Group/bb653> ;
+        gpml:hasInfoBox      <http://rdf.wikipathways.org/Pathway/WP2622_r78385/InfoBox/f7b3f> ;
+        gpml:hasInteraction  <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id50e8a68b> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id6763e0ca> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id2ed7a7c3> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id4492708e> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id2c7f193a> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idad2c0c30> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/iddd54a00b> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id13a9bb97> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idaaf9b17f> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idc5f5060e> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id53842606> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idfd276f96> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idddad5ecb> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id3dd5cd4c> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/bb765> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/c4f09> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id470fe3a8> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id1b7c2a87> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id604d39ff> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idc67e696b> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id11c9ccc4> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idc093c8c2> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id8e46d36e> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idcd052ef> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idbff9632d> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id9d99d709> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id549bab92> ;
+        gpml:hasLabel        <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Label/ce0ea> ;
+        gpml:hasShape        <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Shape/b0b3b> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Shape/ef5a5> ;
+        gpml:name            "Starch Metabolism"^^xsd:string ;
+        gpml:organism        "Arabidopsis thaliana"^^xsd:string ;
+        gpml:version         "20130410"^^xsd:string .
+
+<http://identifiers.org/uniprot/P55228>
+        a                   wp:Protein , wp:DataNode ;
+        rdfs:label          "ADP-glucose pyrophosphorylase SSU"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/uniprot/P55228> ;
+        dcterms:identifier  "P55228"^^xsd:string ;
+        dcterms:isPartOf    <http://identifiers.org/wikipathways/WP2622_r78385> ;
+        dcterms:source      "Uniprot-TrEMBL"^^xsd:string ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/e7ca1> .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/cc91a>
+        a                    gpml:DataNode ;
+        dcterms:isPartOf     <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Group/c5ffa> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385> ;
+        gpml:align           "Center"^^xsd:string ;
+        gpml:centerX         "1292.107685871516"^^xsd:double ;
+        gpml:centerY         "586.1677846112733"^^xsd:double ;
+        gpml:color           "14961e"^^xsd:string ;
+        gpml:fillColor       "ffffff"^^xsd:string ;
+        gpml:fontDecoration  "Normal"^^xsd:string ;
+        gpml:fontName        "Arial"^^xsd:string ;
+        gpml:fontSize        "20.0"^^xsd:double ;
+        gpml:fontStrikethru  "Normal"^^xsd:string ;
+        gpml:fontStyle       "Normal"^^xsd:string ;
+        gpml:fontWeight      "Bold"^^xsd:string ;
+        gpml:graphId         "cc91a"^^xsd:string ;
+        gpml:groupRef        "d4537"^^xsd:string ;
+        gpml:height          "54.93779588241738"^^xsd:double ;
+        gpml:lineStyle       "Solid"^^xsd:string ;
+        gpml:lineThickness   "1.0"^^xsd:double ;
+        gpml:shapeType       "None"^^xsd:string ;
+        gpml:textlabel       "Sucrose Metabolism\n"^^xsd:string ;
+        gpml:type            "Pathway"^^xsd:string ;
+        gpml:valign          "Middle"^^xsd:string ;
+        gpml:width           "223.06695524293292"^^xsd:double ;
+        gpml:xrefDataSource  "WikiPathways"^^xsd:string ;
+        gpml:xrefId          "WP2623"^^xsd:string ;
+        gpml:zorder          "32966"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/ce7ec>
+        a                    gpml:DataNode ;
+        dcterms:isPartOf     <http://rdf.wikipathways.org/Pathway/WP2622_r78385> ;
+        gpml:align           "Center"^^xsd:string ;
+        gpml:centerX         "611.705632545599"^^xsd:double ;
+        gpml:centerY         "289.78068839860566"^^xsd:double ;
+        gpml:color           "ff"^^xsd:string ;
+        gpml:fillColor       "ffffff"^^xsd:string ;
+        gpml:fontDecoration  "Normal"^^xsd:string ;
+        gpml:fontName        "Arial"^^xsd:string ;
+        gpml:fontSize        "10.0"^^xsd:double ;
+        gpml:fontStrikethru  "Normal"^^xsd:string ;
+        gpml:fontStyle       "Normal"^^xsd:string ;
+        gpml:fontWeight      "Normal"^^xsd:string ;
+        gpml:graphId         "ce7ec"^^xsd:string ;
+        gpml:height          "20.0"^^xsd:double ;
+        gpml:lineStyle       "Solid"^^xsd:string ;
+        gpml:lineThickness   "1.0"^^xsd:double ;
+        gpml:shapeType       "Rectangle"^^xsd:string ;
+        gpml:textlabel       "Pi"^^xsd:string ;
+        gpml:type            "Metabolite"^^xsd:string ;
+        gpml:valign          "Middle"^^xsd:string ;
+        gpml:width           "36.0"^^xsd:double ;
+        gpml:xrefDataSource  "ChEBI"^^xsd:string ;
+        gpml:xrefId          "CHEBI:18367"^^xsd:string ;
+        gpml:zorder          "32812"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/a8159>
+        a                    gpml:DataNode ;
+        dcterms:isPartOf     <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Group/ccd20> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385> ;
+        gpml:align           "Center"^^xsd:string ;
+        gpml:centerX         "376.8647851399362"^^xsd:double ;
+        gpml:centerY         "494.20030984509407"^^xsd:double ;
+        gpml:color           "0"^^xsd:string ;
+        gpml:fillColor       "ffffff"^^xsd:string ;
+        gpml:fontDecoration  "Normal"^^xsd:string ;
+        gpml:fontName        "Arial"^^xsd:string ;
+        gpml:fontSize        "10.0"^^xsd:double ;
+        gpml:fontStrikethru  "Normal"^^xsd:string ;
+        gpml:fontStyle       "Normal"^^xsd:string ;
+        gpml:fontWeight      "Normal"^^xsd:string ;
+        gpml:graphId         "a8159"^^xsd:string ;
+        gpml:groupRef        "d595f"^^xsd:string ;
+        gpml:height          "20.000000000000078"^^xsd:double ;
+        gpml:lineStyle       "Solid"^^xsd:string ;
+        gpml:lineThickness   "1.0"^^xsd:double ;
+        gpml:shapeType       "Rectangle"^^xsd:string ;
+        gpml:textlabel       "ADP-glucose pyrophosphorylase LSU1"^^xsd:string ;
+        gpml:type            "Protein"^^xsd:string ;
+        gpml:valign          "Middle"^^xsd:string ;
+        gpml:width           "181.1110916857045"^^xsd:double ;
+        gpml:xrefDataSource  "Uniprot-TrEMBL"^^xsd:string ;
+        gpml:xrefId          "P55229"^^xsd:string ;
+        gpml:zorder          "33614"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id604d39ff/Point/fb906>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2622_r78385> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id604d39ff> ;
+        gpml:graphRef     "c0815"^^xsd:string ;
+        gpml:relX         "-0.5"^^xsd:double ;
+        gpml:relY         "1.0"^^xsd:double ;
+        gpml:x            "655.4514870347106"^^xsd:double ;
+        gpml:y            "494.22130195538864"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idc093c8c2>
+        a                   gpml:Interaction ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2622_r78385> ;
+        gpml:color          "0"^^xsd:string ;
+        gpml:connectorType  "Straight"^^xsd:string ;
+        gpml:graphId        "idc093c8c2"^^xsd:string ;
+        gpml:hasPoint       <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idc093c8c2/Point/a199b> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idc093c8c2/Point/a85cb> ;
+        gpml:lineStyle      "Solid"^^xsd:string ;
+        gpml:lineThickness  "1.0"^^xsd:double ;
+        gpml:zorder         "32959"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/c09e5>
+        a                    gpml:DataNode ;
+        dcterms:isPartOf     <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Group/c5ffa> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385> ;
+        gpml:align           "Center"^^xsd:string ;
+        gpml:centerX         "1292.1076858715153"^^xsd:double ;
+        gpml:centerY         "616.8095834699969"^^xsd:double ;
+        gpml:color           "14961e"^^xsd:string ;
+        gpml:fillColor       "ffffff"^^xsd:string ;
+        gpml:fontDecoration  "Normal"^^xsd:string ;
+        gpml:fontName        "Arial"^^xsd:string ;
+        gpml:fontSize        "20.0"^^xsd:double ;
+        gpml:fontStrikethru  "Normal"^^xsd:string ;
+        gpml:fontStyle       "Normal"^^xsd:string ;
+        gpml:fontWeight      "Bold"^^xsd:string ;
+        gpml:graphId         "c09e5"^^xsd:string ;
+        gpml:groupRef        "d4537"^^xsd:string ;
+        gpml:height          "54.93779588241738"^^xsd:double ;
+        gpml:lineStyle       "Solid"^^xsd:string ;
+        gpml:lineThickness   "1.0"^^xsd:double ;
+        gpml:shapeType       "None"^^xsd:string ;
+        gpml:textlabel       "Glycolysis"^^xsd:string ;
+        gpml:type            "Pathway"^^xsd:string ;
+        gpml:valign          "Middle"^^xsd:string ;
+        gpml:width           "128.12947264117895"^^xsd:double ;
+        gpml:xrefDataSource  "WikiPathways"^^xsd:string ;
+        gpml:xrefId          "WP2621"^^xsd:string ;
+        gpml:zorder          "32967"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/WP/Interaction/id2ed7a7c3>
+        a                 wp:Catalysis , wp:DirectedInteraction , wp:Interaction ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP2622_r78385> ;
+        wp:isAbout        <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id2ed7a7c3> ;
+        wp:participants   <http://identifiers.org/uniprot/Q9LIR6> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/WP/Interaction/iddd54a00b> ;
+        wp:source         <http://identifiers.org/uniprot/Q9LIR6> ;
+        wp:target         <http://rdf.wikipathways.org/Pathway/WP2622_r78385/WP/Interaction/iddd54a00b> .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/c0815>
+        a                    gpml:DataNode ;
+        dcterms:isPartOf     <http://rdf.wikipathways.org/Pathway/WP2622_r78385> ;
+        gpml:align           "Center"^^xsd:string ;
+        gpml:centerX         "682.233894442118"^^xsd:double ;
+        gpml:centerY         "484.22130195538864"^^xsd:double ;
+        gpml:color           "ff"^^xsd:string ;
+        gpml:fillColor       "ffffff"^^xsd:string ;
+        gpml:fontDecoration  "Normal"^^xsd:string ;
+        gpml:fontName        "Arial"^^xsd:string ;
+        gpml:fontSize        "10.0"^^xsd:double ;
+        gpml:fontStrikethru  "Normal"^^xsd:string ;
+        gpml:fontStyle       "Normal"^^xsd:string ;
+        gpml:fontWeight      "Normal"^^xsd:string ;
+        gpml:graphId         "c0815"^^xsd:string ;
+        gpml:height          "20.0"^^xsd:double ;
+        gpml:lineStyle       "Solid"^^xsd:string ;
+        gpml:lineThickness   "1.0"^^xsd:double ;
+        gpml:shapeType       "Rectangle"^^xsd:string ;
+        gpml:textlabel       "glucose 6-phosphate"^^xsd:string ;
+        gpml:type            "Metabolite"^^xsd:string ;
+        gpml:valign          "Middle"^^xsd:string ;
+        gpml:width           "107.12962962962904"^^xsd:double ;
+        gpml:xrefDataSource  "HMDB"^^xsd:string ;
+        gpml:xrefId          "HMDB01401"^^xsd:string ;
+        gpml:zorder          "32811"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/a2c73>
+        a                    gpml:DataNode ;
+        dcterms:isPartOf     <http://rdf.wikipathways.org/Pathway/WP2622_r78385> ;
+        gpml:align           "Center"^^xsd:string ;
+        gpml:centerX         "535.2236144499296"^^xsd:double ;
+        gpml:centerY         "388.51961295388264"^^xsd:double ;
+        gpml:color           "ff"^^xsd:string ;
+        gpml:fillColor       "ffffff"^^xsd:string ;
+        gpml:fontDecoration  "Normal"^^xsd:string ;
+        gpml:fontName        "Arial"^^xsd:string ;
+        gpml:fontSize        "10.0"^^xsd:double ;
+        gpml:fontStrikethru  "Normal"^^xsd:string ;
+        gpml:fontStyle       "Normal"^^xsd:string ;
+        gpml:fontWeight      "Normal"^^xsd:string ;
+        gpml:graphId         "a2c73"^^xsd:string ;
+        gpml:height          "20.0"^^xsd:double ;
+        gpml:lineStyle       "Solid"^^xsd:string ;
+        gpml:lineThickness   "1.0"^^xsd:double ;
+        gpml:shapeType       "Rectangle"^^xsd:string ;
+        gpml:textlabel       "glucose 1-phosphate"^^xsd:string ;
+        gpml:type            "Metabolite"^^xsd:string ;
+        gpml:valign          "Middle"^^xsd:string ;
+        gpml:width           "111.04557640750693"^^xsd:double ;
+        gpml:xrefDataSource  "HMDB"^^xsd:string ;
+        gpml:xrefId          "HMDB01586"^^xsd:string ;
+        gpml:zorder          "32768"^^xsd:long .
+
+<http://identifiers.org/kegg.compound/C00369>
+        a                   wp:Metabolite , wp:DataNode ;
+        rdfs:label          "starch"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/kegg.compound/C00369> ;
+        dcterms:identifier  "C00369"^^xsd:string ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2622_r78385/WP/Interaction/iddd54a00b> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/WP/Interaction/id13a9bb97> , <http://identifiers.org/wikipathways/WP2622_r78385> ;
+        dcterms:source      "KEGG Compound"^^xsd:string ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/ec6f2> .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id549bab92/Anchor/f07c5>
+        a                 gpml:Anchor ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2622_r78385> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id549bab92> ;
+        gpml:graphId      "f07c5"^^xsd:string ;
+        gpml:position     "0.25695118317442767"^^xsd:double ;
+        gpml:shape        "None"^^xsd:string .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/f0552>
+        a                    gpml:DataNode ;
+        dcterms:isPartOf     <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Group/ce20d> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385> ;
+        gpml:align           "Center"^^xsd:string ;
+        gpml:centerX         "390.88541548064086"^^xsd:double ;
+        gpml:centerY         "310.29373481098895"^^xsd:double ;
+        gpml:color           "0"^^xsd:string ;
+        gpml:fillColor       "ffffff"^^xsd:string ;
+        gpml:fontDecoration  "Normal"^^xsd:string ;
+        gpml:fontName        "Arial"^^xsd:string ;
+        gpml:fontSize        "10.0"^^xsd:double ;
+        gpml:fontStrikethru  "Normal"^^xsd:string ;
+        gpml:fontStyle       "Normal"^^xsd:string ;
+        gpml:fontWeight      "Normal"^^xsd:string ;
+        gpml:graphId         "f0552"^^xsd:string ;
+        gpml:groupRef        "cfe35"^^xsd:string ;
+        gpml:height          "20.0"^^xsd:double ;
+        gpml:lineStyle       "Solid"^^xsd:string ;
+        gpml:lineThickness   "1.0"^^xsd:double ;
+        gpml:shapeType       "Rectangle"^^xsd:string ;
+        gpml:textlabel       "starch synthase 1"^^xsd:string ;
+        gpml:type            "Protein"^^xsd:string ;
+        gpml:valign          "Middle"^^xsd:string ;
+        gpml:width           "85.7859695884719"^^xsd:double ;
+        gpml:xrefDataSource  "Uniprot-TrEMBL"^^xsd:string ;
+        gpml:xrefId          "Q9FNF2"^^xsd:string ;
+        gpml:zorder          "33607"^^xsd:long .
+
+<http://identifiers.org/hmdb/HMDB01586>
+        a                   wp:Metabolite , wp:DataNode ;
+        rdfs:label          "glucose 1-phosphate"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/hmdb/HMDB01586> ;
+        dcterms:identifier  "HMDB01586"^^xsd:string ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2622_r78385/WP/Interaction/id13a9bb97> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/WP/Interaction/id4492708e> , <http://identifiers.org/wikipathways/WP2622_r78385> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/WP/Interaction/id11c9ccc4_2> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/WP/Interaction/id11c9ccc4_1> ;
+        dcterms:source      "HMDB"^^xsd:string ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/a2c73> .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id6763e0ca>
+        a                   gpml:Interaction ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2622_r78385> ;
+        gpml:color          "0"^^xsd:string ;
+        gpml:connectorType  "Straight"^^xsd:string ;
+        gpml:graphId        "id6763e0ca"^^xsd:string ;
+        gpml:hasPoint       <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id6763e0ca/Point/fbeb7> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id6763e0ca/Point/fda7d> ;
+        gpml:lineStyle      "Solid"^^xsd:string ;
+        gpml:lineThickness  "1.0"^^xsd:double ;
+        gpml:zorder         "12288"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id2c7f193a/Point/da65f>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2622_r78385> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id2c7f193a> ;
+        gpml:graphRef     "ce66b"^^xsd:string ;
+        gpml:relX         "-1.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "919.7137872035054"^^xsd:double ;
+        gpml:y            "436.0972129983619"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id8e46d36e/Point/eaf35>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2622_r78385> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id8e46d36e> ;
+        gpml:graphRef     "cb00b"^^xsd:string ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "654.9554123046188"^^xsd:double ;
+        gpml:y            "759.6407130860607"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id3dd5cd4c>
+        a                   gpml:Interaction ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2622_r78385> ;
+        gpml:color          "0"^^xsd:string ;
+        gpml:connectorType  "Straight"^^xsd:string ;
+        gpml:graphId        "id3dd5cd4c"^^xsd:string ;
+        gpml:hasPoint       <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id3dd5cd4c/Point/c8ac9> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id3dd5cd4c/Point/bb4a9> ;
+        gpml:lineStyle      "Solid"^^xsd:string ;
+        gpml:lineThickness  "1.0"^^xsd:double ;
+        gpml:zorder         "32814"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/iddd54a00b/Anchor/b0a22>
+        a                 gpml:Anchor ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2622_r78385> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/iddd54a00b> ;
+        gpml:graphId      "b0a22"^^xsd:string ;
+        gpml:position     "0.39085602060021424"^^xsd:double ;
+        gpml:shape        "None"^^xsd:string .
+
+<http://identifiers.org/hmdb/HMDB02111>
+        a                   wp:DataNode , wp:Metabolite ;
+        rdfs:label          "H2O"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/hmdb/HMDB02111> ;
+        dcterms:identifier  "HMDB02111"^^xsd:string ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2622_r78385/WP/Interaction/iddd54a00b> , <http://identifiers.org/wikipathways/WP2622_r78385> ;
+        dcterms:source      "HMDB"^^xsd:string ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/ddf7b> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/d6aa7> .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id11c9ccc4>
+        a                   gpml:Interaction ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2622_r78385> ;
+        gpml:color          "0"^^xsd:string ;
+        gpml:connectorType  "Elbow"^^xsd:string ;
+        gpml:graphId        "id11c9ccc4"^^xsd:string ;
+        gpml:hasAnchor      <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id11c9ccc4/Anchor/f3d89> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id11c9ccc4/Anchor/f3740> ;
+        gpml:hasPoint       <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id11c9ccc4/Point/c1127> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id11c9ccc4/Point/df3b6> ;
+        gpml:lineStyle      "Solid"^^xsd:string ;
+        gpml:lineThickness  "1.0"^^xsd:double ;
+        gpml:zorder         "12288"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id4492708e/Anchor/b75f6>
+        a                 gpml:Anchor ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2622_r78385> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id4492708e> ;
+        gpml:graphId      "b75f6"^^xsd:string ;
+        gpml:position     "0.6452121579871988"^^xsd:double ;
+        gpml:shape        "None"^^xsd:string .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/c48ff>
+        a                    gpml:DataNode ;
+        dcterms:isPartOf     <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Group/ce20d> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385> ;
+        gpml:align           "Center"^^xsd:string ;
+        gpml:centerX         "390.885415480641"^^xsd:double ;
+        gpml:centerY         "350.293734810989"^^xsd:double ;
+        gpml:color           "0"^^xsd:string ;
+        gpml:fillColor       "ffffff"^^xsd:string ;
+        gpml:fontDecoration  "Normal"^^xsd:string ;
+        gpml:fontName        "Arial"^^xsd:string ;
+        gpml:fontSize        "10.0"^^xsd:double ;
+        gpml:fontStrikethru  "Normal"^^xsd:string ;
+        gpml:fontStyle       "Normal"^^xsd:string ;
+        gpml:fontWeight      "Normal"^^xsd:string ;
+        gpml:graphId         "c48ff"^^xsd:string ;
+        gpml:groupRef        "cfe35"^^xsd:string ;
+        gpml:height          "20.000000000000068"^^xsd:double ;
+        gpml:lineStyle       "Solid"^^xsd:string ;
+        gpml:lineThickness   "1.0"^^xsd:double ;
+        gpml:shapeType       "Rectangle"^^xsd:string ;
+        gpml:textlabel       "starch synthase 3"^^xsd:string ;
+        gpml:type            "Protein"^^xsd:string ;
+        gpml:valign          "Middle"^^xsd:string ;
+        gpml:width           "85.78596958847201"^^xsd:double ;
+        gpml:xrefDataSource  "Uniprot-TrEMBL"^^xsd:string ;
+        gpml:xrefId          "F4IAG2"^^xsd:string ;
+        gpml:zorder          "33609"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/InfoBox/f7b3f>
+        a                 gpml:InfoBox ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2622_r78385> ;
+        gpml:centerX      "0.0"^^xsd:double ;
+        gpml:centerY      "0.0"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/ebecd>
+        a                    gpml:DataNode ;
+        dcterms:isPartOf     <http://rdf.wikipathways.org/Pathway/WP2622_r78385> ;
+        gpml:align           "Center"^^xsd:string ;
+        gpml:centerX         "279.58063027367064"^^xsd:double ;
+        gpml:centerY         "388.27082911141974"^^xsd:double ;
+        gpml:color           "ff"^^xsd:string ;
+        gpml:fillColor       "ffffff"^^xsd:string ;
+        gpml:fontDecoration  "Normal"^^xsd:string ;
+        gpml:fontName        "Arial"^^xsd:string ;
+        gpml:fontSize        "10.0"^^xsd:double ;
+        gpml:fontStrikethru  "Normal"^^xsd:string ;
+        gpml:fontStyle       "Normal"^^xsd:string ;
+        gpml:fontWeight      "Normal"^^xsd:string ;
+        gpml:graphId         "ebecd"^^xsd:string ;
+        gpml:height          "20.0"^^xsd:double ;
+        gpml:lineStyle       "Solid"^^xsd:string ;
+        gpml:lineThickness   "1.0"^^xsd:double ;
+        gpml:shapeType       "Rectangle"^^xsd:string ;
+        gpml:textlabel       "ADP-glucose"^^xsd:string ;
+        gpml:type            "Metabolite"^^xsd:string ;
+        gpml:valign          "Middle"^^xsd:string ;
+        gpml:width           "80.0"^^xsd:double ;
+        gpml:xrefDataSource  "HMDB"^^xsd:string ;
+        gpml:xrefId          "HMDB06557"^^xsd:string ;
+        gpml:zorder          "32768"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idddad5ecb/Point/cb191>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2622_r78385> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idddad5ecb> ;
+        gpml:graphRef     "d30f4"^^xsd:string ;
+        gpml:relX         "-1.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "854.6180697844597"^^xsd:double ;
+        gpml:y            "461.94809519460375"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idfd276f96>
+        a                   gpml:Interaction ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2622_r78385> ;
+        gpml:color          "0"^^xsd:string ;
+        gpml:connectorType  "Straight"^^xsd:string ;
+        gpml:graphId        "idfd276f96"^^xsd:string ;
+        gpml:hasPoint       <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idfd276f96/Point/e831a> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idfd276f96/Point/bede8> ;
+        gpml:lineStyle      "Solid"^^xsd:string ;
+        gpml:lineThickness  "1.0"^^xsd:double ;
+        gpml:zorder         "12288"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id8e46d36e>
+        a                   gpml:Interaction ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2622_r78385> ;
+        gpml:color          "0"^^xsd:string ;
+        gpml:connectorType  "Straight"^^xsd:string ;
+        gpml:graphId        "id8e46d36e"^^xsd:string ;
+        gpml:hasPoint       <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id8e46d36e/Point/b4730> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id8e46d36e/Point/eaf35> ;
+        gpml:lineStyle      "Solid"^^xsd:string ;
+        gpml:lineThickness  "1.0"^^xsd:double ;
+        gpml:zorder         "32829"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Shape/ef5a5>
+        a                    gpml:shape ;
+        dcterms:isPartOf     <http://rdf.wikipathways.org/Pathway/WP2622_r78385> ;
+        gpml:align           "Center"^^xsd:string ;
+        gpml:centerX         "756.0880281690141"^^xsd:double ;
+        gpml:centerY         "586.3697183098592"^^xsd:double ;
+        gpml:color           "c0c0c0"^^xsd:string ;
+        gpml:fontDecoration  "Normal"^^xsd:string ;
+        gpml:fontName        "Arial"^^xsd:string ;
+        gpml:fontSize        "10.0"^^xsd:double ;
+        gpml:fontStrikethru  "Normal"^^xsd:string ;
+        gpml:fontStyle       "Normal"^^xsd:string ;
+        gpml:fontWeight      "Normal"^^xsd:string ;
+        gpml:graphId         "ef5a5"^^xsd:string ;
+        gpml:height          "1001.9084507042255"^^xsd:double ;
+        gpml:lineStyle       "Solid"^^xsd:string ;
+        gpml:lineThickness   "3.0"^^xsd:double ;
+        gpml:shape           "0.0"^^xsd:double ;
+        gpml:shapeType       "RoundedRectangle"^^xsd:string ;
+        gpml:textlabel       ""^^xsd:string ;
+        gpml:valign          "Middle"^^xsd:string ;
+        gpml:width           "1344.161971830986"^^xsd:double ;
+        gpml:zorder          "16384"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id1b7c2a87>
+        a                   gpml:Interaction ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2622_r78385> ;
+        gpml:color          "0"^^xsd:string ;
+        gpml:connectorType  "Straight"^^xsd:string ;
+        gpml:graphId        "id1b7c2a87"^^xsd:string ;
+        gpml:hasPoint       <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id1b7c2a87/Point/eb092> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id1b7c2a87/Point/bdc30> ;
+        gpml:lineStyle      "Solid"^^xsd:string ;
+        gpml:lineThickness  "1.0"^^xsd:double ;
+        gpml:zorder         "12288"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id9d99d709/Point/faa07>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2622_r78385> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id9d99d709> ;
+        gpml:graphRef     "c561b"^^xsd:string ;
+        gpml:relX         "-1.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "731.1845904290351"^^xsd:double ;
+        gpml:y            "732.2528689493511"^^xsd:double .
+
+<http://identifiers.org/hmdb/HMDB00538>
+        a                   wp:DataNode , wp:Metabolite ;
+        rdfs:label          "ATP"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/hmdb/HMDB00538> ;
+        dcterms:identifier  "HMDB00538"^^xsd:string ;
+        dcterms:isPartOf    <http://identifiers.org/wikipathways/WP2622_r78385> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/WP/Interaction/id4492708e> ;
+        dcterms:source      "HMDB"^^xsd:string ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/d0e12> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/fef8e> .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id11c9ccc4/Point/c1127>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2622_r78385> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id11c9ccc4> ;
+        gpml:graphRef     "a2c73"^^xsd:string ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "1.0"^^xsd:double ;
+        gpml:x            "535.2236144499296"^^xsd:double ;
+        gpml:y            "398.51961295388264"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/ec6f2>
+        a                    gpml:DataNode ;
+        dcterms:isPartOf     <http://rdf.wikipathways.org/Pathway/WP2622_r78385> ;
+        gpml:align           "Center"^^xsd:string ;
+        gpml:centerX         "682.2338944421178"^^xsd:double ;
+        gpml:centerY         "239.41194354185282"^^xsd:double ;
+        gpml:color           "ff"^^xsd:string ;
+        gpml:fillColor       "ffffff"^^xsd:string ;
+        gpml:fontDecoration  "Normal"^^xsd:string ;
+        gpml:fontName        "Arial"^^xsd:string ;
+        gpml:fontSize        "10.0"^^xsd:double ;
+        gpml:fontStrikethru  "Normal"^^xsd:string ;
+        gpml:fontStyle       "Normal"^^xsd:string ;
+        gpml:fontWeight      "Normal"^^xsd:string ;
+        gpml:graphId         "ec6f2"^^xsd:string ;
+        gpml:height          "20.0"^^xsd:double ;
+        gpml:lineStyle       "Solid"^^xsd:string ;
+        gpml:lineThickness   "1.0"^^xsd:double ;
+        gpml:shapeType       "Rectangle"^^xsd:string ;
+        gpml:textlabel       "starch"^^xsd:string ;
+        gpml:type            "Metabolite"^^xsd:string ;
+        gpml:valign          "Middle"^^xsd:string ;
+        gpml:width           "80.0"^^xsd:double ;
+        gpml:xrefDataSource  "KEGG Compound"^^xsd:string ;
+        gpml:xrefId          "C00369"^^xsd:string ;
+        gpml:zorder          "32768"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idddad5ecb>
+        a                   gpml:Interaction ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2622_r78385> ;
+        gpml:color          "0"^^xsd:string ;
+        gpml:connectorType  "Straight"^^xsd:string ;
+        gpml:graphId        "idddad5ecb"^^xsd:string ;
+        gpml:hasPoint       <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idddad5ecb/Point/eaecb> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idddad5ecb/Point/cb191> ;
+        gpml:lineStyle      "Solid"^^xsd:string ;
+        gpml:lineThickness  "1.0"^^xsd:double ;
+        gpml:zorder         "12288"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/f5996>
+        a                    gpml:DataNode ;
+        dcterms:isPartOf     <http://rdf.wikipathways.org/Pathway/WP2622_r78385> ;
+        gpml:align           "Center"^^xsd:string ;
+        gpml:centerX         "810.6089487975771"^^xsd:double ;
+        gpml:centerY         "388.51961295388264"^^xsd:double ;
+        gpml:color           "ff"^^xsd:string ;
+        gpml:fillColor       "ffffff"^^xsd:string ;
+        gpml:fontDecoration  "Normal"^^xsd:string ;
+        gpml:fontName        "Arial"^^xsd:string ;
+        gpml:fontSize        "10.0"^^xsd:double ;
+        gpml:fontStrikethru  "Normal"^^xsd:string ;
+        gpml:fontStyle       "Normal"^^xsd:string ;
+        gpml:fontWeight      "Normal"^^xsd:string ;
+        gpml:graphId         "f5996"^^xsd:string ;
+        gpml:height          "20.0"^^xsd:double ;
+        gpml:lineStyle       "Solid"^^xsd:string ;
+        gpml:lineThickness   "1.0"^^xsd:double ;
+        gpml:shapeType       "Rectangle"^^xsd:string ;
+        gpml:textlabel       "glucose"^^xsd:string ;
+        gpml:type            "Metabolite"^^xsd:string ;
+        gpml:valign          "Middle"^^xsd:string ;
+        gpml:width           "80.0"^^xsd:double ;
+        gpml:xrefDataSource  "HMDB"^^xsd:string ;
+        gpml:xrefId          "HMDB00122"^^xsd:string ;
+        gpml:zorder          "32815"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id9d99d709>
+        a                   gpml:Interaction ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2622_r78385> ;
+        gpml:color          "0"^^xsd:string ;
+        gpml:connectorType  "Straight"^^xsd:string ;
+        gpml:graphId        "id9d99d709"^^xsd:string ;
+        gpml:hasPoint       <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id9d99d709/Point/e5175> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id9d99d709/Point/faa07> ;
+        gpml:lineStyle      "Solid"^^xsd:string ;
+        gpml:lineThickness  "1.0"^^xsd:double ;
+        gpml:zorder         "12288"^^xsd:long .
+
+<http://identifiers.org/uniprot/P55231>
+        a                   wp:Protein , wp:DataNode ;
+        rdfs:label          "ADP-glucose pyrophosphorylase LSU3"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/uniprot/P55231> ;
+        dcterms:identifier  "P55231"^^xsd:string ;
+        dcterms:isPartOf    <http://identifiers.org/wikipathways/WP2622_r78385> ;
+        dcterms:source      "Uniprot-TrEMBL"^^xsd:string ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/f156f> .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/e8e43>
+        a                    gpml:DataNode ;
+        dcterms:isPartOf     <http://rdf.wikipathways.org/Pathway/WP2622_r78385> ;
+        gpml:align           "Center"^^xsd:string ;
+        gpml:centerX         "812.6744021696475"^^xsd:double ;
+        gpml:centerY         "760.0026433809757"^^xsd:double ;
+        gpml:color           "0"^^xsd:string ;
+        gpml:fillColor       "ffffff"^^xsd:string ;
+        gpml:fontDecoration  "Normal"^^xsd:string ;
+        gpml:fontName        "Arial"^^xsd:string ;
+        gpml:fontSize        "10.0"^^xsd:double ;
+        gpml:fontStrikethru  "Normal"^^xsd:string ;
+        gpml:fontStyle       "Normal"^^xsd:string ;
+        gpml:fontWeight      "Normal"^^xsd:string ;
+        gpml:graphId         "e8e43"^^xsd:string ;
+        gpml:height          "20.000000000000032"^^xsd:double ;
+        gpml:lineStyle       "Solid"^^xsd:string ;
+        gpml:lineThickness   "1.0"^^xsd:double ;
+        gpml:shapeType       "Rectangle"^^xsd:string ;
+        gpml:textlabel       "fructose-1,6-bisphosphatase"^^xsd:string ;
+        gpml:type            "Protein"^^xsd:string ;
+        gpml:valign          "Middle"^^xsd:string ;
+        gpml:width           "140.5361930294903"^^xsd:double ;
+        gpml:xrefDataSource  "Uniprot-TrEMBL"^^xsd:string ;
+        gpml:xrefId          "P25851"^^xsd:string ;
+        gpml:zorder          "32768"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/WP/Interaction/iddd54a00b>
+        a                 wp:Conversion , wp:DirectedInteraction , wp:Interaction ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP2622_r78385> ;
+        wp:isAbout        <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/iddd54a00b> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id6763e0ca> ;
+        wp:participants   <http://identifiers.org/kegg.compound/C00369> , <http://identifiers.org/hmdb/HMDB02111> , <http://identifiers.org/hmdb/HMDB00122> ;
+        wp:source         <http://identifiers.org/hmdb/HMDB02111> , <http://identifiers.org/kegg.compound/C00369> ;
+        wp:target         <http://identifiers.org/hmdb/HMDB00122> .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id1b7c2a87/Point/eb092>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2622_r78385> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id1b7c2a87> ;
+        gpml:graphRef     "f3740"^^xsd:string ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "559.8518185677417"^^xsd:double ;
+        gpml:y            "484.22130195538864"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/bb765/Point/d9a6b>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2622_r78385> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/bb765> ;
+        gpml:graphRef     "abd19"^^xsd:string ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "662.2338944421178"^^xsd:double ;
+        gpml:y            "329.3517459327445"^^xsd:double .
+
+<http://identifiers.org/wikipathways/WP2622_r78385>
+        a              skos:Collection , wp:Pathway ;
+        dc:identifier  <http://identifiers.org/wikipathways/WP2622_r78385> ;
+        dc:source      "Wikipathways"^^xsd:string ;
+        dc:title       "Starch Metabolism"@en ;
+        wp:isAbout     <http://rdf.wikipathways.org/Pathway/WP2622_r78385> ;
+        wp:organism    "Arabidopsis thaliana"^^xsd:string ;
+        foaf:page      <http://www.wikipathways.org/instance/WP2622_r78385> .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idad2c0c30/Point/cb8cc>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2622_r78385> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idad2c0c30> ;
+        gpml:graphRef     "d0e12"^^xsd:string ;
+        gpml:relX         "-1.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "854.6180697844588"^^xsd:double ;
+        gpml:y            "411.9118030115957"^^xsd:double .
+
+<http://identifiers.org/uniprot/Q9LIB2>
+        a                   wp:Protein , wp:DataNode ;
+        rdfs:label          "starch phosphorylase"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/uniprot/Q9LIB2> ;
+        dcterms:identifier  "Q9LIB2"^^xsd:string ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2622_r78385/WP/Interaction/id3dd5cd4c> , <http://identifiers.org/wikipathways/WP2622_r78385> ;
+        dcterms:source      "Uniprot-TrEMBL"^^xsd:string ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/b8380> .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id549bab92/Point/b581a>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2622_r78385> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id549bab92> ;
+        gpml:graphRef     "c0815"^^xsd:string ;
+        gpml:relX         "1.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "735.7987092569324"^^xsd:double ;
+        gpml:y            "484.22130195538864"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id53842606/Point/e53af>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2622_r78385> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id53842606> ;
+        gpml:graphRef     "e94b3"^^xsd:string ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "-1.0"^^xsd:double ;
+        gpml:x            "655.4820506084287"^^xsd:double ;
+        gpml:y            "958.3186270191147"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idaaf9b17f/Anchor/cb00b>
+        a                 gpml:Anchor ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2622_r78385> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idaaf9b17f> ;
+        gpml:graphId      "cb00b"^^xsd:string ;
+        gpml:position     "0.5133159335555576"^^xsd:double ;
+        gpml:shape        "None"^^xsd:string .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/WP/Interaction/id53842606>
+        a                 wp:DirectedInteraction , wp:Interaction ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP2622_r78385> ;
+        wp:isAbout        <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id53842606> ;
+        wp:participants   <http://identifiers.org/hmdb/HMDB01058> , <http://identifiers.org/wikipathways/WP2619> ;
+        wp:source         <http://identifiers.org/wikipathways/WP2619> ;
+        wp:target         <http://identifiers.org/hmdb/HMDB01058> .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Group/bb653>
+        a                 gpml:Group ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2622_r78385> ;
+        gpml:graphId      "bb653"^^xsd:string ;
+        gpml:groupId      "bf715"^^xsd:string ;
+        gpml:style        "Group"^^xsd:string .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Group/df8e5>
+        a                 gpml:Group ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2622_r78385> ;
+        gpml:graphId      "df8e5"^^xsd:string ;
+        gpml:groupId      "a1e8e"^^xsd:string ;
+        gpml:style        "Group"^^xsd:string .
+
+<http://identifiers.org/uniprot/F4IAG2>
+        a                   wp:Protein , wp:DataNode ;
+        rdfs:label          "starch synthase 3"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/uniprot/F4IAG2> ;
+        dcterms:identifier  "F4IAG2"^^xsd:string ;
+        dcterms:isPartOf    <http://identifiers.org/wikipathways/WP2622_r78385> ;
+        dcterms:source      "Uniprot-TrEMBL"^^xsd:string ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/c48ff> .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idbff9632d/Point/e72a3>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2622_r78385> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/idbff9632d> ;
+        gpml:graphRef     "ec6f2"^^xsd:string ;
+        gpml:relX         "-1.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "642.2338944421178"^^xsd:double ;
+        gpml:y            "239.41194354185282"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id3dd5cd4c/Point/bb4a9>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2622_r78385> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id3dd5cd4c> ;
+        gpml:graphRef     "b8380"^^xsd:string ;
+        gpml:relX         "1.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "570.8198300284917"^^xsd:double ;
+        gpml:y            "330.1380271550157"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Label/ce0ea>
+        a                    gpml:Label ;
+        dcterms:isPartOf     <http://rdf.wikipathways.org/Pathway/WP2622_r78385> ;
+        gpml:align           "Center"^^xsd:string ;
+        gpml:centerX         "586.338028169014"^^xsd:double ;
+        gpml:centerY         "156.97183098591555"^^xsd:double ;
+        gpml:color           "cc00"^^xsd:string ;
+        gpml:fillColor       "ffffff"^^xsd:string ;
+        gpml:fontDecoration  "Normal"^^xsd:string ;
+        gpml:fontName        "Arial"^^xsd:string ;
+        gpml:fontSize        "30.0"^^xsd:double ;
+        gpml:fontStrikethru  "Normal"^^xsd:string ;
+        gpml:fontStyle       "Normal"^^xsd:string ;
+        gpml:fontWeight      "Normal"^^xsd:string ;
+        gpml:graphId         "ce0ea"^^xsd:string ;
+        gpml:height          "38.169014084507054"^^xsd:double ;
+        gpml:href            ""^^xsd:string ;
+        gpml:lineStyle       "Solid"^^xsd:string ;
+        gpml:lineThickness   "1.0"^^xsd:double ;
+        gpml:shapeType       "None"^^xsd:string ;
+        gpml:textlabel       "Chloroplast"^^xsd:string ;
+        gpml:valign          "Middle"^^xsd:string ;
+        gpml:width           "196.33802816901436"^^xsd:double ;
+        gpml:zorder          "28672"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/iddd54a00b/Point/b51be>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2622_r78385> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/iddd54a00b> ;
+        gpml:graphRef     "ec6f2"^^xsd:string ;
+        gpml:relX         "0.5"^^xsd:double ;
+        gpml:relY         "1.0"^^xsd:double ;
+        gpml:x            "702.2338944421178"^^xsd:double ;
+        gpml:y            "249.41194354185282"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/b02aa>
+        a                    gpml:DataNode ;
+        dcterms:isPartOf     <http://rdf.wikipathways.org/Pathway/WP2622_r78385> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Group/ccd20> ;
+        gpml:align           "Center"^^xsd:string ;
+        gpml:centerX         "376.8647851399358"^^xsd:double ;
+        gpml:centerY         "514.200309845093"^^xsd:double ;
+        gpml:color           "0"^^xsd:string ;
+        gpml:fillColor       "ffffff"^^xsd:string ;
+        gpml:fontDecoration  "Normal"^^xsd:string ;
+        gpml:fontName        "Arial"^^xsd:string ;
+        gpml:fontSize        "10.0"^^xsd:double ;
+        gpml:fontStrikethru  "Normal"^^xsd:string ;
+        gpml:fontStyle       "Normal"^^xsd:string ;
+        gpml:fontWeight      "Normal"^^xsd:string ;
+        gpml:graphId         "b02aa"^^xsd:string ;
+        gpml:groupRef        "d595f"^^xsd:string ;
+        gpml:height          "20.0"^^xsd:double ;
+        gpml:lineStyle       "Solid"^^xsd:string ;
+        gpml:lineThickness   "1.0"^^xsd:double ;
+        gpml:shapeType       "Rectangle"^^xsd:string ;
+        gpml:textlabel       "ADP-glucose pyrophosphorylase LSU2"^^xsd:string ;
+        gpml:type            "Protein"^^xsd:string ;
+        gpml:valign          "Middle"^^xsd:string ;
+        gpml:width           "181.1110916857044"^^xsd:double ;
+        gpml:xrefDataSource  "Uniprot-TrEMBL"^^xsd:string ;
+        gpml:xrefId          "P55230"^^xsd:string ;
+        gpml:zorder          "33612"^^xsd:long .
+
+<http://identifiers.org/hmdb/HMDB06557>
+        a                   wp:Metabolite , wp:DataNode ;
+        rdfs:label          "ADP-glucose"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/hmdb/HMDB06557> ;
+        dcterms:identifier  "HMDB06557"^^xsd:string ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2622_r78385/WP/Interaction/id4492708e> , <http://identifiers.org/wikipathways/WP2622_r78385> ;
+        dcterms:source      "HMDB"^^xsd:string ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/ebecd> .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id2ed7a7c3/Point/a9983>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2622_r78385> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id2ed7a7c3> ;
+        gpml:graphRef     "b0a22"^^xsd:string ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "702.2338944421178"^^xsd:double ;
+        gpml:y            "330.5078152969071"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/aabfc>
+        a                    gpml:DataNode ;
+        dcterms:isPartOf     <http://rdf.wikipathways.org/Pathway/WP2622_r78385> ;
+        gpml:align           "Center"^^xsd:string ;
+        gpml:centerX         "655.4820506084287"^^xsd:double ;
+        gpml:centerY         "822.3235771241192"^^xsd:double ;
+        gpml:color           "ff"^^xsd:string ;
+        gpml:fillColor       "ffffff"^^xsd:string ;
+        gpml:fontDecoration  "Normal"^^xsd:string ;
+        gpml:fontName        "Arial"^^xsd:string ;
+        gpml:fontSize        "10.0"^^xsd:double ;
+        gpml:fontStrikethru  "Normal"^^xsd:string ;
+        gpml:fontStyle       "Normal"^^xsd:string ;
+        gpml:fontWeight      "Normal"^^xsd:string ;
+        gpml:graphId         "aabfc"^^xsd:string ;
+        gpml:height          "20.0"^^xsd:double ;
+        gpml:lineStyle       "Solid"^^xsd:string ;
+        gpml:lineThickness   "1.0"^^xsd:double ;
+        gpml:shapeType       "Rectangle"^^xsd:string ;
+        gpml:textlabel       "fructose 1,6-bisphosphate"^^xsd:string ;
+        gpml:type            "Metabolite"^^xsd:string ;
+        gpml:valign          "Middle"^^xsd:string ;
+        gpml:width           "131.43518518518567"^^xsd:double ;
+        gpml:xrefDataSource  "HMDB"^^xsd:string ;
+        gpml:xrefId          "HMDB01058"^^xsd:string ;
+        gpml:zorder          "32819"^^xsd:long .
+
+<http://identifiers.org/chebi/CHEBI:18367>
+        a                   wp:DataNode , wp:Metabolite ;
+        rdfs:label          "Pi"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/chebi/CHEBI:18367> ;
+        dcterms:identifier  "CHEBI:18367"^^xsd:string ;
+        dcterms:isPartOf    <http://identifiers.org/wikipathways/WP2622_r78385> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/WP/Interaction/id13a9bb97> ;
+        dcterms:source      "ChEBI"^^xsd:string ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/c561b> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/ce7ec> .
+
+<http://identifiers.org/hmdb/HMDB01058>
+        a                   wp:Metabolite , wp:DataNode ;
+        rdfs:label          "fructose 1,6-bisphosphate"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/hmdb/HMDB01058> ;
+        dcterms:identifier  "HMDB01058"^^xsd:string ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2622_r78385/WP/Interaction/id53842606> , <http://identifiers.org/wikipathways/WP2622_r78385> ;
+        dcterms:source      "HMDB"^^xsd:string ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/aabfc> .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/iddd54a00b/Point/d935b>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2622_r78385> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/iddd54a00b> ;
+        gpml:graphRef     "f5996"^^xsd:string ;
+        gpml:relX         "-1.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "770.6089487975771"^^xsd:double ;
+        gpml:y            "388.51961295388264"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Group/f92c3>
+        a                 gpml:Group ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2622_r78385> ;
+        gpml:graphId      "f92c3"^^xsd:string ;
+        gpml:groupId      "cb880"^^xsd:string ;
+        gpml:style        "Group"^^xsd:string .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id604d39ff>
+        a                   gpml:Interaction ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2622_r78385> ;
+        gpml:color          "0"^^xsd:string ;
+        gpml:connectorType  "Straight"^^xsd:string ;
+        gpml:graphId        "id604d39ff"^^xsd:string ;
+        gpml:hasAnchor      <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id604d39ff/Anchor/bc8a9> ;
+        gpml:hasPoint       <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id604d39ff/Point/fb906> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Interaction/id604d39ff/Point/caa76> ;
+        gpml:lineStyle      "Solid"^^xsd:string ;
+        gpml:lineThickness  "1.0"^^xsd:double ;
+        gpml:zorder         "12288"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2622_r78385/DataNode/f156f>
+        a                    gpml:DataNode ;
+        dcterms:isPartOf     <http://rdf.wikipathways.org/Pathway/WP2622_r78385> , <http://rdf.wikipathways.org/Pathway/WP2622_r78385/Group/ccd20> ;
+        gpml:align           "Center"^^xsd:string ;
+        gpml:centerX         "376.86478513993575"^^xsd:double ;
+        gpml:centerY         "534.2003098450931"^^xsd:double ;
+        gpml:color           "0"^^xsd:string ;
+        gpml:fillColor       "ffffff"^^xsd:string ;
+        gpml:fontDecoration  "Normal"^^xsd:string ;
+        gpml:fontName        "Arial"^^xsd:string ;
+        gpml:fontSize        "10.0"^^xsd:double ;
+        gpml:fontStrikethru  "Normal"^^xsd:string ;
+        gpml:fontStyle       "Normal"^^xsd:string ;
+        gpml:fontWeight      "Normal"^^xsd:string ;
+        gpml:graphId         "f156f"^^xsd:string ;
+        gpml:groupRef        "d595f"^^xsd:string ;
+        gpml:height          "20.000000000000078"^^xsd:double ;
+        gpml:lineStyle       "Solid"^^xsd:string ;
+        gpml:lineThickness   "1.0"^^xsd:double ;
+        gpml:shapeType       "Rectangle"^^xsd:string ;
+        gpml:textlabel       "ADP-glucose pyrophosphorylase LSU3"^^xsd:string ;
+        gpml:type            "Protein"^^xsd:string ;
+        gpml:valign          "Middle"^^xsd:string ;
+        gpml:width           "181.1110916857045"^^xsd:double ;
+        gpml:xrefDataSource  "Uniprot-TrEMBL"^^xsd:string ;
+        gpml:xrefId          "P55231"^^xsd:string ;
+        gpml:zorder          "33613"^^xsd:long .

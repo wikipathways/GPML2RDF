@@ -1,0 +1,2203 @@
+@prefix dc:    <http://purl.org/dc/elements/1.1/> .
+@prefix wprdf: <http://rdf.wikipathways.org/> .
+@prefix prov:  <http://www.w3.org/ns/prov#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix freq:  <http://purl.org/cld/freq/> .
+@prefix pubmed: <http://www.ncbi.nlm.nih.gov/pubmed/> .
+@prefix wp:    <http://vocabularies.wikipathways.org/wp#> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix biopax: <http://www.biopax.org/release/biopax-level3.owl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix pav:   <http://purl.org/pav/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix gpml:  <http://vocabularies.wikipathways.org/gpml#> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id8c404940/Point/d12de>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id8c404940> ;
+        gpml:graphRef     "d49de"^^xsd:string ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "1.0"^^xsd:double ;
+        gpml:x            "1059.0"^^xsd:double ;
+        gpml:y            "184.0"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/f6809>
+        a                   gpml:Interaction ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2618_r74397> ;
+        gpml:color          "0"^^xsd:string ;
+        gpml:connectorType  "Straight"^^xsd:string ;
+        gpml:graphId        "f6809"^^xsd:string ;
+        gpml:hasPoint       <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/f6809/Point/dbf99> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/f6809/Point/cb040> ;
+        gpml:lineStyle      "Solid"^^xsd:string ;
+        gpml:lineThickness  "1.0"^^xsd:double ;
+        gpml:zorder         "32776"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id615bf953/Point/b3864>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id615bf953> ;
+        gpml:graphRef     "a1da5"^^xsd:string ;
+        gpml:relX         "1.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "208.0"^^xsd:double ;
+        gpml:y            "220.0"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/DataNode/f81b3>
+        a                    gpml:DataNode ;
+        dcterms:isPartOf     <http://rdf.wikipathways.org/Pathway/WP2618_r74397> ;
+        gpml:align           "Center"^^xsd:string ;
+        gpml:centerX         "733.0"^^xsd:double ;
+        gpml:centerY         "357.0"^^xsd:double ;
+        gpml:color           "0"^^xsd:string ;
+        gpml:fillColor       "ffffff"^^xsd:string ;
+        gpml:fontDecoration  "Normal"^^xsd:string ;
+        gpml:fontName        "Arial"^^xsd:string ;
+        gpml:fontSize        "10.0"^^xsd:double ;
+        gpml:fontStrikethru  "Normal"^^xsd:string ;
+        gpml:fontStyle       "Normal"^^xsd:string ;
+        gpml:fontWeight      "Normal"^^xsd:string ;
+        gpml:graphId         "f81b3"^^xsd:string ;
+        gpml:height          "20.0"^^xsd:double ;
+        gpml:lineStyle       "Solid"^^xsd:string ;
+        gpml:lineThickness   "1.0"^^xsd:double ;
+        gpml:shapeType       "Rectangle"^^xsd:string ;
+        gpml:textlabel       "UGT"^^xsd:string ;
+        gpml:type            "GeneProduct"^^xsd:string ;
+        gpml:valign          "Middle"^^xsd:string ;
+        gpml:width           "80.0"^^xsd:double ;
+        gpml:zorder          "32770"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/DataNode/ff0a8>
+        a                    gpml:DataNode ;
+        dcterms:isPartOf     <http://rdf.wikipathways.org/Pathway/WP2618_r74397> ;
+        gpml:align           "Center"^^xsd:string ;
+        gpml:centerX         "735.0"^^xsd:double ;
+        gpml:centerY         "389.0"^^xsd:double ;
+        gpml:color           "0"^^xsd:string ;
+        gpml:fillColor       "ffffff"^^xsd:string ;
+        gpml:fontDecoration  "Normal"^^xsd:string ;
+        gpml:fontName        "Arial"^^xsd:string ;
+        gpml:fontSize        "10.0"^^xsd:double ;
+        gpml:fontStrikethru  "Normal"^^xsd:string ;
+        gpml:fontStyle       "Normal"^^xsd:string ;
+        gpml:fontWeight      "Normal"^^xsd:string ;
+        gpml:graphId         "ff0a8"^^xsd:string ;
+        gpml:height          "20.0"^^xsd:double ;
+        gpml:lineStyle       "Solid"^^xsd:string ;
+        gpml:lineThickness   "1.0"^^xsd:double ;
+        gpml:shapeType       "Rectangle"^^xsd:string ;
+        gpml:textlabel       "UGT"^^xsd:string ;
+        gpml:type            "GeneProduct"^^xsd:string ;
+        gpml:valign          "Middle"^^xsd:string ;
+        gpml:width           "80.0"^^xsd:double ;
+        gpml:zorder          "32768"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/DataNode/b4caa>
+        a                    gpml:DataNode ;
+        dcterms:isPartOf     <http://rdf.wikipathways.org/Pathway/WP2618_r74397> ;
+        gpml:align           "Center"^^xsd:string ;
+        gpml:centerX         "897.0"^^xsd:double ;
+        gpml:centerY         "393.0"^^xsd:double ;
+        gpml:color           "0"^^xsd:string ;
+        gpml:fillColor       "ffffff"^^xsd:string ;
+        gpml:fontDecoration  "Normal"^^xsd:string ;
+        gpml:fontName        "Arial"^^xsd:string ;
+        gpml:fontSize        "10.0"^^xsd:double ;
+        gpml:fontStrikethru  "Normal"^^xsd:string ;
+        gpml:fontStyle       "Normal"^^xsd:string ;
+        gpml:fontWeight      "Normal"^^xsd:string ;
+        gpml:graphId         "b4caa"^^xsd:string ;
+        gpml:height          "20.0"^^xsd:double ;
+        gpml:lineStyle       "Solid"^^xsd:string ;
+        gpml:lineThickness   "1.0"^^xsd:double ;
+        gpml:shapeType       "Rectangle"^^xsd:string ;
+        gpml:textlabel       "UGT"^^xsd:string ;
+        gpml:type            "GeneProduct"^^xsd:string ;
+        gpml:valign          "Middle"^^xsd:string ;
+        gpml:width           "80.0"^^xsd:double ;
+        gpml:zorder          "32774"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/f7084>
+        a                   gpml:Interaction ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2618_r74397> ;
+        gpml:color          "0"^^xsd:string ;
+        gpml:connectorType  "Straight"^^xsd:string ;
+        gpml:graphId        "f7084"^^xsd:string ;
+        gpml:hasPoint       <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/f7084/Point/d1aa1> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/f7084/Point/a413f> ;
+        gpml:lineStyle      "Solid"^^xsd:string ;
+        gpml:lineThickness  "1.0"^^xsd:double ;
+        gpml:zorder         "32777"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id82ffcd4a/Point/ffe4e>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id82ffcd4a> ;
+        gpml:graphRef     "df996"^^xsd:string ;
+        gpml:relX         "-1.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "610.0"^^xsd:double ;
+        gpml:y            "222.0"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id615bf953/Point/b9b83>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id615bf953> ;
+        gpml:graphRef     "fd513"^^xsd:string ;
+        gpml:relX         "-1.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "288.0"^^xsd:double ;
+        gpml:y            "220.0"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397>
+        gpml:boardHeight     "480.0"^^xsd:double ;
+        gpml:boardWidth      "1372.0"^^xsd:double ;
+        gpml:hasDataNode     <http://rdf.wikipathways.org/Pathway/WP2618_r74397/DataNode/f81b3> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/DataNode/a1da5> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/DataNode/b0877> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/DataNode/a45a0> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/DataNode/d75d0> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/DataNode/c4a94> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/DataNode/e0772> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/DataNode/c950c> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/DataNode/b69e4> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/DataNode/c9c62> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/DataNode/b7b97> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/DataNode/eb6f6> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/DataNode/d2890> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/DataNode/d49de> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/DataNode/de31d> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/DataNode/ff0a8> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/DataNode/ad14f> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/DataNode/e5939> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/DataNode/df996> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/DataNode/d1c63> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/DataNode/c5782> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/DataNode/f6db4> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/DataNode/b4caa> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/DataNode/b91e5> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/DataNode/e328b> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/DataNode/bda70> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/DataNode/a77ee> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/DataNode/ccbce> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/DataNode/a6c07> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/DataNode/ae4b5> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/DataNode/fd513> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/DataNode/cbc3c> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/DataNode/f6437> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/DataNode/e0d8b> ;
+        gpml:hasInfoBox      <http://rdf.wikipathways.org/Pathway/WP2618_r74397/InfoBox/ad2fd> ;
+        gpml:hasInteraction  <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/idee0dba4> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/cc506> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/ided1af2ed> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/idf550dc2d> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/idf7d94fdf> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/idd0261794> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/idd52dd42> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/b17bf> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id53a85239> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/e22fd> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id56b609cc> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/f5ad8> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/c724e> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/f7084> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/f6809> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/idd2dab152> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id56d94ed8> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id8bd81f54> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/e40ea> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/dd55d> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/bf871> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id1f3aa801> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id5bfdcbb5> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id6417b99a> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id82ffcd4a> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/bdeea> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/ide71a0bc6> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/fc96c> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id615bf953> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/b86a0> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id796557aa> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id1262fd7a> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/b433e> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id8c404940> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/ida8660041> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/c0842> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/d01a4> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id30fc63c0> ;
+        gpml:name            "Flavonoid biosynthesis"^^xsd:string ;
+        gpml:organism        "Arabidopsis thaliana"^^xsd:string ;
+        gpml:version         "20140130"^^xsd:string .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id6417b99a/Point/c4ce4>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id6417b99a> ;
+        gpml:graphRef     "a45a0"^^xsd:string ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "1.0"^^xsd:double ;
+        gpml:x            "248.0"^^xsd:double ;
+        gpml:y            "180.0"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/idd2dab152/Anchor/facd2>
+        a                 gpml:Anchor ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/idd2dab152> ;
+        gpml:graphId      "facd2"^^xsd:string ;
+        gpml:position     "0.5"^^xsd:double ;
+        gpml:shape        "None"^^xsd:string .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id30fc63c0/Point/db3d9>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id30fc63c0> ;
+        gpml:graphRef     "c5782"^^xsd:string ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "1.0"^^xsd:double ;
+        gpml:x            "905.0"^^xsd:double ;
+        gpml:y            "277.0"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/e40ea/Point/a0f79>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/e40ea> ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "1302.0"^^xsd:double ;
+        gpml:y            "312.0"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/f6809/Point/dbf99>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/f6809> ;
+        gpml:graphRef     "cbc3c"^^xsd:string ;
+        gpml:relX         "1.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "944.0"^^xsd:double ;
+        gpml:y            "353.0"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/b17bf>
+        a                   gpml:Interaction ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2618_r74397> ;
+        gpml:color          "0"^^xsd:string ;
+        gpml:connectorType  "Straight"^^xsd:string ;
+        gpml:graphId        "b17bf"^^xsd:string ;
+        gpml:hasPoint       <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/b17bf/Point/a123d> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/b17bf/Point/a80d1> ;
+        gpml:lineStyle      "Solid"^^xsd:string ;
+        gpml:lineThickness  "1.0"^^xsd:double ;
+        gpml:zorder         "32795"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/e22fd>
+        a                   gpml:Interaction ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2618_r74397> ;
+        gpml:color          "0"^^xsd:string ;
+        gpml:connectorType  "Straight"^^xsd:string ;
+        gpml:graphId        "e22fd"^^xsd:string ;
+        gpml:hasAnchor      <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/e22fd/Anchor/cd18a> ;
+        gpml:hasPoint       <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/e22fd/Point/ed6f1> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/e22fd/Point/cf809> ;
+        gpml:lineStyle      "Solid"^^xsd:string ;
+        gpml:lineThickness  "1.0"^^xsd:double ;
+        gpml:zorder         "32775"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/DataNode/d75d0>
+        a                    gpml:DataNode ;
+        dcterms:isPartOf     <http://rdf.wikipathways.org/Pathway/WP2618_r74397> ;
+        gpml:align           "Center"^^xsd:string ;
+        gpml:centerX         "731.0"^^xsd:double ;
+        gpml:centerY         "172.0"^^xsd:double ;
+        gpml:color           "0"^^xsd:string ;
+        gpml:fillColor       "ffffff"^^xsd:string ;
+        gpml:fontDecoration  "Normal"^^xsd:string ;
+        gpml:fontName        "Arial"^^xsd:string ;
+        gpml:fontSize        "10.0"^^xsd:double ;
+        gpml:fontStrikethru  "Normal"^^xsd:string ;
+        gpml:fontStyle       "Normal"^^xsd:string ;
+        gpml:fontWeight      "Normal"^^xsd:string ;
+        gpml:graphId         "d75d0"^^xsd:string ;
+        gpml:height          "20.0"^^xsd:double ;
+        gpml:lineStyle       "Solid"^^xsd:string ;
+        gpml:lineThickness   "1.0"^^xsd:double ;
+        gpml:shapeType       "Rectangle"^^xsd:string ;
+        gpml:textlabel       "F3H"^^xsd:string ;
+        gpml:type            "GeneProduct"^^xsd:string ;
+        gpml:valign          "Middle"^^xsd:string ;
+        gpml:width           "80.0"^^xsd:double ;
+        gpml:zorder          "32768"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/bf871/Point/cf93d>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/bf871> ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "1146.0"^^xsd:double ;
+        gpml:y            "403.5"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/idd0261794/Point/b3bdb>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/idd0261794> ;
+        gpml:graphRef     "d75d0"^^xsd:string ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "1.0"^^xsd:double ;
+        gpml:x            "731.0"^^xsd:double ;
+        gpml:y            "182.0"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/cc506>
+        a                   gpml:Interaction ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2618_r74397> ;
+        gpml:color          "0"^^xsd:string ;
+        gpml:connectorType  "Straight"^^xsd:string ;
+        gpml:graphId        "cc506"^^xsd:string ;
+        gpml:hasPoint       <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/cc506/Point/d7f60> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/cc506/Point/db0ab> ;
+        gpml:lineStyle      "Solid"^^xsd:string ;
+        gpml:lineThickness  "1.0"^^xsd:double ;
+        gpml:zorder         "32787"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/f5ad8/Point/f9c50>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/f5ad8> ;
+        gpml:graphRef     "f81b3"^^xsd:string ;
+        gpml:relX         "1.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "773.0"^^xsd:double ;
+        gpml:y            "357.0"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id56b609cc/Anchor/c38ee>
+        a                 gpml:Anchor ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id56b609cc> ;
+        gpml:graphId      "c38ee"^^xsd:string ;
+        gpml:position     "0.5"^^xsd:double ;
+        gpml:shape        "None"^^xsd:string .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/DataNode/ad14f>
+        a                    gpml:DataNode ;
+        dcterms:isPartOf     <http://rdf.wikipathways.org/Pathway/WP2618_r74397> ;
+        gpml:align           "Center"^^xsd:string ;
+        gpml:centerX         "1139.0"^^xsd:double ;
+        gpml:centerY         "330.0"^^xsd:double ;
+        gpml:color           "ff"^^xsd:string ;
+        gpml:fillColor       "ffffff"^^xsd:string ;
+        gpml:fontDecoration  "Normal"^^xsd:string ;
+        gpml:fontName        "Arial"^^xsd:string ;
+        gpml:fontSize        "10.0"^^xsd:double ;
+        gpml:fontStrikethru  "Normal"^^xsd:string ;
+        gpml:fontStyle       "Normal"^^xsd:string ;
+        gpml:fontWeight      "Normal"^^xsd:string ;
+        gpml:graphId         "ad14f"^^xsd:string ;
+        gpml:height          "20.0"^^xsd:double ;
+        gpml:lineStyle       "Solid"^^xsd:string ;
+        gpml:lineThickness   "1.0"^^xsd:double ;
+        gpml:shapeType       "Rectangle"^^xsd:string ;
+        gpml:textlabel       "Isorhamnetin"^^xsd:string ;
+        gpml:type            "Metabolite"^^xsd:string ;
+        gpml:valign          "Middle"^^xsd:string ;
+        gpml:width           "80.0"^^xsd:double ;
+        gpml:zorder          "32768"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/idd52dd42/Anchor/c62eb>
+        a                 gpml:Anchor ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/idd52dd42> ;
+        gpml:graphId      "c62eb"^^xsd:string ;
+        gpml:position     "0.5"^^xsd:double ;
+        gpml:shape        "None"^^xsd:string .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/idd2dab152/Point/e73c5>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/idd2dab152> ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "368.0"^^xsd:double ;
+        gpml:y            "221.0"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id56d94ed8>
+        a                   gpml:Interaction ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2618_r74397> ;
+        gpml:color          "0"^^xsd:string ;
+        gpml:connectorType  "Straight"^^xsd:string ;
+        gpml:graphId        "id56d94ed8"^^xsd:string ;
+        gpml:hasAnchor      <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id56d94ed8/Anchor/c7590> ;
+        gpml:hasPoint       <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id56d94ed8/Point/e027a> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id56d94ed8/Point/c5cb2> ;
+        gpml:lineStyle      "Solid"^^xsd:string ;
+        gpml:lineThickness  "1.0"^^xsd:double ;
+        gpml:zorder         "12288"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/ida8660041/Point/ff9df>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/ida8660041> ;
+        gpml:graphRef     "e0d8b"^^xsd:string ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "1.0"^^xsd:double ;
+        gpml:x            "739.0"^^xsd:double ;
+        gpml:y            "275.0"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/DataNode/eb6f6>
+        a                    gpml:DataNode ;
+        dcterms:isPartOf     <http://rdf.wikipathways.org/Pathway/WP2618_r74397> ;
+        gpml:align           "Center"^^xsd:string ;
+        gpml:centerX         "408.0"^^xsd:double ;
+        gpml:centerY         "171.0"^^xsd:double ;
+        gpml:color           "0"^^xsd:string ;
+        gpml:fillColor       "ffffff"^^xsd:string ;
+        gpml:fontDecoration  "Normal"^^xsd:string ;
+        gpml:fontName        "Arial"^^xsd:string ;
+        gpml:fontSize        "10.0"^^xsd:double ;
+        gpml:fontStrikethru  "Normal"^^xsd:string ;
+        gpml:fontStyle       "Normal"^^xsd:string ;
+        gpml:fontWeight      "Normal"^^xsd:string ;
+        gpml:graphId         "eb6f6"^^xsd:string ;
+        gpml:height          "20.0"^^xsd:double ;
+        gpml:lineStyle       "Solid"^^xsd:string ;
+        gpml:lineThickness   "1.0"^^xsd:double ;
+        gpml:shapeType       "Rectangle"^^xsd:string ;
+        gpml:textlabel       "CHS"^^xsd:string ;
+        gpml:type            "GeneProduct"^^xsd:string ;
+        gpml:valign          "Middle"^^xsd:string ;
+        gpml:width           "80.0"^^xsd:double ;
+        gpml:xrefDataSource  "TAIR"^^xsd:string ;
+        gpml:xrefId          "AT5G13930"^^xsd:string ;
+        gpml:zorder          "32768"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/DataNode/bda70>
+        a                    gpml:DataNode ;
+        dcterms:isPartOf     <http://rdf.wikipathways.org/Pathway/WP2618_r74397> ;
+        gpml:align           "Center"^^xsd:string ;
+        gpml:centerX         "977.0"^^xsd:double ;
+        gpml:centerY         "223.0"^^xsd:double ;
+        gpml:color           "ff"^^xsd:string ;
+        gpml:fillColor       "ffffff"^^xsd:string ;
+        gpml:fontDecoration  "Normal"^^xsd:string ;
+        gpml:fontName        "Arial"^^xsd:string ;
+        gpml:fontSize        "10.0"^^xsd:double ;
+        gpml:fontStrikethru  "Normal"^^xsd:string ;
+        gpml:fontStyle       "Normal"^^xsd:string ;
+        gpml:fontWeight      "Normal"^^xsd:string ;
+        gpml:graphId         "bda70"^^xsd:string ;
+        gpml:height          "20.0"^^xsd:double ;
+        gpml:lineStyle       "Solid"^^xsd:string ;
+        gpml:lineThickness   "1.0"^^xsd:double ;
+        gpml:shapeType       "Rectangle"^^xsd:string ;
+        gpml:textlabel       "Dihydroquercetin"^^xsd:string ;
+        gpml:type            "Metabolite"^^xsd:string ;
+        gpml:valign          "Middle"^^xsd:string ;
+        gpml:width           "80.0"^^xsd:double ;
+        gpml:zorder          "32768"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/idf550dc2d/Anchor/ac416>
+        a                 gpml:Anchor ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/idf550dc2d> ;
+        gpml:graphId      "ac416"^^xsd:string ;
+        gpml:position     "0.5"^^xsd:double ;
+        gpml:shape        "None"^^xsd:string .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/fc96c>
+        a                   gpml:Interaction ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2618_r74397> ;
+        gpml:color          "0"^^xsd:string ;
+        gpml:connectorType  "Straight"^^xsd:string ;
+        gpml:graphId        "fc96c"^^xsd:string ;
+        gpml:hasPoint       <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/fc96c/Point/e0192> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/fc96c/Point/b6299> ;
+        gpml:lineStyle      "Solid"^^xsd:string ;
+        gpml:lineThickness  "1.0"^^xsd:double ;
+        gpml:zorder         "32793"^^xsd:long .
+
+<http://identifiers.org/kegg.compound/C00223>
+        a                   wp:Metabolite , wp:DataNode ;
+        rdfs:label          "p-Coumaroyl CoA"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/kegg.compound/C00223> ;
+        dcterms:identifier  "C00223"^^xsd:string ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2618_r74397/WP/Interaction/id615bf953> , <http://identifiers.org/wikipathways/WP2618_r74397> ;
+        dcterms:source      "KEGG Compound"^^xsd:string ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP2618_r74397/DataNode/fd513> .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id8c404940/Point/e98e8>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id8c404940> ;
+        gpml:graphRef     "eb2cd"^^xsd:string ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "1058.5"^^xsd:double ;
+        gpml:y            "223.5"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/bf871>
+        a                   gpml:Interaction ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2618_r74397> ;
+        gpml:color          "0"^^xsd:string ;
+        gpml:connectorType  "Straight"^^xsd:string ;
+        gpml:graphId        "bf871"^^xsd:string ;
+        gpml:hasPoint       <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/bf871/Point/cf93d> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/bf871/Point/f9e03> ;
+        gpml:lineStyle      "Solid"^^xsd:string ;
+        gpml:lineThickness  "1.0"^^xsd:double ;
+        gpml:zorder         "32786"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id796557aa/Point/d74af>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id796557aa> ;
+        gpml:graphRef     "ad14f"^^xsd:string ;
+        gpml:relX         "-1.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "1099.0"^^xsd:double ;
+        gpml:y            "330.0"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/DataNode/f6db4>
+        a                    gpml:DataNode ;
+        dcterms:isPartOf     <http://rdf.wikipathways.org/Pathway/WP2618_r74397> ;
+        gpml:align           "Center"^^xsd:string ;
+        gpml:centerX         "1230.0"^^xsd:double ;
+        gpml:centerY         "319.0"^^xsd:double ;
+        gpml:color           "0"^^xsd:string ;
+        gpml:fillColor       "ffffff"^^xsd:string ;
+        gpml:fontDecoration  "Normal"^^xsd:string ;
+        gpml:fontName        "Arial"^^xsd:string ;
+        gpml:fontSize        "10.0"^^xsd:double ;
+        gpml:fontStrikethru  "Normal"^^xsd:string ;
+        gpml:fontStyle       "Normal"^^xsd:string ;
+        gpml:fontWeight      "Normal"^^xsd:string ;
+        gpml:graphId         "f6db4"^^xsd:string ;
+        gpml:height          "20.0"^^xsd:double ;
+        gpml:lineStyle       "Solid"^^xsd:string ;
+        gpml:lineThickness   "1.0"^^xsd:double ;
+        gpml:shapeType       "Rectangle"^^xsd:string ;
+        gpml:textlabel       "AATs"^^xsd:string ;
+        gpml:type            "GeneProduct"^^xsd:string ;
+        gpml:valign          "Middle"^^xsd:string ;
+        gpml:width           "80.0"^^xsd:double ;
+        gpml:zorder          "32792"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/bf871/Point/f9e03>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/bf871> ;
+        gpml:graphRef     "b91e5"^^xsd:string ;
+        gpml:relX         "1.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "1104.0"^^xsd:double ;
+        gpml:y            "399.0"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/d01a4/Point/dc848>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/d01a4> ;
+        gpml:graphRef     "b69e4"^^xsd:string ;
+        gpml:relX         "1.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "1272.0"^^xsd:double ;
+        gpml:y            "281.0"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/DataNode/fd513>
+        a                    gpml:DataNode ;
+        dcterms:isPartOf     <http://rdf.wikipathways.org/Pathway/WP2618_r74397> ;
+        gpml:align           "Center"^^xsd:string ;
+        gpml:centerX         "328.0"^^xsd:double ;
+        gpml:centerY         "220.0"^^xsd:double ;
+        gpml:color           "ff"^^xsd:string ;
+        gpml:fillColor       "ffffff"^^xsd:string ;
+        gpml:fontDecoration  "Normal"^^xsd:string ;
+        gpml:fontName        "Arial"^^xsd:string ;
+        gpml:fontSize        "10.0"^^xsd:double ;
+        gpml:fontStrikethru  "Normal"^^xsd:string ;
+        gpml:fontStyle       "Normal"^^xsd:string ;
+        gpml:fontWeight      "Normal"^^xsd:string ;
+        gpml:graphId         "fd513"^^xsd:string ;
+        gpml:height          "20.0"^^xsd:double ;
+        gpml:lineStyle       "Solid"^^xsd:string ;
+        gpml:lineThickness   "1.0"^^xsd:double ;
+        gpml:shapeType       "Rectangle"^^xsd:string ;
+        gpml:textlabel       "p-Coumaroyl CoA"^^xsd:string ;
+        gpml:type            "Metabolite"^^xsd:string ;
+        gpml:valign          "Middle"^^xsd:string ;
+        gpml:width           "80.0"^^xsd:double ;
+        gpml:xrefDataSource  "KEGG Compound"^^xsd:string ;
+        gpml:xrefId          "C00223"^^xsd:string ;
+        gpml:zorder          "32768"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/dd55d/Point/b4dba>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/dd55d> ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "1139.0"^^xsd:double ;
+        gpml:y            "387.0"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/DataNode/a1da5>
+        a                    gpml:DataNode ;
+        dcterms:isPartOf     <http://rdf.wikipathways.org/Pathway/WP2618_r74397> ;
+        gpml:align           "Center"^^xsd:string ;
+        gpml:centerX         "168.0"^^xsd:double ;
+        gpml:centerY         "220.0"^^xsd:double ;
+        gpml:color           "ff"^^xsd:string ;
+        gpml:fillColor       "ffffff"^^xsd:string ;
+        gpml:fontDecoration  "Normal"^^xsd:string ;
+        gpml:fontName        "Arial"^^xsd:string ;
+        gpml:fontSize        "10.0"^^xsd:double ;
+        gpml:fontStrikethru  "Normal"^^xsd:string ;
+        gpml:fontStyle       "Normal"^^xsd:string ;
+        gpml:fontWeight      "Normal"^^xsd:string ;
+        gpml:graphId         "a1da5"^^xsd:string ;
+        gpml:height          "20.0"^^xsd:double ;
+        gpml:lineStyle       "Solid"^^xsd:string ;
+        gpml:lineThickness   "1.0"^^xsd:double ;
+        gpml:shapeType       "Rectangle"^^xsd:string ;
+        gpml:textlabel       "p-Coumarate"^^xsd:string ;
+        gpml:type            "Metabolite"^^xsd:string ;
+        gpml:valign          "Middle"^^xsd:string ;
+        gpml:width           "80.0"^^xsd:double ;
+        gpml:xrefDataSource  "KEGG Compound"^^xsd:string ;
+        gpml:xrefId          "C00811"^^xsd:string ;
+        gpml:zorder          "32768"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/c724e/Point/ae853>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/c724e> ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "1139.0"^^xsd:double ;
+        gpml:y            "361.0"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/c0842>
+        a                   gpml:Interaction ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2618_r74397> ;
+        gpml:color          "0"^^xsd:string ;
+        gpml:connectorType  "Straight"^^xsd:string ;
+        gpml:graphId        "c0842"^^xsd:string ;
+        gpml:hasPoint       <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/c0842/Point/bbcc8> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/c0842/Point/ef6eb> ;
+        gpml:lineStyle      "Solid"^^xsd:string ;
+        gpml:lineThickness  "1.0"^^xsd:double ;
+        gpml:zorder         "32784"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id5bfdcbb5/Point/f1d93>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id5bfdcbb5> ;
+        gpml:graphRef     "a87fe"^^xsd:string ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "1058.5"^^xsd:double ;
+        gpml:y            "329.5"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/bdeea>
+        a                   gpml:Interaction ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2618_r74397> ;
+        gpml:color          "0"^^xsd:string ;
+        gpml:connectorType  "Straight"^^xsd:string ;
+        gpml:graphId        "bdeea"^^xsd:string ;
+        gpml:hasPoint       <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/bdeea/Point/abd03> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/bdeea/Point/ba332> ;
+        gpml:lineStyle      "Solid"^^xsd:string ;
+        gpml:lineThickness  "1.0"^^xsd:double ;
+        gpml:zorder         "32789"^^xsd:long .
+
+<http://identifiers.org/wikipathways/WP2618_r74397>
+        a              skos:Collection , wp:Pathway ;
+        dc:identifier  <http://identifiers.org/wikipathways/WP2618_r74397> ;
+        dc:source      "Wikipathways"^^xsd:string ;
+        dc:title       "Flavonoid biosynthesis"@en ;
+        wp:isAbout     <http://rdf.wikipathways.org/Pathway/WP2618_r74397> ;
+        wp:organism    "Arabidopsis thaliana"^^xsd:string ;
+        foaf:page      <http://www.wikipathways.org/instance/WP2618_r74397> .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/ided1af2ed/Point/a67b5>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/ided1af2ed> ;
+        gpml:graphRef     "ae4b5"^^xsd:string ;
+        gpml:relX         "1.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "1180.0"^^xsd:double ;
+        gpml:y            "224.0"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id56d94ed8/Anchor/c7590>
+        a                 gpml:Anchor ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id56d94ed8> ;
+        gpml:graphId      "c7590"^^xsd:string ;
+        gpml:position     "0.5"^^xsd:double ;
+        gpml:shape        "None"^^xsd:string .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id56d94ed8/Point/e027a>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id56d94ed8> ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "857.0"^^xsd:double ;
+        gpml:y            "223.0"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/b86a0>
+        a                   gpml:Interaction ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2618_r74397> ;
+        gpml:color          "0"^^xsd:string ;
+        gpml:connectorType  "Straight"^^xsd:string ;
+        gpml:graphId        "b86a0"^^xsd:string ;
+        gpml:hasPoint       <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/b86a0/Point/d35c9> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/b86a0/Point/cf89f> ;
+        gpml:lineStyle      "Solid"^^xsd:string ;
+        gpml:lineThickness  "1.0"^^xsd:double ;
+        gpml:zorder         "32781"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/WP/Interaction/id6417b99a>
+        a                 wp:Catalysis , wp:DirectedInteraction , wp:Interaction ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP2618_r74397> ;
+        wp:isAbout        <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id6417b99a> ;
+        wp:participants   <http://identifiers.org/tair.locus/AT3G21230> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/WP/Interaction/id615bf953> ;
+        wp:source         <http://identifiers.org/tair.locus/AT3G21230> ;
+        wp:target         <http://rdf.wikipathways.org/Pathway/WP2618_r74397/WP/Interaction/id615bf953> .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/ide71a0bc6>
+        a                   gpml:Interaction ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2618_r74397> ;
+        gpml:color          "0"^^xsd:string ;
+        gpml:connectorType  "Straight"^^xsd:string ;
+        gpml:graphId        "ide71a0bc6"^^xsd:string ;
+        gpml:hasPoint       <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/ide71a0bc6/Point/a2194> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/ide71a0bc6/Point/ffd5c> ;
+        gpml:lineStyle      "Solid"^^xsd:string ;
+        gpml:lineThickness  "1.0"^^xsd:double ;
+        gpml:zorder         "12288"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/DataNode/a45a0>
+        a                    gpml:DataNode ;
+        dcterms:isPartOf     <http://rdf.wikipathways.org/Pathway/WP2618_r74397> ;
+        gpml:align           "Center"^^xsd:string ;
+        gpml:centerX         "248.0"^^xsd:double ;
+        gpml:centerY         "170.0"^^xsd:double ;
+        gpml:color           "0"^^xsd:string ;
+        gpml:fillColor       "ffffff"^^xsd:string ;
+        gpml:fontDecoration  "Normal"^^xsd:string ;
+        gpml:fontName        "Arial"^^xsd:string ;
+        gpml:fontSize        "10.0"^^xsd:double ;
+        gpml:fontStrikethru  "Normal"^^xsd:string ;
+        gpml:fontStyle       "Normal"^^xsd:string ;
+        gpml:fontWeight      "Normal"^^xsd:string ;
+        gpml:graphId         "a45a0"^^xsd:string ;
+        gpml:height          "20.0"^^xsd:double ;
+        gpml:lineStyle       "Solid"^^xsd:string ;
+        gpml:lineThickness   "1.0"^^xsd:double ;
+        gpml:shapeType       "Rectangle"^^xsd:string ;
+        gpml:textlabel       "4CL5"^^xsd:string ;
+        gpml:type            "GeneProduct"^^xsd:string ;
+        gpml:valign          "Middle"^^xsd:string ;
+        gpml:width           "80.0"^^xsd:double ;
+        gpml:xrefDataSource  "TAIR"^^xsd:string ;
+        gpml:xrefId          "AT3G21230"^^xsd:string ;
+        gpml:zorder          "32768"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id1f3aa801/Anchor/eb2cd>
+        a                 gpml:Anchor ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id1f3aa801> ;
+        gpml:graphId      "eb2cd"^^xsd:string ;
+        gpml:position     "0.5"^^xsd:double ;
+        gpml:shape        "None"^^xsd:string .
+
+<http://identifiers.org/tair.locus/AT3G21230>
+        a                   wp:GeneProduct , wp:DataNode ;
+        rdfs:label          "4CL5"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/tair.locus/AT3G21230> ;
+        dcterms:identifier  "AT3G21230"^^xsd:string ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2618_r74397/WP/Interaction/id6417b99a> , <http://identifiers.org/wikipathways/WP2618_r74397> ;
+        dcterms:source      "TAIR"^^xsd:string ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP2618_r74397/DataNode/a45a0> .
+
+<http://identifiers.org/tair.locus/AT4G22880>
+        a                   wp:GeneProduct , wp:DataNode ;
+        rdfs:label          "LDOX/ANS"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/tair.locus/AT4G22880> ;
+        dcterms:identifier  "AT4G22880"^^xsd:string ;
+        dcterms:isPartOf    <http://identifiers.org/wikipathways/WP2618_r74397> ;
+        dcterms:source      "TAIR"^^xsd:string ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP2618_r74397/DataNode/b7b97> .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id1262fd7a>
+        a                   gpml:Interaction ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2618_r74397> ;
+        gpml:color          "0"^^xsd:string ;
+        gpml:connectorType  "Straight"^^xsd:string ;
+        gpml:graphId        "id1262fd7a"^^xsd:string ;
+        gpml:hasPoint       <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id1262fd7a/Point/f3580> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id1262fd7a/Point/e9294> ;
+        gpml:lineStyle      "Solid"^^xsd:string ;
+        gpml:lineThickness  "1.0"^^xsd:double ;
+        gpml:zorder         "12288"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/c0842/Point/bbcc8>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/c0842> ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "1140.0"^^xsd:double ;
+        gpml:y            "387.0"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id30fc63c0>
+        a                   gpml:Interaction ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2618_r74397> ;
+        gpml:color          "0"^^xsd:string ;
+        gpml:connectorType  "Straight"^^xsd:string ;
+        gpml:graphId        "id30fc63c0"^^xsd:string ;
+        gpml:hasPoint       <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id30fc63c0/Point/db3d9> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id30fc63c0/Point/c1abb> ;
+        gpml:lineStyle      "Solid"^^xsd:string ;
+        gpml:lineThickness  "1.0"^^xsd:double ;
+        gpml:zorder         "12288"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id8bd81f54/Point/cb4d9>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id8bd81f54> ;
+        gpml:graphRef     "c7590"^^xsd:string ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "897.0"^^xsd:double ;
+        gpml:y            "223.0"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/idf7d94fdf>
+        a                   gpml:Interaction ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2618_r74397> ;
+        gpml:color          "0"^^xsd:string ;
+        gpml:connectorType  "Straight"^^xsd:string ;
+        gpml:graphId        "idf7d94fdf"^^xsd:string ;
+        gpml:hasAnchor      <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/idf7d94fdf/Anchor/a2c44> ;
+        gpml:hasPoint       <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/idf7d94fdf/Point/e06d1> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/idf7d94fdf/Point/b68ed> ;
+        gpml:lineStyle      "Solid"^^xsd:string ;
+        gpml:lineThickness  "1.0"^^xsd:double ;
+        gpml:zorder         "12288"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/e40ea/Point/c1330>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/e40ea> ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "1302.0"^^xsd:double ;
+        gpml:y            "271.0"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id82ffcd4a>
+        a                   gpml:Interaction ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2618_r74397> ;
+        gpml:color          "0"^^xsd:string ;
+        gpml:connectorType  "Straight"^^xsd:string ;
+        gpml:graphId        "id82ffcd4a"^^xsd:string ;
+        gpml:hasAnchor      <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id82ffcd4a/Anchor/dcf1e> ;
+        gpml:hasPoint       <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id82ffcd4a/Point/ffe4e> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id82ffcd4a/Point/a9e1f> ;
+        gpml:lineStyle      "Solid"^^xsd:string ;
+        gpml:lineThickness  "1.0"^^xsd:double ;
+        gpml:zorder         "12288"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/d01a4>
+        a                   gpml:Interaction ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2618_r74397> ;
+        gpml:color          "0"^^xsd:string ;
+        gpml:connectorType  "Straight"^^xsd:string ;
+        gpml:graphId        "d01a4"^^xsd:string ;
+        gpml:hasPoint       <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/d01a4/Point/bd2c6> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/d01a4/Point/dc848> ;
+        gpml:lineStyle      "Solid"^^xsd:string ;
+        gpml:lineThickness  "1.0"^^xsd:double ;
+        gpml:zorder         "32794"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/fc96c/Point/b6299>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/fc96c> ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "1305.0"^^xsd:double ;
+        gpml:y            "252.0"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/DataNode/ae4b5>
+        a                    gpml:DataNode ;
+        dcterms:isPartOf     <http://rdf.wikipathways.org/Pathway/WP2618_r74397> ;
+        gpml:align           "Center"^^xsd:string ;
+        gpml:centerX         "1140.0"^^xsd:double ;
+        gpml:centerY         "224.0"^^xsd:double ;
+        gpml:color           "ff"^^xsd:string ;
+        gpml:fillColor       "ffffff"^^xsd:string ;
+        gpml:fontDecoration  "Normal"^^xsd:string ;
+        gpml:fontName        "Arial"^^xsd:string ;
+        gpml:fontSize        "10.0"^^xsd:double ;
+        gpml:fontStrikethru  "Normal"^^xsd:string ;
+        gpml:fontStyle       "Normal"^^xsd:string ;
+        gpml:fontWeight      "Normal"^^xsd:string ;
+        gpml:graphId         "ae4b5"^^xsd:string ;
+        gpml:height          "20.0"^^xsd:double ;
+        gpml:lineStyle       "Solid"^^xsd:string ;
+        gpml:lineThickness   "1.0"^^xsd:double ;
+        gpml:shapeType       "Rectangle"^^xsd:string ;
+        gpml:textlabel       "Leucocyanidin"^^xsd:string ;
+        gpml:type            "Metabolite"^^xsd:string ;
+        gpml:valign          "Middle"^^xsd:string ;
+        gpml:width           "80.0"^^xsd:double ;
+        gpml:zorder          "32768"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id8bd81f54>
+        a                   gpml:Interaction ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2618_r74397> ;
+        gpml:color          "0"^^xsd:string ;
+        gpml:connectorType  "Straight"^^xsd:string ;
+        gpml:graphId        "id8bd81f54"^^xsd:string ;
+        gpml:hasPoint       <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id8bd81f54/Point/cb4d9> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id8bd81f54/Point/a6764> ;
+        gpml:lineStyle      "Solid"^^xsd:string ;
+        gpml:lineThickness  "1.0"^^xsd:double ;
+        gpml:zorder         "12288"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id796557aa>
+        a                   gpml:Interaction ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2618_r74397> ;
+        gpml:color          "0"^^xsd:string ;
+        gpml:connectorType  "Straight"^^xsd:string ;
+        gpml:graphId        "id796557aa"^^xsd:string ;
+        gpml:hasAnchor      <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id796557aa/Anchor/a87fe> ;
+        gpml:hasPoint       <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id796557aa/Point/babba> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id796557aa/Point/d74af> ;
+        gpml:lineStyle      "Solid"^^xsd:string ;
+        gpml:lineThickness  "1.0"^^xsd:double ;
+        gpml:zorder         "12288"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/DataNode/df996>
+        a                    gpml:DataNode ;
+        dcterms:isPartOf     <http://rdf.wikipathways.org/Pathway/WP2618_r74397> ;
+        gpml:align           "Center"^^xsd:string ;
+        gpml:centerX         "650.0"^^xsd:double ;
+        gpml:centerY         "222.0"^^xsd:double ;
+        gpml:color           "ff"^^xsd:string ;
+        gpml:fillColor       "ffffff"^^xsd:string ;
+        gpml:fontDecoration  "Normal"^^xsd:string ;
+        gpml:fontName        "Arial"^^xsd:string ;
+        gpml:fontSize        "10.0"^^xsd:double ;
+        gpml:fontStrikethru  "Normal"^^xsd:string ;
+        gpml:fontStyle       "Normal"^^xsd:string ;
+        gpml:fontWeight      "Normal"^^xsd:string ;
+        gpml:graphId         "df996"^^xsd:string ;
+        gpml:height          "20.0"^^xsd:double ;
+        gpml:lineStyle       "Solid"^^xsd:string ;
+        gpml:lineThickness   "1.0"^^xsd:double ;
+        gpml:shapeType       "Rectangle"^^xsd:string ;
+        gpml:textlabel       "Naringenin"^^xsd:string ;
+        gpml:type            "Metabolite"^^xsd:string ;
+        gpml:valign          "Middle"^^xsd:string ;
+        gpml:width           "80.0"^^xsd:double ;
+        gpml:zorder          "32768"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/WP/Interaction/id615bf953>
+        a                 wp:DirectedInteraction , wp:Interaction ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP2618_r74397> ;
+        wp:isAbout        <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id615bf953> ;
+        wp:participants   <http://identifiers.org/kegg.compound/C00223> , <http://identifiers.org/kegg.compound/C00811> ;
+        wp:source         <http://identifiers.org/kegg.compound/C00811> ;
+        wp:target         <http://identifiers.org/kegg.compound/C00223> .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/cc506/Point/db0ab>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/cc506> ;
+        gpml:graphRef     "d1c63"^^xsd:string ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "1.0"^^xsd:double ;
+        gpml:x            "1302.0"^^xsd:double ;
+        gpml:y            "233.0"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id56b609cc/Point/fbbe1>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id56b609cc> ;
+        gpml:graphRef     "c9c62"^^xsd:string ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "-1.0"^^xsd:double ;
+        gpml:x            "811.0"^^xsd:double ;
+        gpml:y            "419.0"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/bdeea/Point/abd03>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/bdeea> ;
+        gpml:graphRef     "a77ee"^^xsd:string ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "-1.0"^^xsd:double ;
+        gpml:x            "1302.0"^^xsd:double ;
+        gpml:y            "429.0"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id82ffcd4a/Anchor/dcf1e>
+        a                 gpml:Anchor ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id82ffcd4a> ;
+        gpml:graphId      "dcf1e"^^xsd:string ;
+        gpml:position     "0.5"^^xsd:double ;
+        gpml:shape        "None"^^xsd:string .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/DataNode/f6437>
+        a                    gpml:DataNode ;
+        dcterms:isPartOf     <http://rdf.wikipathways.org/Pathway/WP2618_r74397> ;
+        gpml:align           "Center"^^xsd:string ;
+        gpml:centerX         "811.0"^^xsd:double ;
+        gpml:centerY         "222.0"^^xsd:double ;
+        gpml:color           "ff"^^xsd:string ;
+        gpml:fillColor       "ffffff"^^xsd:string ;
+        gpml:fontDecoration  "Normal"^^xsd:string ;
+        gpml:fontName        "Arial"^^xsd:string ;
+        gpml:fontSize        "10.0"^^xsd:double ;
+        gpml:fontStrikethru  "Normal"^^xsd:string ;
+        gpml:fontStyle       "Normal"^^xsd:string ;
+        gpml:fontWeight      "Normal"^^xsd:string ;
+        gpml:graphId         "f6437"^^xsd:string ;
+        gpml:height          "20.0"^^xsd:double ;
+        gpml:lineStyle       "Solid"^^xsd:string ;
+        gpml:lineThickness   "1.0"^^xsd:double ;
+        gpml:shapeType       "Rectangle"^^xsd:string ;
+        gpml:textlabel       "dihydrokaempferol"^^xsd:string ;
+        gpml:type            "Metabolite"^^xsd:string ;
+        gpml:valign          "Middle"^^xsd:string ;
+        gpml:width           "80.0"^^xsd:double ;
+        gpml:xrefDataSource  "KEGG Compound"^^xsd:string ;
+        gpml:xrefId          "C00974 "^^xsd:string ;
+        gpml:zorder          "32768"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/idf7d94fdf/Anchor/a2c44>
+        a                 gpml:Anchor ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/idf7d94fdf> ;
+        gpml:graphId      "a2c44"^^xsd:string ;
+        gpml:position     "0.5"^^xsd:double ;
+        gpml:shape        "None"^^xsd:string .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/ided1af2ed/Anchor/bf09e>
+        a                 gpml:Anchor ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/ided1af2ed> ;
+        gpml:graphId      "bf09e"^^xsd:string ;
+        gpml:position     "0.5"^^xsd:double ;
+        gpml:shape        "None"^^xsd:string .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id8bd81f54/Point/a6764>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id8bd81f54> ;
+        gpml:graphRef     "e328b"^^xsd:string ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "1.0"^^xsd:double ;
+        gpml:x            "897.0"^^xsd:double ;
+        gpml:y            "183.0"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/idee0dba4>
+        a                   gpml:Interaction ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2618_r74397> ;
+        gpml:color          "0"^^xsd:string ;
+        gpml:connectorType  "Straight"^^xsd:string ;
+        gpml:graphId        "idee0dba4"^^xsd:string ;
+        gpml:hasPoint       <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/idee0dba4/Point/c84ef> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/idee0dba4/Point/cb733> ;
+        gpml:lineStyle      "Solid"^^xsd:string ;
+        gpml:lineThickness  "1.0"^^xsd:double ;
+        gpml:zorder         "12288"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/e40ea>
+        a                   gpml:Interaction ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2618_r74397> ;
+        gpml:color          "0"^^xsd:string ;
+        gpml:connectorType  "Straight"^^xsd:string ;
+        gpml:graphId        "e40ea"^^xsd:string ;
+        gpml:hasPoint       <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/e40ea/Point/c1330> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/e40ea/Point/a0f79> ;
+        gpml:lineStyle      "Solid"^^xsd:string ;
+        gpml:lineThickness  "1.0"^^xsd:double ;
+        gpml:zorder         "32788"^^xsd:long .
+
+<http://identifiers.org/tair.locus/AT5G42800>
+        a                   wp:GeneProduct , wp:DataNode ;
+        rdfs:label          "DFR"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/tair.locus/AT5G42800> ;
+        dcterms:identifier  "AT5G42800"^^xsd:string ;
+        dcterms:isPartOf    <http://identifiers.org/wikipathways/WP2618_r74397> ;
+        dcterms:source      "TAIR"^^xsd:string ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP2618_r74397/DataNode/d49de> .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/ide71a0bc6/Point/ffd5c>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/ide71a0bc6> ;
+        gpml:graphRef     "a6c07"^^xsd:string ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "1.0"^^xsd:double ;
+        gpml:x            "570.0"^^xsd:double ;
+        gpml:y            "182.0"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/e22fd/Point/cf809>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/e22fd> ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "979.0"^^xsd:double ;
+        gpml:y            "424.0"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/idee0dba4/Point/c84ef>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/idee0dba4> ;
+        gpml:graphRef     "eb6f6"^^xsd:string ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "1.0"^^xsd:double ;
+        gpml:x            "408.0"^^xsd:double ;
+        gpml:y            "181.0"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id1f3aa801/Point/e558e>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id1f3aa801> ;
+        gpml:graphRef     "bda70"^^xsd:string ;
+        gpml:relX         "1.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "1017.0"^^xsd:double ;
+        gpml:y            "223.0"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/DataNode/e5939>
+        a                    gpml:DataNode ;
+        dcterms:isPartOf     <http://rdf.wikipathways.org/Pathway/WP2618_r74397> ;
+        gpml:align           "Center"^^xsd:string ;
+        gpml:centerX         "978.0"^^xsd:double ;
+        gpml:centerY         "329.0"^^xsd:double ;
+        gpml:color           "ff"^^xsd:string ;
+        gpml:fillColor       "ffffff"^^xsd:string ;
+        gpml:fontDecoration  "Normal"^^xsd:string ;
+        gpml:fontName        "Arial"^^xsd:string ;
+        gpml:fontSize        "10.0"^^xsd:double ;
+        gpml:fontStrikethru  "Normal"^^xsd:string ;
+        gpml:fontStyle       "Normal"^^xsd:string ;
+        gpml:fontWeight      "Normal"^^xsd:string ;
+        gpml:graphId         "e5939"^^xsd:string ;
+        gpml:height          "20.0"^^xsd:double ;
+        gpml:lineStyle       "Solid"^^xsd:string ;
+        gpml:lineThickness   "1.0"^^xsd:double ;
+        gpml:shapeType       "Rectangle"^^xsd:string ;
+        gpml:textlabel       "Quercetin"^^xsd:string ;
+        gpml:type            "Metabolite"^^xsd:string ;
+        gpml:valign          "Middle"^^xsd:string ;
+        gpml:width           "80.0"^^xsd:double ;
+        gpml:zorder          "32768"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id82ffcd4a/Point/a9e1f>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id82ffcd4a> ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "530.0"^^xsd:double ;
+        gpml:y            "222.0"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/e22fd/Point/ed6f1>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/e22fd> ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "979.0"^^xsd:double ;
+        gpml:y            "381.0"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/idf7d94fdf/Point/e06d1>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/idf7d94fdf> ;
+        gpml:graphRef     "e5939"^^xsd:string ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "-1.0"^^xsd:double ;
+        gpml:x            "978.0"^^xsd:double ;
+        gpml:y            "319.0"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/dd55d>
+        a                   gpml:Interaction ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2618_r74397> ;
+        gpml:color          "0"^^xsd:string ;
+        gpml:connectorType  "Straight"^^xsd:string ;
+        gpml:graphId        "dd55d"^^xsd:string ;
+        gpml:hasPoint       <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/dd55d/Point/b4dba> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/dd55d/Point/b1b5e> ;
+        gpml:lineStyle      "Solid"^^xsd:string ;
+        gpml:lineThickness  "1.0"^^xsd:double ;
+        gpml:zorder         "32782"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id5bfdcbb5/Point/e24ae>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id5bfdcbb5> ;
+        gpml:graphRef     "c950c"^^xsd:string ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "1.0"^^xsd:double ;
+        gpml:x            "1059.0"^^xsd:double ;
+        gpml:y            "290.0"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/idee0dba4/Point/cb733>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/idee0dba4> ;
+        gpml:graphRef     "facd2"^^xsd:string ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "408.0"^^xsd:double ;
+        gpml:y            "221.0"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/e22fd/Anchor/cd18a>
+        a                 gpml:Anchor ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/e22fd> ;
+        gpml:graphId      "cd18a"^^xsd:string ;
+        gpml:position     "0.5"^^xsd:double ;
+        gpml:shape        "None"^^xsd:string .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/ida8660041>
+        a                   gpml:Interaction ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2618_r74397> ;
+        gpml:color          "0"^^xsd:string ;
+        gpml:connectorType  "Straight"^^xsd:string ;
+        gpml:graphId        "ida8660041"^^xsd:string ;
+        gpml:hasPoint       <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/ida8660041/Point/fb43b> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/ida8660041/Point/ff9df> ;
+        gpml:lineStyle      "Solid"^^xsd:string ;
+        gpml:lineThickness  "1.0"^^xsd:double ;
+        gpml:zorder         "12288"^^xsd:long .
+
+<http://identifiers.org/tair.locus/AT3G55120>
+        a                   wp:GeneProduct , wp:DataNode ;
+        rdfs:label          "CHI"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/tair.locus/AT3G55120> ;
+        dcterms:identifier  "AT3G55120"^^xsd:string ;
+        dcterms:isPartOf    <http://identifiers.org/wikipathways/WP2618_r74397> ;
+        dcterms:source      "TAIR"^^xsd:string ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP2618_r74397/DataNode/a6c07> .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id1f3aa801/Point/a30b5>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id1f3aa801> ;
+        gpml:graphRef     "ae4b5"^^xsd:string ;
+        gpml:relX         "-1.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "1100.0"^^xsd:double ;
+        gpml:y            "224.0"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/idd2dab152>
+        a                   gpml:Interaction ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2618_r74397> ;
+        gpml:color          "0"^^xsd:string ;
+        gpml:connectorType  "Straight"^^xsd:string ;
+        gpml:graphId        "idd2dab152"^^xsd:string ;
+        gpml:hasAnchor      <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/idd2dab152/Anchor/facd2> ;
+        gpml:hasPoint       <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/idd2dab152/Point/e73c5> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/idd2dab152/Point/dd3df> ;
+        gpml:lineStyle      "Solid"^^xsd:string ;
+        gpml:lineThickness  "1.0"^^xsd:double ;
+        gpml:zorder         "12288"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id1f3aa801>
+        a                   gpml:Interaction ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2618_r74397> ;
+        gpml:color          "0"^^xsd:string ;
+        gpml:connectorType  "Straight"^^xsd:string ;
+        gpml:graphId        "id1f3aa801"^^xsd:string ;
+        gpml:hasAnchor      <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id1f3aa801/Anchor/eb2cd> ;
+        gpml:hasPoint       <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id1f3aa801/Point/e558e> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id1f3aa801/Point/a30b5> ;
+        gpml:lineStyle      "Solid"^^xsd:string ;
+        gpml:lineThickness  "1.0"^^xsd:double ;
+        gpml:zorder         "12288"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/idf550dc2d>
+        a                   gpml:Interaction ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2618_r74397> ;
+        gpml:color          "0"^^xsd:string ;
+        gpml:connectorType  "Straight"^^xsd:string ;
+        gpml:graphId        "idf550dc2d"^^xsd:string ;
+        gpml:hasAnchor      <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/idf550dc2d/Anchor/ac416> ;
+        gpml:hasPoint       <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/idf550dc2d/Point/ed721> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/idf550dc2d/Point/e053f> ;
+        gpml:lineStyle      "Solid"^^xsd:string ;
+        gpml:lineThickness  "1.0"^^xsd:double ;
+        gpml:zorder         "12288"^^xsd:long .
+
+<http://identifiers.org/tair.locus/AT5G13930>
+        a                   wp:GeneProduct , wp:DataNode ;
+        rdfs:label          "CHS"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/tair.locus/AT5G13930> ;
+        dcterms:identifier  "AT5G13930"^^xsd:string ;
+        dcterms:isPartOf    <http://identifiers.org/wikipathways/WP2618_r74397> ;
+        dcterms:source      "TAIR"^^xsd:string ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP2618_r74397/DataNode/eb6f6> .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id56d94ed8/Point/c5cb2>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id56d94ed8> ;
+        gpml:graphRef     "bda70"^^xsd:string ;
+        gpml:relX         "-1.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "937.0"^^xsd:double ;
+        gpml:y            "223.0"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/f5ad8/Point/f468a>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/f5ad8> ;
+        gpml:graphRef     "abf03"^^xsd:string ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "811.5"^^xsd:double ;
+        gpml:y            "356.5"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/ide71a0bc6/Point/a2194>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/ide71a0bc6> ;
+        gpml:graphRef     "dcf1e"^^xsd:string ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "570.0"^^xsd:double ;
+        gpml:y            "222.0"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/c724e>
+        a                   gpml:Interaction ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2618_r74397> ;
+        gpml:color          "0"^^xsd:string ;
+        gpml:connectorType  "Straight"^^xsd:string ;
+        gpml:graphId        "c724e"^^xsd:string ;
+        gpml:hasPoint       <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/c724e/Point/ae853> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/c724e/Point/dc348> ;
+        gpml:lineStyle      "Solid"^^xsd:string ;
+        gpml:lineThickness  "1.0"^^xsd:double ;
+        gpml:zorder         "32779"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id796557aa/Point/babba>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id796557aa> ;
+        gpml:graphRef     "e5939"^^xsd:string ;
+        gpml:relX         "1.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "1018.0"^^xsd:double ;
+        gpml:y            "329.0"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id30fc63c0/Point/c1abb>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id30fc63c0> ;
+        gpml:graphRef     "a2c44"^^xsd:string ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "977.5"^^xsd:double ;
+        gpml:y            "276.0"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/c0842/Point/ef6eb>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/c0842> ;
+        gpml:graphRef     "de31d"^^xsd:string ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "-1.0"^^xsd:double ;
+        gpml:x            "1139.0"^^xsd:double ;
+        gpml:y            "430.0"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/DataNode/b69e4>
+        a                    gpml:DataNode ;
+        dcterms:isPartOf     <http://rdf.wikipathways.org/Pathway/WP2618_r74397> ;
+        gpml:align           "Center"^^xsd:string ;
+        gpml:centerX         "1232.0"^^xsd:double ;
+        gpml:centerY         "281.0"^^xsd:double ;
+        gpml:color           "0"^^xsd:string ;
+        gpml:fillColor       "ffffff"^^xsd:string ;
+        gpml:fontDecoration  "Normal"^^xsd:string ;
+        gpml:fontName        "Arial"^^xsd:string ;
+        gpml:fontSize        "10.0"^^xsd:double ;
+        gpml:fontStrikethru  "Normal"^^xsd:string ;
+        gpml:fontStyle       "Normal"^^xsd:string ;
+        gpml:fontWeight      "Normal"^^xsd:string ;
+        gpml:graphId         "b69e4"^^xsd:string ;
+        gpml:height          "20.0"^^xsd:double ;
+        gpml:lineStyle       "Solid"^^xsd:string ;
+        gpml:lineThickness   "1.0"^^xsd:double ;
+        gpml:shapeType       "Rectangle"^^xsd:string ;
+        gpml:textlabel       "UGT"^^xsd:string ;
+        gpml:type            "GeneProduct"^^xsd:string ;
+        gpml:valign          "Middle"^^xsd:string ;
+        gpml:width           "80.0"^^xsd:double ;
+        gpml:zorder          "32791"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/idd52dd42>
+        a                   gpml:Interaction ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2618_r74397> ;
+        gpml:color          "0"^^xsd:string ;
+        gpml:connectorType  "Straight"^^xsd:string ;
+        gpml:graphId        "idd52dd42"^^xsd:string ;
+        gpml:hasAnchor      <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/idd52dd42/Anchor/c62eb> ;
+        gpml:hasPoint       <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/idd52dd42/Point/f2c89> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/idd52dd42/Point/ef309> ;
+        gpml:lineStyle      "Solid"^^xsd:string ;
+        gpml:lineThickness  "1.0"^^xsd:double ;
+        gpml:zorder         "12288"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id53a85239/Point/fa57a>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id53a85239> ;
+        gpml:graphRef     "c38ee"^^xsd:string ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "811.0"^^xsd:double ;
+        gpml:y            "397.5"^^xsd:double .
+
+<http://identifiers.org/kegg.compound/C00974 >
+        a                   wp:Metabolite , wp:DataNode ;
+        rdfs:label          "dihydrokaempferol"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/kegg.compound/C00974 > ;
+        dcterms:identifier  "C00974 "^^xsd:string ;
+        dcterms:isPartOf    <http://identifiers.org/wikipathways/WP2618_r74397> ;
+        dcterms:source      "KEGG Compound"^^xsd:string ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP2618_r74397/DataNode/f6437> .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/d01a4/Point/bd2c6>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/d01a4> ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "1307.0"^^xsd:double ;
+        gpml:y            "282.0"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/f7084/Point/d1aa1>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/f7084> ;
+        gpml:graphRef     "b4caa"^^xsd:string ;
+        gpml:relX         "1.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "937.0"^^xsd:double ;
+        gpml:y            "393.0"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id8c404940>
+        a                   gpml:Interaction ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2618_r74397> ;
+        gpml:color          "0"^^xsd:string ;
+        gpml:connectorType  "Straight"^^xsd:string ;
+        gpml:graphId        "id8c404940"^^xsd:string ;
+        gpml:hasPoint       <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id8c404940/Point/e98e8> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id8c404940/Point/d12de> ;
+        gpml:lineStyle      "Solid"^^xsd:string ;
+        gpml:lineThickness  "1.0"^^xsd:double ;
+        gpml:zorder         "12288"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/ided1af2ed>
+        a                   gpml:Interaction ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2618_r74397> ;
+        gpml:color          "0"^^xsd:string ;
+        gpml:connectorType  "Straight"^^xsd:string ;
+        gpml:graphId        "ided1af2ed"^^xsd:string ;
+        gpml:hasAnchor      <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/ided1af2ed/Anchor/bf09e> ;
+        gpml:hasPoint       <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/ided1af2ed/Point/a67b5> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/ided1af2ed/Point/c6c24> ;
+        gpml:lineStyle      "Solid"^^xsd:string ;
+        gpml:lineThickness  "1.0"^^xsd:double ;
+        gpml:zorder         "12288"^^xsd:long .
+
+<http://identifiers.org/kegg.compound/C06561>
+        a                   wp:Metabolite , wp:DataNode ;
+        rdfs:label          "Naringenin chalcone"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/kegg.compound/C06561> ;
+        dcterms:identifier  "C06561"^^xsd:string ;
+        dcterms:isPartOf    <http://identifiers.org/wikipathways/WP2618_r74397> ;
+        dcterms:source      "KEGG Compound"^^xsd:string ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP2618_r74397/DataNode/d2890> .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/idd52dd42/Point/ef309>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/idd52dd42> ;
+        gpml:graphRef     "f6437"^^xsd:string ;
+        gpml:relX         "-1.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "771.0"^^xsd:double ;
+        gpml:y            "222.0"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/f7084/Point/a413f>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/f7084> ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "980.0"^^xsd:double ;
+        gpml:y            "392.5"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/DataNode/de31d>
+        a                    gpml:DataNode ;
+        dcterms:isPartOf     <http://rdf.wikipathways.org/Pathway/WP2618_r74397> ;
+        gpml:align           "Center"^^xsd:string ;
+        gpml:centerX         "1139.0"^^xsd:double ;
+        gpml:centerY         "440.0"^^xsd:double ;
+        gpml:color           "ff"^^xsd:string ;
+        gpml:fillColor       "ffffff"^^xsd:string ;
+        gpml:fontDecoration  "Normal"^^xsd:string ;
+        gpml:fontName        "Arial"^^xsd:string ;
+        gpml:fontSize        "10.0"^^xsd:double ;
+        gpml:fontStrikethru  "Normal"^^xsd:string ;
+        gpml:fontStyle       "Normal"^^xsd:string ;
+        gpml:fontWeight      "Normal"^^xsd:string ;
+        gpml:graphId         "de31d"^^xsd:string ;
+        gpml:height          "20.0"^^xsd:double ;
+        gpml:lineStyle       "Solid"^^xsd:string ;
+        gpml:lineThickness   "1.0"^^xsd:double ;
+        gpml:shapeType       "Rectangle"^^xsd:string ;
+        gpml:textlabel       "Isorhamnetin glycosides"^^xsd:string ;
+        gpml:type            "Metabolite"^^xsd:string ;
+        gpml:valign          "Middle"^^xsd:string ;
+        gpml:width           "80.0"^^xsd:double ;
+        gpml:zorder          "32785"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/DataNode/b0877>
+        a                    gpml:DataNode ;
+        dcterms:isPartOf     <http://rdf.wikipathways.org/Pathway/WP2618_r74397> ;
+        gpml:align           "Center"^^xsd:string ;
+        gpml:centerX         "977.0"^^xsd:double ;
+        gpml:centerY         "435.0"^^xsd:double ;
+        gpml:color           "ff"^^xsd:string ;
+        gpml:fillColor       "ffffff"^^xsd:string ;
+        gpml:fontDecoration  "Normal"^^xsd:string ;
+        gpml:fontName        "Arial"^^xsd:string ;
+        gpml:fontSize        "10.0"^^xsd:double ;
+        gpml:fontStrikethru  "Normal"^^xsd:string ;
+        gpml:fontStyle       "Normal"^^xsd:string ;
+        gpml:fontWeight      "Normal"^^xsd:string ;
+        gpml:graphId         "b0877"^^xsd:string ;
+        gpml:height          "20.0"^^xsd:double ;
+        gpml:lineStyle       "Solid"^^xsd:string ;
+        gpml:lineThickness   "1.0"^^xsd:double ;
+        gpml:shapeType       "Rectangle"^^xsd:string ;
+        gpml:textlabel       "Quercetin glycosides"^^xsd:string ;
+        gpml:type            "Metabolite"^^xsd:string ;
+        gpml:valign          "Middle"^^xsd:string ;
+        gpml:width           "80.0"^^xsd:double ;
+        gpml:zorder          "32778"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/idf550dc2d/Point/e053f>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/idf550dc2d> ;
+        gpml:graphRef     "e0772"^^xsd:string ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "-1.0"^^xsd:double ;
+        gpml:x            "812.0"^^xsd:double ;
+        gpml:y            "318.0"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id53a85239>
+        a                   gpml:Interaction ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2618_r74397> ;
+        gpml:color          "0"^^xsd:string ;
+        gpml:connectorType  "Straight"^^xsd:string ;
+        gpml:graphId        "id53a85239"^^xsd:string ;
+        gpml:hasPoint       <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id53a85239/Point/fa1fe> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id53a85239/Point/fa57a> ;
+        gpml:lineStyle      "Solid"^^xsd:string ;
+        gpml:lineThickness  "1.0"^^xsd:double ;
+        gpml:zorder         "12288"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/b17bf/Point/a80d1>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/b17bf> ;
+        gpml:graphRef     "f6db4"^^xsd:string ;
+        gpml:relX         "1.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "1270.0"^^xsd:double ;
+        gpml:y            "319.0"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/DataNode/e328b>
+        a                    gpml:DataNode ;
+        dcterms:isPartOf     <http://rdf.wikipathways.org/Pathway/WP2618_r74397> ;
+        gpml:align           "Center"^^xsd:string ;
+        gpml:centerX         "897.0"^^xsd:double ;
+        gpml:centerY         "173.0"^^xsd:double ;
+        gpml:color           "0"^^xsd:string ;
+        gpml:fillColor       "ffffff"^^xsd:string ;
+        gpml:fontDecoration  "Normal"^^xsd:string ;
+        gpml:fontName        "Arial"^^xsd:string ;
+        gpml:fontSize        "10.0"^^xsd:double ;
+        gpml:fontStrikethru  "Normal"^^xsd:string ;
+        gpml:fontStyle       "Normal"^^xsd:string ;
+        gpml:fontWeight      "Normal"^^xsd:string ;
+        gpml:graphId         "e328b"^^xsd:string ;
+        gpml:height          "20.0"^^xsd:double ;
+        gpml:lineStyle       "Solid"^^xsd:string ;
+        gpml:lineThickness   "1.0"^^xsd:double ;
+        gpml:shapeType       "Rectangle"^^xsd:string ;
+        gpml:textlabel       "F3'H"^^xsd:string ;
+        gpml:type            "GeneProduct"^^xsd:string ;
+        gpml:valign          "Middle"^^xsd:string ;
+        gpml:width           "80.0"^^xsd:double ;
+        gpml:zorder          "32768"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/b433e>
+        a                   gpml:Interaction ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2618_r74397> ;
+        gpml:color          "0"^^xsd:string ;
+        gpml:connectorType  "Straight"^^xsd:string ;
+        gpml:graphId        "b433e"^^xsd:string ;
+        gpml:hasAnchor      <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/b433e/Anchor/abf03> ;
+        gpml:hasPoint       <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/b433e/Point/c74e8> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/b433e/Point/e3212> ;
+        gpml:lineStyle      "Solid"^^xsd:string ;
+        gpml:lineThickness  "1.0"^^xsd:double ;
+        gpml:zorder         "32769"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id56b609cc>
+        a                   gpml:Interaction ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2618_r74397> ;
+        gpml:color          "0"^^xsd:string ;
+        gpml:connectorType  "Straight"^^xsd:string ;
+        gpml:graphId        "id56b609cc"^^xsd:string ;
+        gpml:hasAnchor      <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id56b609cc/Anchor/c38ee> ;
+        gpml:hasPoint       <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id56b609cc/Point/d5043> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id56b609cc/Point/fbbe1> ;
+        gpml:lineStyle      "Solid"^^xsd:string ;
+        gpml:lineThickness  "1.0"^^xsd:double ;
+        gpml:zorder         "12288"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/DataNode/a6c07>
+        a                    gpml:DataNode ;
+        dcterms:isPartOf     <http://rdf.wikipathways.org/Pathway/WP2618_r74397> ;
+        gpml:align           "Center"^^xsd:string ;
+        gpml:centerX         "570.0"^^xsd:double ;
+        gpml:centerY         "172.0"^^xsd:double ;
+        gpml:color           "0"^^xsd:string ;
+        gpml:fillColor       "ffffff"^^xsd:string ;
+        gpml:fontDecoration  "Normal"^^xsd:string ;
+        gpml:fontName        "Arial"^^xsd:string ;
+        gpml:fontSize        "10.0"^^xsd:double ;
+        gpml:fontStrikethru  "Normal"^^xsd:string ;
+        gpml:fontStyle       "Normal"^^xsd:string ;
+        gpml:fontWeight      "Normal"^^xsd:string ;
+        gpml:graphId         "a6c07"^^xsd:string ;
+        gpml:height          "20.0"^^xsd:double ;
+        gpml:lineStyle       "Solid"^^xsd:string ;
+        gpml:lineThickness   "1.0"^^xsd:double ;
+        gpml:shapeType       "Rectangle"^^xsd:string ;
+        gpml:textlabel       "CHI"^^xsd:string ;
+        gpml:type            "GeneProduct"^^xsd:string ;
+        gpml:valign          "Middle"^^xsd:string ;
+        gpml:width           "80.0"^^xsd:double ;
+        gpml:xrefDataSource  "TAIR"^^xsd:string ;
+        gpml:xrefId          "AT3G55120"^^xsd:string ;
+        gpml:zorder          "32768"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/idf7d94fdf/Point/b68ed>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/idf7d94fdf> ;
+        gpml:graphRef     "bda70"^^xsd:string ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "1.0"^^xsd:double ;
+        gpml:x            "977.0"^^xsd:double ;
+        gpml:y            "233.0"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id6417b99a>
+        a                   gpml:Interaction ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2618_r74397> ;
+        gpml:color          "0"^^xsd:string ;
+        gpml:connectorType  "Straight"^^xsd:string ;
+        gpml:graphId        "id6417b99a"^^xsd:string ;
+        gpml:hasPoint       <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id6417b99a/Point/d5687> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id6417b99a/Point/c4ce4> ;
+        gpml:lineStyle      "Solid"^^xsd:string ;
+        gpml:lineThickness  "1.0"^^xsd:double ;
+        gpml:zorder         "12288"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/DataNode/a77ee>
+        a                    gpml:DataNode ;
+        dcterms:isPartOf     <http://rdf.wikipathways.org/Pathway/WP2618_r74397> ;
+        gpml:align           "Center"^^xsd:string ;
+        gpml:centerX         "1302.0"^^xsd:double ;
+        gpml:centerY         "439.0"^^xsd:double ;
+        gpml:color           "ff"^^xsd:string ;
+        gpml:fillColor       "ffffff"^^xsd:string ;
+        gpml:fontDecoration  "Normal"^^xsd:string ;
+        gpml:fontName        "Arial"^^xsd:string ;
+        gpml:fontSize        "10.0"^^xsd:double ;
+        gpml:fontStrikethru  "Normal"^^xsd:string ;
+        gpml:fontStyle       "Normal"^^xsd:string ;
+        gpml:fontWeight      "Normal"^^xsd:string ;
+        gpml:graphId         "a77ee"^^xsd:string ;
+        gpml:height          "20.0"^^xsd:double ;
+        gpml:lineStyle       "Solid"^^xsd:string ;
+        gpml:lineThickness   "1.0"^^xsd:double ;
+        gpml:shapeType       "Rectangle"^^xsd:string ;
+        gpml:textlabel       "Cyanidin glycosides"^^xsd:string ;
+        gpml:type            "Metabolite"^^xsd:string ;
+        gpml:valign          "Middle"^^xsd:string ;
+        gpml:width           "80.0"^^xsd:double ;
+        gpml:zorder          "32796"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/b433e/Point/e3212>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/b433e> ;
+        gpml:graphRef     "e0772"^^xsd:string ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "1.0"^^xsd:double ;
+        gpml:x            "812.0"^^xsd:double ;
+        gpml:y            "338.0"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/fc96c/Point/e0192>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/fc96c> ;
+        gpml:graphRef     "c4a94"^^xsd:string ;
+        gpml:relX         "1.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "1272.0"^^xsd:double ;
+        gpml:y            "251.0"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/DataNode/e0772>
+        a                    gpml:DataNode ;
+        dcterms:isPartOf     <http://rdf.wikipathways.org/Pathway/WP2618_r74397> ;
+        gpml:align           "Center"^^xsd:string ;
+        gpml:centerX         "812.0"^^xsd:double ;
+        gpml:centerY         "328.0"^^xsd:double ;
+        gpml:color           "ff"^^xsd:string ;
+        gpml:fillColor       "ffffff"^^xsd:string ;
+        gpml:fontDecoration  "Normal"^^xsd:string ;
+        gpml:fontName        "Arial"^^xsd:string ;
+        gpml:fontSize        "10.0"^^xsd:double ;
+        gpml:fontStrikethru  "Normal"^^xsd:string ;
+        gpml:fontStyle       "Normal"^^xsd:string ;
+        gpml:fontWeight      "Normal"^^xsd:string ;
+        gpml:graphId         "e0772"^^xsd:string ;
+        gpml:height          "20.0"^^xsd:double ;
+        gpml:lineStyle       "Solid"^^xsd:string ;
+        gpml:lineThickness   "1.0"^^xsd:double ;
+        gpml:shapeType       "Rectangle"^^xsd:string ;
+        gpml:textlabel       "Kaempferol"^^xsd:string ;
+        gpml:type            "Metabolite"^^xsd:string ;
+        gpml:valign          "Middle"^^xsd:string ;
+        gpml:width           "80.0"^^xsd:double ;
+        gpml:zorder          "32768"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/DataNode/c950c>
+        a                    gpml:DataNode ;
+        dcterms:isPartOf     <http://rdf.wikipathways.org/Pathway/WP2618_r74397> ;
+        gpml:align           "Center"^^xsd:string ;
+        gpml:centerX         "1059.0"^^xsd:double ;
+        gpml:centerY         "280.0"^^xsd:double ;
+        gpml:color           "0"^^xsd:string ;
+        gpml:fillColor       "ffffff"^^xsd:string ;
+        gpml:fontDecoration  "Normal"^^xsd:string ;
+        gpml:fontName        "Arial"^^xsd:string ;
+        gpml:fontSize        "10.0"^^xsd:double ;
+        gpml:fontStrikethru  "Normal"^^xsd:string ;
+        gpml:fontStyle       "Normal"^^xsd:string ;
+        gpml:fontWeight      "Normal"^^xsd:string ;
+        gpml:graphId         "c950c"^^xsd:string ;
+        gpml:height          "20.0"^^xsd:double ;
+        gpml:lineStyle       "Solid"^^xsd:string ;
+        gpml:lineThickness   "1.0"^^xsd:double ;
+        gpml:shapeType       "Rectangle"^^xsd:string ;
+        gpml:textlabel       "OMT"^^xsd:string ;
+        gpml:type            "GeneProduct"^^xsd:string ;
+        gpml:valign          "Middle"^^xsd:string ;
+        gpml:width           "80.0"^^xsd:double ;
+        gpml:zorder          "32768"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/DataNode/d1c63>
+        a                    gpml:DataNode ;
+        dcterms:isPartOf     <http://rdf.wikipathways.org/Pathway/WP2618_r74397> ;
+        gpml:align           "Center"^^xsd:string ;
+        gpml:centerX         "1302.0"^^xsd:double ;
+        gpml:centerY         "223.0"^^xsd:double ;
+        gpml:color           "ff"^^xsd:string ;
+        gpml:fillColor       "ffffff"^^xsd:string ;
+        gpml:fontDecoration  "Normal"^^xsd:string ;
+        gpml:fontName        "Arial"^^xsd:string ;
+        gpml:fontSize        "10.0"^^xsd:double ;
+        gpml:fontStrikethru  "Normal"^^xsd:string ;
+        gpml:fontStyle       "Normal"^^xsd:string ;
+        gpml:fontWeight      "Normal"^^xsd:string ;
+        gpml:graphId         "d1c63"^^xsd:string ;
+        gpml:height          "20.0"^^xsd:double ;
+        gpml:lineStyle       "Solid"^^xsd:string ;
+        gpml:lineThickness   "1.0"^^xsd:double ;
+        gpml:shapeType       "Rectangle"^^xsd:string ;
+        gpml:textlabel       "Cyanidin"^^xsd:string ;
+        gpml:type            "Metabolite"^^xsd:string ;
+        gpml:valign          "Middle"^^xsd:string ;
+        gpml:width           "80.0"^^xsd:double ;
+        gpml:zorder          "32768"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/DataNode/b7b97>
+        a                    gpml:DataNode ;
+        dcterms:isPartOf     <http://rdf.wikipathways.org/Pathway/WP2618_r74397> ;
+        gpml:align           "Center"^^xsd:string ;
+        gpml:centerX         "1222.0"^^xsd:double ;
+        gpml:centerY         "173.0"^^xsd:double ;
+        gpml:color           "0"^^xsd:string ;
+        gpml:fillColor       "ffffff"^^xsd:string ;
+        gpml:fontDecoration  "Normal"^^xsd:string ;
+        gpml:fontName        "Arial"^^xsd:string ;
+        gpml:fontSize        "10.0"^^xsd:double ;
+        gpml:fontStrikethru  "Normal"^^xsd:string ;
+        gpml:fontStyle       "Normal"^^xsd:string ;
+        gpml:fontWeight      "Normal"^^xsd:string ;
+        gpml:graphId         "b7b97"^^xsd:string ;
+        gpml:height          "20.0"^^xsd:double ;
+        gpml:lineStyle       "Solid"^^xsd:string ;
+        gpml:lineThickness   "1.0"^^xsd:double ;
+        gpml:shapeType       "Rectangle"^^xsd:string ;
+        gpml:textlabel       "LDOX/ANS"^^xsd:string ;
+        gpml:type            "GeneProduct"^^xsd:string ;
+        gpml:valign          "Middle"^^xsd:string ;
+        gpml:width           "80.0"^^xsd:double ;
+        gpml:xrefDataSource  "TAIR"^^xsd:string ;
+        gpml:xrefId          "AT4G22880"^^xsd:string ;
+        gpml:zorder          "32768"^^xsd:long .
+
+<http://identifiers.org/kegg.compound/C00811>
+        a                   wp:Metabolite , wp:DataNode ;
+        rdfs:label          "p-Coumarate"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/kegg.compound/C00811> ;
+        dcterms:identifier  "C00811"^^xsd:string ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2618_r74397/WP/Interaction/id615bf953> , <http://identifiers.org/wikipathways/WP2618_r74397> ;
+        dcterms:source      "KEGG Compound"^^xsd:string ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP2618_r74397/DataNode/a1da5> .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id5bfdcbb5>
+        a                   gpml:Interaction ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2618_r74397> ;
+        gpml:color          "0"^^xsd:string ;
+        gpml:connectorType  "Straight"^^xsd:string ;
+        gpml:graphId        "id5bfdcbb5"^^xsd:string ;
+        gpml:hasPoint       <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id5bfdcbb5/Point/f1d93> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id5bfdcbb5/Point/e24ae> ;
+        gpml:lineStyle      "Solid"^^xsd:string ;
+        gpml:lineThickness  "1.0"^^xsd:double ;
+        gpml:zorder         "12288"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/DataNode/c4a94>
+        a                    gpml:DataNode ;
+        dcterms:isPartOf     <http://rdf.wikipathways.org/Pathway/WP2618_r74397> ;
+        gpml:align           "Center"^^xsd:string ;
+        gpml:centerX         "1232.0"^^xsd:double ;
+        gpml:centerY         "251.0"^^xsd:double ;
+        gpml:color           "0"^^xsd:string ;
+        gpml:fillColor       "ffffff"^^xsd:string ;
+        gpml:fontDecoration  "Normal"^^xsd:string ;
+        gpml:fontName        "Arial"^^xsd:string ;
+        gpml:fontSize        "10.0"^^xsd:double ;
+        gpml:fontStrikethru  "Normal"^^xsd:string ;
+        gpml:fontStyle       "Normal"^^xsd:string ;
+        gpml:fontWeight      "Normal"^^xsd:string ;
+        gpml:graphId         "c4a94"^^xsd:string ;
+        gpml:height          "20.0"^^xsd:double ;
+        gpml:lineStyle       "Solid"^^xsd:string ;
+        gpml:lineThickness   "1.0"^^xsd:double ;
+        gpml:shapeType       "Rectangle"^^xsd:string ;
+        gpml:textlabel       "UGT"^^xsd:string ;
+        gpml:type            "GeneProduct"^^xsd:string ;
+        gpml:valign          "Middle"^^xsd:string ;
+        gpml:width           "80.0"^^xsd:double ;
+        gpml:zorder          "32790"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/DataNode/d2890>
+        a                    gpml:DataNode ;
+        dcterms:isPartOf     <http://rdf.wikipathways.org/Pathway/WP2618_r74397> ;
+        gpml:align           "Center"^^xsd:string ;
+        gpml:centerX         "488.0"^^xsd:double ;
+        gpml:centerY         "221.0"^^xsd:double ;
+        gpml:color           "ff"^^xsd:string ;
+        gpml:fillColor       "ffffff"^^xsd:string ;
+        gpml:fontDecoration  "Normal"^^xsd:string ;
+        gpml:fontName        "Arial"^^xsd:string ;
+        gpml:fontSize        "10.0"^^xsd:double ;
+        gpml:fontStrikethru  "Normal"^^xsd:string ;
+        gpml:fontStyle       "Normal"^^xsd:string ;
+        gpml:fontWeight      "Normal"^^xsd:string ;
+        gpml:graphId         "d2890"^^xsd:string ;
+        gpml:height          "20.0"^^xsd:double ;
+        gpml:lineStyle       "Solid"^^xsd:string ;
+        gpml:lineThickness   "1.0"^^xsd:double ;
+        gpml:shapeType       "Rectangle"^^xsd:string ;
+        gpml:textlabel       "Naringenin chalcone"^^xsd:string ;
+        gpml:type            "Metabolite"^^xsd:string ;
+        gpml:valign          "Middle"^^xsd:string ;
+        gpml:width           "80.0"^^xsd:double ;
+        gpml:xrefDataSource  "KEGG Compound"^^xsd:string ;
+        gpml:xrefId          "C06561"^^xsd:string ;
+        gpml:zorder          "32768"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/DataNode/b91e5>
+        a                    gpml:DataNode ;
+        dcterms:isPartOf     <http://rdf.wikipathways.org/Pathway/WP2618_r74397> ;
+        gpml:align           "Center"^^xsd:string ;
+        gpml:centerX         "1064.0"^^xsd:double ;
+        gpml:centerY         "399.0"^^xsd:double ;
+        gpml:color           "0"^^xsd:string ;
+        gpml:fillColor       "ffffff"^^xsd:string ;
+        gpml:fontDecoration  "Normal"^^xsd:string ;
+        gpml:fontName        "Arial"^^xsd:string ;
+        gpml:fontSize        "10.0"^^xsd:double ;
+        gpml:fontStrikethru  "Normal"^^xsd:string ;
+        gpml:fontStyle       "Normal"^^xsd:string ;
+        gpml:fontWeight      "Normal"^^xsd:string ;
+        gpml:graphId         "b91e5"^^xsd:string ;
+        gpml:height          "20.0"^^xsd:double ;
+        gpml:lineStyle       "Solid"^^xsd:string ;
+        gpml:lineThickness   "1.0"^^xsd:double ;
+        gpml:shapeType       "Rectangle"^^xsd:string ;
+        gpml:textlabel       "UGT"^^xsd:string ;
+        gpml:type            "GeneProduct"^^xsd:string ;
+        gpml:valign          "Middle"^^xsd:string ;
+        gpml:width           "80.0"^^xsd:double ;
+        gpml:zorder          "32783"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/DataNode/e0d8b>
+        a                    gpml:DataNode ;
+        dcterms:isPartOf     <http://rdf.wikipathways.org/Pathway/WP2618_r74397> ;
+        gpml:align           "Center"^^xsd:string ;
+        gpml:centerX         "739.0"^^xsd:double ;
+        gpml:centerY         "265.0"^^xsd:double ;
+        gpml:color           "0"^^xsd:string ;
+        gpml:fillColor       "ffffff"^^xsd:string ;
+        gpml:fontDecoration  "Normal"^^xsd:string ;
+        gpml:fontName        "Arial"^^xsd:string ;
+        gpml:fontSize        "10.0"^^xsd:double ;
+        gpml:fontStrikethru  "Normal"^^xsd:string ;
+        gpml:fontStyle       "Normal"^^xsd:string ;
+        gpml:fontWeight      "Normal"^^xsd:string ;
+        gpml:graphId         "e0d8b"^^xsd:string ;
+        gpml:height          "20.0"^^xsd:double ;
+        gpml:lineStyle       "Solid"^^xsd:string ;
+        gpml:lineThickness   "1.0"^^xsd:double ;
+        gpml:shapeType       "Rectangle"^^xsd:string ;
+        gpml:textlabel       "FLS"^^xsd:string ;
+        gpml:type            "GeneProduct"^^xsd:string ;
+        gpml:valign          "Middle"^^xsd:string ;
+        gpml:width           "80.0"^^xsd:double ;
+        gpml:xrefDataSource  "TAIR"^^xsd:string ;
+        gpml:xrefId          "AT5G08640"^^xsd:string ;
+        gpml:zorder          "32768"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id6417b99a/Point/d5687>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id6417b99a> ;
+        gpml:graphRef     "eb5b9"^^xsd:string ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "248.0"^^xsd:double ;
+        gpml:y            "220.0"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/idd2dab152/Point/dd3df>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/idd2dab152> ;
+        gpml:graphRef     "d2890"^^xsd:string ;
+        gpml:relX         "-1.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "448.0"^^xsd:double ;
+        gpml:y            "221.0"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/b433e/Point/c74e8>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/b433e> ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "811.0"^^xsd:double ;
+        gpml:y            "375.0"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/DataNode/cbc3c>
+        a                    gpml:DataNode ;
+        dcterms:isPartOf     <http://rdf.wikipathways.org/Pathway/WP2618_r74397> ;
+        gpml:align           "Center"^^xsd:string ;
+        gpml:centerX         "904.0"^^xsd:double ;
+        gpml:centerY         "353.0"^^xsd:double ;
+        gpml:color           "0"^^xsd:string ;
+        gpml:fillColor       "ffffff"^^xsd:string ;
+        gpml:fontDecoration  "Normal"^^xsd:string ;
+        gpml:fontName        "Arial"^^xsd:string ;
+        gpml:fontSize        "10.0"^^xsd:double ;
+        gpml:fontStrikethru  "Normal"^^xsd:string ;
+        gpml:fontStyle       "Normal"^^xsd:string ;
+        gpml:fontWeight      "Normal"^^xsd:string ;
+        gpml:graphId         "cbc3c"^^xsd:string ;
+        gpml:height          "20.0"^^xsd:double ;
+        gpml:lineStyle       "Solid"^^xsd:string ;
+        gpml:lineThickness   "1.0"^^xsd:double ;
+        gpml:shapeType       "Rectangle"^^xsd:string ;
+        gpml:textlabel       "UGT"^^xsd:string ;
+        gpml:type            "GeneProduct"^^xsd:string ;
+        gpml:valign          "Middle"^^xsd:string ;
+        gpml:width           "80.0"^^xsd:double ;
+        gpml:zorder          "32772"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/cc506/Point/d7f60>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/cc506> ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "1302.0"^^xsd:double ;
+        gpml:y            "274.0"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/InfoBox/ad2fd>
+        a                 gpml:InfoBox ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> ;
+        gpml:centerX      "0.0"^^xsd:double ;
+        gpml:centerY      "0.0"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id615bf953>
+        a                   gpml:Interaction ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2618_r74397> ;
+        gpml:color          "0"^^xsd:string ;
+        gpml:connectorType  "Straight"^^xsd:string ;
+        gpml:graphId        "id615bf953"^^xsd:string ;
+        gpml:hasAnchor      <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id615bf953/Anchor/eb5b9> ;
+        gpml:hasPoint       <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id615bf953/Point/b3864> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id615bf953/Point/b9b83> ;
+        gpml:lineStyle      "Solid"^^xsd:string ;
+        gpml:lineThickness  "1.0"^^xsd:double ;
+        gpml:zorder         "12288"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/f6809/Point/cb040>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/f6809> ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "980.0"^^xsd:double ;
+        gpml:y            "355.0"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/b86a0/Point/cf89f>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/b86a0> ;
+        gpml:graphRef     "e5939"^^xsd:string ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "1.0"^^xsd:double ;
+        gpml:x            "978.0"^^xsd:double ;
+        gpml:y            "339.0"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/b433e/Anchor/abf03>
+        a                 gpml:Anchor ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/b433e> ;
+        gpml:graphId      "abf03"^^xsd:string ;
+        gpml:position     "0.5"^^xsd:double ;
+        gpml:shape        "None"^^xsd:string .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/f5ad8>
+        a                   gpml:Interaction ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2618_r74397> ;
+        gpml:color          "0"^^xsd:string ;
+        gpml:connectorType  "Straight"^^xsd:string ;
+        gpml:graphId        "f5ad8"^^xsd:string ;
+        gpml:hasPoint       <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/f5ad8/Point/f468a> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/f5ad8/Point/f9c50> ;
+        gpml:lineStyle      "Solid"^^xsd:string ;
+        gpml:lineThickness  "1.0"^^xsd:double ;
+        gpml:zorder         "32771"^^xsd:long .
+
+<http://identifiers.org/tair.locus/AT5G08640>
+        a                   wp:GeneProduct , wp:DataNode ;
+        rdfs:label          "FLS"^^xsd:string ;
+        dc:identifier       <http://identifiers.org/tair.locus/AT5G08640> ;
+        dcterms:identifier  "AT5G08640"^^xsd:string ;
+        dcterms:isPartOf    <http://identifiers.org/wikipathways/WP2618_r74397> ;
+        dcterms:source      "TAIR"^^xsd:string ;
+        wp:isAbout          <http://rdf.wikipathways.org/Pathway/WP2618_r74397/DataNode/c5782> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/DataNode/e0d8b> .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id796557aa/Anchor/a87fe>
+        a                 gpml:Anchor ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id796557aa> ;
+        gpml:graphId      "a87fe"^^xsd:string ;
+        gpml:position     "0.5"^^xsd:double ;
+        gpml:shape        "None"^^xsd:string .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/DataNode/c9c62>
+        a                    gpml:DataNode ;
+        dcterms:isPartOf     <http://rdf.wikipathways.org/Pathway/WP2618_r74397> ;
+        gpml:align           "Center"^^xsd:string ;
+        gpml:centerX         "811.0"^^xsd:double ;
+        gpml:centerY         "429.0"^^xsd:double ;
+        gpml:color           "ff"^^xsd:string ;
+        gpml:fillColor       "ffffff"^^xsd:string ;
+        gpml:fontDecoration  "Normal"^^xsd:string ;
+        gpml:fontName        "Arial"^^xsd:string ;
+        gpml:fontSize        "10.0"^^xsd:double ;
+        gpml:fontStrikethru  "Normal"^^xsd:string ;
+        gpml:fontStyle       "Normal"^^xsd:string ;
+        gpml:fontWeight      "Normal"^^xsd:string ;
+        gpml:graphId         "c9c62"^^xsd:string ;
+        gpml:height          "20.0"^^xsd:double ;
+        gpml:lineStyle       "Solid"^^xsd:string ;
+        gpml:lineThickness   "1.0"^^xsd:double ;
+        gpml:shapeType       "Rectangle"^^xsd:string ;
+        gpml:textlabel       "Kaempferol glycosides"^^xsd:string ;
+        gpml:type            "Metabolite"^^xsd:string ;
+        gpml:valign          "Middle"^^xsd:string ;
+        gpml:width           "80.0"^^xsd:double ;
+        gpml:zorder          "32768"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/bdeea/Point/ba332>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/bdeea> ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "1302.0"^^xsd:double ;
+        gpml:y            "309.0"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id1262fd7a/Point/f3580>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id1262fd7a> ;
+        gpml:graphRef     "b7b97"^^xsd:string ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "1.0"^^xsd:double ;
+        gpml:x            "1222.0"^^xsd:double ;
+        gpml:y            "183.0"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/c724e/Point/dc348>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/c724e> ;
+        gpml:graphRef     "ccbce"^^xsd:string ;
+        gpml:relX         "1.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "1103.0"^^xsd:double ;
+        gpml:y            "365.0"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/ida8660041/Point/fb43b>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/ida8660041> ;
+        gpml:graphRef     "ac416"^^xsd:string ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "811.5"^^xsd:double ;
+        gpml:y            "275.0"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/DataNode/ccbce>
+        a                    gpml:DataNode ;
+        dcterms:isPartOf     <http://rdf.wikipathways.org/Pathway/WP2618_r74397> ;
+        gpml:align           "Center"^^xsd:string ;
+        gpml:centerX         "1063.0"^^xsd:double ;
+        gpml:centerY         "365.0"^^xsd:double ;
+        gpml:color           "0"^^xsd:string ;
+        gpml:fillColor       "ffffff"^^xsd:string ;
+        gpml:fontDecoration  "Normal"^^xsd:string ;
+        gpml:fontName        "Arial"^^xsd:string ;
+        gpml:fontSize        "10.0"^^xsd:double ;
+        gpml:fontStrikethru  "Normal"^^xsd:string ;
+        gpml:fontStyle       "Normal"^^xsd:string ;
+        gpml:fontWeight      "Normal"^^xsd:string ;
+        gpml:graphId         "ccbce"^^xsd:string ;
+        gpml:height          "20.0"^^xsd:double ;
+        gpml:lineStyle       "Solid"^^xsd:string ;
+        gpml:lineThickness   "1.0"^^xsd:double ;
+        gpml:shapeType       "Rectangle"^^xsd:string ;
+        gpml:textlabel       "UGT"^^xsd:string ;
+        gpml:type            "GeneProduct"^^xsd:string ;
+        gpml:valign          "Middle"^^xsd:string ;
+        gpml:width           "80.0"^^xsd:double ;
+        gpml:zorder          "32780"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/ided1af2ed/Point/c6c24>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/ided1af2ed> ;
+        gpml:graphRef     "d1c63"^^xsd:string ;
+        gpml:relX         "-1.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "1262.0"^^xsd:double ;
+        gpml:y            "223.0"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/idd52dd42/Point/f2c89>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/idd52dd42> ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "691.0"^^xsd:double ;
+        gpml:y            "222.0"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id1262fd7a/Point/e9294>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id1262fd7a> ;
+        gpml:graphRef     "bf09e"^^xsd:string ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "1221.0"^^xsd:double ;
+        gpml:y            "223.5"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/DataNode/c5782>
+        a                    gpml:DataNode ;
+        dcterms:isPartOf     <http://rdf.wikipathways.org/Pathway/WP2618_r74397> ;
+        gpml:align           "Center"^^xsd:string ;
+        gpml:centerX         "905.0"^^xsd:double ;
+        gpml:centerY         "267.0"^^xsd:double ;
+        gpml:color           "0"^^xsd:string ;
+        gpml:fillColor       "ffffff"^^xsd:string ;
+        gpml:fontDecoration  "Normal"^^xsd:string ;
+        gpml:fontName        "Arial"^^xsd:string ;
+        gpml:fontSize        "10.0"^^xsd:double ;
+        gpml:fontStrikethru  "Normal"^^xsd:string ;
+        gpml:fontStyle       "Normal"^^xsd:string ;
+        gpml:fontWeight      "Normal"^^xsd:string ;
+        gpml:graphId         "c5782"^^xsd:string ;
+        gpml:height          "20.0"^^xsd:double ;
+        gpml:lineStyle       "Solid"^^xsd:string ;
+        gpml:lineThickness   "1.0"^^xsd:double ;
+        gpml:shapeType       "Rectangle"^^xsd:string ;
+        gpml:textlabel       "FLS"^^xsd:string ;
+        gpml:type            "GeneProduct"^^xsd:string ;
+        gpml:valign          "Middle"^^xsd:string ;
+        gpml:width           "80.0"^^xsd:double ;
+        gpml:xrefDataSource  "TAIR"^^xsd:string ;
+        gpml:xrefId          "AT5G08640"^^xsd:string ;
+        gpml:zorder          "32768"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id56b609cc/Point/d5043>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id56b609cc> ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "811.0"^^xsd:double ;
+        gpml:y            "376.0"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/DataNode/d49de>
+        a                    gpml:DataNode ;
+        dcterms:isPartOf     <http://rdf.wikipathways.org/Pathway/WP2618_r74397> ;
+        gpml:align           "Center"^^xsd:string ;
+        gpml:centerX         "1059.0"^^xsd:double ;
+        gpml:centerY         "174.0"^^xsd:double ;
+        gpml:color           "0"^^xsd:string ;
+        gpml:fillColor       "ffffff"^^xsd:string ;
+        gpml:fontDecoration  "Normal"^^xsd:string ;
+        gpml:fontName        "Arial"^^xsd:string ;
+        gpml:fontSize        "10.0"^^xsd:double ;
+        gpml:fontStrikethru  "Normal"^^xsd:string ;
+        gpml:fontStyle       "Normal"^^xsd:string ;
+        gpml:fontWeight      "Normal"^^xsd:string ;
+        gpml:graphId         "d49de"^^xsd:string ;
+        gpml:height          "20.0"^^xsd:double ;
+        gpml:lineStyle       "Solid"^^xsd:string ;
+        gpml:lineThickness   "1.0"^^xsd:double ;
+        gpml:shapeType       "Rectangle"^^xsd:string ;
+        gpml:textlabel       "DFR"^^xsd:string ;
+        gpml:type            "GeneProduct"^^xsd:string ;
+        gpml:valign          "Middle"^^xsd:string ;
+        gpml:width           "80.0"^^xsd:double ;
+        gpml:xrefDataSource  "TAIR"^^xsd:string ;
+        gpml:xrefId          "AT5G42800"^^xsd:string ;
+        gpml:zorder          "32768"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/dd55d/Point/b1b5e>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/dd55d> ;
+        gpml:graphRef     "ad14f"^^xsd:string ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "1.0"^^xsd:double ;
+        gpml:x            "1139.0"^^xsd:double ;
+        gpml:y            "340.0"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id53a85239/Point/fa1fe>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id53a85239> ;
+        gpml:graphRef     "ff0a8"^^xsd:string ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "1.0"^^xsd:double ;
+        gpml:x            "735.0"^^xsd:double ;
+        gpml:y            "399.0"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/idd0261794>
+        a                   gpml:Interaction ;
+        dcterms:isPartOf    <http://rdf.wikipathways.org/Pathway/WP2618_r74397> ;
+        gpml:color          "0"^^xsd:string ;
+        gpml:connectorType  "Straight"^^xsd:string ;
+        gpml:graphId        "idd0261794"^^xsd:string ;
+        gpml:hasPoint       <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/idd0261794/Point/a721e> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/idd0261794/Point/b3bdb> ;
+        gpml:lineStyle      "Solid"^^xsd:string ;
+        gpml:lineThickness  "1.0"^^xsd:double ;
+        gpml:zorder         "12288"^^xsd:long .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id615bf953/Anchor/eb5b9>
+        a                 gpml:Anchor ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/id615bf953> ;
+        gpml:graphId      "eb5b9"^^xsd:string ;
+        gpml:position     "0.5"^^xsd:double ;
+        gpml:shape        "None"^^xsd:string .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/b86a0/Point/d35c9>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/b86a0> ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "979.0"^^xsd:double ;
+        gpml:y            "380.0"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/idd0261794/Point/a721e>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/idd0261794> ;
+        gpml:graphRef     "c62eb"^^xsd:string ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "731.0"^^xsd:double ;
+        gpml:y            "222.0"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/b17bf/Point/a123d>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/b17bf> ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "0.0"^^xsd:double ;
+        gpml:x            "1305.0"^^xsd:double ;
+        gpml:y            "320.0"^^xsd:double .
+
+<http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/idf550dc2d/Point/ed721>
+        a                 gpml:Point ;
+        dcterms:isPartOf  <http://rdf.wikipathways.org/Pathway/WP2618_r74397> , <http://rdf.wikipathways.org/Pathway/WP2618_r74397/Interaction/idf550dc2d> ;
+        gpml:graphRef     "f6437"^^xsd:string ;
+        gpml:relX         "0.0"^^xsd:double ;
+        gpml:relY         "1.0"^^xsd:double ;
+        gpml:x            "811.0"^^xsd:double ;
+        gpml:y            "232.0"^^xsd:double .

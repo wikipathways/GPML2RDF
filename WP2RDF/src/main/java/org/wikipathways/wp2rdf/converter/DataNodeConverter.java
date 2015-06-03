@@ -59,7 +59,7 @@ public class DataNodeConverter {
 		if(elem.getXref() != null && elem.getXref().getId() != null && elem.getXref().getDataSource() != null) {
 			if(!elem.getDataNodeType().equals("Unkown")) {
 				String url = elem.getDataSource().getIdentifiersOrgUri(elem.getXref().getId());
-				if(!url.equals("")) {
+				if(url != null && !url.equals("")) {
 					Resource datanodeRes = data.getDataNodes().get(elem.getXref());
 					if(datanodeRes == null) {
 						datanodeRes = model.createResource(url);

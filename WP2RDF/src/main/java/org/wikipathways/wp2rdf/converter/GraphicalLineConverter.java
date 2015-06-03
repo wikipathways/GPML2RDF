@@ -61,7 +61,7 @@ public class GraphicalLineConverter {
 		// TODO: in schema there is an interaction type but that's not in the data model. 
 		
 		for(MAnchor a : e.getMAnchors()) {
-			AnchorConverter.parseAnchorGpml(a, model, intRes, data);
+			if(a.getGraphId() != null) AnchorConverter.parseAnchorGpml(a, model, intRes, data);
 		}
 		
 		for(MPoint p : e.getMPoints()) {

@@ -51,7 +51,6 @@ public class GroupConverter {
 	 * semantic information about a complex group
 	 */
 	public static void parseComplexWp(MGroup group, Model model, DataHandlerWp data) {
-		System.out.println(group.getGroupStyle());
 		if(group.getGroupStyle().equals(GroupStyle.COMPLEX)) {
 			List<Resource> participants = new ArrayList<Resource>();
 			for(PathwayElement e : group.getGroupElements()) {

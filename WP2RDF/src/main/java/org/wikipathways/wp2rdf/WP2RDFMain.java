@@ -44,9 +44,12 @@ public class WP2RDFMain {
 		// want to try a different pathway
 		
 //		File pathwayFile = new File("resources/WP2059_79765.gpml");
-//		File pathwayFile = new File("resources/WP2447_75221.gpml");
+		File pathwayFile = new File("resources/WP2447_75221.gpml");
 //		File pathwayFile = new File("resources/complex.gpml");
-		File pathwayFile = new File("resources/test-simple-conversion.gpml");
+//		File pathwayFile = new File("resources/test-simple-conversion.gpml");
+//		File pathwayFile = new File("resources/test-simple-reversible-regulated.gpml");
+//		File pathwayFile = new File("resources/reactome-interaction.gpml");
+//		File pathwayFile = new File("resources/test-simple-undirected.gpml");
 //		File pathwayFile = new File("resources/test-advanced-conversion-withRegulators.gpml");
 
 		File outputFile = new File("output-test.owl");
@@ -63,7 +66,7 @@ public class WP2RDFMain {
 			Model pathwayModel = ModelFactory.createDefaultModel();
 			Utils.setModelPrefix(pathwayModel);
 			// New conversion of the pathway in GPML vocabulary
-			GpmlConverter.convertGpml(p, wpId, revision, pathwayModel);
+//			GpmlConverter.convertGpml(p, wpId, revision, pathwayModel);
 			
 			// New conversion of the pathway in WP vocabulary
 			GpmlConverter.convertWp(p, wpId, revision, pathwayModel);

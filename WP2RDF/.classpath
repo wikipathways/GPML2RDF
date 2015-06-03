@@ -19,20 +19,13 @@
 	</classpathentry>
 	<classpathentry kind="lib" path="lib/com.springsource.org.jdom-1.1.0.jar"/>
 	<classpathentry kind="lib" path="lib/derby.jar"/>
-	<classpathentry kind="lib" path="lib/org.bridgedb.bio.jar"/>
-	<classpathentry kind="lib" path="lib/org.bridgedb.gui.jar"/>
-	<classpathentry kind="lib" path="lib/org.bridgedb.jar"/>
 	<classpathentry kind="lib" path="lib/org.bridgedb.rdb.construct.jar"/>
 	<classpathentry kind="lib" path="lib/org.bridgedb.rdb.jar"/>
-	<classpathentry kind="lib" path="lib/org.pathvisio.core.jar"/>
 	<classpathentry kind="lib" path="lib/jena-core-2.13.0.jar"/>
 	<classpathentry kind="lib" path="lib/slf4j-api-1.7.6.jar"/>
 	<classpathentry kind="lib" path="lib/slf4j-log4j12-1.7.6.jar"/>
 	<classpathentry kind="lib" path="lib/log4j-1.2.17.jar"/>
 	<classpathentry kind="lib" path="lib/xercesImpl-2.11.0.jar"/>
-	<classpathentry kind="lib" path="lib/httpclient-4.2.6.jar"/>
-	<classpathentry kind="lib" path="lib/httpclient-cache-4.2.6.jar"/>
-	<classpathentry kind="lib" path="lib/httpcore-4.2.5.jar"/>
 	<classpathentry kind="lib" path="lib/jackson-annotations-2.3.0.jar"/>
 	<classpathentry kind="lib" path="lib/jackson-core-2.3.3.jar"/>
 	<classpathentry kind="lib" path="lib/jackson-databind-2.3.3.jar"/>
@@ -46,6 +39,7 @@
 	<classpathentry kind="lib" path="lib/jsonld-java-0.5.1.jar"/>
 	<classpathentry kind="lib" path="lib/libthrift-0.9.2.jar"/>
 	<classpathentry kind="lib" path="lib/xml-apis-1.4.01.jar"/>
+	<classpathentry kind="lib" path="lib/org.wikipathways.client.lib-3.2.0.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
 		<attributes>
