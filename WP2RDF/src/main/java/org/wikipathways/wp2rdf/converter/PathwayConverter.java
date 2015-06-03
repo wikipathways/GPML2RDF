@@ -25,6 +25,7 @@ import org.wikipathways.wp2rdf.ontologies.Gpml;
 import org.wikipathways.wp2rdf.ontologies.GpmlNew;
 import org.wikipathways.wp2rdf.ontologies.Pav;
 import org.wikipathways.wp2rdf.ontologies.Skos;
+import org.wikipathways.wp2rdf.ontologies.Wp;
 import org.wikipathways.wp2rdf.ontologies.WpOld;
 import org.wikipathways.wp2rdf.utils.Utils;
 
@@ -49,7 +50,18 @@ public class PathwayConverter {
 	 * semantic information about the pathway
 	 */
 	public static Resource parsePathwayInfoWp(Pathway p, String wpId, String revision, Model model) {
-		// TODO
+		String name = p.getMappInfo().getMapInfoName();
+		String url = Utils.IDENTIFIERS_ORG_URL + "/wikipathways/" + wpId + "_r" + revision;
+		Resource pwyRes = model.createResource(url);
+		
+		pwyRes.addLiteral(GpmlNew.ORGANISM, p.getMappInfo().getOrganism());
+		
+		pwyRes.addProperty(FOAF.page, model.createResource(Utils.WP_URL + "/instance/" + wpId + "_r" + revision));
+		pwyRes.addProperty(RDF.type, Wp.Pathway);
+		pwyRes.addProperty(RDF.type, Skos.Collection);
+		pwyRes.addProperty(DC.identifier, url);
+		pwyRes.addLiteral(DC.title, model.createLiteral(name, "en"));
+		
 		return null;
 	}
 	
