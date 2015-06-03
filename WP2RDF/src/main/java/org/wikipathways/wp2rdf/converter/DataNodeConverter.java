@@ -60,21 +60,16 @@ public class DataNodeConverter {
 			if(!elem.getDataNodeType().equals("Unkown")) {
 				String url = elem.getDataSource().getIdentifiersOrgUri(elem.getXref().getId());
 				if(!url.equals("")) {
-					Resource datanodeRes = model.createResource(url);
-					datanodeRes.addLiteral(RDFS.label, elem.getTextLabel().replace("\n", ""));
-					datanodeRes.addProperty(DC.identifier, model.createResource(url));
-					datanodeRes.addLiteral(DC.source, "WikiPathways");
-					
-					for(PublicationXref xref : elem.getBiopaxReferenceManager().getPublicationXRefs()) {
-						if(xref.getPubmedId() != null && !xref.getPubmedId().equals("")) {
-							String pubmedUrl = Utils.IDENTIFIERS_ORG_URL + "/pubmed/" + xref.getPubmedId();
-							datanodeRes.addProperty(DCTerms.bibliographicCitation, model.createResource(pubmedUrl));
-						}
-					}
-					
-					datanodeRes.addProperty(RDF.type, Wp.DataNode);
-					datanodeRes.addProperty(DCTerms.isPartOf, data.getPathwayRes());
-					switch (elem.getDataNodeType()) {
+					Resource datanodeRes = data.getDataNodes().get(elem.getXref());
+					if(datanodeRes == null) {
+						datanodeRes = model.createResource(url);
+						
+						datanodeRes.addProperty(DC.identifier, model.createResource(url));
+						datanodeRes.addLiteral(DCTerms.source, elem.getXref().getDataSource().getFullName());
+						datanodeRes.addLiteral(DCTerms.identifier, elem.getXref().getId());
+						
+						datanodeRes.addProperty(RDF.type, Wp.DataNode);
+						switch (elem.getDataNodeType()) {
 						case "GeneProduct":
 							datanodeRes.addProperty(RDF.type, Wp.GeneProduct);
 							break;
@@ -95,7 +90,23 @@ public class DataNodeConverter {
 							break;
 						default:
 							break;
+						}
+						data.getDataNodes().put(elem.getXref(), datanodeRes);
+						data.getPathwayElements().put(elem, datanodeRes);
 					}
+					// TODO: what to do about those - are they pathway specific?
+					for(PublicationXref xref : elem.getBiopaxReferenceManager().getPublicationXRefs()) {
+						if(xref.getPubmedId() != null && !xref.getPubmedId().equals("")) {
+							String pubmedUrl = Utils.IDENTIFIERS_ORG_URL + "/pubmed/" + xref.getPubmedId();
+							datanodeRes.addProperty(DCTerms.bibliographicCitation, model.createResource(pubmedUrl));
+						}
+					}
+	
+					datanodeRes.addProperty(Wp.isAbout, model.createResource(Utils.WP_RDF_URL + "/Pathway/" + data.getPwyId() + "_r" + data.getRevision() +
+							"/DataNode/" + elem.getGraphId()));
+					datanodeRes.addLiteral(RDFS.label, elem.getTextLabel().replace("\n", " "));
+					datanodeRes.addProperty(DCTerms.isPartOf, data.getPathwayRes());
+					
 				}
 			}
 		}
