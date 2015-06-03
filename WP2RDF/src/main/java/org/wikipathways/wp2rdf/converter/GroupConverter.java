@@ -27,7 +27,6 @@ import org.wikipathways.wp2rdf.utils.DataHandler;
 
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.Resource;
-import com.hp.hpl.jena.vocabulary.DC;
 import com.hp.hpl.jena.vocabulary.DCTerms;
 import com.hp.hpl.jena.vocabulary.RDF;
 import com.hp.hpl.jena.vocabulary.RDFS;
@@ -40,6 +39,14 @@ import com.hp.hpl.jena.vocabulary.RDFS;
  */
 public class GroupConverter {
 
+	/**
+	 * conversion only WP vocabulary
+	 * semantic information about a complex group
+	 */
+	public static void parseComplexWp(MGroup group, Model model, DataHandler data) {
+		// TODO - for now only convert groups of type complex
+	}
+	
 	/**
 	 * conversion only GPML vocabulary
 	 */

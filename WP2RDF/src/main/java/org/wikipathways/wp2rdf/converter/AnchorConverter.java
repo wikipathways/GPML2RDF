@@ -24,7 +24,6 @@ import org.wikipathways.wp2rdf.utils.DataHandler;
 
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.Resource;
-import com.hp.hpl.jena.vocabulary.DC;
 import com.hp.hpl.jena.vocabulary.DCTerms;
 import com.hp.hpl.jena.vocabulary.RDF;
 
@@ -54,8 +53,7 @@ public class AnchorConverter {
 		
 		data.getAnchors().put(anchor, anchorRes);
 	}
-	
-	
+
 	/**
 	 * old conversion
 	 */

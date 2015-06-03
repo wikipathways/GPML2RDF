@@ -49,6 +49,14 @@ import com.hp.hpl.jena.vocabulary.RDFS;
 public class DataNodeConverter {
 
 	/**
+	 * conversion only WP vocabulary
+	 * semantic information about a data node
+	 */
+	public static void parseDataNodeWp(PathwayElement elem, Model model, DataHandler data) {
+		// TODO
+	}
+	
+	/**
 	 * conversion only GPML vocabulary
 	 */
 	public static void parseDataNodesGpml(PathwayElement elem, Model model, DataHandler data) {

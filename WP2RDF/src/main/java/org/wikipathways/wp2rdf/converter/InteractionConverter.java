@@ -51,6 +51,14 @@ import com.hp.hpl.jena.vocabulary.RDF;
 public class InteractionConverter {
 
 	/**
+	 * conversion only WP vocabulary
+	 * semantic information about interactions
+	 */
+	public static void parseInteractionWp(MLine e, Model model, DataHandler data) {
+		// TODO
+	}
+	
+	/**
 	 * conversion only GPML vocabulary
 	 */
 	public static void parseInteractionGpml(MLine e, Model model, DataHandler data) {

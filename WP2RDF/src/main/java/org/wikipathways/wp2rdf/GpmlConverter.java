@@ -41,6 +41,8 @@ import com.hp.hpl.jena.rdf.model.Resource;
  * Class that converts a pathway
  * in a RDF model - only GPML vocabulary
  * 
+ * This work is based on Andra Waagmeester's work.
+ * 
  * @author mkutmon
  * @author ryanmiller
  *
@@ -51,7 +53,7 @@ public class GpmlConverter {
 		Model pathwayModel = ModelFactory.createDefaultModel();
 		Utils.setModelPrefix(pathwayModel);
 		
-		Resource pathwayRes = PathwayConverter.parsePathwayInfoNew(p, wpId, revision, pathwayModel);
+		Resource pathwayRes = PathwayConverter.parsePathwayInfoGpml(p, wpId, revision, pathwayModel);
 		DataHandler data = new DataHandler(p, pathwayRes);
 		
 		for(PathwayElement e : p.getDataObjects()) {

@@ -38,6 +38,14 @@ import com.hp.hpl.jena.vocabulary.RDF;
 public class PublicationXrefConverter {
 	
 	/**
+	 * conversion only WP vocabulary
+	 * semantic information about a publication xref
+	 */
+	public static void parsePublicationXrefWp(PublicationXref xref, Resource parent, Model model, DataHandler data) {
+		// TODO
+	}
+	
+	/**
 	 * conversion only GPML vocabulary
 	 */
 	public static void parsePublicationXrefGpml(PublicationXref xref, Resource parent, Model model, DataHandler data) {

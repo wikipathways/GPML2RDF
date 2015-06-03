@@ -45,9 +45,18 @@ import com.hp.hpl.jena.vocabulary.RDFS;
 public class PathwayConverter {
 
 	/**
+	 * conversion only WP vocabulary
+	 * semantic information about the pathway
+	 */
+	public static Resource parsePathwayInfoWp(Pathway p, String wpId, String revision, Model model) {
+		// TODO
+		return null;
+	}
+	
+	/**
 	 * conversion only GPML vocabulary
 	 */
-	public static Resource parsePathwayInfoNew(Pathway p, String wpId, String revision, Model model) {
+	public static Resource parsePathwayInfoGpml(Pathway p, String wpId, String revision, Model model) {
 
 		Resource pwyRes = model.createResource(Utils.WP_RDF_URL + "/Pathway/" + wpId + "_r" + revision);
 		

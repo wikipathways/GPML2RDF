@@ -32,7 +32,7 @@ import com.hp.hpl.jena.vocabulary.RDF;
  *
  */
 public class InfoBoxConverter {
-
+	
 	/**
 	 * conversion only GPML vocabulary
 	 */
