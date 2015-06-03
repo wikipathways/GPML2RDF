@@ -22,7 +22,6 @@ import org.bridgedb.DataSource;
 import org.bridgedb.IDMapper;
 import org.bridgedb.IDMapperException;
 import org.bridgedb.Xref;
-import org.bridgedb.bio.DataSourceTxt;
 import org.pathvisio.core.biopax.PublicationXref;
 import org.pathvisio.core.model.LineStyle;
 import org.pathvisio.core.model.PathwayElement;
@@ -30,8 +29,10 @@ import org.pathvisio.core.model.PathwayElement.Comment;
 import org.wikipathways.wp2rdf.ontologies.Gpml;
 import org.wikipathways.wp2rdf.ontologies.GpmlNew;
 import org.wikipathways.wp2rdf.ontologies.Skos;
+import org.wikipathways.wp2rdf.ontologies.Wp;
 import org.wikipathways.wp2rdf.ontologies.WpOld;
 import org.wikipathways.wp2rdf.utils.DataHandlerGpml;
+import org.wikipathways.wp2rdf.utils.DataHandlerWp;
 import org.wikipathways.wp2rdf.utils.Utils;
 
 import com.hp.hpl.jena.rdf.model.Model;
@@ -53,20 +54,51 @@ public class DataNodeConverter {
 	 * conversion only WP vocabulary
 	 * semantic information about a data node
 	 */
-	public static void parseDataNodeWp(PathwayElement elem, Model model, DataHandlerGpml data) {
+	public static void parseDataNodeWp(PathwayElement elem, Model model, DataHandlerWp data) {
 		
 		if(elem.getXref() != null && elem.getXref().getId() != null && elem.getXref().getDataSource() != null) {
-			String url = elem.getDataSource().getIdentifiersOrgUri(elem.getXref().getId());
-			if(!url.equals("")) {
-				Resource datanodeRes = model.createResource(url);
-				datanodeRes.addLiteral(RDFS.label, elem.getTextLabel().replace("\n", ""));
-				datanodeRes.addLiteral(DC.identifier, url);
-				
+			if(!elem.getDataNodeType().equals("Unkown")) {
+				String url = elem.getDataSource().getIdentifiersOrgUri(elem.getXref().getId());
+				if(!url.equals("")) {
+					Resource datanodeRes = model.createResource(url);
+					datanodeRes.addLiteral(RDFS.label, elem.getTextLabel().replace("\n", ""));
+					datanodeRes.addProperty(DC.identifier, model.createResource(url));
+					datanodeRes.addLiteral(DC.source, "WikiPathways");
+					
+					for(PublicationXref xref : elem.getBiopaxReferenceManager().getPublicationXRefs()) {
+						if(xref.getPubmedId() != null && !xref.getPubmedId().equals("")) {
+							String pubmedUrl = Utils.IDENTIFIERS_ORG_URL + "/pubmed/" + xref.getPubmedId();
+							datanodeRes.addProperty(DCTerms.bibliographicCitation, model.createResource(pubmedUrl));
+						}
+					}
+					
+					datanodeRes.addProperty(RDF.type, Wp.DataNode);
+					datanodeRes.addProperty(DCTerms.isPartOf, data.getPathwayRes());
+					switch (elem.getDataNodeType()) {
+						case "GeneProduct":
+							datanodeRes.addProperty(RDF.type, Wp.GeneProduct);
+							break;
+						case "Protein":
+							datanodeRes.addProperty(RDF.type, Wp.Protein);
+							break;
+						case "Metabolite":
+							datanodeRes.addProperty(RDF.type, Wp.Metabolite);
+							break;
+						case "Rna":
+							datanodeRes.addProperty(RDF.type, Wp.Rna);
+							break;
+						case "Pathway":
+							// TODO
+							break;
+						case "Complex":
+							// TODO
+							break;
+						default:
+							break;
+					}
+				}
 			}
-			System.out.println(url);
 		}
-		
-		// TODO
 	}
 	
 	/**

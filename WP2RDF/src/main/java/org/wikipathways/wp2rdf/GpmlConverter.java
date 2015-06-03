@@ -31,6 +31,7 @@ import org.wikipathways.wp2rdf.converter.PathwayConverter;
 import org.wikipathways.wp2rdf.converter.ShapeConverter;
 import org.wikipathways.wp2rdf.converter.StateConverter;
 import org.wikipathways.wp2rdf.utils.DataHandlerGpml;
+import org.wikipathways.wp2rdf.utils.DataHandlerWp;
 import org.wikipathways.wp2rdf.utils.Utils;
 
 import com.hp.hpl.jena.rdf.model.Model;
@@ -49,7 +50,7 @@ import com.hp.hpl.jena.rdf.model.Resource;
  */
 public class GpmlConverter {
 
-	public static Model convert(Pathway p, String wpId, String revision) {
+	public static Model convertGpml(Pathway p, String wpId, String revision) {
 		Model pathwayModel = ModelFactory.createDefaultModel();
 		Utils.setModelPrefix(pathwayModel);
 		
@@ -58,22 +59,37 @@ public class GpmlConverter {
 		
 		for(PathwayElement e : p.getDataObjects()) {
 			if(e.getObjectType().equals(ObjectType.DATANODE)) {
-//				DataNodeConverter.parseDataNodesGpml(e, pathwayModel, data);
+				DataNodeConverter.parseDataNodesGpml(e, pathwayModel, data);
+			} else if(e.getObjectType().equals(ObjectType.STATE)) {
+				StateConverter.parseStateGpml(e, pathwayModel, data);
+			} else if(e.getObjectType().equals(ObjectType.LINE)) {
+				InteractionConverter.parseInteractionGpml((MLine) e, pathwayModel, data);
+			} else if(e.getObjectType().equals(ObjectType.GRAPHLINE)) {
+				GraphicalLineConverter.parseInteractionGpml((MLine) e, pathwayModel, data);
+			} else if(e.getObjectType().equals(ObjectType.LABEL)) {
+				LabelConverter.parseLabelGpml(e, pathwayModel, data);
+			} else if(e.getObjectType().equals(ObjectType.SHAPE)) {
+				ShapeConverter.parseShapeGpml(e, pathwayModel, data);
+			} else if(e.getObjectType().equals(ObjectType.GROUP)) {
+				GroupConverter.parseGroupGpml((MGroup) e, pathwayModel, data);
+			} else if(e.getObjectType().equals(ObjectType.INFOBOX)) {
+				InfoBoxConverter.parseInfoBoxGpml(e, pathwayModel, data);
+			}
+		}
+		
+		return pathwayModel;
+	}
+	
+	public static Model convertWp(Pathway p, String wpId, String revision) {
+		Model pathwayModel = ModelFactory.createDefaultModel();
+		Utils.setModelPrefix(pathwayModel);
+		
+		Resource pathwayRes = PathwayConverter.parsePathwayInfoWp(p, wpId, revision, pathwayModel);
+		DataHandlerWp data = new DataHandlerWp(p, pathwayRes);
+		
+		for(PathwayElement e : p.getDataObjects()) {
+			if(e.getObjectType().equals(ObjectType.DATANODE)) {
 				DataNodeConverter.parseDataNodeWp(e, pathwayModel, data);
-//			} else if(e.getObjectType().equals(ObjectType.STATE)) {
-//				StateConverter.parseStateGpml(e, pathwayModel, data);
-//			} else if(e.getObjectType().equals(ObjectType.LINE)) {
-//				InteractionConverter.parseInteractionGpml((MLine) e, pathwayModel, data);
-//			} else if(e.getObjectType().equals(ObjectType.GRAPHLINE)) {
-//				GraphicalLineConverter.parseInteractionGpml((MLine) e, pathwayModel, data);
-//			} else if(e.getObjectType().equals(ObjectType.LABEL)) {
-//				LabelConverter.parseLabelGpml(e, pathwayModel, data);
-//			} else if(e.getObjectType().equals(ObjectType.SHAPE)) {
-//				ShapeConverter.parseShapeGpml(e, pathwayModel, data);
-//			} else if(e.getObjectType().equals(ObjectType.GROUP)) {
-//				GroupConverter.parseGroupGpml((MGroup) e, pathwayModel, data);
-//			} else if(e.getObjectType().equals(ObjectType.INFOBOX)) {
-//				InfoBoxConverter.parseInfoBoxGpml(e, pathwayModel, data);
 			}
 		}
 		

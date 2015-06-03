@@ -53,12 +53,15 @@ public class WP2RDFMain {
 			Pathway p = PathwayReader.readPathway(pathwayFile);
 
 			// TODO: get pathway id
-			String wpId = "WP2447";
+			String wpId = "WP2059";
 			// TODO: get revision
-			String revision = "75221";
+			String revision = "79765";
 			
 			// New conversion of the pathway in GPML vocabulary
-			Model pathwayModel = GpmlConverter.convert(p, wpId, revision);
+//			Model pathwayModel = GpmlConverter.convertGpml(p, wpId, revision);
+			
+			// New conversion of the pathway in WP vocabulary
+			Model pathwayModel = GpmlConverter.convertWp(p, wpId, revision);
 		
 			// TODO: conversion in WP vocabulary
 			

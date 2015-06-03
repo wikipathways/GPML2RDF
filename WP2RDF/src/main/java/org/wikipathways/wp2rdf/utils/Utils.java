@@ -64,8 +64,6 @@ public class Utils {
 		model.setNsPrefix("wprdf", "http://rdf.wikipathways.org/");
 		model.setNsPrefix("pubmed", "http://www.ncbi.nlm.nih.gov/pubmed/");
 		model.setNsPrefix("foaf", FOAF.getURI());
-		model.setNsPrefix("ncbigene", "http://identifiers.org/ncbigene/");
-		model.setNsPrefix("cas", "http://identifiers.org/cas/");
 		model.setNsPrefix("dc", DC.getURI());
 		model.setNsPrefix("skos", Skos.getURI());
 		model.setNsPrefix("void", Void.getURI());
@@ -73,7 +71,6 @@ public class Utils {
 		model.setNsPrefix("pav", Pav.getURI());
 		model.setNsPrefix("prov", Prov.getURI());
 		model.setNsPrefix("dcterms", DCTerms.getURI());
-		model.setNsPrefix("hmdb", "http://identifiers.org/hmdb/");
 		model.setNsPrefix("freq", Freq.getURI());
 	}
 	

@@ -59,10 +59,10 @@ public class PathwayConverter {
 		pwyRes.addProperty(FOAF.page, model.createResource(Utils.WP_URL + "/instance/" + wpId + "_r" + revision));
 		pwyRes.addProperty(RDF.type, Wp.Pathway);
 		pwyRes.addProperty(RDF.type, Skos.Collection);
-		pwyRes.addProperty(DC.identifier, url);
+		pwyRes.addProperty(DC.identifier, model.createResource(url));
 		pwyRes.addLiteral(DC.title, model.createLiteral(name, "en"));
 		
-		return null;
+		return pwyRes;
 	}
 	
 	/**
