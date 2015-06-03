@@ -19,7 +19,7 @@ package org.wikipathways.wp2rdf.converter;
 import org.pathvisio.core.biopax.PublicationXref;
 import org.wikipathways.wp2rdf.ontologies.Gpml;
 import org.wikipathways.wp2rdf.ontologies.GpmlNew;
-import org.wikipathways.wp2rdf.ontologies.Wp;
+import org.wikipathways.wp2rdf.ontologies.WpOld;
 import org.wikipathways.wp2rdf.utils.DataHandler;
 import org.wikipathways.wp2rdf.utils.Utils;
 
@@ -65,7 +65,7 @@ public class PublicationXrefConverter {
 	 */
 	public static void parsePublicationXref(PublicationXref xref, Resource parent, Model model) {
 		Resource pubXrefRes = model.createResource(Utils.IDENTIFIERS_ORG_URL + "/pubmed/" + xref.getPubmedId());
-		pubXrefRes.addProperty(RDF.type, Wp.PublicationReference);
+		pubXrefRes.addProperty(RDF.type, WpOld.PublicationReference);
 		parent.addProperty(DCTerms.references, pubXrefRes);
 		pubXrefRes.addProperty(DCTerms.isPartOf, parent);			
 		pubXrefRes.addLiteral(Gpml.biopaxref, xref.getId());

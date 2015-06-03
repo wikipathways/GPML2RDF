@@ -32,7 +32,7 @@ import org.pathvisio.core.model.PathwayElement.MPoint;
 import org.pathvisio.core.view.MIMShapes;
 import org.wikipathways.wp2rdf.ontologies.Gpml;
 import org.wikipathways.wp2rdf.ontologies.GpmlNew;
-import org.wikipathways.wp2rdf.ontologies.Wp;
+import org.wikipathways.wp2rdf.ontologies.WpOld;
 import org.wikipathways.wp2rdf.utils.DataHandler;
 import org.wikipathways.wp2rdf.utils.Utils;
 
@@ -235,45 +235,45 @@ public class InteractionConverter {
 	}	
 	
 	private static void createInteraction(LineType lineType, List<Resource> source, List<Resource> target, Resource intRes, DataHandler data) {
-		intRes.addProperty(RDF.type, Wp.Interaction);
-		intRes.addProperty(RDF.type, Wp.Relation);
+		intRes.addProperty(RDF.type, WpOld.Interaction);
+		intRes.addProperty(RDF.type, WpOld.Relation);
 		intRes.addProperty(DCTerms.isPartOf, data.getPathwayRes());
 		for(Resource r : source) {
-			intRes.addProperty(Wp.hasParticipant, r);
+			intRes.addProperty(WpOld.hasParticipant, r);
 		}
 		for(Resource r : target) {
-			intRes.addProperty(Wp.hasParticipant, r);
+			intRes.addProperty(WpOld.hasParticipant, r);
 		}
 		
 		if(lineType.equals(LineType.ARROW)) {
 			mapDirectedInteraction(intRes, source, target, null);
 		} else if (lineType.equals(LineType.TBAR)) {
-			mapDirectedInteraction(intRes, source, target, Wp.Inhibition);
+			mapDirectedInteraction(intRes, source, target, WpOld.Inhibition);
 		} else if(lineType.equals(MIMShapes.MIM_CONVERSION)) {
-			mapDirectedInteraction(intRes, source, target, Wp.Conversion);
+			mapDirectedInteraction(intRes, source, target, WpOld.Conversion);
 		} else if(lineType.equals(MIMShapes.MIM_INHIBITION)) {
-			mapDirectedInteraction(intRes, source, target, Wp.Inhibition);
+			mapDirectedInteraction(intRes, source, target, WpOld.Inhibition);
 		} else if(lineType.equals(MIMShapes.MIM_MODIFICATION)) {
-			mapDirectedInteraction(intRes, source, target, Wp.Modification);
+			mapDirectedInteraction(intRes, source, target, WpOld.Modification);
 		} else if(lineType.equals(MIMShapes.MIM_NECESSARY_STIMULATION)) {
-			mapDirectedInteraction(intRes, source, target, Wp.NecessaryStimulation);
+			mapDirectedInteraction(intRes, source, target, WpOld.NecessaryStimulation);
 		} else if(lineType.equals(MIMShapes.MIM_STIMULATION)) {
-			mapDirectedInteraction(intRes, source, target, Wp.Stimulation);
+			mapDirectedInteraction(intRes, source, target, WpOld.Stimulation);
 		} else if(lineType.equals(MIMShapes.MIM_TRANSLATION)) {
-			mapDirectedInteraction(intRes, source, target, Wp.TranscriptionTranslation);
+			mapDirectedInteraction(intRes, source, target, WpOld.TranscriptionTranslation);
 		} else if(lineType.equals(MIMShapes.MIM_BINDING)) {
-			mapDirectedInteraction(intRes, source, target, Wp.Binding);
+			mapDirectedInteraction(intRes, source, target, WpOld.Binding);
 		}
 	}
 	
 	private static void mapDirectedInteraction(Resource intRes, List<Resource> source, List<Resource> target, Resource interactionType) {
-		intRes.addProperty(RDF.type, Wp.DirectedInteraction);
+		intRes.addProperty(RDF.type, WpOld.DirectedInteraction);
 		if(interactionType != null) intRes.addProperty(RDF.type, interactionType);
 		for(Resource r : source) {
-			intRes.addProperty(Wp.source, r);
+			intRes.addProperty(WpOld.source, r);
 		}
 		for(Resource r : target) {
-			intRes.addProperty(Wp.target, r);
+			intRes.addProperty(WpOld.target, r);
 		}
 	}
 }

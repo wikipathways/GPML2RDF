@@ -22,7 +22,7 @@ import org.pathvisio.core.model.PathwayElement;
 import org.pathvisio.core.model.PathwayElement.Comment;
 import org.wikipathways.wp2rdf.ontologies.Gpml;
 import org.wikipathways.wp2rdf.ontologies.GpmlNew;
-import org.wikipathways.wp2rdf.ontologies.Wp;
+import org.wikipathways.wp2rdf.ontologies.WpOld;
 import org.wikipathways.wp2rdf.utils.DataHandler;
 
 import com.hp.hpl.jena.rdf.model.Model;
@@ -117,7 +117,7 @@ public class GroupConverter {
 			if(res != null) {
 				res.addProperty(DCTerms.isPartOf, groupRes);
 				// TODO: adding a hasParticipants or so, might be nice for the groups
-				groupRes.addProperty(Wp.hasParticipant, res);
+				groupRes.addProperty(WpOld.hasParticipant, res);
 			} else {
 				System.out.println("ERRRORR");
 			}

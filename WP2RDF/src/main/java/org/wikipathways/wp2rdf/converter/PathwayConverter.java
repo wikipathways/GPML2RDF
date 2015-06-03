@@ -25,7 +25,7 @@ import org.wikipathways.wp2rdf.ontologies.Gpml;
 import org.wikipathways.wp2rdf.ontologies.GpmlNew;
 import org.wikipathways.wp2rdf.ontologies.Pav;
 import org.wikipathways.wp2rdf.ontologies.Skos;
-import org.wikipathways.wp2rdf.ontologies.Wp;
+import org.wikipathways.wp2rdf.ontologies.WpOld;
 import org.wikipathways.wp2rdf.utils.Utils;
 
 import com.hp.hpl.jena.rdf.model.Model;
@@ -101,7 +101,7 @@ public class PathwayConverter {
 		
 		// add properties
 		pwyRes.addProperty(FOAF.page, model.createResource(Utils.WP_URL + "/instance/" + wpId + "_r" + revision));
-		pwyRes.addProperty(RDF.type, Wp.Pathway);
+		pwyRes.addProperty(RDF.type, WpOld.Pathway);
 		pwyRes.addProperty(RDF.type, Skos.Collection);
 		pwyRes.addProperty(DC.identifier, pwyIdRes);
 		pwyRes.addLiteral(DCTerms.identifier, wpId);
@@ -109,7 +109,7 @@ public class PathwayConverter {
 		pwyRes.addLiteral(DC.title, model.createLiteral(name, "en"));
 		
 		// organism
-		pwyRes.addProperty(Wp.organism, pwyOrgRes);
+		pwyRes.addProperty(WpOld.organism, pwyOrgRes);
 		
 		// category
 		parseCategory(p, pwyRes);
@@ -133,13 +133,13 @@ public class PathwayConverter {
 				if(c.getSource().equals("WikiPathways-category")) {
 					String category = c.getComment();
 					if(category.equals("Physiological Process")) {
-						parent.addProperty(Wp.category, Wp.PhysiologicalProcess);
+						parent.addProperty(WpOld.category, WpOld.PhysiologicalProcess);
 					} else if (category.equals("Metabolic Process")) {
-						parent.addProperty(Wp.category, Wp.MetabolicProcess);
+						parent.addProperty(WpOld.category, WpOld.MetabolicProcess);
 					} else if (category.equals("Cellular Process")) {
-						parent.addProperty(Wp.category, Wp.CellularProcess);
+						parent.addProperty(WpOld.category, WpOld.CellularProcess);
 					} else if( category.equals("Molecular Function")) {
-						parent.addProperty(Wp.category, Wp.MolecularFunction);
+						parent.addProperty(WpOld.category, WpOld.MolecularFunction);
 					}		
 				}
 			}

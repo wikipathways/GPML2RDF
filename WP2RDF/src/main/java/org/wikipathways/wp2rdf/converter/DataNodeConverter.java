@@ -29,7 +29,7 @@ import org.pathvisio.core.model.PathwayElement.Comment;
 import org.wikipathways.wp2rdf.ontologies.Gpml;
 import org.wikipathways.wp2rdf.ontologies.GpmlNew;
 import org.wikipathways.wp2rdf.ontologies.Skos;
-import org.wikipathways.wp2rdf.ontologies.Wp;
+import org.wikipathways.wp2rdf.ontologies.WpOld;
 import org.wikipathways.wp2rdf.utils.DataHandler;
 import org.wikipathways.wp2rdf.utils.Utils;
 
@@ -177,19 +177,19 @@ public class DataNodeConverter {
 		
 		switch (elem.getDataNodeType()) {
 		case "GeneProduct":
-			datanodeRes.addProperty(RDF.type, Wp.GeneProduct);
+			datanodeRes.addProperty(RDF.type, WpOld.GeneProduct);
 			break;
 		case "Protein":
-			datanodeRes.addProperty(RDF.type, Wp.Protein);
+			datanodeRes.addProperty(RDF.type, WpOld.Protein);
 			break;
 		case "Metabolite":
-			datanodeRes.addProperty(RDF.type, Wp.Metabolite);
+			datanodeRes.addProperty(RDF.type, WpOld.Metabolite);
 			break;
 		case "Pathway":
-			datanodeRes.addProperty(RDF.type, Wp.Pathway);
+			datanodeRes.addProperty(RDF.type, WpOld.Pathway);
 			break;
 		case "Rna":
-			datanodeRes.addProperty(RDF.type, Wp.RNA);
+			datanodeRes.addProperty(RDF.type, WpOld.RNA);
 			break;
 		default:
 			break;
@@ -215,12 +215,12 @@ public class DataNodeConverter {
 		Set<Xref> resCs = metMapper.mapID(elem.getXref(), DataSource.getExistingBySystemCode("Cs"));
 		for(Xref x : resCs) {
 			Resource res = model.createResource(Utils.IDENTIFIERS_ORG_URL + "/chemspider/" + x.getId());
-			datanodeRes.addProperty(Wp.bdbChemspider, res);
+			datanodeRes.addProperty(WpOld.bdbChemspider, res);
 		}
 		Set<Xref> resCh = metMapper.mapID(elem.getXref(), DataSource.getExistingBySystemCode("Ch"));
 		for(Xref x : resCh) {
 			Resource res = model.createResource(Utils.IDENTIFIERS_ORG_URL + "/hmdb/" + x.getId());
-			datanodeRes.addProperty(Wp.bdbHmdb, res);
+			datanodeRes.addProperty(WpOld.bdbHmdb, res);
 		}
 	}
 	
@@ -229,22 +229,22 @@ public class DataNodeConverter {
 		Set<Xref> resEn = geneMapper.mapID(elem.getXref(), DataSource.getExistingBySystemCode("En"));
 		for(Xref x : resEn) {
 			Resource res = model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ensembl/" + x.getId());
-			datanodeRes.addProperty(Wp.bdbEnsembl, res);
+			datanodeRes.addProperty(WpOld.bdbEnsembl, res);
 		}
 		Set<Xref> resS = geneMapper.mapID(elem.getXref(), DataSource.getExistingBySystemCode("S"));
 		for(Xref x : resS) {
 			Resource res = model.createResource(Utils.IDENTIFIERS_ORG_URL + "/uniprot/" + x.getId());
-			datanodeRes.addProperty(Wp.bdbUniprot, res);
+			datanodeRes.addProperty(WpOld.bdbUniprot, res);
 		}
 		Set<Xref> resH = geneMapper.mapID(elem.getXref(), DataSource.getExistingBySystemCode("H"));
 		for(Xref x : resH) {
 			Resource res = model.createResource(Utils.IDENTIFIERS_ORG_URL + "/hgnc.symbol/" + x.getId());
-			datanodeRes.addProperty(Wp.bdbHgncSymbol, res);
+			datanodeRes.addProperty(WpOld.bdbHgncSymbol, res);
 		}
 		Set<Xref> resL = geneMapper.mapID(elem.getXref(), DataSource.getExistingBySystemCode("L"));
 		for(Xref x : resL) {
 			Resource res = model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ncbigene/" + x.getId());
-			datanodeRes.addProperty(Wp.bdbEntrezGene, res);
+			datanodeRes.addProperty(WpOld.bdbEntrezGene, res);
 		}
 	}
 }
