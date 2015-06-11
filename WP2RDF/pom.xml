@@ -73,7 +73,7 @@
 						</goals>
 						<phase>install</phase>
 						<configuration>
-							<file>${build.directory}/${project.build.finalName}.jar</file>
+							<file>${project.build.directory}/${project.build.finalName}.jar</file>
 							<generatePom>false</generatePom>
 							<pomFile>pom.xml</pomFile>
 							<version>${my.version}</version>
