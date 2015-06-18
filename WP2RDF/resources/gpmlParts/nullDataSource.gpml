@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Pathway xmlns="http://pathvisio.org/GPML/2013a" Name="Amyotrophic lateral sclerosis (ALS)" Organism="Homo sapiens">
+  <Graphics BoardWidth="1805.045542007426" BoardHeight="1308.0" />
+  <DataNode TextLabel="CYTC" GraphId="b06fe" Type="Protein">
+    <Graphics CenterX="1003.2377495462794" CenterY="76.20309618803853" Width="57.16878402903801" Height="20.000000000000004" ZOrder="32768" FontSize="10" Valign="Middle" />
+    <Xref Database="" ID="P01034" />
+  </DataNode>
+  <InfoBox CenterX="0.0" CenterY="0.0" />
+</Pathway>
