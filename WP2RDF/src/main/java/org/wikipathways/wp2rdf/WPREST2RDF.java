@@ -45,8 +45,18 @@ public class WPREST2RDF {
 				System.out.println("  pathway: " + pwInfo.getId() + "\t" + pwInfo.getRevision());
 
 				// to be converted? only if it has the right tag
-				WSCurationTag[] tags = client.getCurationTags(pwInfo.getId());
-				if (isIncludedTag(tags)) {
+				boolean gotTags = false;
+				WSCurationTag[] tags = null;
+				for (int i=0; !gotTags && i<=5; i++) {
+					try {
+						tags = client.getCurationTags(pwInfo.getId());
+						gotTags = true;
+					} catch (Throwable exception) {}
+				}
+				if (!gotTags) {
+					System.out.println("Failed to get curation tags for " + pwInfo.getId());
+				}
+				if (gotTags && isIncludedTag(tags)) {
 					Model pathwayModel = ModelFactory.createDefaultModel();
 					Utils.setModelPrefix(pathwayModel);
 
