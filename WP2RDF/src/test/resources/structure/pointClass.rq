@@ -1,0 +1,6 @@
+prefix wp:      <http://vocabularies.wikipathways.org/wp#>
+prefix gpml:    <http://vocabularies.wikipathways.org/gpml#>
+
+select ?node where {
+  ?node a gpml:Point .
+}

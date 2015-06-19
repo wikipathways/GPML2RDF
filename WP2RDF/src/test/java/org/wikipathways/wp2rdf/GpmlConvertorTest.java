@@ -36,4 +36,27 @@ public class GpmlConvertorTest extends AbstractConvertorTest {
 		Assert.assertEquals("Expected details for things of type gpml:Group: " + table, 0, table.getRowCount());
 	}
 
+	@Test
+	public void hasPoints() throws Exception {
+		String sparql = ResourceHelper.resourceAsString("structure/pointClass.rq");
+		StringMatrix table = SPARQLHelper.sparql(model, sparql);
+		Assert.assertNotNull(table);
+		Assert.assertNotSame("Expected things of type gpml:Point.", 0, table.getRowCount());
+	}
+
+	@Test
+	public void nodesHaveTypedParents() throws Exception {
+		String sparql = ResourceHelper.resourceAsString("structure/nodesHaveTypedParents.rq");
+		StringMatrix table = SPARQLHelper.sparql(model, sparql);
+		Assert.assertNotNull(table);
+		Assert.assertEquals("Parents of DataNodes should be typed: " + table, 0, table.getRowCount());
+	}
+
+	@Test
+	public void nodesPointingToUnspecifiedGroups() throws Exception {
+		String sparql = ResourceHelper.resourceAsString("structure/nodesInEmptyGroups.rq");
+		StringMatrix table = SPARQLHelper.sparql(model, sparql);
+		Assert.assertNotNull(table);
+		Assert.assertEquals("Nodes should not be part of unspecified groups: " + table, 0, table.getRowCount());
+	}
 }

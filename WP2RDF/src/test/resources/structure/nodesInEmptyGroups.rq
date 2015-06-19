@@ -1,0 +1,12 @@
+prefix wp:      <http://vocabularies.wikipathways.org/wp#>
+prefix gpml:    <http://vocabularies.wikipathways.org/gpml#>
+prefix xsd:     <http://www.w3.org/2001/XMLSchema#>
+prefix dcterms: <http://purl.org/dc/terms/>
+
+select ?node ?group where {
+ ?node a gpml:DataNode ;
+   dcterms:isPartOf ?group .
+ OPTIONAL { ?group a ?groupType . }
+ FILTER (!BOUND(?groupType))
+ FILTER (contains(str(?group), "group"))
+}
