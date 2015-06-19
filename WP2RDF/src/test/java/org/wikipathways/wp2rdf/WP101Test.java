@@ -28,4 +28,24 @@ public class WP101Test extends AbstractConvertorTest {
 		Assert.assertEquals("Parents of DataNodes should be typed: " + table, 0, table.getRowCount());
 	}
 
+	@Test
+	public void whitespaceIdentifiers() throws Exception {
+		String sparql = ResourceHelper.resourceAsString("xrefs/allIdentifiers.rq");
+		StringMatrix table = SPARQLHelper.sparql(model, sparql);
+		Assert.assertNotNull(table);
+		Assert.assertNotSame(0, table.getRowCount());
+		String errors = "";
+		int errorCount = 0;
+		for (int i=1; i<=table.getRowCount(); i++) {
+			if (table.get(i, "identifier").trim().length() == 0) {
+				errors += table.get(i, "pathway") + " " + table.get(i, "label") + "\n";
+				errorCount++;
+			}
+		}
+		Assert.assertEquals(
+			"Unexpected identifiers that only consist of whitespace:\n" + errors,
+			0, errorCount
+		);
+	}
+
 }
