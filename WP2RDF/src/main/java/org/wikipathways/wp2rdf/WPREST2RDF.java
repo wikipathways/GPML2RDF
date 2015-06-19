@@ -30,31 +30,31 @@ public class WPREST2RDF {
 
 		for (Organism organism : species.keySet()) {
 			WSPathwayInfo [] pathways = client.listPathways(organism);
-			for(WSPathwayInfo i : pathways) {
-				System.out.println(i.getId() + "\t" + i.getRevision());
+			for(WSPathwayInfo pwInfo : pathways) {
+				System.out.println(pwInfo.getId() + "\t" + pwInfo.getRevision());
 
 				Model pathwayModel = ModelFactory.createDefaultModel();
 				Utils.setModelPrefix(pathwayModel);
 
-				Pathway p = WikiPathwaysClient.toPathway(client.getPathway(i.getId(), Integer.parseInt(i.getRevision())));
+				Pathway p = WikiPathwaysClient.toPathway(client.getPathway(pwInfo.getId(), Integer.parseInt(pwInfo.getRevision())));
 
 				// New conversion of the pathway in GPML vocabulary
-				GpmlConverter.convertGpml(p, i.getId(), i.getRevision(), pathwayModel);
+				GpmlConverter.convertGpml(p, pwInfo.getId(), pwInfo.getRevision(), pathwayModel);
 
 				String folder = "output/gpml/" + species.get(organism) + "/";
 				new File(folder).mkdirs();
-				FileWriter output = new FileWriter(folder + i.getId() +".ttl");
+				FileWriter output = new FileWriter(folder + pwInfo.getId() +".ttl");
 				pathwayModel.write(output, "TURTLE");
 				output.close();
 
 				// New conversion of the pathway in WP vocabulary
 				pathwayModel = ModelFactory.createDefaultModel();
 				Utils.setModelPrefix(pathwayModel);
-				GpmlConverter.convertWp(p, i.getId(), i.getRevision(), pathwayModel);
+				GpmlConverter.convertWp(p, pwInfo.getId(), pwInfo.getRevision(), pathwayModel);
 
 				folder = "output/wp/" + species.get(organism) + "/";
 				new File(folder).mkdirs();
-				output = new FileWriter(folder + i.getId() +".ttl");
+				output = new FileWriter(folder + pwInfo.getId() +".ttl");
 				pathwayModel.write(output, "TURTLE");
 				output.close();
 			}
