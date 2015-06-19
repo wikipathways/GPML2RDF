@@ -4,5 +4,5 @@ prefix xsd:     <http://www.w3.org/2001/XMLSchema#>
 
 select ?mb where {
   ?mb a gpml:DataNode ;
-      gpml:graphid ""^^xsd:string .
+      gpml:graphId ""^^xsd:string .
 }
