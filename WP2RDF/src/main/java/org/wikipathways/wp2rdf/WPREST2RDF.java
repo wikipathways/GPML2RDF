@@ -47,7 +47,7 @@ public class WPREST2RDF {
 		add(Organism.GibberellaZeae);
 		add(Organism.HomoSapiens);
 		add(Organism.MusMusculus);
-		add(Organism.OryzaJaponica);
+		add(Organism.OryzaSativa);
 		add(Organism.PanTroglodytes);
 		add(Organism.RattusNorvegicus);
 		add(Organism.SaccharomycesCerevisiae);
