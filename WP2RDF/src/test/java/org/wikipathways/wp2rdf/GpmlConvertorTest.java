@@ -9,7 +9,7 @@ public class GpmlConvertorTest extends AbstractConvertorTest {
 
 	@BeforeClass
 	public static void createModel() throws ConverterException {
-		loadModel("WP2447_75221.gpml", "WP2447", "75221");
+		loadModelAsGPMLRDF("WP2447_75221.gpml", "WP2447", "75221");
 	}
 
 	@Test

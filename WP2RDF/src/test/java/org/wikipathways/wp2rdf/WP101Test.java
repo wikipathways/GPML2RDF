@@ -9,7 +9,7 @@ public class WP101Test extends AbstractConvertorTest {
 
 	@BeforeClass
 	public static void createModel() throws ConverterException {
-		loadModel("WP101_79360.gpml", "WP101", "79360");
+		loadModelAsWPRDF("WP101_79360.gpml", "WP101", "79360");
 	}
 
 	@Test

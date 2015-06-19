@@ -20,11 +20,21 @@ public abstract class AbstractConvertorTest {
 		return new String(output.toByteArray());
 	}
 
-	public static void loadModel(String gpmlFile, String wpid, String revision) throws ConverterException {
+	public static void loadModelAsGPMLRDF(String gpmlFile, String wpid, String revision) throws ConverterException {
 		InputStream input = AbstractConvertorTest.class.getClassLoader().getResourceAsStream(gpmlFile);
 		Pathway pathway = PathwayReader.readPathway(input);
 		Assert.assertNotNull(pathway);
 		model = GpmlConverter.convertGpml(pathway, wpid, revision);
+		Assert.assertNotNull(model);
+		System.out.println("===== " + gpmlFile + " =====");
+		System.out.println(toString(model));
+	}
+
+	public static void loadModelAsWPRDF(String gpmlFile, String wpid, String revision) throws ConverterException {
+		InputStream input = AbstractConvertorTest.class.getClassLoader().getResourceAsStream(gpmlFile);
+		Pathway pathway = PathwayReader.readPathway(input);
+		Assert.assertNotNull(pathway);
+		model = GpmlConverter.convertWp(pathway, wpid, revision);
 		Assert.assertNotNull(model);
 		System.out.println("===== " + gpmlFile + " =====");
 		System.out.println(toString(model));

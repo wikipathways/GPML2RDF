@@ -19,7 +19,7 @@ public class DataNodeTest extends AbstractConvertorTest {
 
 	@BeforeClass
 	public static void createModel() throws ConverterException {
-		loadModel("gpmlParts/datanode.gpml", "WP4", "42");
+		loadModelAsGPMLRDF("gpmlParts/datanode.gpml", "WP4", "42");
 	}
 
 	@Test

@@ -9,7 +9,7 @@ public class NullDataSourceTest extends AbstractConvertorTest {
 
 	@BeforeClass
 	public static void createModel() throws ConverterException {
-		loadModel("gpmlParts/nullDataSource.gpml", "WP4", "42");
+		loadModelAsGPMLRDF("gpmlParts/nullDataSource.gpml", "WP4", "42");
 	}
 
 	@Test
