@@ -1,5 +1,6 @@
 package org.wikipathways.wp2rdf;
 
+import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 
 import org.junit.Assert;
@@ -13,12 +14,20 @@ public abstract class AbstractConvertorTest {
 
 	protected static Model model;
 
+	private static String toString(Model model) {
+		ByteArrayOutputStream output = new ByteArrayOutputStream();
+		model.write(output, "TURTLE");
+		return new String(output.toByteArray());
+	}
+
 	public static void loadModel(String gpmlFile, String wpid, String revision) throws ConverterException {
 		InputStream input = AbstractConvertorTest.class.getClassLoader().getResourceAsStream(gpmlFile);
 		Pathway pathway = PathwayReader.readPathway(input);
 		Assert.assertNotNull(pathway);
 		model = GpmlConverter.convertGpml(pathway, wpid, revision);
 		Assert.assertNotNull(model);
+		System.out.println("===== " + gpmlFile + " =====");
+		System.out.println(toString(model));
 	}
 
 }
