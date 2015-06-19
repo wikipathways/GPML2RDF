@@ -29,8 +29,29 @@ public class WPREST2RDF {
 	}};
 
 	@SuppressWarnings("serial")
-	private static final Map<Organism,String> SPECIES = new HashMap<Organism,String>() {{
-		put(Organism.HomoSapiens, "human");
+	private static final Map<Organism,String> SPECIES = new HashMap<Organism,String>() {
+		void add(Organism organism) {
+			put(organism, organism.shortName() != null ? organism.shortName() : organism.code());
+		}
+	{
+		add(Organism.AnophelesGambiae);
+		add(Organism.ArabidopsisThaliana);
+		add(Organism.BosTaurus);
+		add(Organism.BacillusSubtilis);
+		add(Organism.CaenorhabditisElegans);
+		add(Organism.CanisFamiliaris);
+		add(Organism.DanioRerio);
+		add(Organism.DrosophilaMelanogaster);
+		add(Organism.EscherichiaColi);
+		add(Organism.GallusGallus);
+		add(Organism.GibberellaZeae);
+		add(Organism.HomoSapiens);
+		add(Organism.MusMusculus);
+		add(Organism.OryzaJaponica);
+		add(Organism.PanTroglodytes);
+		add(Organism.RattusNorvegicus);
+		add(Organism.SaccharomycesCerevisiae);
+		add(Organism.ZeaMays);
 	}};
 
 	public static void main(String[] args) throws NumberFormatException, ConverterException, IOException {
