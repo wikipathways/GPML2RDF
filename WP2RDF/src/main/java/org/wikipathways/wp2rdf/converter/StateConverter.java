@@ -52,7 +52,8 @@ public class StateConverter {
 		stateRes.addProperty(DCTerms.isPartOf, data.getPathwayRes());
 		
 		stateRes.addLiteral(GpmlNew.LINE_THICKNESS, elem.getLineThickness());
-		stateRes.addLiteral(GpmlNew.GRAPH_ID, elem.getGraphId());
+		if (elem.getGraphId() != null)
+			stateRes.addLiteral(GpmlNew.GRAPH_ID, elem.getGraphId());
 		stateRes.addLiteral(GpmlNew.COLOR, Utils.colorToHex(elem.getColor()));
 		stateRes.addLiteral(GpmlNew.HEIGHT, elem.getMHeight());
 		stateRes.addLiteral(GpmlNew.LINE_STYLE, elem.getLineStyle() != LineStyle.DASHED ? "Solid" : "Broken");
@@ -63,7 +64,8 @@ public class StateConverter {
 		stateRes.addLiteral(GpmlNew.WIDTH, elem.getMWidth());
 		stateRes.addLiteral(GpmlNew.FILL_COLOR, Utils.colorToHex(elem.getFillColor()));
 		stateRes.addLiteral(GpmlNew.ZORDER, elem.getZOrder());
-		stateRes.addLiteral(GpmlNew.SHAPE_TYPE, elem.getShapeType().getName());
+		if (elem.getShapeType() != null)
+			stateRes.addLiteral(GpmlNew.SHAPE_TYPE, elem.getShapeType().getName());
 		stateRes.addLiteral(GpmlNew.STATE_TYPE, elem.getDataNodeType());
 
 		if(elem.getXref() != null && elem.getXref().getId() != null && elem.getXref().getDataSource() != null) {

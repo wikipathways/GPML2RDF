@@ -139,7 +139,8 @@ public class DataNodeConverter {
 		datanodeRes.addLiteral(GpmlNew.WIDTH, elem.getMWidth());
 		datanodeRes.addLiteral(GpmlNew.FILL_COLOR, Utils.colorToHex(elem.getFillColor()));
 		datanodeRes.addLiteral(GpmlNew.ZORDER, elem.getZOrder());
-		datanodeRes.addLiteral(GpmlNew.SHAPE_TYPE, elem.getShapeType().getName());
+		if (elem.getShapeType() != null)
+			datanodeRes.addLiteral(GpmlNew.SHAPE_TYPE, elem.getShapeType().getName());
 		datanodeRes.addLiteral(GpmlNew.TYPE, elem.getDataNodeType());
 		
 		if(elem.getXref() != null && elem.getXref().getId() != null && elem.getXref().getDataSource() != null) {

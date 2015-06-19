@@ -70,7 +70,8 @@ public class LabelConverter {
 		labelRes.addLiteral(GpmlNew.WIDTH, elem.getMWidth());
 		labelRes.addLiteral(GpmlNew.FILL_COLOR, Utils.colorToHex(elem.getFillColor()));
 		labelRes.addLiteral(GpmlNew.ZORDER, elem.getZOrder());
-		labelRes.addLiteral(GpmlNew.SHAPE_TYPE, elem.getShapeType().getName());
+		if (elem.getShapeType() != null)
+			labelRes.addLiteral(GpmlNew.SHAPE_TYPE, elem.getShapeType().getName());
 		
 		for(String s : elem.getBiopaxRefs()) {
 			labelRes.addLiteral(GpmlNew.BIOPAX_REF, s);
