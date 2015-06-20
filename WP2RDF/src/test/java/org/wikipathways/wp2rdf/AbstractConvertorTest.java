@@ -4,11 +4,13 @@ import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 
 import org.junit.Assert;
+import org.junit.Test;
 import org.pathvisio.core.model.ConverterException;
 import org.pathvisio.core.model.Pathway;
 import org.wikipathways.wp2rdf.io.PathwayReader;
 
 import com.hp.hpl.jena.rdf.model.Model;
+import com.hp.hpl.jena.rdf.model.Resource;
 
 public abstract class AbstractConvertorTest {
 
@@ -40,4 +42,27 @@ public abstract class AbstractConvertorTest {
 		System.out.println(toString(model));
 	}
 
+	@Test
+	public void testForResourceURIsWithWhitespace() {
+		String errors = "";
+		int errorCount = 0;
+		for (Resource resource : model.listSubjects().toSet()) {
+			String resourceURI = resource.getURI();
+			if (containsWhiteSpace(resourceURI)) {
+				errors += "<" + resourceURI + ">\n";
+				errorCount++;
+			}
+		}
+		Assert.assertEquals(
+			"Resource URIs with whitespace:\n" + errors,
+			0, errorCount
+		);
+	}
+
+	private boolean containsWhiteSpace(String string) {
+		for (int i=0; i<string.length(); i++) {
+			if (Character.isWhitespace(string.charAt(i))) return true;
+		}
+		return false;
+	}
 }
