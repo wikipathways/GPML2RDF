@@ -1,0 +1,11 @@
+prefix dcterms: <http://purl.org/dc/terms/>
+prefix dc:      <http://purl.org/dc/elements/1.1/>
+prefix wp:      <http://vocabularies.wikipathways.org/wp#>
+
+SELECT * WHERE {
+	?rev dc:identifier ?pw_uri ; 
+		dc:title ?title .
+	?metabolite_internal dcterms:isPartOf ?rev ;
+		a wp:Metabolite ;
+		dc:identifier ?metabolite . 
+}
