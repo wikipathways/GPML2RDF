@@ -1,0 +1,14 @@
+prefix dc:      <http://purl.org/dc/elements/1.1/>
+prefix wp:      <http://vocabularies.wikipathways.org/wp#>
+prefix foaf:    <http://xmlns.com/foaf/0.1/> 
+prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ( COUNT ( DISTINCT ?pathway ) AS ?count ) 
+{
+	?pathway a wp:Pathway ;
+		dc:title ?title ; 
+		wp:organism ?organism_uri ; 
+		foaf:page ?page ;
+		dc:identifier ?identifier . 
+	?organism_uri rdfs:label ?organism . 
+}

@@ -1,0 +1,22 @@
+prefix dcterms: <http://purl.org/dc/terms/>
+prefix dc:      <http://purl.org/dc/elements/1.1/>
+prefix wp:      <http://vocabularies.wikipathways.org/wp#>
+prefix foaf:    <http://xmlns.com/foaf/0.1/> 
+prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT * WHERE {
+	?rev dc:identifier ?pw_uri ; 
+		wp:organism ?organism_uri ; 
+		foaf:page ?page ;
+		dc:title ?title . 
+	?organism_uri rdfs:label ?organism .
+	?part_internal dcterms:isPartOf ?rev ;
+		a ?type ;
+		dc:identifier ?part .
+	OPTIONAL { ?rev dcterms:description ?description }
+	OPTIONAL { ?rev wp:pathwayOntology ?ontology }
+	OPTIONAL { ?reference dcterms:isPartOf ?rev ;
+			a wp:PublicationReference }
+	FILTER (!regex(?part,'noIdentifier'))
+	FILTER (?type = wp:Protein || ?type = wp:GeneProduct || ?type = wp:Metabolite || ?type = wp:Reference ) 
+}

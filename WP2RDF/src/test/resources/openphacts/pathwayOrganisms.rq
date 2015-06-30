@@ -1,0 +1,8 @@
+prefix wp:      <http://vocabularies.wikipathways.org/wp#> 
+prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?item COUNT(?pathway) AS ?count WHERE {
+   ?pathway wp:organism ?item  .
+   ?item wp:organismName ?label .
+ GROUP BY ?item
+}
