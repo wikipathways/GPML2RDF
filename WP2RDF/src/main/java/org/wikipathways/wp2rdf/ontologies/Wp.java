@@ -28,6 +28,8 @@ public class Wp {
     
     public static final Property organism = m_model.createProperty( "http://vocabularies.wikipathways.org/wp#organism" );
     
+    public static final Property organismName = m_model.createProperty( "http://vocabularies.wikipathways.org/wp#organismName" );
+    
     public static final Property participants = m_model.createProperty( "http://vocabularies.wikipathways.org/wp#participants" );
     
     public static final Property source = m_model.createProperty( "http://vocabularies.wikipathways.org/wp#source" );

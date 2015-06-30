@@ -53,8 +53,16 @@ public class PathwayConverter {
 		String name = p.getMappInfo().getMapInfoName();
 		String url = Utils.IDENTIFIERS_ORG_URL + "/wikipathways/" + wpId + "_r" + revision;
 		Resource pwyRes = model.createResource(url);
+  		Xref orgTaxId = Organism.fromLatinName(p.getMappInfo().getOrganism()).taxonomyID();
+  		Resource pwyOrgRes = model.createResource(Utils.PURL_TAX_URL + orgTaxId.getId());
 		
-		pwyRes.addLiteral(Wp.organism, p.getMappInfo().getOrganism());
+		
+  		pwyRes.addProperty(Wp.organism, pwyOrgRes);
+		pwyRes.addLiteral(Wp.organismName, p.getMappInfo().getOrganism());
+		
+//		Organism z = Organism.HomoSapiens;
+//		System.out.println(z.taxonomyID().getId());
+//		System.out.println(z.taxonomyID());
 		
 		pwyRes.addProperty(Wp.isAbout, model.createResource(Utils.WP_RDF_URL + "/Pathway/" + wpId + "_r" + revision));
 		
@@ -64,6 +72,20 @@ public class PathwayConverter {
 		pwyRes.addProperty(DC.identifier, model.createResource(url));
 		pwyRes.addLiteral(DC.title, model.createLiteral(name, "en"));
 		pwyRes.addLiteral(DC.source, "Wikipathways");
+		
+		
+
+		for(Comment o : p.getMappInfo().getComments()) 
+		{
+			if(o.getSource() != null) 
+			{
+				if(o.getSource().equals("WikiPathways-description")) 
+				{
+					pwyRes.addProperty(DCTerms.description, o.getComment());
+				}
+			}
+		}
+		
 		
 		return pwyRes;
 	}

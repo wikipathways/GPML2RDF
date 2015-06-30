@@ -104,7 +104,7 @@ public class DataNodeConverter {
 	
 					datanodeRes.addProperty(Wp.isAbout, model.createResource(Utils.WP_RDF_URL + "/Pathway/" + data.getPwyId() + "_r" + data.getRevision() +
 							"/DataNode/" + elem.getGraphId()));
-					datanodeRes.addLiteral(RDFS.label, elem.getTextLabel().replace("\n", " "));
+					datanodeRes.addLiteral(RDFS.label, elem.getTextLabel().replace("\n", " ").trim());
 					datanodeRes.addProperty(DCTerms.isPartOf, data.getPathwayRes());
 					
 				}
