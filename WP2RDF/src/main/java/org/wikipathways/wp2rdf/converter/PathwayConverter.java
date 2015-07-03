@@ -20,6 +20,7 @@ import org.bridgedb.Xref;
 import org.bridgedb.bio.Organism;
 import org.pathvisio.core.biopax.PublicationXref;
 import org.pathvisio.core.model.Pathway;
+import org.pathvisio.core.model.PathwayElement;
 import org.pathvisio.core.model.PathwayElement.Comment;
 import org.wikipathways.wp2rdf.ontologies.Gpml;
 import org.wikipathways.wp2rdf.ontologies.GpmlNew;
@@ -64,6 +65,8 @@ public class PathwayConverter {
 //		System.out.println(z.taxonomyID().getId());
 //		System.out.println(z.taxonomyID());
 		
+//		pwyRes.addProperty(Wp.ontologyTag, p.getMappInfo());
+		
 		pwyRes.addProperty(Wp.isAbout, model.createResource(Utils.WP_RDF_URL + "/Pathway/" + wpId + "_r" + revision));
 		
 		pwyRes.addProperty(FOAF.page, model.createResource(Utils.WP_URL + "/instance/" + wpId + "_r" + revision));
@@ -73,7 +76,8 @@ public class PathwayConverter {
 		pwyRes.addLiteral(DC.title, model.createLiteral(name, "en"));
 		pwyRes.addLiteral(DC.source, "Wikipathways");
 		
-		
+//		PathwayElement info = p.getMappInfo();
+//		info.getOntologyID();
 
 		for(Comment o : p.getMappInfo().getComments()) 
 		{
