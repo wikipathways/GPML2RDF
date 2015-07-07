@@ -19,6 +19,7 @@ package org.wikipathways.wp2rdf.converter;
 import org.bridgedb.Xref;
 import org.bridgedb.bio.Organism;
 import org.pathvisio.core.biopax.PublicationXref;
+import org.pathvisio.core.model.OntologyTag;
 import org.pathvisio.core.model.Pathway;
 import org.pathvisio.core.model.PathwayElement;
 import org.pathvisio.core.model.PathwayElement.Comment;
@@ -64,8 +65,11 @@ public class PathwayConverter {
 //		Organism z = Organism.HomoSapiens;
 //		System.out.println(z.taxonomyID().getId());
 //		System.out.println(z.taxonomyID());
+
+//		DOID_10609
 		
-//		pwyRes.addProperty(Wp.ontologyTag, p.getMappInfo());
+		for (OntologyTag o : p.getOntologyTags()){
+			pwyRes.addProperty(Wp.ontologyTag, model.createResource(Utils.PURL_OBO_LIB + o.getId().replace(":", "_"))); }
 		
 		pwyRes.addProperty(Wp.isAbout, model.createResource(Utils.WP_RDF_URL + "/Pathway/" + wpId + "_r" + revision));
 		
@@ -77,7 +81,7 @@ public class PathwayConverter {
 		pwyRes.addLiteral(DC.source, "Wikipathways");
 		
 //		PathwayElement info = p.getMappInfo();
-//		info.getOntologyID();
+//		p.getOntologyTags();
 
 		for(Comment o : p.getMappInfo().getComments()) 
 		{
@@ -89,7 +93,9 @@ public class PathwayConverter {
 				}
 			}
 		}
-		
+		for(PublicationXref x : p.getMappInfo().getBiopaxReferenceManager().getPublicationXRefs()) {
+			PublicationXrefConverter.parsePublicationXrefWp(x, pwyRes, model);
+		}
 		
 		return pwyRes;
 	}
