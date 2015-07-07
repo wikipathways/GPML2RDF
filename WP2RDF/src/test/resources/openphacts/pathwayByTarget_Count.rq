@@ -14,5 +14,5 @@ SELECT ( COUNT ( DISTINCT ?pathway ) AS ?count ) WHERE {
         { ?gene_product a wp:GeneProduct }
 	UNION { ?gene_product a wp:Protein }
         ?gene_product dc:identifier|wp:bdbUniprot ?pw_uri .
-	?organism_uri rdfs:label ?organism . 
+	?pathway wp:organismName ?organism . 
 }

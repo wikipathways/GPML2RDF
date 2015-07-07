@@ -9,14 +9,14 @@ SELECT * WHERE {
 		wp:organism ?organism_uri ; 
 		foaf:page ?page ;
 		dc:title ?title . 
-	?organism_uri rdfs:label ?organism .
+	?rev wp:organismName ?organism .
 	?part_internal dcterms:isPartOf ?rev ;
 		a ?type ;
 		dc:identifier ?part .
 	OPTIONAL { ?rev dcterms:description ?description }
-	OPTIONAL { ?rev wp:pathwayOntology ?ontology }
+	OPTIONAL { ?rev wp:ontologyTag ?ontology }
 	OPTIONAL { ?reference dcterms:isPartOf ?rev ;
-			a wp:PublicationReference }
+			a wp:PublicationReference . }
 	FILTER (!regex(?part,'noIdentifier'))
 	FILTER (?type = wp:Protein || ?type = wp:GeneProduct || ?type = wp:Metabolite || ?type = wp:Reference ) 
 }

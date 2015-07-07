@@ -10,9 +10,9 @@ SELECT * WHERE {
 		wp:organism ?organism_uri ; 
 		foaf:page ?page ;
 		dc:identifier ?identifier . 
-        ?pw_uri dcterms:isPartOf ?item ;
-                a wp:PublicationReference .
-	?organism_uri rdfs:label ?organism . 
+    ?pw_uri dcterms:isPartOf ?item ;
+            a wp:publicationReference .
+	?item wp:organismName ?organism . 
 	OPTIONAL { ?item dcterms:description ?description }
-	OPTIONAL { ?item wp:pathwayOntology ?ontology }
+	OPTIONAL { ?item wp:ontologyTag ?ontology }
 }

@@ -10,8 +10,8 @@ SELECT ( COUNT ( DISTINCT ?pathway ) AS ?count ) WHERE {
 		wp:organism ?organism_uri ; 
 		foaf:page ?page ;
 		dc:identifier ?identifier . 
-        ?gene_product dcterms:isPartOf ?pathway ;
-                a wp:Metabolite ;
-                dc:identifier ?pw_uri .
-	?organism_uri rdfs:label ?organism . 
+    ?gene_product dcterms:isPartOf ?pathway ;
+        a wp:Metabolite ;
+        dc:identifier ?pw_uri .
+	?pathway wp:organismName ?organism . 
 }

@@ -14,7 +14,7 @@ SELECT * WHERE {
         { ?gene_product a wp:GeneProduct }
 	UNION { ?gene_product a wp:Protein }
         ?gene_product dc:identifier|wp:bdbUniprot ?pw_uri .
-	?organism_uri rdfs:label ?organism . 
+	?item wp:organismName ?organism . 
 	OPTIONAL { ?item dcterms:description ?description }
-	OPTIONAL { ?item wp:pathwayOntology ?ontology }
+	OPTIONAL { ?item wp:ontologyTag ?ontology }
 }

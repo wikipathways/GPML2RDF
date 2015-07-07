@@ -7,6 +7,6 @@ SELECT * WHERE {
 	?rev dc:identifier ?pw_uri ;
 		dc:title ?title .
 	?reference dcterms:isPartOf ?rev ;
-		a wp:PublicationReference
+		a wp:publicationReference .
 	FILTER(!isBlank(?reference)) 
 }

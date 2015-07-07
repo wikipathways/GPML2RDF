@@ -10,5 +10,5 @@ SELECT ( COUNT ( DISTINCT ?pathway ) AS ?count )
 		wp:organism ?organism_uri ; 
 		foaf:page ?page ;
 		dc:identifier ?identifier . 
-	?organism_uri rdfs:label ?organism . 
+	?pathway wp:organismName ?organism . 
 }
