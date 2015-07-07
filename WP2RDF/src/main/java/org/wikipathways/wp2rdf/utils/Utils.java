@@ -52,6 +52,7 @@ public class Utils {
 	public static final String IDENTIFIERS_ORG_URL = "http://identifiers.org";
 	public static final String PURL_TAX_URL = "http://purl.obolobrary.org/obo/NCBITaxon_";
 	public static final String PUBMED_URL = "http://www.ncbi.nlm.nih.gox/pubmed/";
+	public static final String PURL_OBO_LIB = "http://purl.obolibrary.org/obo/";
 	
 	public static void setModelPrefix(Model model){
 		model.setNsPrefix("biopax", Biopax_level3.getURI());
