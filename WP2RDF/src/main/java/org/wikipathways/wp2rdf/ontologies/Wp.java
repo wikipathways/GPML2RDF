@@ -32,6 +32,8 @@ public class Wp {
     
     public static final Property participants = m_model.createProperty( "http://vocabularies.wikipathways.org/wp#participants" );
     
+    public static final Property publicationReference = m_model.createProperty( "http://vocabularies.wikipathways.org/wp#publicationReference" );
+    
     public static final Property source = m_model.createProperty( "http://vocabularies.wikipathways.org/wp#source" );
     
     public static final Property target = m_model.createProperty( "http://vocabularies.wikipathways.org/wp#target" );
