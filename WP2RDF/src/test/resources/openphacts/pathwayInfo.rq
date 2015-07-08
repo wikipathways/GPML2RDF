@@ -16,7 +16,7 @@ SELECT * WHERE {
 	OPTIONAL { ?rev dcterms:description ?description }
 	OPTIONAL { ?rev wp:ontologyTag ?ontology }
 	OPTIONAL { ?reference dcterms:isPartOf ?rev ;
-			a wp:PublicationReference . }
+			a wp:publicationReference . }
 	FILTER (!regex(?part,'noIdentifier'))
 	FILTER (?type = wp:Protein || ?type = wp:GeneProduct || ?type = wp:Metabolite || ?type = wp:Reference ) 
 }
