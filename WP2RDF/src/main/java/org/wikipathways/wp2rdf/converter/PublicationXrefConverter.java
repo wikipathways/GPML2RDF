@@ -43,7 +43,7 @@ public class PublicationXrefConverter {
 	 * semantic information about a publication xref
 	 */
 	public static void parsePublicationXrefWp(PublicationXref xref, Resource parent, Model model) {
-		if (xref.getPubmedId() == null) return; // Reconsider...
+		if (xref.getPubmedId() == null || xref.getPubmedId().trim().length() == 0) return; // Reconsider...
 		Resource pubXrefRes = model.createResource(Utils.IDENTIFIERS_ORG_URL + "/pubmed/" + xref.getPubmedId());
 		pubXrefRes.addProperty(RDF.type, Wp.publicationReference);
 		parent.addProperty(DCTerms.references, pubXrefRes);
@@ -56,7 +56,7 @@ public class PublicationXrefConverter {
 	 */
 	public static void parsePublicationXrefGpml(PublicationXref xref, Resource parent, Model model, DataHandlerGpml data) {
 		Resource pubXrefRes = model.createResource(Utils.IDENTIFIERS_ORG_URL + "/pubmed/" + xref.getPubmedId());
-		if (xref.getPubmedId() == null)
+		if (xref.getPubmedId() == null || xref.getPubmedId().trim().length() == 0)
 			pubXrefRes = model.createResource(data.getPathwayRes().getURI() + "/pub/" + xref.getId());
 		pubXrefRes.addProperty(RDF.type, GpmlNew.PUBLICATION_XREF);
 		pubXrefRes.addLiteral(GpmlNew.ID, xref.getPubmedId() != null ? xref.getPubmedId() : "");
