@@ -43,10 +43,11 @@ public class PublicationXrefConverter {
 	 * semantic information about a publication xref
 	 */
 	public static void parsePublicationXrefWp(PublicationXref xref, Resource parent, Model model) {
+		if (xref.getPubmedId() == null) return; // Reconsider...
 		Resource pubXrefRes = model.createResource(Utils.IDENTIFIERS_ORG_URL + "/pubmed/" + xref.getPubmedId());
 		pubXrefRes.addProperty(RDF.type, Wp.publicationReference);
 		parent.addProperty(DCTerms.references, pubXrefRes);
-		pubXrefRes.addProperty(DCTerms.isPartOf, parent);			
+		pubXrefRes.addProperty(DCTerms.isPartOf, parent);
 		pubXrefRes.addProperty(FOAF.page, model.createResource(Utils.PUBMED_URL + xref.getPubmedId()));
 	}
 	
