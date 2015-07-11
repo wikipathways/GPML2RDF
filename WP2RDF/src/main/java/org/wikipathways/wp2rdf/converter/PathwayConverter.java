@@ -38,6 +38,7 @@ import com.hp.hpl.jena.vocabulary.DC;
 import com.hp.hpl.jena.vocabulary.DCTerms;
 import com.hp.hpl.jena.vocabulary.RDF;
 import com.hp.hpl.jena.vocabulary.RDFS;
+import com.hp.hpl.jena.vocabulary.XSD;
 
 /**
  * 
@@ -77,6 +78,7 @@ public class PathwayConverter {
 		pwyRes.addProperty(RDF.type, Wp.Pathway);
 		pwyRes.addProperty(RDF.type, Skos.Collection);
 		pwyRes.addProperty(DC.identifier, model.createResource(url));
+		pwyRes.addLiteral(DCTerms.identifier, wpId);
 		pwyRes.addLiteral(DC.title, model.createLiteral(name, "en"));
 		pwyRes.addLiteral(DC.source, "Wikipathways");
 		
