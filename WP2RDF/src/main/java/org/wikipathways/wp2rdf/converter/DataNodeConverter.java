@@ -57,7 +57,7 @@ public class DataNodeConverter {
 	public static void parseDataNodeWp(PathwayElement elem, Model model, DataHandlerWp data) {
 		
 		if(elem.getXref() != null && elem.getXref().getId() != null && elem.getXref().getDataSource() != null) {
-			if(!elem.getDataNodeType().equals("Unkown")) {
+			if(!elem.getDataNodeType().equals("Unknown")) {
 				String url = elem.getDataSource().getIdentifiersOrgUri(elem.getXref().getId());
 				if(url != null && !url.equals("")) {
 					Resource datanodeRes = data.getDataNodes().get(elem.getXref());
