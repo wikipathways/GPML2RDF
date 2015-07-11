@@ -118,6 +118,8 @@ public class DataNodeConverter {
 	public static void parseDataNodesGpml(PathwayElement elem, Model model, DataHandlerGpml data) {
 		
 		Resource datanodeRes = model.createResource(data.getPathwayRes().getURI() + "/DataNode/" + elem.getGraphId());
+		if (elem.getGraphId() == null)
+			datanodeRes = model.createResource(data.getPathwayRes().getURI() + "/DataNode/" + elem.hashCode());
 
 		datanodeRes.addLiteral(GpmlNew.FONT_STYLE, elem.isItalic() ? "Italic" : "Normal");
 		datanodeRes.addLiteral(GpmlNew.LINE_THICKNESS, elem.getLineThickness());

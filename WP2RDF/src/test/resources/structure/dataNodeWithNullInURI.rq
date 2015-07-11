@@ -1,0 +1,10 @@
+prefix wp:      <http://vocabularies.wikipathways.org/wp#>
+prefix gpml:    <http://vocabularies.wikipathways.org/gpml#>
+prefix xsd:     <http://www.w3.org/2001/XMLSchema#>
+prefix dcterms: <http://purl.org/dc/terms/>
+
+SELECT DISTINCT ?datanode ?pathway WHERE {
+  ?datanode a gpml:DataNode ;
+    dcterms:isPartOf ?pathway .
+  FILTER (contains(str(?datanode), "/DataNode/null"))
+}
