@@ -55,6 +55,8 @@ public class PublicationXrefConverter {
 	 */
 	public static void parsePublicationXrefGpml(PublicationXref xref, Resource parent, Model model, DataHandlerGpml data) {
 		Resource pubXrefRes = model.createResource(Utils.IDENTIFIERS_ORG_URL + "/pubmed/" + xref.getPubmedId());
+		if (xref.getPubmedId() == null)
+			pubXrefRes = model.createResource(data.getPathwayRes().getURI() + "/pub/" + xref.getId());
 		pubXrefRes.addProperty(RDF.type, GpmlNew.PUBLICATION_XREF);
 		pubXrefRes.addLiteral(GpmlNew.ID, xref.getPubmedId() != null ? xref.getPubmedId() : "");
 		pubXrefRes.addLiteral(GpmlNew.DATABASE, "Pubmed");
