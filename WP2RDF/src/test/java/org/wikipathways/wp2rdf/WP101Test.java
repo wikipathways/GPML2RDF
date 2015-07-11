@@ -38,7 +38,7 @@ public class WP101Test extends AbstractConvertorTest {
 		int errorCount = 0;
 		for (int i=1; i<=table.getRowCount(); i++) {
 			if (table.get(i, "identifier").trim().length() == 0) {
-				errors += table.get(i, "pathway") + " " + table.get(i, "label") + "\n";
+				errors += table.get(i, "pathway") + " " + table.get(i, "label")+ " " + table.get(i, "concept") + "\n";
 				errorCount++;
 			}
 		}
