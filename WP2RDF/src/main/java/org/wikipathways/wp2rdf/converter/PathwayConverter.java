@@ -54,8 +54,8 @@ public class PathwayConverter {
 	 */
 	public static Resource parsePathwayInfoWp(Pathway p, String wpId, String revision, Model model) {
 		String name = p.getMappInfo().getMapInfoName();
-		String url = Utils.IDENTIFIERS_ORG_URL + "/wikipathways/" + wpId + "_r" + revision;
-		Resource pwyRes = model.createResource(url);
+		String url = Utils.IDENTIFIERS_ORG_URL + "/wikipathways/" + wpId ;
+		Resource pwyRes = model.createResource(url + "_r" + revision);
   		Xref orgTaxId = Organism.fromLatinName(p.getMappInfo().getOrganism()).taxonomyID();
   		Resource pwyOrgRes = model.createResource(Utils.PURL_TAX_URL + orgTaxId.getId());
 		
@@ -168,7 +168,7 @@ public class PathwayConverter {
 		
 		// publication references
 		for(PublicationXref x : p.getMappInfo().getBiopaxReferenceManager().getPublicationXRefs()) {
-			PublicationXrefConverter.parsePublicationXref(x, pwyRes, model);
+			PublicationXrefConverter.parsePublicationXrefWp(x, pwyRes, model);
 		}
 		
 		// TODO: add ontology tags when PV can handle them :)
