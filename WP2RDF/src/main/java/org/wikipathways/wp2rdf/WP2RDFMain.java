@@ -20,6 +20,8 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
+import org.bridgedb.IDMapper;
+import org.bridgedb.IDMapperException;
 import org.pathvisio.core.model.ConverterException;
 import org.pathvisio.core.model.Pathway;
 import org.pathvisio.core.view.MIMShapes;
@@ -65,19 +67,18 @@ public class WP2RDFMain {
 			
 			Model pathwayModel = ModelFactory.createDefaultModel();
 			Utils.setModelPrefix(pathwayModel);
+			
+			File bridgeDbFile = new File("/home/martina/Data/BridgeDb/Hs_Derby_20130701.bridge");
+			File bridgeDbFileMet = new File("/home/martina/Data/BridgeDb/metabolites_20140516.bridge");
+			
+			IDMapper geneMapper = Utils.setUpIDMapper(bridgeDbFile);
+			IDMapper metMapper = Utils.setUpIDMapper(bridgeDbFileMet);
+			
 			// New conversion of the pathway in GPML vocabulary
 //			GpmlConverter.convertGpml(p, wpId, revision, pathwayModel);
 			
 			// New conversion of the pathway in WP vocabulary
-			GpmlConverter.convertWp(p, wpId, revision, pathwayModel);
-		
-			// TODO: conversion in WP vocabulary
-			
-//			File bridgeDbFile = new File("/home/martina/Data/BridgeDb/Hs_Derby_20130701.bridge");
-//			File bridgeDbFileMet = new File("/home/martina/Data/BridgeDb/metabolites_20140516.bridge");
-			
-//			IDMapper geneMapper = Utils.setUpIDMapper(bridgeDbFile);
-//			IDMapper metMapper = Utils.setUpIDMapper(bridgeDbFileMet);
+			GpmlConverter.convertWp(p, wpId, revision, pathwayModel, geneMapper, metMapper);
 			
 			// Write model in new file
 			pathwayModel.write(new FileWriter(outputFile), "TURTLE");
@@ -87,6 +88,10 @@ public class WP2RDFMain {
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			System.out.println("cannot set up bridgedb mapper");
+		} catch (IDMapperException e) {
+			System.out.println("cannot set up bridgedb mapper");
 		}
 		
 	}

@@ -22,7 +22,7 @@ import org.pathvisio.core.model.MLine;
 import org.pathvisio.core.model.PathwayElement.Comment;
 import org.pathvisio.core.model.PathwayElement.MAnchor;
 import org.pathvisio.core.model.PathwayElement.MPoint;
-import org.wikipathways.wp2rdf.ontologies.GpmlNew;
+import org.wikipathways.wp2rdf.ontologies.Gpml;
 import org.wikipathways.wp2rdf.utils.DataHandlerGpml;
 import org.wikipathways.wp2rdf.utils.Utils;
 
@@ -45,18 +45,18 @@ public class GraphicalLineConverter {
 	public static void parseInteractionGpml(MLine e, Model model, DataHandlerGpml data) {
 		Resource intRes = model.createResource(data.getPathwayRes().getURI() + "/GraphicalLine/" + e.getGraphId());
 		
-		intRes.addProperty(RDF.type, GpmlNew.GRAPHICAL_LINE);
-		data.getPathwayRes().addProperty(GpmlNew.HAS_GRAPHICAL_LINE, intRes);
+		intRes.addProperty(RDF.type, Gpml.GRAPHICAL_LINE);
+		data.getPathwayRes().addProperty(Gpml.HAS_GRAPHICAL_LINE, intRes);
 		intRes.addProperty(DCTerms.isPartOf, data.getPathwayRes());
 		
-		intRes.addLiteral(GpmlNew.LINE_THICKNESS, e.getLineThickness());
-		intRes.addLiteral(GpmlNew.GRAPH_ID, e.getGraphId());
-		intRes.addLiteral(GpmlNew.COLOR, Utils.colorToHex(e.getColor()));
-		intRes.addLiteral(GpmlNew.LINE_STYLE, e.getLineStyle() != LineStyle.DASHED ? "Solid" : "Broken");
-		intRes.addLiteral(GpmlNew.ZORDER, e.getZOrder());
-		intRes.addLiteral(GpmlNew.CONNECTOR_TYPE, e.getConnectorType().getName());
+		intRes.addLiteral(Gpml.LINE_THICKNESS, e.getLineThickness());
+		intRes.addLiteral(Gpml.GRAPH_ID, e.getGraphId());
+		intRes.addLiteral(Gpml.COLOR, Utils.colorToHex(e.getColor()));
+		intRes.addLiteral(Gpml.LINE_STYLE, e.getLineStyle() != LineStyle.DASHED ? "Solid" : "Broken");
+		intRes.addLiteral(Gpml.ZORDER, e.getZOrder());
+		intRes.addLiteral(Gpml.CONNECTOR_TYPE, e.getConnectorType().getName());
 		
-		if(e.getGroupRef() != null) intRes.addLiteral(GpmlNew.GROUP_REF, e.getGroupRef());
+		if(e.getGroupRef() != null) intRes.addLiteral(Gpml.GROUP_REF, e.getGroupRef());
 		
 		// TODO: in schema there is an interaction type but that's not in the data model. 
 		
@@ -75,7 +75,7 @@ public class GraphicalLineConverter {
 		}
 
 		for(String s : e.getBiopaxRefs()) {
-			intRes.addLiteral(GpmlNew.BIOPAX_REF, s);
+			intRes.addLiteral(Gpml.BIOPAX_REF, s);
 		}
 		
 		for(Comment c : e.getComments()) {

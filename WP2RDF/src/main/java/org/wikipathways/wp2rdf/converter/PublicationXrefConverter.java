@@ -18,9 +18,7 @@ package org.wikipathways.wp2rdf.converter;
 
 import org.pathvisio.core.biopax.PublicationXref;
 import org.wikipathways.wp2rdf.ontologies.Gpml;
-import org.wikipathways.wp2rdf.ontologies.GpmlNew;
 import org.wikipathways.wp2rdf.ontologies.Wp;
-import org.wikipathways.wp2rdf.ontologies.WpOld;
 import org.wikipathways.wp2rdf.utils.DataHandlerGpml;
 import org.wikipathways.wp2rdf.utils.Utils;
 
@@ -58,25 +56,13 @@ public class PublicationXrefConverter {
 		Resource pubXrefRes = model.createResource(Utils.IDENTIFIERS_ORG_URL + "/pubmed/" + xref.getPubmedId());
 		if (xref.getPubmedId() == null || xref.getPubmedId().trim().length() == 0)
 			pubXrefRes = model.createResource(data.getPathwayRes().getURI() + "/pub/" + xref.getId());
-		pubXrefRes.addProperty(RDF.type, GpmlNew.PUBLICATION_XREF);
-		pubXrefRes.addLiteral(GpmlNew.ID, xref.getPubmedId() != null ? xref.getPubmedId() : "");
-		pubXrefRes.addLiteral(GpmlNew.DATABASE, "Pubmed");
+		pubXrefRes.addProperty(RDF.type, Gpml.PUBLICATION_XREF);
+		pubXrefRes.addLiteral(Gpml.ID, xref.getPubmedId() != null ? xref.getPubmedId() : "");
+		pubXrefRes.addLiteral(Gpml.DATABASE, "Pubmed");
 		
 		pubXrefRes.addProperty(DCTerms.isPartOf, parent);			
-		parent.addProperty(GpmlNew.HAS_PUBLICATION_XREF, pubXrefRes);
+		parent.addProperty(Gpml.HAS_PUBLICATION_XREF, pubXrefRes);
 		
 		data.getPubXrefs().put(xref, pubXrefRes);
-	}
-	
-	/**
-	 * old conversion GPML + WP
-	 */
-	public static void parsePublicationXref(PublicationXref xref, Resource parent, Model model) {
-		Resource pubXrefRes = model.createResource(Utils.IDENTIFIERS_ORG_URL + "/pubmed/" + xref.getPubmedId());
-		pubXrefRes.addProperty(RDF.type, WpOld.PublicationReference);
-		parent.addProperty(DCTerms.references, pubXrefRes);
-		pubXrefRes.addProperty(DCTerms.isPartOf, parent);			
-		pubXrefRes.addLiteral(Gpml.biopaxref, xref.getId());
-		pubXrefRes.addProperty(FOAF.page, model.createResource(Utils.PUBMED_URL + xref.getPubmedId()));
 	}
 }

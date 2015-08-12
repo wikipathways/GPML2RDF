@@ -16,6 +16,7 @@
 //
 package org.wikipathways.wp2rdf;
 
+import org.bridgedb.IDMapper;
 import org.pathvisio.core.model.MGroup;
 import org.pathvisio.core.model.MLine;
 import org.pathvisio.core.model.ObjectType;
@@ -82,20 +83,20 @@ public class GpmlConverter {
 		}
 	}
 		
-	public static Model convertWp(Pathway p, String wpId, String revision) {
+	public static Model convertWp(Pathway p, String wpId, String revision, IDMapper geneMapper, IDMapper metMapper) {
 		Model pathwayModel = ModelFactory.createDefaultModel();
 		Utils.setModelPrefix(pathwayModel);
-		convertWp(p, wpId, revision, pathwayModel);
+		convertWp(p, wpId, revision, pathwayModel, geneMapper, metMapper);
 		return pathwayModel;
 	}
 	
-	public static void convertWp(Pathway p, String wpId, String revision, Model pathwayModel) {
+	public static void convertWp(Pathway p, String wpId, String revision, Model pathwayModel, IDMapper geneMapper, IDMapper metMapper) {
 		Resource pathwayRes = PathwayConverter.parsePathwayInfoWp(p, wpId, revision, pathwayModel);
 		DataHandlerWp data = new DataHandlerWp(p, wpId, revision, pathwayRes);
 		
 		for(PathwayElement e : p.getDataObjects()) {
 			if(e.getObjectType().equals(ObjectType.DATANODE)) {
-				DataNodeConverter.parseDataNodeWp(e, pathwayModel, data);
+				DataNodeConverter.parseDataNodeWp(e, pathwayModel, data, geneMapper, metMapper);
 			}
 		}
 		for(PathwayElement e : p.getDataObjects()) {

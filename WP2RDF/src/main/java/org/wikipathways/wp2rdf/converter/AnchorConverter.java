@@ -19,7 +19,6 @@ package org.wikipathways.wp2rdf.converter;
 
 import org.pathvisio.core.model.PathwayElement.MAnchor;
 import org.wikipathways.wp2rdf.ontologies.Gpml;
-import org.wikipathways.wp2rdf.ontologies.GpmlNew;
 import org.wikipathways.wp2rdf.utils.DataHandlerGpml;
 
 import com.hp.hpl.jena.rdf.model.Model;
@@ -41,35 +40,16 @@ public class AnchorConverter {
 	public static void parseAnchorGpml(MAnchor anchor, Model model, Resource lineRes, DataHandlerGpml data) {
 		Resource anchorRes = model.createResource(lineRes.getURI() + "/Anchor/" + anchor.getGraphId());
 
-		anchorRes.addProperty(RDF.type, GpmlNew.ANCHOR);
+		anchorRes.addProperty(RDF.type, Gpml.ANCHOR);
 		anchorRes.addProperty(DCTerms.isPartOf, lineRes);
 		anchorRes.addProperty(DCTerms.isPartOf, data.getPathwayRes());
 		
-		lineRes.addProperty(GpmlNew.HAS_ANCHOR, anchorRes);
+		lineRes.addProperty(Gpml.HAS_ANCHOR, anchorRes);
 		
-		anchorRes.addLiteral(GpmlNew.GRAPH_ID, anchor.getGraphId());
-		anchorRes.addLiteral(GpmlNew.POSITION, anchor.getPosition());
-		anchorRes.addLiteral(GpmlNew.SHAPE, anchor.getShape().getName());
+		anchorRes.addLiteral(Gpml.GRAPH_ID, anchor.getGraphId());
+		anchorRes.addLiteral(Gpml.POSITION, anchor.getPosition());
+		anchorRes.addLiteral(Gpml.SHAPE, anchor.getShape().getName());
 		
 		data.getAnchors().put(anchor, anchorRes);
-	}
-
-	/**
-	 * old conversion
-	 */
-	public static Resource parseAnchor(MAnchor anchor, Model model, Resource lineRes, DataHandlerGpml data) {
-		// TODO: currently the URI is depending on the line - this is not the case for the Point, so I wouldn't do it for Anchors either
-		Resource anchorRes = model.createResource(lineRes.getURI() + "/Anchor/" + anchor.getGraphId());
-		
-		// TODO: shouldn't this be part of the pathway as well?
-		// TODO: anchors actually don't even link to the lines currently. we added this isPartOf
-		anchorRes.addProperty(DCTerms.isPartOf, lineRes);
-		anchorRes.addProperty(RDF.type, Gpml.Anchor);
-		
-		// GPML RELATED PROPERTIES
-		anchorRes.addLiteral(Gpml.anchorPosition, anchor.getPosition());
-		anchorRes.addLiteral(Gpml.graphid, anchor.getGraphId());
-		anchorRes.addLiteral(Gpml.anchorShape, anchor.getShape());
-		return anchorRes;
 	}
 }

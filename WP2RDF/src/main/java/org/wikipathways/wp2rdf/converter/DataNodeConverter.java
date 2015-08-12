@@ -16,21 +16,13 @@
 //
 package org.wikipathways.wp2rdf.converter;
 
-import java.util.Set;
-
-import org.bridgedb.DataSource;
 import org.bridgedb.IDMapper;
-import org.bridgedb.IDMapperException;
-import org.bridgedb.Xref;
 import org.pathvisio.core.biopax.PublicationXref;
 import org.pathvisio.core.model.LineStyle;
 import org.pathvisio.core.model.PathwayElement;
 import org.pathvisio.core.model.PathwayElement.Comment;
 import org.wikipathways.wp2rdf.ontologies.Gpml;
-import org.wikipathways.wp2rdf.ontologies.GpmlNew;
-import org.wikipathways.wp2rdf.ontologies.Skos;
 import org.wikipathways.wp2rdf.ontologies.Wp;
-import org.wikipathways.wp2rdf.ontologies.WpOld;
 import org.wikipathways.wp2rdf.utils.DataHandlerGpml;
 import org.wikipathways.wp2rdf.utils.DataHandlerWp;
 import org.wikipathways.wp2rdf.utils.Utils;
@@ -53,8 +45,10 @@ public class DataNodeConverter {
 	/**
 	 * conversion only WP vocabulary
 	 * semantic information about a data node
+	 * @param metMapper 
+	 * @param geneMapper 
 	 */
-	public static void parseDataNodeWp(PathwayElement elem, Model model, DataHandlerWp data) {
+	public static void parseDataNodeWp(PathwayElement elem, Model model, DataHandlerWp data, IDMapper geneMapper, IDMapper metMapper) {
 		
 		if(elem.getXref() != null && elem.getXref().getId() != null && elem.getXref().getDataSource() != null) {
 			if(!elem.getDataNodeType().equals("Unknown")) {
@@ -73,15 +67,19 @@ public class DataNodeConverter {
 							switch (elem.getDataNodeType()) {
 							case "GeneProduct":
 								datanodeRes.addProperty(RDF.type, Wp.GeneProduct);
+								// add id mapping step
 								break;
 							case "Protein":
 								datanodeRes.addProperty(RDF.type, Wp.Protein);
+								// add id mapping step
 								break;
 							case "Metabolite":
 								datanodeRes.addProperty(RDF.type, Wp.Metabolite);
+								// add id mapping step
 								break;
 							case "Rna":
 								datanodeRes.addProperty(RDF.type, Wp.Rna);
+								// add id mapping step
 								break;
 							case "Pathway":
 								// TODO
@@ -122,37 +120,37 @@ public class DataNodeConverter {
 		if (elem.getGraphId() == null)
 			datanodeRes = model.createResource(data.getPathwayRes().getURI() + "/DataNode/" + elem.hashCode());
 
-		datanodeRes.addLiteral(GpmlNew.FONT_STYLE, elem.isItalic() ? "Italic" : "Normal");
-		datanodeRes.addLiteral(GpmlNew.LINE_THICKNESS, elem.getLineThickness());
-		datanodeRes.addLiteral(GpmlNew.FONT_SIZE, elem.getMFontSize());
-		datanodeRes.addLiteral(GpmlNew.FONT_NAME, elem.getFontName());
-		datanodeRes.addLiteral(GpmlNew.ALIGN, elem.getAlign().getGpmlName());
-		datanodeRes.addLiteral(GpmlNew.GRAPH_ID, elem.getGraphId() != null ? elem.getGraphId() : "");
-		if(elem.getGroupRef() != null) datanodeRes.addLiteral(GpmlNew.GROUP_REF, elem.getGroupRef());
-		datanodeRes.addLiteral(GpmlNew.COLOR, Utils.colorToHex(elem.getColor()));
-		datanodeRes.addLiteral(GpmlNew.CENTER_Y, elem.getMCenterY());
-		datanodeRes.addLiteral(GpmlNew.VALIGN, elem.getValign().getGpmlName());
-		datanodeRes.addLiteral(GpmlNew.FONT_WEIGHT, elem.isBold() ? "Bold" : "Normal");
-		datanodeRes.addLiteral(GpmlNew.FONT_DECORATION, elem.isUnderline() ? "Underline" : "Normal");
-		datanodeRes.addLiteral(GpmlNew.FONT_STRIKETHRU, elem.isStrikethru() ? "Strikethru" : "Normal");
-		datanodeRes.addLiteral(GpmlNew.HEIGHT, elem.getMHeight());
-		datanodeRes.addLiteral(GpmlNew.LINE_STYLE, elem.getLineStyle() != LineStyle.DASHED ? "Solid" : "Broken");
-		datanodeRes.addLiteral(GpmlNew.CENTER_X, elem.getMCenterX());
-		datanodeRes.addLiteral(GpmlNew.TEXTLABEL, elem.getTextLabel());
-		datanodeRes.addLiteral(GpmlNew.WIDTH, elem.getMWidth());
-		datanodeRes.addLiteral(GpmlNew.FILL_COLOR, Utils.colorToHex(elem.getFillColor()));
-		datanodeRes.addLiteral(GpmlNew.ZORDER, elem.getZOrder());
+		datanodeRes.addLiteral(Gpml.FONT_STYLE, elem.isItalic() ? "Italic" : "Normal");
+		datanodeRes.addLiteral(Gpml.LINE_THICKNESS, elem.getLineThickness());
+		datanodeRes.addLiteral(Gpml.FONT_SIZE, elem.getMFontSize());
+		datanodeRes.addLiteral(Gpml.FONT_NAME, elem.getFontName());
+		datanodeRes.addLiteral(Gpml.ALIGN, elem.getAlign().getGpmlName());
+		datanodeRes.addLiteral(Gpml.GRAPH_ID, elem.getGraphId() != null ? elem.getGraphId() : "");
+		if(elem.getGroupRef() != null) datanodeRes.addLiteral(Gpml.GROUP_REF, elem.getGroupRef());
+		datanodeRes.addLiteral(Gpml.COLOR, Utils.colorToHex(elem.getColor()));
+		datanodeRes.addLiteral(Gpml.CENTER_Y, elem.getMCenterY());
+		datanodeRes.addLiteral(Gpml.VALIGN, elem.getValign().getGpmlName());
+		datanodeRes.addLiteral(Gpml.FONT_WEIGHT, elem.isBold() ? "Bold" : "Normal");
+		datanodeRes.addLiteral(Gpml.FONT_DECORATION, elem.isUnderline() ? "Underline" : "Normal");
+		datanodeRes.addLiteral(Gpml.FONT_STRIKETHRU, elem.isStrikethru() ? "Strikethru" : "Normal");
+		datanodeRes.addLiteral(Gpml.HEIGHT, elem.getMHeight());
+		datanodeRes.addLiteral(Gpml.LINE_STYLE, elem.getLineStyle() != LineStyle.DASHED ? "Solid" : "Broken");
+		datanodeRes.addLiteral(Gpml.CENTER_X, elem.getMCenterX());
+		datanodeRes.addLiteral(Gpml.TEXTLABEL, elem.getTextLabel());
+		datanodeRes.addLiteral(Gpml.WIDTH, elem.getMWidth());
+		datanodeRes.addLiteral(Gpml.FILL_COLOR, Utils.colorToHex(elem.getFillColor()));
+		datanodeRes.addLiteral(Gpml.ZORDER, elem.getZOrder());
 		if (elem.getShapeType() != null)
-			datanodeRes.addLiteral(GpmlNew.SHAPE_TYPE, elem.getShapeType().getName());
-		datanodeRes.addLiteral(GpmlNew.TYPE, elem.getDataNodeType());
+			datanodeRes.addLiteral(Gpml.SHAPE_TYPE, elem.getShapeType().getName());
+		datanodeRes.addLiteral(Gpml.TYPE, elem.getDataNodeType());
 		
 		if(elem.getXref() != null && elem.getXref().getId() != null && elem.getXref().getDataSource() != null) {
-			datanodeRes.addLiteral(GpmlNew.XREF_ID, elem.getXref().getId());
-			datanodeRes.addLiteral(GpmlNew.XREF_DATASOURCE, elem.getXref().getDataSource().getFullName());
+			datanodeRes.addLiteral(Gpml.XREF_ID, elem.getXref().getId());
+			datanodeRes.addLiteral(Gpml.XREF_DATASOURCE, elem.getXref().getDataSource().getFullName());
 		}
 		
 		for(String s : elem.getBiopaxRefs()) {
-			datanodeRes.addLiteral(GpmlNew.BIOPAX_REF, s);
+			datanodeRes.addLiteral(Gpml.BIOPAX_REF, s);
 		}
 		
 		for(Comment c : elem.getComments()) {
@@ -163,148 +161,11 @@ public class DataNodeConverter {
 			PublicationXrefConverter.parsePublicationXrefGpml(xref, datanodeRes, model, data);
 		}
 		
-		datanodeRes.addProperty(RDF.type, GpmlNew.DATA_NODE);
+		datanodeRes.addProperty(RDF.type, Gpml.DATA_NODE);
 		
 		datanodeRes.addProperty(DCTerms.isPartOf, data.getPathwayRes());
-		data.getPathwayRes().addProperty(GpmlNew.HAS_DATA_NODE, datanodeRes);
+		data.getPathwayRes().addProperty(Gpml.HAS_DATA_NODE, datanodeRes);
 		data.getPathwayElements().put(elem, datanodeRes);
 		
-	}
-
-	/**
-	 * old conversion GPML + WP
-	 */
-	public static void parseDataNodes(PathwayElement elem, Model model, IDMapper geneMapper, IDMapper metMapper, DataHandlerGpml data) {
-		
-		String name = elem.getTextLabel().replace("\n", " ");
-		
-		Resource datanodeRes = model.createResource(data.getPathwayRes().getURI() + "/DataNode/" + elem.getGraphId());
-		datanodeRes.addProperty(DCTerms.isPartOf, data.getPathwayRes());
-		datanodeRes.addProperty(RDF.type, Gpml.DataNode);
-		datanodeRes.addProperty(RDF.type, Skos.Concept);
-		
-		// why this one?
-		datanodeRes.addProperty(RDFS.isDefinedBy, Gpml.DataNode);
-		datanodeRes.addLiteral(RDFS.label, model.createLiteral(name, "en"));
-		
-		// GPML RELATED PROPERTIES
-		datanodeRes.addLiteral(Gpml.graphid, elem.getGraphId());
-		datanodeRes.addLiteral(Gpml.height, elem.getMHeight());
-		datanodeRes.addLiteral(Gpml.width, elem.getMWidth());
-		datanodeRes.addLiteral(Gpml.zorder, elem.getZOrder());
-		datanodeRes.addLiteral(Gpml.centerx, elem.getMCenterX());
-		datanodeRes.addLiteral(Gpml.centery, elem.getMCenterY());
-
-		// TODO: Add all font related with a central font resource
-
-		// PUBLICATION REFERENCES
-		for(PublicationXref xref : elem.getBiopaxReferenceManager().getPublicationXRefs()) {
-			PublicationXrefConverter.parsePublicationXref(xref, datanodeRes, model);
-		}
-		
-		// IDENTIFIERS
-		if(elem.getXref() != null && !elem.getXref().getId().equals("") && elem.getXref().getDataSource() != null) {
-			// TODO: fix issue with some of the identifiers.org URIs
-			Resource idRes = model.createResource(elem.getXref().getDataSource().getIdentifiersOrgUri(elem.getXref().getId()));
-			datanodeRes.addProperty(DC.identifier, idRes);
-			datanodeRes.addLiteral(DCTerms.identifier, elem.getXref().getId());
-			// TODO: why not use DCTerms for source as well?
-			datanodeRes.addLiteral(DC.source, elem.getXref().getDataSource().getFullName());
-			
-			// TODO: mapping to unified ids
-			try {
-				switch (elem.getDataNodeType()) {
-				case "GeneProduct":
-					mapGeneProduct(elem, geneMapper, datanodeRes, model);
-					break;
-				case "Protein":
-					mapGeneProduct(elem, geneMapper, datanodeRes, model);
-					break;
-				case "Metabolite":
-					mapMetabolite(elem, metMapper, datanodeRes, model);
-					break;
-				case "Rna":
-					mapGeneProduct(elem, geneMapper, datanodeRes, model);
-					break;
-				default:
-					break;
-				}
-			} catch (IDMapperException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-		
-		switch (elem.getDataNodeType()) {
-		case "GeneProduct":
-			datanodeRes.addProperty(RDF.type, WpOld.GeneProduct);
-			break;
-		case "Protein":
-			datanodeRes.addProperty(RDF.type, WpOld.Protein);
-			break;
-		case "Metabolite":
-			datanodeRes.addProperty(RDF.type, WpOld.Metabolite);
-			break;
-		case "Pathway":
-			datanodeRes.addProperty(RDF.type, WpOld.Pathway);
-			break;
-		case "Rna":
-			datanodeRes.addProperty(RDF.type, WpOld.RNA);
-			break;
-		default:
-			break;
-		}
-		
-		// GROUP 
-		if(elem.getGroupRef() != null) {
-			Resource res = model.getResource(data.getPathwayRes().getURI() + "/Group/" + elem.getGroupRef());
-			if(res != null) {
-				datanodeRes.addProperty(DCTerms.isPartOf, res);
-			} else {
-				System.out.println("ERRRORRRR!!!");
-			}
-		}
-		
-		// TODO: subClass of resource missing (not sure what that is)
-		
-		
-		data.getPathwayElements().put(elem, datanodeRes);
-	}
-	
-	private static void mapMetabolite(PathwayElement elem, IDMapper metMapper, Resource datanodeRes, Model model) throws IDMapperException {
-		Set<Xref> resCs = metMapper.mapID(elem.getXref(), DataSource.getExistingBySystemCode("Cs"));
-		for(Xref x : resCs) {
-			Resource res = model.createResource(Utils.IDENTIFIERS_ORG_URL + "/chemspider/" + x.getId());
-			datanodeRes.addProperty(WpOld.bdbChemspider, res);
-		}
-		Set<Xref> resCh = metMapper.mapID(elem.getXref(), DataSource.getExistingBySystemCode("Ch"));
-		for(Xref x : resCh) {
-			Resource res = model.createResource(Utils.IDENTIFIERS_ORG_URL + "/hmdb/" + x.getId());
-			datanodeRes.addProperty(WpOld.bdbHmdb, res);
-		}
-	}
-	
-	
-	private static void mapGeneProduct(PathwayElement elem, IDMapper geneMapper, Resource datanodeRes, Model model) throws IDMapperException {
-		Set<Xref> resEn = geneMapper.mapID(elem.getXref(), DataSource.getExistingBySystemCode("En"));
-		for(Xref x : resEn) {
-			Resource res = model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ensembl/" + x.getId());
-			datanodeRes.addProperty(WpOld.bdbEnsembl, res);
-		}
-		Set<Xref> resS = geneMapper.mapID(elem.getXref(), DataSource.getExistingBySystemCode("S"));
-		for(Xref x : resS) {
-			Resource res = model.createResource(Utils.IDENTIFIERS_ORG_URL + "/uniprot/" + x.getId());
-			datanodeRes.addProperty(WpOld.bdbUniprot, res);
-		}
-		Set<Xref> resH = geneMapper.mapID(elem.getXref(), DataSource.getExistingBySystemCode("H"));
-		for(Xref x : resH) {
-			Resource res = model.createResource(Utils.IDENTIFIERS_ORG_URL + "/hgnc.symbol/" + x.getId());
-			datanodeRes.addProperty(WpOld.bdbHgncSymbol, res);
-		}
-		Set<Xref> resL = geneMapper.mapID(elem.getXref(), DataSource.getExistingBySystemCode("L"));
-		for(Xref x : resL) {
-			Resource res = model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ncbigene/" + x.getId());
-			datanodeRes.addProperty(WpOld.bdbEntrezGene, res);
-		}
 	}
 }

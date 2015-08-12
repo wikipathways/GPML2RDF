@@ -17,7 +17,7 @@
 package org.wikipathways.wp2rdf.converter;
 
 import org.pathvisio.core.model.PathwayElement.Comment;
-import org.wikipathways.wp2rdf.ontologies.GpmlNew;
+import org.wikipathways.wp2rdf.ontologies.Gpml;
 import org.wikipathways.wp2rdf.utils.DataHandlerGpml;
 
 import com.hp.hpl.jena.rdf.model.Model;
@@ -39,14 +39,15 @@ public class CommentConverter {
 	public static void parseCommentGpml(Comment comment, Model model, Resource parent, DataHandlerGpml data) {
 		Resource commentRes = model.createResource(data.getPathwayRes().getURI() + "/Comment/" + data.getPathway().getUniqueGraphId());
 		
-		commentRes.addProperty(RDF.type, GpmlNew.COMMENT);
+		commentRes.addProperty(RDF.type, Gpml.COMMENT);
 		
-		if(comment.getSource() != null) commentRes.addLiteral(GpmlNew.SOURCE, comment.getSource());
-		commentRes.addLiteral(GpmlNew.COMMENT_TEXT, comment.getComment());
+		if(comment.getSource() != null) commentRes.addLiteral(Gpml.SOURCE, comment.getSource());
+		commentRes.addLiteral(Gpml.COMMENT_TEXT, comment.getComment());
 		
-		parent.addProperty(GpmlNew.HAS_COMMENT, commentRes);
+		parent.addProperty(Gpml.HAS_COMMENT, commentRes);
 		commentRes.addProperty(DCTerms.isPartOf, parent);
 		
 		data.getComments().put(comment, commentRes);
 	}
+	
 }

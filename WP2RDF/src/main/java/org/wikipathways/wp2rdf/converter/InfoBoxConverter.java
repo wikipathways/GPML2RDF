@@ -17,7 +17,7 @@
 package org.wikipathways.wp2rdf.converter;
 
 import org.pathvisio.core.model.PathwayElement;
-import org.wikipathways.wp2rdf.ontologies.GpmlNew;
+import org.wikipathways.wp2rdf.ontologies.Gpml;
 import org.wikipathways.wp2rdf.utils.DataHandlerGpml;
 
 import com.hp.hpl.jena.rdf.model.Model;
@@ -43,12 +43,12 @@ public class InfoBoxConverter {
 		}
 		Resource infoboxRes = model.createResource(data.getPathwayRes().getURI() + "/InfoBox/" + graphId);
 
-		infoboxRes.addProperty(RDF.type, GpmlNew.INFO_BOX);
+		infoboxRes.addProperty(RDF.type, Gpml.INFO_BOX);
 		infoboxRes.addProperty(DCTerms.isPartOf, data.getPathwayRes());		
-		data.getPathwayRes().addProperty(GpmlNew.HAS_INFO_BOX, infoboxRes);
+		data.getPathwayRes().addProperty(Gpml.HAS_INFO_BOX, infoboxRes);
 		
-		infoboxRes.addLiteral(GpmlNew.CENTER_X, e.getMCenterX());
-		infoboxRes.addLiteral(GpmlNew.CENTER_Y, e.getMCenterY());
+		infoboxRes.addLiteral(Gpml.CENTER_X, e.getMCenterX());
+		infoboxRes.addLiteral(Gpml.CENTER_Y, e.getMCenterY());
 		
 		data.getPathwayElements().put(e, infoboxRes);
 	}

@@ -16,10 +16,8 @@
 //
 package org.wikipathways.wp2rdf.converter;
 
-import org.pathvisio.core.model.LineType;
 import org.pathvisio.core.model.PathwayElement.MPoint;
 import org.wikipathways.wp2rdf.ontologies.Gpml;
-import org.wikipathways.wp2rdf.ontologies.GpmlNew;
 import org.wikipathways.wp2rdf.utils.DataHandlerGpml;
 
 import com.hp.hpl.jena.rdf.model.Model;
@@ -45,44 +43,22 @@ public class PointConverter {
 		}
 		Resource pointRes = model.createResource(lineRes.getURI() + "/Point/" + graphId);
 
-		pointRes.addProperty(RDF.type, GpmlNew.POINT);
+		pointRes.addProperty(RDF.type, Gpml.POINT);
 		pointRes.addProperty(DCTerms.isPartOf, lineRes);
 		pointRes.addProperty(DCTerms.isPartOf, data.getPathwayRes());
 		
-		lineRes.addProperty(GpmlNew.HAS_POINT, pointRes);
+		lineRes.addProperty(Gpml.HAS_POINT, pointRes);
 		
 		// TODO: make sure that every point has a graph id!!!
-		if(point.getGraphId() != null) pointRes.addLiteral(GpmlNew.GRAPH_ID, point.getGraphId());
-		if(point.getGraphRef() != null) pointRes.addLiteral(GpmlNew.GRAPH_REF, point.getGraphRef());
-		pointRes.addLiteral(GpmlNew.REL_X, point.getRelX());
-		pointRes.addLiteral(GpmlNew.REL_Y, point.getRelY());
-		pointRes.addLiteral(GpmlNew.X, point.getX());
-		pointRes.addLiteral(GpmlNew.Y, point.getY());
+		if(point.getGraphId() != null) pointRes.addLiteral(Gpml.GRAPH_ID, point.getGraphId());
+		if(point.getGraphRef() != null) pointRes.addLiteral(Gpml.GRAPH_REF, point.getGraphRef());
+		pointRes.addLiteral(Gpml.REL_X, point.getRelX());
+		pointRes.addLiteral(Gpml.REL_Y, point.getRelY());
+		pointRes.addLiteral(Gpml.X, point.getX());
+		pointRes.addLiteral(Gpml.Y, point.getY());
 		
-		if(arrowHead != null) pointRes.addLiteral(GpmlNew.ARROW_HEAD, arrowHead);
+		if(arrowHead != null) pointRes.addLiteral(Gpml.ARROW_HEAD, arrowHead);
 		
 		data.getPoints().put(point, pointRes);
-	}
-	
-	/**
-	 * old conversion GPML + WP
-	 */
-	public static void parsePoint(MPoint p, LineType lineType, String id, Model model, Resource lineRes, DataHandlerGpml data) {
-		Resource pointRes = model.createResource(data.getPathwayRes().getURI() + "/Point/" + id);
-		// TODO: shouldn't this be part of the pathway as well?
-		pointRes.addProperty(DCTerms.isPartOf, lineRes);
-		pointRes.addProperty(RDF.type, Gpml.Point);
-		
-		// GPML RELATED PROPERTIES
-		pointRes.addLiteral(Gpml.x, p.getX());
-		pointRes.addLiteral(Gpml.y, p.getY());
-		pointRes.addLiteral(Gpml.relX, p.getRelX());
-		pointRes.addLiteral(Gpml.relY, p.getRelY());
-		if(p.getGraphRef() != null) {
-			pointRes.addLiteral(Gpml.graphref, p.getGraphRef());
-		}
-		pointRes.addLiteral(Gpml.arrowHead, lineType.getName());
-		
-		data.getPoints().put(p, pointRes);
 	}
 }

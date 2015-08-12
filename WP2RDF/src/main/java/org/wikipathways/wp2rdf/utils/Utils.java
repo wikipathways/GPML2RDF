@@ -22,6 +22,7 @@ import java.io.File;
 import org.bridgedb.BridgeDb;
 import org.bridgedb.IDMapper;
 import org.bridgedb.IDMapperException;
+import org.bridgedb.bio.DataSourceTxt;
 import org.wikipathways.wp2rdf.ontologies.Biopax_level3;
 import org.wikipathways.wp2rdf.ontologies.Freq;
 import org.wikipathways.wp2rdf.ontologies.Gpml;
@@ -92,6 +93,7 @@ public class Utils {
 	
 	public static IDMapper setUpIDMapper(File file) throws IDMapperException, ClassNotFoundException {
 		Class.forName("org.bridgedb.rdb.IDMapperRdb");  
+		DataSourceTxt.init();
 		IDMapper mapper = BridgeDb.connect("idmapper-pgdb:" + file.getAbsolutePath());
 		return mapper;
 	}

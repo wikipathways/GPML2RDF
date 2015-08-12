@@ -17,9 +17,7 @@
 package org.wikipathways.wp2rdf.converter;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.pathvisio.core.biopax.PublicationXref;
 import org.pathvisio.core.model.LineStyle;
@@ -32,16 +30,13 @@ import org.pathvisio.core.model.PathwayElement.MAnchor;
 import org.pathvisio.core.model.PathwayElement.MPoint;
 import org.pathvisio.core.view.MIMShapes;
 import org.wikipathways.wp2rdf.ontologies.Gpml;
-import org.wikipathways.wp2rdf.ontologies.GpmlNew;
 import org.wikipathways.wp2rdf.ontologies.Wp;
-import org.wikipathways.wp2rdf.ontologies.WpOld;
 import org.wikipathways.wp2rdf.utils.DataHandlerGpml;
 import org.wikipathways.wp2rdf.utils.DataHandlerWp;
 import org.wikipathways.wp2rdf.utils.Utils;
 
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.Resource;
-import com.hp.hpl.jena.vocabulary.DC;
 import com.hp.hpl.jena.vocabulary.DCTerms;
 import com.hp.hpl.jena.vocabulary.RDF;
 
@@ -424,23 +419,23 @@ public class InteractionConverter {
 	public static void parseInteractionGpml(MLine e, Model model, DataHandlerGpml data) {
 		Resource intRes = model.createResource(data.getPathwayRes().getURI() + "/Interaction/" + e.getGraphId());
 		
-		intRes.addProperty(RDF.type, GpmlNew.INTERACTION);
-		data.getPathwayRes().addProperty(GpmlNew.HAS_INTERACTION, intRes);
+		intRes.addProperty(RDF.type, Gpml.INTERACTION);
+		data.getPathwayRes().addProperty(Gpml.HAS_INTERACTION, intRes);
 		intRes.addProperty(DCTerms.isPartOf, data.getPathwayRes());
 		
-		intRes.addLiteral(GpmlNew.LINE_THICKNESS, e.getLineThickness());
-		intRes.addLiteral(GpmlNew.GRAPH_ID, e.getGraphId());
-		intRes.addLiteral(GpmlNew.COLOR, Utils.colorToHex(e.getColor()));
-		intRes.addLiteral(GpmlNew.LINE_STYLE, e.getLineStyle() != LineStyle.DASHED ? "Solid" : "Broken");
-		intRes.addLiteral(GpmlNew.ZORDER, e.getZOrder());
-		intRes.addLiteral(GpmlNew.CONNECTOR_TYPE, e.getConnectorType().getName());
+		intRes.addLiteral(Gpml.LINE_THICKNESS, e.getLineThickness());
+		intRes.addLiteral(Gpml.GRAPH_ID, e.getGraphId());
+		intRes.addLiteral(Gpml.COLOR, Utils.colorToHex(e.getColor()));
+		intRes.addLiteral(Gpml.LINE_STYLE, e.getLineStyle() != LineStyle.DASHED ? "Solid" : "Broken");
+		intRes.addLiteral(Gpml.ZORDER, e.getZOrder());
+		intRes.addLiteral(Gpml.CONNECTOR_TYPE, e.getConnectorType().getName());
 		
 		if(e.getXref() != null && e.getXref().getId() != null && e.getXref().getDataSource() != null) {
-			intRes.addLiteral(GpmlNew.XREF_ID, e.getXref().getId());
-			intRes.addLiteral(GpmlNew.XREF_DATASOURCE, e.getXref().getDataSource().getFullName());
+			intRes.addLiteral(Gpml.XREF_ID, e.getXref().getId());
+			intRes.addLiteral(Gpml.XREF_DATASOURCE, e.getXref().getDataSource().getFullName());
 		}
 		
-		if(e.getGroupRef() != null) intRes.addLiteral(GpmlNew.GROUP_REF, e.getGroupRef());
+		if(e.getGroupRef() != null) intRes.addLiteral(Gpml.GROUP_REF, e.getGroupRef());
 		
 		// TODO: in schema there is an interaction type but that's not in the data model. 
 		
@@ -459,7 +454,7 @@ public class InteractionConverter {
 		}
 
 		for(String s : e.getBiopaxRefs()) {
-			intRes.addLiteral(GpmlNew.BIOPAX_REF, s);
+			intRes.addLiteral(Gpml.BIOPAX_REF, s);
 		}
 		
 		for(Comment c : e.getComments()) {
@@ -471,169 +466,5 @@ public class InteractionConverter {
 		}
 			
 		data.getPathwayElements().put(e, intRes);
-	}
-	
-	/**
-	 * first try of resolving complex interactions
-	 * still work in progress!!
-	 */
-	public static void parseInteractionSemantics(MLine e, Model model, DataHandlerGpml data) {
-	
-		List<MLine> participatingLines = new ArrayList<MLine>();
-		participatingLines.add(e);
-		List<MLine> regLines = new ArrayList<MLine>();
-		
-		// TODO: implement better way to get lines that are connected to anchor in PV
-		for(MAnchor a : e.getMAnchors()) {
-			for(MPoint p : data.getPoints().keySet()) {
-				if(p.getGraphRef() != null) {
-					if(p.getGraphRef().equals(a.getGraphId())) {
-						MLine interactingLine = (MLine) p.getParent();
-						
-						
-						if(interactingLine.getStartGraphRef() != null && interactingLine.getEndGraphRef() != null) {
-							if(interactingLine.getStartGraphRef().equals(a.getGraphId())) {
-								if(interactingLine.getStartLineType().equals(LineType.LINE)) {
-									if(!participatingLines.contains(interactingLine)) participatingLines.add(interactingLine);
-								} else {
-									if(!regLines.contains(interactingLine)) regLines.add(interactingLine);
-								}
-							} 
-							if(interactingLine.getEndGraphRef().equals(a.getGraphId())) {
-								if(interactingLine.getEndLineType().equals(LineType.LINE)) {
-									if(!participatingLines.contains(interactingLine)) participatingLines.add(interactingLine);
-								} else {
-									if(!regLines.contains(interactingLine)) regLines.add(interactingLine);
-								}
-							} 
-						}
-					}
-				}
-			}			
-		}
-		
-		List<Resource> participants = new ArrayList<Resource>();
-		for(MLine l : participatingLines) {
-			if(l.getStartGraphRef() != null) {
-				PathwayElement pwEle = data.getPathway().getElementById(l.getStartGraphRef());
-				if(pwEle != null) {
-					Resource res = data.getPathwayElements().get(pwEle);
-					if(res != null && res.getProperty(DC.identifier) != null) {
-						participants.add(res);
-					}
-				}
-			}
-			if(l.getEndGraphRef() != null) {
-				PathwayElement pwEle = data.getPathway().getElementById(l.getEndGraphRef());
-				if(pwEle != null) {
-					Resource res = data.getPathwayElements().get(pwEle);
-					if(res != null && res.getProperty(DC.identifier) != null) {
-						participants.add(res);
-					}
-				}
-			}
-		}
-		
-		if(participants.size() >= 2) {
-			// find out what is input and what is output
-			List<Resource> sources = new ArrayList<Resource>();
-			List<Resource> targets = new ArrayList<Resource>();
-			Map<LineType, List<Resource>> intTypes = new HashMap<LineType, List<Resource>>();
-			
-			for(MLine l : participatingLines) {
-				for(Resource r : participants) {
-					if(l.getStartGraphRef().equals(r.getProperty(Gpml.graphid).getString())) {
-						if(l.getStartLineType().equals(LineType.LINE)) {
-							if(!sources.contains(r)) {
-								sources.add(r);
-							}
-						} else {
-							if(!targets.contains(r)) {
-								targets.add(r);
-							}
-							if(intTypes.containsKey(l.getStartLineType())) {
-								intTypes.get(l.getStartLineType()).add(r);
-							} else {
-								ArrayList<Resource> list = new ArrayList<Resource>();
-								list.add(r);
-								intTypes.put(l.getStartLineType(), list);
-							}
-						}
-					}
-					if(l.getEndGraphRef().equals(r.getProperty(Gpml.graphid).getString())) {
-						if(l.getEndLineType().equals(LineType.LINE)) {
-							if(!sources.contains(r)) {
-								sources.add(r);
-							}
-						} else {
-							if(!targets.contains(r)) {
-								targets.add(r);
-							}
-							if(intTypes.containsKey(l.getEndLineType())) {
-								intTypes.get(l.getEndLineType()).add(r);
-							} else {
-								ArrayList<Resource> list = new ArrayList<Resource>();
-								list.add(r);
-								intTypes.put(l.getEndLineType(), list);
-							}
-						}
-					}
-				}
-			}
-			if(intTypes.size() == 1) {
-				LineType lineType = intTypes.keySet().iterator().next();
-				Resource interaction = model.createResource(data.getPathwayRes().getURI() + "/Interaction/" + data.getPathway().getUniqueGraphId());
-				createInteraction(lineType, sources, targets, interaction, data);
-				for(MLine l : participatingLines) {
-					Resource res = data.getPathwayElements().get(l);
-					res.addProperty(DCTerms.isPartOf, interaction);
-				}
-			} else {
-				System.out.println("ERRRORRRR!!!");
-			}
-		}
-	}	
-	
-	private static void createInteraction(LineType lineType, List<Resource> source, List<Resource> target, Resource intRes, DataHandlerGpml data) {
-		intRes.addProperty(RDF.type, WpOld.Interaction);
-		intRes.addProperty(RDF.type, WpOld.Relation);
-		intRes.addProperty(DCTerms.isPartOf, data.getPathwayRes());
-		for(Resource r : source) {
-			intRes.addProperty(WpOld.hasParticipant, r);
-		}
-		for(Resource r : target) {
-			intRes.addProperty(WpOld.hasParticipant, r);
-		}
-		
-		if(lineType.equals(LineType.ARROW)) {
-			mapDirectedInteraction(intRes, source, target, null);
-		} else if (lineType.equals(LineType.TBAR)) {
-			mapDirectedInteraction(intRes, source, target, WpOld.Inhibition);
-		} else if(lineType.equals(MIMShapes.MIM_CONVERSION)) {
-			mapDirectedInteraction(intRes, source, target, WpOld.Conversion);
-		} else if(lineType.equals(MIMShapes.MIM_INHIBITION)) {
-			mapDirectedInteraction(intRes, source, target, WpOld.Inhibition);
-		} else if(lineType.equals(MIMShapes.MIM_MODIFICATION)) {
-			mapDirectedInteraction(intRes, source, target, WpOld.Modification);
-		} else if(lineType.equals(MIMShapes.MIM_NECESSARY_STIMULATION)) {
-			mapDirectedInteraction(intRes, source, target, WpOld.NecessaryStimulation);
-		} else if(lineType.equals(MIMShapes.MIM_STIMULATION)) {
-			mapDirectedInteraction(intRes, source, target, WpOld.Stimulation);
-		} else if(lineType.equals(MIMShapes.MIM_TRANSLATION)) {
-			mapDirectedInteraction(intRes, source, target, WpOld.TranscriptionTranslation);
-		} else if(lineType.equals(MIMShapes.MIM_BINDING)) {
-			mapDirectedInteraction(intRes, source, target, WpOld.Binding);
-		}
-	}
-	
-	private static void mapDirectedInteraction(Resource intRes, List<Resource> source, List<Resource> target, Resource interactionType) {
-		intRes.addProperty(RDF.type, WpOld.DirectedInteraction);
-		if(interactionType != null) intRes.addProperty(RDF.type, interactionType);
-		for(Resource r : source) {
-			intRes.addProperty(WpOld.source, r);
-		}
-		for(Resource r : target) {
-			intRes.addProperty(WpOld.target, r);
-		}
 	}
 }
