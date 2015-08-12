@@ -16,7 +16,6 @@
 //
 package org.wikipathways.wp2rdf.converter;
 
-import org.bridgedb.IDMapper;
 import org.pathvisio.core.biopax.PublicationXref;
 import org.pathvisio.core.model.LineStyle;
 import org.pathvisio.core.model.PathwayElement;
@@ -48,7 +47,7 @@ public class DataNodeConverter {
 	 * @param metMapper 
 	 * @param geneMapper 
 	 */
-	public static void parseDataNodeWp(PathwayElement elem, Model model, DataHandlerWp data, IDMapper geneMapper, IDMapper metMapper) {
+	public static void parseDataNodeWp(PathwayElement elem, Model model, DataHandlerWp data) {
 		
 		if(elem.getXref() != null && elem.getXref().getId() != null && elem.getXref().getDataSource() != null) {
 			if(!elem.getDataNodeType().equals("Unknown")) {
