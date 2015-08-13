@@ -25,7 +25,7 @@ public class DataNodeTest extends AbstractConvertorTest {
 	@Test
 	public void testDataNode() throws ConverterException {
 		String turtle = toString(model);
-		Assert.assertTrue(turtle.contains("<http://rdf.wikipathways.org/Pathway/WP4_r42/DataNode/b06fe>"));
+		Assert.assertTrue(turtle.contains("<http://rdf.wikipathways.org/Pathway/WP4_r42/DataNode/a489f>"));
 		Assert.assertTrue(turtle.contains("gpml:DataNode"));
 		Assert.assertTrue(turtle.contains("gpml:centerX"));
 	}
