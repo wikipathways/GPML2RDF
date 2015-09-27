@@ -12,7 +12,7 @@ public class Gpml {
     private static Model m_model = ModelFactory.createDefaultModel();
     
     /** <p>The namespace of the vocabulary as a string</p> */
-    public static final String NS = "http://vocabularies.wikipathways.org/gpml";
+    public static final String NS = "http://vocabularies.wikipathways.org/gpml#";
     
     /** <p>The namespace of the vocabulary as a string</p>
      *  @see #NS */
