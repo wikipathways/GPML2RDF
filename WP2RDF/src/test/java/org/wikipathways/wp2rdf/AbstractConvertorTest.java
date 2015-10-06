@@ -16,7 +16,7 @@ public abstract class AbstractConvertorTest {
 
 	protected static Model model;
 
-	private static String toString(Model model) {
+	protected static String toString(Model model) {
 		ByteArrayOutputStream output = new ByteArrayOutputStream();
 		model.write(output, "TURTLE");
 		return new String(output.toByteArray());

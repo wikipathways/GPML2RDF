@@ -1,21 +1,11 @@
 package org.wikipathways.wp2rdf;
 
-import java.io.ByteArrayOutputStream;
-
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.pathvisio.core.model.ConverterException;
 
-import com.hp.hpl.jena.rdf.model.Model;
-
 public class DataNodeTest extends AbstractConvertorTest {
-
-	private String toString(Model model) {
-		ByteArrayOutputStream output = new ByteArrayOutputStream();
-		model.write(output, "TURTLE");
-		return new String(output.toByteArray());
-	}
 
 	@BeforeClass
 	public static void createModel() throws ConverterException {
