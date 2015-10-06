@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Pathway xmlns="http://pathvisio.org/GPML/2013a" Name="New Pathway" Version="20150603" Organism="Homo sapiens">
+  <Graphics BoardWidth="819.0" BoardHeight="287.0" />
+  <DataNode TextLabel="VLDL triglyceride" GraphId="ff1ff" Type="Metabolite">
+    <Graphics CenterX="433.0" CenterY="241.0" Width="80.0" Height="20.0" ZOrder="32768" FontSize="10" Valign="Middle" />
+    <Xref Database="ChEBI" ID="47776" />
+  </DataNode>
+  <InfoBox CenterX="0.0" CenterY="0.0" />
+  <Biopax />
+</Pathway>
+
