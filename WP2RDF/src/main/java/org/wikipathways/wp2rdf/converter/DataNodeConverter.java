@@ -52,7 +52,10 @@ public class DataNodeConverter {
 		if(elem.getXref() != null && elem.getXref().getId() != null && elem.getXref().getDataSource() != null) {
 			if(!elem.getDataNodeType().equals("Unknown")) {
 				if (elem.getXref().getId() != null && elem.getXref().getId().trim().length() > 0) {
-					String url = elem.getDataSource().getIdentifiersOrgUri(elem.getXref().getId());
+					String id = elem.getXref().getId().trim();
+					if (elem.getDataSource().getFullName().equals("ChEBI") &&
+						!id.startsWith("ChEBI:")) id = "CHEBI:" + id;
+					String url = elem.getDataSource().getIdentifiersOrgUri(id);
 					if(url != null && !url.equals("")) {
 						Resource datanodeRes = data.getDataNodes().get(elem.getXref());
 						if(datanodeRes == null) {
