@@ -15,13 +15,13 @@ public class OPSBug_GLOBAL290 extends AbstractConvertorTest {
 	@Test
 	public void properIdentifierDotOrgURI() throws Exception {
 		String turtle = toString(model);
-		Assert.assertFalse(turtle.contains("http://identifiers.org/obo.chebi/47776"));
-		Assert.assertTrue(turtle.contains("http://identifiers.org/obo.chebi/CHEBI:47776"));
+		Assert.assertFalse(turtle.contains("http://identifiers.org/chebi/47776"));
+		Assert.assertTrue(turtle.contains("http://identifiers.org/chebi/CHEBI:47776"));
 	}
 
 	@Test
 	public void properIdentifierDotOrgURIFormat() throws Exception {
 		String turtle = toString(model);
-		Assert.assertFalse(turtle.contains("http://identifiers.org/chebi/"));
+		Assert.assertFalse(turtle.contains("http://identifiers.org/obi.chebi/"));
 	}
 }
