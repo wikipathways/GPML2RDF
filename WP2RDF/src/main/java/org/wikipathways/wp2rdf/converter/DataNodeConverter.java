@@ -16,8 +16,16 @@
 //
 package org.wikipathways.wp2rdf.converter;
 
+import java.util.Set;
+
+import org.bridgedb.BridgeDb;
+import org.bridgedb.DataSource;
+import org.bridgedb.IDMapper;
+import org.bridgedb.IDMapperException;
+import org.bridgedb.Xref;
 import org.pathvisio.core.biopax.PublicationXref;
 import org.pathvisio.core.model.LineStyle;
+import org.pathvisio.core.model.Pathway;
 import org.pathvisio.core.model.PathwayElement;
 import org.pathvisio.core.model.PathwayElement.Comment;
 import org.wikipathways.wp2rdf.ontologies.Gpml;
@@ -25,7 +33,6 @@ import org.wikipathways.wp2rdf.ontologies.Wp;
 import org.wikipathways.wp2rdf.utils.DataHandlerGpml;
 import org.wikipathways.wp2rdf.utils.DataHandlerWp;
 import org.wikipathways.wp2rdf.utils.Utils;
-
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.Resource;
 import com.hp.hpl.jena.vocabulary.DC;
@@ -47,21 +54,21 @@ public class DataNodeConverter {
 	 * @param metMapper 
 	 * @param geneMapper 
 	 */
-	public static void parseDataNodeWp(PathwayElement elem, Model model, DataHandlerWp data) {
+	public static void parseDataNodeWp(PathwayElement elem, Model model, DataHandlerWp data, Pathway p) {
+		
+		//final Properties prop = new Properties();
+		//prop.load(new FileInputStream("config.properties"));
 		
 		if(elem.getXref() != null && elem.getXref().getId() != null && elem.getXref().getDataSource() != null) {
 			if(!elem.getDataNodeType().equals("Unknown")) {
 				if (elem.getXref().getId() != null && elem.getXref().getId().trim().length() > 0) {
-					String id = elem.getXref().getId().trim();
-					if (elem.getDataSource().getFullName().equals("ChEBI") &&
-						!id.startsWith("ChEBI:")) id = "CHEBI:" + id;
-					String url = elem.getDataSource().getIdentifiersOrgUri(id);
+					String url = elem.getDataSource().getIdentifiersOrgUri(elem.getXref().getId());
 					if(url != null && !url.equals("")) {
 						Resource datanodeRes = data.getDataNodes().get(elem.getXref());
 						if(datanodeRes == null) {
-							datanodeRes = model.createResource(url);
+							datanodeRes = model.createResource(url.trim().replaceAll(" ", "_"));
 
-							datanodeRes.addProperty(DC.identifier, model.createResource(url));
+							datanodeRes.addProperty(DC.identifier, model.createResource(url.trim().replaceAll(" ", "_")));
 							datanodeRes.addLiteral(DCTerms.source, elem.getXref().getDataSource().getFullName());
 							datanodeRes.addLiteral(DCTerms.identifier, elem.getXref().getId());
 
@@ -70,18 +77,2056 @@ public class DataNodeConverter {
 							case "GeneProduct":
 								datanodeRes.addProperty(RDF.type, Wp.GeneProduct);
 								// add id mapping step
+								try 
+								{
+									Class.forName("org.bridgedb.rdb.IDMapperRdb");
+									// set up switch case for different species to select correct bridge file
+									if (p.getMappInfo().getOrganism().equalsIgnoreCase("homo sapiens") )
+									{
+										DataSource ds = null;
+										DataSource ds1 = null;
+										DataSource ds2 = null;
+										DataSource ds3 = null;
+										
+										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
+												+ "/tmp/OPSBRIDGEDB/Hs_Derby_Ensembl_80.bridge");
+										//here you get crossreferences from all databases the element id maps to
+										ds = ds.getBySystemCode("L");
+										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
+										for(Xref ref: crossrefs){
+											datanodeRes.addProperty(Wp.bdbEntrezGene, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ncbigene/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+										ds1 = ds1.getBySystemCode("En");
+										Set<Xref> crossrefs1 = mapper.mapID(elem.getXref(), ds1);
+										for(Xref ref: crossrefs1){
+										datanodeRes.addProperty(Wp.bdbEnsembl, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ensembl/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+										ds2 = ds2.getBySystemCode("H");
+										Set<Xref> crossrefs2 = mapper.mapID(elem.getXref(), ds2);
+										for(Xref ref: crossrefs2){
+										datanodeRes.addProperty(Wp.bdbHgncSymbol, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/hgnc.symbol/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+										ds3 = ds3.getBySystemCode("S");
+										Set<Xref> crossrefs3 = mapper.mapID(elem.getXref(), ds3);
+										for(Xref ref: crossrefs3){
+										datanodeRes.addProperty(Wp.bdbUniprot, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/uniprot/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+									}
+									
+								} catch (ClassNotFoundException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (IDMapperException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (NullPointerException e){
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+								
+								try 
+								{
+									Class.forName("org.bridgedb.rdb.IDMapperRdb");
+									// set up switch case for different species to select correct bridge file
+									if (p.getMappInfo().getOrganism().equalsIgnoreCase("anopheles gambiae") )
+									{
+										DataSource ds = null;
+										DataSource ds1 = null;
+										DataSource ds2 = null;
+										DataSource ds3 = null;
+										
+										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
+												+ "/tmp/OPSBRIDGEDB/Ag_Derby_Ensembl_Metazoa_28.bridge");
+										//here you get crossreferences from all databases the element id maps to
+										ds = ds.getBySystemCode("L");
+										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
+										for(Xref ref: crossrefs){
+											datanodeRes.addProperty(Wp.bdbEntrezGene, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ncbigene/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+										ds1 = ds1.getBySystemCode("En");
+										Set<Xref> crossrefs1 = mapper.mapID(elem.getXref(), ds1);
+										for(Xref ref: crossrefs1){
+										datanodeRes.addProperty(Wp.bdbEnsembl, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ensembl/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+										ds2 = ds2.getBySystemCode("H");
+										Set<Xref> crossrefs2 = mapper.mapID(elem.getXref(), ds2);
+										for(Xref ref: crossrefs2){
+										datanodeRes.addProperty(Wp.bdbHgncSymbol, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/hgnc.symbol/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+										ds3 = ds3.getBySystemCode("S");
+										Set<Xref> crossrefs3 = mapper.mapID(elem.getXref(), ds3);
+										for(Xref ref: crossrefs3){
+										datanodeRes.addProperty(Wp.bdbUniprot, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/uniprot/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+									}
+									
+								} catch (ClassNotFoundException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (IDMapperException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (NullPointerException e){
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+								
+								try 
+								{
+									Class.forName("org.bridgedb.rdb.IDMapperRdb");
+									// set up switch case for different species to select correct bridge file
+									if (p.getMappInfo().getOrganism().equalsIgnoreCase("arabidopsis thaliana") )
+									{
+										DataSource ds = null;
+										DataSource ds1 = null;
+										DataSource ds2 = null;
+										DataSource ds3 = null;
+										
+										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
+												+ "/tmp/OPSBRIDGEDB/At_Derby_Ensembl_Plant_28.bridge");
+										//here you get crossreferences from all databases the element id maps to
+										ds = ds.getBySystemCode("L");
+										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
+										for(Xref ref: crossrefs){
+											datanodeRes.addProperty(Wp.bdbEntrezGene, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ncbigene/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+										ds1 = ds1.getBySystemCode("En");
+										Set<Xref> crossrefs1 = mapper.mapID(elem.getXref(), ds1);
+										for(Xref ref: crossrefs1){
+										datanodeRes.addProperty(Wp.bdbEnsembl, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ensembl/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+										ds2 = ds2.getBySystemCode("H");
+										Set<Xref> crossrefs2 = mapper.mapID(elem.getXref(), ds2);
+										for(Xref ref: crossrefs2){
+										datanodeRes.addProperty(Wp.bdbHgncSymbol, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/hgnc.symbol/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+										ds3 = ds3.getBySystemCode("S");
+										Set<Xref> crossrefs3 = mapper.mapID(elem.getXref(), ds3);
+										for(Xref ref: crossrefs3){
+										datanodeRes.addProperty(Wp.bdbUniprot, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/uniprot/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+									}
+									
+								} catch (ClassNotFoundException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (IDMapperException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (NullPointerException e){
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+								
+								try 
+								{
+									Class.forName("org.bridgedb.rdb.IDMapperRdb");
+									// set up switch case for different species to select correct bridge file
+									if (p.getMappInfo().getOrganism().equalsIgnoreCase("bacillus subtilis") )
+									{
+										DataSource ds = null;
+										DataSource ds1 = null;
+										DataSource ds2 = null;
+										DataSource ds3 = null;
+										
+										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
+												+ "/tmp/OPSBRIDGEDB/Bs_Derby_Ensembl_80.bridge");
+										//here you get crossreferences from all databases the element id maps to
+										ds = ds.getBySystemCode("L");
+										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
+										for(Xref ref: crossrefs){
+											datanodeRes.addProperty(Wp.bdbEntrezGene, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ncbigene/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+										ds1 = ds1.getBySystemCode("En");
+										Set<Xref> crossrefs1 = mapper.mapID(elem.getXref(), ds1);
+										for(Xref ref: crossrefs1){
+										datanodeRes.addProperty(Wp.bdbEnsembl, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ensembl/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+										ds2 = ds2.getBySystemCode("H");
+										Set<Xref> crossrefs2 = mapper.mapID(elem.getXref(), ds2);
+										for(Xref ref: crossrefs2){
+										datanodeRes.addProperty(Wp.bdbHgncSymbol, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/hgnc.symbol/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+										ds3 = ds3.getBySystemCode("S");
+										Set<Xref> crossrefs3 = mapper.mapID(elem.getXref(), ds3);
+										for(Xref ref: crossrefs3){
+										datanodeRes.addProperty(Wp.bdbUniprot, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/uniprot/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+									}
+									
+								} catch (ClassNotFoundException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (IDMapperException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (NullPointerException e){
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+								
+								try 
+								{
+									Class.forName("org.bridgedb.rdb.IDMapperRdb");
+									// set up switch case for different species to select correct bridge file
+									if (p.getMappInfo().getOrganism().equalsIgnoreCase("bos taurus") )
+									{
+										DataSource ds = null;
+										DataSource ds1 = null;
+										DataSource ds2 = null;
+										DataSource ds3 = null;
+										
+										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
+												+ "/tmp/OPSBRIDGEDB/Bt_Derby_Ensembl_80.bridge");
+										//here you get crossreferences from all databases the element id maps to
+										ds = ds.getBySystemCode("L");
+										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
+										for(Xref ref: crossrefs){
+											datanodeRes.addProperty(Wp.bdbEntrezGene, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ncbigene/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+										ds1 = ds1.getBySystemCode("En");
+										Set<Xref> crossrefs1 = mapper.mapID(elem.getXref(), ds1);
+										for(Xref ref: crossrefs1){
+										datanodeRes.addProperty(Wp.bdbEnsembl, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ensembl/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+										ds2 = ds2.getBySystemCode("H");
+										Set<Xref> crossrefs2 = mapper.mapID(elem.getXref(), ds2);
+										for(Xref ref: crossrefs2){
+										datanodeRes.addProperty(Wp.bdbHgncSymbol, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/hgnc.symbol/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+										ds3 = ds3.getBySystemCode("S");
+										Set<Xref> crossrefs3 = mapper.mapID(elem.getXref(), ds3);
+										for(Xref ref: crossrefs3){
+										datanodeRes.addProperty(Wp.bdbUniprot, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/uniprot/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+									}
+									
+								} catch (ClassNotFoundException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (IDMapperException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (NullPointerException e){
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+								
+								try 
+								{
+									Class.forName("org.bridgedb.rdb.IDMapperRdb");
+									// set up switch case for different species to select correct bridge file
+									if (p.getMappInfo().getOrganism().equalsIgnoreCase("caenorhabditis elegans") )
+									{
+										DataSource ds = null;
+										DataSource ds1 = null;
+										DataSource ds2 = null;
+										DataSource ds3 = null;
+										
+										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
+												+ "/tmp/OPSBRIDGEDB/Ce_Derby_Ensembl_80.bridge");
+										//here you get crossreferences from all databases the element id maps to
+										ds = ds.getBySystemCode("L");
+										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
+										for(Xref ref: crossrefs){
+											datanodeRes.addProperty(Wp.bdbEntrezGene, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ncbigene/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+										ds1 = ds1.getBySystemCode("En");
+										Set<Xref> crossrefs1 = mapper.mapID(elem.getXref(), ds1);
+										for(Xref ref: crossrefs1){
+										datanodeRes.addProperty(Wp.bdbEnsembl, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ensembl/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+										ds2 = ds2.getBySystemCode("H");
+										Set<Xref> crossrefs2 = mapper.mapID(elem.getXref(), ds2);
+										for(Xref ref: crossrefs2){
+										datanodeRes.addProperty(Wp.bdbHgncSymbol, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/hgnc.symbol/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+										ds3 = ds3.getBySystemCode("S");
+										Set<Xref> crossrefs3 = mapper.mapID(elem.getXref(), ds3);
+										for(Xref ref: crossrefs3){
+										datanodeRes.addProperty(Wp.bdbUniprot, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/uniprot/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+									}
+									
+								} catch (ClassNotFoundException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (IDMapperException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (NullPointerException e){
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+								
+								try 
+								{
+									Class.forName("org.bridgedb.rdb.IDMapperRdb");
+									// set up switch case for different species to select correct bridge file
+									if (p.getMappInfo().getOrganism().equalsIgnoreCase("canis familiaris") )
+									{
+										DataSource ds = null;
+										DataSource ds1 = null;
+										DataSource ds2 = null;
+										DataSource ds3 = null;
+										
+										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
+												+ "/tmp/OPSBRIDGEDB/Cf_Derby_Ensembl_80.bridge");
+										//here you get crossreferences from all databases the element id maps to
+										ds = ds.getBySystemCode("L");
+										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
+										for(Xref ref: crossrefs){
+											datanodeRes.addProperty(Wp.bdbEntrezGene, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ncbigene/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+										ds1 = ds1.getBySystemCode("En");
+										Set<Xref> crossrefs1 = mapper.mapID(elem.getXref(), ds1);
+										for(Xref ref: crossrefs1){
+										datanodeRes.addProperty(Wp.bdbEnsembl, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ensembl/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+										ds2 = ds2.getBySystemCode("H");
+										Set<Xref> crossrefs2 = mapper.mapID(elem.getXref(), ds2);
+										for(Xref ref: crossrefs2){
+										datanodeRes.addProperty(Wp.bdbHgncSymbol, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/hgnc.symbol/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+										ds3 = ds3.getBySystemCode("S");
+										Set<Xref> crossrefs3 = mapper.mapID(elem.getXref(), ds3);
+										for(Xref ref: crossrefs3){
+										datanodeRes.addProperty(Wp.bdbUniprot, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/uniprot/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+									}
+									
+								} catch (ClassNotFoundException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (IDMapperException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (NullPointerException e){
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+								
+								try 
+								{
+									Class.forName("org.bridgedb.rdb.IDMapperRdb");
+									// set up switch case for different species to select correct bridge file
+									if (p.getMappInfo().getOrganism().equalsIgnoreCase("danio rerio") )
+									{
+										DataSource ds = null;
+										DataSource ds1 = null;
+										DataSource ds2 = null;
+										DataSource ds3 = null;
+										
+										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
+												+ "/tmp/OPSBRIDGEDB/Dr_Derby_Ensembl_80.bridge");
+										//here you get crossreferences from all databases the element id maps to
+										ds = ds.getBySystemCode("L");
+										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
+										for(Xref ref: crossrefs){
+											datanodeRes.addProperty(Wp.bdbEntrezGene, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ncbigene/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+										ds1 = ds1.getBySystemCode("En");
+										Set<Xref> crossrefs1 = mapper.mapID(elem.getXref(), ds1);
+										for(Xref ref: crossrefs1){
+										datanodeRes.addProperty(Wp.bdbEnsembl, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ensembl/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+										ds2 = ds2.getBySystemCode("H");
+										Set<Xref> crossrefs2 = mapper.mapID(elem.getXref(), ds2);
+										for(Xref ref: crossrefs2){
+										datanodeRes.addProperty(Wp.bdbHgncSymbol, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/hgnc.symbol/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+										ds3 = ds3.getBySystemCode("S");
+										Set<Xref> crossrefs3 = mapper.mapID(elem.getXref(), ds3);
+										for(Xref ref: crossrefs3){
+										datanodeRes.addProperty(Wp.bdbUniprot, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/uniprot/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+									}
+									
+								} catch (ClassNotFoundException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (IDMapperException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (NullPointerException e){
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+								
+								try 
+								{
+									Class.forName("org.bridgedb.rdb.IDMapperRdb");
+									// set up switch case for different species to select correct bridge file
+									if (p.getMappInfo().getOrganism().equalsIgnoreCase("Drosohpila melanogaster") )
+									{
+										DataSource ds = null;
+										DataSource ds1 = null;
+										DataSource ds2 = null;
+										DataSource ds3 = null;
+										
+										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
+												+ "/tmp/OPSBRIDGEDB/Dm_Derby_Ensembl_80.bridge");
+										//here you get crossreferences from all databases the element id maps to
+										ds = ds.getBySystemCode("L");
+										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
+										for(Xref ref: crossrefs){
+											datanodeRes.addProperty(Wp.bdbEntrezGene, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ncbigene/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+										ds1 = ds1.getBySystemCode("En");
+										Set<Xref> crossrefs1 = mapper.mapID(elem.getXref(), ds1);
+										for(Xref ref: crossrefs1){
+										datanodeRes.addProperty(Wp.bdbEnsembl, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ensembl/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+										ds2 = ds2.getBySystemCode("H");
+										Set<Xref> crossrefs2 = mapper.mapID(elem.getXref(), ds2);
+										for(Xref ref: crossrefs2){
+										datanodeRes.addProperty(Wp.bdbHgncSymbol, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/hgnc.symbol/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+										ds3 = ds3.getBySystemCode("S");
+										Set<Xref> crossrefs3 = mapper.mapID(elem.getXref(), ds3);
+										for(Xref ref: crossrefs3){
+										datanodeRes.addProperty(Wp.bdbUniprot, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/uniprot/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+									}
+									
+								} catch (ClassNotFoundException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (IDMapperException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (NullPointerException e){
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+								
+								try 
+								{
+									Class.forName("org.bridgedb.rdb.IDMapperRdb");
+									// set up switch case for different species to select correct bridge file
+									if (p.getMappInfo().getOrganism().equalsIgnoreCase("escherichia coli") )
+									{
+										DataSource ds = null;
+										DataSource ds1 = null;
+										DataSource ds2 = null;
+										DataSource ds3 = null;
+										
+										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
+												+ "/tmp/OPSBRIDGEDB/Ec_Derby_Ensembl_80.bridge");
+										//here you get crossreferences from all databases the element id maps to
+										ds = ds.getBySystemCode("L");
+										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
+										for(Xref ref: crossrefs){
+											datanodeRes.addProperty(Wp.bdbEntrezGene, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ncbigene/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+										ds1 = ds1.getBySystemCode("En");
+										Set<Xref> crossrefs1 = mapper.mapID(elem.getXref(), ds1);
+										for(Xref ref: crossrefs1){
+										datanodeRes.addProperty(Wp.bdbEnsembl, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ensembl/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+										ds2 = ds2.getBySystemCode("H");
+										Set<Xref> crossrefs2 = mapper.mapID(elem.getXref(), ds2);
+										for(Xref ref: crossrefs2){
+										datanodeRes.addProperty(Wp.bdbHgncSymbol, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/hgnc.symbol/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+										ds3 = ds3.getBySystemCode("S");
+										Set<Xref> crossrefs3 = mapper.mapID(elem.getXref(), ds3);
+										for(Xref ref: crossrefs3){
+										datanodeRes.addProperty(Wp.bdbUniprot, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/uniprot/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+									}
+									
+								} catch (ClassNotFoundException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (IDMapperException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (NullPointerException e){
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+								
+								try 
+								{
+									Class.forName("org.bridgedb.rdb.IDMapperRdb");
+									// set up switch case for different species to select correct bridge file
+									if (p.getMappInfo().getOrganism().equalsIgnoreCase("gallus gallus") )
+									{
+										DataSource ds = null;
+										DataSource ds1 = null;
+										DataSource ds2 = null;
+										DataSource ds3 = null;
+										
+										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
+												+ "/tmp/OPSBRIDGEDB/Gg_Derby_Ensembl_80.bridge");
+										//here you get crossreferences from all databases the element id maps to
+										ds = ds.getBySystemCode("L");
+										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
+										for(Xref ref: crossrefs){
+											datanodeRes.addProperty(Wp.bdbEntrezGene, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ncbigene/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+										ds1 = ds1.getBySystemCode("En");
+										Set<Xref> crossrefs1 = mapper.mapID(elem.getXref(), ds1);
+										for(Xref ref: crossrefs1){
+										datanodeRes.addProperty(Wp.bdbEnsembl, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ensembl/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+										ds2 = ds2.getBySystemCode("H");
+										Set<Xref> crossrefs2 = mapper.mapID(elem.getXref(), ds2);
+										for(Xref ref: crossrefs2){
+										datanodeRes.addProperty(Wp.bdbHgncSymbol, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/hgnc.symbol/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+										ds3 = ds3.getBySystemCode("S");
+										Set<Xref> crossrefs3 = mapper.mapID(elem.getXref(), ds3);
+										for(Xref ref: crossrefs3){
+										datanodeRes.addProperty(Wp.bdbUniprot, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/uniprot/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+									}
+									
+								} catch (ClassNotFoundException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (IDMapperException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (NullPointerException e){
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+								
+								try 
+								{
+									Class.forName("org.bridgedb.rdb.IDMapperRdb");
+									// set up switch case for different species to select correct bridge file
+									if (p.getMappInfo().getOrganism().equalsIgnoreCase("mus musculus") )
+									{
+										DataSource ds = null;
+										DataSource ds1 = null;
+										DataSource ds2 = null;
+										DataSource ds3 = null;
+										
+										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
+												+ "/tmp/OPSBRIDGEDB/Mm_Derby_Ensembl_80.bridge");
+										//here you get crossreferences from all databases the element id maps to
+										ds = ds.getBySystemCode("L");
+										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
+										for(Xref ref: crossrefs){
+											datanodeRes.addProperty(Wp.bdbEntrezGene, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ncbigene/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+										ds1 = ds1.getBySystemCode("En");
+										Set<Xref> crossrefs1 = mapper.mapID(elem.getXref(), ds1);
+										for(Xref ref: crossrefs1){
+										datanodeRes.addProperty(Wp.bdbEnsembl, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ensembl/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+										ds2 = ds2.getBySystemCode("H");
+										Set<Xref> crossrefs2 = mapper.mapID(elem.getXref(), ds2);
+										for(Xref ref: crossrefs2){
+										datanodeRes.addProperty(Wp.bdbHgncSymbol, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/hgnc.symbol/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+										ds3 = ds3.getBySystemCode("S");
+										Set<Xref> crossrefs3 = mapper.mapID(elem.getXref(), ds3);
+										for(Xref ref: crossrefs3){
+										datanodeRes.addProperty(Wp.bdbUniprot, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/uniprot/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+									}
+									
+								} catch (ClassNotFoundException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (IDMapperException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (NullPointerException e){
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+								
+								try 
+								{
+									Class.forName("org.bridgedb.rdb.IDMapperRdb");
+									// set up switch case for different species to select correct bridge file
+									if (p.getMappInfo().getOrganism().equalsIgnoreCase("oryza sativa") )
+									{
+										DataSource ds = null;
+										DataSource ds1 = null;
+										DataSource ds2 = null;
+										DataSource ds3 = null;
+										
+										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
+												+ "/tmp/OPSBRIDGEDB/Oj_Derby_Ensembl_Plant_28.bridge");
+										//here you get crossreferences from all databases the element id maps to
+										ds = ds.getBySystemCode("L");
+										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
+										for(Xref ref: crossrefs){
+											datanodeRes.addProperty(Wp.bdbEntrezGene, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ncbigene/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+										ds1 = ds1.getBySystemCode("En");
+										Set<Xref> crossrefs1 = mapper.mapID(elem.getXref(), ds1);
+										for(Xref ref: crossrefs1){
+										datanodeRes.addProperty(Wp.bdbEnsembl, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ensembl/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+										ds2 = ds2.getBySystemCode("H");
+										Set<Xref> crossrefs2 = mapper.mapID(elem.getXref(), ds2);
+										for(Xref ref: crossrefs2){
+										datanodeRes.addProperty(Wp.bdbHgncSymbol, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/hgnc.symbol/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+										ds3 = ds3.getBySystemCode("S");
+										Set<Xref> crossrefs3 = mapper.mapID(elem.getXref(), ds3);
+										for(Xref ref: crossrefs3){
+										datanodeRes.addProperty(Wp.bdbUniprot, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/uniprot/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+									}
+									
+								} catch (ClassNotFoundException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (IDMapperException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (NullPointerException e){
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+								
+								try 
+								{
+									Class.forName("org.bridgedb.rdb.IDMapperRdb");
+									// set up switch case for different species to select correct bridge file
+									if (p.getMappInfo().getOrganism().equalsIgnoreCase("pan troglodytes") )
+									{
+										DataSource ds = null;
+										DataSource ds1 = null;
+										DataSource ds2 = null;
+										DataSource ds3 = null;
+										
+										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
+												+ "/tmp/OPSBRIDGEDB/Pt_Derby_Ensembl_80.bridge");
+										//here you get crossreferences from all databases the element id maps to
+										ds = ds.getBySystemCode("L");
+										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
+										for(Xref ref: crossrefs){
+											datanodeRes.addProperty(Wp.bdbEntrezGene, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ncbigene/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+										ds1 = ds1.getBySystemCode("En");
+										Set<Xref> crossrefs1 = mapper.mapID(elem.getXref(), ds1);
+										for(Xref ref: crossrefs1){
+										datanodeRes.addProperty(Wp.bdbEnsembl, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ensembl/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+										ds2 = ds2.getBySystemCode("H");
+										Set<Xref> crossrefs2 = mapper.mapID(elem.getXref(), ds2);
+										for(Xref ref: crossrefs2){
+										datanodeRes.addProperty(Wp.bdbHgncSymbol, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/hgnc.symbol/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+										ds3 = ds3.getBySystemCode("S");
+										Set<Xref> crossrefs3 = mapper.mapID(elem.getXref(), ds3);
+										for(Xref ref: crossrefs3){
+										datanodeRes.addProperty(Wp.bdbUniprot, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/uniprot/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+									}
+									
+								} catch (ClassNotFoundException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (IDMapperException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (NullPointerException e){
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+								
+								try 
+								{
+									Class.forName("org.bridgedb.rdb.IDMapperRdb");
+									// set up switch case for different species to select correct bridge file
+									if (p.getMappInfo().getOrganism().equalsIgnoreCase("rattus norvegicus") )
+									{
+										DataSource ds = null;
+										DataSource ds1 = null;
+										DataSource ds2 = null;
+										DataSource ds3 = null;
+										
+										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
+												+ "/tmp/OPSBRIDGEDB/Rn_Derby_Ensembl_80.bridge");
+										//here you get crossreferences from all databases the element id maps to
+										ds = ds.getBySystemCode("L");
+										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
+										for(Xref ref: crossrefs){
+											datanodeRes.addProperty(Wp.bdbEntrezGene, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ncbigene/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+										ds1 = ds1.getBySystemCode("En");
+										Set<Xref> crossrefs1 = mapper.mapID(elem.getXref(), ds1);
+										for(Xref ref: crossrefs1){
+										datanodeRes.addProperty(Wp.bdbEnsembl, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ensembl/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+										ds2 = ds2.getBySystemCode("H");
+										Set<Xref> crossrefs2 = mapper.mapID(elem.getXref(), ds2);
+										for(Xref ref: crossrefs2){
+										datanodeRes.addProperty(Wp.bdbHgncSymbol, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/hgnc.symbol/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+										ds3 = ds3.getBySystemCode("S");
+										Set<Xref> crossrefs3 = mapper.mapID(elem.getXref(), ds3);
+										for(Xref ref: crossrefs3){
+										datanodeRes.addProperty(Wp.bdbUniprot, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/uniprot/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+									}
+									
+								} catch (ClassNotFoundException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (IDMapperException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (NullPointerException e){
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+								
+								try 
+								{
+									Class.forName("org.bridgedb.rdb.IDMapperRdb");
+									// set up switch case for different species to select correct bridge file
+									if (p.getMappInfo().getOrganism().equalsIgnoreCase("saccharomyces cerevisiae") )
+									{
+										DataSource ds = null;
+										DataSource ds1 = null;
+										DataSource ds2 = null;
+										DataSource ds3 = null;
+										
+										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
+												+ "/tmp/OPSBRIDGEDB/Sc_Derby_Ensembl_80.bridge");
+										//here you get crossreferences from all databases the element id maps to
+										ds = ds.getBySystemCode("L");
+										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
+										for(Xref ref: crossrefs){
+											datanodeRes.addProperty(Wp.bdbEntrezGene, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ncbigene/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+										ds1 = ds1.getBySystemCode("En");
+										Set<Xref> crossrefs1 = mapper.mapID(elem.getXref(), ds1);
+										for(Xref ref: crossrefs1){
+										datanodeRes.addProperty(Wp.bdbEnsembl, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ensembl/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+										ds2 = ds2.getBySystemCode("H");
+										Set<Xref> crossrefs2 = mapper.mapID(elem.getXref(), ds2);
+										for(Xref ref: crossrefs2){
+										datanodeRes.addProperty(Wp.bdbHgncSymbol, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/hgnc.symbol/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+										ds3 = ds3.getBySystemCode("S");
+										Set<Xref> crossrefs3 = mapper.mapID(elem.getXref(), ds3);
+										for(Xref ref: crossrefs3){
+										datanodeRes.addProperty(Wp.bdbUniprot, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/uniprot/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+									}
+									
+								} catch (ClassNotFoundException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (IDMapperException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (NullPointerException e){
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+								
+								try 
+								{
+									Class.forName("org.bridgedb.rdb.IDMapperRdb");
+									// set up switch case for different species to select correct bridge file
+									if (p.getMappInfo().getOrganism().equalsIgnoreCase("zea mays") )
+									{
+										DataSource ds = null;
+										DataSource ds1 = null;
+										DataSource ds2 = null;
+										DataSource ds3 = null;
+										
+										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
+												+ "/tmp/OPSBRIDGEDB/Zm_Derby_Ensembl_Plant_28.bridge");
+										//here you get crossreferences from all databases the element id maps to
+										ds = ds.getBySystemCode("L");
+										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
+										for(Xref ref: crossrefs){
+											datanodeRes.addProperty(Wp.bdbEntrezGene, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ncbigene/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+										ds1 = ds1.getBySystemCode("En");
+										Set<Xref> crossrefs1 = mapper.mapID(elem.getXref(), ds1);
+										for(Xref ref: crossrefs1){
+										datanodeRes.addProperty(Wp.bdbEnsembl, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ensembl/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+										ds2 = ds2.getBySystemCode("H");
+										Set<Xref> crossrefs2 = mapper.mapID(elem.getXref(), ds2);
+										for(Xref ref: crossrefs2){
+										datanodeRes.addProperty(Wp.bdbHgncSymbol, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/hgnc.symbol/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+										ds3 = ds3.getBySystemCode("S");
+										Set<Xref> crossrefs3 = mapper.mapID(elem.getXref(), ds3);
+										for(Xref ref: crossrefs3){
+										datanodeRes.addProperty(Wp.bdbUniprot, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/uniprot/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+									}
+									
+								} catch (ClassNotFoundException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (IDMapperException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (NullPointerException e){
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+								
 								break;
+								
 							case "Protein":
 								datanodeRes.addProperty(RDF.type, Wp.Protein);
 								// add id mapping step
+								
+								try 
+								{
+									Class.forName("org.bridgedb.rdb.IDMapperRdb");
+									// set up switch case for different species to select correct bridge file
+									if (p.getMappInfo().getOrganism().equalsIgnoreCase("homo sapiens") )
+									{
+										DataSource ds = null;
+										
+										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
+												+ "/tmp/OPSBRIDGEDB/Hs_Derby_Ensembl_80.bridge");
+										//here you get crossreferences from all databases the element id maps to
+
+										ds = ds.getBySystemCode("S");
+										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
+										for(Xref ref: crossrefs){
+										datanodeRes.addProperty(Wp.bdbUniprot, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/uniprot/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+									}
+									
+								} catch (ClassNotFoundException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (IDMapperException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (NullPointerException e){
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+								
+								try 
+								{
+									Class.forName("org.bridgedb.rdb.IDMapperRdb");
+									// set up switch case for different species to select correct bridge file
+									if (p.getMappInfo().getOrganism().equalsIgnoreCase("anopheles gambiae") )
+									{
+										DataSource ds = null;
+										
+										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
+												+ "/tmp/OPSBRIDGEDB/Ag_Derby_Ensembl_Metazoa_28.bridge");
+										//here you get crossreferences from all databases the element id maps to
+
+										ds = ds.getBySystemCode("S");
+										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
+										for(Xref ref: crossrefs){
+										datanodeRes.addProperty(Wp.bdbUniprot, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/uniprot/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+									}
+									
+								} catch (ClassNotFoundException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (IDMapperException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (NullPointerException e){
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+								
+								try 
+								{
+									Class.forName("org.bridgedb.rdb.IDMapperRdb");
+									// set up switch case for different species to select correct bridge file
+									if (p.getMappInfo().getOrganism().equalsIgnoreCase("arabidopsis thaliana") )
+									{
+										DataSource ds = null;
+										
+										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
+												+ "/tmp/OPSBRIDGEDB/At_Derby_Ensembl_Plant_28.bridge");
+										//here you get crossreferences from all databases the element id maps to
+
+										ds = ds.getBySystemCode("S");
+										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
+										for(Xref ref: crossrefs){
+										datanodeRes.addProperty(Wp.bdbUniprot, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/uniprot/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+									}
+									
+								} catch (ClassNotFoundException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (IDMapperException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (NullPointerException e){
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+								
+								try 
+								{
+									Class.forName("org.bridgedb.rdb.IDMapperRdb");
+									// set up switch case for different species to select correct bridge file
+									if (p.getMappInfo().getOrganism().equalsIgnoreCase("bacillus subtilis") )
+									{
+										DataSource ds = null;
+										
+										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
+												+ "/tmp/OPSBRIDGEDB/Bs_Derby_Ensembl_80.bridge");
+										//here you get crossreferences from all databases the element id maps to
+
+										ds = ds.getBySystemCode("S");
+										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
+										for(Xref ref: crossrefs){
+										datanodeRes.addProperty(Wp.bdbUniprot, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/uniprot/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+									}
+									
+								} catch (ClassNotFoundException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (IDMapperException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (NullPointerException e){
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+								
+								try 
+								{
+									Class.forName("org.bridgedb.rdb.IDMapperRdb");
+									// set up switch case for different species to select correct bridge file
+									if (p.getMappInfo().getOrganism().equalsIgnoreCase("bos taurus") )
+									{
+										DataSource ds = null;
+										
+										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
+												+ "/tmp/OPSBRIDGEDB/Bt_Derby_Ensembl_80.bridge");
+										//here you get crossreferences from all databases the element id maps to
+
+										ds = ds.getBySystemCode("S");
+										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
+										for(Xref ref: crossrefs){
+										datanodeRes.addProperty(Wp.bdbUniprot, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/uniprot/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+									}
+									
+								} catch (ClassNotFoundException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (IDMapperException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (NullPointerException e){
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+								
+								try 
+								{
+									Class.forName("org.bridgedb.rdb.IDMapperRdb");
+									// set up switch case for different species to select correct bridge file
+									if (p.getMappInfo().getOrganism().equalsIgnoreCase("caenorhabditis elegans") )
+									{
+										DataSource ds = null;
+										
+										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
+												+ "/tmp/OPSBRIDGEDB/Ce_Derby_Ensembl_80.bridge");
+										//here you get crossreferences from all databases the element id maps to
+
+										ds = ds.getBySystemCode("S");
+										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
+										for(Xref ref: crossrefs){
+										datanodeRes.addProperty(Wp.bdbUniprot, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/uniprot/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+									}
+									
+								} catch (ClassNotFoundException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (IDMapperException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (NullPointerException e){
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+								
+								try 
+								{
+									Class.forName("org.bridgedb.rdb.IDMapperRdb");
+									// set up switch case for different species to select correct bridge file
+									if (p.getMappInfo().getOrganism().equalsIgnoreCase("canis familiaris") )
+									{
+										DataSource ds = null;
+										
+										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
+												+ "/tmp/OPSBRIDGEDB/Cf_Derby_Ensembl_80.bridge");
+										//here you get crossreferences from all databases the element id maps to
+
+										ds = ds.getBySystemCode("S");
+										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
+										for(Xref ref: crossrefs){
+										datanodeRes.addProperty(Wp.bdbUniprot, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/uniprot/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+									}
+									
+								} catch (ClassNotFoundException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (IDMapperException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (NullPointerException e){
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+								
+								try 
+								{
+									Class.forName("org.bridgedb.rdb.IDMapperRdb");
+									// set up switch case for different species to select correct bridge file
+									if (p.getMappInfo().getOrganism().equalsIgnoreCase("drosophila melanogaster") )
+									{
+										DataSource ds = null;
+										
+										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
+												+ "/tmp/OPSBRIDGEDB/Dm_Derby_Ensembl_80.bridge");
+										//here you get crossreferences from all databases the element id maps to
+
+										ds = ds.getBySystemCode("S");
+										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
+										for(Xref ref: crossrefs){
+										datanodeRes.addProperty(Wp.bdbUniprot, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/uniprot/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+									}
+									
+								} catch (ClassNotFoundException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (IDMapperException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (NullPointerException e){
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+								
+								try 
+								{
+									Class.forName("org.bridgedb.rdb.IDMapperRdb");
+									// set up switch case for different species to select correct bridge file
+									if (p.getMappInfo().getOrganism().equalsIgnoreCase("danio rerio") )
+									{
+										DataSource ds = null;
+										
+										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
+												+ "/tmp/OPSBRIDGEDB/Dr_Derby_Ensembl_80.bridge");
+										//here you get crossreferences from all databases the element id maps to
+
+										ds = ds.getBySystemCode("S");
+										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
+										for(Xref ref: crossrefs){
+										datanodeRes.addProperty(Wp.bdbUniprot, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/uniprot/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+									}
+									
+								} catch (ClassNotFoundException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (IDMapperException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (NullPointerException e){
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+								
+								try 
+								{
+									Class.forName("org.bridgedb.rdb.IDMapperRdb");
+									// set up switch case for different species to select correct bridge file
+									if (p.getMappInfo().getOrganism().equalsIgnoreCase("escherichia coli") )
+									{
+										DataSource ds = null;
+										
+										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
+												+ "/tmp/OPSBRIDGEDB/Ec_Derby_Ensembl_80.bridge");
+										//here you get crossreferences from all databases the element id maps to
+
+										ds = ds.getBySystemCode("S");
+										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
+										for(Xref ref: crossrefs){
+										datanodeRes.addProperty(Wp.bdbUniprot, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/uniprot/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+									}
+									
+								} catch (ClassNotFoundException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (IDMapperException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (NullPointerException e){
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+								
+								try 
+								{
+									Class.forName("org.bridgedb.rdb.IDMapperRdb");
+									// set up switch case for different species to select correct bridge file
+									if (p.getMappInfo().getOrganism().equalsIgnoreCase("gallus gallus") )
+									{
+										DataSource ds = null;
+										
+										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
+												+ "/tmp/OPSBRIDGEDB/Gg_Derby_Ensembl_80.bridge");
+										//here you get crossreferences from all databases the element id maps to
+
+										ds = ds.getBySystemCode("S");
+										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
+										for(Xref ref: crossrefs){
+										datanodeRes.addProperty(Wp.bdbUniprot, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/uniprot/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+									}
+									
+								} catch (ClassNotFoundException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (IDMapperException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (NullPointerException e){
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+								
+								try 
+								{
+									Class.forName("org.bridgedb.rdb.IDMapperRdb");
+									// set up switch case for different species to select correct bridge file
+									if (p.getMappInfo().getOrganism().equalsIgnoreCase("mus musculus") )
+									{
+										DataSource ds = null;
+										
+										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
+												+ "/tmp/OPSBRIDGEDB/Mm_Derby_Ensembl_80.bridge");
+										//here you get crossreferences from all databases the element id maps to
+
+										ds = ds.getBySystemCode("S");
+										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
+										for(Xref ref: crossrefs){
+										datanodeRes.addProperty(Wp.bdbUniprot, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/uniprot/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+									}
+									
+								} catch (ClassNotFoundException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (IDMapperException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (NullPointerException e){
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+								
+								try 
+								{
+									Class.forName("org.bridgedb.rdb.IDMapperRdb");
+									// set up switch case for different species to select correct bridge file
+									if (p.getMappInfo().getOrganism().equalsIgnoreCase("oryza sativa") )
+									{
+										DataSource ds = null;
+										
+										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
+												+ "/tmp/OPSBRIDGEDB/Oj_Derby_Ensembl_Plant_28.bridge");
+										//here you get crossreferences from all databases the element id maps to
+
+										ds = ds.getBySystemCode("S");
+										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
+										for(Xref ref: crossrefs){
+										datanodeRes.addProperty(Wp.bdbUniprot, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/uniprot/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+									}
+									
+								} catch (ClassNotFoundException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (IDMapperException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (NullPointerException e){
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+								
+								try 
+								{
+									Class.forName("org.bridgedb.rdb.IDMapperRdb");
+									// set up switch case for different species to select correct bridge file
+									if (p.getMappInfo().getOrganism().equalsIgnoreCase("pan troglodytes") )
+									{
+										DataSource ds = null;
+										
+										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
+												+ "/tmp/OPSBRIDGEDB/Pt_Derby_Ensembl_80.bridge");
+										//here you get crossreferences from all databases the element id maps to
+
+										ds = ds.getBySystemCode("S");
+										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
+										for(Xref ref: crossrefs){
+										datanodeRes.addProperty(Wp.bdbUniprot, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/uniprot/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+									}
+									
+								} catch (ClassNotFoundException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (IDMapperException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (NullPointerException e){
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+								
+								try 
+								{
+									Class.forName("org.bridgedb.rdb.IDMapperRdb");
+									// set up switch case for different species to select correct bridge file
+									if (p.getMappInfo().getOrganism().equalsIgnoreCase("rattus norvegicus") )
+									{
+										DataSource ds = null;
+										
+										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
+												+ "/tmp/OPSBRIDGEDB/Rn_Derby_Ensembl_80.bridge");
+										//here you get crossreferences from all databases the element id maps to
+
+										ds = ds.getBySystemCode("S");
+										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
+										for(Xref ref: crossrefs){
+										datanodeRes.addProperty(Wp.bdbUniprot, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/uniprot/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+									}
+									
+								} catch (ClassNotFoundException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (IDMapperException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (NullPointerException e){
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+								
+								try 
+								{
+									Class.forName("org.bridgedb.rdb.IDMapperRdb");
+									// set up switch case for different species to select correct bridge file
+									if (p.getMappInfo().getOrganism().equalsIgnoreCase("saccharomyces cerevisiae") )
+									{
+										DataSource ds = null;
+										
+										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
+												+ "/tmp/OPSBRIDGEDB/Sc_Derby_Ensembl_80.bridge");
+										//here you get crossreferences from all databases the element id maps to
+
+										ds = ds.getBySystemCode("S");
+										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
+										for(Xref ref: crossrefs){
+										datanodeRes.addProperty(Wp.bdbUniprot, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/uniprot/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+									}
+									
+								} catch (ClassNotFoundException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (IDMapperException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (NullPointerException e){
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+								
+								try 
+								{
+									Class.forName("org.bridgedb.rdb.IDMapperRdb");
+									// set up switch case for different species to select correct bridge file
+									if (p.getMappInfo().getOrganism().equalsIgnoreCase("zea mays") )
+									{
+										DataSource ds = null;
+										
+										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
+												+ "/tmp/OPSBRIDGEDB/Zm_Derby_Ensembl_Plant_28.bridge");
+										//here you get crossreferences from all databases the element id maps to
+
+										ds = ds.getBySystemCode("S");
+										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
+										for(Xref ref: crossrefs){
+										datanodeRes.addProperty(Wp.bdbUniprot, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/uniprot/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+									}
+									
+								} catch (ClassNotFoundException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (IDMapperException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (NullPointerException e){
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+								
 								break;
+								
 							case "Metabolite":
 								datanodeRes.addProperty(RDF.type, Wp.Metabolite);
 								// add id mapping step
+								try 
+								{
+									Class.forName("org.bridgedb.rdb.IDMapperRdb");
+									// set up switch case for different species to select correct bridge file
+									
+										DataSource ds = null;
+										DataSource ds1 = null;
+										DataSource ds2 = null;
+										
+										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
+												+ "/tmp/OPSBRIDGEDB/metabolites_20150409.bridge");
+										//here you get crossreferences from all databases the element id maps to
+										ds = ds.getBySystemCode("Ch");
+										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
+										for(Xref ref: crossrefs){
+										datanodeRes.addProperty(Wp.bdbHmdb, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/hmdb/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+										ds1 = ds1.getBySystemCode("Cs");
+										Set<Xref> crossrefs1 = mapper.mapID(elem.getXref(), ds1);
+										for(Xref ref: crossrefs1){
+										datanodeRes.addProperty(Wp.bdbChemspider, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/chemspider/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+										ds2 = ds2.getBySystemCode("Ce");
+										Set<Xref> crossrefs2 = mapper.mapID(elem.getXref(), ds2);
+										for(Xref ref: crossrefs2){
+										datanodeRes.addProperty(Wp.bdbChEBI, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/chebi/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+									
+									
+								} catch (ClassNotFoundException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (IDMapperException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (NullPointerException e){
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+								
 								break;
+								
 							case "Rna":
 								datanodeRes.addProperty(RDF.type, Wp.Rna);
 								// add id mapping step
+								try 
+								{
+									Class.forName("org.bridgedb.rdb.IDMapperRdb");
+									// set up switch case for different species to select correct bridge file
+									if (p.getMappInfo().getOrganism().equalsIgnoreCase("homo sapiens") )
+									{
+										DataSource ds = null;
+										DataSource ds1 = null;
+										
+										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
+												+ "/tmp/OPSBRIDGEDB/Hs_Derby_Ensembl_80.bridge");
+										//here you get crossreferences from all databases the element id maps to
+										ds = ds.getBySystemCode("L");
+										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
+										for(Xref ref: crossrefs){
+										datanodeRes.addProperty(Wp.bdbEntrezGene, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ncbigene/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+										ds1 = ds1.getBySystemCode("En");
+										Set<Xref> crossrefs1 = mapper.mapID(elem.getXref(), ds1);
+										for(Xref ref: crossrefs1){
+										datanodeRes.addProperty(Wp.bdbEnsembl, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ensembl/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+									}
+									
+								} catch (ClassNotFoundException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (IDMapperException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (NullPointerException e){
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+								
+								try 
+								{
+									Class.forName("org.bridgedb.rdb.IDMapperRdb");
+									// set up switch case for different species to select correct bridge file
+									if (p.getMappInfo().getOrganism().equalsIgnoreCase("anopheles gambiae") )
+									{
+										DataSource ds = null;
+										DataSource ds1 = null;
+										
+										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
+												+ "/tmp/OPSBRIDGEDB/Ag_Derby_Ensembl_Metazoa_28.bridge");
+										//here you get crossreferences from all databases the element id maps to
+										ds = ds.getBySystemCode("L");
+										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
+										for(Xref ref: crossrefs){
+										datanodeRes.addProperty(Wp.bdbEntrezGene, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ncbigene/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+										ds1 = ds1.getBySystemCode("En");
+										Set<Xref> crossrefs1 = mapper.mapID(elem.getXref(), ds1);
+										for(Xref ref: crossrefs1){
+										datanodeRes.addProperty(Wp.bdbEnsembl, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ensembl/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+									}
+									
+								} catch (ClassNotFoundException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (IDMapperException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (NullPointerException e){
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+								
+								try 
+								{
+									Class.forName("org.bridgedb.rdb.IDMapperRdb");
+									// set up switch case for different species to select correct bridge file
+									if (p.getMappInfo().getOrganism().equalsIgnoreCase("arabidopsis thaliana") )
+									{
+										DataSource ds = null;
+										DataSource ds1 = null;
+										
+										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
+												+ "/tmp/OPSBRIDGEDB/At_Derby_Ensembl_Plant_28.bridge");
+										//here you get crossreferences from all databases the element id maps to
+										ds = ds.getBySystemCode("L");
+										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
+										for(Xref ref: crossrefs){
+										datanodeRes.addProperty(Wp.bdbEntrezGene, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ncbigene/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+										ds1 = ds1.getBySystemCode("En");
+										Set<Xref> crossrefs1 = mapper.mapID(elem.getXref(), ds1);
+										for(Xref ref: crossrefs1){
+										datanodeRes.addProperty(Wp.bdbEnsembl, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ensembl/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+									}
+									
+								} catch (ClassNotFoundException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (IDMapperException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (NullPointerException e){
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+								
+								try 
+								{
+									Class.forName("org.bridgedb.rdb.IDMapperRdb");
+									// set up switch case for different species to select correct bridge file
+									if (p.getMappInfo().getOrganism().equalsIgnoreCase("bacillus subtilis") )
+									{
+										DataSource ds = null;
+										DataSource ds1 = null;
+										
+										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
+												+ "/tmp/OPSBRIDGEDB/Bs_Derby_Ensembl_80.bridge");
+										//here you get crossreferences from all databases the element id maps to
+										ds = ds.getBySystemCode("L");
+										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
+										for(Xref ref: crossrefs){
+										datanodeRes.addProperty(Wp.bdbEntrezGene, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ncbigene/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+										ds1 = ds1.getBySystemCode("En");
+										Set<Xref> crossrefs1 = mapper.mapID(elem.getXref(), ds1);
+										for(Xref ref: crossrefs1){
+										datanodeRes.addProperty(Wp.bdbEnsembl, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ensembl/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+									}
+									
+								} catch (ClassNotFoundException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (IDMapperException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (NullPointerException e){
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+								
+								try 
+								{
+									Class.forName("org.bridgedb.rdb.IDMapperRdb");
+									// set up switch case for different species to select correct bridge file
+									if (p.getMappInfo().getOrganism().equalsIgnoreCase("bos taurus") )
+									{
+										DataSource ds = null;
+										DataSource ds1 = null;
+										
+										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
+												+ "/tmp/OPSBRIDGEDB/Bt_Derby_Ensembl_80.bridge");
+										//here you get crossreferences from all databases the element id maps to
+										ds = ds.getBySystemCode("L");
+										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
+										for(Xref ref: crossrefs){
+										datanodeRes.addProperty(Wp.bdbEntrezGene, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ncbigene/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+										ds1 = ds1.getBySystemCode("En");
+										Set<Xref> crossrefs1 = mapper.mapID(elem.getXref(), ds1);
+										for(Xref ref: crossrefs1){
+										datanodeRes.addProperty(Wp.bdbEnsembl, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ensembl/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+									}
+									
+								} catch (ClassNotFoundException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (IDMapperException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (NullPointerException e){
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+								
+								try 
+								{
+									Class.forName("org.bridgedb.rdb.IDMapperRdb");
+									// set up switch case for different species to select correct bridge file
+									if (p.getMappInfo().getOrganism().equalsIgnoreCase("caenorhabditis elegans") )
+									{
+										DataSource ds = null;
+										DataSource ds1 = null;
+										
+										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
+												+ "/tmp/OPSBRIDGEDB/Ce_Derby_Ensembl_80.bridge");
+										//here you get crossreferences from all databases the element id maps to
+										ds = ds.getBySystemCode("L");
+										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
+										for(Xref ref: crossrefs){
+										datanodeRes.addProperty(Wp.bdbEntrezGene, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ncbigene/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+										ds1 = ds1.getBySystemCode("En");
+										Set<Xref> crossrefs1 = mapper.mapID(elem.getXref(), ds1);
+										for(Xref ref: crossrefs1){
+										datanodeRes.addProperty(Wp.bdbEnsembl, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ensembl/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+									}
+									
+								} catch (ClassNotFoundException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (IDMapperException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (NullPointerException e){
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+								
+								try 
+								{
+									Class.forName("org.bridgedb.rdb.IDMapperRdb");
+									// set up switch case for different species to select correct bridge file
+									if (p.getMappInfo().getOrganism().equalsIgnoreCase("canis familiaris") )
+									{
+										DataSource ds = null;
+										DataSource ds1 = null;
+										
+										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
+												+ "/tmp/OPSBRIDGEDB/Cf_Derby_Ensembl_80.bridge");
+										//here you get crossreferences from all databases the element id maps to
+										ds = ds.getBySystemCode("L");
+										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
+										for(Xref ref: crossrefs){
+										datanodeRes.addProperty(Wp.bdbEntrezGene, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ncbigene/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+										ds1 = ds1.getBySystemCode("En");
+										Set<Xref> crossrefs1 = mapper.mapID(elem.getXref(), ds1);
+										for(Xref ref: crossrefs1){
+										datanodeRes.addProperty(Wp.bdbEnsembl, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ensembl/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+									}
+									
+								} catch (ClassNotFoundException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (IDMapperException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (NullPointerException e){
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+								
+								try 
+								{
+									Class.forName("org.bridgedb.rdb.IDMapperRdb");
+									// set up switch case for different species to select correct bridge file
+									if (p.getMappInfo().getOrganism().equalsIgnoreCase("drosophila melanogaster") )
+									{
+										DataSource ds = null;
+										DataSource ds1 = null;
+										
+										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
+												+ "/tmp/OPSBRIDGEDB/Dm_Derby_Ensembl_80.bridge");
+										//here you get crossreferences from all databases the element id maps to
+										ds = ds.getBySystemCode("L");
+										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
+										for(Xref ref: crossrefs){
+										datanodeRes.addProperty(Wp.bdbEntrezGene, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ncbigene/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+										ds1 = ds1.getBySystemCode("En");
+										Set<Xref> crossrefs1 = mapper.mapID(elem.getXref(), ds1);
+										for(Xref ref: crossrefs1){
+										datanodeRes.addProperty(Wp.bdbEnsembl, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ensembl/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+									}
+									
+								} catch (ClassNotFoundException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (IDMapperException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (NullPointerException e){
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+								
+								try 
+								{
+									Class.forName("org.bridgedb.rdb.IDMapperRdb");
+									// set up switch case for different species to select correct bridge file
+									if (p.getMappInfo().getOrganism().equalsIgnoreCase("danio rerio") )
+									{
+										DataSource ds = null;
+										DataSource ds1 = null;
+										
+										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
+												+ "/tmp/OPSBRIDGEDB/Dr_Derby_Ensembl_80.bridge");
+										//here you get crossreferences from all databases the element id maps to
+										ds = ds.getBySystemCode("L");
+										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
+										for(Xref ref: crossrefs){
+										datanodeRes.addProperty(Wp.bdbEntrezGene, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ncbigene/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+										ds1 = ds1.getBySystemCode("En");
+										Set<Xref> crossrefs1 = mapper.mapID(elem.getXref(), ds1);
+										for(Xref ref: crossrefs1){
+										datanodeRes.addProperty(Wp.bdbEnsembl, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ensembl/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+									}
+									
+								} catch (ClassNotFoundException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (IDMapperException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (NullPointerException e){
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+								
+								try 
+								{
+									Class.forName("org.bridgedb.rdb.IDMapperRdb");
+									// set up switch case for different species to select correct bridge file
+									if (p.getMappInfo().getOrganism().equalsIgnoreCase("escherichia coli") )
+									{
+										DataSource ds = null;
+										DataSource ds1 = null;
+										
+										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
+												+ "/tmp/OPSBRIDGEDB/Ec_Derby_Ensembl_80.bridge");
+										//here you get crossreferences from all databases the element id maps to
+										ds = ds.getBySystemCode("L");
+										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
+										for(Xref ref: crossrefs){
+										datanodeRes.addProperty(Wp.bdbEntrezGene, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ncbigene/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+										ds1 = ds1.getBySystemCode("En");
+										Set<Xref> crossrefs1 = mapper.mapID(elem.getXref(), ds1);
+										for(Xref ref: crossrefs1){
+										datanodeRes.addProperty(Wp.bdbEnsembl, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ensembl/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+									}
+									
+								} catch (ClassNotFoundException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (IDMapperException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (NullPointerException e){
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+								
+								try 
+								{
+									Class.forName("org.bridgedb.rdb.IDMapperRdb");
+									// set up switch case for different species to select correct bridge file
+									if (p.getMappInfo().getOrganism().equalsIgnoreCase("gallus gallus") )
+									{
+										DataSource ds = null;
+										DataSource ds1 = null;
+										
+										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
+												+ "/tmp/OPSBRIDGEDB/Gg_Derby_Ensembl_80.bridge");
+										//here you get crossreferences from all databases the element id maps to
+										ds = ds.getBySystemCode("L");
+										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
+										for(Xref ref: crossrefs){
+										datanodeRes.addProperty(Wp.bdbEntrezGene, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ncbigene/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+										ds1 = ds1.getBySystemCode("En");
+										Set<Xref> crossrefs1 = mapper.mapID(elem.getXref(), ds1);
+										for(Xref ref: crossrefs1){
+										datanodeRes.addProperty(Wp.bdbEnsembl, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ensembl/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+									}
+									
+								} catch (ClassNotFoundException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (IDMapperException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (NullPointerException e){
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+								
+								try 
+								{
+									Class.forName("org.bridgedb.rdb.IDMapperRdb");
+									// set up switch case for different species to select correct bridge file
+									if (p.getMappInfo().getOrganism().equalsIgnoreCase("mus musculus") )
+									{
+										DataSource ds = null;
+										DataSource ds1 = null;
+										
+										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
+												+ "/tmp/OPSBRIDGEDB/Mm_Derby_Ensembl_80.bridge");
+										//here you get crossreferences from all databases the element id maps to
+										ds = ds.getBySystemCode("L");
+										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
+										for(Xref ref: crossrefs){
+										datanodeRes.addProperty(Wp.bdbEntrezGene, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ncbigene/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+										ds1 = ds1.getBySystemCode("En");
+										Set<Xref> crossrefs1 = mapper.mapID(elem.getXref(), ds1);
+										for(Xref ref: crossrefs1){
+										datanodeRes.addProperty(Wp.bdbEnsembl, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ensembl/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+									}
+									
+								} catch (ClassNotFoundException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (IDMapperException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (NullPointerException e){
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+								
+								try 
+								{
+									Class.forName("org.bridgedb.rdb.IDMapperRdb");
+									// set up switch case for different species to select correct bridge file
+									if (p.getMappInfo().getOrganism().equalsIgnoreCase("oryza sativa") )
+									{
+										DataSource ds = null;
+										DataSource ds1 = null;
+										
+										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
+												+ "/tmp/OPSBRIDGEDB/Oj_Derby_Ensembl_Plant_28.bridge");
+										//here you get crossreferences from all databases the element id maps to
+										ds = ds.getBySystemCode("L");
+										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
+										for(Xref ref: crossrefs){
+										datanodeRes.addProperty(Wp.bdbEntrezGene, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ncbigene/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+										ds1 = ds1.getBySystemCode("En");
+										Set<Xref> crossrefs1 = mapper.mapID(elem.getXref(), ds1);
+										for(Xref ref: crossrefs1){
+										datanodeRes.addProperty(Wp.bdbEnsembl, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ensembl/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+									}
+									
+								} catch (ClassNotFoundException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (IDMapperException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (NullPointerException e){
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+								
+								try 
+								{
+									Class.forName("org.bridgedb.rdb.IDMapperRdb");
+									// set up switch case for different species to select correct bridge file
+									if (p.getMappInfo().getOrganism().equalsIgnoreCase("pan troglodytes") )
+									{
+										DataSource ds = null;
+										DataSource ds1 = null;
+										
+										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
+												+ "/tmp/OPSBRIDGEDB/Pt_Derby_Ensembl_80.bridge");
+										//here you get crossreferences from all databases the element id maps to
+										ds = ds.getBySystemCode("L");
+										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
+										for(Xref ref: crossrefs){
+										datanodeRes.addProperty(Wp.bdbEntrezGene, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ncbigene/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+										ds1 = ds1.getBySystemCode("En");
+										Set<Xref> crossrefs1 = mapper.mapID(elem.getXref(), ds1);
+										for(Xref ref: crossrefs1){
+										datanodeRes.addProperty(Wp.bdbEnsembl, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ensembl/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+									}
+									
+								} catch (ClassNotFoundException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (IDMapperException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (NullPointerException e){
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+								
+								try 
+								{
+									Class.forName("org.bridgedb.rdb.IDMapperRdb");
+									// set up switch case for different species to select correct bridge file
+									if (p.getMappInfo().getOrganism().equalsIgnoreCase("rattus norvegicus") )
+									{
+										DataSource ds = null;
+										DataSource ds1 = null;
+										
+										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
+												+ "/tmp/OPSBRIDGEDB/Rn_Derby_Ensembl_80.bridge");
+										//here you get crossreferences from all databases the element id maps to
+										ds = ds.getBySystemCode("L");
+										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
+										for(Xref ref: crossrefs){
+										datanodeRes.addProperty(Wp.bdbEntrezGene, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ncbigene/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+										ds1 = ds1.getBySystemCode("En");
+										Set<Xref> crossrefs1 = mapper.mapID(elem.getXref(), ds1);
+										for(Xref ref: crossrefs1){
+										datanodeRes.addProperty(Wp.bdbEnsembl, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ensembl/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+									}
+									
+								} catch (ClassNotFoundException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (IDMapperException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (NullPointerException e){
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+								
+								try 
+								{
+									Class.forName("org.bridgedb.rdb.IDMapperRdb");
+									// set up switch case for different species to select correct bridge file
+									if (p.getMappInfo().getOrganism().equalsIgnoreCase("saccharomyces cerevisiae") )
+									{
+										DataSource ds = null;
+										DataSource ds1 = null;
+										
+										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
+												+ "/tmp/OPSBRIDGEDB/Sc_Derby_Ensembl_80.bridge");
+										//here you get crossreferences from all databases the element id maps to
+										ds = ds.getBySystemCode("L");
+										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
+										for(Xref ref: crossrefs){
+										datanodeRes.addProperty(Wp.bdbEntrezGene, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ncbigene/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+										ds1 = ds1.getBySystemCode("En");
+										Set<Xref> crossrefs1 = mapper.mapID(elem.getXref(), ds1);
+										for(Xref ref: crossrefs1){
+										datanodeRes.addProperty(Wp.bdbEnsembl, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ensembl/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+									}
+									
+								} catch (ClassNotFoundException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (IDMapperException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (NullPointerException e){
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+								
+								try 
+								{
+									Class.forName("org.bridgedb.rdb.IDMapperRdb");
+									// set up switch case for different species to select correct bridge file
+									if (p.getMappInfo().getOrganism().equalsIgnoreCase("zea mays") )
+									{
+										DataSource ds = null;
+										DataSource ds1 = null;
+										
+										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
+												+ "/tmp/OPSBRIDGEDB/Zm_Derby_Ensembl_Plant_28.bridge");
+										//here you get crossreferences from all databases the element id maps to
+										ds = ds.getBySystemCode("L");
+										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
+										for(Xref ref: crossrefs){
+										datanodeRes.addProperty(Wp.bdbEntrezGene, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ncbigene/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+										ds1 = ds1.getBySystemCode("En");
+										Set<Xref> crossrefs1 = mapper.mapID(elem.getXref(), ds1);
+										for(Xref ref: crossrefs1){
+										datanodeRes.addProperty(Wp.bdbEnsembl, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ensembl/" + ref.getId().trim().replaceAll(" ", "_")) );
+										}
+										
+									}
+									
+								} catch (ClassNotFoundException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (IDMapperException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (NullPointerException e){
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+								
+								
+								
 								break;
 							case "Pathway":
 								// TODO
@@ -92,6 +2137,8 @@ public class DataNodeConverter {
 							default:
 								break;
 							}
+									
+							
 							data.getDataNodes().put(elem.getXref(), datanodeRes);
 							data.getPathwayElements().put(elem, datanodeRes);
 						}
@@ -99,7 +2146,7 @@ public class DataNodeConverter {
 						for(PublicationXref xref : elem.getBiopaxReferenceManager().getPublicationXRefs()) {
 							if(xref.getPubmedId() != null && !xref.getPubmedId().equals("")) {
 								String pubmedUrl = Utils.IDENTIFIERS_ORG_URL + "/pubmed/" + xref.getPubmedId();
-								datanodeRes.addProperty(DCTerms.bibliographicCitation, model.createResource(pubmedUrl));
+								datanodeRes.addProperty(DCTerms.bibliographicCitation, model.createResource(pubmedUrl.trim()));
 							}
 						}
 
