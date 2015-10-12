@@ -95,7 +95,7 @@ public class GpmlConverter {
 		
 		for(PathwayElement e : p.getDataObjects()) {
 			if(e.getObjectType().equals(ObjectType.DATANODE)) {
-				DataNodeConverter.parseDataNodeWp(e, pathwayModel, data);
+				DataNodeConverter.parseDataNodeWp(e, pathwayModel, data, p);
 			}
 		}
 		for(PathwayElement e : p.getDataObjects()) {
