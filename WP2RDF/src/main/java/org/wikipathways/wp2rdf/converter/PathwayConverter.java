@@ -48,24 +48,24 @@ public class PathwayConverter {
 	 */
 	public static Resource parsePathwayInfoWp(Pathway p, String wpId, String revision, Model model) {
 		String name = p.getMappInfo().getMapInfoName();
-		String url = Utils.IDENTIFIERS_ORG_URL + "/wikipathways/" + wpId ;
-		Resource pwyRes = model.createResource(url + "_r" + revision);
+		String url = Utils.IDENTIFIERS_ORG_URL + "/wikipathways/" + wpId.trim() ;
+		Resource pwyRes = model.createResource(url + "_r" + revision.trim().replaceAll(" ", "_"));
   		Xref orgTaxId = Organism.fromLatinName(p.getMappInfo().getOrganism()).taxonomyID();
-  		Resource pwyOrgRes = model.createResource(Utils.PURL_TAX_URL + orgTaxId.getId());
+  		Resource pwyOrgRes = model.createResource(Utils.PURL_TAX_URL + orgTaxId.getId().replaceAll(" ", "_"));
 		
 		
   		pwyRes.addProperty(Wp.organism, pwyOrgRes);
 		pwyRes.addLiteral(Wp.organismName, p.getMappInfo().getOrganism());
 
 		for (OntologyTag o : p.getOntologyTags()){
-			pwyRes.addProperty(Wp.ontologyTag, model.createResource(Utils.PURL_OBO_LIB + o.getId().replace(":", "_"))); }
+			pwyRes.addProperty(Wp.ontologyTag, model.createResource(Utils.PURL_OBO_LIB + o.getId().replace(":", "_").trim().replaceAll(" ", "_"))); }
 		
-		pwyRes.addProperty(Wp.isAbout, model.createResource(Utils.WP_RDF_URL + "/Pathway/" + wpId + "_r" + revision));
+		pwyRes.addProperty(Wp.isAbout, model.createResource(Utils.WP_RDF_URL + "/Pathway/" + wpId + "_r" + revision.trim().replaceAll(" ", "_")));
 		
-		pwyRes.addProperty(FOAF.page, model.createResource(Utils.WP_URL + "/instance/" + wpId + "_r" + revision));
+		pwyRes.addProperty(FOAF.page, model.createResource(Utils.WP_URL + "/instance/" + wpId + "_r" + revision.trim().replaceAll(" ", "_")));
 		pwyRes.addProperty(RDF.type, Wp.Pathway);
 		pwyRes.addProperty(RDF.type, Skos.Collection);
-		pwyRes.addProperty(DC.identifier, model.createResource(url));
+		pwyRes.addProperty(DC.identifier, model.createResource(url.trim().replaceAll(" ", "_")));
 		pwyRes.addLiteral(DCTerms.identifier, wpId);
 		pwyRes.addLiteral(DC.title, model.createLiteral(name, "en"));
 		pwyRes.addLiteral(DC.source, "Wikipathways");
@@ -92,7 +92,7 @@ public class PathwayConverter {
 	 */
 	public static Resource parsePathwayInfoGpml(Pathway p, String wpId, String revision, Model model) {
 
-		Resource pwyRes = model.createResource(Utils.WP_RDF_URL + "/Pathway/" + wpId + "_r" + revision);
+		Resource pwyRes = model.createResource(Utils.WP_RDF_URL + "/Pathway/" + wpId + "_r" + revision.trim().replaceAll(" ", "_"));
 		
 		// Required Attributes
 		pwyRes.addLiteral(Gpml.ORGANISM, p.getMappInfo().getOrganism());
