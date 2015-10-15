@@ -66,9 +66,19 @@ public class DataNodeConverter {
 					if(url != null && !url.equals("")) {
 						Resource datanodeRes = data.getDataNodes().get(elem.getXref());
 						if(datanodeRes == null) {
-							datanodeRes = model.createResource(url.trim().replaceAll(" ", "_"));
-
-							datanodeRes.addProperty(DC.identifier, model.createResource(url.trim().replaceAll(" ", "_")));
+							if (url.matches("(.*)chebi/CHEBI:(.*)")){
+								datanodeRes = model.createResource(url.trim().replaceAll(" ", "_"));
+								datanodeRes.addProperty(DC.identifier, model.createResource(url.trim().replaceAll(" ", "_")));
+							}
+							else if (url.matches("(.*)chebi(.*)")){
+								datanodeRes = model.createResource(url.trim().replaceAll(" ", "_").replace("chebi/","chebi/CHEBI:"));
+								datanodeRes.addProperty(DC.identifier, model.createResource(url.trim().replaceAll(" ", "_").replace("chebi/","chebi/CHEBI:")));
+							}
+							else{
+								datanodeRes = model.createResource(url.trim().replaceAll(" ", "_"));
+								datanodeRes.addProperty(DC.identifier, model.createResource(url.trim().replaceAll(" ", "_")));
+							}
+							
 							datanodeRes.addLiteral(DCTerms.source, elem.getXref().getDataSource().getFullName());
 							datanodeRes.addLiteral(DCTerms.identifier, elem.getXref().getId());
 
@@ -1475,9 +1485,14 @@ public class DataNodeConverter {
 										ds2 = ds2.getBySystemCode("Ce");
 										Set<Xref> crossrefs2 = mapper.mapID(elem.getXref(), ds2);
 										for(Xref ref: crossrefs2){
-										datanodeRes.addProperty(Wp.bdbChEBI, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/chebi/" + ref.getId().trim().replaceAll(" ", "_")) );
+											String ref1;
+											ref1 = ref.toString();
+											// if statement to only take the "CHEBI:XXXX" pattern instead of "/XXXX"
+											if (ref1.matches("(.*)CHEBI(.*)")) {
+												datanodeRes.addProperty(Wp.bdbChEBI, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/chebi/" + ref.getId().trim().replaceAll(" ", "_")) );
 										}
-										
+											else;
+										}
 									
 									
 								} catch (ClassNotFoundException e) {
