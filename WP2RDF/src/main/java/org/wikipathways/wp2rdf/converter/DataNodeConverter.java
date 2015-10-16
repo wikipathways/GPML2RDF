@@ -79,7 +79,7 @@ public class DataNodeConverter {
 								datanodeRes.addProperty(DC.identifier, model.createResource(url.trim().replaceAll(" ", "_")));
 							}
 							
-							datanodeRes.addLiteral(DCTerms.source, elem.getXref().getDataSource().getFullName());
+							datanodeRes.addLiteral(DC.source, elem.getXref().getDataSource().getFullName());
 							datanodeRes.addLiteral(DCTerms.identifier, elem.getXref().getId());
 
 							datanodeRes.addProperty(RDF.type, Wp.DataNode);
