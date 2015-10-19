@@ -30,7 +30,9 @@ public abstract class AbstractConvertorTest {
 		model = GpmlConverter.convertGpml(pathway, wpid, revision);
 		Assert.assertNotNull(model);
 		System.out.println("===== " + gpmlFile + " =====");
-		System.out.println(toString(model));
+		String ttlContent = toString(model);
+		if (ttlContent.length() > 1000) ttlContent.substring(0,1000);
+		System.out.println(ttlContent);
 	}
 
 	public static void loadModelAsWPRDF(String gpmlFile, String wpid, String revision) throws ConverterException {
@@ -41,7 +43,9 @@ public abstract class AbstractConvertorTest {
 		model = GpmlConverter.convertWp(pathway, wpid, revision);
 		Assert.assertNotNull(model);
 		System.out.println("===== " + gpmlFile + " =====");
-		System.out.println(toString(model));
+		String ttlContent = toString(model);
+		if (ttlContent.length() > 1000) ttlContent.substring(0,1000);
+		System.out.println(ttlContent);
 	}
 
 	@Test
