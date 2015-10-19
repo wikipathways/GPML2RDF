@@ -1468,7 +1468,7 @@ public class DataNodeConverter {
 										DataSource ds2 = null;
 										
 										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
-												+ "/tmp/OPSBRIDGEDB/metabolites_20150409.bridge");
+												+ "/tmp/OPSBRIDGEDB/metabolites_20150717.bridge");
 										//here you get crossreferences from all databases the element id maps to
 										ds = ds.getBySystemCode("Ch");
 										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
