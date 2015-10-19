@@ -3,6 +3,7 @@ package org.wikipathways.wp2rdf;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 
+import org.bridgedb.bio.DataSourceTxt;
 import org.junit.Assert;
 import org.junit.Test;
 import org.pathvisio.core.model.ConverterException;
@@ -33,6 +34,7 @@ public abstract class AbstractConvertorTest {
 	}
 
 	public static void loadModelAsWPRDF(String gpmlFile, String wpid, String revision) throws ConverterException {
+		DataSourceTxt.init();
 		InputStream input = AbstractConvertorTest.class.getClassLoader().getResourceAsStream(gpmlFile);
 		Pathway pathway = PathwayReader.readPathway(input);
 		Assert.assertNotNull(pathway);
