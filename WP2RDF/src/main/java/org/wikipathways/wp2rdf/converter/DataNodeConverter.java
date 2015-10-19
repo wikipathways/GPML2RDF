@@ -23,6 +23,7 @@ import org.bridgedb.DataSource;
 import org.bridgedb.IDMapper;
 import org.bridgedb.IDMapperException;
 import org.bridgedb.Xref;
+import org.bridgedb.bio.DataSourceTxt;
 import org.pathvisio.core.biopax.PublicationXref;
 import org.pathvisio.core.model.LineStyle;
 import org.pathvisio.core.model.Pathway;
@@ -55,6 +56,7 @@ public class DataNodeConverter {
 	 * @param geneMapper 
 	 */
 	public static void parseDataNodeWp(PathwayElement elem, Model model, DataHandlerWp data, Pathway p) {
+		DataSourceTxt.init();
 		
 		//final Properties prop = new Properties();
 		//prop.load(new FileInputStream("config.properties"));
