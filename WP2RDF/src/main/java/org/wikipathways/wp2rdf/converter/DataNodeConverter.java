@@ -101,25 +101,25 @@ public class DataNodeConverter {
 										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
 												+ "/tmp/OPSBRIDGEDB/Hs_Derby_Ensembl_80.bridge");
 										//here you get crossreferences from all databases the element id maps to
-										ds = ds.getBySystemCode("L");
+										ds = DataSource.getExistingBySystemCode("L");
 										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
 										for(Xref ref: crossrefs){
 											datanodeRes.addProperty(Wp.bdbEntrezGene, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ncbigene/" + ref.getId().trim().replaceAll(" ", "_")) );
 										}
 										
-										ds1 = ds1.getBySystemCode("En");
+										ds1 = DataSource.getExistingBySystemCode("En");
 										Set<Xref> crossrefs1 = mapper.mapID(elem.getXref(), ds1);
 										for(Xref ref: crossrefs1){
 										datanodeRes.addProperty(Wp.bdbEnsembl, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ensembl/" + ref.getId().trim().replaceAll(" ", "_")) );
 										}
 										
-										ds2 = ds2.getBySystemCode("H");
+										ds2 = DataSource.getExistingBySystemCode("H");
 										Set<Xref> crossrefs2 = mapper.mapID(elem.getXref(), ds2);
 										for(Xref ref: crossrefs2){
 										datanodeRes.addProperty(Wp.bdbHgncSymbol, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/hgnc.symbol/" + ref.getId().trim().replaceAll(" ", "_")) );
 										}
 										
-										ds3 = ds3.getBySystemCode("S");
+										ds3 = DataSource.getExistingBySystemCode("S");
 										Set<Xref> crossrefs3 = mapper.mapID(elem.getXref(), ds3);
 										for(Xref ref: crossrefs3){
 										datanodeRes.addProperty(Wp.bdbUniprot, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/uniprot/" + ref.getId().trim().replaceAll(" ", "_")) );
@@ -151,25 +151,25 @@ public class DataNodeConverter {
 										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
 												+ "/tmp/OPSBRIDGEDB/Ag_Derby_Ensembl_Metazoa_28.bridge");
 										//here you get crossreferences from all databases the element id maps to
-										ds = ds.getBySystemCode("L");
+										ds = DataSource.getExistingBySystemCode("L");
 										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
 										for(Xref ref: crossrefs){
 											datanodeRes.addProperty(Wp.bdbEntrezGene, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ncbigene/" + ref.getId().trim().replaceAll(" ", "_")) );
 										}
 										
-										ds1 = ds1.getBySystemCode("En");
+										ds1 = DataSource.getExistingBySystemCode("En");
 										Set<Xref> crossrefs1 = mapper.mapID(elem.getXref(), ds1);
 										for(Xref ref: crossrefs1){
 										datanodeRes.addProperty(Wp.bdbEnsembl, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ensembl/" + ref.getId().trim().replaceAll(" ", "_")) );
 										}
 										
-										ds2 = ds2.getBySystemCode("H");
+										ds2 = DataSource.getExistingBySystemCode("H");
 										Set<Xref> crossrefs2 = mapper.mapID(elem.getXref(), ds2);
 										for(Xref ref: crossrefs2){
 										datanodeRes.addProperty(Wp.bdbHgncSymbol, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/hgnc.symbol/" + ref.getId().trim().replaceAll(" ", "_")) );
 										}
 										
-										ds3 = ds3.getBySystemCode("S");
+										ds3 = DataSource.getExistingBySystemCode("S");
 										Set<Xref> crossrefs3 = mapper.mapID(elem.getXref(), ds3);
 										for(Xref ref: crossrefs3){
 										datanodeRes.addProperty(Wp.bdbUniprot, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/uniprot/" + ref.getId().trim().replaceAll(" ", "_")) );
@@ -201,25 +201,25 @@ public class DataNodeConverter {
 										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
 												+ "/tmp/OPSBRIDGEDB/At_Derby_Ensembl_Plant_28.bridge");
 										//here you get crossreferences from all databases the element id maps to
-										ds = ds.getBySystemCode("L");
+										ds = DataSource.getExistingBySystemCode("L");
 										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
 										for(Xref ref: crossrefs){
 											datanodeRes.addProperty(Wp.bdbEntrezGene, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ncbigene/" + ref.getId().trim().replaceAll(" ", "_")) );
 										}
 										
-										ds1 = ds1.getBySystemCode("En");
+										ds1 = DataSource.getExistingBySystemCode("En");
 										Set<Xref> crossrefs1 = mapper.mapID(elem.getXref(), ds1);
 										for(Xref ref: crossrefs1){
 										datanodeRes.addProperty(Wp.bdbEnsembl, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ensembl/" + ref.getId().trim().replaceAll(" ", "_")) );
 										}
 										
-										ds2 = ds2.getBySystemCode("H");
+										ds2 = DataSource.getExistingBySystemCode("H");
 										Set<Xref> crossrefs2 = mapper.mapID(elem.getXref(), ds2);
 										for(Xref ref: crossrefs2){
 										datanodeRes.addProperty(Wp.bdbHgncSymbol, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/hgnc.symbol/" + ref.getId().trim().replaceAll(" ", "_")) );
 										}
 										
-										ds3 = ds3.getBySystemCode("S");
+										ds3 = DataSource.getExistingBySystemCode("S");
 										Set<Xref> crossrefs3 = mapper.mapID(elem.getXref(), ds3);
 										for(Xref ref: crossrefs3){
 										datanodeRes.addProperty(Wp.bdbUniprot, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/uniprot/" + ref.getId().trim().replaceAll(" ", "_")) );
@@ -251,25 +251,25 @@ public class DataNodeConverter {
 										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
 												+ "/tmp/OPSBRIDGEDB/Bs_Derby_Ensembl_80.bridge");
 										//here you get crossreferences from all databases the element id maps to
-										ds = ds.getBySystemCode("L");
+										ds = DataSource.getExistingBySystemCode("L");
 										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
 										for(Xref ref: crossrefs){
 											datanodeRes.addProperty(Wp.bdbEntrezGene, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ncbigene/" + ref.getId().trim().replaceAll(" ", "_")) );
 										}
 										
-										ds1 = ds1.getBySystemCode("En");
+										ds1 = DataSource.getExistingBySystemCode("En");
 										Set<Xref> crossrefs1 = mapper.mapID(elem.getXref(), ds1);
 										for(Xref ref: crossrefs1){
 										datanodeRes.addProperty(Wp.bdbEnsembl, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ensembl/" + ref.getId().trim().replaceAll(" ", "_")) );
 										}
 										
-										ds2 = ds2.getBySystemCode("H");
+										ds2 = DataSource.getExistingBySystemCode("H");
 										Set<Xref> crossrefs2 = mapper.mapID(elem.getXref(), ds2);
 										for(Xref ref: crossrefs2){
 										datanodeRes.addProperty(Wp.bdbHgncSymbol, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/hgnc.symbol/" + ref.getId().trim().replaceAll(" ", "_")) );
 										}
 										
-										ds3 = ds3.getBySystemCode("S");
+										ds3 = DataSource.getExistingBySystemCode("S");
 										Set<Xref> crossrefs3 = mapper.mapID(elem.getXref(), ds3);
 										for(Xref ref: crossrefs3){
 										datanodeRes.addProperty(Wp.bdbUniprot, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/uniprot/" + ref.getId().trim().replaceAll(" ", "_")) );
@@ -301,25 +301,25 @@ public class DataNodeConverter {
 										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
 												+ "/tmp/OPSBRIDGEDB/Bt_Derby_Ensembl_80.bridge");
 										//here you get crossreferences from all databases the element id maps to
-										ds = ds.getBySystemCode("L");
+										ds = DataSource.getExistingBySystemCode("L");
 										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
 										for(Xref ref: crossrefs){
 											datanodeRes.addProperty(Wp.bdbEntrezGene, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ncbigene/" + ref.getId().trim().replaceAll(" ", "_")) );
 										}
 										
-										ds1 = ds1.getBySystemCode("En");
+										ds1 = DataSource.getExistingBySystemCode("En");
 										Set<Xref> crossrefs1 = mapper.mapID(elem.getXref(), ds1);
 										for(Xref ref: crossrefs1){
 										datanodeRes.addProperty(Wp.bdbEnsembl, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ensembl/" + ref.getId().trim().replaceAll(" ", "_")) );
 										}
 										
-										ds2 = ds2.getBySystemCode("H");
+										ds2 = DataSource.getExistingBySystemCode("H");
 										Set<Xref> crossrefs2 = mapper.mapID(elem.getXref(), ds2);
 										for(Xref ref: crossrefs2){
 										datanodeRes.addProperty(Wp.bdbHgncSymbol, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/hgnc.symbol/" + ref.getId().trim().replaceAll(" ", "_")) );
 										}
 										
-										ds3 = ds3.getBySystemCode("S");
+										ds3 = DataSource.getExistingBySystemCode("S");
 										Set<Xref> crossrefs3 = mapper.mapID(elem.getXref(), ds3);
 										for(Xref ref: crossrefs3){
 										datanodeRes.addProperty(Wp.bdbUniprot, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/uniprot/" + ref.getId().trim().replaceAll(" ", "_")) );
@@ -351,25 +351,25 @@ public class DataNodeConverter {
 										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
 												+ "/tmp/OPSBRIDGEDB/Ce_Derby_Ensembl_80.bridge");
 										//here you get crossreferences from all databases the element id maps to
-										ds = ds.getBySystemCode("L");
+										ds = DataSource.getExistingBySystemCode("L");
 										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
 										for(Xref ref: crossrefs){
 											datanodeRes.addProperty(Wp.bdbEntrezGene, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ncbigene/" + ref.getId().trim().replaceAll(" ", "_")) );
 										}
 										
-										ds1 = ds1.getBySystemCode("En");
+										ds1 = DataSource.getExistingBySystemCode("En");
 										Set<Xref> crossrefs1 = mapper.mapID(elem.getXref(), ds1);
 										for(Xref ref: crossrefs1){
 										datanodeRes.addProperty(Wp.bdbEnsembl, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ensembl/" + ref.getId().trim().replaceAll(" ", "_")) );
 										}
 										
-										ds2 = ds2.getBySystemCode("H");
+										ds2 = DataSource.getExistingBySystemCode("H");
 										Set<Xref> crossrefs2 = mapper.mapID(elem.getXref(), ds2);
 										for(Xref ref: crossrefs2){
 										datanodeRes.addProperty(Wp.bdbHgncSymbol, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/hgnc.symbol/" + ref.getId().trim().replaceAll(" ", "_")) );
 										}
 										
-										ds3 = ds3.getBySystemCode("S");
+										ds3 = DataSource.getExistingBySystemCode("S");
 										Set<Xref> crossrefs3 = mapper.mapID(elem.getXref(), ds3);
 										for(Xref ref: crossrefs3){
 										datanodeRes.addProperty(Wp.bdbUniprot, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/uniprot/" + ref.getId().trim().replaceAll(" ", "_")) );
@@ -401,25 +401,25 @@ public class DataNodeConverter {
 										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
 												+ "/tmp/OPSBRIDGEDB/Cf_Derby_Ensembl_80.bridge");
 										//here you get crossreferences from all databases the element id maps to
-										ds = ds.getBySystemCode("L");
+										ds = DataSource.getExistingBySystemCode("L");
 										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
 										for(Xref ref: crossrefs){
 											datanodeRes.addProperty(Wp.bdbEntrezGene, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ncbigene/" + ref.getId().trim().replaceAll(" ", "_")) );
 										}
 										
-										ds1 = ds1.getBySystemCode("En");
+										ds1 = DataSource.getExistingBySystemCode("En");
 										Set<Xref> crossrefs1 = mapper.mapID(elem.getXref(), ds1);
 										for(Xref ref: crossrefs1){
 										datanodeRes.addProperty(Wp.bdbEnsembl, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ensembl/" + ref.getId().trim().replaceAll(" ", "_")) );
 										}
 										
-										ds2 = ds2.getBySystemCode("H");
+										ds2 = DataSource.getExistingBySystemCode("H");
 										Set<Xref> crossrefs2 = mapper.mapID(elem.getXref(), ds2);
 										for(Xref ref: crossrefs2){
 										datanodeRes.addProperty(Wp.bdbHgncSymbol, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/hgnc.symbol/" + ref.getId().trim().replaceAll(" ", "_")) );
 										}
 										
-										ds3 = ds3.getBySystemCode("S");
+										ds3 = DataSource.getExistingBySystemCode("S");
 										Set<Xref> crossrefs3 = mapper.mapID(elem.getXref(), ds3);
 										for(Xref ref: crossrefs3){
 										datanodeRes.addProperty(Wp.bdbUniprot, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/uniprot/" + ref.getId().trim().replaceAll(" ", "_")) );
@@ -451,25 +451,25 @@ public class DataNodeConverter {
 										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
 												+ "/tmp/OPSBRIDGEDB/Dr_Derby_Ensembl_80.bridge");
 										//here you get crossreferences from all databases the element id maps to
-										ds = ds.getBySystemCode("L");
+										ds = DataSource.getExistingBySystemCode("L");
 										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
 										for(Xref ref: crossrefs){
 											datanodeRes.addProperty(Wp.bdbEntrezGene, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ncbigene/" + ref.getId().trim().replaceAll(" ", "_")) );
 										}
 										
-										ds1 = ds1.getBySystemCode("En");
+										ds1 = DataSource.getExistingBySystemCode("En");
 										Set<Xref> crossrefs1 = mapper.mapID(elem.getXref(), ds1);
 										for(Xref ref: crossrefs1){
 										datanodeRes.addProperty(Wp.bdbEnsembl, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ensembl/" + ref.getId().trim().replaceAll(" ", "_")) );
 										}
 										
-										ds2 = ds2.getBySystemCode("H");
+										ds2 = DataSource.getExistingBySystemCode("H");
 										Set<Xref> crossrefs2 = mapper.mapID(elem.getXref(), ds2);
 										for(Xref ref: crossrefs2){
 										datanodeRes.addProperty(Wp.bdbHgncSymbol, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/hgnc.symbol/" + ref.getId().trim().replaceAll(" ", "_")) );
 										}
 										
-										ds3 = ds3.getBySystemCode("S");
+										ds3 = DataSource.getExistingBySystemCode("S");
 										Set<Xref> crossrefs3 = mapper.mapID(elem.getXref(), ds3);
 										for(Xref ref: crossrefs3){
 										datanodeRes.addProperty(Wp.bdbUniprot, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/uniprot/" + ref.getId().trim().replaceAll(" ", "_")) );
@@ -501,25 +501,25 @@ public class DataNodeConverter {
 										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
 												+ "/tmp/OPSBRIDGEDB/Dm_Derby_Ensembl_80.bridge");
 										//here you get crossreferences from all databases the element id maps to
-										ds = ds.getBySystemCode("L");
+										ds = DataSource.getExistingBySystemCode("L");
 										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
 										for(Xref ref: crossrefs){
 											datanodeRes.addProperty(Wp.bdbEntrezGene, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ncbigene/" + ref.getId().trim().replaceAll(" ", "_")) );
 										}
 										
-										ds1 = ds1.getBySystemCode("En");
+										ds1 = DataSource.getExistingBySystemCode("En");
 										Set<Xref> crossrefs1 = mapper.mapID(elem.getXref(), ds1);
 										for(Xref ref: crossrefs1){
 										datanodeRes.addProperty(Wp.bdbEnsembl, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ensembl/" + ref.getId().trim().replaceAll(" ", "_")) );
 										}
 										
-										ds2 = ds2.getBySystemCode("H");
+										ds2 = DataSource.getExistingBySystemCode("H");
 										Set<Xref> crossrefs2 = mapper.mapID(elem.getXref(), ds2);
 										for(Xref ref: crossrefs2){
 										datanodeRes.addProperty(Wp.bdbHgncSymbol, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/hgnc.symbol/" + ref.getId().trim().replaceAll(" ", "_")) );
 										}
 										
-										ds3 = ds3.getBySystemCode("S");
+										ds3 = DataSource.getExistingBySystemCode("S");
 										Set<Xref> crossrefs3 = mapper.mapID(elem.getXref(), ds3);
 										for(Xref ref: crossrefs3){
 										datanodeRes.addProperty(Wp.bdbUniprot, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/uniprot/" + ref.getId().trim().replaceAll(" ", "_")) );
@@ -551,25 +551,25 @@ public class DataNodeConverter {
 										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
 												+ "/tmp/OPSBRIDGEDB/Ec_Derby_Ensembl_80.bridge");
 										//here you get crossreferences from all databases the element id maps to
-										ds = ds.getBySystemCode("L");
+										ds = DataSource.getExistingBySystemCode("L");
 										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
 										for(Xref ref: crossrefs){
 											datanodeRes.addProperty(Wp.bdbEntrezGene, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ncbigene/" + ref.getId().trim().replaceAll(" ", "_")) );
 										}
 										
-										ds1 = ds1.getBySystemCode("En");
+										ds1 = DataSource.getExistingBySystemCode("En");
 										Set<Xref> crossrefs1 = mapper.mapID(elem.getXref(), ds1);
 										for(Xref ref: crossrefs1){
 										datanodeRes.addProperty(Wp.bdbEnsembl, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ensembl/" + ref.getId().trim().replaceAll(" ", "_")) );
 										}
 										
-										ds2 = ds2.getBySystemCode("H");
+										ds2 = DataSource.getExistingBySystemCode("H");
 										Set<Xref> crossrefs2 = mapper.mapID(elem.getXref(), ds2);
 										for(Xref ref: crossrefs2){
 										datanodeRes.addProperty(Wp.bdbHgncSymbol, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/hgnc.symbol/" + ref.getId().trim().replaceAll(" ", "_")) );
 										}
 										
-										ds3 = ds3.getBySystemCode("S");
+										ds3 = DataSource.getExistingBySystemCode("S");
 										Set<Xref> crossrefs3 = mapper.mapID(elem.getXref(), ds3);
 										for(Xref ref: crossrefs3){
 										datanodeRes.addProperty(Wp.bdbUniprot, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/uniprot/" + ref.getId().trim().replaceAll(" ", "_")) );
@@ -601,25 +601,25 @@ public class DataNodeConverter {
 										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
 												+ "/tmp/OPSBRIDGEDB/Gg_Derby_Ensembl_80.bridge");
 										//here you get crossreferences from all databases the element id maps to
-										ds = ds.getBySystemCode("L");
+										ds = DataSource.getExistingBySystemCode("L");
 										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
 										for(Xref ref: crossrefs){
 											datanodeRes.addProperty(Wp.bdbEntrezGene, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ncbigene/" + ref.getId().trim().replaceAll(" ", "_")) );
 										}
 										
-										ds1 = ds1.getBySystemCode("En");
+										ds1 = DataSource.getExistingBySystemCode("En");
 										Set<Xref> crossrefs1 = mapper.mapID(elem.getXref(), ds1);
 										for(Xref ref: crossrefs1){
 										datanodeRes.addProperty(Wp.bdbEnsembl, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ensembl/" + ref.getId().trim().replaceAll(" ", "_")) );
 										}
 										
-										ds2 = ds2.getBySystemCode("H");
+										ds2 = DataSource.getExistingBySystemCode("H");
 										Set<Xref> crossrefs2 = mapper.mapID(elem.getXref(), ds2);
 										for(Xref ref: crossrefs2){
 										datanodeRes.addProperty(Wp.bdbHgncSymbol, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/hgnc.symbol/" + ref.getId().trim().replaceAll(" ", "_")) );
 										}
 										
-										ds3 = ds3.getBySystemCode("S");
+										ds3 = DataSource.getExistingBySystemCode("S");
 										Set<Xref> crossrefs3 = mapper.mapID(elem.getXref(), ds3);
 										for(Xref ref: crossrefs3){
 										datanodeRes.addProperty(Wp.bdbUniprot, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/uniprot/" + ref.getId().trim().replaceAll(" ", "_")) );
@@ -651,25 +651,25 @@ public class DataNodeConverter {
 										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
 												+ "/tmp/OPSBRIDGEDB/Mm_Derby_Ensembl_80.bridge");
 										//here you get crossreferences from all databases the element id maps to
-										ds = ds.getBySystemCode("L");
+										ds = DataSource.getExistingBySystemCode("L");
 										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
 										for(Xref ref: crossrefs){
 											datanodeRes.addProperty(Wp.bdbEntrezGene, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ncbigene/" + ref.getId().trim().replaceAll(" ", "_")) );
 										}
 										
-										ds1 = ds1.getBySystemCode("En");
+										ds1 = DataSource.getExistingBySystemCode("En");
 										Set<Xref> crossrefs1 = mapper.mapID(elem.getXref(), ds1);
 										for(Xref ref: crossrefs1){
 										datanodeRes.addProperty(Wp.bdbEnsembl, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ensembl/" + ref.getId().trim().replaceAll(" ", "_")) );
 										}
 										
-										ds2 = ds2.getBySystemCode("H");
+										ds2 = DataSource.getExistingBySystemCode("H");
 										Set<Xref> crossrefs2 = mapper.mapID(elem.getXref(), ds2);
 										for(Xref ref: crossrefs2){
 										datanodeRes.addProperty(Wp.bdbHgncSymbol, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/hgnc.symbol/" + ref.getId().trim().replaceAll(" ", "_")) );
 										}
 										
-										ds3 = ds3.getBySystemCode("S");
+										ds3 = DataSource.getExistingBySystemCode("S");
 										Set<Xref> crossrefs3 = mapper.mapID(elem.getXref(), ds3);
 										for(Xref ref: crossrefs3){
 										datanodeRes.addProperty(Wp.bdbUniprot, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/uniprot/" + ref.getId().trim().replaceAll(" ", "_")) );
@@ -701,25 +701,25 @@ public class DataNodeConverter {
 										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
 												+ "/tmp/OPSBRIDGEDB/Oj_Derby_Ensembl_Plant_28.bridge");
 										//here you get crossreferences from all databases the element id maps to
-										ds = ds.getBySystemCode("L");
+										ds = DataSource.getExistingBySystemCode("L");
 										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
 										for(Xref ref: crossrefs){
 											datanodeRes.addProperty(Wp.bdbEntrezGene, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ncbigene/" + ref.getId().trim().replaceAll(" ", "_")) );
 										}
 										
-										ds1 = ds1.getBySystemCode("En");
+										ds1 = DataSource.getExistingBySystemCode("En");
 										Set<Xref> crossrefs1 = mapper.mapID(elem.getXref(), ds1);
 										for(Xref ref: crossrefs1){
 										datanodeRes.addProperty(Wp.bdbEnsembl, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ensembl/" + ref.getId().trim().replaceAll(" ", "_")) );
 										}
 										
-										ds2 = ds2.getBySystemCode("H");
+										ds2 = DataSource.getExistingBySystemCode("H");
 										Set<Xref> crossrefs2 = mapper.mapID(elem.getXref(), ds2);
 										for(Xref ref: crossrefs2){
 										datanodeRes.addProperty(Wp.bdbHgncSymbol, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/hgnc.symbol/" + ref.getId().trim().replaceAll(" ", "_")) );
 										}
 										
-										ds3 = ds3.getBySystemCode("S");
+										ds3 = DataSource.getExistingBySystemCode("S");
 										Set<Xref> crossrefs3 = mapper.mapID(elem.getXref(), ds3);
 										for(Xref ref: crossrefs3){
 										datanodeRes.addProperty(Wp.bdbUniprot, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/uniprot/" + ref.getId().trim().replaceAll(" ", "_")) );
@@ -751,25 +751,25 @@ public class DataNodeConverter {
 										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
 												+ "/tmp/OPSBRIDGEDB/Pt_Derby_Ensembl_80.bridge");
 										//here you get crossreferences from all databases the element id maps to
-										ds = ds.getBySystemCode("L");
+										ds = DataSource.getExistingBySystemCode("L");
 										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
 										for(Xref ref: crossrefs){
 											datanodeRes.addProperty(Wp.bdbEntrezGene, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ncbigene/" + ref.getId().trim().replaceAll(" ", "_")) );
 										}
 										
-										ds1 = ds1.getBySystemCode("En");
+										ds1 = DataSource.getExistingBySystemCode("En");
 										Set<Xref> crossrefs1 = mapper.mapID(elem.getXref(), ds1);
 										for(Xref ref: crossrefs1){
 										datanodeRes.addProperty(Wp.bdbEnsembl, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ensembl/" + ref.getId().trim().replaceAll(" ", "_")) );
 										}
 										
-										ds2 = ds2.getBySystemCode("H");
+										ds2 = DataSource.getExistingBySystemCode("H");
 										Set<Xref> crossrefs2 = mapper.mapID(elem.getXref(), ds2);
 										for(Xref ref: crossrefs2){
 										datanodeRes.addProperty(Wp.bdbHgncSymbol, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/hgnc.symbol/" + ref.getId().trim().replaceAll(" ", "_")) );
 										}
 										
-										ds3 = ds3.getBySystemCode("S");
+										ds3 = DataSource.getExistingBySystemCode("S");
 										Set<Xref> crossrefs3 = mapper.mapID(elem.getXref(), ds3);
 										for(Xref ref: crossrefs3){
 										datanodeRes.addProperty(Wp.bdbUniprot, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/uniprot/" + ref.getId().trim().replaceAll(" ", "_")) );
@@ -801,25 +801,25 @@ public class DataNodeConverter {
 										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
 												+ "/tmp/OPSBRIDGEDB/Rn_Derby_Ensembl_80.bridge");
 										//here you get crossreferences from all databases the element id maps to
-										ds = ds.getBySystemCode("L");
+										ds = DataSource.getExistingBySystemCode("L");
 										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
 										for(Xref ref: crossrefs){
 											datanodeRes.addProperty(Wp.bdbEntrezGene, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ncbigene/" + ref.getId().trim().replaceAll(" ", "_")) );
 										}
 										
-										ds1 = ds1.getBySystemCode("En");
+										ds1 = DataSource.getExistingBySystemCode("En");
 										Set<Xref> crossrefs1 = mapper.mapID(elem.getXref(), ds1);
 										for(Xref ref: crossrefs1){
 										datanodeRes.addProperty(Wp.bdbEnsembl, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ensembl/" + ref.getId().trim().replaceAll(" ", "_")) );
 										}
 										
-										ds2 = ds2.getBySystemCode("H");
+										ds2 = DataSource.getExistingBySystemCode("H");
 										Set<Xref> crossrefs2 = mapper.mapID(elem.getXref(), ds2);
 										for(Xref ref: crossrefs2){
 										datanodeRes.addProperty(Wp.bdbHgncSymbol, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/hgnc.symbol/" + ref.getId().trim().replaceAll(" ", "_")) );
 										}
 										
-										ds3 = ds3.getBySystemCode("S");
+										ds3 = DataSource.getExistingBySystemCode("S");
 										Set<Xref> crossrefs3 = mapper.mapID(elem.getXref(), ds3);
 										for(Xref ref: crossrefs3){
 										datanodeRes.addProperty(Wp.bdbUniprot, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/uniprot/" + ref.getId().trim().replaceAll(" ", "_")) );
@@ -851,25 +851,25 @@ public class DataNodeConverter {
 										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
 												+ "/tmp/OPSBRIDGEDB/Sc_Derby_Ensembl_80.bridge");
 										//here you get crossreferences from all databases the element id maps to
-										ds = ds.getBySystemCode("L");
+										ds = DataSource.getExistingBySystemCode("L");
 										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
 										for(Xref ref: crossrefs){
 											datanodeRes.addProperty(Wp.bdbEntrezGene, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ncbigene/" + ref.getId().trim().replaceAll(" ", "_")) );
 										}
 										
-										ds1 = ds1.getBySystemCode("En");
+										ds1 = DataSource.getExistingBySystemCode("En");
 										Set<Xref> crossrefs1 = mapper.mapID(elem.getXref(), ds1);
 										for(Xref ref: crossrefs1){
 										datanodeRes.addProperty(Wp.bdbEnsembl, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ensembl/" + ref.getId().trim().replaceAll(" ", "_")) );
 										}
 										
-										ds2 = ds2.getBySystemCode("H");
+										ds2 = DataSource.getExistingBySystemCode("H");
 										Set<Xref> crossrefs2 = mapper.mapID(elem.getXref(), ds2);
 										for(Xref ref: crossrefs2){
 										datanodeRes.addProperty(Wp.bdbHgncSymbol, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/hgnc.symbol/" + ref.getId().trim().replaceAll(" ", "_")) );
 										}
 										
-										ds3 = ds3.getBySystemCode("S");
+										ds3 = DataSource.getExistingBySystemCode("S");
 										Set<Xref> crossrefs3 = mapper.mapID(elem.getXref(), ds3);
 										for(Xref ref: crossrefs3){
 										datanodeRes.addProperty(Wp.bdbUniprot, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/uniprot/" + ref.getId().trim().replaceAll(" ", "_")) );
@@ -901,25 +901,25 @@ public class DataNodeConverter {
 										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
 												+ "/tmp/OPSBRIDGEDB/Zm_Derby_Ensembl_Plant_28.bridge");
 										//here you get crossreferences from all databases the element id maps to
-										ds = ds.getBySystemCode("L");
+										ds = DataSource.getExistingBySystemCode("L");
 										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
 										for(Xref ref: crossrefs){
 											datanodeRes.addProperty(Wp.bdbEntrezGene, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ncbigene/" + ref.getId().trim().replaceAll(" ", "_")) );
 										}
 										
-										ds1 = ds1.getBySystemCode("En");
+										ds1 = DataSource.getExistingBySystemCode("En");
 										Set<Xref> crossrefs1 = mapper.mapID(elem.getXref(), ds1);
 										for(Xref ref: crossrefs1){
 										datanodeRes.addProperty(Wp.bdbEnsembl, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ensembl/" + ref.getId().trim().replaceAll(" ", "_")) );
 										}
 										
-										ds2 = ds2.getBySystemCode("H");
+										ds2 = DataSource.getExistingBySystemCode("H");
 										Set<Xref> crossrefs2 = mapper.mapID(elem.getXref(), ds2);
 										for(Xref ref: crossrefs2){
 										datanodeRes.addProperty(Wp.bdbHgncSymbol, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/hgnc.symbol/" + ref.getId().trim().replaceAll(" ", "_")) );
 										}
 										
-										ds3 = ds3.getBySystemCode("S");
+										ds3 = DataSource.getExistingBySystemCode("S");
 										Set<Xref> crossrefs3 = mapper.mapID(elem.getXref(), ds3);
 										for(Xref ref: crossrefs3){
 										datanodeRes.addProperty(Wp.bdbUniprot, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/uniprot/" + ref.getId().trim().replaceAll(" ", "_")) );
@@ -955,7 +955,7 @@ public class DataNodeConverter {
 												+ "/tmp/OPSBRIDGEDB/Hs_Derby_Ensembl_80.bridge");
 										//here you get crossreferences from all databases the element id maps to
 
-										ds = ds.getBySystemCode("S");
+										ds = DataSource.getExistingBySystemCode("S");
 										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
 										for(Xref ref: crossrefs){
 										datanodeRes.addProperty(Wp.bdbUniprot, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/uniprot/" + ref.getId().trim().replaceAll(" ", "_")) );
@@ -985,7 +985,7 @@ public class DataNodeConverter {
 												+ "/tmp/OPSBRIDGEDB/Ag_Derby_Ensembl_Metazoa_28.bridge");
 										//here you get crossreferences from all databases the element id maps to
 
-										ds = ds.getBySystemCode("S");
+										ds = DataSource.getExistingBySystemCode("S");
 										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
 										for(Xref ref: crossrefs){
 										datanodeRes.addProperty(Wp.bdbUniprot, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/uniprot/" + ref.getId().trim().replaceAll(" ", "_")) );
@@ -1015,7 +1015,7 @@ public class DataNodeConverter {
 												+ "/tmp/OPSBRIDGEDB/At_Derby_Ensembl_Plant_28.bridge");
 										//here you get crossreferences from all databases the element id maps to
 
-										ds = ds.getBySystemCode("S");
+										ds = DataSource.getExistingBySystemCode("S");
 										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
 										for(Xref ref: crossrefs){
 										datanodeRes.addProperty(Wp.bdbUniprot, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/uniprot/" + ref.getId().trim().replaceAll(" ", "_")) );
@@ -1045,7 +1045,7 @@ public class DataNodeConverter {
 												+ "/tmp/OPSBRIDGEDB/Bs_Derby_Ensembl_80.bridge");
 										//here you get crossreferences from all databases the element id maps to
 
-										ds = ds.getBySystemCode("S");
+										ds = DataSource.getExistingBySystemCode("S");
 										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
 										for(Xref ref: crossrefs){
 										datanodeRes.addProperty(Wp.bdbUniprot, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/uniprot/" + ref.getId().trim().replaceAll(" ", "_")) );
@@ -1075,7 +1075,7 @@ public class DataNodeConverter {
 												+ "/tmp/OPSBRIDGEDB/Bt_Derby_Ensembl_80.bridge");
 										//here you get crossreferences from all databases the element id maps to
 
-										ds = ds.getBySystemCode("S");
+										ds = DataSource.getExistingBySystemCode("S");
 										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
 										for(Xref ref: crossrefs){
 										datanodeRes.addProperty(Wp.bdbUniprot, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/uniprot/" + ref.getId().trim().replaceAll(" ", "_")) );
@@ -1105,7 +1105,7 @@ public class DataNodeConverter {
 												+ "/tmp/OPSBRIDGEDB/Ce_Derby_Ensembl_80.bridge");
 										//here you get crossreferences from all databases the element id maps to
 
-										ds = ds.getBySystemCode("S");
+										ds = DataSource.getExistingBySystemCode("S");
 										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
 										for(Xref ref: crossrefs){
 										datanodeRes.addProperty(Wp.bdbUniprot, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/uniprot/" + ref.getId().trim().replaceAll(" ", "_")) );
@@ -1135,7 +1135,7 @@ public class DataNodeConverter {
 												+ "/tmp/OPSBRIDGEDB/Cf_Derby_Ensembl_80.bridge");
 										//here you get crossreferences from all databases the element id maps to
 
-										ds = ds.getBySystemCode("S");
+										ds = DataSource.getExistingBySystemCode("S");
 										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
 										for(Xref ref: crossrefs){
 										datanodeRes.addProperty(Wp.bdbUniprot, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/uniprot/" + ref.getId().trim().replaceAll(" ", "_")) );
@@ -1165,7 +1165,7 @@ public class DataNodeConverter {
 												+ "/tmp/OPSBRIDGEDB/Dm_Derby_Ensembl_80.bridge");
 										//here you get crossreferences from all databases the element id maps to
 
-										ds = ds.getBySystemCode("S");
+										ds = DataSource.getExistingBySystemCode("S");
 										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
 										for(Xref ref: crossrefs){
 										datanodeRes.addProperty(Wp.bdbUniprot, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/uniprot/" + ref.getId().trim().replaceAll(" ", "_")) );
@@ -1195,7 +1195,7 @@ public class DataNodeConverter {
 												+ "/tmp/OPSBRIDGEDB/Dr_Derby_Ensembl_80.bridge");
 										//here you get crossreferences from all databases the element id maps to
 
-										ds = ds.getBySystemCode("S");
+										ds = DataSource.getExistingBySystemCode("S");
 										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
 										for(Xref ref: crossrefs){
 										datanodeRes.addProperty(Wp.bdbUniprot, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/uniprot/" + ref.getId().trim().replaceAll(" ", "_")) );
@@ -1225,7 +1225,7 @@ public class DataNodeConverter {
 												+ "/tmp/OPSBRIDGEDB/Ec_Derby_Ensembl_80.bridge");
 										//here you get crossreferences from all databases the element id maps to
 
-										ds = ds.getBySystemCode("S");
+										ds = DataSource.getExistingBySystemCode("S");
 										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
 										for(Xref ref: crossrefs){
 										datanodeRes.addProperty(Wp.bdbUniprot, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/uniprot/" + ref.getId().trim().replaceAll(" ", "_")) );
@@ -1255,7 +1255,7 @@ public class DataNodeConverter {
 												+ "/tmp/OPSBRIDGEDB/Gg_Derby_Ensembl_80.bridge");
 										//here you get crossreferences from all databases the element id maps to
 
-										ds = ds.getBySystemCode("S");
+										ds = DataSource.getExistingBySystemCode("S");
 										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
 										for(Xref ref: crossrefs){
 										datanodeRes.addProperty(Wp.bdbUniprot, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/uniprot/" + ref.getId().trim().replaceAll(" ", "_")) );
@@ -1285,7 +1285,7 @@ public class DataNodeConverter {
 												+ "/tmp/OPSBRIDGEDB/Mm_Derby_Ensembl_80.bridge");
 										//here you get crossreferences from all databases the element id maps to
 
-										ds = ds.getBySystemCode("S");
+										ds = DataSource.getExistingBySystemCode("S");
 										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
 										for(Xref ref: crossrefs){
 										datanodeRes.addProperty(Wp.bdbUniprot, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/uniprot/" + ref.getId().trim().replaceAll(" ", "_")) );
@@ -1315,7 +1315,7 @@ public class DataNodeConverter {
 												+ "/tmp/OPSBRIDGEDB/Oj_Derby_Ensembl_Plant_28.bridge");
 										//here you get crossreferences from all databases the element id maps to
 
-										ds = ds.getBySystemCode("S");
+										ds = DataSource.getExistingBySystemCode("S");
 										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
 										for(Xref ref: crossrefs){
 										datanodeRes.addProperty(Wp.bdbUniprot, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/uniprot/" + ref.getId().trim().replaceAll(" ", "_")) );
@@ -1345,7 +1345,7 @@ public class DataNodeConverter {
 												+ "/tmp/OPSBRIDGEDB/Pt_Derby_Ensembl_80.bridge");
 										//here you get crossreferences from all databases the element id maps to
 
-										ds = ds.getBySystemCode("S");
+										ds = DataSource.getExistingBySystemCode("S");
 										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
 										for(Xref ref: crossrefs){
 										datanodeRes.addProperty(Wp.bdbUniprot, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/uniprot/" + ref.getId().trim().replaceAll(" ", "_")) );
@@ -1375,7 +1375,7 @@ public class DataNodeConverter {
 												+ "/tmp/OPSBRIDGEDB/Rn_Derby_Ensembl_80.bridge");
 										//here you get crossreferences from all databases the element id maps to
 
-										ds = ds.getBySystemCode("S");
+										ds = DataSource.getExistingBySystemCode("S");
 										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
 										for(Xref ref: crossrefs){
 										datanodeRes.addProperty(Wp.bdbUniprot, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/uniprot/" + ref.getId().trim().replaceAll(" ", "_")) );
@@ -1405,7 +1405,7 @@ public class DataNodeConverter {
 												+ "/tmp/OPSBRIDGEDB/Sc_Derby_Ensembl_80.bridge");
 										//here you get crossreferences from all databases the element id maps to
 
-										ds = ds.getBySystemCode("S");
+										ds = DataSource.getExistingBySystemCode("S");
 										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
 										for(Xref ref: crossrefs){
 										datanodeRes.addProperty(Wp.bdbUniprot, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/uniprot/" + ref.getId().trim().replaceAll(" ", "_")) );
@@ -1435,7 +1435,7 @@ public class DataNodeConverter {
 												+ "/tmp/OPSBRIDGEDB/Zm_Derby_Ensembl_Plant_28.bridge");
 										//here you get crossreferences from all databases the element id maps to
 
-										ds = ds.getBySystemCode("S");
+										ds = DataSource.getExistingBySystemCode("S");
 										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
 										for(Xref ref: crossrefs){
 										datanodeRes.addProperty(Wp.bdbUniprot, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/uniprot/" + ref.getId().trim().replaceAll(" ", "_")) );
@@ -1470,19 +1470,19 @@ public class DataNodeConverter {
 										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
 												+ "/tmp/OPSBRIDGEDB/metabolites_20150409.bridge");
 										//here you get crossreferences from all databases the element id maps to
-										ds = ds.getBySystemCode("Ch");
+										ds = DataSource.getExistingBySystemCode("Ch");
 										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
 										for(Xref ref: crossrefs){
 										datanodeRes.addProperty(Wp.bdbHmdb, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/hmdb/" + ref.getId().trim().replaceAll(" ", "_")) );
 										}
 										
-										ds1 = ds1.getBySystemCode("Cs");
+										ds1 = DataSource.getExistingBySystemCode("Cs");
 										Set<Xref> crossrefs1 = mapper.mapID(elem.getXref(), ds1);
 										for(Xref ref: crossrefs1){
 										datanodeRes.addProperty(Wp.bdbChemspider, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/chemspider/" + ref.getId().trim().replaceAll(" ", "_")) );
 										}
 										
-										ds2 = ds2.getBySystemCode("Ce");
+										ds2 = DataSource.getExistingBySystemCode("Ce");
 										Set<Xref> crossrefs2 = mapper.mapID(elem.getXref(), ds2);
 										for(Xref ref: crossrefs2){
 											String ref1;
@@ -1523,13 +1523,13 @@ public class DataNodeConverter {
 										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
 												+ "/tmp/OPSBRIDGEDB/Hs_Derby_Ensembl_80.bridge");
 										//here you get crossreferences from all databases the element id maps to
-										ds = ds.getBySystemCode("L");
+										ds = DataSource.getExistingBySystemCode("L");
 										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
 										for(Xref ref: crossrefs){
 										datanodeRes.addProperty(Wp.bdbEntrezGene, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ncbigene/" + ref.getId().trim().replaceAll(" ", "_")) );
 										}
 										
-										ds1 = ds1.getBySystemCode("En");
+										ds1 = DataSource.getExistingBySystemCode("En");
 										Set<Xref> crossrefs1 = mapper.mapID(elem.getXref(), ds1);
 										for(Xref ref: crossrefs1){
 										datanodeRes.addProperty(Wp.bdbEnsembl, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ensembl/" + ref.getId().trim().replaceAll(" ", "_")) );
@@ -1560,13 +1560,13 @@ public class DataNodeConverter {
 										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
 												+ "/tmp/OPSBRIDGEDB/Ag_Derby_Ensembl_Metazoa_28.bridge");
 										//here you get crossreferences from all databases the element id maps to
-										ds = ds.getBySystemCode("L");
+										ds = DataSource.getExistingBySystemCode("L");
 										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
 										for(Xref ref: crossrefs){
 										datanodeRes.addProperty(Wp.bdbEntrezGene, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ncbigene/" + ref.getId().trim().replaceAll(" ", "_")) );
 										}
 										
-										ds1 = ds1.getBySystemCode("En");
+										ds1 = DataSource.getExistingBySystemCode("En");
 										Set<Xref> crossrefs1 = mapper.mapID(elem.getXref(), ds1);
 										for(Xref ref: crossrefs1){
 										datanodeRes.addProperty(Wp.bdbEnsembl, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ensembl/" + ref.getId().trim().replaceAll(" ", "_")) );
@@ -1597,13 +1597,13 @@ public class DataNodeConverter {
 										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
 												+ "/tmp/OPSBRIDGEDB/At_Derby_Ensembl_Plant_28.bridge");
 										//here you get crossreferences from all databases the element id maps to
-										ds = ds.getBySystemCode("L");
+										ds = DataSource.getExistingBySystemCode("L");
 										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
 										for(Xref ref: crossrefs){
 										datanodeRes.addProperty(Wp.bdbEntrezGene, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ncbigene/" + ref.getId().trim().replaceAll(" ", "_")) );
 										}
 										
-										ds1 = ds1.getBySystemCode("En");
+										ds1 = DataSource.getExistingBySystemCode("En");
 										Set<Xref> crossrefs1 = mapper.mapID(elem.getXref(), ds1);
 										for(Xref ref: crossrefs1){
 										datanodeRes.addProperty(Wp.bdbEnsembl, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ensembl/" + ref.getId().trim().replaceAll(" ", "_")) );
@@ -1634,13 +1634,13 @@ public class DataNodeConverter {
 										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
 												+ "/tmp/OPSBRIDGEDB/Bs_Derby_Ensembl_80.bridge");
 										//here you get crossreferences from all databases the element id maps to
-										ds = ds.getBySystemCode("L");
+										ds = DataSource.getExistingBySystemCode("L");
 										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
 										for(Xref ref: crossrefs){
 										datanodeRes.addProperty(Wp.bdbEntrezGene, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ncbigene/" + ref.getId().trim().replaceAll(" ", "_")) );
 										}
 										
-										ds1 = ds1.getBySystemCode("En");
+										ds1 = DataSource.getExistingBySystemCode("En");
 										Set<Xref> crossrefs1 = mapper.mapID(elem.getXref(), ds1);
 										for(Xref ref: crossrefs1){
 										datanodeRes.addProperty(Wp.bdbEnsembl, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ensembl/" + ref.getId().trim().replaceAll(" ", "_")) );
@@ -1671,13 +1671,13 @@ public class DataNodeConverter {
 										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
 												+ "/tmp/OPSBRIDGEDB/Bt_Derby_Ensembl_80.bridge");
 										//here you get crossreferences from all databases the element id maps to
-										ds = ds.getBySystemCode("L");
+										ds = DataSource.getExistingBySystemCode("L");
 										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
 										for(Xref ref: crossrefs){
 										datanodeRes.addProperty(Wp.bdbEntrezGene, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ncbigene/" + ref.getId().trim().replaceAll(" ", "_")) );
 										}
 										
-										ds1 = ds1.getBySystemCode("En");
+										ds1 = DataSource.getExistingBySystemCode("En");
 										Set<Xref> crossrefs1 = mapper.mapID(elem.getXref(), ds1);
 										for(Xref ref: crossrefs1){
 										datanodeRes.addProperty(Wp.bdbEnsembl, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ensembl/" + ref.getId().trim().replaceAll(" ", "_")) );
@@ -1708,13 +1708,13 @@ public class DataNodeConverter {
 										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
 												+ "/tmp/OPSBRIDGEDB/Ce_Derby_Ensembl_80.bridge");
 										//here you get crossreferences from all databases the element id maps to
-										ds = ds.getBySystemCode("L");
+										ds = DataSource.getExistingBySystemCode("L");
 										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
 										for(Xref ref: crossrefs){
 										datanodeRes.addProperty(Wp.bdbEntrezGene, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ncbigene/" + ref.getId().trim().replaceAll(" ", "_")) );
 										}
 										
-										ds1 = ds1.getBySystemCode("En");
+										ds1 = DataSource.getExistingBySystemCode("En");
 										Set<Xref> crossrefs1 = mapper.mapID(elem.getXref(), ds1);
 										for(Xref ref: crossrefs1){
 										datanodeRes.addProperty(Wp.bdbEnsembl, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ensembl/" + ref.getId().trim().replaceAll(" ", "_")) );
@@ -1745,13 +1745,13 @@ public class DataNodeConverter {
 										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
 												+ "/tmp/OPSBRIDGEDB/Cf_Derby_Ensembl_80.bridge");
 										//here you get crossreferences from all databases the element id maps to
-										ds = ds.getBySystemCode("L");
+										ds = DataSource.getExistingBySystemCode("L");
 										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
 										for(Xref ref: crossrefs){
 										datanodeRes.addProperty(Wp.bdbEntrezGene, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ncbigene/" + ref.getId().trim().replaceAll(" ", "_")) );
 										}
 										
-										ds1 = ds1.getBySystemCode("En");
+										ds1 = DataSource.getExistingBySystemCode("En");
 										Set<Xref> crossrefs1 = mapper.mapID(elem.getXref(), ds1);
 										for(Xref ref: crossrefs1){
 										datanodeRes.addProperty(Wp.bdbEnsembl, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ensembl/" + ref.getId().trim().replaceAll(" ", "_")) );
@@ -1782,13 +1782,13 @@ public class DataNodeConverter {
 										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
 												+ "/tmp/OPSBRIDGEDB/Dm_Derby_Ensembl_80.bridge");
 										//here you get crossreferences from all databases the element id maps to
-										ds = ds.getBySystemCode("L");
+										ds = DataSource.getExistingBySystemCode("L");
 										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
 										for(Xref ref: crossrefs){
 										datanodeRes.addProperty(Wp.bdbEntrezGene, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ncbigene/" + ref.getId().trim().replaceAll(" ", "_")) );
 										}
 										
-										ds1 = ds1.getBySystemCode("En");
+										ds1 = DataSource.getExistingBySystemCode("En");
 										Set<Xref> crossrefs1 = mapper.mapID(elem.getXref(), ds1);
 										for(Xref ref: crossrefs1){
 										datanodeRes.addProperty(Wp.bdbEnsembl, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ensembl/" + ref.getId().trim().replaceAll(" ", "_")) );
@@ -1819,13 +1819,13 @@ public class DataNodeConverter {
 										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
 												+ "/tmp/OPSBRIDGEDB/Dr_Derby_Ensembl_80.bridge");
 										//here you get crossreferences from all databases the element id maps to
-										ds = ds.getBySystemCode("L");
+										ds = DataSource.getExistingBySystemCode("L");
 										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
 										for(Xref ref: crossrefs){
 										datanodeRes.addProperty(Wp.bdbEntrezGene, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ncbigene/" + ref.getId().trim().replaceAll(" ", "_")) );
 										}
 										
-										ds1 = ds1.getBySystemCode("En");
+										ds1 = DataSource.getExistingBySystemCode("En");
 										Set<Xref> crossrefs1 = mapper.mapID(elem.getXref(), ds1);
 										for(Xref ref: crossrefs1){
 										datanodeRes.addProperty(Wp.bdbEnsembl, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ensembl/" + ref.getId().trim().replaceAll(" ", "_")) );
@@ -1856,13 +1856,13 @@ public class DataNodeConverter {
 										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
 												+ "/tmp/OPSBRIDGEDB/Ec_Derby_Ensembl_80.bridge");
 										//here you get crossreferences from all databases the element id maps to
-										ds = ds.getBySystemCode("L");
+										ds = DataSource.getExistingBySystemCode("L");
 										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
 										for(Xref ref: crossrefs){
 										datanodeRes.addProperty(Wp.bdbEntrezGene, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ncbigene/" + ref.getId().trim().replaceAll(" ", "_")) );
 										}
 										
-										ds1 = ds1.getBySystemCode("En");
+										ds1 = DataSource.getExistingBySystemCode("En");
 										Set<Xref> crossrefs1 = mapper.mapID(elem.getXref(), ds1);
 										for(Xref ref: crossrefs1){
 										datanodeRes.addProperty(Wp.bdbEnsembl, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ensembl/" + ref.getId().trim().replaceAll(" ", "_")) );
@@ -1893,13 +1893,13 @@ public class DataNodeConverter {
 										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
 												+ "/tmp/OPSBRIDGEDB/Gg_Derby_Ensembl_80.bridge");
 										//here you get crossreferences from all databases the element id maps to
-										ds = ds.getBySystemCode("L");
+										ds = DataSource.getExistingBySystemCode("L");
 										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
 										for(Xref ref: crossrefs){
 										datanodeRes.addProperty(Wp.bdbEntrezGene, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ncbigene/" + ref.getId().trim().replaceAll(" ", "_")) );
 										}
 										
-										ds1 = ds1.getBySystemCode("En");
+										ds1 = DataSource.getExistingBySystemCode("En");
 										Set<Xref> crossrefs1 = mapper.mapID(elem.getXref(), ds1);
 										for(Xref ref: crossrefs1){
 										datanodeRes.addProperty(Wp.bdbEnsembl, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ensembl/" + ref.getId().trim().replaceAll(" ", "_")) );
@@ -1930,13 +1930,13 @@ public class DataNodeConverter {
 										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
 												+ "/tmp/OPSBRIDGEDB/Mm_Derby_Ensembl_80.bridge");
 										//here you get crossreferences from all databases the element id maps to
-										ds = ds.getBySystemCode("L");
+										ds = DataSource.getExistingBySystemCode("L");
 										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
 										for(Xref ref: crossrefs){
 										datanodeRes.addProperty(Wp.bdbEntrezGene, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ncbigene/" + ref.getId().trim().replaceAll(" ", "_")) );
 										}
 										
-										ds1 = ds1.getBySystemCode("En");
+										ds1 = DataSource.getExistingBySystemCode("En");
 										Set<Xref> crossrefs1 = mapper.mapID(elem.getXref(), ds1);
 										for(Xref ref: crossrefs1){
 										datanodeRes.addProperty(Wp.bdbEnsembl, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ensembl/" + ref.getId().trim().replaceAll(" ", "_")) );
@@ -1967,13 +1967,13 @@ public class DataNodeConverter {
 										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
 												+ "/tmp/OPSBRIDGEDB/Oj_Derby_Ensembl_Plant_28.bridge");
 										//here you get crossreferences from all databases the element id maps to
-										ds = ds.getBySystemCode("L");
+										ds = DataSource.getExistingBySystemCode("L");
 										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
 										for(Xref ref: crossrefs){
 										datanodeRes.addProperty(Wp.bdbEntrezGene, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ncbigene/" + ref.getId().trim().replaceAll(" ", "_")) );
 										}
 										
-										ds1 = ds1.getBySystemCode("En");
+										ds1 = DataSource.getExistingBySystemCode("En");
 										Set<Xref> crossrefs1 = mapper.mapID(elem.getXref(), ds1);
 										for(Xref ref: crossrefs1){
 										datanodeRes.addProperty(Wp.bdbEnsembl, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ensembl/" + ref.getId().trim().replaceAll(" ", "_")) );
@@ -2004,13 +2004,13 @@ public class DataNodeConverter {
 										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
 												+ "/tmp/OPSBRIDGEDB/Pt_Derby_Ensembl_80.bridge");
 										//here you get crossreferences from all databases the element id maps to
-										ds = ds.getBySystemCode("L");
+										ds = DataSource.getExistingBySystemCode("L");
 										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
 										for(Xref ref: crossrefs){
 										datanodeRes.addProperty(Wp.bdbEntrezGene, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ncbigene/" + ref.getId().trim().replaceAll(" ", "_")) );
 										}
 										
-										ds1 = ds1.getBySystemCode("En");
+										ds1 = DataSource.getExistingBySystemCode("En");
 										Set<Xref> crossrefs1 = mapper.mapID(elem.getXref(), ds1);
 										for(Xref ref: crossrefs1){
 										datanodeRes.addProperty(Wp.bdbEnsembl, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ensembl/" + ref.getId().trim().replaceAll(" ", "_")) );
@@ -2041,13 +2041,13 @@ public class DataNodeConverter {
 										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
 												+ "/tmp/OPSBRIDGEDB/Rn_Derby_Ensembl_80.bridge");
 										//here you get crossreferences from all databases the element id maps to
-										ds = ds.getBySystemCode("L");
+										ds = DataSource.getExistingBySystemCode("L");
 										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
 										for(Xref ref: crossrefs){
 										datanodeRes.addProperty(Wp.bdbEntrezGene, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ncbigene/" + ref.getId().trim().replaceAll(" ", "_")) );
 										}
 										
-										ds1 = ds1.getBySystemCode("En");
+										ds1 = DataSource.getExistingBySystemCode("En");
 										Set<Xref> crossrefs1 = mapper.mapID(elem.getXref(), ds1);
 										for(Xref ref: crossrefs1){
 										datanodeRes.addProperty(Wp.bdbEnsembl, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ensembl/" + ref.getId().trim().replaceAll(" ", "_")) );
@@ -2078,13 +2078,13 @@ public class DataNodeConverter {
 										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
 												+ "/tmp/OPSBRIDGEDB/Sc_Derby_Ensembl_80.bridge");
 										//here you get crossreferences from all databases the element id maps to
-										ds = ds.getBySystemCode("L");
+										ds = DataSource.getExistingBySystemCode("L");
 										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
 										for(Xref ref: crossrefs){
 										datanodeRes.addProperty(Wp.bdbEntrezGene, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ncbigene/" + ref.getId().trim().replaceAll(" ", "_")) );
 										}
 										
-										ds1 = ds1.getBySystemCode("En");
+										ds1 = DataSource.getExistingBySystemCode("En");
 										Set<Xref> crossrefs1 = mapper.mapID(elem.getXref(), ds1);
 										for(Xref ref: crossrefs1){
 										datanodeRes.addProperty(Wp.bdbEnsembl, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ensembl/" + ref.getId().trim().replaceAll(" ", "_")) );
@@ -2115,13 +2115,13 @@ public class DataNodeConverter {
 										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
 												+ "/tmp/OPSBRIDGEDB/Zm_Derby_Ensembl_Plant_28.bridge");
 										//here you get crossreferences from all databases the element id maps to
-										ds = ds.getBySystemCode("L");
+										ds = DataSource.getExistingBySystemCode("L");
 										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);
 										for(Xref ref: crossrefs){
 										datanodeRes.addProperty(Wp.bdbEntrezGene, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ncbigene/" + ref.getId().trim().replaceAll(" ", "_")) );
 										}
 										
-										ds1 = ds1.getBySystemCode("En");
+										ds1 = DataSource.getExistingBySystemCode("En");
 										Set<Xref> crossrefs1 = mapper.mapID(elem.getXref(), ds1);
 										for(Xref ref: crossrefs1){
 										datanodeRes.addProperty(Wp.bdbEnsembl, model.createResource(Utils.IDENTIFIERS_ORG_URL + "/ensembl/" + ref.getId().trim().replaceAll(" ", "_")) );
