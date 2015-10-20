@@ -23,6 +23,7 @@ import org.bridgedb.DataSource;
 import org.bridgedb.IDMapper;
 import org.bridgedb.IDMapperException;
 import org.bridgedb.Xref;
+import org.bridgedb.bio.DataSourceTxt;
 import org.pathvisio.core.biopax.PublicationXref;
 import org.pathvisio.core.model.LineStyle;
 import org.pathvisio.core.model.Pathway;
@@ -55,6 +56,7 @@ public class DataNodeConverter {
 	 * @param geneMapper 
 	 */
 	public static void parseDataNodeWp(PathwayElement elem, Model model, DataHandlerWp data, Pathway p) {
+		DataSourceTxt.init();
 		
 		//final Properties prop = new Properties();
 		//prop.load(new FileInputStream("config.properties"));
@@ -1468,7 +1470,7 @@ public class DataNodeConverter {
 										DataSource ds2 = null;
 										
 										IDMapper mapper = BridgeDb.connect("idmapper-pgdb:"
-												+ "/tmp/OPSBRIDGEDB/metabolites_20150409.bridge");
+												+ "/tmp/OPSBRIDGEDB/metabolites_20150717.bridge");
 										//here you get crossreferences from all databases the element id maps to
 										ds = DataSource.getExistingBySystemCode("Ch");
 										Set<Xref> crossrefs = mapper.mapID(elem.getXref(), ds);

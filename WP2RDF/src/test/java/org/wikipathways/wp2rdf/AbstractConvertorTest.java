@@ -3,6 +3,7 @@ package org.wikipathways.wp2rdf;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 
+import org.bridgedb.bio.DataSourceTxt;
 import org.junit.Assert;
 import org.junit.Test;
 import org.pathvisio.core.model.ConverterException;
@@ -29,17 +30,22 @@ public abstract class AbstractConvertorTest {
 		model = GpmlConverter.convertGpml(pathway, wpid, revision);
 		Assert.assertNotNull(model);
 		System.out.println("===== " + gpmlFile + " =====");
-		System.out.println(toString(model));
+		String ttlContent = toString(model);
+		if (ttlContent.length() > 1000) ttlContent.substring(0,1000);
+		System.out.println(ttlContent);
 	}
 
 	public static void loadModelAsWPRDF(String gpmlFile, String wpid, String revision) throws ConverterException {
+		DataSourceTxt.init();
 		InputStream input = AbstractConvertorTest.class.getClassLoader().getResourceAsStream(gpmlFile);
 		Pathway pathway = PathwayReader.readPathway(input);
 		Assert.assertNotNull(pathway);
 		model = GpmlConverter.convertWp(pathway, wpid, revision);
 		Assert.assertNotNull(model);
 		System.out.println("===== " + gpmlFile + " =====");
-		System.out.println(toString(model));
+		String ttlContent = toString(model);
+		if (ttlContent.length() > 1000) ttlContent.substring(0,1000);
+		System.out.println(ttlContent);
 	}
 
 	@Test
