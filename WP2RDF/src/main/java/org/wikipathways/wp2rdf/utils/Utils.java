@@ -64,7 +64,6 @@ public class Utils {
 		model.setNsPrefix("rdfs", RDFS.getURI());
 		model.setNsPrefix("dcterms", DCTerms.getURI());
 		model.setNsPrefix("wprdf", "http://rdf.wikipathways.org/");
-		model.setNsPrefix("pubmed", "http://www.ncbi.nlm.nih.gov/pubmed/");
 		model.setNsPrefix("foaf", FOAF.getURI());
 		model.setNsPrefix("dc", DC.getURI());
 		model.setNsPrefix("skos", Skos.getURI());
