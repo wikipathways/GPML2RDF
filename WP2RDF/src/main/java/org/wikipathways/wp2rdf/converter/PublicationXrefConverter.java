@@ -42,11 +42,11 @@ public class PublicationXrefConverter {
 	 */
 	public static void parsePublicationXrefWp(PublicationXref xref, Resource parent, Model model) {
 		if (xref.getPubmedId() == null || xref.getPubmedId().trim().length() == 0) return; // Reconsider...
-		Resource pubXrefRes = model.createResource(Utils.IDENTIFIERS_ORG_URL + "/pubmed/" + xref.getPubmedId());
+		Resource pubXrefRes = model.createResource(Utils.IDENTIFIERS_ORG_URL + "/pubmed/" + xref.getPubmedId().trim());
 		pubXrefRes.addProperty(RDF.type, Wp.PublicationReference);
 		parent.addProperty(DCTerms.references, pubXrefRes);
 		pubXrefRes.addProperty(DCTerms.isPartOf, parent);
-		pubXrefRes.addProperty(FOAF.page, model.createResource(Utils.PUBMED_URL + xref.getPubmedId()));
+		pubXrefRes.addProperty(FOAF.page, model.createResource(Utils.PUBMED_URL + xref.getPubmedId().trim()));
 	}
 	
 	/**
@@ -55,7 +55,7 @@ public class PublicationXrefConverter {
 	public static void parsePublicationXrefGpml(PublicationXref xref, Resource parent, Model model, DataHandlerGpml data) {
 		Resource pubXrefRes = model.createResource(Utils.IDENTIFIERS_ORG_URL + "/pubmed/" + xref.getPubmedId());
 		if (xref.getPubmedId() == null || xref.getPubmedId().trim().length() == 0)
-			pubXrefRes = model.createResource(data.getPathwayRes().getURI() + "/pub/" + xref.getId());
+			pubXrefRes = model.createResource(data.getPathwayRes().getURI() + "/pub/" + xref.getId().trim());
 		pubXrefRes.addProperty(RDF.type, Gpml.PUBLICATION_XREF);
 		pubXrefRes.addLiteral(Gpml.ID, xref.getPubmedId() != null ? xref.getPubmedId() : "");
 		pubXrefRes.addLiteral(Gpml.DATABASE, "Pubmed");
