@@ -140,7 +140,7 @@ public class InteractionConverter {
 							data.getPathwayElements().put(l, intRes);
 							for(PublicationXref xref : l.getBiopaxReferenceManager().getPublicationXRefs()) {
 								if(xref.getPubmedId() != null && !xref.getPubmedId().equals("")) {
-									String pubmedUrl = Utils.IDENTIFIERS_ORG_URL + "/pubmed/" + xref.getPubmedId();
+									String pubmedUrl = Utils.IDENTIFIERS_ORG_URL + "/pubmed/" + xref.getPubmedId().trim();
 									intRes.addProperty(DCTerms.bibliographicCitation, model.createResource(pubmedUrl));
 								}
 							}
@@ -191,7 +191,7 @@ public class InteractionConverter {
 									data.getPathwayElements().put(l, intRes);
 									for(PublicationXref xref : l.getBiopaxReferenceManager().getPublicationXRefs()) {
 										if(xref.getPubmedId() != null && !xref.getPubmedId().equals("")) {
-											String pubmedUrl = Utils.IDENTIFIERS_ORG_URL + "/pubmed/" + xref.getPubmedId();
+											String pubmedUrl = Utils.IDENTIFIERS_ORG_URL + "/pubmed/" + xref.getPubmedId().trim();
 											intRes.addProperty(DCTerms.bibliographicCitation, model.createResource(pubmedUrl));
 										}
 									}
@@ -294,7 +294,7 @@ public class InteractionConverter {
 				
 				for(PublicationXref xref : l.getBiopaxReferenceManager().getPublicationXRefs()) {
 					if(xref.getPubmedId() != null && !xref.getPubmedId().equals("")) {
-						String pubmedUrl = Utils.IDENTIFIERS_ORG_URL + "/pubmed/" + xref.getPubmedId();
+						String pubmedUrl = Utils.IDENTIFIERS_ORG_URL + "/pubmed/" + xref.getPubmedId().trim();
 						intRes.addProperty(DCTerms.bibliographicCitation, model.createResource(pubmedUrl));
 						intRes2.addProperty(DCTerms.bibliographicCitation, model.createResource(pubmedUrl));
 					}
@@ -346,7 +346,7 @@ public class InteractionConverter {
 				regIntRes.addProperty(Wp.isAbout, model.createResource(Utils.WP_RDF_URL + "/Pathway/" + data.getPwyId() + "_r" + data.getRevision() + "/Interaction/" + l.getGraphId()));
 				for(PublicationXref xref : l.getBiopaxReferenceManager().getPublicationXRefs()) {
 					if(xref.getPubmedId() != null && !xref.getPubmedId().equals("")) {
-						String pubmedUrl = Utils.IDENTIFIERS_ORG_URL + "/pubmed/" + xref.getPubmedId();
+						String pubmedUrl = Utils.IDENTIFIERS_ORG_URL + "/pubmed/" + xref.getPubmedId().trim();
 						parentInt.addProperty(DCTerms.bibliographicCitation, model.createResource(pubmedUrl));
 					}
 				}
