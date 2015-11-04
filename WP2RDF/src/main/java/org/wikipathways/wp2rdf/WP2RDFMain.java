@@ -20,6 +20,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
+import org.bridgedb.IDMapperException;
 import org.pathvisio.core.model.ConverterException;
 import org.pathvisio.core.model.Pathway;
 import org.pathvisio.core.view.MIMShapes;
@@ -37,7 +38,7 @@ import com.hp.hpl.jena.rdf.model.ModelFactory;
  */
 public class WP2RDFMain {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws ClassNotFoundException, IDMapperException {
 		// TODO: get all pathways from webservice
 		
 		// change file location if you 
@@ -76,7 +77,7 @@ public class WP2RDFMain {
 //			GpmlConverter.convertGpml(p, wpId, revision, pathwayModel);
 			
 			// New conversion of the pathway in WP vocabulary
-			GpmlConverter.convertWp(p, wpId, revision, pathwayModel);
+			GpmlConverter.convertWp(p, wpId, revision);
 			
 			// Write model in new file
 			pathwayModel.write(new FileWriter(outputFile), "TURTLE");
