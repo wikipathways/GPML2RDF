@@ -1,6 +1,8 @@
 package org.wikipathways.wp2rdf;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
@@ -8,7 +10,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Properties;
 
+import org.bridgedb.IDMapperException;
+import org.bridgedb.IDMapperStack;
 import org.bridgedb.bio.Organism;
 import org.pathvisio.core.model.ConverterException;
 import org.pathvisio.core.model.Pathway;
@@ -54,7 +59,7 @@ public class WPREST2RDF {
 		add(Organism.ZeaMays);
 	}};
 
-	public static void main(String[] args) throws NumberFormatException, ConverterException, IOException {
+	public static void main(String[] args) throws NumberFormatException, ConverterException, IOException, ClassNotFoundException, IDMapperException {
 		URL url = new URL("http://webservice.wikipathways.org");
 		WikiPathwaysClient client = new WikiPathwaysClient(url);
 
@@ -62,6 +67,7 @@ public class WPREST2RDF {
 			System.out.println("Processing species: " + organism);
 			WSPathwayInfo [] pathways = client.listPathways(organism);
 			System.out.println("  found #pathways: " + pathways.length);
+			IDMapperStack mapper = WPREST2RDF.maps();
 			for(WSPathwayInfo pwInfo : pathways) {
 				System.out.println("  pathway: " + pwInfo.getId() + "\t" + pwInfo.getRevision());
 
@@ -95,7 +101,7 @@ public class WPREST2RDF {
 					// New conversion of the pathway in WP vocabulary
 					pathwayModel = ModelFactory.createDefaultModel();
 					Utils.setModelPrefix(pathwayModel);
-					GpmlConverter.convertWp(p, pwInfo.getId(), pwInfo.getRevision(), pathwayModel);
+					GpmlConverter.convertWp(p, pwInfo.getId(), pwInfo.getRevision(), pathwayModel, mapper);
 
 					folder = "output/wp/" + SPECIES.get(organism) + "/";
 					new File(folder).mkdirs();
@@ -105,6 +111,8 @@ public class WPREST2RDF {
 				}
 			}
 		}
+		
+
 	}
 
 	private static boolean isIncludedTag(WSCurationTag[] tags) {
@@ -112,6 +120,14 @@ public class WPREST2RDF {
 			if (INCLUDED_TAGS.contains(tag.getName())) return true;
 		}
 		return false;
+	}
+	
+	public static IDMapperStack maps () throws FileNotFoundException, IOException, ClassNotFoundException, IDMapperException{
+		final Properties prop = new Properties();
+		prop.load(new FileInputStream("/tmp/OPSBRIDGEDB/config.properties"));
+		IDMapperStack mapper = GpmlConverter.createBridgeDbMapper(prop);
+		return mapper;
+		
 	}
 
 }
