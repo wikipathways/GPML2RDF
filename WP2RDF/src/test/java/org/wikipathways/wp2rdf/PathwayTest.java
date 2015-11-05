@@ -1,8 +1,11 @@
 package org.wikipathways.wp2rdf;
 
 import java.io.ByteArrayOutputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.InputStream;
 
+import org.bridgedb.IDMapperException;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -23,11 +26,11 @@ public class PathwayTest {
 	}
 
 	@BeforeClass
-	public static void createModel() throws ConverterException {
+	public static void createModel() throws ConverterException, FileNotFoundException, ClassNotFoundException, IOException, IDMapperException {
 		loadModelAsWPRDF("gpmlParts/datanode.gpml", "WP4", "42");
 	}
 
-	private static void loadModelAsWPRDF(String gpmlFile, String wpid, String revision) throws ConverterException {
+	private static void loadModelAsWPRDF(String gpmlFile, String wpid, String revision) throws ConverterException, FileNotFoundException, ClassNotFoundException, IOException, IDMapperException {
 		InputStream input = AbstractConvertorTest.class.getClassLoader().getResourceAsStream(gpmlFile);
 		Pathway pathway = PathwayReader.readPathway(input);
 		Assert.assertNotNull(pathway);

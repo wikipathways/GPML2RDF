@@ -1,8 +1,11 @@
 package org.wikipathways.wp2rdf;
 
 import java.io.ByteArrayOutputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.InputStream;
 
+import org.bridgedb.IDMapperException;
 import org.bridgedb.bio.DataSourceTxt;
 import org.junit.Assert;
 import org.junit.Test;
@@ -35,7 +38,7 @@ public abstract class AbstractConvertorTest {
 		System.out.println(ttlContent);
 	}
 
-	public static void loadModelAsWPRDF(String gpmlFile, String wpid, String revision) throws ConverterException {
+	public static void loadModelAsWPRDF(String gpmlFile, String wpid, String revision) throws ConverterException, FileNotFoundException, ClassNotFoundException, IOException, IDMapperException {
 		DataSourceTxt.init();
 		InputStream input = AbstractConvertorTest.class.getClassLoader().getResourceAsStream(gpmlFile);
 		Pathway pathway = PathwayReader.readPathway(input);
