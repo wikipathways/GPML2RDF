@@ -27,6 +27,7 @@ import java.util.Iterator;
 import java.util.Properties;
 import java.util.Set;
 
+import org.bridgedb.BridgeDb;
 import org.bridgedb.DataSource;
 import org.bridgedb.IDMapper;
 import org.bridgedb.IDMapperException;
@@ -74,8 +75,9 @@ public class GpmlConverter {
 	
 	
 	public static IDMapperStack createBridgeDbMapper(Properties prop) throws ClassNotFoundException, IDMapperException{
-		DataSourceTxt.init();
+		Class.forName("org.apache.derby.jdbc.ClientDriver");
 		Class.forName("org.bridgedb.rdb.IDMapperRdb");
+		DataSourceTxt.init();
 		File dir = new File(prop.getProperty("bridgefiles")); //TODO Get Refector to get them directly form bridgedb.org
 		FilenameFilter filter = new FilenameFilter() {
 		    public boolean accept(File dir, String name) {
@@ -87,7 +89,9 @@ public class GpmlConverter {
 		IDMapperStack mapper = new IDMapperStack();
 		for (File bridgeDbFile : bridgeDbFiles) {
 			System.out.println(bridgeDbFile.getAbsolutePath());
-			mapper.addIDMapper("idmapper-pgdb:" + bridgeDbFile.getAbsolutePath());
+			mapper.addIDMapper(
+				BridgeDb.connect("idmapper-pgdb:" + bridgeDbFile.getAbsolutePath())
+			);
 		}
 		return mapper;
 	}
