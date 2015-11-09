@@ -22,6 +22,8 @@ public class Wp {
     /** <p>The namespace of the vocabulary as a resource</p> */
     public static final Resource NAMESPACE = m_model.createResource( NS );
     
+    public static final Property bdbWikidata = m_model.createProperty( "http://vocabularies.wikipathways.org/wp#bdbWikidata" );
+    
     public static final Property bdbChEBI = m_model.createProperty( "http://vocabularies.wikipathways.org/wp#bdbChEBI" );
     
     public static final Property bdbChemspider = m_model.createProperty( "http://vocabularies.wikipathways.org/wp#bdbChemspider" );

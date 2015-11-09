@@ -95,7 +95,7 @@ public class GpmlConverter {
 		}
 		return mapper;
 	}
-	
+
 	public static void getUnifiedIdentifiers(Model model, IDMapper  mapper, Xref idXref, Resource internalWPDataNodeResource) throws IDMapperException, UnsupportedEncodingException {
 		//ENSEMBL
 		System.out.println(idXref);
@@ -155,6 +155,18 @@ public class GpmlConverter {
 			String unifiedChemspiderDataNodeIdentifier = URLEncoder.encode(unifiedChemspiderId.getId(), "UTF-8");
 			Resource unifiedChemspiderIdResource = model.createResource("http://identifiers.org/chemspider/"+unifiedChemspiderDataNodeIdentifier);
 			internalWPDataNodeResource.addProperty(Wp.bdbChemspider, unifiedChemspiderIdResource);
+			//createCHEMINFBits(model,
+			//		internalWPDataNodeResource, CHEMINF.CHEMINF_000405, unifiedChemspiderDataNodeIdentifier
+			//);
+		}
+		// Wikidata
+		Set<Xref> unifiedWikidataIdXref = mapper.mapID(idXref, DataSource.getExistingBySystemCode("Wd"));
+		Iterator<Xref> iterWikidata = unifiedWikidataIdXref.iterator();
+		while (iterWikidata.hasNext()){
+			Xref unifiedWikidataId = (Xref) iterWikidata.next();
+			String unifiedWikidataDataNodeIdentifier = URLEncoder.encode(unifiedWikidataId.getId(), "UTF-8");
+			Resource unifiedWikidataIdResource = model.createResource("http://www.wikidata.org/entity/"+unifiedWikidataDataNodeIdentifier);
+			internalWPDataNodeResource.addProperty(Wp.bdbWikidata, unifiedWikidataIdResource);
 			//createCHEMINFBits(model,
 			//		internalWPDataNodeResource, CHEMINF.CHEMINF_000405, unifiedChemspiderDataNodeIdentifier
 			//);
