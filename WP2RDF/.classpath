@@ -18,7 +18,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="lib/com.springsource.org.jdom-1.1.0.jar"/>
-	<classpathentry kind="lib" path="lib/derby.jar"/>
 	<classpathentry kind="lib" path="lib/org.bridgedb.rdb.construct.jar"/>
 	<classpathentry kind="lib" path="lib/org.bridgedb.rdb.jar"/>
 	<classpathentry kind="lib" path="lib/jena-core-2.13.0.jar"/>
@@ -56,5 +55,6 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="lib/derby-10.5.3.0_1.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
