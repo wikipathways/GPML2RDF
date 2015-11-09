@@ -81,7 +81,8 @@ public class GpmlConverter {
 		        return name.toLowerCase().endsWith(".bridge");
 		    }
 		};
-	
+
+		DataSource.register("Wd", "Wikidata");
 		File[] bridgeDbFiles = dir.listFiles(filter);
 		IDMapperStack mapper = new IDMapperStack();
 		for (File bridgeDbFile : bridgeDbFiles) {
