@@ -17,7 +17,6 @@
 package org.wikipathways.wp2rdf;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FilenameFilter;
 import java.io.IOException;
@@ -39,8 +38,6 @@ import org.pathvisio.core.model.MLine;
 import org.pathvisio.core.model.ObjectType;
 import org.pathvisio.core.model.Pathway;
 import org.pathvisio.core.model.PathwayElement;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
 import org.wikipathways.wp2rdf.converter.DataNodeConverter;
 import org.wikipathways.wp2rdf.converter.GraphicalLineConverter;
 import org.wikipathways.wp2rdf.converter.GroupConverter;
@@ -57,8 +54,8 @@ import org.wikipathways.wp2rdf.utils.Utils;
 
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
+import com.hp.hpl.jena.rdf.model.Property;
 import com.hp.hpl.jena.rdf.model.Resource;
-import com.hp.hpl.jena.vocabulary.DC;
 
 /**
  * Class that converts a pathway
@@ -97,81 +94,52 @@ public class GpmlConverter {
 	}
 
 	public static void getUnifiedIdentifiers(Model model, IDMapper  mapper, Xref idXref, Resource internalWPDataNodeResource) throws IDMapperException, UnsupportedEncodingException {
-		//ENSEMBL
 		System.out.println(idXref);
-		Set<Xref> unifiedEnsemblIdXref = mapper.mapID(idXref, DataSource.getExistingBySystemCode("En"));
-		Iterator<Xref> iter = unifiedEnsemblIdXref.iterator();
+		//ENSEMBL
+		outputBridgeDbMapping(model, mapper, idXref, internalWPDataNodeResource,
+			"En", "http://identifiers.org/ensembl/", Wp.bdbEnsembl
+		);
+		//Uniprot
+		outputBridgeDbMapping(model, mapper, idXref, internalWPDataNodeResource,
+			"S", "http://identifiers.org/uniprot/", Wp.bdbUniprot
+		);
+		//Entrez Gene
+		outputBridgeDbMapping(model, mapper, idXref, internalWPDataNodeResource,
+			"L", "http://identifiers.org/ncbigene/", Wp.bdbEntrezGene
+		);
+		//HGNC Symbols
+		outputBridgeDbMapping(model, mapper, idXref, internalWPDataNodeResource,
+			"H", "http://identifiers.org/hgnc.symbol/", Wp.bdbHgncSymbol
+		);
+		//HMDB
+		outputBridgeDbMapping(model, mapper, idXref, internalWPDataNodeResource,
+			"Ch", "http://identifiers.org/hmdb/", Wp.bdbHmdb
+		);
+		//CHEMSPIDER
+		outputBridgeDbMapping(model, mapper, idXref, internalWPDataNodeResource,
+			"Cs", "http://identifiers.org/chemspider/", Wp.bdbChemspider
+		);
+		// Wikidata
+		outputBridgeDbMapping(model, mapper, idXref, internalWPDataNodeResource,
+			"Wd", "http://www.wikidata.org/entity/", Wp.bdbWikidata
+		);
+	}
+
+	private static void outputBridgeDbMapping(Model model, IDMapper mapper, Xref idXref,
+			Resource internalWPDataNodeResource, String sourceCode, String uriPrefix, Property predicate)
+	throws IDMapperException, UnsupportedEncodingException {
+		DataSource source = DataSource.getExistingBySystemCode(sourceCode);
+		Set<Xref> unifiedIdXref = mapper.mapID(idXref, source);
+		Iterator<Xref> iter = unifiedIdXref.iterator();
 		while (iter.hasNext()){
 			Xref unifiedId = (Xref) iter.next();
-			String unifiedEnsemblDataNodeIdentifier = URLEncoder.encode(unifiedId.getId(), "UTF-8");
-			Resource unifiedEnsemblIdResource = model.createResource("http://identifiers.org/ensembl/"+unifiedEnsemblDataNodeIdentifier);
-			internalWPDataNodeResource.addProperty(Wp.bdbEnsembl, unifiedEnsemblIdResource);
-		}
-		//Uniprot
-		Set<Xref> unifiedUniprotIdXref = mapper.mapID(idXref, DataSource.getExistingBySystemCode("S"));
-		Iterator<Xref> iterUniprot = unifiedUniprotIdXref.iterator();
-		while (iterUniprot.hasNext()){
-			Xref unifiedUniprotId = (Xref) iterUniprot.next();
-			String unifiedUniprotDataNodeIdentifier = URLEncoder.encode(unifiedUniprotId.getId(), "UTF-8");
-			Resource unifiedUniprotIdResource = model.createResource("http://identifiers.org/uniprot/"+unifiedUniprotDataNodeIdentifier);
-			internalWPDataNodeResource.addProperty(Wp.bdbUniprot, unifiedUniprotIdResource);
-		}
-		//Entrez Gene
-		Set<Xref> unifiedEntrezGeneIdXref = mapper.mapID(idXref, DataSource.getExistingBySystemCode("L"));
-		Iterator<Xref> iterEntrezGene = unifiedEntrezGeneIdXref.iterator();
-		while (iterEntrezGene.hasNext()){
-			Xref unifiedEntrezGeneId = (Xref) iterEntrezGene.next();
-			String unifiedEntrezGeneDataNodeIdentifier = URLEncoder.encode(unifiedEntrezGeneId.getId(), "UTF-8");
-			Resource unifiedEntrezGeneIdResource = model.createResource("http://identifiers.org/ncbigene/"+unifiedEntrezGeneDataNodeIdentifier);
-			internalWPDataNodeResource.addProperty(Wp.bdbEntrezGene, unifiedEntrezGeneIdResource);
-		}
-		
-		//HGNC Symbols
-		Set<Xref> unifiedHGNCSymboXref = mapper.mapID(idXref, DataSource.getExistingBySystemCode("H"));
-		Iterator<Xref> iterhgncsymbol = unifiedHGNCSymboXref.iterator();
-		while (iterhgncsymbol.hasNext()){
-			Xref unifiedHGNCSymbol = (Xref) iterhgncsymbol.next();
-			String unifiedHGNCSymbolDataNodeIdentifier = URLEncoder.encode(unifiedHGNCSymbol.getId(), "UTF-8");
-			Resource unifiedHGNCSymbolResource = model.createResource("http://identifiers.org/hgnc.symbol/"+unifiedHGNCSymbolDataNodeIdentifier);
-			internalWPDataNodeResource.addProperty(Wp.bdbHgncSymbol, unifiedHGNCSymbolResource);
-		}
-		//HMDB
-		Set<Xref> unifiedHmdbIdXref = mapper.mapID(idXref, DataSource.getExistingBySystemCode("Ch"));
-		Iterator<Xref> iterHmdb = unifiedHmdbIdXref.iterator();
-		while (iterHmdb.hasNext()){
-			Xref unifiedHmdbId = (Xref) iterHmdb.next();
-			String unifiedHmdbDataNodeIdentifier = URLEncoder.encode(unifiedHmdbId.getId(),"UTF-8");
-			Resource unifiedHmdbIdResource = model.createResource("http://identifiers.org/hmdb/"+unifiedHmdbDataNodeIdentifier);
-			internalWPDataNodeResource.addProperty(Wp.bdbHmdb, unifiedHmdbIdResource);
-			//createCHEMINFBits(model,
-			//		internalWPDataNodeResource, CHEMINF.CHEMINF_000408, unifiedHmdbDataNodeIdentifier
-			//);
-		}
-		//CHEMSPIDER
-		Set<Xref> unifiedChemspiderIdXref = mapper.mapID(idXref, DataSource.getExistingBySystemCode("Cs"));
-		Iterator<Xref> iterChemspider = unifiedChemspiderIdXref.iterator();
-		while (iterChemspider.hasNext()){
-			Xref unifiedChemspiderId = (Xref) iterChemspider.next();
-			String unifiedChemspiderDataNodeIdentifier = URLEncoder.encode(unifiedChemspiderId.getId(), "UTF-8");
-			Resource unifiedChemspiderIdResource = model.createResource("http://identifiers.org/chemspider/"+unifiedChemspiderDataNodeIdentifier);
-			internalWPDataNodeResource.addProperty(Wp.bdbChemspider, unifiedChemspiderIdResource);
+			String unifiedDataNodeIdentifier = URLEncoder.encode(unifiedId.getId(), "UTF-8");
+			Resource unifiedlIdResource = model.createResource(uriPrefix+unifiedDataNodeIdentifier);
+			internalWPDataNodeResource.addProperty(predicate, unifiedlIdResource);
 			//createCHEMINFBits(model,
 			//		internalWPDataNodeResource, CHEMINF.CHEMINF_000405, unifiedChemspiderDataNodeIdentifier
 			//);
 		}
-		// Wikidata
-		Set<Xref> unifiedWikidataIdXref = mapper.mapID(idXref, DataSource.getExistingBySystemCode("Wd"));
-		Iterator<Xref> iterWikidata = unifiedWikidataIdXref.iterator();
-		while (iterWikidata.hasNext()){
-			Xref unifiedWikidataId = (Xref) iterWikidata.next();
-			String unifiedWikidataDataNodeIdentifier = URLEncoder.encode(unifiedWikidataId.getId(), "UTF-8");
-			Resource unifiedWikidataIdResource = model.createResource("http://www.wikidata.org/entity/"+unifiedWikidataDataNodeIdentifier);
-			internalWPDataNodeResource.addProperty(Wp.bdbWikidata, unifiedWikidataIdResource);
-			//createCHEMINFBits(model,
-			//		internalWPDataNodeResource, CHEMINF.CHEMINF_000405, unifiedChemspiderDataNodeIdentifier
-			//);
-		}
-
 	}
 
 	public static Model convertGpml(Pathway p, String wpId, String revision) {
