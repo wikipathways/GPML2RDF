@@ -128,7 +128,14 @@ public class GpmlConverter {
 	private static void outputBridgeDbMapping(Model model, IDMapper mapper, Xref idXref,
 			Resource internalWPDataNodeResource, String sourceCode, String uriPrefix, Property predicate)
 	throws IDMapperException, UnsupportedEncodingException {
-		DataSource source = DataSource.getExistingBySystemCode(sourceCode);
+		if (mapper == null) return; // OK, not BridgeDb mapping files; just return
+		DataSource source = null;
+		try {
+			source = DataSource.getExistingBySystemCode(sourceCode);
+		} catch (Exception exception) {
+			System.out.println("Unknown system code (mapping files not loaded?): " + sourceCode);
+			return;
+		}
 		Set<Xref> unifiedIdXref = mapper.mapID(idXref, source);
 		Iterator<Xref> iter = unifiedIdXref.iterator();
 		while (iter.hasNext()){
