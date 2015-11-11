@@ -53,7 +53,7 @@ public class PublicationXrefConverter {
 	 * conversion only GPML vocabulary
 	 */
 	public static void parsePublicationXrefGpml(PublicationXref xref, Resource parent, Model model, DataHandlerGpml data) {
-		Resource pubXrefRes = model.createResource(Utils.IDENTIFIERS_ORG_URL + "/pubmed/" + xref.getPubmedId());
+		Resource pubXrefRes = model.createResource(Utils.IDENTIFIERS_ORG_URL + "/pubmed/" + xref.getPubmedId().trim());
 		if (xref.getPubmedId() == null || xref.getPubmedId().trim().length() == 0)
 			pubXrefRes = model.createResource(data.getPathwayRes().getURI() + "/pub/" + xref.getId().trim());
 		pubXrefRes.addProperty(RDF.type, Gpml.PUBLICATION_XREF);

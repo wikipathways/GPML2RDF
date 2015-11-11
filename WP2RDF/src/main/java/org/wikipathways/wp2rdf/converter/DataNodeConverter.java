@@ -148,7 +148,7 @@ public class DataNodeConverter {
 						}
 						// TODO: what to do about those - are they pathway specific?
 						for(PublicationXref xref : elem.getBiopaxReferenceManager().getPublicationXRefs()) {
-							if(xref.getPubmedId() != null && !xref.getPubmedId().equals("")) {
+							if(xref.getPubmedId() != null && !xref.getPubmedId().trim().equals("")) {
 								String pubmedUrl = Utils.IDENTIFIERS_ORG_URL + "/pubmed/" + xref.getPubmedId().trim();
 								datanodeRes.addProperty(DCTerms.bibliographicCitation, model.createResource(pubmedUrl.trim()));
 							}

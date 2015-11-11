@@ -86,8 +86,8 @@ public class GroupConverter {
 				}
 				
 				for(PublicationXref xref : group.getBiopaxReferenceManager().getPublicationXRefs()) {
-					if(xref.getPubmedId() != null && !xref.getPubmedId().equals("")) {
-						String pubmedUrl = Utils.IDENTIFIERS_ORG_URL + "/pubmed/" + xref.getPubmedId();
+					if(xref.getPubmedId() != null && !xref.getPubmedId().trim().equals("")) {
+						String pubmedUrl = Utils.IDENTIFIERS_ORG_URL + "/pubmed/" + xref.getPubmedId().trim();
 						groupRes.addProperty(DCTerms.bibliographicCitation, model.createResource(pubmedUrl));
 						complexBinding.addProperty(DCTerms.bibliographicCitation, model.createResource(pubmedUrl));
 					}
