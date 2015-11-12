@@ -68,6 +68,14 @@ public abstract class AbstractConvertorTest {
 		);
 	}
 
+	@Test
+	public void untypedPubMedRef() throws Exception {
+		String sparql = ResourceHelper.resourceAsString("structure/untypedPubMedRefs.rq");
+		StringMatrix table = SPARQLHelper.sparql(model, sparql);
+		Assert.assertNotNull(table);
+		Assert.assertEquals("No tping as wp:PublicationReference for PubMed URIs:\n" + table, 0, table.getRowCount());
+	}
+
 	private boolean containsWhiteSpace(String string) {
 		for (int i=0; i<string.length(); i++) {
 			if (Character.isWhitespace(string.charAt(i))) return true;

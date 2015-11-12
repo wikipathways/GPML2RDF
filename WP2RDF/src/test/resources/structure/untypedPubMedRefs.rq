@@ -1,0 +1,9 @@
+PREFIX wp:      <http://vocabularies.wikipathways.org/wp#>
+
+SELECT DISTINCT ?pubmedRef
+WHERE {
+  ?source ?predicate ?pubmedRef .
+  OPTIONAL { ?pubmedRef ?rdfType wp:PublicationReference }
+  FILTER (regex(str(?pubmedRef),"identifiers.org/pubmed"))
+  FILTER (!BOUND(?rdfType))
+}
