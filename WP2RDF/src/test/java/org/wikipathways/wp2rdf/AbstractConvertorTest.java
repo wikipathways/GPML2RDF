@@ -32,10 +32,10 @@ public abstract class AbstractConvertorTest {
 		Assert.assertNotNull(pathway);
 		model = GpmlConverter.convertGpml(pathway, wpid, revision);
 		Assert.assertNotNull(model);
-		System.out.println("===== " + gpmlFile + " =====");
-		String ttlContent = toString(model);
-		if (ttlContent.length() > 1000) ttlContent.substring(0,1000);
-		System.out.println(ttlContent);
+		// System.out.println("===== " + gpmlFile + " =====");
+		// String ttlContent = toString(model);
+		// if (ttlContent.length() > 1000) ttlContent.substring(0,1000);
+		// System.out.println(ttlContent);
 	}
 
 	public static void loadModelAsWPRDF(String gpmlFile, String wpid, String revision) throws ConverterException, FileNotFoundException, ClassNotFoundException, IOException, IDMapperException {
@@ -45,10 +45,10 @@ public abstract class AbstractConvertorTest {
 		Assert.assertNotNull(pathway);
 		model = GpmlConverter.convertWp(pathway, wpid, revision);
 		Assert.assertNotNull(model);
-		System.out.println("===== " + gpmlFile + " =====");
-		String ttlContent = toString(model);
-		if (ttlContent.length() > 1000) ttlContent.substring(0,1000);
-		System.out.println(ttlContent);
+		// System.out.println("===== " + gpmlFile + " =====");
+		// String ttlContent = toString(model);
+		// if (ttlContent.length() > 1000) ttlContent.substring(0,1000);
+		// System.out.println(ttlContent);
 	}
 
 	@Test
