@@ -32,6 +32,7 @@ import org.wikipathways.wp2rdf.utils.Utils;
 
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.Resource;
+import com.hp.hpl.jena.sparql.vocabulary.FOAF;
 import com.hp.hpl.jena.vocabulary.DCTerms;
 import com.hp.hpl.jena.vocabulary.RDF;
 import com.hp.hpl.jena.vocabulary.RDFS;
@@ -90,6 +91,12 @@ public class GroupConverter {
 						String pubmedUrl = Utils.IDENTIFIERS_ORG_URL + "/pubmed/" + xref.getPubmedId().trim();
 						groupRes.addProperty(DCTerms.bibliographicCitation, model.createResource(pubmedUrl));
 						complexBinding.addProperty(DCTerms.bibliographicCitation, model.createResource(pubmedUrl));
+						groupRes.addProperty(RDF.type, Wp.PublicationReference);
+						complexBinding.addProperty(RDF.type, Wp.PublicationReference);
+						groupRes.addProperty(FOAF.page, model.createResource(Utils.PUBMED_URL + xref.getPubmedId().trim()));
+						groupRes.addProperty(DCTerms.isPartOf, data.getPathwayRes());
+						complexBinding.addProperty(FOAF.page, model.createResource(Utils.PUBMED_URL + xref.getPubmedId().trim()));
+						complexBinding.addProperty(DCTerms.isPartOf, data.getPathwayRes());
 					}
 				}
 				
