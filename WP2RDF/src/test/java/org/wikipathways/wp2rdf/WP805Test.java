@@ -5,7 +5,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.pathvisio.core.model.ConverterException;
 
-public class WP805Test extends AbstractConvertorTest {
+public class WP805Test extends AbstractGPMLConvertorTest {
 
 	@BeforeClass
 	public static void createModel() throws ConverterException {

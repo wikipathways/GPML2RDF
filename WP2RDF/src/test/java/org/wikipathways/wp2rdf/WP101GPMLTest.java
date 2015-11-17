@@ -6,23 +6,22 @@ import java.io.IOException;
 import org.bridgedb.IDMapperException;
 import org.junit.Assert;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.pathvisio.core.model.ConverterException;
 
-public class WP1533Test extends AbstractWPConvertorTest {
+public class WP101GPMLTest extends AbstractGPMLConvertorTest {
 
 	@BeforeClass
 	public static void createModel() throws ConverterException, FileNotFoundException, ClassNotFoundException, IOException, IDMapperException {
-		loadModelAsWPRDF("WP1533_82707.gpml", "WP1533", "82707");
+		loadModelAsGPMLRDF("WP101_79360.gpml", "WP101", "79360");
 	}
 
 	@Test
-	public void hasUnlinkedPubMedReference() throws Exception {
+	public void containsPubMed() throws Exception {
 		String ttl = toString(model);
-		Assert.assertTrue(
-			"PubMed reference 9789062 is not linked to a DataNode or Pathway, but should appear in the RDF",
-			ttl.contains("/9789062")
-		);
+		Assert.assertTrue(ttl.contains("/14769483/"));
+		Assert.assertTrue(ttl.contains("\"14769483\""));
 	}
 
 }

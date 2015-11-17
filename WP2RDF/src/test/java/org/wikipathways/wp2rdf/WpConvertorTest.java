@@ -9,7 +9,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.pathvisio.core.model.ConverterException;
 
-public class WpConvertorTest extends AbstractConvertorTest {
+public class WpConvertorTest extends AbstractWPConvertorTest {
 
 	@BeforeClass
 	public static void createModel() throws ConverterException, FileNotFoundException, ClassNotFoundException, IOException, IDMapperException {

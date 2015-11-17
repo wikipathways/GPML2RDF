@@ -9,7 +9,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.pathvisio.core.model.ConverterException;
 
-public class OpenPHACTSTests extends AbstractConvertorTest {
+public class OpenPHACTSTests extends AbstractWPConvertorTest {
 
 	@BeforeClass
 	public static void createModel() throws ConverterException, FileNotFoundException, ClassNotFoundException, IOException, IDMapperException {
