@@ -17,6 +17,7 @@ public class WP101GPMLTest extends AbstractGPMLConvertorTest {
 		loadModelAsGPMLRDF("WP101_79360.gpml", "WP101", "79360");
 	}
 
+	@Ignore
 	@Test
 	public void containsPubMed() throws Exception {
 		String ttl = toString(model);

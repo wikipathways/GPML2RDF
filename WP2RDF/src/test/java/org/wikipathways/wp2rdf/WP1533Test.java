@@ -6,6 +6,7 @@ import java.io.IOException;
 import org.bridgedb.IDMapperException;
 import org.junit.Assert;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.pathvisio.core.model.ConverterException;
 
@@ -16,6 +17,7 @@ public class WP1533Test extends AbstractWPConvertorTest {
 		loadModelAsWPRDF("WP1533_82707.gpml", "WP1533", "82707");
 	}
 
+	@Ignore
 	@Test
 	public void hasUnlinkedPubMedReference() throws Exception {
 		String ttl = toString(model);
