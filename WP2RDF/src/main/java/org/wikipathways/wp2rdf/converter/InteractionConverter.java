@@ -142,10 +142,11 @@ public class InteractionConverter {
 							for(PublicationXref xref : l.getBiopaxReferenceManager().getPublicationXRefs()) {
 								if(xref.getPubmedId() != null && !xref.getPubmedId().trim().equals("")) {
 									String pubmedUrl = Utils.IDENTIFIERS_ORG_URL + "/pubmed/" + xref.getPubmedId().trim();
-									intRes.addProperty(DCTerms.bibliographicCitation, model.createResource(pubmedUrl));
-									intRes.addProperty(RDF.type, Wp.PublicationReference);
-									intRes.addProperty(FOAF.page, model.createResource(Utils.PUBMED_URL + xref.getPubmedId().trim()));
-									intRes.addProperty(DCTerms.isPartOf, data.getPathwayRes());
+									Resource pubmedRes = model.createResource(pubmedUrl);
+									intRes.addProperty(DCTerms.bibliographicCitation, pubmedRes);
+									pubmedRes.addProperty(RDF.type, Wp.PublicationReference);
+									pubmedRes.addProperty(FOAF.page, model.createResource(Utils.PUBMED_URL + xref.getPubmedId().trim()));
+									pubmedRes.addProperty(DCTerms.isPartOf, data.getPathwayRes());
 								}
 							}
 						}
@@ -196,10 +197,11 @@ public class InteractionConverter {
 									for(PublicationXref xref : l.getBiopaxReferenceManager().getPublicationXRefs()) {
 										if(xref.getPubmedId() != null && !xref.getPubmedId().trim().equals("")) {
 											String pubmedUrl = Utils.IDENTIFIERS_ORG_URL + "/pubmed/" + xref.getPubmedId().trim();
-											intRes.addProperty(DCTerms.bibliographicCitation, model.createResource(pubmedUrl));
-											intRes.addProperty(RDF.type, Wp.PublicationReference);
-											intRes.addProperty(FOAF.page, model.createResource(Utils.PUBMED_URL + xref.getPubmedId().trim()));
-											intRes.addProperty(DCTerms.isPartOf, data.getPathwayRes());
+											Resource pubmedRes = model.createResource(pubmedUrl);
+											intRes.addProperty(DCTerms.bibliographicCitation, pubmedRes);
+											pubmedRes.addProperty(RDF.type, Wp.PublicationReference);
+											pubmedRes.addProperty(FOAF.page, model.createResource(Utils.PUBMED_URL + xref.getPubmedId().trim()));
+											pubmedRes.addProperty(DCTerms.isPartOf, data.getPathwayRes());
 										}
 									}
 								}
@@ -302,14 +304,12 @@ public class InteractionConverter {
 				for(PublicationXref xref : l.getBiopaxReferenceManager().getPublicationXRefs()) {
 					if(xref.getPubmedId() != null && !xref.getPubmedId().trim().equals("")) {
 						String pubmedUrl = Utils.IDENTIFIERS_ORG_URL + "/pubmed/" + xref.getPubmedId().trim();
-						intRes.addProperty(DCTerms.bibliographicCitation, model.createResource(pubmedUrl));
-						intRes2.addProperty(DCTerms.bibliographicCitation, model.createResource(pubmedUrl));
-						intRes.addProperty(RDF.type, Wp.PublicationReference);
-						intRes2.addProperty(RDF.type, Wp.PublicationReference);
-						intRes.addProperty(FOAF.page, model.createResource(Utils.PUBMED_URL + xref.getPubmedId().trim()));
-						intRes.addProperty(DCTerms.isPartOf, data.getPathwayRes());
-						intRes2.addProperty(FOAF.page, model.createResource(Utils.PUBMED_URL + xref.getPubmedId().trim()));
-						intRes2.addProperty(DCTerms.isPartOf, data.getPathwayRes());
+						Resource pubmedRes = model.createResource(pubmedUrl);
+						intRes.addProperty(DCTerms.bibliographicCitation, pubmedRes);
+						intRes2.addProperty(DCTerms.bibliographicCitation, pubmedRes);
+						pubmedRes.addProperty(RDF.type, Wp.PublicationReference);
+						pubmedRes.addProperty(FOAF.page, model.createResource(Utils.PUBMED_URL + xref.getPubmedId().trim()));
+						pubmedRes.addProperty(DCTerms.isPartOf, data.getPathwayRes());
 					}
 				}
 				
@@ -360,10 +360,11 @@ public class InteractionConverter {
 				for(PublicationXref xref : l.getBiopaxReferenceManager().getPublicationXRefs()) {
 					if(xref.getPubmedId() != null && !xref.getPubmedId().trim().equals("")) {
 						String pubmedUrl = Utils.IDENTIFIERS_ORG_URL + "/pubmed/" + xref.getPubmedId().trim();
-						parentInt.addProperty(DCTerms.bibliographicCitation, model.createResource(pubmedUrl));
-						parentInt.addProperty(RDF.type, Wp.PublicationReference);
-						parentInt.addProperty(FOAF.page, model.createResource(Utils.PUBMED_URL + xref.getPubmedId().trim()));
-						parentInt.addProperty(DCTerms.isPartOf, data.getPathwayRes());
+						Resource pubmedRes = model.createResource(pubmedUrl);
+						parentInt.addProperty(DCTerms.bibliographicCitation, pubmedRes);
+						pubmedRes.addProperty(RDF.type, Wp.PublicationReference);
+						pubmedRes.addProperty(FOAF.page, model.createResource(Utils.PUBMED_URL + xref.getPubmedId().trim()));
+						pubmedRes.addProperty(DCTerms.isPartOf, data.getPathwayRes());
 					}
 				}
 				regIntRes.addProperty(Wp.participants, parentInt);

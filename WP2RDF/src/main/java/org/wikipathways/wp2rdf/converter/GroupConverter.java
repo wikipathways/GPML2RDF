@@ -89,14 +89,12 @@ public class GroupConverter {
 				for(PublicationXref xref : group.getBiopaxReferenceManager().getPublicationXRefs()) {
 					if(xref.getPubmedId() != null && !xref.getPubmedId().trim().equals("")) {
 						String pubmedUrl = Utils.IDENTIFIERS_ORG_URL + "/pubmed/" + xref.getPubmedId().trim();
-						groupRes.addProperty(DCTerms.bibliographicCitation, model.createResource(pubmedUrl));
+						Resource pubmedRes = model.createResource(pubmedUrl);
+						groupRes.addProperty(DCTerms.bibliographicCitation, pubmedRes);
 						complexBinding.addProperty(DCTerms.bibliographicCitation, model.createResource(pubmedUrl));
-						groupRes.addProperty(RDF.type, Wp.PublicationReference);
-						complexBinding.addProperty(RDF.type, Wp.PublicationReference);
-						groupRes.addProperty(FOAF.page, model.createResource(Utils.PUBMED_URL + xref.getPubmedId().trim()));
-						groupRes.addProperty(DCTerms.isPartOf, data.getPathwayRes());
-						complexBinding.addProperty(FOAF.page, model.createResource(Utils.PUBMED_URL + xref.getPubmedId().trim()));
-						complexBinding.addProperty(DCTerms.isPartOf, data.getPathwayRes());
+						pubmedRes.addProperty(RDF.type, Wp.PublicationReference);
+						pubmedRes.addProperty(FOAF.page, model.createResource(Utils.PUBMED_URL + xref.getPubmedId().trim()));
+						pubmedRes.addProperty(DCTerms.isPartOf, data.getPathwayRes());
 					}
 				}
 				

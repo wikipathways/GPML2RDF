@@ -151,10 +151,11 @@ public class DataNodeConverter {
 						for(PublicationXref xref : elem.getBiopaxReferenceManager().getPublicationXRefs()) {
 							if(xref.getPubmedId() != null && !xref.getPubmedId().trim().equals("")) {
 								String pubmedUrl = Utils.IDENTIFIERS_ORG_URL + "/pubmed/" + xref.getPubmedId().trim();
-								datanodeRes.addProperty(DCTerms.bibliographicCitation, model.createResource(pubmedUrl.trim()));
-								datanodeRes.addProperty(RDF.type, Wp.PublicationReference);
-								datanodeRes.addProperty(FOAF.page, model.createResource(Utils.PUBMED_URL + xref.getPubmedId().trim()));
-								datanodeRes.addProperty(DCTerms.isPartOf, data.getPathwayRes());
+								Resource pubmedRes = model.createResource(pubmedUrl.trim());
+								datanodeRes.addProperty(DCTerms.bibliographicCitation, pubmedRes);
+								pubmedRes.addProperty(RDF.type, Wp.PublicationReference);
+								pubmedRes.addProperty(FOAF.page, model.createResource(Utils.PUBMED_URL + xref.getPubmedId().trim()));
+								pubmedRes.addProperty(DCTerms.isPartOf, data.getPathwayRes());
 							
 							}
 						}
