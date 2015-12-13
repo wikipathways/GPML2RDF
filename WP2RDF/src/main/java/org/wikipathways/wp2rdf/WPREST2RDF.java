@@ -62,12 +62,12 @@ public class WPREST2RDF {
 	public static void main(String[] args) throws NumberFormatException, ConverterException, IOException, ClassNotFoundException, IDMapperException {
 		URL url = new URL("http://webservice.wikipathways.org");
 		WikiPathwaysClient client = new WikiPathwaysClient(url);
+		IDMapperStack mapper = WPREST2RDF.maps();
 
 		for (Organism organism : SPECIES.keySet()) {
 			System.out.println("Processing species: " + organism);
 			WSPathwayInfo [] pathways = client.listPathways(organism);
 			System.out.println("  found #pathways: " + pathways.length);
-			IDMapperStack mapper = WPREST2RDF.maps();
 			for(WSPathwayInfo pwInfo : pathways) {
 				System.out.println("  pathway: " + pwInfo.getId() + "\t" + pwInfo.getRevision());
 
