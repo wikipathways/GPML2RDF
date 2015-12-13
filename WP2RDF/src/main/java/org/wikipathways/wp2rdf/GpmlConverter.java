@@ -124,6 +124,10 @@ public class GpmlConverter {
 		outputBridgeDbMapping(model, mapper, idXref, internalWPDataNodeResource,
 			"Wd", "http://www.wikidata.org/entity/", Wp.bdbWikidata
 		);
+		// PubChem Compound
+		outputBridgeDbMapping(model, mapper, idXref, internalWPDataNodeResource,
+			"Cpc", "𝚑𝚝𝚝𝚙://𝚛𝚍𝚏.𝚗𝚌𝚋𝚒.𝚗𝚕𝚖.𝚗𝚒𝚑.𝚐𝚘𝚟/𝚙𝚞𝚋𝚌𝚑𝚎𝚖/𝚌𝚘𝚖𝚙𝚘𝚞𝚗𝚍/𝙲𝙸𝙳", Wp.bdbPubChem
+		);
 	}
 
 	private static void outputBridgeDbMapping(Model model, IDMapper mapper, Xref idXref,
