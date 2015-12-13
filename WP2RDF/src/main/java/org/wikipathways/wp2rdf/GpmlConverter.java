@@ -95,7 +95,7 @@ public class GpmlConverter {
 	}
 
 	public static void getUnifiedIdentifiers(Model model, IDMapper  mapper, Xref idXref, Resource internalWPDataNodeResource) throws IDMapperException, UnsupportedEncodingException {
-		System.out.println(idXref);
+//		System.out.println(idXref);
 		//ENSEMBL
 		outputBridgeDbMapping(model, mapper, idXref, internalWPDataNodeResource,
 			"En", "http://identifiers.org/ensembl/", Wp.bdbEnsembl
