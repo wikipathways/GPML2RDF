@@ -137,7 +137,7 @@ public class DataNodeConverter {
 								// TODO
 								break;
 							case "Complex":
-								// TODO
+								datanodeRes.addProperty(RDF.type, Wp.Complex);
 								break;
 							default:
 								break;
