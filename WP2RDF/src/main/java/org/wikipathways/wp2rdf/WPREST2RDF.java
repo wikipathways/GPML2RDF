@@ -63,6 +63,8 @@ public class WPREST2RDF {
 		URL url = new URL("http://webservice.wikipathways.org");
 		WikiPathwaysClient client = new WikiPathwaysClient(url);
 		IDMapperStack mapper = WPREST2RDF.maps();
+		
+		boolean doAll = System.getProperty("doAll", "false").equals("true");
 
 		for (Organism organism : SPECIES.keySet()) {
 			System.out.println("Processing species: " + organism);
@@ -83,7 +85,7 @@ public class WPREST2RDF {
 				if (!gotTags) {
 					System.out.println("Failed to get curation tags for " + pwInfo.getId());
 				}
-				if (gotTags && isIncludedTag(tags)) {
+				if (doAll || (gotTags && isIncludedTag(tags))) {
 					Model pathwayModel = ModelFactory.createDefaultModel();
 					Utils.setModelPrefix(pathwayModel);
 
