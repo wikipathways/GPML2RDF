@@ -28,6 +28,12 @@ import com.hp.hpl.jena.rdf.model.ModelFactory;
 public class WPREST2RDF {
 
 	@SuppressWarnings("serial")
+	private static final List<String> EXCLUDED_PATHWAYS = new ArrayList<String>() {{
+		add("WP4");     // sandbox
+		add("WP2582");  // metabolite test pathway
+	}};
+
+	@SuppressWarnings("serial")
 	private static final List<String> INCLUDED_TAGS = new ArrayList<String>() {{
 		add("Curation:AnalysisCollection");
 		add("Curation:Reactome_Approved");
@@ -85,7 +91,8 @@ public class WPREST2RDF {
 				if (!gotTags) {
 					System.out.println("Failed to get curation tags for " + pwInfo.getId());
 				}
-				if (doAll || (gotTags && isIncludedTag(tags))) {
+				if ((doAll || (gotTags && isIncludedTag(tags))) &&
+				    !EXCLUDED_PATHWAYS.contains(pwInfo.getId())) {
 					Model pathwayModel = ModelFactory.createDefaultModel();
 					Utils.setModelPrefix(pathwayModel);
 
