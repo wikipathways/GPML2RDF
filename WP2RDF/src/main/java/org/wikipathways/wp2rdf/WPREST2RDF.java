@@ -101,7 +101,7 @@ public class WPREST2RDF {
 					// New conversion of the pathway in GPML vocabulary
 					GpmlConverter.convertGpml(p, pwInfo.getId(), pwInfo.getRevision(), pathwayModel);
 
-					String folder = "output/gpml/" + SPECIES.get(organism) + "/";
+					String folder = "output/gpml/" + SPECIES.get(organism).replace(" ", "_") + "/";
 					new File(folder).mkdirs();
 					FileWriter output = new FileWriter(folder + pwInfo.getId() +".ttl");
 					pathwayModel.write(output, "TURTLE");
@@ -112,7 +112,7 @@ public class WPREST2RDF {
 					Utils.setModelPrefix(pathwayModel);
 					GpmlConverter.convertWp(p, pwInfo.getId(), pwInfo.getRevision(), pathwayModel, mapper);
 
-					folder = "output/wp/" + SPECIES.get(organism) + "/";
+					folder = "output/wp/" + SPECIES.get(organism).replace(" ", "_") + "/";
 					new File(folder).mkdirs();
 					output = new FileWriter(folder + pwInfo.getId() +".ttl");
 					pathwayModel.write(output, "TURTLE");
