@@ -42,11 +42,17 @@ public class PublicationXrefConverter {
 	 */
 	public static void parsePublicationXrefWp(PublicationXref xref, Resource parent, Model model) {
 		if (xref.getPubmedId() == null || xref.getPubmedId().trim().length() == 0) return; // Reconsider...
-		Resource pubXrefRes = model.createResource(Utils.IDENTIFIERS_ORG_URL + "/pubmed/" + xref.getPubmedId().trim());
-		pubXrefRes.addProperty(RDF.type, Wp.PublicationReference);
-		parent.addProperty(DCTerms.references, pubXrefRes);
-		pubXrefRes.addProperty(DCTerms.isPartOf, parent);
-		pubXrefRes.addProperty(FOAF.page, model.createResource(Utils.PUBMED_URL + xref.getPubmedId().trim()));
+		String pmid = xref.getPubmedId().trim();
+		try {
+			Integer.parseInt(pmid);
+			Resource pubXrefRes = model.createResource(Utils.IDENTIFIERS_ORG_URL + "/pubmed/" + pmid);
+			pubXrefRes.addProperty(RDF.type, Wp.PublicationReference);
+			parent.addProperty(DCTerms.references, pubXrefRes);
+			pubXrefRes.addProperty(DCTerms.isPartOf, parent);
+			pubXrefRes.addProperty(FOAF.page, model.createResource(Utils.PUBMED_URL + pmid));
+		} catch (NumberFormatException exception) {
+			// invalid Pubmed ID
+		}
 	}
 	
 	/**
