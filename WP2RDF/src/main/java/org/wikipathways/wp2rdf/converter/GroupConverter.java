@@ -140,7 +140,7 @@ public class GroupConverter {
 		
 		for(PathwayElement e : group.getGroupElements()) {
 			Resource r = data.getPathwayElements().get(e);
-			r.addProperty(DCTerms.isPartOf, groupRes);
+			if (r != null) r.addProperty(DCTerms.isPartOf, groupRes);
 		}
 		
 		data.getPathwayElements().put(group, groupRes);
