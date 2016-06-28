@@ -212,7 +212,7 @@ public class Gpml {
     
     public static final Property RECT_ATTRIBUTES = m_model.createProperty( "http://vocabularies.wikipathways.org/gpml#rectAttributes" );
     
-    /** <p>relX – RelX is the x-coordinate used when a point or state is linked to a 
+    /** <p>relX - RelX is the x-coordinate used when a point or state is linked to a 
      *  another object - relative coordinate to the object that it is linked to (0,0 
      *  - center, 1,1 - bottom-right).</p>
      */
