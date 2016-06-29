@@ -120,6 +120,10 @@ public class GpmlConverter {
 		outputBridgeDbMapping(model, mapper, idXref, internalWPDataNodeResource,
 			"Cs", "http://identifiers.org/chemspider/", Wp.bdbChemspider
 		);
+		//ChEBI
+		outputBridgeDbMapping(model, mapper, idXref, internalWPDataNodeResource,
+			"Ce", "http://identifiers.org/chebi/", Wp.bdbChEBI
+		);
 		// Wikidata
 		outputBridgeDbMapping(model, mapper, idXref, internalWPDataNodeResource,
 			"Wd", "http://www.wikidata.org/entity/", Wp.bdbWikidata
