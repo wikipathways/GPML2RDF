@@ -149,9 +149,17 @@ public class GpmlConverter {
 		Iterator<Xref> iter = unifiedIdXref.iterator();
 		while (iter.hasNext()){
 			Xref unifiedId = (Xref) iter.next();
-			String unifiedDataNodeIdentifier = URLEncoder.encode(unifiedId.getId(), "UTF-8");
-			Resource unifiedlIdResource = model.createResource(uriPrefix+unifiedDataNodeIdentifier);
-			internalWPDataNodeResource.addProperty(predicate, unifiedlIdResource);
+			if ("Ce".equals(sourceCode)) {
+				String unifiedDataNodeIdentifier = unifiedId.getId();
+				if (unifiedDataNodeIdentifier.contains("CHEBI")) {
+					Resource unifiedlIdResource = model.createResource(uriPrefix+unifiedDataNodeIdentifier);
+					internalWPDataNodeResource.addProperty(predicate, unifiedlIdResource);
+				}
+			} else {
+				String unifiedDataNodeIdentifier = URLEncoder.encode(unifiedId.getId(), "UTF-8");
+  			    Resource unifiedlIdResource = model.createResource(uriPrefix+unifiedDataNodeIdentifier);
+			    internalWPDataNodeResource.addProperty(predicate, unifiedlIdResource);
+			}
 			//createCHEMINFBits(model,
 			//		internalWPDataNodeResource, CHEMINF.CHEMINF_000405, unifiedChemspiderDataNodeIdentifier
 			//);
