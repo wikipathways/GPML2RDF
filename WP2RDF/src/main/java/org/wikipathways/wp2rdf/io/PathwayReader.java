@@ -32,13 +32,13 @@ public class PathwayReader {
 
 	public static Pathway readPathway(File file) throws ConverterException {
 		Pathway pathway = new Pathway();
-		pathway.readFromXml(file, true);
+		pathway.readFromXml(file, false);
 		return pathway;
 	}
 
 	public static Pathway readPathway(InputStream input) throws ConverterException {
 		Pathway pathway = new Pathway();
-		pathway.readFromXml(input, true);
+		pathway.readFromXml(input, false);
 		return pathway;
 	}
 }
