@@ -83,16 +83,19 @@ public class DataNodeConverter {
 						Resource datanodeRes = data.getDataNodes().get(elem.getXref());
 						if(datanodeRes == null) {
 							if (url.contains("chebi/CHEBI:")){
-								datanodeRes = model.createResource(url.trim().replaceAll(" ", "_"));
-								datanodeRes.addProperty(DC.identifier, model.createResource(url.trim().replaceAll(" ", "_")));
+								String resourceURL = url.trim().replaceAll(" ", "_");
+								datanodeRes = model.createResource(resourceURL);
+								datanodeRes.addProperty(DC.identifier, model.createResource(resourceURL));
 							}
 							else if (url.contains("chebi")){
-								datanodeRes = model.createResource(url.trim().replaceAll(" ", "_").replace("chebi/","chebi/CHEBI:"));
-								datanodeRes.addProperty(DC.identifier, model.createResource(url.trim().replaceAll(" ", "_").replace("chebi/","chebi/CHEBI:")));
+								String resourceURL = url.trim().replaceAll(" ", "_").replace("chebi/","chebi/CHEBI:");
+								datanodeRes = model.createResource(resourceURL);
+								datanodeRes.addProperty(DC.identifier, model.createResource(resourceURL));
 							}
 							else{
-								datanodeRes = model.createResource(url.trim().replaceAll(" ", "_"));
-								datanodeRes.addProperty(DC.identifier, model.createResource(url.trim().replaceAll(" ", "_")));
+								String resourceURL = url.trim().replaceAll(" ", "_");
+								datanodeRes = model.createResource(resourceURL);
+								datanodeRes.addProperty(DC.identifier, model.createResource(resourceURL));
 							}
 							
 							datanodeRes.addLiteral(DC.source, elem.getXref().getDataSource().getFullName());
