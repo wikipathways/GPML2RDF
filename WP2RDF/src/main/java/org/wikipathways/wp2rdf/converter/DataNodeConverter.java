@@ -82,11 +82,11 @@ public class DataNodeConverter {
 					if(url != null && !url.equals("")) {
 						Resource datanodeRes = data.getDataNodes().get(elem.getXref());
 						if(datanodeRes == null) {
-							if (url.matches("(.*)chebi/CHEBI:(.*)")){
+							if (url.contains("chebi/CHEBI:")){
 								datanodeRes = model.createResource(url.trim().replaceAll(" ", "_"));
 								datanodeRes.addProperty(DC.identifier, model.createResource(url.trim().replaceAll(" ", "_")));
 							}
-							else if (url.matches("(.*)chebi(.*)")){
+							else if (url.contains("chebi")){
 								datanodeRes = model.createResource(url.trim().replaceAll(" ", "_").replace("chebi/","chebi/CHEBI:"));
 								datanodeRes.addProperty(DC.identifier, model.createResource(url.trim().replaceAll(" ", "_").replace("chebi/","chebi/CHEBI:")));
 							}
