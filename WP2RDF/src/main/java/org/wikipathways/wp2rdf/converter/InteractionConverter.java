@@ -236,7 +236,8 @@ public class InteractionConverter {
 						}
 					}
 				}
-				System.err.println(warningMsg);
+				if (warningMsg.trim().length() > 0)
+					System.err.println(warningMsg);
 			}
 		}
 	}
