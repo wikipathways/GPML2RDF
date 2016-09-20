@@ -245,7 +245,7 @@ public class WPREST2RDF {
 		for (Organism organism : SPECIES.keySet()) {
 			voidBase.addProperty(
 				DCTerms.subject,
-				voidModel.createResource("http://identifiers.org/taxonomy/" + organism.taxonomyID())
+				voidModel.createResource("http://identifiers.org/taxonomy/" + organism.taxonomyID().getId())
 			);
 		}
 		voidBase.addProperty(Void.vocabulary, Biopax_level3.NAMESPACE);
