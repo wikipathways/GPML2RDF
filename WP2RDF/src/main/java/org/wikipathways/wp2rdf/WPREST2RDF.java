@@ -36,6 +36,7 @@ import com.hp.hpl.jena.rdf.model.Resource;
 import com.hp.hpl.jena.sparql.vocabulary.FOAF;
 import com.hp.hpl.jena.vocabulary.DCTerms;
 import com.hp.hpl.jena.vocabulary.RDF;
+import com.hp.hpl.jena.vocabulary.XSD;
 
 public class WPREST2RDF {
 
@@ -175,13 +176,16 @@ public class WPREST2RDF {
 		Literal descriptionLiteral = voidModel.createLiteral(
 			"This is the VoID description for this WikiPathways RDF dataset.", "en"
 		);
-		dsDescription.addProperty(Pav.createdWith, voidModel.createResource("https://github.com/wikipathways/GPML2RDF/tree/v3"));
 		dsDescription.addLiteral(DCTerms.description, descriptionLiteral);
+		dsDescription.addProperty(Pav.createdWith, voidModel.createResource("https://github.com/wikipathways/GPML2RDF/tree/v3"));
+		dsDescription.addProperty(Pav.createdBy, voidModel.createResource("https://jenkins.bigcat.unimaas.nl/job/GPML%20to%20GPML%20+%20WP%20RDF/"));
+		dsDescription.addLiteral(Pav.createdOn, nowLiteral);
+		dsDescription.addLiteral(DCTerms.issued, nowLiteral);
+		dsDescription.addLiteral(Pav.lastUpdateOn, nowLiteral);
 
-		
-		
 		// define the dataset info
 		Resource voidBase = voidModel.createResource("http://rdf.wikipathways.org/" + date + "/");
+		dsDescription.addProperty(FOAF.primaryTopic, voidBase);
 		voidBase.addProperty(
 			voidModel.createProperty("http://www.w3.org/ns/dcat#landingPage"),
 			voidModel.createResource("http://www.wikipathways.org/")
@@ -189,7 +193,6 @@ public class WPREST2RDF {
 		Resource wpHomeBase = voidModel.createResource("http://www.wikipathways.org/");
 		Resource authorResource = voidModel.createResource("https://jenkins.bigcat.unimaas.nl/job/GPML%20to%20GPML%20+%20WP%20RDF/");
 		Resource apiResource = voidModel.createResource("http://www.wikipathways.org/wpi/webservice/webservice.php");
-		Resource mainDatadump = voidModel.createResource("http://data.wikipathways.org/" + date + "/rdf/wikipathways-" + date + "-rdf-wp.zip");
 		Resource license = voidModel.createResource("http://creativecommons.org/licenses/by/3.0/");
 		Resource instituteResource = voidModel.createResource("http://maastichtuniversity.nl/");
 		voidBase.addProperty(RDF.type, Void.Dataset);
@@ -200,17 +203,6 @@ public class WPREST2RDF {
 		voidBase.addProperty(Pav.importedBy, authorResource);
 		voidBase.addProperty(Pav.importedFrom, apiResource);
 		voidBase.addProperty(Pav.importedOn, nowLiteral);
-		Resource distribution = voidModel.createResource("http://rdf.wikipathways.org/wp/distribution");
-		distribution.addProperty(RDF.type, voidModel.createResource("http://www.w3.org/ns/dcat#Distribution"));
-		distribution.addLiteral(
-			voidModel.createProperty("http://www.w3.org/ns/dcat#mediaType"), "application/zip"
-		);
-		distribution.addProperty(
-			voidModel.createProperty("http://www.w3.org/ns/dcat#downloadURL"), mainDatadump
-		);
-		voidBase.addProperty(
-			voidModel.createProperty("http://www.w3.org/ns/dcat#distribution"), distribution
-		);
 		voidBase.addProperty(
 			voidModel.createProperty("http://purl.org/dc/terms/accuralPeriodicity"),
 			voidModel.createResource("http://purl.org/cld/freq/irregular")
@@ -240,7 +232,24 @@ public class WPREST2RDF {
 		voidBase.addProperty(Void.vocabulary, voidModel.createResource(Gpml.getURI()));
 		voidBase.addProperty(Void.vocabulary, FOAF.NAMESPACE);
 		voidBase.addProperty(Void.vocabulary, Pav.NAMESPACE);
-	}
+
+		// create two the distributions
+		String[] codes = {"wp", "gpml"};
+		for (String code : codes) {
+			Resource distribution = voidModel.createResource("http://rdf.wikipathways.org/" + date + "/" + code);
+			voidBase.addProperty(Void.subset, distribution);
+			distribution.addProperty(RDF.type, voidModel.createResource("http://www.w3.org/ns/dcat#Distribution"));
+			distribution.addLiteral(
+				voidModel.createProperty("http://www.w3.org/ns/dcat#mediaType"), "application/zip"
+			);
+			Resource mainDatadump = voidModel.createResource(
+				"http://data.wikipathways.org/" + date + "/rdf/wikipathways-" + date + "-rdf-" + code + ".zip"
+			);
+			distribution.addProperty(
+				voidModel.createProperty("http://www.w3.org/ns/dcat#downloadURL"), mainDatadump
+			);
+		}
+}
 
 	private static boolean isIncludedTag(WSCurationTag[] tags) {
 		for (WSCurationTag tag : tags) {
