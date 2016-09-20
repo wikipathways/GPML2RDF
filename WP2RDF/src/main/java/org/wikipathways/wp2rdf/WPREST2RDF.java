@@ -166,7 +166,7 @@ public class WPREST2RDF {
 
 		// populate void.ttl
 		Calendar now = Calendar.getInstance();
-		String date = new SimpleDateFormat("yyyyMMdd").format(now);
+		String date = new SimpleDateFormat("yyyyMMdd").format(now.getTime());
 		Literal nowLiteral = voidModel.createTypedLiteral(now);
 		
 		// define the dataset description info
