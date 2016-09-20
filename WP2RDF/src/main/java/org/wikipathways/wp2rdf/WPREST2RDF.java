@@ -25,8 +25,8 @@ import org.wikipathways.client.WikiPathwaysClient;
 import org.wikipathways.wp2rdf.ontologies.Biopax_level3;
 import org.wikipathways.wp2rdf.ontologies.Gpml;
 import org.wikipathways.wp2rdf.ontologies.Pav;
-import org.wikipathways.wp2rdf.ontologies.Wp;
 import org.wikipathways.wp2rdf.ontologies.Void;
+import org.wikipathways.wp2rdf.ontologies.Wp;
 import org.wikipathways.wp2rdf.utils.Utils;
 
 import com.hp.hpl.jena.rdf.model.Literal;
@@ -134,53 +134,73 @@ public class WPREST2RDF {
 		}
 		
 		// create VoID files
-		String folder = "output/wp/";
-		Writer output = new FileWriter(folder + "voidWp.ttl");
+		String folder = "output/";
+		Writer output = new FileWriter(folder + "void.ttl");
 		Model voidWp = ModelFactory.createDefaultModel();
-		Map<String, String> voidInfo = new HashMap<>();
-		populateVOID(voidWp, voidInfo);
+		populateVOID(voidWp);
 		voidWp.write(output, "TURTLE");
-		output.close();
-		folder = "output/gpml/";
-		output = new FileWriter(folder + "voidGpml.ttl");
-		Model voidGpml = ModelFactory.createDefaultModel();
-		voidGpml.write(output, "TURTLE");
 		output.close();
 
 	}
 
-	private static void populateVOID(Model voidModel, Map<String, String> voidInfo) {
-		//Populate void.ttl
+	private static void populateVOID(Model voidModel) {
+		// set prefixes
+		voidModel.setNsPrefix("prov", "http://www.w3.org/ns/prov#");
+		voidModel.setNsPrefix("foaf", "http://xmlns.com/foaf/0.1/");
+		voidModel.setNsPrefix("hmdb", "http://identifiers.org/hmdb/");
+		voidModel.setNsPrefix("freq", "http://purl.org/cld/freq/");
+		voidModel.setNsPrefix("pubmed", "http://www.ncbi.nlm.nih.gov/pubmed/");
+		voidModel.setNsPrefix("wp", "http://vocabularies.wikipathways.org/wp#");
+		voidModel.setNsPrefix("void", "http://rdfs.org/ns/void#");
+		voidModel.setNsPrefix("biopax", "http://www.biopax.org/release/biopax-level3.owl#");
+		voidModel.setNsPrefix("dcterms", "http://purl.org/dc/terms/");
+		voidModel.setNsPrefix("rdfs", "http://www.w3.org/2000/01/rdf-schema#");
+		voidModel.setNsPrefix("pav", "http://purl.org/pav/");
+		voidModel.setNsPrefix("ncbigene", "http://identifiers.org/ncbigene/");
+		voidModel.setNsPrefix("xsd", "http://www.w3.org/2001/XMLSchema#");
+		voidModel.setNsPrefix("rdf", "http://www.w3.org/1999/02/22-rdf-syntax-ns#");
+		voidModel.setNsPrefix("gpml", "http://vocabularies.wikipathways.org/gpml#");
+		voidModel.setNsPrefix("skos", "http://www.w3.org/2004/02/skos/core#");
+
+		// populate void.ttl
 		Calendar now = Calendar.getInstance();
+		String date = "" + now.get(Calendar.YEAR) + now.get(Calendar.MONTH) + now.get(Calendar.DAY_OF_MONTH);
 		Literal nowLiteral = voidModel.createTypedLiteral(now);
-		String datasetTitle = voidInfo.get("voidDatasetTitle");
-		String voidShortCode = voidInfo.get("voidShortCode");
-		Literal titleLiteral = voidModel.createLiteral(datasetTitle + " VoID Description", "en");
+		
+		// define the dataset description info
+		Resource dsDescription = voidModel.createResource("http://rdf.wikipathways.org/" + date + "/datasetDescription/");
+		dsDescription.addProperty(RDF.type, Void.DatasetDescription);
+		Literal titleLiteral = voidModel.createLiteral("WikiPathways RDF VoID Description", "en");
+		dsDescription.addLiteral(DCTerms.title, titleLiteral);
 		Literal descriptionLiteral = voidModel.createLiteral(
-			"This is the VoID description for a " + datasetTitle + " dataset.", "en"
+			"This is the VoID description for this WikiPathways RDF dataset.", "en"
 		);
-		Resource voidBase = voidModel.createResource("http://rdf.wikipathways.org/" + voidShortCode + "/");
+		dsDescription.addProperty(Pav.createdWith, voidModel.createResource("https://github.com/wikipathways/GPML2RDF/tree/v3"));
+		dsDescription.addLiteral(DCTerms.description, descriptionLiteral);
+
+		
+		
+		// define the dataset info
+		Resource voidBase = voidModel.createResource("http://rdf.wikipathways.org/" + date + "/");
 		voidBase.addProperty(
 			voidModel.createProperty("http://www.w3.org/ns/dcat#landingPage"),
 			voidModel.createResource("http://www.wikipathways.org/")
 		);
 		Resource wpHomeBase = voidModel.createResource("http://www.wikipathways.org/");
-		Resource authorResource = voidModel.createResource(voidInfo.get("voidAuthor"));
+		Resource authorResource = voidModel.createResource("https://jenkins.bigcat.unimaas.nl/job/GPML%20to%20GPML%20+%20WP%20RDF/");
 		Resource apiResource = voidModel.createResource("http://www.wikipathways.org/wpi/webservice/webservice.php");
-		Resource mainDatadump = voidModel.createResource(voidInfo.get("voidDownload"));
+		Resource mainDatadump = voidModel.createResource("http://data.wikipathways.org/" + date + "/rdf/wikipathways-" + date + "-rdf-wp.zip");
 		Resource license = voidModel.createResource("http://creativecommons.org/licenses/by/3.0/");
-		Resource instituteResource = voidModel.createResource(voidInfo.get("voidInstitute"));
+		Resource instituteResource = voidModel.createResource("http://maastichtuniversity.nl/");
 		voidBase.addProperty(RDF.type, Void.Dataset);
-		voidBase.addProperty(DCTerms.title, titleLiteral);
-		voidBase.addProperty(DCTerms.description, descriptionLiteral);
 		voidBase.addProperty(FOAF.homepage, wpHomeBase);
 		voidBase.addProperty(DCTerms.license, license);
-		voidBase.addLiteral(Void.uriSpace, "http://rdf.wikipathways.org/" + voidShortCode + "/");
+		voidBase.addLiteral(Void.uriSpace, "http://rdf.wikipathways.org/wp/");
 		voidBase.addLiteral(Void.uriSpace, "http://identifiers.org");
 		voidBase.addProperty(Pav.importedBy, authorResource);
 		voidBase.addProperty(Pav.importedFrom, apiResource);
 		voidBase.addProperty(Pav.importedOn, nowLiteral);
-		Resource distribution = voidModel.createResource("http://rdf.wikipathways.org/" + voidShortCode + "/distribution");
+		Resource distribution = voidModel.createResource("http://rdf.wikipathways.org/wp/distribution");
 		distribution.addProperty(RDF.type, voidModel.createResource("http://www.w3.org/ns/dcat#Distribution"));
 		distribution.addLiteral(
 			voidModel.createProperty("http://www.w3.org/ns/dcat#mediaType"), "application/zip"
