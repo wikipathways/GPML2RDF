@@ -11,9 +11,11 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
+import java.util.Set;
 
 import org.bridgedb.IDMapperException;
 import org.bridgedb.IDMapperStack;
@@ -37,7 +39,6 @@ import com.hp.hpl.jena.rdf.model.Resource;
 import com.hp.hpl.jena.sparql.vocabulary.FOAF;
 import com.hp.hpl.jena.vocabulary.DCTerms;
 import com.hp.hpl.jena.vocabulary.RDF;
-import com.hp.hpl.jena.vocabulary.XSD;
 
 public class WPREST2RDF {
 
@@ -83,8 +84,20 @@ public class WPREST2RDF {
 		URL url = new URL("http://webservice.wikipathways.org");
 		WikiPathwaysClient client = new WikiPathwaysClient(url);
 		IDMapperStack mapper = WPREST2RDF.maps();
-		
+
 		boolean doAll = System.getProperty("doAll", "false").equals("true");
+
+		Set<String> includedPathways = new HashSet<>();
+		try {
+			for (String tagName : INCLUDED_TAGS) {
+				WSCurationTag[] curatedTags = client.getCurationTagsByName(tagName);
+				for (WSCurationTag tag : curatedTags) {
+					includedPathways.add(tag.getPathway().getId());
+				}
+			}
+		} catch (Exception exception) {
+			System.out.println("Failed to get curation tags: " + exception.getMessage());
+		}
 
 		for (Organism organism : SPECIES.keySet()) {
 			System.out.println("Processing species: " + organism);
@@ -93,20 +106,8 @@ public class WPREST2RDF {
 			for(WSPathwayInfo pwInfo : pathways) {
 				System.out.println("  pathway: " + pwInfo.getId() + "\t" + pwInfo.getRevision());
 
-				// to be converted? only if it has the right tag
-				boolean gotTags = false;
-				WSCurationTag[] tags = null;
-				for (int i=0; !gotTags && i<=5; i++) {
-					try {
-						tags = client.getCurationTags(pwInfo.getId());
-						gotTags = true;
-					} catch (Throwable exception) {}
-				}
-				if (!gotTags) {
-					System.out.println("Failed to get curation tags for " + pwInfo.getId());
-				}
-				if ((doAll || (gotTags && isIncludedTag(tags))) &&
-				    !EXCLUDED_PATHWAYS.contains(pwInfo.getId())) {
+				if ((doAll || includedPathways.contains(pwInfo.getId()) &&
+				    !EXCLUDED_PATHWAYS.contains(pwInfo.getId()))) {
 					Model pathwayModel = ModelFactory.createDefaultModel();
 					Utils.setModelPrefix(pathwayModel);
 
@@ -273,13 +274,6 @@ public class WPREST2RDF {
 		}
 	}
 
-	private static boolean isIncludedTag(WSCurationTag[] tags) {
-		for (WSCurationTag tag : tags) {
-			if (INCLUDED_TAGS.contains(tag.getName())) return true;
-		}
-		return false;
-	}
-	
 	public static IDMapperStack maps () throws FileNotFoundException, IOException, ClassNotFoundException, IDMapperException{
 		final Properties prop = new Properties();
 		prop.load(new FileInputStream("/tmp/OPSBRIDGEDB/config.properties"));
