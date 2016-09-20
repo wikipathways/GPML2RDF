@@ -7,6 +7,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Writer;
 import java.net.URL;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
@@ -165,7 +166,7 @@ public class WPREST2RDF {
 
 		// populate void.ttl
 		Calendar now = Calendar.getInstance();
-		String date = "" + now.get(Calendar.YEAR) + now.get(Calendar.MONTH) + now.get(Calendar.DAY_OF_MONTH);
+		String date = new SimpleDateFormat("yyyyMMdd").format(now);
 		Literal nowLiteral = voidModel.createTypedLiteral(now);
 		
 		// define the dataset description info
@@ -174,7 +175,7 @@ public class WPREST2RDF {
 		Literal titleLiteral = voidModel.createLiteral("WikiPathways RDF VoID Description", "en");
 		dsDescription.addLiteral(DCTerms.title, titleLiteral);
 		Literal descriptionLiteral = voidModel.createLiteral(
-			"This is the VoID description for this WikiPathways RDF dataset.", "en"
+			"This is the VoID description for this WikiPathways RDF dataset created on " + date + ".", "en"
 		);
 		dsDescription.addLiteral(DCTerms.description, descriptionLiteral);
 		dsDescription.addProperty(Pav.createdWith, voidModel.createResource("https://github.com/wikipathways/GPML2RDF/tree/v3"));
@@ -184,7 +185,7 @@ public class WPREST2RDF {
 		dsDescription.addLiteral(Pav.lastUpdateOn, nowLiteral);
 
 		// define the dataset info
-		Resource voidBase = voidModel.createResource("http://rdf.wikipathways.org/" + date + "/");
+		Resource voidBase = voidModel.createResource("http://rdf.wikipathways.org/" + date + "/rdf/");
 		dsDescription.addProperty(FOAF.primaryTopic, voidBase);
 		voidBase.addProperty(
 			voidModel.createProperty("http://www.w3.org/ns/dcat#landingPage"),
@@ -198,6 +199,7 @@ public class WPREST2RDF {
 		voidBase.addProperty(RDF.type, Void.Dataset);
 		voidBase.addProperty(FOAF.homepage, wpHomeBase);
 		voidBase.addProperty(DCTerms.license, license);
+		voidBase.addLiteral(DCTerms.description, "WikiPathways RDF data dump of the Curated and Reactome pathways created on " + date + ".");
 		voidBase.addLiteral(Void.uriSpace, "http://rdf.wikipathways.org/wp/");
 		voidBase.addLiteral(Void.uriSpace, "http://identifiers.org");
 		voidBase.addProperty(Pav.importedBy, authorResource);
@@ -236,7 +238,7 @@ public class WPREST2RDF {
 		// create two the distributions
 		String[] codes = {"wp", "gpml"};
 		for (String code : codes) {
-			Resource distribution = voidModel.createResource("http://rdf.wikipathways.org/" + date + "/" + code);
+			Resource distribution = voidModel.createResource("http://rdf.wikipathways.org/" + date + "/rdf/" + code);
 			voidBase.addProperty(Void.subset, distribution);
 			distribution.addProperty(RDF.type, voidModel.createResource("http://www.w3.org/ns/dcat#Distribution"));
 			distribution.addLiteral(
@@ -249,7 +251,7 @@ public class WPREST2RDF {
 				voidModel.createProperty("http://www.w3.org/ns/dcat#downloadURL"), mainDatadump
 			);
 		}
-}
+	}
 
 	private static boolean isIncludedTag(WSCurationTag[] tags) {
 		for (WSCurationTag tag : tags) {
