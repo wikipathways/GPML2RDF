@@ -163,6 +163,7 @@ public class WPREST2RDF {
 		voidModel.setNsPrefix("rdf", "http://www.w3.org/1999/02/22-rdf-syntax-ns#");
 		voidModel.setNsPrefix("gpml", "http://vocabularies.wikipathways.org/gpml#");
 		voidModel.setNsPrefix("skos", "http://www.w3.org/2004/02/skos/core#");
+		voidModel.setNsPrefix("dcat", "http://www.w3.org/ns/dcat#");
 
 		// populate void.ttl
 		Calendar now = Calendar.getInstance();
@@ -195,10 +196,11 @@ public class WPREST2RDF {
 		Resource authorResource = voidModel.createResource("https://jenkins.bigcat.unimaas.nl/job/GPML%20to%20GPML%20+%20WP%20RDF/");
 		Resource apiResource = voidModel.createResource("http://www.wikipathways.org/wpi/webservice/webservice.php");
 		Resource license = voidModel.createResource("http://creativecommons.org/licenses/by/3.0/");
-		Resource instituteResource = voidModel.createResource("http://maastichtuniversity.nl/");
+		Resource instituteResource = voidModel.createResource("http://www.wikidata.org/entity/Q1137652");
 		voidBase.addProperty(RDF.type, Void.Dataset);
 		voidBase.addProperty(FOAF.homepage, wpHomeBase);
 		voidBase.addProperty(DCTerms.license, license);
+		voidBase.addLiteral(DCTerms.title, "WikiPathways RDF " + date);
 		voidBase.addLiteral(DCTerms.description, "WikiPathways RDF data dump of the Curated and Reactome pathways created on " + date + ".");
 		voidBase.addLiteral(Void.uriSpace, "http://rdf.wikipathways.org/wp/");
 		voidBase.addLiteral(Void.uriSpace, "http://identifiers.org");
@@ -212,7 +214,24 @@ public class WPREST2RDF {
 		voidBase.addProperty(Pav.createdBy, authorResource);
 		voidBase.addProperty(Pav.createdAt, instituteResource);		 
 		voidBase.addLiteral(Pav.createdOn, nowLiteral);
+		voidBase.addLiteral(DCTerms.issued, nowLiteral);
 		voidBase.addProperty(DCTerms.subject, Biopax_level3.Pathway);
+		voidBase.addProperty(DCTerms.subject, Wp.Binding);
+		voidBase.addProperty(DCTerms.subject, Wp.Catalysis);
+		voidBase.addProperty(DCTerms.subject, Wp.Complex);
+		voidBase.addProperty(DCTerms.subject, Wp.ComplexBinding);
+		voidBase.addProperty(DCTerms.subject, Wp.DirectedInteraction);
+		voidBase.addProperty(DCTerms.subject, Wp.GeneProduct);
+		voidBase.addProperty(DCTerms.subject, Wp.Inhibition);
+		voidBase.addProperty(DCTerms.subject, Wp.Interaction);
+		voidBase.addProperty(DCTerms.subject, Wp.Metabolite);
+		voidBase.addProperty(DCTerms.subject, Wp.Pathway);
+		voidBase.addProperty(DCTerms.subject, Wp.PublicationReference);
+		voidBase.addProperty(DCTerms.subject, Wp.Stimulation);
+		voidBase.addProperty(DCTerms.subject, Wp.TranscriptionTranslation);
+		voidBase.addProperty(DCTerms.subject, Wp.Pathway);
+		voidBase.addProperty(DCTerms.subject, Wp.Protein);
+		voidBase.addProperty(DCTerms.subject, Wp.Rna);
 		voidBase.addProperty(
 			voidModel.createProperty("http://www.w3.org/ns/dcat#theme"),
 			voidModel.createResource("http://semanticscience.org/resource/SIO_001107")
@@ -250,6 +269,7 @@ public class WPREST2RDF {
 			distribution.addProperty(
 				voidModel.createProperty("http://www.w3.org/ns/dcat#downloadURL"), mainDatadump
 			);
+			distribution.addProperty(Void.dataDump, mainDatadump);
 		}
 	}
 
