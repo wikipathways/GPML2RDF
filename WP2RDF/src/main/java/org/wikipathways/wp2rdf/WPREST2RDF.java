@@ -95,12 +95,16 @@ public class WPREST2RDF {
 
 		// process the cache and organize the pathways by species (to be used later)
 		List<File> cacheFiles = cache.getFiles();
-		Map<Organism,Set<WSPathwayInfo>> pathwaysByOrganism = new HashMap<>();
+		Map<String,Set<WSPathwayInfo>> pathwaysByOrganism = new HashMap<>();
 		for (File cacheFile : cacheFiles) {
 			WSPathwayInfo info = cache.getPathwayInfo(cacheFile);
 			String organism = info.getSpecies();
 			Set<WSPathwayInfo> pathways = pathwaysByOrganism.get(organism);
-			if (pathways == null) pathways = new HashSet<>();
+			if (pathways == null) {
+				System.out.println("New organism found: " + organism);
+				pathways = new HashSet<>();
+				pathwaysByOrganism.put(organism, pathways);
+			}
 			pathways.add(info);
 		}
 
@@ -118,8 +122,13 @@ public class WPREST2RDF {
 		}
 
 		for (Organism organism : SPECIES.keySet()) {
-			System.out.println("Processing species: " + organism);
-			WSPathwayInfo [] pathways = (WSPathwayInfo[]) pathwaysByOrganism.get(organism.latinName()).toArray();
+			System.out.println("Processing species: " + organism.latinName());
+			Set<WSPathwayInfo> pathwaysInfoObjs = pathwaysByOrganism.get(organism.latinName());
+			if (pathwaysInfoObjs == null) {
+				System.out.println("No pathways found for this organism");
+				continue;
+			}
+			WSPathwayInfo [] pathways = (WSPathwayInfo[])pathwaysInfoObjs.toArray();
 			System.out.println("  found #pathways: " + pathways.length);
 			for(WSPathwayInfo pwInfo : pathways) {
 				System.out.println("  pathway: " + pwInfo.getId() + "\t" + pwInfo.getRevision());
