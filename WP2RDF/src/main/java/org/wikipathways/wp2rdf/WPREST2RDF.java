@@ -95,17 +95,17 @@ public class WPREST2RDF {
 
 		// process the cache and organize the pathways by species (to be used later)
 		List<File> cacheFiles = cache.getFiles();
-		Map<String,Set<WSPathwayInfo>> pathwaysByOrganism = new HashMap<>();
+		Map<String,Map<WSPathwayInfo,File>> pathwaysByOrganism = new HashMap<>();
 		for (File cacheFile : cacheFiles) {
 			WSPathwayInfo info = cache.getPathwayInfo(cacheFile);
 			String organism = info.getSpecies();
-			Set<WSPathwayInfo> pathways = pathwaysByOrganism.get(organism);
+			Map<WSPathwayInfo,File> pathways = pathwaysByOrganism.get(organism);
 			if (pathways == null) {
 				System.out.println("New organism found: " + organism);
-				pathways = new HashSet<>();
+				pathways = new HashMap<>();
 				pathwaysByOrganism.put(organism, pathways);
 			}
-			pathways.add(info);
+			pathways.put(info, cacheFile);
 		}
 
 		// fetch the pathways for included curation tags from the webservice
@@ -123,11 +123,12 @@ public class WPREST2RDF {
 
 		for (Organism organism : SPECIES.keySet()) {
 			System.out.println("Processing species: " + organism.latinName());
-			Set<WSPathwayInfo> pathwaysInfoObjs = pathwaysByOrganism.get(organism.latinName());
-			if (pathwaysInfoObjs == null) {
+			Map<WSPathwayInfo,File> pathwaysInfo = pathwaysByOrganism.get(organism.latinName());
+			if (pathwaysInfo == null) {
 				System.out.println("No pathways found for this organism");
 				continue;
 			}
+			Set<WSPathwayInfo> pathwaysInfoObjs = pathwaysInfo.keySet();
 			System.out.println("  found #pathways: " + pathwaysInfoObjs.size());
 			for(WSPathwayInfo pwInfo : pathwaysInfoObjs) {
 				System.out.println("  pathway: " + pwInfo.getId() + "\t" + pwInfo.getRevision());
@@ -137,7 +138,8 @@ public class WPREST2RDF {
 					Model pathwayModel = ModelFactory.createDefaultModel();
 					Utils.setModelPrefix(pathwayModel);
 
-					Pathway p = WikiPathwaysClient.toPathway(client.getPathway(pwInfo.getId(), Integer.parseInt(pwInfo.getRevision())));
+					Pathway p = new Pathway();
+					p.readFromXml(pathwaysInfo.get(pwInfo), false);
 
 					// New conversion of the pathway in GPML vocabulary
 					GpmlConverter.convertGpml(p, pwInfo.getId(), pwInfo.getRevision(), pathwayModel);
