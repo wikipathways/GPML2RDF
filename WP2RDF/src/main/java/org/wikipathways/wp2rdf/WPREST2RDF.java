@@ -24,6 +24,7 @@ import org.pathvisio.core.model.ConverterException;
 import org.pathvisio.core.model.Pathway;
 import org.pathvisio.wikipathways.webservice.WSCurationTag;
 import org.pathvisio.wikipathways.webservice.WSPathwayInfo;
+import org.wikipathways.client.WikiPathwaysCache;
 import org.wikipathways.client.WikiPathwaysClient;
 import org.wikipathways.wp2rdf.ontologies.Biopax_level3;
 import org.wikipathways.wp2rdf.ontologies.Gpml;
@@ -87,6 +88,21 @@ public class WPREST2RDF {
 
 		boolean doAll = System.getProperty("doAll", "false").equals("true");
 
+		WikiPathwaysCache cache = new WikiPathwaysCache(new File("/tmp/wp-cache"));
+		cache.update();
+
+		// process the cache and organize the pathways by species (to be used later)
+		List<File> cacheFiles = cache.getFiles();
+		Map<Organism,Set<WSPathwayInfo>> pathwaysByOrganism = new HashMap<>();
+		for (File cacheFile : cacheFiles) {
+			WSPathwayInfo info = cache.getPathwayInfo(cacheFile);
+			String organism = info.getSpecies();
+			Set<WSPathwayInfo> pathways = pathwaysByOrganism.get(organism);
+			if (pathways == null) pathways = new HashSet<>();
+			pathways.add(info);
+		}
+
+		// fetch the pathways for included curation tags from the webservice
 		Set<String> includedPathways = new HashSet<>();
 		try {
 			for (String tagName : INCLUDED_TAGS) {
@@ -101,7 +117,7 @@ public class WPREST2RDF {
 
 		for (Organism organism : SPECIES.keySet()) {
 			System.out.println("Processing species: " + organism);
-			WSPathwayInfo [] pathways = client.listPathways(organism);
+			WSPathwayInfo [] pathways = (WSPathwayInfo[]) pathwaysByOrganism.get(organism.latinName()).toArray();
 			System.out.println("  found #pathways: " + pathways.length);
 			for(WSPathwayInfo pwInfo : pathways) {
 				System.out.println("  pathway: " + pwInfo.getId() + "\t" + pwInfo.getRevision());
