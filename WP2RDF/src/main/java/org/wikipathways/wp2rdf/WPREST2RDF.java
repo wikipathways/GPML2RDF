@@ -88,7 +88,9 @@ public class WPREST2RDF {
 
 		boolean doAll = System.getProperty("doAll", "false").equals("true");
 
-		WikiPathwaysCache cache = new WikiPathwaysCache(new File("/tmp/wp-cache"));
+		File cacheFolder = new File("/tmp/wp-cache");
+		if (!cacheFolder.exists()) cacheFolder.mkdir();
+		WikiPathwaysCache cache = new WikiPathwaysCache(cacheFolder);
 		cache.update();
 
 		// process the cache and organize the pathways by species (to be used later)
