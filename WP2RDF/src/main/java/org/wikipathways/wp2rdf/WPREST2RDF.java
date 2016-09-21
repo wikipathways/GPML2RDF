@@ -128,9 +128,8 @@ public class WPREST2RDF {
 				System.out.println("No pathways found for this organism");
 				continue;
 			}
-			WSPathwayInfo [] pathways = (WSPathwayInfo[])pathwaysInfoObjs.toArray();
-			System.out.println("  found #pathways: " + pathways.length);
-			for(WSPathwayInfo pwInfo : pathways) {
+			System.out.println("  found #pathways: " + pathwaysInfoObjs.size());
+			for(WSPathwayInfo pwInfo : pathwaysInfoObjs) {
 				System.out.println("  pathway: " + pwInfo.getId() + "\t" + pwInfo.getRevision());
 
 				if ((doAll || includedPathways.contains(pwInfo.getId()) &&
