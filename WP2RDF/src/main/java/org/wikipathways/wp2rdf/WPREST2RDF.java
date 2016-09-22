@@ -133,8 +133,8 @@ public class WPREST2RDF {
 			for(WSPathwayInfo pwInfo : pathwaysInfoObjs) {
 				System.out.println("  pathway: " + pwInfo.getId() + "\t" + pwInfo.getRevision());
 
-				if ((doAll || includedPathways.contains(pwInfo.getId()) &&
-				    !EXCLUDED_PATHWAYS.contains(pwInfo.getId()))) {
+				if ((doAll || includedPathways.contains(pwInfo.getId())) &&
+				    !EXCLUDED_PATHWAYS.contains(pwInfo.getId())) {
 					Model pathwayModel = ModelFactory.createDefaultModel();
 					Utils.setModelPrefix(pathwayModel);
 
