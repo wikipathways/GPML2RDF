@@ -293,7 +293,7 @@ public class WPREST2RDF {
 				voidModel.createProperty("http://www.w3.org/ns/dcat#mediaType"), "application/zip"
 			);
 			Resource mainDatadump = voidModel.createResource(
-				"http://data.wikipathways.org/" + date + "/rdf/wikipathways-" + date + "-rdf-" + code + ".zip"
+				"https://jenkins.bigcat.unimaas.nl/job/GPML%20to%20GPML%20+%20WP%20RDF/ws/WP2RDF/output/" + code + "/*zip*/" + code + ".zip"
 			);
 			distribution.addProperty(
 				voidModel.createProperty("http://www.w3.org/ns/dcat#downloadURL"), mainDatadump
