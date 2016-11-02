@@ -4,8 +4,7 @@ Work in progress
 
 ## Status:
 - [x] Conversion to GPML vocabulary is finished
-- [ ] Conversion to WP vocabulary work in progress
-
+- [X] Conversion to WP vocabulary is finished
 
 ###Setup:
 
