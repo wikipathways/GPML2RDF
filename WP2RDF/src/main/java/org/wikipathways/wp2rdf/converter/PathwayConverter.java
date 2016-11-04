@@ -76,7 +76,7 @@ public class PathwayConverter {
 		for (String curationTag : tags) {
 			pwyRes.addProperty(
 				Wp.ontologyTag,
-				"http://vocabularies.wikipathways.org/wp#" + curationTag
+				model.createResource("http://vocabularies.wikipathways.org/wp#" + curationTag)
 			);
 		}
 		
