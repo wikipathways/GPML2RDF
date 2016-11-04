@@ -61,7 +61,14 @@ public class PathwayConverter {
 		pwyRes.addLiteral(Wp.organismName, p.getMappInfo().getOrganism());
 
 		for (OntologyTag o : p.getOntologyTags()){
-			pwyRes.addProperty(Wp.ontologyTag, model.createResource(Utils.PURL_OBO_LIB + o.getId().replace(":", "_").trim().replaceAll(" ", "_")));
+			String ontoTag = o.getId().replace(":", "_").trim().replaceAll(" ", "_");
+			pwyRes.addProperty(Wp.ontologyTag, model.createResource(Utils.PURL_OBO_LIB + ontoTag));
+			if (ontoTag.contains("PW_"))
+				pwyRes.addProperty(Wp.pathwayOntologyTag, model.createResource(Utils.PURL_OBO_LIB + ontoTag));
+			if (ontoTag.contains("DOID_"))
+				pwyRes.addProperty(Wp.diseaseOntologyTag, model.createResource(Utils.PURL_OBO_LIB + ontoTag));
+			if (ontoTag.contains("CL_"))
+				pwyRes.addProperty(Wp.cellTypeOntologyTag, model.createResource(Utils.PURL_OBO_LIB + ontoTag));
 		}
 		for (String curationTag : tags) {
 			pwyRes.addProperty(
