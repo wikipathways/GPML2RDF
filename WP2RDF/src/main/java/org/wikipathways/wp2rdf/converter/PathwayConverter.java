@@ -78,7 +78,7 @@ public class PathwayConverter {
 		pwyRes.addProperty(DC.identifier, model.createResource(url.trim().replaceAll(" ", "_")));
 		pwyRes.addLiteral(DCTerms.identifier, wpId);
 		pwyRes.addLiteral(DC.title, model.createLiteral(name, "en"));
-		pwyRes.addLiteral(DC.source, "Wikipathways");
+		pwyRes.addLiteral(DC.source, "WikiPathways");
 		
 		for(Comment o : p.getMappInfo().getComments()) 
 		{
