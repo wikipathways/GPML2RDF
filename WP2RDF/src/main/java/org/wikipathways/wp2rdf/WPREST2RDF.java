@@ -10,6 +10,7 @@ import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -159,7 +160,12 @@ public class WPREST2RDF {
 					// New conversion of the pathway in WP vocabulary
 					pathwayModel = ModelFactory.createDefaultModel();
 					Utils.setModelPrefix(pathwayModel);
-					GpmlConverter.convertWp(p, pwInfo.getId(), pwInfo.getRevision(), pathwayModel, mapper, includedPathways.get(pwInfo.getId()));
+					List<String> tags = includedPathways.get(pwInfo.getId());
+					if (tags == null) {
+						GpmlConverter.convertWp(p, pwInfo.getId(), pwInfo.getRevision(), pathwayModel, mapper, Collections.<String>emptyList());
+					} else {
+						GpmlConverter.convertWp(p, pwInfo.getId(), pwInfo.getRevision(), pathwayModel, mapper, tags);
+					}
 
 					folder = "output/wp/" + SPECIES.get(organism).replace(" ", "_") + "/";
 					new File(folder).mkdirs();
