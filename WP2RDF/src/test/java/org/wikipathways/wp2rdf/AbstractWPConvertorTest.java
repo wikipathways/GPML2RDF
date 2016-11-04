@@ -3,6 +3,7 @@ package org.wikipathways.wp2rdf;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Collections;
 
 import org.bridgedb.IDMapperException;
 import org.bridgedb.bio.DataSourceTxt;
@@ -19,7 +20,7 @@ public abstract class AbstractWPConvertorTest extends AbstractConvertorTest {
 		InputStream input = AbstractConvertorTest.class.getClassLoader().getResourceAsStream(gpmlFile);
 		Pathway pathway = PathwayReader.readPathway(input);
 		Assert.assertNotNull(pathway);
-		model = GpmlConverter.convertWp(pathway, wpid, revision);
+		model = GpmlConverter.convertWp(pathway, wpid, revision, Collections.<String>emptyList());
 		Assert.assertNotNull(model);
 		// System.out.println("===== " + gpmlFile + " =====");
 		// String ttlContent = toString(model);

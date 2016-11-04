@@ -109,12 +109,18 @@ public class WPREST2RDF {
 		}
 
 		// fetch the pathways for included curation tags from the webservice
-		Set<String> includedPathways = new HashSet<>();
+		Map<String,List<String>> includedPathways = new HashMap<>();
 		try {
 			for (String tagName : INCLUDED_TAGS) {
 				WSCurationTag[] curatedTags = client.getCurationTagsByName(tagName);
 				for (WSCurationTag tag : curatedTags) {
-					includedPathways.add(tag.getPathway().getId());
+					String pwId = tag.getPathway().getId();
+					List<String> tags = includedPathways.get(pwId);
+					if (tags == null) {
+						tags = new ArrayList<String>();
+					}
+					tags.add(tag.getName());
+					includedPathways.put(pwId, tags);
 				}
 			}
 		} catch (Exception exception) {
@@ -133,7 +139,7 @@ public class WPREST2RDF {
 			for(WSPathwayInfo pwInfo : pathwaysInfoObjs) {
 				System.out.println("  pathway: " + pwInfo.getId() + "\t" + pwInfo.getRevision());
 
-				if ((doAll || includedPathways.contains(pwInfo.getId())) &&
+				if ((doAll || includedPathways.containsKey(pwInfo.getId())) &&
 				    !EXCLUDED_PATHWAYS.contains(pwInfo.getId())) {
 					Model pathwayModel = ModelFactory.createDefaultModel();
 					Utils.setModelPrefix(pathwayModel);
@@ -153,7 +159,7 @@ public class WPREST2RDF {
 					// New conversion of the pathway in WP vocabulary
 					pathwayModel = ModelFactory.createDefaultModel();
 					Utils.setModelPrefix(pathwayModel);
-					GpmlConverter.convertWp(p, pwInfo.getId(), pwInfo.getRevision(), pathwayModel, mapper);
+					GpmlConverter.convertWp(p, pwInfo.getId(), pwInfo.getRevision(), pathwayModel, mapper, includedPathways.get(pwInfo.getId()));
 
 					folder = "output/wp/" + SPECIES.get(organism).replace(" ", "_") + "/";
 					new File(folder).mkdirs();

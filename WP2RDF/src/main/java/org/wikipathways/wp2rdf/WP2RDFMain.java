@@ -19,6 +19,7 @@ package org.wikipathways.wp2rdf;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Collections;
 
 import org.bridgedb.IDMapperException;
 import org.pathvisio.core.model.ConverterException;
@@ -77,7 +78,7 @@ public class WP2RDFMain {
 //			GpmlConverter.convertGpml(p, wpId, revision, pathwayModel);
 			
 			// New conversion of the pathway in WP vocabulary
-			GpmlConverter.convertWp(p, wpId, revision);
+			GpmlConverter.convertWp(p, wpId, revision, Collections.<String>emptyList());
 			
 			// Write model in new file
 			pathwayModel.write(new FileWriter(outputFile), "TURTLE");

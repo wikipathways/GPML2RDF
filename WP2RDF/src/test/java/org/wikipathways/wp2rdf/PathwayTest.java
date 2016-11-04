@@ -4,6 +4,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Collections;
 
 import org.bridgedb.IDMapperException;
 import org.junit.Assert;
@@ -34,7 +35,7 @@ public class PathwayTest {
 		InputStream input = AbstractConvertorTest.class.getClassLoader().getResourceAsStream(gpmlFile);
 		Pathway pathway = PathwayReader.readPathway(input);
 		Assert.assertNotNull(pathway);
-		model = GpmlConverter.convertWp(pathway, wpid, revision);
+		model = GpmlConverter.convertWp(pathway, wpid, revision, Collections.<String>emptyList());
 		Assert.assertNotNull(model);
 		System.out.println("===== " + gpmlFile + " =====");
 		System.out.println(toString(model));

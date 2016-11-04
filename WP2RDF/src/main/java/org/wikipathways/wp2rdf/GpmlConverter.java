@@ -23,6 +23,7 @@ import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Properties;
 import java.util.Set;
 
@@ -198,17 +199,17 @@ public class GpmlConverter {
 		}
 	}
 		
-	public static Model convertWp(Pathway p, String wpId, String revision) throws FileNotFoundException, IOException, ClassNotFoundException, IDMapperException {
+	public static Model convertWp(Pathway p, String wpId, String revision, List<String> tags) throws FileNotFoundException, IOException, ClassNotFoundException, IDMapperException {
 		Model pathwayModel = ModelFactory.createDefaultModel();
 		Utils.setModelPrefix(pathwayModel);
-		convertWp(p, wpId, revision, pathwayModel, null);
+		convertWp(p, wpId, revision, pathwayModel, null, tags);
 		return pathwayModel;
 	}
 	
-	public static void convertWp(Pathway p, String wpId, String revision, Model pathwayModel, IDMapperStack mapper) throws FileNotFoundException, IOException, ClassNotFoundException, IDMapperException {
+	public static void convertWp(Pathway p, String wpId, String revision, Model pathwayModel, IDMapperStack mapper, List<String> tags) throws FileNotFoundException, IOException, ClassNotFoundException, IDMapperException {
 		
 		
-		Resource pathwayRes = PathwayConverter.parsePathwayInfoWp(p, wpId, revision, pathwayModel);
+		Resource pathwayRes = PathwayConverter.parsePathwayInfoWp(p, wpId, revision, pathwayModel, tags);
 		DataHandlerWp data = new DataHandlerWp(p, wpId, revision, pathwayRes);
 		
 		//IDMapperStack mapper = WPREST2RDF.maps();

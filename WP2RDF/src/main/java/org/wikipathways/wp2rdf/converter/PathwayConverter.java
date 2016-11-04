@@ -16,6 +16,8 @@
 //
 package org.wikipathways.wp2rdf.converter;
 
+import java.util.List;
+
 import org.bridgedb.Xref;
 import org.bridgedb.bio.Organism;
 import org.pathvisio.core.biopax.PublicationXref;
@@ -45,8 +47,9 @@ public class PathwayConverter {
 	/**
 	 * conversion only WP vocabulary
 	 * semantic information about the pathway
+	 * @param tags 
 	 */
-	public static Resource parsePathwayInfoWp(Pathway p, String wpId, String revision, Model model) {
+	public static Resource parsePathwayInfoWp(Pathway p, String wpId, String revision, Model model, List<String> tags) {
 		String name = p.getMappInfo().getMapInfoName();
 		String url = Utils.IDENTIFIERS_ORG_URL + "/wikipathways/" + wpId.trim() ;
 		Resource pwyRes = model.createResource(url + "_r" + revision.trim().replaceAll(" ", "_"));
@@ -58,7 +61,14 @@ public class PathwayConverter {
 		pwyRes.addLiteral(Wp.organismName, p.getMappInfo().getOrganism());
 
 		for (OntologyTag o : p.getOntologyTags()){
-			pwyRes.addProperty(Wp.ontologyTag, model.createResource(Utils.PURL_OBO_LIB + o.getId().replace(":", "_").trim().replaceAll(" ", "_"))); }
+			pwyRes.addProperty(Wp.ontologyTag, model.createResource(Utils.PURL_OBO_LIB + o.getId().replace(":", "_").trim().replaceAll(" ", "_")));
+		}
+		for (String curationTag : tags) {
+			pwyRes.addProperty(
+				Wp.ontologyTag,
+				"http://vocabularies.wikipathways.org/wp#" + curationTag
+			);
+		}
 		
 		pwyRes.addProperty(Wp.isAbout, model.createResource(Utils.WP_RDF_URL + "/Pathway/" + wpId + "_r" + revision.trim().replaceAll(" ", "_")));
 		
