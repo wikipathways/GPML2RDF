@@ -112,6 +112,8 @@ public class Pav {
     
     public static final Property derivedBy = m_model.createProperty( "http://purl.org/pav/derivedBy" );
     
+    public static final Property hasVersion = m_model.createProperty( "http://purl.org/pav/hasVersion" );
+
     public static final Property importedBy = m_model.createProperty( "http://purl.org/pav/importedBy" );
     
     /** <p>The original source of the imported information. Import means that the content 

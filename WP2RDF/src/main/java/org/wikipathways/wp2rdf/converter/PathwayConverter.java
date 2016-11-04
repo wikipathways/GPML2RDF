@@ -25,6 +25,7 @@ import org.pathvisio.core.model.OntologyTag;
 import org.pathvisio.core.model.Pathway;
 import org.pathvisio.core.model.PathwayElement.Comment;
 import org.wikipathways.wp2rdf.ontologies.Gpml;
+import org.wikipathways.wp2rdf.ontologies.Pav;
 import org.wikipathways.wp2rdf.ontologies.Skos;
 import org.wikipathways.wp2rdf.ontologies.Wp;
 import org.wikipathways.wp2rdf.utils.Utils;
@@ -52,10 +53,12 @@ public class PathwayConverter {
 	public static Resource parsePathwayInfoWp(Pathway p, String wpId, String revision, Model model, List<String> tags) {
 		String name = p.getMappInfo().getMapInfoName();
 		String url = Utils.IDENTIFIERS_ORG_URL + "/wikipathways/" + wpId.trim() ;
+		Resource versionlessRes = model.createResource(url);
 		Resource pwyRes = model.createResource(url + "_r" + revision.trim().replaceAll(" ", "_"));
   		Xref orgTaxId = Organism.fromLatinName(p.getMappInfo().getOrganism()).taxonomyID();
   		Resource pwyOrgRes = model.createResource(Utils.PURL_TAX_URL + orgTaxId.getId().replaceAll(" ", "_"));
 		
+  		versionlessRes.addProperty(Pav.hasVersion, pwyRes);
 		
   		pwyRes.addProperty(Wp.organism, pwyOrgRes);
 		pwyRes.addLiteral(Wp.organismName, p.getMappInfo().getOrganism());
