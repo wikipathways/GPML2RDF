@@ -315,7 +315,7 @@ public class WPREST2RDF {
 				voidModel.createProperty("http://www.w3.org/ns/dcat#mediaType"), "application/zip"
 			);
 			Resource mainDatadump = voidModel.createResource(
-				downloadFilePattern.replaceAll("${code}", code).replaceAll("${date}", date)
+				downloadFilePattern.replaceAll("\\${code}", code).replaceAll("\\${date}", date)
 			);
 			distribution.addProperty(
 				voidModel.createProperty("http://www.w3.org/ns/dcat#downloadURL"), mainDatadump
