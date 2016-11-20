@@ -181,7 +181,7 @@ public class WPREST2RDF {
 		Writer output = new FileWriter(folder + "void.ttl");
 		Model voidWp = ModelFactory.createDefaultModel();
 		populateVOID(
-			voidWp, "https://jenkins.bigcat.unimaas.nl/job/GPML%20to%20GPML%20+%20WP%20RDF/ws/WP2RDF/output/${code}/*zip*/${code}.zip",
+			voidWp, "https://jenkins.bigcat.unimaas.nl/job/GPML%20to%20GPML%20+%20WP%20RDF/ws/WP2RDF/output/\\${code}/*zip*/\\${code}.zip",
 			"http://rdf.wikipathways.org/"
 		);
 		voidWp.write(output, "TURTLE");
@@ -189,7 +189,7 @@ public class WPREST2RDF {
 		output = new FileWriter(folder + "void_for_data.wp.org.ttl");
 		voidWp = ModelFactory.createDefaultModel();
 		populateVOID(
-			voidWp, "http://data.wikipathways.org/${date}/rdf/wikipathways-${date}-rdf-${code}.zip",
+			voidWp, "http://data.wikipathways.org/\\${date}/rdf/wikipathways-\\${date}-rdf-\\${code}.zip",
 			"http://data.wikipathways.org/"
 		);
 		voidWp.write(output, "TURTLE");
