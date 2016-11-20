@@ -180,13 +180,23 @@ public class WPREST2RDF {
 		String folder = "output/";
 		Writer output = new FileWriter(folder + "void.ttl");
 		Model voidWp = ModelFactory.createDefaultModel();
-		populateVOID(voidWp);
+		populateVOID(
+			voidWp, "https://jenkins.bigcat.unimaas.nl/job/GPML%20to%20GPML%20+%20WP%20RDF/ws/WP2RDF/output/${code}/*zip*/${code}.zip",
+			"http://rdf.wikipathways.org/"
+		);
 		voidWp.write(output, "TURTLE");
 		output.close();
-
+		output = new FileWriter(folder + "void_for_data.wp.org.ttl");
+		voidWp = ModelFactory.createDefaultModel();
+		populateVOID(
+			voidWp, "http://data.wikipathways.org/${date}/rdf/wikipathways-${date}-rdf-${code}.zip",
+			"http://data.wikipathways.org/"
+		);
+		voidWp.write(output, "TURTLE");
+		output.close();
 	}
 
-	private static void populateVOID(Model voidModel) {
+	private static void populateVOID(Model voidModel, String downloadFilePattern, String domain) {
 		// set prefixes
 		voidModel.setNsPrefix("prov", "http://www.w3.org/ns/prov#");
 		voidModel.setNsPrefix("foaf", "http://xmlns.com/foaf/0.1/");
@@ -212,7 +222,7 @@ public class WPREST2RDF {
 		Literal nowLiteral = voidModel.createTypedLiteral(now);
 		
 		// define the dataset description info
-		Resource dsDescription = voidModel.createResource("http://rdf.wikipathways.org/" + date + "/datasetDescription/");
+		Resource dsDescription = voidModel.createResource(domain + date + "/datasetDescription/");
 		dsDescription.addProperty(RDF.type, Void.DatasetDescription);
 		Literal titleLiteral = voidModel.createLiteral("WikiPathways RDF VoID Description", "en");
 		dsDescription.addLiteral(DCTerms.title, titleLiteral);
@@ -227,7 +237,7 @@ public class WPREST2RDF {
 		dsDescription.addLiteral(Pav.lastUpdateOn, nowLiteral);
 
 		// define the dataset info
-		Resource voidBase = voidModel.createResource("http://rdf.wikipathways.org/" + date + "/rdf/");
+		Resource voidBase = voidModel.createResource(domain + date + "/rdf/");
 		dsDescription.addProperty(FOAF.primaryTopic, voidBase);
 		voidBase.addProperty(
 			voidModel.createProperty("http://www.w3.org/ns/dcat#landingPage"),
@@ -298,14 +308,14 @@ public class WPREST2RDF {
 		// create two the distributions
 		String[] codes = {"wp", "gpml"};
 		for (String code : codes) {
-			Resource distribution = voidModel.createResource("http://rdf.wikipathways.org/" + date + "/rdf/" + code);
+			Resource distribution = voidModel.createResource(domain + date + "/rdf/" + code);
 			voidBase.addProperty(Void.subset, distribution);
 			distribution.addProperty(RDF.type, voidModel.createResource("http://www.w3.org/ns/dcat#Distribution"));
 			distribution.addLiteral(
 				voidModel.createProperty("http://www.w3.org/ns/dcat#mediaType"), "application/zip"
 			);
 			Resource mainDatadump = voidModel.createResource(
-				"https://jenkins.bigcat.unimaas.nl/job/GPML%20to%20GPML%20+%20WP%20RDF/ws/WP2RDF/output/" + code + "/*zip*/" + code + ".zip"
+				downloadFilePattern.replaceAll("${code}", code).replaceAll("${date}", date)
 			);
 			distribution.addProperty(
 				voidModel.createProperty("http://www.w3.org/ns/dcat#downloadURL"), mainDatadump
