@@ -246,7 +246,7 @@ public class WPREST2RDF {
 		Resource wpHomeBase = voidModel.createResource("http://www.wikipathways.org/");
 		Resource authorResource = voidModel.createResource("https://jenkins.bigcat.unimaas.nl/job/GPML%20to%20GPML%20+%20WP%20RDF/");
 		Resource apiResource = voidModel.createResource("http://www.wikipathways.org/wpi/webservice/webservice.php");
-		Resource license = voidModel.createResource("http://creativecommons.org/licenses/by/3.0/");
+		Resource license = voidModel.createResource("http://creativecommons.org/publicdomain/zero/1.0/");
 		Resource instituteResource = voidModel.createResource("http://www.wikidata.org/entity/Q1137652");
 		voidBase.addProperty(RDF.type, Void.Dataset);
 		voidBase.addProperty(FOAF.homepage, wpHomeBase);
