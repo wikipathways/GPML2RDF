@@ -230,7 +230,7 @@ public class WPREST2RDF {
 			"This is the VoID description for this WikiPathways RDF dataset created on " + date + ".", "en"
 		);
 		dsDescription.addLiteral(DCTerms.description, descriptionLiteral);
-		dsDescription.addProperty(Pav.createdWith, voidModel.createResource("https://github.com/wikipathways/GPML2RDF/tree/v3"));
+		dsDescription.addProperty(Pav.createdWith, voidModel.createResource("https://github.com/wikipathways/GPML2RDF/tree/v4"));
 		dsDescription.addProperty(Pav.createdBy, voidModel.createResource("https://jenkins.bigcat.unimaas.nl/job/GPML%20to%20GPML%20+%20WP%20RDF/"));
 		dsDescription.addLiteral(Pav.createdOn, nowLiteral);
 		dsDescription.addLiteral(DCTerms.issued, nowLiteral);
