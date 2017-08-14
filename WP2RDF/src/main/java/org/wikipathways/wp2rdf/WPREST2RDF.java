@@ -146,7 +146,12 @@ public class WPREST2RDF {
 					Utils.setModelPrefix(pathwayModel);
 
 					Pathway p = new Pathway();
-					p.readFromXml(pathwaysInfo.get(pwInfo), false);
+					try {
+						p.readFromXml(pathwaysInfo.get(pwInfo), false);
+					} catch (Exception readException) {
+						System.out.println("Error while reading the GPML of "+ pwInfo.getId() + ": " + readException.getMessage());
+						continue;
+					}
 
 					// New conversion of the pathway in GPML vocabulary
 					GpmlConverter.convertGpml(p, pwInfo.getId(), pwInfo.getRevision(), pathwayModel);
