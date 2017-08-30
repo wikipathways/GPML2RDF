@@ -7,7 +7,6 @@
     <groupId>org.wikipathways.rdf</groupId>
     <artifactId>gpml2rdf</artifactId>
     <version>3.0.0-SNAPSHOT</version>
-    <bridgedbVersion>2.2.2-SNAPSHOT</bridgedbVersion>
 
     <name>GPML2RDF</name>
 
@@ -16,6 +15,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <bridgedb.version>2.2.2-SNAPSHOT</bridgedb.version>
     </properties>
 
     <prerequisites>
@@ -152,19 +152,19 @@
  		<dependency> 
       		<groupId>org.bridgedb</groupId> 
       		<artifactId>org.bridgedb</artifactId> 
-      		<version>${bridgedbVersion}</version> 
+      		<version>${bridgedb.version}</version> 
       		<optional>true</optional>
     	</dependency>
 	<dependency> 
       		<groupId>org.bridgedb</groupId> 
       		<artifactId>org.bridgedb.bio</artifactId> 
-      		<version>${bridgedbVersion}</version> 
+      		<version>${bridgedb.version}</version> 
       		<optional>true</optional>
     	</dependency>
 	<dependency> 
       		<groupId>org.bridgedb</groupId> 
       		<artifactId>org.bridgedb.rdb</artifactId> 
-      		<version>${bridgedbVersion}</version> 
+      		<version>${bridgedb.version}</version> 
       		<optional>true</optional>
     	</dependency>
         <dependency>
