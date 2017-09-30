@@ -239,6 +239,7 @@ public class WPREST2RDF {
 		dsDescription.addProperty(Pav.createdBy, voidModel.createResource("https://jenkins.bigcat.unimaas.nl/job/GPML%20to%20GPML%20+%20WP%20RDF/"));
 		dsDescription.addLiteral(Pav.createdOn, nowLiteral);
 		dsDescription.addLiteral(DCTerms.issued, nowLiteral);
+		dsDescription.addLiteral(DCTerms.modified, nowLiteral);
 		dsDescription.addLiteral(Pav.lastUpdateOn, nowLiteral);
 
 		// define the dataset info
