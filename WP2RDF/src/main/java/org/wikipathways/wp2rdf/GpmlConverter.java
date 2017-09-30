@@ -148,6 +148,16 @@ public class GpmlConverter {
 		}
 		Set<Xref> unifiedIdXref = mapper.mapID(idXref, source);
 		Iterator<Xref> iter = unifiedIdXref.iterator();
+		// the next if clause is to handle new HMDB00xxxxx-style identifiers and a BridgeDb
+		// mapping file that does not recognize them yet (causing an empty iter)
+		if (!iter.hasNext() && "Ch".equals(idXref.getDataSource().getSystemCode())) {
+			String origIdentifier = idXref.getId();
+			if (origIdentifier.length() == 11) { // HMDB00xxxxx -> HMDBxxxxx
+				idXref = new Xref(origIdentifier.replace("HMDB00", "HMDB"), idXref.getDataSource());
+				unifiedIdXref = mapper.mapID(idXref, source);
+				iter = unifiedIdXref.iterator();
+			}
+		}
 		while (iter.hasNext()){
 			Xref unifiedId = (Xref) iter.next();
 			if ("Ce".equals(sourceCode)) {
