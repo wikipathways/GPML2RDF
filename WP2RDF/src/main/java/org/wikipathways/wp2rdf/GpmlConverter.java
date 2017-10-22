@@ -146,6 +146,12 @@ public class GpmlConverter {
 			System.out.println("Unknown system code (mapping files not loaded?): " + sourceCode);
 			return;
 		}
+		// first, if we already have a $foo identifier, also output is as mapped identifier
+		if (sourceCode.equals(idXref.getDataSource().getSystemCode())) {
+			Resource unifiedlIdResource = model.createResource(uriPrefix + idXref.getId());
+			internalWPDataNodeResource.addProperty(predicate, unifiedlIdResource);
+		}
+		// now, use BridgeDb to find additional identifiers
 		Set<Xref> unifiedIdXref = mapper.mapID(idXref, source);
 		Iterator<Xref> iter = unifiedIdXref.iterator();
 		// the next if clause is to handle new HMDB00xxxxx-style identifiers and a BridgeDb
