@@ -1,6 +1,9 @@
 # GPML2RDF
 
-GPML2RDF creates RDF for WikiPathways [1].
+GPML2RDF creates RDF for WikiPathways [1]. Use cases, examples SPARQL queries, downloads, etc,
+are available from the WikiPathways RDF Portal: http://rdf.wikipathways.org/
+
+## Installation
 
 ### Setup:
 
