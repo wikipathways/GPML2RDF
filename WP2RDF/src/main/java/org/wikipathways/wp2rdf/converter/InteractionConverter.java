@@ -397,6 +397,8 @@ public class InteractionConverter {
 			System.out.println("TODO: necessary stimulation");
 		} else if (lt.equals(MIMShapes.MIM_MODIFICATION)) {
 			System.out.println("TODO: modification");
+		} else {
+			System.out.println("Unknown and unsupported interaction type: " + lt);
 		}
 		return null;
 	}
