@@ -332,7 +332,8 @@ public class WPREST2RDF {
 
 	public static IDMapperStack maps () throws FileNotFoundException, IOException, ClassNotFoundException, IDMapperException{
 		final Properties prop = new Properties();
-		prop.load(new FileInputStream("/tmp/OPSBRIDGEDB/config.properties"));
+		String derbyFolder = System.getProperty("OPSBRIDGEDB", "OPSBRIDGEDB");
+		prop.load(new FileInputStream("/tmp/" + derbyFolder + "/config.properties"));
 		IDMapperStack mapper = GpmlConverter.createBridgeDbMapper(prop);
 		return mapper;
 		
