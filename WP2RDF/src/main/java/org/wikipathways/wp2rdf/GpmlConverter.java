@@ -148,8 +148,21 @@ public class GpmlConverter {
 		}
 		// first, if we already have a $foo identifier, also output is as mapped identifier
 		if (sourceCode.equals(idXref.getDataSource().getSystemCode())) {
-			Resource unifiedlIdResource = model.createResource(uriPrefix + idXref.getId());
-			internalWPDataNodeResource.addProperty(predicate, unifiedlIdResource);
+			// here too, we need to make sure to output proper identifiers.org IRIs for ChEBI IDs.
+			if ("Ce".equals(sourceCode)) {
+				String nodeIdentifier = idXref.getId();
+				if (nodeIdentifier.startsWith("CHEBI:")) {
+					Resource unifiedlIdResource = model.createResource(uriPrefix+nodeIdentifier);
+					internalWPDataNodeResource.addProperty(predicate, unifiedlIdResource);
+				} else { // just digits
+					nodeIdentifier = "CHEBI:" + nodeIdentifier;
+					Resource unifiedlIdResource = model.createResource(uriPrefix+nodeIdentifier);
+					internalWPDataNodeResource.addProperty(predicate, unifiedlIdResource);
+				}
+			} else {
+				Resource unifiedlIdResource = model.createResource(uriPrefix + idXref.getId());
+				internalWPDataNodeResource.addProperty(predicate, unifiedlIdResource);
+			}
 		}
 		// now, use BridgeDb to find additional identifiers
 		Set<Xref> unifiedIdXref = mapper.mapID(idXref, source);
