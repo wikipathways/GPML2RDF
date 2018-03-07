@@ -168,7 +168,11 @@ public class GpmlConverter {
 			Xref unifiedId = (Xref) iter.next();
 			if ("Ce".equals(sourceCode)) {
 				String unifiedDataNodeIdentifier = unifiedId.getId();
-				if (unifiedDataNodeIdentifier.contains("CHEBI")) {
+				if (unifiedDataNodeIdentifier.startsWith("CHEBI:")) {
+					Resource unifiedlIdResource = model.createResource(uriPrefix+unifiedDataNodeIdentifier);
+					internalWPDataNodeResource.addProperty(predicate, unifiedlIdResource);
+				} else { // just digits
+					unifiedDataNodeIdentifier = "CHEBI:" + unifiedDataNodeIdentifier;
 					Resource unifiedlIdResource = model.createResource(uriPrefix+unifiedDataNodeIdentifier);
 					internalWPDataNodeResource.addProperty(predicate, unifiedlIdResource);
 				}
