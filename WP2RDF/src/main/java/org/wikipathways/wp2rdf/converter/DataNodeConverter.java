@@ -78,9 +78,19 @@ public class DataNodeConverter {
 		if(elem.getXref() != null && elem.getXref().getId() != null && elem.getXref().getDataSource() != null) {
 			if(!elem.getDataNodeType().equals("Unknown")) {
 				if (elem.getXref().getId() != null && elem.getXref().getId().trim().length() > 0) {
-					String url = elem.getDataSource().getIdentifiersOrgUri(elem.getXref().getId());
+					Xref xref = elem.getXref();
+					String xrefid = xref.getId(); 
+					String url = elem.getDataSource().getIdentifiersOrgUri(xrefid);
+					if ("HMDB".equals(xref.getDataSource().getFullName())) {
+						if (xrefid.length() == 11) {
+							// OK, all is fine
+						} else if (xrefid.length() > 4) {
+							xrefid = "HMDB00" + xrefid.substring(4);
+						} // else, something really weird
+						url = elem.getDataSource().getIdentifiersOrgUri(xrefid);
+					}
 					if(url != null && !url.equals("")) {
-						Resource datanodeRes = data.getDataNodes().get(elem.getXref());
+						Resource datanodeRes = data.getDataNodes().get(xref);
 						if(datanodeRes == null) {
 							if (url.contains("chebi/CHEBI:")){
 								String resourceURL = url.trim().replaceAll(" ", "_");
@@ -98,8 +108,8 @@ public class DataNodeConverter {
 								datanodeRes.addProperty(DC.identifier, model.createResource(resourceURL));
 							}
 							
-							datanodeRes.addLiteral(DC.source, elem.getXref().getDataSource().getFullName());
-							datanodeRes.addLiteral(DCTerms.identifier, elem.getXref().getId());
+							datanodeRes.addLiteral(DC.source, xref.getDataSource().getFullName());
+							datanodeRes.addLiteral(DCTerms.identifier, xrefid);
 
 							datanodeRes.addProperty(RDF.type, Wp.DataNode);
 							
@@ -151,13 +161,13 @@ public class DataNodeConverter {
 							data.getPathwayElements().put(elem, datanodeRes);
 						}
 						// TODO: what to do about those - are they pathway specific?
-						for(PublicationXref xref : elem.getBiopaxReferenceManager().getPublicationXRefs()) {
-							if(xref.getPubmedId() != null && !xref.getPubmedId().trim().equals("")) {
-								String pubmedUrl = Utils.IDENTIFIERS_ORG_URL + "/pubmed/" + xref.getPubmedId().trim();
+						for(PublicationXref pubXref : elem.getBiopaxReferenceManager().getPublicationXRefs()) {
+							if(pubXref.getPubmedId() != null && !pubXref.getPubmedId().trim().equals("")) {
+								String pubmedUrl = Utils.IDENTIFIERS_ORG_URL + "/pubmed/" + pubXref.getPubmedId().trim();
 								Resource pubmedRes = model.createResource(pubmedUrl.trim());
 								datanodeRes.addProperty(DCTerms.bibliographicCitation, pubmedRes);
 								pubmedRes.addProperty(RDF.type, Wp.PublicationReference);
-								pubmedRes.addProperty(FOAF.page, model.createResource(Utils.PUBMED_URL + xref.getPubmedId().trim()));
+								pubmedRes.addProperty(FOAF.page, model.createResource(Utils.PUBMED_URL + pubXref.getPubmedId().trim()));
 								pubmedRes.addProperty(DCTerms.isPartOf, data.getPathwayRes());
 							
 							}
