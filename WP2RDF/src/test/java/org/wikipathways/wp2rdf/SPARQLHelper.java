@@ -26,6 +26,7 @@
  */
 package org.wikipathways.wp2rdf;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -38,7 +39,8 @@ import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
-import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.message.BasicNameValuePair;
 
 import com.hp.hpl.jena.query.Query;
@@ -75,24 +77,27 @@ public class SPARQLHelper {
 		StringMatrix table = null;
 
 		// use Apache for doing the SPARQL query
-		DefaultHttpClient httpclient = new DefaultHttpClient();
-		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
-		formparams.add(new BasicNameValuePair("query", queryString));
-		UrlEncodedFormEntity entity = new UrlEncodedFormEntity(formparams, "UTF-8");
-		HttpPost httppost = new HttpPost(endpoint);
-		httppost.setEntity(entity);
-		HttpResponse response = httpclient.execute(httppost);
-		HttpEntity responseEntity = response.getEntity();
-		InputStream in = responseEntity.getContent();
+		try (CloseableHttpClient httpclient = HttpClientBuilder.create().build()) {
+			List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+			formparams.add(new BasicNameValuePair("query", queryString));
+			UrlEncodedFormEntity entity = new UrlEncodedFormEntity(formparams, "UTF-8");
+			HttpPost httppost = new HttpPost(endpoint);
+			httppost.setEntity(entity);
+			HttpResponse response = httpclient.execute(httppost);
+			HttpEntity responseEntity = response.getEntity();
+			InputStream in = responseEntity.getContent();
 
-		// now the Jena part
-		ResultSet results = ResultSetFactory.fromXML(in);
-		// also use Jena for getting the prefixes...
-		// Query query = QueryFactory.create(queryString);
-		// PrefixMapping prefixMap = query.getPrefixMapping();
-		table = convertIntoTable(null, results);
+			// now the Jena part
+			ResultSet results = ResultSetFactory.fromXML(in);
+			// also use Jena for getting the prefixes...
+			// Query query = QueryFactory.create(queryString);
+			// PrefixMapping prefixMap = query.getPrefixMapping();
+			table = convertIntoTable(null, results);
 
-		in.close();
+			in.close();
+		} catch (IOException exception) {
+			throw exception;
+		}
 		return table;
 	}
 
