@@ -18,24 +18,16 @@ package org.wikipathways.wp2rdf.converter;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import java.util.Set;
 
-import org.bridgedb.BridgeDb;
-import org.bridgedb.DataSource;
-import org.bridgedb.IDMapper;
 import org.bridgedb.IDMapperException;
 import org.bridgedb.IDMapperStack;
 import org.bridgedb.Xref;
-import org.bridgedb.bio.DataSourceTxt;
 import org.pathvisio.core.biopax.PublicationXref;
 import org.pathvisio.core.model.LineStyle;
 import org.pathvisio.core.model.Pathway;
 import org.pathvisio.core.model.PathwayElement;
 import org.pathvisio.core.model.PathwayElement.Comment;
-import org.w3c.dom.Element;
 import org.wikipathways.wp2rdf.GpmlConverter;
-import org.wikipathways.wp2rdf.WPREST2RDF;
 import org.wikipathways.wp2rdf.ontologies.Gpml;
 import org.wikipathways.wp2rdf.ontologies.Wp;
 import org.wikipathways.wp2rdf.utils.DataHandlerGpml;
