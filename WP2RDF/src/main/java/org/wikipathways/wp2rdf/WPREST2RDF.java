@@ -85,15 +85,20 @@ public class WPREST2RDF {
 		add(Organism.CanisFamiliaris);
 		add(Organism.DanioRerio);
 		add(Organism.DrosophilaMelanogaster);
+		add(Organism.EquusCaballus);
 		add(Organism.EscherichiaColi);
 		add(Organism.GallusGallus);
 		add(Organism.GibberellaZeae);
 		add(Organism.HomoSapiens);
 		add(Organism.MusMusculus);
+		add(Organism.MycobacteriumTuberculosis);
 		add(Organism.OryzaSativa);
 		add(Organism.PanTroglodytes);
+		add(Organism.PlasmodiumFalciparum);
+		add(Organism.PopulusTrichocarpa);
 		add(Organism.RattusNorvegicus);
 		add(Organism.SaccharomycesCerevisiae);
+		add(Organism.SolanumLycopersicum);
 		add(Organism.ZeaMays);
 	}};
 
