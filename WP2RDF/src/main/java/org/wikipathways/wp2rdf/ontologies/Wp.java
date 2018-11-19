@@ -38,6 +38,8 @@ public class Wp {
     
     public static final Property bdbPubChem = m_model.createProperty( "http://vocabularies.wikipathways.org/wp#bdbPubChem" );
     
+    public static final Property bdbRhea = m_model.createProperty( "http://vocabularies.wikipathways.org/wp#bdbRhea" );
+
     public static final Property bdbUniprot = m_model.createProperty( "http://vocabularies.wikipathways.org/wp#bdbUniprot" );
     
     public static final Property cellTypeOntologyTag = m_model.createProperty( "http://vocabularies.wikipathways.org/wp#cellTypeOntologyTag" );

@@ -236,6 +236,10 @@ public class InteractionConverter {
 
 										intRes.addLiteral(DC.source, xref.getDataSource().getFullName());
 										intRes.addLiteral(DCTerms.identifier, xrefid);
+
+										intRes.addProperty(Wp.bdbRhea, model.createResource(
+											"http://identifiers.org/rhea/" + xrefid
+										));
 									}
 								}
 							}
