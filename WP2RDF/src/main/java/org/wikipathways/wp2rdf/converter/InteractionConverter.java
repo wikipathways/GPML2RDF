@@ -19,6 +19,7 @@ package org.wikipathways.wp2rdf.converter;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.bridgedb.Xref;
 import org.pathvisio.core.biopax.PublicationXref;
 import org.pathvisio.core.model.LineStyle;
 import org.pathvisio.core.model.LineType;
@@ -38,6 +39,7 @@ import org.wikipathways.wp2rdf.utils.Utils;
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.Resource;
 import com.hp.hpl.jena.sparql.vocabulary.FOAF;
+import com.hp.hpl.jena.vocabulary.DC;
 import com.hp.hpl.jena.vocabulary.DCTerms;
 import com.hp.hpl.jena.vocabulary.RDF;
 
@@ -224,6 +226,16 @@ public class InteractionConverter {
 										createRegInt(l, data, model, intRes, regUrl);
 									} else {
 										System.out.println("regulating line is reversible - not allowed " + l.getGraphId());
+									}
+								}
+
+								if(e.getXref() != null && e.getXref().getId() != null && e.getXref().getDataSource() != null) {
+									if (e.getXref().getId() != null && e.getXref().getId().trim().length() > 0) {
+										Xref xref = e.getXref();
+										String xrefid = xref.getId();
+
+										intRes.addLiteral(DC.source, xref.getDataSource().getFullName());
+										intRes.addLiteral(DCTerms.identifier, xrefid);
 									}
 								}
 							}
