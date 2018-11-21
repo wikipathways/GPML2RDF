@@ -232,14 +232,17 @@ public class InteractionConverter {
 								if(e.getXref() != null && e.getXref().getId() != null && e.getXref().getDataSource() != null) {
 									if (e.getXref().getId() != null && e.getXref().getId().trim().length() > 0) {
 										Xref xref = e.getXref();
-										String xrefid = xref.getId();
+										String xrefid = xref.getId().replace(" ", "_");
 
-										intRes.addLiteral(DC.source, xref.getDataSource().getFullName());
+										String dataSource = xref.getDataSource().getFullName();
+										intRes.addLiteral(DC.source, dataSource);
 										intRes.addLiteral(DCTerms.identifier, xrefid);
 
-										intRes.addProperty(Wp.bdbRhea, model.createResource(
-											"http://identifiers.org/rhea/" + xrefid
-										));
+										if ("Rhea".equals(dataSource)) {
+											intRes.addProperty(Wp.bdbRhea, model.createResource(
+												"http://identifiers.org/rhea/" + xrefid
+											));
+										}
 									}
 								}
 							}
