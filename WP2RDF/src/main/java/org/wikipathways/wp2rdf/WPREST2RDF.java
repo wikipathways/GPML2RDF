@@ -136,6 +136,7 @@ public class WPREST2RDF {
 
 		// fetch the pathways for included curation tags from the webservice
 		Map<String,List<String>> includedPathways = new HashMap<>();
+		Map<String,List<String>> otherPathways = new HashMap<>();
 		try {
 			for (String tagName : INCLUDED_TAGS) {
 				WSCurationTag[] curatedTags = client.getCurationTagsByName(tagName);
@@ -154,8 +155,13 @@ public class WPREST2RDF {
 				for (WSCurationTag tag : curatedTags) {
 					String pwId = tag.getPathway().getId();
 					List<String> tags = includedPathways.get(pwId);
-					if (tags != null) {
+					if (tags == null) {
+						tags = new ArrayList<String>();
 						tags.add(tag.getName());
+						otherPathways.put(pwId, tags);
+					} else {
+						tags.add(tag.getName());
+						includedPathways.put(pwId, tags);
 					}
 				}
 			}
@@ -201,6 +207,7 @@ public class WPREST2RDF {
 					pathwayModel = ModelFactory.createDefaultModel();
 					Utils.setModelPrefix(pathwayModel);
 					List<String> tags = includedPathways.get(pwInfo.getId());
+					if (tags == null) tags = otherPathways.get(pwInfo.getId());
 					if (tags == null) {
 						GpmlConverter.convertWp(p, pwInfo.getId(), pwInfo.getRevision(), pathwayModel, mapper, Collections.<String>emptyList());
 					} else {
