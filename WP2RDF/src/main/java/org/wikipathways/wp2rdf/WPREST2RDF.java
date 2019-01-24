@@ -72,6 +72,11 @@ public class WPREST2RDF {
 	}};
 
 	@SuppressWarnings("serial")
+	private static final List<String> EXTRA_TAGS = new ArrayList<String>() {{
+		add("Curation:LIPID_MAPS");
+	}};
+
+	@SuppressWarnings("serial")
 	private static final Map<Organism,String> SPECIES = new HashMap<Organism,String>() {
 		void add(Organism organism) {
 			put(organism, organism.shortName() != null ? organism.shortName() : organism.code());
@@ -142,6 +147,16 @@ public class WPREST2RDF {
 					}
 					tags.add(tag.getName());
 					includedPathways.put(pwId, tags);
+				}
+			}
+			for (String tagName : EXTRA_TAGS) {
+				WSCurationTag[] curatedTags = client.getCurationTagsByName(tagName);
+				for (WSCurationTag tag : curatedTags) {
+					String pwId = tag.getPathway().getId();
+					List<String> tags = includedPathways.get(pwId);
+					if (tags != null) {
+						tags.add(tag.getName());
+					}
 				}
 			}
 		} catch (Exception exception) {
