@@ -16,9 +16,12 @@
 //
 package org.wikipathways.wp2rdf.converter;
 
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.bridgedb.IDMapperException;
+import org.bridgedb.IDMapperStack;
 import org.bridgedb.Xref;
 import org.pathvisio.core.biopax.PublicationXref;
 import org.pathvisio.core.model.LineStyle;
@@ -30,6 +33,7 @@ import org.pathvisio.core.model.PathwayElement.Comment;
 import org.pathvisio.core.model.PathwayElement.MAnchor;
 import org.pathvisio.core.model.PathwayElement.MPoint;
 import org.pathvisio.core.view.MIMShapes;
+import org.wikipathways.wp2rdf.GpmlConverter;
 import org.wikipathways.wp2rdf.ontologies.Gpml;
 import org.wikipathways.wp2rdf.ontologies.Wp;
 import org.wikipathways.wp2rdf.utils.DataHandlerGpml;
@@ -39,7 +43,6 @@ import org.wikipathways.wp2rdf.utils.Utils;
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.Resource;
 import com.hp.hpl.jena.sparql.vocabulary.FOAF;
-import com.hp.hpl.jena.vocabulary.DC;
 import com.hp.hpl.jena.vocabulary.DCTerms;
 import com.hp.hpl.jena.vocabulary.RDF;
 
@@ -55,7 +58,7 @@ public class InteractionConverter {
 	 * conversion only WP vocabulary
 	 * semantic information about interactions
 	 */
-	public static void parseInteractionWp(MLine e, Model model, DataHandlerWp data) {
+	public static void parseInteractionWp(MLine e, Model model, DataHandlerWp data, IDMapperStack mapper) throws IDMapperException, UnsupportedEncodingException {
 		
 		if(!data.getPathwayElements().containsKey(e)) {
 			boolean ignore = pointingTowardsLine(e, data);
@@ -232,17 +235,7 @@ public class InteractionConverter {
 								if(e.getXref() != null && e.getXref().getId() != null && e.getXref().getDataSource() != null) {
 									if (e.getXref().getId() != null && e.getXref().getId().trim().length() > 0) {
 										Xref xref = e.getXref();
-										String xrefid = xref.getId().replace(" ", "_");
-
-										String dataSource = xref.getDataSource().getFullName();
-										intRes.addLiteral(DC.source, dataSource);
-										intRes.addLiteral(DCTerms.identifier, xrefid);
-
-										if ("Rhea".equals(dataSource)) {
-											intRes.addProperty(Wp.bdbRhea, model.createResource(
-												"http://identifiers.org/rhea/" + xrefid
-											));
-										}
+										GpmlConverter.getUnifiedIdentifiers(model, mapper, xref, intRes);
 									}
 								}
 							}

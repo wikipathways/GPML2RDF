@@ -113,6 +113,9 @@ public class GpmlConverter {
 		outputBridgeDbMapping(model, mapper, idXref, internalWPDataNodeResource,
 			"H", "http://identifiers.org/hgnc.symbol/", Wp.bdbHgncSymbol
 		);
+
+		// Metabolites
+
 		//HMDB
 		outputBridgeDbMapping(model, mapper, idXref, internalWPDataNodeResource,
 			"Ch", "http://identifiers.org/hmdb/", Wp.bdbHmdb
@@ -132,6 +135,17 @@ public class GpmlConverter {
 		// PubChem Compound
 		outputBridgeDbMapping(model, mapper, idXref, internalWPDataNodeResource,
 			"Cpc", "http://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID", Wp.bdbPubChem
+		);
+
+		// Interactions
+
+		// Reactome
+		outputBridgeDbMapping(model, mapper, idXref, internalWPDataNodeResource,
+			"Re", "http://identifiers.org/reactome/", Wp.bdbReactome
+		);
+		// Rhea
+		outputBridgeDbMapping(model, mapper, idXref, internalWPDataNodeResource,
+			"Rh", "http://identifiers.org/rhea/", Wp.bdbRhea
 		);
 	}
 
@@ -274,7 +288,7 @@ public class GpmlConverter {
 		}
 		for(PathwayElement e : p.getDataObjects()) {
 			if(e.getObjectType().equals(ObjectType.LINE)) {
-				InteractionConverter.parseInteractionWp((MLine)e, pathwayModel, data);
+				InteractionConverter.parseInteractionWp((MLine)e, pathwayModel, data, mapper);
 			}
 		}
 	}
