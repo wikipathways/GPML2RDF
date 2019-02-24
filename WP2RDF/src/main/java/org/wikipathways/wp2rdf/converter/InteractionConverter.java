@@ -43,6 +43,7 @@ import org.wikipathways.wp2rdf.utils.Utils;
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.Resource;
 import com.hp.hpl.jena.sparql.vocabulary.FOAF;
+import com.hp.hpl.jena.vocabulary.DC;
 import com.hp.hpl.jena.vocabulary.DCTerms;
 import com.hp.hpl.jena.vocabulary.RDF;
 
@@ -235,6 +236,14 @@ public class InteractionConverter {
 								if(e.getXref() != null && e.getXref().getId() != null && e.getXref().getDataSource() != null) {
 									if (e.getXref().getId() != null && e.getXref().getId().trim().length() > 0) {
 										Xref xref = e.getXref();
+
+										// add the Dublin Code info
+										String xrefid = xref.getId().replace(" ", "_");
+										String dataSource = xref.getDataSource().getFullName();
+										intRes.addLiteral(DC.source, dataSource);
+										intRes.addLiteral(DCTerms.identifier, xrefid);
+
+										// add normalized identifiers (Reaction + Rhea)
 										GpmlConverter.getUnifiedIdentifiers(model, mapper, xref, intRes);
 									}
 								}
