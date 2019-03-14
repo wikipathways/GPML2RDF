@@ -38,6 +38,8 @@ public class Wp {
     
     public static final Property bdbPubChem = m_model.createProperty( "http://vocabularies.wikipathways.org/wp#bdbPubChem" );
     
+    public static final Property bdbKeggCompound = m_model.createProperty( "http://vocabularies.wikipathways.org/wp#bdbKeggCompound" );
+    
     public static final Property bdbRhea = m_model.createProperty( "http://vocabularies.wikipathways.org/wp#bdbRhea" );
 
     public static final Property bdbReactome = m_model.createProperty( "http://vocabularies.wikipathways.org/wp#bdbReactome" );

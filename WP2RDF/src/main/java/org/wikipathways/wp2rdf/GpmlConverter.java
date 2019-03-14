@@ -66,6 +66,7 @@ import com.hp.hpl.jena.rdf.model.Resource;
  * 
  * @author mkutmon
  * @author ryanmiller
+ * @author DeniseSl22
  *
  */
 public class GpmlConverter {
@@ -76,7 +77,7 @@ public class GpmlConverter {
 		Class.forName("org.apache.derby.jdbc.ClientDriver");
 		Class.forName("org.bridgedb.rdb.IDMapperRdb");
 		DataSourceTxt.init();
-		File dir = new File(prop.getProperty("bridgefiles")); //TODO Get Refector to get them directly form bridgedb.org
+		File dir = new File(prop.getProperty("bridgefiles")); //TODO Get Refactor to get them directly from bridgedb.org -> could be done with wget? Or from Dockerised version of bridgeDb?
 		FilenameFilter filter = new FilenameFilter() {
 		    public boolean accept(File dir, String name) {
 		        return name.toLowerCase().endsWith(".bridge");
@@ -84,6 +85,7 @@ public class GpmlConverter {
 		};
 
 		DataSource.register("Wd", "Wikidata");
+		DataSource.register("Ck", "KEGG Compound");
 		File[] bridgeDbFiles = dir.listFiles(filter);
 		IDMapperStack mapper = new IDMapperStack();
 		for (File bridgeDbFile : bridgeDbFiles) {
@@ -136,6 +138,10 @@ public class GpmlConverter {
 		outputBridgeDbMapping(model, mapper, idXref, internalWPDataNodeResource,
 			"Cpc", "http://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID", Wp.bdbPubChem
 		);
+		// Kegg Compound
+				outputBridgeDbMapping(model, mapper, idXref, internalWPDataNodeResource,
+					"Ck", "http://identifiers.org/kegg.compound/", Wp.bdbKeggCompound
+				); 
 
 		// Interactions
 
