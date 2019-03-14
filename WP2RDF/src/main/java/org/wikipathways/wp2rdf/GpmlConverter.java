@@ -86,6 +86,7 @@ public class GpmlConverter {
 
 		DataSource.register("Wd", "Wikidata");
 		DataSource.register("Ck", "KEGG Compound");
+		DataSource.register("Lm", "LIPID MAPS");
 		File[] bridgeDbFiles = dir.listFiles(filter);
 		IDMapperStack mapper = new IDMapperStack();
 		for (File bridgeDbFile : bridgeDbFiles) {
@@ -141,6 +142,10 @@ public class GpmlConverter {
 		// Kegg Compound
 				outputBridgeDbMapping(model, mapper, idXref, internalWPDataNodeResource,
 					"Ck", "http://identifiers.org/kegg.compound/", Wp.bdbKeggCompound
+				); 
+		// LipidMaps
+				outputBridgeDbMapping(model, mapper, idXref, internalWPDataNodeResource,
+					"Lm", "http://identifiers.org/lipidmaps/", Wp.bdbLipidMaps
 				); 
 
 		// Interactions
