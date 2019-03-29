@@ -52,7 +52,7 @@ public class LabelConverter {
 		labelRes.addLiteral(Gpml.FONT_SIZE, elem.getMFontSize());
 		labelRes.addLiteral(Gpml.FONT_NAME, elem.getFontName());
 		labelRes.addLiteral(Gpml.ALIGN, elem.getAlign().getGpmlName());
-		labelRes.addLiteral(Gpml.GRAPH_ID, elem.getGraphId());
+		//labelRes.addLiteral(Gpml.GRAPH_ID, elem.getGraphId()); //Commented this line, since it is causing problems in RDF creation
 		if(elem.getGroupRef() != null) labelRes.addLiteral(Gpml.GROUP_REF, elem.getGroupRef());
 		labelRes.addLiteral(Gpml.COLOR, Utils.colorToHex(elem.getColor()));
 		labelRes.addLiteral(Gpml.CENTER_Y, elem.getMCenterY());
