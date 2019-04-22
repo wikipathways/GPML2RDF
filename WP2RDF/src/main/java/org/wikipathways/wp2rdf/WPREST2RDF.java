@@ -77,6 +77,11 @@ public class WPREST2RDF {
 	}};
 
 	@SuppressWarnings("serial")
+	private static final List<String> BLACKLIST_TAGS = new ArrayList<String>() {{
+		add("Curation:ProposedDeletion");
+	}};
+
+	@SuppressWarnings("serial")
 	private static final Map<Organism,String> SPECIES = new HashMap<Organism,String>() {
 		void add(Organism organism) {
 			put(organism, organism.shortName() != null ? organism.shortName() : organism.code());
@@ -162,6 +167,17 @@ public class WPREST2RDF {
 					} else {
 						tags.add(tag.getName());
 						includedPathways.put(pwId, tags);
+					}
+				}
+			}
+			// pathways with tags that should not be converted into RDF
+			for (String tagName : BLACKLIST_TAGS) {
+				WSCurationTag[] curatedTags = client.getCurationTagsByName(tagName);
+				for (WSCurationTag tag : curatedTags) {
+					String pwId = tag.getPathway().getId();
+					List<String> tags = includedPathways.get(pwId);
+					if (tags != null) {
+						includedPathways.remove(pwId);
 					}
 				}
 			}
