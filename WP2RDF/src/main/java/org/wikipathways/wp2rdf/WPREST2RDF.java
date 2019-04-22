@@ -175,8 +175,8 @@ public class WPREST2RDF {
 				WSCurationTag[] curatedTags = client.getCurationTagsByName(tagName);
 				for (WSCurationTag tag : curatedTags) {
 					String pwId = tag.getPathway().getId();
-					List<String> tags = includedPathways.get(pwId);
-					if (tags != null) {
+					if (includedPathways.containsKey(pwId)) {
+						System.out.println("Removing blacklisted pathway: " + pwId);
 						includedPathways.remove(pwId);
 					}
 				}
