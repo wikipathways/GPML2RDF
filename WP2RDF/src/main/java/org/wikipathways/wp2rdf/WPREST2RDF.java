@@ -175,10 +175,8 @@ public class WPREST2RDF {
 				WSCurationTag[] curatedTags = client.getCurationTagsByName(tagName);
 				for (WSCurationTag tag : curatedTags) {
 					String pwId = tag.getPathway().getId();
-					if (includedPathways.containsKey(pwId)) {
-						System.out.println("Removing blacklisted pathway: " + pwId);
-						includedPathways.remove(pwId);
-					}
+					System.out.println("Removing blacklisted pathway: " + pwId);
+					EXCLUDED_PATHWAYS.add(pwId);
 				}
 			}
 		} catch (Exception exception) {
