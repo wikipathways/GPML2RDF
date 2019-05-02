@@ -65,6 +65,7 @@ public class GroupConverter {
 					graphId = group.getGroupId();
 				}
 				Resource groupRes = model.createResource(Utils.WP_RDF_URL + "/Pathway/" + data.getPwyId() + "_r" + data.getRevision() + "/Complex/" + graphId);
+				groupRes.addProperty(RDF.type, Wp.DataNode);
 				groupRes.addProperty(RDF.type, Wp.Complex);
 				groupRes.addProperty(Wp.isAbout, Utils.WP_RDF_URL + "/Pathway/" + data.getPwyId() + "_r" + data.getRevision() + "/Group/" + graphId);
 				groupRes.addProperty(DCTerms.isPartOf, data.getPathwayRes());
