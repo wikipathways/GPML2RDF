@@ -74,11 +74,13 @@ public class WPREST2RDF {
 	@SuppressWarnings("serial")
 	private static final List<String> EXTRA_TAGS = new ArrayList<String>() {{
 		add("Curation:LIPID_MAPS");
+		
 	}};
 
 	@SuppressWarnings("serial")
 	private static final List<String> BLACKLIST_TAGS = new ArrayList<String>() {{
 		add("Curation:ProposedDeletion");
+		add("Curation:Tutorial");
 	}};
 
 	@SuppressWarnings("serial")
