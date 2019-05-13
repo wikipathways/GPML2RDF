@@ -415,7 +415,8 @@ public class InteractionConverter {
 		} else if (lt.equals(MIMShapes.MIM_BINDING)) {
 			return Wp.Binding;
 		} else if (lt.equals(MIMShapes.MIM_NECESSARY_STIMULATION)) {
-			System.out.println("TODO: necessary stimulation");
+			System.out.println("TODO: necessary stimulation; mapping to wp:Stimulation for now");
+			return Wp.Stimulation;
 		} else if (lt.equals(MIMShapes.MIM_MODIFICATION)) {
 			System.out.println("TODO: modification");
 		} else {
