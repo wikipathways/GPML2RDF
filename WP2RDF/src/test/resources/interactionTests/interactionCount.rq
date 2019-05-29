@@ -1,0 +1,5 @@
+prefix wp:      <http://vocabularies.wikipathways.org/wp#>
+
+select distinct ?node where {
+  ?node a wp:Interaction .
+}
