@@ -324,7 +324,7 @@ public class WPREST2RDF {
 		voidBase.addProperty(Pav.importedOn, nowLiteral);
 		voidBase.addProperty(
 			voidModel.createProperty("http://purl.org/dc/terms/accuralPeriodicity"),
-			voidModel.createResource("http://purl.org/cld/freq/irregular")
+			voidModel.createResource("http://purl.org/cld/freq/monthly")
 		);
 		voidBase.addProperty(Pav.createdBy, authorResource);
 		voidBase.addProperty(Pav.createdAt, instituteResource);		 
