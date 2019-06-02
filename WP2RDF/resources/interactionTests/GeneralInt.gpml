@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Pathway xmlns="http://pathvisio.org/GPML/2013a" Name="GeneralInteraction" Version="20190527" Organism="Homo sapiens">
+  <Graphics BoardWidth="618.0" BoardHeight="196.0" />
+  <DataNode TextLabel="MAVS" GraphId="a7382" Type="GeneProduct">
+    <Graphics CenterX="203.0" CenterY="142.75" Width="90.0" Height="46.5" ZOrder="32768" FontSize="12" Valign="Middle" />
+    <Xref Database="Ensembl" ID="ENSG00000088888" />
+  </DataNode>
+  <DataNode TextLabel="TRAF2" GraphId="ba71a" Type="GeneProduct">
+    <Graphics CenterX="419.0" CenterY="141.25" Width="90.0" Height="45.5" ZOrder="32768" FontSize="12" Valign="Middle" />
+    <Xref Database="Ensembl" ID="ENSG00000127191" />
+  </DataNode>
+  <Interaction>
+    <Graphics ZOrder="12288" LineThickness="1.0">
+      <Point X="248.0" Y="142.75" GraphRef="a7382" RelX="1.0" RelY="0.0" />
+      <Point X="374.0" Y="141.25" GraphRef="ba71a" RelX="-1.0" RelY="0.0" />
+    </Graphics>
+    <Xref Database="WikiPathways" ID="" />
+  </Interaction>
+  <InfoBox CenterX="0.0" CenterY="0.0" />
+  <Biopax />
+</Pathway>
