@@ -3,6 +3,12 @@ package org.wikipathways.wp2rdf.interactionTests;
 import org.junit.BeforeClass;
 import org.pathvisio.core.view.MIMShapes;
 
+/**
+ * Based on test data by Ryan Miller. See <a href="https://github.com/RyAMiller/WikiPathwaysInteractions">this repository</a>.
+ *
+ * @author Egon Willighagen
+ * @author Ryan Miller
+ */
 public class ConversionTest extends AbstractInteractionTest {
 
 	@BeforeClass
