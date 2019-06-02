@@ -35,7 +35,6 @@ abstract public class AbstractInteractionTest extends AbstractWPConvertorTest {
 		StringMatrix table = SPARQLHelper.sparql(model, sparql);
 		Assert.assertNotNull(table);
 		Assert.assertNotSame(0, table.getRowCount());
-		System.out.println(toString(model));
 		Assert.assertTrue(table.getColumn("type").contains(expectedType));
 	}
 }
