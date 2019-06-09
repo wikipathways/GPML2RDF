@@ -386,6 +386,16 @@ public class WPREST2RDF {
 			);
 			distribution.addProperty(Void.dataDump, mainDatadump);
 		}
+
+		// create link sets
+
+		// WPRDF - Wikidata
+		Resource linkset = voidModel.createResource(domain + date + "/linkset/wikidata");
+		linkset.addProperty(RDF.type, Void.Linkset);
+		linkset.addProperty(Void.subjectsTarget, voidBase);
+		linkset.addProperty(DCTerms.title, "WPRDF to Wikidata Linkset");
+		linkset.addProperty(Void.subjectsTarget, voidModel.createResource("https://www.wikidata.org/entity/Q2013"));
+		linkset.addProperty(Void.linkPredicate, Wp.bdbWikidata);
 	}
 
 	public static IDMapperStack maps () throws FileNotFoundException, IOException, ClassNotFoundException, IDMapperException{
