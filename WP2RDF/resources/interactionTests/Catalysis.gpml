@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Pathway xmlns="http://pathvisio.org/GPML/2013a" Name="Catalysis" Version="20190528" Organism="Homo sapiens">
+  <Graphics BoardWidth="506.0" BoardHeight="249.5" />
+  <DataNode TextLabel="DHFU" GraphId="ae6f8" Type="Metabolite">
+    <Graphics CenterX="425.5" CenterY="196.25" Width="99.0" Height="30.5" ZOrder="32768" FontSize="12" Valign="Middle" Color="0000ff" />
+    <Xref Database="PubChem-compound" ID="121997" />
+  </DataNode>
+  <DataNode TextLabel="DPYD" GraphId="d71d6" Type="GeneProduct">
+    <Graphics CenterX="263.0" CenterY="96.25" Width="96.0" Height="34.5" ZOrder="32768" FontSize="12" Valign="Middle" />
+    <Xref Database="Entrez Gene" ID="1806" />
+  </DataNode>
+  <DataNode TextLabel="5-FU" GraphId="e879b" Type="Metabolite">
+    <Graphics CenterX="122.0" CenterY="198.25" Width="94.0" Height="32.5" ZOrder="32768" FontSize="12" Valign="Middle" Color="0000ff" />
+    <Xref Database="ChEBI" ID="CHEBI:46345" />
+  </DataNode>
+  <Interaction>
+    <Graphics ZOrder="12288" LineThickness="1.0">
+      <Point X="169.0" Y="198.25" GraphRef="e879b" RelX="1.0" RelY="0.0" />
+      <Point X="376.0" Y="196.25" GraphRef="ae6f8" RelX="-1.0" RelY="0.0" ArrowHead="mim-conversion" />
+      <Anchor Position="0.4684736191165146" Shape="None" GraphId="b35e2" />
+    </Graphics>
+    <Xref Database="" ID="" />
+  </Interaction>
+  <Interaction>
+    <Graphics ZOrder="12288" LineThickness="1.0">
+      <Point X="263.0" Y="113.5" GraphRef="d71d6" RelX="0.0" RelY="1.0" />
+      <Point X="265.9740391571185" Y="197.31305276176698" GraphRef="b35e2" RelX="0.0" RelY="0.0" ArrowHead="mim-catalysis" />
+    </Graphics>
+    <Xref Database="" ID="" />
+  </Interaction>
+  <InfoBox CenterX="0.0" CenterY="0.0" />
+  <Biopax />
+</Pathway>
+

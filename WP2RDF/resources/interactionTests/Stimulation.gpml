@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Pathway xmlns="http://pathvisio.org/GPML/2013a" Name="Stimulation" Version="20190528" Organism="Homo sapiens">
+  <Graphics BoardWidth="543.75" BoardHeight="269.5" />
+  <DataNode TextLabel="E2F1" GraphId="d48f3" Type="Protein">
+    <Graphics CenterX="385.875" CenterY="220.625" Width="100.25" Height="33.25" ZOrder="32768" FontSize="12" Valign="Middle" />
+    <Xref Database="Uniprot-SwissProt" ID="Q01094" />
+  </DataNode>
+  <DataNode TextLabel="SMAD2" GraphId="e8bf6" Type="Protein">
+    <Graphics CenterX="127.5" CenterY="223.25" Width="99.0" Height="30.5" ZOrder="32768" FontSize="12" Valign="Middle" />
+    <Xref Database="Uniprot-SwissProt" ID="Q15796" />
+  </DataNode>
+  <Interaction>
+    <Graphics ZOrder="12288" LineThickness="1.0">
+      <Point X="177.0" Y="223.25" GraphRef="e8bf6" RelX="1.0" RelY="0.0" />
+      <Point X="335.75" Y="220.625" GraphRef="d48f3" RelX="-1.0" RelY="0.0" ArrowHead="mim-stimulation" />
+    </Graphics>
+    <Xref Database="" ID="" />
+  </Interaction>
+  <InfoBox CenterX="0.0" CenterY="0.0" />
+  <Biopax />
+</Pathway>
+

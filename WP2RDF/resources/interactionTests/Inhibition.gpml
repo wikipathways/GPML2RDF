@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Pathway xmlns="http://pathvisio.org/GPML/2013a" Name="Inhibition" Version="20190528" Organism="Homo sapiens">
+  <Graphics BoardWidth="446.0" BoardHeight="236.5" />
+  <DataNode TextLabel="NOG" GraphId="c5438" Type="GeneProduct">
+    <Graphics CenterX="100.5" CenterY="187.25" Width="101.0" Height="30.5" ZOrder="32768" FontSize="12" Valign="Middle" />
+    <Xref Database="Ensembl" ID="ENSG00000183691" />
+  </DataNode>
+  <DataNode TextLabel="BMP2" GraphId="d290e" Type="GeneProduct">
+    <Graphics CenterX="365.375" CenterY="187.625" Width="99.25" Height="29.25" ZOrder="32768" FontSize="12" Valign="Middle" />
+    <Xref Database="Ensembl" ID="ENSG00000125845" />
+  </DataNode>
+  <Interaction>
+    <Graphics ZOrder="12288" LineThickness="1.0">
+      <Point X="151.0" Y="187.25" GraphRef="c5438" RelX="1.0" RelY="0.0" />
+      <Point X="315.75" Y="187.625" GraphRef="d290e" RelX="-1.0" RelY="0.0" ArrowHead="mim-inhibition" />
+    </Graphics>
+    <Xref Database="" ID="" />
+  </Interaction>
+  <InfoBox CenterX="0.0" CenterY="0.0" />
+  <Biopax />
+</Pathway>
+

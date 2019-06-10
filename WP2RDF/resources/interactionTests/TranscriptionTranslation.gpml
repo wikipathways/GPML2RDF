@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Pathway xmlns="http://pathvisio.org/GPML/2013a" Name="Transcription-Translation" Version="20190528" Organism="Homo sapiens">
+  <Graphics BoardWidth="532.0" BoardHeight="271.0" />
+  <DataNode TextLabel="TFAP2A" GraphId="b4648" Type="GeneProduct">
+    <Graphics CenterX="190.125" CenterY="205.625" Width="93.75" Height="33.25" ZOrder="32768" FontSize="12" Valign="Middle" />
+    <Xref Database="Ensembl" ID="ENSG00000137203" />
+  </DataNode>
+  <DataNode TextLabel="SOX10" GraphId="ffd14" Type="GeneProduct">
+    <Graphics CenterX="448.5" CenterY="204.75" Width="103.0" Height="33.5" ZOrder="32768" FontSize="12" Valign="Middle" />
+    <Xref Database="Ensembl" ID="ENSG00000100146" />
+  </DataNode>
+  <Interaction>
+    <Graphics ZOrder="12288" LineThickness="1.0">
+      <Point X="237.0" Y="205.625" GraphRef="b4648" RelX="1.0" RelY="0.0" />
+      <Point X="397.0" Y="204.75" GraphRef="ffd14" RelX="-1.0" RelY="0.0" ArrowHead="mim-transcription-translation" />
+    </Graphics>
+    <Xref Database="" ID="" />
+  </Interaction>
+  <InfoBox CenterX="0.0" CenterY="0.0" />
+  <Biopax />
+</Pathway>
+

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Pathway xmlns="http://pathvisio.org/GPML/2013a" Name="Multiple Outputs" Version="20190603" Organism="Homo sapiens">
+  <Graphics BoardWidth="525.0" BoardHeight="292.5" />
+  <DataNode TextLabel="ammonium" GraphId="cfbb4" Type="Metabolite">
+    <Graphics CenterX="428.5" CenterY="182.25" Width="105.0" Height="35.5" ZOrder="32768" FontSize="12" Valign="Middle" Color="0000ff" />
+    <Xref Database="ChEBI" ID="CHEBI:28938" />
+  </DataNode>
+  <DataNode TextLabel="L-glutamate(1−)" GraphId="da38b" Type="Metabolite">
+    <Graphics CenterX="431.5" CenterY="119.75" Width="107.0" Height="34.5" ZOrder="32768" FontSize="12" Valign="Middle" Color="0000ff" />
+    <Xref Database="ChEBI" ID="CHEBI:29985" />
+  </DataNode>
+  <DataNode TextLabel="L-glutamine" GraphId="e9de5" Type="Metabolite">
+    <Graphics CenterX="163.875" CenterY="137.375" Width="109.75" Height="32.75" ZOrder="32768" FontSize="12" Valign="Middle" Color="0000ff" />
+    <Xref Database="ChEBI" ID="CHEBI:58359" />
+  </DataNode>
+  <Interaction>
+    <Graphics ZOrder="12288" LineThickness="1.0">
+      <Point X="218.75" Y="137.375" GraphRef="e9de5" RelX="1.0" RelY="0.0" />
+      <Point X="378.0" Y="119.75" GraphRef="da38b" RelX="-1.0" RelY="0.0" ArrowHead="mim-conversion" />
+      <Anchor Position="0.5249577438727856" Shape="None" GraphId="c04a8" />
+    </Graphics>
+    <Xref Database="" ID="" />
+  </Interaction>
+  <Interaction>
+    <Graphics ZOrder="12288" LineThickness="1.0">
+      <Point X="302.3495207117411" Y="128.12261976424216" GraphRef="c04a8" RelX="0.0" RelY="0.0" />
+      <Point X="376.0" Y="182.25" GraphRef="cfbb4" RelX="-1.0" RelY="0.0" ArrowHead="mim-conversion" />
+    </Graphics>
+    <Xref Database="" ID="" />
+  </Interaction>
+  <InfoBox CenterX="0.0" CenterY="0.0" />
+  <Biopax />
+</Pathway>
+

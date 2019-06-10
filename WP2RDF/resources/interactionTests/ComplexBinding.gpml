@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Pathway xmlns="http://pathvisio.org/GPML/2013a" Name="Binding" Version="20190528" Organism="Homo sapiens">
+  <Graphics BoardWidth="525.75" BoardHeight="377.25" />
+  <DataNode TextLabel="CDK2" GraphId="a46a0" Type="Protein" GroupRef="a8d51">
+    <Graphics CenterX="161.25" CenterY="293.75" Width="90.0" Height="25.0" ZOrder="32768" FontSize="12" Valign="Middle" />
+    <Xref Database="Uniprot-SwissProt" ID="P24941" />
+  </DataNode>
+  <DataNode TextLabel="CCNA2" GraphId="a7d1c" Type="GeneProduct" GroupRef="a8d51">
+    <Graphics CenterX="160.0" CenterY="268.0" Width="90.0" Height="25.0" ZOrder="32768" FontSize="12" Valign="Middle" />
+    <Xref Database="Uniprot-SwissProt" ID="P20248" />
+  </DataNode>
+  <DataNode TextLabel="CDKN1A" GraphId="b4c82" Type="Protein" GroupRef="a8d51">
+    <Graphics CenterX="160.0" CenterY="190.0" Width="90.0" Height="25.0" ZOrder="32768" FontSize="12" Valign="Middle" />
+    <Xref Database="Uniprot-SwissProt" ID="P38936" />
+  </DataNode>
+  <DataNode TextLabel="CCNA1" GraphId="c9f37" Type="Protein" GroupRef="a8d51">
+    <Graphics CenterX="159.75" CenterY="241.75" Width="90.0" Height="25.0" ZOrder="32768" FontSize="12" Valign="Middle" />
+    <Xref Database="Uniprot-SwissProt" ID="P78396" />
+  </DataNode>
+  <DataNode TextLabel="CDKN1B" GraphId="ec6b7" Type="Protein" GroupRef="a8d51">
+    <Graphics CenterX="159.0" CenterY="216.0" Width="90.0" Height="25.0" ZOrder="32768" FontSize="12" Valign="Middle" />
+    <Xref Database="Uniprot-SwissProt" ID="P46527" />
+  </DataNode>
+  <Group GroupId="a8d51" Style="Complex" />
+  <InfoBox CenterX="0.0" CenterY="0.0" />
+  <Biopax />
+</Pathway>
+

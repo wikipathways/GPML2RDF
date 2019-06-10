@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Pathway xmlns="http://pathvisio.org/GPML/2013a" Name="Unspecified Directed" Version="20190527" Organism="Homo sapiens">
+  <Graphics BoardWidth="539.0" BoardHeight="253.0" />
+  <DataNode TextLabel="CSF2RB" GraphId="cdcc6" Type="GeneProduct">
+    <Graphics CenterX="172.625" CenterY="195.5" Width="118.75" Height="55.0" ZOrder="32768" FontSize="12" Valign="Middle" />
+    <Xref Database="Entrez Gene" ID="1439" />
+  </DataNode>
+  <DataNode TextLabel="STAT3" GraphId="ede06" Type="GeneProduct">
+    <Graphics CenterX="455.5" CenterY="194.75" Width="107.0" Height="54.5" ZOrder="32768" FontSize="12" Valign="Middle" />
+    <Xref Database="Entrez Gene" ID="6774" />
+  </DataNode>
+  <Interaction>
+    <Graphics ZOrder="12288" LineThickness="1.0">
+      <Point X="232.0" Y="195.5" GraphRef="cdcc6" RelX="1.0" RelY="0.0" />
+      <Point X="402.0" Y="194.75" GraphRef="ede06" RelX="-1.0" RelY="0.0" ArrowHead="Arrow" />
+    </Graphics>
+    <Xref Database="" ID="" />
+  </Interaction>
+  <InfoBox CenterX="0.0" CenterY="0.0" />
+  <Biopax />
+</Pathway>
+
