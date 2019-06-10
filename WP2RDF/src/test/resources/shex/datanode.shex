@@ -1,0 +1,45 @@
+BASE <https://raw.githubusercontent.com/wikipathways/GPML2RDF/master/WP2RDF/src/test/resources/shex/datanode.shex>
+
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix dcterms:	<http://purl.org/dc/terms/>
+prefix dc:	 <http://purl.org/dc/elements/1.1/>
+prefix foaf: <http://xmlns.com/foaf/0.1/>
+prefix pav:  <http://purl.org/pav/>
+prefix skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+# original IRI
+PREFIX wp: <http://vocabularies.wikipathways.org/wp#>
+prefix wpInstance: <http://www.wikipathways.org/instance/>
+PREFIX gpml: <http://vocabularies.wikipathways.org/gpml#>
+PREFIX pubmed: <http://www.ncbi.nlm.nih.gov/pubmed/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+
+# identifier.org based iris
+PREFIX wdio: <http://identifiers.org/wikidata/>
+PREFIX uniprotio: <http://identifiers.org/uniprot/> 
+PREFIX pubmedio: <http://identifiers.org/pubmed/> 
+PREFIX wpio: <http://identifiers.org/wikipathways/> 
+PREFIX ncbigeneio: <http://identifiers.org/ncbigene/>
+PREFIX ensemblio: <http://identifiers.org/ensembl/>
+# Wikidata
+PREFIX wd: <http://www.wikidata.org/entity/> 
+
+start = @<#geneproduct>
+
+<#geneproduct> {
+	rdf:type	wp:DataNode ;
+	rdf:type    wp:GeneProduct ;
+	rdfs:label  xsd:string ;
+	dc:identifier [ncbigeneio:~] ;	
+	dcterms:identifier xsd:string ;
+	wp:bdbEnsembl	[ensemblio:~] ;
+	wp:bdbEntrezGene [ncbigeneio:~] ;
+	wp:bdbUniprot [uniprotio:~]* ; 
+	wp:isAbout IRI ; # Needs to be more specific.
+}
+
+
+
+
