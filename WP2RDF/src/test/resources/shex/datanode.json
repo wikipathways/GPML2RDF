@@ -1,6 +1,6 @@
 [
     {
-        "schemaLabel": "pathway",
+        "schemaLabel": "datanode",
         "schemaURL": "https://raw.githubusercontent.com/wikipathways/GPML2RDF/master/WP2RDF/src/test/resources/shex/datanode.shex",
         "dataLabel": "Get 1 datanode from WikiPathways" ,
         "data": "Endpoint: http://sparql.wikipathways.org/",
