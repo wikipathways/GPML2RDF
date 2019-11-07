@@ -42,6 +42,8 @@ public class Wp {
     
     public static final Property bdbLipidMaps = m_model.createProperty( "http://vocabularies.wikipathways.org/wp#bdbLipidMaps" );
     
+    public static final Property bdbInChIKey = m_model.createProperty( "http://vocabularies.wikipathways.org/wp#bdbInChIKey" );
+
     public static final Property bdbRhea = m_model.createProperty( "http://vocabularies.wikipathways.org/wp#bdbRhea" );
 
     public static final Property bdbReactome = m_model.createProperty( "http://vocabularies.wikipathways.org/wp#bdbReactome" );

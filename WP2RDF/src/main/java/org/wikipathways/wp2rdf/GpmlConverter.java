@@ -57,6 +57,7 @@ import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
 import com.hp.hpl.jena.rdf.model.Property;
 import com.hp.hpl.jena.rdf.model.Resource;
+import com.hp.hpl.jena.vocabulary.RDFS;
 
 /**
  * Class that converts a pathway
@@ -147,6 +148,22 @@ public class GpmlConverter {
 				outputBridgeDbMapping(model, mapper, idXref, internalWPDataNodeResource,
 					"Lm", "http://identifiers.org/lipidmaps/", Wp.bdbLipidMaps
 				); 
+		// InChIKey
+		if (mapper != null) {
+			try {
+				DataSource source = DataSource.getExistingBySystemCode("Ik");
+				Set<Xref> unifiedIdXref = mapper.mapID(idXref, source);
+				Iterator<Xref> iter = unifiedIdXref.iterator();
+				while (iter.hasNext()){
+					Xref unifiedId = (Xref) iter.next();
+					String inchikey = unifiedId.getId();
+					Resource inchiResource = model.createResource("http://identifiers.org/inchikey/" + inchikey);
+					internalWPDataNodeResource.addProperty(Wp.bdbInChIKey, inchiResource);
+					Resource neutralResource = model.createResource("http://identifiers.org/inchikey/" + inchikey.substring(0,inchikey.length()-1) + "N");
+					internalWPDataNodeResource.addProperty(RDFS.seeAlso, neutralResource);
+				}
+			} catch (Exception exception) {}
+		}
 
 		// Interactions
 
