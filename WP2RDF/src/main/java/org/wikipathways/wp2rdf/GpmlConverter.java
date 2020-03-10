@@ -162,7 +162,9 @@ public class GpmlConverter {
 					Resource neutralResource = model.createResource("http://identifiers.org/inchikey/" + inchikey.substring(0,inchikey.length()-1) + "N");
 					internalWPDataNodeResource.addProperty(RDFS.seeAlso, neutralResource);
 				}
-			} catch (Exception exception) {}
+			} catch (Exception exception) {
+				System.out.println("InChIKey exception: " + exception.getMessage());
+			}
 		}
 
 		// Interactions
