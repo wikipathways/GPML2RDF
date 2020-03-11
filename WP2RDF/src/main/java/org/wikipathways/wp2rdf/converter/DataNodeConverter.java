@@ -73,6 +73,7 @@ public class DataNodeConverter {
 					Xref xref = elem.getXref();
 					String xrefid = xref.getId(); 
 					String url = elem.getDataSource().getIdentifiersOrgUri(xrefid);
+					String foafURL = elem.getDataSource().getKnownUrl(xrefid);
 					if ("HMDB".equals(xref.getDataSource().getFullName())) {
 						if (xrefid.length() == 11) {
 							// OK, all is fine
@@ -151,6 +152,11 @@ public class DataNodeConverter {
 							
 							data.getDataNodes().put(elem.getXref(), datanodeRes);
 							data.getPathwayElements().put(elem, datanodeRes);
+						}
+						// FOAF URL
+						if (foafURL != null) {
+							Resource foafResource = model.createResource(foafURL);
+							datanodeRes.addProperty(FOAF.page, foafResource);
 						}
 						// TODO: what to do about those - are they pathway specific?
 						for(PublicationXref pubXref : elem.getBiopaxReferenceManager().getPublicationXRefs()) {
