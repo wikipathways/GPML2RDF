@@ -5,11 +5,42 @@ are available from the WikiPathways RDF Portal: http://rdf.wikipathways.org/
 
 ## Installation
 
-### Setup:
+### Setup
 
 Clone or download this repository, and then import as an "Existing Java Project" in Eclipse.
 
-### Try different pathways:
+There are two dependencies. You can made them available to Maven using the below instructions.
+
+#### WikiPathways API client 
+
+```shell
+git clone git@github.com:wikipathways/wikipathways-api-client-java.git
+cd wikipathways-api-client-java
+mvn clean install
+mvn install:install-file -Dfile=org.wikipathways.client/org.wikipathways.webservice.api.bundle.jar \
+  -DgroupId=org.pathvisio -DartifactId=wikipathways-client -Dversion=3.2.1.wprdf -Dpackaging=jar
+```
+
+#### PathVisio Core
+
+```shell
+git clone git@github.com:PathVisio/pathvisio.git
+cd pathvisio
+git checkout -b series/3.3.0 v3.3.0
+ant clean core.jar
+mvn install:install-file -Dfile=modules/org.pathvisio.core.jar -DgroupId=org.pathvisio \
+  -DartifactId=pathvisio-core -Dversion=3.4.0 -Dpackaging=jar
+```
+
+### Compiling
+
+There is a `pom.xml` and you can compile the code with:
+
+```shell
+mvn clean install
+```
+
+### Try different pathways
 
 Add GPML file in resources directory --> Open WP2RDF class --> Change pathwayFile location
 
