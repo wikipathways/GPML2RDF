@@ -4,11 +4,11 @@ import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class WP4846Test extends AbstractWPConvertorTest {
+public class WP4853Test extends AbstractWPConvertorTest {
 
 	@BeforeClass
 	public static void createModel() throws Exception {
-		loadModelAsWPRDF("WP4846.gpml", "WP4846", "109431");
+		loadModelAsWPRDF("WP4853.gpml", "WP4853", "109431");
 	}
 
 	@Test
@@ -17,7 +17,7 @@ public class WP4846Test extends AbstractWPConvertorTest {
 		StringMatrix table = SPARQLHelper.sparql(model, sparql);
 		Assert.assertNotNull(table);
 		Assert.assertEquals("PubMed with a null IDs:\n" + table, 0, table.getRowCount());
-		System.out.println("===== WP4846.gpml =====");
+		System.out.println("===== WP4853.gpml =====");
 		String ttlContent = toString(model);
 		System.out.println(ttlContent);
 	}
