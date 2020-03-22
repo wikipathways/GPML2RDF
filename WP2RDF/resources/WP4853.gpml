@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Pathway xmlns="http://pathvisio.org/GPML/2013a" Name="Coronavirus lipid metabolism" Version="20200320" Organism="Homo sapiens">
+  <Comment Source="WikiPathways-description">Lipid metabolism alternations that are related to infection by the corona virus. The information comes from the Yan et al. in 2019 in the bibliography, particularly Figure 5.</Comment>
+  <BiopaxRef>fbb</BiopaxRef>
+  <Graphics BoardWidth="474.767251064086" BoardHeight="619.0" />
+  <DataNode TextLabel="palmitic acid" GraphId="b2e17" Type="Metabolite">
+    <Graphics CenterX="334.42105263157924" CenterY="277.5263157894738" Width="90.0" Height="25.0" ZOrder="32768" FontSize="12" Valign="Middle" Color="0000ff" />
+    <Xref Database="LIPID MAPS" ID="LMFA01010001" />
+  </DataNode>
+  <DataNode TextLabel="Arachidonic acid" GraphId="b4efb" Type="Metabolite">
+    <Graphics CenterX="185.51725106408603" CenterY="551.3289473684216" Width="88.92105263157896" Height="23.657894736841982" ZOrder="32768" FontSize="12" Valign="Middle" Color="0000ff" />
+    <Xref Database="LIPID MAPS" ID="LMFA01030001" />
+  </DataNode>
+  <DataNode TextLabel="Cytosolic Phospholipase A2" GraphId="b7b4c" Type="GeneProduct">
+    <Graphics CenterX="328.89473684210554" CenterY="220.09724712583062" Width="169.57894736842044" Height="25.0" ZOrder="32768" FontSize="12" Valign="Middle" />
+    <Xref Database="BRENDA" ID="3.1.1.4" />
+  </DataNode>
+  <DataNode TextLabel="linoleic acid" GraphId="b9202" Type="Metabolite">
+    <Graphics CenterX="185.51725106408603" CenterY="347.0" Width="90.0" Height="25.0" ZOrder="32768" FontSize="12" Valign="Middle" Color="0000ff" />
+    <Xref Database="LIPID MAPS" ID="LMFA01030120" />
+  </DataNode>
+  <DataNode TextLabel="LysoPC16:0" GraphId="bcd60" Type="Metabolite" GroupRef="b2683">
+    <Graphics CenterX="85.78947368421053" CenterY="261.8552631578946" Width="89.47368421052633" Height="25.763157894736857" ZOrder="32768" FontSize="12" Valign="Middle" Color="0000ff" />
+    <Xref Database="LIPID MAPS" ID="LMGP01050113" />
+  </DataNode>
+  <DataNode TextLabel="Linoleoyl-CoA&#xA;desaturase&#xA;" GraphId="d2e0b" Type="GeneProduct">
+    <Graphics CenterX="308.3684210526327" CenterY="375.25" Width="90.0" Height="29.5" ZOrder="32768" FontSize="12" Valign="Middle" />
+    <Xref Database="BRENDA" ID="1.14.19.3" />
+  </DataNode>
+  <DataNode TextLabel="LysPE 16:0" GraphId="e24ab" Type="Metabolite" GroupRef="b2683">
+    <Graphics CenterX="87.36842105263158" CenterY="238.69736842105263" Width="91.0263157894737" Height="21.552631578947423" ZOrder="32768" FontSize="12" Valign="Middle" Color="0000ff" />
+    <Xref Database="" ID="" />
+  </DataNode>
+  <DataNode TextLabel="bishomo-gamma-linolenic acid" GraphId="e6b51" Type="Metabolite">
+    <Graphics CenterX="184.21052631578948" CenterY="489.2236842105263" Width="191.57894736842104" Height="29.973684210526358" ZOrder="32768" FontSize="12" Valign="Middle" Color="0000ff" />
+    <Xref Database="LIPID MAPS" ID="LMFA01030158" />
+  </DataNode>
+  <DataNode TextLabel="oleic acid&#xA;" GraphId="ecc95" Type="Metabolite">
+    <Graphics CenterX="337.5789473684218" CenterY="311.94736842105226" Width="90.0" Height="25.0" ZOrder="32768" FontSize="12" Valign="Middle" Color="0000ff" />
+    <Xref Database="LIPID MAPS" ID="LMFA01030002" />
+  </DataNode>
+  <DataNode TextLabel="Glycerophospholipids" GraphId="f34d0" Type="Metabolite">
+    <Graphics CenterX="185.51725106408603" CenterY="165.75" Width="113.5" Height="22.5" ZOrder="32768" FontSize="12" Valign="Middle" Color="0000ff" />
+    <Xref Database="" ID="" />
+  </DataNode>
+  <DataNode TextLabel="gamma-&#xA;linolenic acid" GraphId="cf458" Type="Metabolite">
+    <Graphics CenterX="185.51725106408603" CenterY="413.75" Width="90.0" Height="34.5" ZOrder="32769" FontSize="12" Valign="Middle" Color="0000ff" />
+    <Xref Database="LIPID MAPS" ID="LMFA01030141" />
+  </DataNode>
+  <Interaction GraphId="id137e44e">
+    <Graphics ZOrder="12288" LineThickness="1.0">
+      <Point X="186.3456450267082" Y="244.37843658847936" />
+      <Point X="289.42105263157924" Y="271.2763157894738" GraphRef="b2e17" RelX="-1.0" RelY="-0.5" ArrowHead="mim-conversion" />
+    </Graphics>
+    <Xref Database="" ID="" />
+  </Interaction>
+  <Interaction GraphId="id41594063">
+    <Graphics ZOrder="12288" LineThickness="1.0">
+      <Point X="184.21052631578948" Y="504.2105263157895" GraphRef="e6b51" RelX="0.0" RelY="1.0" />
+      <Point X="185.51725106408603" Y="539.5000000000005" GraphRef="b4efb" RelX="0.0" RelY="-1.0" ArrowHead="mim-conversion" />
+    </Graphics>
+    <Xref Database="" ID="" />
+  </Interaction>
+  <Interaction GraphId="id4fda8300">
+    <Graphics ZOrder="12288" LineThickness="1.0">
+      <Point X="185.51725106408603" Y="177.0" GraphRef="f34d0" RelX="0.0" RelY="1.0" />
+      <Point X="185.51725106408603" Y="334.5" GraphRef="b9202" RelX="0.0" RelY="-1.0" ArrowHead="mim-conversion" />
+    </Graphics>
+    <Xref Database="" ID="" />
+  </Interaction>
+  <Interaction GraphId="id52f68985">
+    <Graphics ZOrder="12288" LineThickness="1.0">
+      <Point X="186.37274549098197" Y="273.5470941883768" />
+      <Point X="292.5789473684218" Y="311.94736842105226" GraphRef="ecc95" RelX="-1.0" RelY="0.0" ArrowHead="mim-conversion" />
+    </Graphics>
+    <Xref Database="" ID="" />
+  </Interaction>
+  <Interaction GraphId="id8ca14613">
+    <Graphics ZOrder="12288" LineThickness="1.0">
+      <Point X="185.51725106408603" Y="359.5" GraphRef="b9202" RelX="0.0" RelY="1.0" />
+      <Point X="185.51725106408603" Y="396.5" GraphRef="cf458" RelX="0.0" RelY="-1.0" ArrowHead="mim-conversion" />
+      <Anchor Position="0.4" Shape="None" GraphId="e4996" />
+    </Graphics>
+    <Xref Database="" ID="" />
+  </Interaction>
+  <Interaction GraphId="idb0f84963">
+    <Graphics ZOrder="12288" LineThickness="1.0">
+      <Point X="185.51725106408603" Y="431.0" GraphRef="cf458" RelX="0.0" RelY="1.0" />
+      <Point X="184.21052631578948" Y="474.2368421052631" GraphRef="e6b51" RelX="0.0" RelY="-1.0" ArrowHead="mim-conversion" />
+    </Graphics>
+    <Xref Database="" ID="" />
+  </Interaction>
+  <Interaction GraphId="idd3306a7b">
+    <Graphics ZOrder="12288" LineThickness="1.0">
+      <Point X="263.3684210526327" Y="375.25" GraphRef="d2e0b" RelX="-1.0" RelY="0.0" />
+      <Point X="185.51725106408603" Y="374.3" GraphRef="e4996" RelX="0.0" RelY="0.0" ArrowHead="mim-catalysis" />
+    </Graphics>
+    <Xref Database="" ID="" />
+  </Interaction>
+  <Interaction GraphId="iddd1cfda4" GroupRef="b2683">
+    <Graphics ZOrder="12288" LineThickness="1.0">
+      <Point X="129.47368421052633" Y="176.8421052631579" />
+      <Point X="87.36842105263159" Y="227.92105263157896" GraphRef="e24ab" RelX="0.0" RelY="-1.0" ArrowHead="mim-conversion" />
+    </Graphics>
+    <Xref Database="" ID="" />
+  </Interaction>
+  <Interaction GraphId="ideb0617af">
+    <Graphics ZOrder="12288" LineThickness="1.0">
+      <Point X="243.4869739478958" Y="216.43286573146293" />
+      <Point X="186.77494199535963" Y="216.93735498839908" ArrowHead="mim-catalysis" />
+    </Graphics>
+    <Xref Database="" ID="" />
+  </Interaction>
+  <Shape GraphId="da018">
+    <Attribute Key="org.pathvisio.CellularComponentProperty" Value="Cell" />
+    <Attribute Key="org.pathvisio.DoubleLineProperty" Value="Double" />
+    <Graphics CenterX="185.517251064086" CenterY="377.75" Width="518.5" Height="422.5" ZOrder="16384" FontSize="12" Valign="Middle" ShapeType="RoundedRectangle" LineThickness="3.0" Color="c0c0c0" Rotation="0.0" />
+  </Shape>
+  <Group GroupId="b2683" Style="Group" />
+  <InfoBox CenterX="0.0" CenterY="0.0" />
+  <Biopax>
+    <bp:PublicationXref xmlns:bp="http://www.biopax.org/release/biopax-level3.owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:id="fbb">
+      <bp:ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">30654597</bp:ID>
+      <bp:DB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PubMed</bp:DB>
+      <bp:TITLE rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Characterization of the Lipidomic Profile of Human Coronavirus-Infected Cells: Implications for Lipid Metabolism Remodeling upon Coronavirus Replication.</bp:TITLE>
+      <bp:SOURCE rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Viruses</bp:SOURCE>
+      <bp:YEAR rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2019</bp:YEAR>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yan B</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chu H</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yang D</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sze KH</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lai PM</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yuan S</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Shuai H</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wang Y</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Kao RY</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chan JF</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yuen KY</bp:AUTHORS>
+    </bp:PublicationXref>
+  </Biopax>
+</Pathway>

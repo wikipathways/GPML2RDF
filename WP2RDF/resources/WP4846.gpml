@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Pathway xmlns="http://pathvisio.org/GPML/2013a" Name="SARS-CoV-2 and COVID-19 Pathway" Version="20200316" Organism="Homo sapiens">
+  <Comment Source="WikiPathways-description">Collaborative project for curation biological processes involved in the COVID-19 disease after SARS-Cov-2 infection.
+
+Editing this pathway is (at this moment) coordinated via the wikipathways.slack.com #sarscov2 channel.
+
+The large viral Spike (S) protein (surface glycoprotein) needs to be primed by host proteases. For SARS-CoV-2 that is the serine protease TMPRSS2. After priming the virus uses the host's ACE2 receptor for entry (Hoffmann et al 2020). The ACE2 receptor interaction was also suggested as the start of specfic lung damaging effects
+ </Comment>
+  <Graphics BoardWidth="817.0" BoardHeight="659.0"/>
+  <DataNode TextLabel="SARS-CoV-2" GraphId="ba78c">
+    <Graphics CenterX="137.0" CenterY="91.0" Width="90.0" Height="25.0" ZOrder="32768" FontSize="12" Valign="Middle"/>
+    <Xref Database="Wikidata" ID="Q82069695"/>
+  </DataNode>
+  <DataNode TextLabel="S2 subunit" GraphId="bdee3" Type="Protein">
+    <Graphics CenterX="317.5" CenterY="309.0" Width="71.0" Height="25.0" ZOrder="32768" FontSize="12" Valign="Middle"/>
+    <Xref Database="" ID=""/>
+  </DataNode>
+  <DataNode TextLabel="orf1ab" GraphId="cda8f" Type="GeneProduct">
+    <Graphics CenterX="137.0" CenterY="170.0" Width="90.0" Height="25.0" ZOrder="32768" FontSize="12" Valign="Middle"/>
+    <Xref Database="Entrez Gene" ID="43740578"/>
+  </DataNode>
+  <DataNode TextLabel="TMPRSS2" GraphId="cf321" Type="GeneProduct">
+    <BiopaxRef>af3</BiopaxRef>
+    <Graphics CenterX="379.0" CenterY="248.0" Width="90.0" Height="25.0" ZOrder="32768" FontSize="12" Valign="Middle"/>
+    <Xref Database="Ensembl" ID="ENSG00000184012"/>
+  </DataNode>
+  <DataNode TextLabel="ACE2" GraphId="e154d" Type="GeneProduct">
+    <Graphics CenterX="378.0" CenterY="207.25" Width="90.0" Height="25.0" ZOrder="32768" FontSize="12" Valign="Middle"/>
+    <Xref Database="Entrez Gene" ID="59272"/>
+  </DataNode>
+  <DataNode TextLabel="orf1a" GraphId="eb8ab" Type="GeneProduct">
+    <BiopaxRef>ad4</BiopaxRef>
+    <Graphics CenterX="137.0" CenterY="145.0" Width="90.0" Height="25.0" ZOrder="32768" FontSize="12" Valign="Middle"/>
+    <Xref Database="Entrez Gene" ID="43740578"/>
+  </DataNode>
+  <DataNode TextLabel="ORF3a" GraphId="ac4ba" Type="GeneProduct">
+    <Graphics CenterX="137.0" CenterY="244.5" Width="90.0" Height="25.0" ZOrder="32769" FontSize="12" Valign="Middle"/>
+    <Xref Database="Entrez Gene" ID="43740569"/>
+  </DataNode>
+  <DataNode TextLabel="ORF6" GraphId="bce0b" Type="GeneProduct">
+    <Graphics CenterX="137.0" CenterY="368.5" Width="90.0" Height="25.0" ZOrder="32770" FontSize="12" Valign="Middle"/>
+    <Xref Database="Entrez Gene" ID="43740572"/>
+  </DataNode>
+  <DataNode TextLabel="ORF7a" GraphId="ff49a" Type="GeneProduct">
+    <Graphics CenterX="137.0" CenterY="393.5" Width="90.0" Height="25.0" ZOrder="32771" FontSize="12" Valign="Middle"/>
+    <Xref Database="Entrez Gene" ID="43740573"/>
+  </DataNode>
+  <DataNode TextLabel="ORF8" GraphId="c6537" Type="GeneProduct">
+    <Graphics CenterX="137.0" CenterY="418.5" Width="90.0" Height="25.0" ZOrder="32772" FontSize="12" Valign="Middle"/>
+    <Xref Database="Entrez Gene" ID="43740577"/>
+  </DataNode>
+  <DataNode TextLabel="ORF10" GraphId="c5b6c" Type="GeneProduct">
+    <Graphics CenterX="137.0" CenterY="493.0" Width="90.0" Height="25.0" ZOrder="32773" FontSize="12" Valign="Middle"/>
+    <Xref Database="Entrez Gene" ID="43740576"/>
+  </DataNode>
+  <DataNode TextLabel="nucleocapsid&#10;phosphoprotein" GraphId="ff3a1" Type="GeneProduct">
+    <BiopaxRef>aa3</BiopaxRef>
+    <Graphics CenterX="137.0" CenterY="455.75" Width="90.0" Height="49.5" ZOrder="32774" FontSize="12" Valign="Middle"/>
+    <Xref Database="Entrez Gene" ID="43740575"/>
+  </DataNode>
+  <DataNode TextLabel="membrane&#10;glycoprotein" GraphId="d614c" Type="GeneProduct">
+    <BiopaxRef>aa3</BiopaxRef>
+    <Graphics CenterX="137.0" CenterY="331.25" Width="90.0" Height="49.5" ZOrder="32775" FontSize="12" Valign="Middle"/>
+    <Xref Database="Entrez Gene" ID="43740571"/>
+  </DataNode>
+  <DataNode TextLabel="envelope&#10;protein" GraphId="aa466" Type="GeneProduct">
+    <BiopaxRef>aa3</BiopaxRef>
+    <Graphics CenterX="137.0" CenterY="281.75" Width="90.0" Height="49.5" ZOrder="32776" FontSize="12" Valign="Middle"/>
+    <Xref Database="Entrez Gene" ID="43740570"/>
+  </DataNode>
+  <DataNode TextLabel="surface&#10;glycoprotein" GraphId="cc4b9" Type="GeneProduct">
+    <BiopaxRef>aa3</BiopaxRef>
+    <BiopaxRef>e1a</BiopaxRef>
+    <Graphics CenterX="137.0" CenterY="207.25" Width="90.0" Height="49.5" ZOrder="32777" FontSize="12" Valign="Middle"/>
+    <Xref Database="Entrez Gene" ID="43740568"/>
+  </DataNode>
+  <Interaction>
+    <Graphics ZOrder="12288" LineThickness="1.0">
+      <Point X="182.0" Y="219.625" GraphRef="cc4b9" RelX="1.0" RelY="0.5"/>
+      <Point X="317.5" Y="296.5" GraphRef="bdee3" RelX="0.0" RelY="-1.0" ArrowHead="mim-conversion"/>
+      <Anchor Position="0.5386153567834795" Shape="None" GraphId="f13fb"/>
+    </Graphics>
+    <Xref Database="" ID=""/>
+  </Interaction>
+  <Interaction>
+    <BiopaxRef>af3</BiopaxRef>
+    <Graphics ZOrder="12288" LineThickness="1.0">
+      <Point X="334.0" Y="248.0" GraphRef="cf321" RelX="-1.0" RelY="0.0"/>
+      <Point X="254.98238084416147" Y="261.03105555273" GraphRef="f13fb" RelX="0.0" RelY="0.0" ArrowHead="mim-catalysis"/>
+    </Graphics>
+    <Xref Database="" ID=""/>
+  </Interaction>
+  <Interaction GraphId="id596b2488">
+    <BiopaxRef>dd6</BiopaxRef>
+    <BiopaxRef>b8f</BiopaxRef>
+    <BiopaxRef>af3</BiopaxRef>
+    <Graphics ZOrder="12288" LineThickness="1.0">
+      <Point X="182.0" Y="207.25" GraphRef="cc4b9" RelX="1.0" RelY="0.0"/>
+      <Point X="333.0" Y="207.25" GraphRef="e154d" RelX="-1.0" RelY="0.0" ArrowHead="mim-binding"/>
+    </Graphics>
+    <Xref Database="" ID=""/>
+  </Interaction>
+  <Shape GraphId="b5291">
+    <Attribute Key="org.pathvisio.CellularComponentProperty" Value="Cell"/>
+    <Attribute Key="org.pathvisio.DoubleLineProperty" Value="Double"/>
+    <Graphics CenterX="558.25" CenterY="311.75" Width="367.5" Height="498.5" ZOrder="16384" FontSize="12" Valign="Middle" ShapeType="RoundedRectangle" LineThickness="3.0" Color="c0c0c0" Rotation="0.0"/>
+  </Shape>
+  <InfoBox CenterX="0.0" CenterY="0.0"/>
+  <Biopax>
+    <bp:PublicationXref xmlns:bp="http://www.biopax.org/release/biopax-level3.owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:id="e1a">
+      <bp:ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">32155444</bp:ID>
+      <bp:DB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PubMed</bp:DB>
+      <bp:TITLE rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Structure, Function, and Antigenicity of the SARS-CoV-2 Spike Glycoprotein.</bp:TITLE>
+      <bp:SOURCE rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cell</bp:SOURCE>
+      <bp:YEAR rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2020</bp:YEAR>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Walls AC</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Park YJ</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tortorici MA</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wall A</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">McGuire AT</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Veesler D</bp:AUTHORS>
+    </bp:PublicationXref>
+    <bp:PublicationXref xmlns:bp="http://www.biopax.org/release/biopax-level3.owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:id="dd6">
+      <bp:ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">32125455</bp:ID>
+      <bp:DB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PubMed</bp:DB>
+      <bp:TITLE rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Angiotensin-converting enzyme 2 (ACE2) as a SARS-CoV-2 receptor: molecular mechanisms and potential therapeutic target.</bp:TITLE>
+      <bp:SOURCE rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Intensive Care Med</bp:SOURCE>
+      <bp:YEAR rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2020</bp:YEAR>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Zhang H</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Penninger JM</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Li Y</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Zhong N</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Slutsky AS</bp:AUTHORS>
+    </bp:PublicationXref>
+    <bp:PublicationXref xmlns:bp="http://www.biopax.org/release/biopax-level3.owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:id="af3">
+      <bp:ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">32142651</bp:ID>
+      <bp:DB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PubMed</bp:DB>
+      <bp:TITLE rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SARS-CoV-2 Cell Entry Depends on ACE2 and TMPRSS2 and Is Blocked by a Clinically Proven Protease Inhibitor.</bp:TITLE>
+      <bp:SOURCE rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cell</bp:SOURCE>
+      <bp:YEAR rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2020</bp:YEAR>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hoffmann M</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Kleine-Weber H</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Schroeder S</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Krüger N</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Herrler T</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Erichsen S</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Schiergens TS</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Herrler G</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wu NH</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Nitsche A</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Müller MA</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Drosten C</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pöhlmann S</bp:AUTHORS>
+    </bp:PublicationXref>
+    <bp:openControlledVocabulary xmlns:bp="http://www.biopax.org/release/biopax-level3.owl#">
+      <bp:TERM xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">disease pathway</bp:TERM>
+      <bp:ID xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PW:0000013</bp:ID>
+      <bp:Ontology xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathway Ontology</bp:Ontology>
+    </bp:openControlledVocabulary>
+    <bp:PublicationXref xmlns:bp="http://www.biopax.org/release/biopax-level3.owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:id="b8f">
+      <bp:ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">32132184</bp:ID>
+      <bp:DB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PubMed</bp:DB>
+      <bp:TITLE rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Structural basis for the recognition of the SARS-CoV-2 by full-length human ACE2.</bp:TITLE>
+      <bp:SOURCE rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Science</bp:SOURCE>
+      <bp:YEAR rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2020</bp:YEAR>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yan R</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Zhang Y</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Li Y</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Xia L</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Guo Y</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Zhou Q</bp:AUTHORS>
+    </bp:PublicationXref>
+    <bp:PublicationXref xmlns:bp="http://www.biopax.org/release/biopax-level3.owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:id="aa3">
+      <bp:ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">32159237</bp:ID>
+      <bp:DB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PubMed</bp:DB>
+      <bp:TITLE rdf:datatype="http://www.w3.org/2001/XMLSchema#string">From SARS and MERS CoVs to SARS-CoV-2: moving toward more biased codon usage in viral structural and non-structural genes.</bp:TITLE>
+      <bp:SOURCE rdf:datatype="http://www.w3.org/2001/XMLSchema#string">J Med Virol</bp:SOURCE>
+      <bp:YEAR rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2020</bp:YEAR>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Kandeel M</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ibrahim AA</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fayez M</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Al-Nazawi M</bp:AUTHORS>
+    </bp:PublicationXref>
+    <bp:PublicationXref xmlns:bp="http://www.biopax.org/release/biopax-level3.owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:id="ad4">
+      <bp:ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">32169673</bp:ID>
+      <bp:DB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PubMed</bp:DB>
+      <bp:TITLE rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Genetic evolution analysis of 2019 novel coronavirus and coronavirus from other species.</bp:TITLE>
+      <bp:SOURCE rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Infect Genet Evol</bp:SOURCE>
+      <bp:YEAR rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2020</bp:YEAR>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Li C</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yang Y</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ren L</bp:AUTHORS>
+    </bp:PublicationXref>
+    <bp:openControlledVocabulary xmlns:bp="http://www.biopax.org/release/biopax-level3.owl#">
+      <bp:TERM xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">disease by infectious agent</bp:TERM>
+      <bp:ID xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DOID:0050117</bp:ID>
+      <bp:Ontology xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Disease</bp:Ontology>
+    </bp:openControlledVocabulary>
+  </Biopax>
+</Pathway>
