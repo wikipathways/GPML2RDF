@@ -282,7 +282,14 @@ public class GpmlConverter {
 			}
 		}
 	}
-		
+
+	public static Model convertWp(Pathway p, String wpId, String revision, IDMapperStack mapper, List<String> tags) throws FileNotFoundException, IOException, ClassNotFoundException, IDMapperException {
+		Model pathwayModel = ModelFactory.createDefaultModel();
+		Utils.setModelPrefix(pathwayModel);
+		convertWp(p, wpId, revision, pathwayModel, mapper, tags);
+		return pathwayModel;
+	}
+
 	public static Model convertWp(Pathway p, String wpId, String revision, List<String> tags) throws FileNotFoundException, IOException, ClassNotFoundException, IDMapperException {
 		Model pathwayModel = ModelFactory.createDefaultModel();
 		Utils.setModelPrefix(pathwayModel);

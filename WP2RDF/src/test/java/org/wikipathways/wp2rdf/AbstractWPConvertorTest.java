@@ -6,6 +6,7 @@ import java.io.InputStream;
 import java.util.Collections;
 
 import org.bridgedb.IDMapperException;
+import org.bridgedb.IDMapperStack;
 import org.bridgedb.bio.DataSourceTxt;
 import org.junit.Assert;
 import org.junit.Test;
@@ -20,7 +21,8 @@ public abstract class AbstractWPConvertorTest extends AbstractConvertorTest {
 		InputStream input = AbstractConvertorTest.class.getClassLoader().getResourceAsStream(gpmlFile);
 		Pathway pathway = PathwayReader.readPathway(input);
 		Assert.assertNotNull(pathway);
-		model = GpmlConverter.convertWp(pathway, wpid, revision, Collections.<String>emptyList());
+		IDMapperStack stack = WPREST2RDF.maps();
+		model = GpmlConverter.convertWp(pathway, wpid, revision, stack, Collections.<String>emptyList());
 		Assert.assertNotNull(model);
 		// System.out.println("===== " + gpmlFile + " =====");
 		// String ttlContent = toString(model);
