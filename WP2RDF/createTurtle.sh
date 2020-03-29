@@ -8,4 +8,5 @@ mvn clean test -Dtest=org.wikipathways.wp2rdf.${wpid}Test \
   | grep -v ".bridge" \
   | grep -v "=== ${wpid}" \
   | grep -v "Tests run" \
+  | grep -v "Running org" \
   > ${wpid}.ttl
