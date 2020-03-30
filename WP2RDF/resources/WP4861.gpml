@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Pathway xmlns="http://pathvisio.org/GPML/2013a" Name="Integrative stress response in SARS-CoV-2 infection" Version="20200325" Organism="Homo sapiens">
+  <BiopaxRef>be0</BiopaxRef>
+  <BiopaxRef>e44</BiopaxRef>
+  <Graphics BoardWidth="645.0" BoardHeight="533.5"/>
+  <DataNode TextLabel="HRI" Type="GeneProduct" GroupRef="e2897">
+    <Graphics CenterX="356.5" CenterY="139.0" Width="53.0" Height="20.0" ZOrder="32768" FontSize="12" Valign="Middle"/>
+    <Xref Database="Ensembl" ID="ENSG00000086232"/>
+  </DataNode>
+  <DataNode TextLabel="GCN2" Type="GeneProduct" GroupRef="e2897">
+    <Graphics CenterX="356.5" CenterY="163.0" Width="53.0" Height="20.0" ZOrder="32768" FontSize="12" Valign="Middle"/>
+    <Xref Database="Ensembl" ID="ENSG00000101460"/>
+  </DataNode>
+  <DataNode TextLabel="EIF2AK3 / PERK" GraphId="b2ad6" Type="GeneProduct">
+    <Graphics CenterX="222.0" CenterY="105.0" Width="124.0" Height="20.0" ZOrder="32768" FontSize="12" Valign="Middle"/>
+    <Xref Database="Ensembl" ID="ENSG00000172071"/>
+  </DataNode>
+  <DataNode TextLabel="GADD34 / PPP1R15A" GraphId="c4bd3" Type="GeneProduct">
+    <Graphics CenterX="539.0" CenterY="349.0" Width="130.0" Height="25.0" ZOrder="32768" FontSize="12" Valign="Middle"/>
+    <Xref Database="Ensembl" ID="ENSG00000087074"/>
+  </DataNode>
+  <DataNode TextLabel="EIF2S1 / EIF2A" GraphId="d0b39" Type="GeneProduct">
+    <Graphics CenterX="137.0" CenterY="229.0" Width="110.0" Height="20.0" ZOrder="32768" FontSize="12" Valign="Middle"/>
+    <Xref Database="Ensembl" ID="ENSG00000134001"/>
+  </DataNode>
+  <DataNode TextLabel="ATF4" GraphId="e01f1" Type="GeneProduct">
+    <Graphics CenterX="545.0" CenterY="491.0" Width="60.0" Height="25.0" ZOrder="32768" FontSize="12" Valign="Middle"/>
+    <Xref Database="Ensembl" ID="ENSG00000128272"/>
+  </DataNode>
+  <DataNode TextLabel="EIF2AK2 / PKR" GraphId="e0e36" Type="GeneProduct">
+    <Graphics CenterX="222.5" CenterY="313.0" Width="113.0" Height="20.0" ZOrder="32768" FontSize="12" Valign="Middle"/>
+    <Xref Database="Ensembl" ID="ENSG00000055332"/>
+  </DataNode>
+  <DataNode TextLabel="DDIT3 / CHOP" GraphId="f2191" Type="GeneProduct">
+    <Graphics CenterX="570.0" CenterY="415.0" Width="90.0" Height="25.0" ZOrder="32768" FontSize="12" Valign="Middle"/>
+    <Xref Database="Ensembl" ID="ENSG00000175197"/>
+  </DataNode>
+  <DataNode TextLabel="nsp15" GraphId="fa46a" Type="GeneProduct">
+    <Graphics CenterX="380.0" CenterY="422.0" Width="62.0" Height="25.0" ZOrder="32768" FontSize="12" Valign="Middle" Color="cc0000"/>
+    <Xref Database="Wikidata" ID="Q87917579"/>
+  </DataNode>
+  <DataNode TextLabel="EIF2AK2 / PKR" GraphId="b5c21" Type="GeneProduct">
+    <Graphics CenterX="222.5" CenterY="422.0" Width="113.0" Height="20.0" ZOrder="32769" FontSize="12" Valign="Middle"/>
+    <Xref Database="Ensembl" ID="ENSG00000055332"/>
+  </DataNode>
+  <DataNode TextLabel="EIF2S1 / EIF2A" GraphId="b6968" Type="GeneProduct">
+    <Graphics CenterX="324.0" CenterY="228.0" Width="110.0" Height="20.0" ZOrder="32770" FontSize="12" Valign="Middle"/>
+    <Xref Database="Ensembl" ID="ENSG00000134001"/>
+  </DataNode>
+  <State GraphRef="e0e36" TextLabel="P" GraphId="c5e53">
+    <Graphics RelX="0.9823008849557522" RelY="-1.0" Width="15.0" Height="15.0" ShapeType="Oval"/>
+    <Xref Database="" ID=""/>
+  </State>
+  <State GraphRef="b6968" TextLabel="P" GraphId="db803">
+    <Graphics RelX="1.0" RelY="-1.0" Width="15.0" Height="15.0" ShapeType="Oval"/>
+    <Xref Database="" ID=""/>
+  </State>
+  <Interaction GraphId="id334c961f">
+    <Graphics ZOrder="12288" LineThickness="1.0">
+      <Point X="349.0" Y="422.0" GraphRef="fa46a" RelX="-1.0" RelY="0.0"/>
+      <Point X="279.0" Y="422.0" GraphRef="b5c21" RelX="1.0" RelY="0.0" ArrowHead="mim-inhibition"/>
+    </Graphics>
+    <Xref Database="" ID=""/>
+  </Interaction>
+  <Interaction GraphId="id8d205e69">
+    <Graphics ZOrder="12288" LineThickness="1.0">
+      <Point X="322.0" Y="151.0" GraphRef="e7f9b" RelX="-1.0" RelY="0.0"/>
+      <Point X="222.8" Y="228.6" GraphRef="cc2ab" RelX="0.0" RelY="0.0" ArrowHead="mim-catalysis"/>
+    </Graphics>
+    <Xref Database="" ID=""/>
+  </Interaction>
+  <Interaction GraphId="idb174dd6a">
+    <Graphics ZOrder="12288" LineThickness="1.0">
+      <Point X="192.0" Y="229.0" GraphRef="d0b39" RelX="1.0" RelY="0.0"/>
+      <Point X="269.0" Y="228.0" GraphRef="b6968" RelX="-1.0" RelY="0.0" ArrowHead="mim-conversion"/>
+      <Anchor Position="0.4" Shape="None" GraphId="cc2ab"/>
+    </Graphics>
+    <Xref Database="" ID=""/>
+  </Interaction>
+  <Interaction GraphId="idcdf3e573">
+    <Graphics ZOrder="12288" LineThickness="1.0">
+      <Point X="222.5" Y="412.0" GraphRef="b5c21" RelX="0.0" RelY="-1.0"/>
+      <Point X="222.5" Y="323.0" GraphRef="e0e36" RelX="0.0" RelY="1.0" ArrowHead="mim-conversion"/>
+    </Graphics>
+    <Xref Database="" ID=""/>
+  </Interaction>
+  <Interaction GraphId="iddbc481e4">
+    <Graphics ZOrder="12288" LineThickness="1.0">
+      <Point X="222.5" Y="303.0" GraphRef="e0e36" RelX="0.0" RelY="-1.0"/>
+      <Point X="222.8" Y="228.6" GraphRef="cc2ab" RelX="0.0" RelY="0.0" ArrowHead="mim-catalysis"/>
+    </Graphics>
+    <Xref Database="" ID=""/>
+  </Interaction>
+  <Interaction GraphId="ided8176a0">
+    <Graphics ZOrder="12288" LineThickness="1.0">
+      <Point X="222.0" Y="115.0" GraphRef="b2ad6" RelX="0.0" RelY="1.0"/>
+      <Point X="222.8" Y="228.6" GraphRef="cc2ab" RelX="0.0" RelY="0.0" ArrowHead="mim-catalysis"/>
+    </Graphics>
+    <Xref Database="" ID=""/>
+  </Interaction>
+  <Group GroupId="e2897" GraphId="e7f9b" Style="Group"/>
+  <InfoBox CenterX="0.0" CenterY="0.0"/>
+  <Biopax>
+    <bp:PublicationXref xmlns:bp="http://www.biopax.org/release/biopax-level3.owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:id="be0">
+      <bp:ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">31226023</bp:ID>
+      <bp:DB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PubMed</bp:DB>
+      <bp:TITLE rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Human Coronavirus: Host-Pathogen Interaction.</bp:TITLE>
+      <bp:SOURCE rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Annu Rev Microbiol</bp:SOURCE>
+      <bp:YEAR rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2019</bp:YEAR>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fung TS</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Liu DX</bp:AUTHORS>
+    </bp:PublicationXref>
+    <bp:PublicationXref xmlns:bp="http://www.biopax.org/release/biopax-level3.owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:id="e44">
+      <bp:ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string"/>
+      <bp:DB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PubMed</bp:DB>
+      <bp:TITLE rdf:datatype="http://www.w3.org/2001/XMLSchema#string"> A SARS-CoV-2-Human Protein-Protein Interaction Map Reveals Drug Targets and Potential Drug Repurposing</bp:TITLE>
+      <bp:SOURCE rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BioRxiv</bp:SOURCE>
+      <bp:YEAR rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2020</bp:YEAR>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">David E. Gordon</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gwendolyn M. Jang</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mehdi Bouhaddou</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Jiewei Xu</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">et al.</bp:AUTHORS>
+    </bp:PublicationXref>
+  <bp:openControlledVocabulary xmlns:bp="http://www.biopax.org/release/biopax-level3.owl#"><bp:TERM>disease pathway</bp:TERM><bp:ID>PW:0000013</bp:ID><bp:Ontology>Pathway Ontology</bp:Ontology></bp:openControlledVocabulary><bp:openControlledVocabulary xmlns:bp="http://www.biopax.org/release/biopax-level3.owl#"><bp:TERM>severe acute respiratory syndrome</bp:TERM><bp:ID>DOID:2945</bp:ID><bp:Ontology>Disease</bp:Ontology></bp:openControlledVocabulary><bp:openControlledVocabulary xmlns:bp="http://www.biopax.org/release/biopax-level3.owl#"><bp:TERM>stress response pathway</bp:TERM><bp:ID>PW:0000237</bp:ID><bp:Ontology>Pathway Ontology</bp:Ontology></bp:openControlledVocabulary><bp:openControlledVocabulary xmlns:bp="http://www.biopax.org/release/biopax-level3.owl#"><bp:TERM>viral infectious disease</bp:TERM><bp:ID>DOID:934</bp:ID><bp:Ontology>Disease</bp:Ontology></bp:openControlledVocabulary></Biopax>
+</Pathway>

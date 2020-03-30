@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Pathway xmlns="http://pathvisio.org/GPML/2013a" Name="Autophagy during CoV infection" Version="20200325" Organism="Homo sapiens">
+  <BiopaxRef>acb</BiopaxRef>
+  <BiopaxRef>d78</BiopaxRef>
+  <Graphics BoardWidth="809.0" BoardHeight="950.5"/>
+  <DataNode TextLabel="MAP1LC3A" GraphId="a70af" Type="GeneProduct">
+    <Graphics CenterX="549.0" CenterY="705.0" Width="90.0" Height="25.0" ZOrder="32768" FontSize="12" Valign="Middle"/>
+    <Xref Database="Ensembl" ID="ENSG00000101460"/>
+  </DataNode>
+  <DataNode TextLabel="MTOR" GraphId="accd9" Type="GeneProduct">
+    <Graphics CenterX="200.0" CenterY="175.0" Width="90.0" Height="25.0" ZOrder="32768" FontSize="12" Valign="Middle"/>
+    <Xref Database="Ensembl" ID="ENSG00000198793"/>
+  </DataNode>
+  <DataNode TextLabel="ATG7" GraphId="bd378" Type="GeneProduct">
+    <Graphics CenterX="438.0" CenterY="862.0" Width="70.0" Height="25.0" ZOrder="32768" FontSize="12" Valign="Middle"/>
+    <Xref Database="Ensembl" ID="ENSG00000197548"/>
+  </DataNode>
+  <DataNode TextLabel="ZFYVE1" GraphId="bd381" Type="GeneProduct">
+    <Graphics CenterX="385.5" CenterY="623.0" Width="67.0" Height="25.0" ZOrder="32768" FontSize="12" Valign="Middle"/>
+    <Xref Database="Ensembl" ID="ENSG00000165861"/>
+  </DataNode>
+  <DataNode TextLabel="WIPI1" GraphId="c2335" Type="GeneProduct">
+    <Graphics CenterX="406.0" CenterY="659.0" Width="90.0" Height="25.0" ZOrder="32768" FontSize="12" Valign="Middle"/>
+    <Xref Database="Ensembl" ID="ENSG00000070540"/>
+  </DataNode>
+  <DataNode TextLabel="ATG10" GraphId="c777a" Type="GeneProduct">
+    <Graphics CenterX="450.0" CenterY="908.0" Width="66.0" Height="25.0" ZOrder="32768" FontSize="12" Valign="Middle"/>
+    <Xref Database="Ensembl" ID="ENSG00000152348"/>
+  </DataNode>
+  <DataNode TextLabel="nsp6" GraphId="d70d9" Type="GeneProduct">
+    <Graphics CenterX="746.0" CenterY="592.0" Width="60.0" Height="25.0" ZOrder="32768" FontSize="12" Valign="Middle" Color="cc0000"/>
+    <Xref Database="" ID=""/>
+  </DataNode>
+  <DataNode TextLabel="PIK3R4" GraphId="df8ef" Type="GeneProduct" GroupRef="c733e">
+    <Graphics CenterX="615.5" CenterY="433.0" Width="71.0" Height="25.0" ZOrder="32768" FontSize="12" Valign="Middle"/>
+    <Xref Database="Ensembl" ID="ENSG00000196455"/>
+  </DataNode>
+  <DataNode TextLabel="ATG13" GraphId="e1f3e" Type="GeneProduct">
+    <Graphics CenterX="295.5" CenterY="365.0" Width="67.0" Height="25.0" ZOrder="32768" FontSize="12" Valign="Middle"/>
+    <Xref Database="Ensembl" ID="ENSG00000175224"/>
+  </DataNode>
+  <DataNode TextLabel="RB1CC1" GraphId="e5a29" Type="GeneProduct">
+    <Graphics CenterX="529.5" CenterY="355.0" Width="63.0" Height="25.0" ZOrder="32768" FontSize="12" Valign="Middle"/>
+    <Xref Database="Ensembl" ID="ENSG00000023287"/>
+  </DataNode>
+  <DataNode TextLabel="BECN1" GraphId="e7608" Type="GeneProduct">
+    <Graphics CenterX="587.5" CenterY="513.0" Width="61.0" Height="25.0" ZOrder="32768" FontSize="12" Valign="Middle"/>
+    <Xref Database="Ensembl" ID="ENSG00000126581"/>
+  </DataNode>
+  <DataNode TextLabel="ATG12" GraphId="f6b71" Type="GeneProduct">
+    <Graphics CenterX="430.5" CenterY="811.0" Width="67.0" Height="25.0" ZOrder="32768" FontSize="12" Valign="Middle"/>
+    <Xref Database="Ensembl" ID="ENSG00000145782"/>
+  </DataNode>
+  <DataNode TextLabel="PIK3C3" GraphId="f9cb7" Type="GeneProduct" GroupRef="c733e">
+    <Graphics CenterX="615.5" CenterY="458.0" Width="71.0" Height="25.0" ZOrder="32768" FontSize="12" Valign="Middle"/>
+    <Xref Database="Ensembl" ID="ENSG00000078142"/>
+  </DataNode>
+  <DataNode TextLabel="ULK1" GraphId="e0807" Type="GeneProduct" GroupRef="da3ca">
+    <Graphics CenterX="183.0" CenterY="354.0" Width="66.0" Height="25.0" ZOrder="32769" FontSize="12" Valign="Middle"/>
+    <Xref Database="Ensembl" ID="ENSG00000177169"/>
+  </DataNode>
+  <DataNode TextLabel="ULK2" GraphId="da66a" Type="GeneProduct" GroupRef="da3ca">
+    <Graphics CenterX="183.0" CenterY="379.0" Width="66.0" Height="25.0" ZOrder="32770" FontSize="12" Valign="Middle"/>
+    <Xref Database="Ensembl" ID="ENSG00000083290"/>
+  </DataNode>
+  <DataNode TextLabel="ATG13" GraphId="f2bc7" Type="GeneProduct">
+    <Graphics CenterX="572.5" CenterY="295.0" Width="67.0" Height="25.0" ZOrder="32772" FontSize="12" Valign="Middle"/>
+    <Xref Database="Ensembl" ID="ENSG00000175224"/>
+  </DataNode>
+  <DataNode TextLabel="ULK1" GraphId="fdbd6" Type="GeneProduct">
+    <Graphics CenterX="460.0" CenterY="284.0" Width="66.0" Height="25.0" ZOrder="32773" FontSize="12" Valign="Middle"/>
+    <Xref Database="Ensembl" ID="ENSG00000177169"/>
+  </DataNode>
+  <DataNode TextLabel="ULK2" GraphId="b6908" Type="GeneProduct">
+    <Graphics CenterX="460.0" CenterY="309.0" Width="66.0" Height="25.0" ZOrder="32774" FontSize="12" Valign="Middle"/>
+    <Xref Database="Ensembl" ID="ENSG00000083290"/>
+  </DataNode>
+  <DataNode TextLabel="nsp6" GraphId="b45d2" Type="GeneProduct">
+    <Graphics CenterX="749.0" CenterY="740.0" Width="60.0" Height="25.0" ZOrder="32775" FontSize="12" Valign="Middle" Color="cc0000"/>
+    <Xref Database="" ID=""/>
+  </DataNode>
+  <Shape GraphId="fa1d9">
+    <Attribute Key="org.pathvisio.CellularComponentProperty" Value="Endoplasmic Reticulum"/>
+    <Graphics CenterX="220.0" CenterY="613.5" Width="294.0" Height="165.0" ZOrder="16384" FontSize="12" Valign="Middle" ShapeType="Endoplasmic Reticulum" LineThickness="3.0" Color="c0c0c0" Rotation="0.0"/>
+  </Shape>
+  <Group GroupId="da3ca" Style="Group"/>
+  <Group GroupId="c733e" Style="Complex"/>
+  <Group GroupId="e7a4e" Style="Group"/>
+  <InfoBox CenterX="0.0" CenterY="0.0"/>
+  <Biopax>
+    <bp:PublicationXref xmlns:bp="http://www.biopax.org/release/biopax-level3.owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:id="acb">
+      <bp:ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">31226023</bp:ID>
+      <bp:DB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PubMed</bp:DB>
+      <bp:TITLE rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Human Coronavirus: Host-Pathogen Interaction.</bp:TITLE>
+      <bp:SOURCE rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Annu Rev Microbiol</bp:SOURCE>
+      <bp:YEAR rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2019</bp:YEAR>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fung TS</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Liu DX</bp:AUTHORS>
+    </bp:PublicationXref>
+    <bp:PublicationXref xmlns:bp="http://www.biopax.org/release/biopax-level3.owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:id="d78">
+      <bp:ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string"/>
+      <bp:DB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PubMed</bp:DB>
+      <bp:TITLE rdf:datatype="http://www.w3.org/2001/XMLSchema#string"> A SARS-CoV-2-Human Protein-Protein Interaction Map Reveals Drug Targets and Potential Drug Repurposing</bp:TITLE>
+      <bp:SOURCE rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BioRxiv</bp:SOURCE>
+      <bp:YEAR rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2020</bp:YEAR>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">David E. Gordon</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gwendolyn M. Jang</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mehdi Bouhaddou</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Jiewei Xu</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">et al.</bp:AUTHORS>
+    </bp:PublicationXref>
+  <bp:openControlledVocabulary xmlns:bp="http://www.biopax.org/release/biopax-level3.owl#"><bp:TERM>autophagy pathway</bp:TERM><bp:ID>PW:0000278</bp:ID><bp:Ontology>Pathway Ontology</bp:Ontology></bp:openControlledVocabulary><bp:openControlledVocabulary xmlns:bp="http://www.biopax.org/release/biopax-level3.owl#"><bp:TERM>disease pathway</bp:TERM><bp:ID>PW:0000013</bp:ID><bp:Ontology>Pathway Ontology</bp:Ontology></bp:openControlledVocabulary><bp:openControlledVocabulary xmlns:bp="http://www.biopax.org/release/biopax-level3.owl#"><bp:TERM>severe acute respiratory syndrome</bp:TERM><bp:ID>DOID:2945</bp:ID><bp:Ontology>Disease</bp:Ontology></bp:openControlledVocabulary><bp:openControlledVocabulary xmlns:bp="http://www.biopax.org/release/biopax-level3.owl#"><bp:TERM>viral infectious disease</bp:TERM><bp:ID>DOID:934</bp:ID><bp:Ontology>Disease</bp:Ontology></bp:openControlledVocabulary></Biopax>
+</Pathway>
