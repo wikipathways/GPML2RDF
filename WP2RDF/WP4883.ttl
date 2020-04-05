@@ -1,0 +1,252 @@
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix pav:   <http://purl.org/pav/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix freq:  <http://purl.org/cld/freq/> .
+@prefix biopax: <http://www.biopax.org/release/biopax-level3.owl#> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix gpml:  <http://vocabularies.wikipathways.org/gpml#> .
+@prefix wp:    <http://vocabularies.wikipathways.org/wp#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix wprdf: <http://rdf.wikipathways.org/> .
+@prefix prov:  <http://www.w3.org/ns/prov#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dc:    <http://purl.org/dc/elements/1.1/> .
+
+<http://rdf.wikipathways.org/Pathway/WP4883_r109431/WP/Interaction/id770baa8e>
+        a                 wp:Interaction ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP4883_r109431> ;
+        wp:isAbout        <http://rdf.wikipathways.org/Pathway/WP4883_r109431/Interaction/id770baa8e> .
+
+<http://rdf.wikipathways.org/Pathway/WP4883_r109431/WP/Interaction/e79fe>
+        a                 wp:Interaction ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP4883_r109431> ;
+        wp:isAbout        <http://rdf.wikipathways.org/Pathway/WP4883_r109431/Interaction/e79fe> ;
+        wp:participants   <http://identifiers.org/ncbigene/59272> .
+
+<http://rdf.wikipathways.org/Pathway/WP4883_r109431/WP/Interaction/id7806bdcd>
+        a                 wp:Interaction ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP4883_r109431> ;
+        wp:isAbout        <http://rdf.wikipathways.org/Pathway/WP4883_r109431/Interaction/id7806bdcd> .
+
+<http://identifiers.org/ncbigene/183>
+        a                              wp:GeneProduct , wp:DataNode ;
+        rdfs:label                     "AGT"^^xsd:string ;
+        dc:identifier                  <http://identifiers.org/ncbigene/183> ;
+        dc:source                      "Entrez Gene"^^xsd:string ;
+        dcterms:bibliographicCitation  <http://identifiers.org/pubmed/32125455> ;
+        dcterms:identifier             "183"^^xsd:string ;
+        dcterms:isPartOf               <http://identifiers.org/wikipathways/WP4883_r109431> , <http://rdf.wikipathways.org/Pathway/WP4883_r109431/WP/Interaction/id695320d0> ;
+        wp:bdbEnsembl                  <http://identifiers.org/ensembl/ENSG00000135744> ;
+        wp:bdbEntrezGene               <http://identifiers.org/ncbigene/183> ;
+        wp:bdbHgncSymbol               <http://identifiers.org/hgnc.symbol/AGT> ;
+        wp:bdbUniprot                  <http://identifiers.org/uniprot/B0ZBE2> , <http://identifiers.org/uniprot/P01019> ;
+        wp:isAbout                     <http://rdf.wikipathways.org/Pathway/WP4883_r109431/DataNode/f53bd> .
+
+<http://identifiers.org/wikipathways/WP4883_r109431>
+        a                    skos:Collection , wp:Pathway ;
+        dc:identifier        <http://identifiers.org/wikipathways/WP4883> ;
+        dc:source            "WikiPathways"^^xsd:string ;
+        dc:title             "SARS-CoV-2 and Angiotensin-converting enzyme 2 (ACE2) receptor : Molecular mechanisms and potential therapeutic target"@en ;
+        dcterms:description  "Initial entry of severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) into cells, The large viral Spike (S) protein needs to be primed by host proteases. For SARS-CoV-2 that is the serine protease TMPRSS2. after binding to its functional receptor, angiotensin-converting enzyme 2 (ACE2). After endocytosis of the viral complex, surface ACE2 is further down-regulated, resulting in unopposed angiotensin II accumulation. Local activation of the reninÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œangiotensinÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œaldosterone system may mediate lung injury responses to viral insults. ACE denotes angiotensin-converting enzyme, and ARB angiotensin-receptor blocker. \nSource :\nFigure 1. Interaction between SARS-CoV-2 and the ReninÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œAngiotensinÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œAldosterone System (Vaduganathan et al., 2020)\nFigure 1. Potential approaches to address ACE2-mediated COVID-19 (Zhang et al., 2020)\n\nHoffmann, M., Kleine-Weber, H., Schroeder, S., Kruger, N., Herrler, T., Erichsen, S., Schiergens, T. S., Herrler, G., Wu, N. H., Nitsche, A., Muller, M. A., Drosten, C. & Pohlmann, S. 2020. SARS-CoV-2 Cell Entry Depends on ACE2 and TMPRSS2 and Is Blocked by a Clinically Proven Protease Inhibitor. Cell.\nVaduganathan, M., Vardeny, O., Michel, T., Mcmurray, J. J. V., Pfeffer, M. A. & Solomon, S. D. 2020. ReninÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œAngiotensinÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œAldosterone System Inhibitors in Patients with Covid-19. New England Journal of Medicine.\nZhang, H., Penninger, J. M., Li, Y., Zhong, N. & Slutsky, A. S. 2020. Angiotensin-converting enzyme 2 (ACE2) as a SARS-CoV-2 receptor: molecular mechanisms and potential therapeutic target. Intensive Care Med, 46, 586-590.\n" , "Initial entry of severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) into cells, The large viral Spike (S) protein needs to be primed by host proteases. For SARS-CoV-2 that is the serine protease TMPRSS2. after binding to its functional receptor, angiotensin-converting enzyme 2 (ACE2). After endocytosis of the viral complex, surface ACE2 is further down-regulated, resulting in unopposed angiotensin II accumulation. Local activation of the reninÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œangiotensinÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œaldosterone system may mediate lung injury responses to viral insults. ACE denotes angiotensin-converting enzyme, and ARB angiotensin-receptor blocker. \n\nSource :\nFigure 1. Interaction between SARS-CoV-2 and the ReninÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œAngiotensinÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œAldosterone System (Vaduganathan et al., 2020)\nFigure 1. Potential approaches to address ACE2-mediated COVID-19 (Zhang et al., 2020)\nVaduganathan, M., Vardeny, O., Michel, T., Mcmurray, J. J. V., Pfeffer, M. A. & Solomon, S. D. 2020. ReninÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œAngiotensinÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œAldosterone System Inhibitors in Patients with Covid-19. New England Journal of Medicine.\nZhang, H., Penninger, J. M., Li, Y., Zhong, N. & Slutsky, A. S. 2020. Angiotensin-converting enzyme 2 (ACE2) as a SARS-CoV-2 receptor: molecular mechanisms and potential therapeutic target. Intensive Care Med, 46, 586-590.\n" , "Initial entry of severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) into cells, The large viral Spike (S) protein needs to be primed by host proteases. For SARS-CoV-2 that is the serine protease TMPRSS2.  After binding to its functional receptor, angiotensin-converting enzyme 2 (ACE2). After endocytosis of the viral complex, surface ACE2 is further down-regulated, resulting in unopposed angiotensin II accumulation. " , "Initial entry of severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) into cells, The large viral Spike (S) protein needs to be primed by host proteases. For SARS-CoV-2 that is the serine protease TMPRSS2. after binding to its functional receptor, angiotensin-converting enzyme 2 (ACE2). After endocytosis of the viral complex, surface ACE2 is further down-regulated, resulting in unopposed angiotensin II accumulation. Local activation of the reninÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œangiotensinÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œaldosterone system may mediate lung injury responses to viral insults. ACE denotes angiotensin-converting enzyme, and ARB angiotensin-receptor blocker. \nSource :\nFigure 1. Interaction between SARS-CoV-2 and the ReninÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œAngiotensinÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œAldosterone System (Vaduganathan et al., 2020)\nFigure 1. Potential approaches to address ACE2-mediated COVID-19 (Zhang et al., 2020)\nVaduganathan, M., Vardeny, O., Michel, T., Mcmurray, J. J. V., Pfeffer, M. A. & Solomon, S. D. 2020. ReninÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œAngiotensinÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œAldosterone System Inhibitors in Patients with Covid-19. New England Journal of Medicine.\nZhang, H., Penninger, J. M., Li, Y., Zhong, N. & Slutsky, A. S. 2020. Angiotensin-converting enzyme 2 (ACE2) as a SARS-CoV-2 receptor: molecular mechanisms and potential therapeutic target. Intensive Care Med, 46, 586-590.\n" , "initial entry of severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) into cells, The large viral Spike (S) protein needs to be primed by host proteases. For SARS-CoV-2 that is the serine protease TMPRSS2. after binding to its functional receptor, angiotensin-converting enzyme 2 (ACE2). After endocytosis of the viral complex, surface ACE2 is further down-regulated, resulting in unopposed angiotensin II accumulation. Local activation of the activation of angiotensin pathway system may mediate lung injury responses to viral insults. ACE denotes angiotensin-converting enzyme, and ARB angiotensin-receptor blocker. " ;
+        dcterms:identifier   "WP4883"^^xsd:string ;
+        dcterms:references   <http://identifiers.org/pubmed/32125455> ;
+        wp:isAbout           <http://rdf.wikipathways.org/Pathway/WP4883_r109431> ;
+        wp:organism          <http://purl.obolibrary.org/obo/NCBITaxon_9606> ;
+        wp:organismName      "Homo sapiens"^^xsd:string ;
+        foaf:page            <http://www.wikipathways.org/instance/WP4883_r109431> .
+
+<http://rdf.wikipathways.org/Pathway/WP4883_r109431/WP/Interaction/id2338925>
+        a                 wp:Interaction ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP4883_r109431> ;
+        wp:isAbout        <http://rdf.wikipathways.org/Pathway/WP4883_r109431/Interaction/id2338925> .
+
+<http://rdf.wikipathways.org/Pathway/WP4883_r109431/WP/Interaction/a4b4f>
+        a                 wp:Interaction ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP4883_r109431> ;
+        wp:isAbout        <http://rdf.wikipathways.org/Pathway/WP4883_r109431/Interaction/a4b4f> .
+
+<http://identifiers.org/ncbigene/1636>
+        a                              wp:Protein , wp:DataNode ;
+        rdfs:label                     "ACE"^^xsd:string ;
+        dc:identifier                  <http://identifiers.org/ncbigene/1636> ;
+        dc:source                      "Entrez Gene"^^xsd:string ;
+        dcterms:bibliographicCitation  <http://identifiers.org/pubmed/32125455> ;
+        dcterms:identifier             "1636"^^xsd:string ;
+        dcterms:isPartOf               <http://identifiers.org/wikipathways/WP4883_r109431> ;
+        wp:bdbEnsembl                  <http://identifiers.org/ensembl/ENSG00000159640> ;
+        wp:bdbEntrezGene               <http://identifiers.org/ncbigene/1636> ;
+        wp:bdbHgncSymbol               <http://identifiers.org/hgnc.symbol/ACE> ;
+        wp:bdbUniprot                  <http://identifiers.org/uniprot/J3KTH9> , <http://identifiers.org/uniprot/J3KS28> , <http://identifiers.org/uniprot/J3KRH5> , <http://identifiers.org/uniprot/A0A0A0MSN4> , <http://identifiers.org/uniprot/J3QSC7> , <http://identifiers.org/uniprot/J3KTB8> , <http://identifiers.org/uniprot/J3KSQ5> , <http://identifiers.org/uniprot/P12821> , <http://identifiers.org/uniprot/J3QRX8> , <http://identifiers.org/uniprot/J3QLR4> ;
+        wp:isAbout                     <http://rdf.wikipathways.org/Pathway/WP4883_r109431/DataNode/e5d6d> .
+
+<http://rdf.wikipathways.org/Pathway/WP4883_r109431/WP/Interaction/id2c3a414b>
+        a                 wp:Interaction ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP4883_r109431> ;
+        wp:isAbout        <http://rdf.wikipathways.org/Pathway/WP4883_r109431/Interaction/id2c3a414b> ;
+        wp:participants   <http://identifiers.org/ncbigene/4142> .
+
+<http://rdf.wikipathways.org/Pathway/WP4883_r109431/WP/Interaction/abf9d>
+        a                 wp:Interaction ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP4883_r109431> ;
+        wp:isAbout        <http://rdf.wikipathways.org/Pathway/WP4883_r109431/Interaction/abf9d> .
+
+<http://rdf.wikipathways.org/Pathway/WP4883_r109431/WP/Interaction/id93eee6dc>
+        a                 wp:Interaction ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP4883_r109431> ;
+        wp:isAbout        <http://rdf.wikipathways.org/Pathway/WP4883_r109431/Interaction/id93eee6dc> ;
+        wp:participants   <http://identifiers.org/ncbigene/185> .
+
+<http://rdf.wikipathways.org/Pathway/WP4883_r109431/WP/Interaction/id45cf6f5e>
+        a                 wp:Interaction ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP4883_r109431> ;
+        wp:isAbout        <http://rdf.wikipathways.org/Pathway/WP4883_r109431/Interaction/id45cf6f5e> .
+
+<http://rdf.wikipathways.org/Pathway/WP4883_r109431/WP/Interaction/e7a20>
+        a                 wp:Interaction ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP4883_r109431> ;
+        wp:isAbout        <http://rdf.wikipathways.org/Pathway/WP4883_r109431/Interaction/e7a20> ;
+        wp:participants   <http://identifiers.org/ncbigene/185> .
+
+<http://identifiers.org/pubmed/32142651>
+        a                 wp:PublicationReference ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP4883_r109431> ;
+        foaf:page         <http://www.ncbi.nlm.nih.gov/pubmed/32142651> .
+
+<http://identifiers.org/ncbigene/59272>
+        a                              wp:DataNode , wp:GeneProduct ;
+        rdfs:label                     "Soluble ACE2"^^xsd:string , "ACE2"^^xsd:string ;
+        dc:identifier                  <http://identifiers.org/ncbigene/59272> ;
+        dc:source                      "Entrez Gene"^^xsd:string ;
+        dcterms:bibliographicCitation  <http://identifiers.org/pubmed/32125455> , <http://identifiers.org/pubmed/32142651> ;
+        dcterms:identifier             "59272"^^xsd:string ;
+        dcterms:isPartOf               <http://identifiers.org/wikipathways/WP4883_r109431> , <http://rdf.wikipathways.org/Pathway/WP4883_r109431/WP/Interaction/ide8eab048> , <http://rdf.wikipathways.org/Pathway/WP4883_r109431/WP/Interaction/e79fe> ;
+        wp:bdbEnsembl                  <http://identifiers.org/ensembl/ENSG00000130234> ;
+        wp:bdbEntrezGene               <http://identifiers.org/ncbigene/59272> ;
+        wp:bdbHgncSymbol               <http://identifiers.org/hgnc.symbol/ACE2> ;
+        wp:bdbUniprot                  <http://identifiers.org/uniprot/Q9BYF1> ;
+        wp:isAbout                     <http://rdf.wikipathways.org/Pathway/WP4883_r109431/DataNode/bf1a9> , <http://rdf.wikipathways.org/Pathway/WP4883_r109431/DataNode/dac5e> .
+
+<http://rdf.wikipathways.org/Pathway/WP4883_r109431/WP/Interaction/d822b>
+        a                 wp:Interaction ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP4883_r109431> ;
+        wp:isAbout        <http://rdf.wikipathways.org/Pathway/WP4883_r109431/Interaction/d822b> .
+
+<http://rdf.wikipathways.org/Pathway/WP4883_r109431/WP/Interaction/ide8eab048>
+        a                 wp:Interaction ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP4883_r109431> ;
+        wp:isAbout        <http://rdf.wikipathways.org/Pathway/WP4883_r109431/Interaction/ide8eab048> ;
+        wp:participants   <http://identifiers.org/ncbigene/59272> .
+
+<http://identifiers.org/wikipathways/WP4883>
+        pav:hasVersion  <http://identifiers.org/wikipathways/WP4883_r109431> .
+
+<http://identifiers.org/ncbigene/4142>
+        a                              wp:DataNode , wp:GeneProduct ;
+        rdfs:label                     "MAS1"^^xsd:string ;
+        dc:identifier                  <http://identifiers.org/ncbigene/4142> ;
+        dc:source                      "Entrez Gene"^^xsd:string ;
+        dcterms:bibliographicCitation  <http://identifiers.org/pubmed/32125455> ;
+        dcterms:identifier             "4142"^^xsd:string ;
+        dcterms:isPartOf               <http://rdf.wikipathways.org/Pathway/WP4883_r109431/WP/Interaction/id2c3a414b> , <http://rdf.wikipathways.org/Pathway/WP4883_r109431/WP/Interaction/idff61de3> , <http://identifiers.org/wikipathways/WP4883_r109431> ;
+        wp:bdbEnsembl                  <http://identifiers.org/ensembl/ENSG00000130368> ;
+        wp:bdbEntrezGene               <http://identifiers.org/ncbigene/4142> ;
+        wp:bdbHgncSymbol               <http://identifiers.org/hgnc.symbol/MAS1> ;
+        wp:bdbUniprot                  <http://identifiers.org/uniprot/P04201> , <http://identifiers.org/uniprot/W8W3P4> ;
+        wp:isAbout                     <http://rdf.wikipathways.org/Pathway/WP4883_r109431/DataNode/c93ee> .
+
+<http://rdf.wikipathways.org/Pathway/WP4883_r109431/WP/Interaction/id1244a43c>
+        a                 wp:Interaction ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP4883_r109431> ;
+        wp:isAbout        <http://rdf.wikipathways.org/Pathway/WP4883_r109431/Interaction/id1244a43c> .
+
+<http://rdf.wikipathways.org/Pathway/WP4883_r109431/WP/Interaction/idff61de3>
+        a                 wp:Interaction ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP4883_r109431> ;
+        wp:isAbout        <http://rdf.wikipathways.org/Pathway/WP4883_r109431/Interaction/idff61de3> ;
+        wp:participants   <http://identifiers.org/ncbigene/4142> .
+
+<http://identifiers.org/ensembl/ENSG00000184012>
+        a                              wp:GeneProduct , wp:DataNode ;
+        rdfs:label                     "TMPRSS2"^^xsd:string ;
+        dc:identifier                  <http://identifiers.org/ensembl/ENSG00000184012> ;
+        dc:source                      "Ensembl"^^xsd:string ;
+        dcterms:bibliographicCitation  <http://identifiers.org/pubmed/32142651> , <http://identifiers.org/pubmed/32125455> ;
+        dcterms:identifier             "ENSG00000184012"^^xsd:string ;
+        dcterms:isPartOf               <http://identifiers.org/wikipathways/WP4883_r109431> ;
+        wp:bdbEnsembl                  <http://identifiers.org/ensembl/ENSG00000184012> ;
+        wp:bdbEntrezGene               <http://identifiers.org/ncbigene/7113> ;
+        wp:bdbHgncSymbol               <http://identifiers.org/hgnc.symbol/TMPRSS2> ;
+        wp:bdbUniprot                  <http://identifiers.org/uniprot/C9J5Y1> , <http://identifiers.org/uniprot/C9JB05> , <http://identifiers.org/uniprot/C9JKZ3> , <http://identifiers.org/uniprot/O15393> ;
+        wp:isAbout                     <http://rdf.wikipathways.org/Pathway/WP4883_r109431/DataNode/b141b> .
+
+<http://identifiers.org/pubmed/32125455>
+        a                 wp:PublicationReference ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP4883_r109431> ;
+        foaf:page         <http://www.ncbi.nlm.nih.gov/pubmed/32125455> .
+
+<http://identifiers.org/ncbigene/185>
+        a                              wp:GeneProduct , wp:DataNode ;
+        rdfs:label                     "AT1R"^^xsd:string ;
+        dc:identifier                  <http://identifiers.org/ncbigene/185> ;
+        dc:source                      "Entrez Gene"^^xsd:string ;
+        dcterms:bibliographicCitation  <http://identifiers.org/pubmed/32125455> ;
+        dcterms:identifier             "185"^^xsd:string ;
+        dcterms:isPartOf               <http://rdf.wikipathways.org/Pathway/WP4883_r109431/WP/Interaction/e7a20> , <http://rdf.wikipathways.org/Pathway/WP4883_r109431/WP/Interaction/id93eee6dc> , <http://identifiers.org/wikipathways/WP4883_r109431> ;
+        wp:bdbEnsembl                  <http://identifiers.org/ensembl/ENSG00000144891> ;
+        wp:bdbEntrezGene               <http://identifiers.org/ncbigene/185> ;
+        wp:bdbHgncSymbol               <http://identifiers.org/hgnc.symbol/AGTR1> ;
+        wp:bdbUniprot                  <http://identifiers.org/uniprot/A0A0A0MSE3> , <http://identifiers.org/uniprot/P30556> , <http://identifiers.org/uniprot/D3DNG8> , <http://identifiers.org/uniprot/Q53YY0> ;
+        wp:isAbout                     <http://rdf.wikipathways.org/Pathway/WP4883_r109431/DataNode/f6bb2> .
+
+<http://rdf.wikipathways.org/Pathway/WP4883_r109431/WP/Interaction/c33df>
+        a                 wp:Interaction ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP4883_r109431> ;
+        wp:isAbout        <http://rdf.wikipathways.org/Pathway/WP4883_r109431/Interaction/c33df> .
+
+<http://rdf.wikipathways.org/Pathway/WP4883_r109431/WP/Interaction/fd6ab>
+        a                 wp:Interaction ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP4883_r109431> ;
+        wp:isAbout        <http://rdf.wikipathways.org/Pathway/WP4883_r109431/Interaction/fd6ab> .
+
+<http://rdf.wikipathways.org/Pathway/WP4883_r109431/WP/Interaction/fb77b>
+        a                 wp:Interaction ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP4883_r109431> ;
+        wp:isAbout        <http://rdf.wikipathways.org/Pathway/WP4883_r109431/Interaction/fb77b> .
+
+<http://rdf.wikipathways.org/Pathway/WP4883_r109431/WP/Interaction/idb0d71735>
+        a                 wp:Interaction ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP4883_r109431> ;
+        wp:isAbout        <http://rdf.wikipathways.org/Pathway/WP4883_r109431/Interaction/idb0d71735> .
+
+<http://rdf.wikipathways.org/Pathway/WP4883_r109431/WP/Interaction/id695320d0>
+        a                 wp:Interaction ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP4883_r109431> ;
+        wp:isAbout        <http://rdf.wikipathways.org/Pathway/WP4883_r109431/Interaction/id695320d0> ;
+        wp:participants   <http://identifiers.org/ncbigene/183> .
+
+<http://identifiers.org/ncbigene/5972>
+        a                              wp:GeneProduct , wp:DataNode ;
+        rdfs:label                     "REN"^^xsd:string ;
+        dc:identifier                  <http://identifiers.org/ncbigene/5972> ;
+        dc:source                      "Entrez Gene"^^xsd:string ;
+        dcterms:bibliographicCitation  <http://identifiers.org/pubmed/32125455> ;
+        dcterms:identifier             "5972"^^xsd:string ;
+        dcterms:isPartOf               <http://identifiers.org/wikipathways/WP4883_r109431> ;
+        wp:bdbEnsembl                  <http://identifiers.org/ensembl/ENSG00000143839> ;
+        wp:bdbEntrezGene               <http://identifiers.org/ncbigene/5972> ;
+        wp:bdbHgncSymbol               <http://identifiers.org/hgnc.symbol/REN> ;
+        wp:bdbUniprot                  <http://identifiers.org/uniprot/P00797> , <http://identifiers.org/uniprot/A0A1B0GUZ2> ;
+        wp:isAbout                     <http://rdf.wikipathways.org/Pathway/WP4883_r109431/DataNode/c91b1> .
+
+<http://rdf.wikipathways.org/Pathway/WP4883_r109431/WP/Interaction/id27ade87d>
+        a                 wp:Interaction ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP4883_r109431> ;
+        wp:isAbout        <http://rdf.wikipathways.org/Pathway/WP4883_r109431/Interaction/id27ade87d> .
+
+<http://rdf.wikipathways.org/Pathway/WP4883_r109431/WP/Interaction/a0ca7>
+        a                 wp:Interaction ;
+        dcterms:isPartOf  <http://identifiers.org/wikipathways/WP4883_r109431> ;
+        wp:isAbout        <http://rdf.wikipathways.org/Pathway/WP4883_r109431/Interaction/a0ca7> .
+
