@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Pathway xmlns="http://pathvisio.org/GPML/2013a" Name="The interferon-MAPK pathway in response to SARS-CoV-2 infection" Version="20200405" Maintainer="Rex D A B" Email="rexprem@gmail.com" Last-Modified="04052020" Organism="Homo sapiens">
+  <Comment Source="WikiPathways-description">The interferon-MAPK pathway in response to SARS-CoV-2 infection</Comment>
+  <Graphics BoardWidth="1054.305555555556" BoardHeight="543.4794249905206" />
+  <DataNode TextLabel="JUNB" GraphId="c29dd" Type="GeneProduct" GroupRef="a3479">
+    <Graphics CenterX="482.04477611940285" CenterY="331.81542683408514" Width="79.99999999999997" Height="19.999999999999993" ZOrder="32768" FontWeight="Bold" FontSize="12" Valign="Middle" />
+    <Xref Database="Entrez Gene" ID="3726" />
+  </DataNode>
+  <DataNode TextLabel="IFITM2" GraphId="c2f9d" Type="Protein" GroupRef="a75f3">
+    <Graphics CenterX="288.4740582800283" CenterY="160.78535891968727" Width="80.0" Height="20.0" ZOrder="32768" FontWeight="Bold" FontSize="12" Valign="Middle" />
+    <Xref Database="Ensembl" ID="ENSG00000185201" />
+  </DataNode>
+  <DataNode TextLabel="IFITM3" GraphId="c737e" Type="Protein" GroupRef="a75f3">
+    <Graphics CenterX="288.4740582800283" CenterY="179.97512437810946" Width="80.00000000000001" Height="19.999999999999993" ZOrder="32768" FontWeight="Bold" FontSize="12" Valign="Middle" />
+    <Xref Database="Ensembl" ID="ENSG00000142089" />
+  </DataNode>
+  <DataNode TextLabel="FOS" GraphId="c9a35" Type="GeneProduct" GroupRef="a3479">
+    <Graphics CenterX="482.04477611940285" CenterY="292.08333333333434" Width="79.99999999999997" Height="19.999999999999993" ZOrder="32768" FontWeight="Bold" FontSize="12" Valign="Middle" />
+    <Xref Database="Entrez Gene" ID="2353" />
+  </DataNode>
+  <DataNode TextLabel="IFI27" GraphId="cc4b9" Type="GeneProduct">
+    <Graphics CenterX="482.3965770367636" CenterY="438.64142353283665" Width="80.0" Height="20.0" ZOrder="32768" FontWeight="Bold" FontStyle="Italic" FontSize="12" Valign="Middle" />
+    <Xref Database="Entrez Gene" ID="3429" />
+  </DataNode>
+  <DataNode TextLabel="JUN" GraphId="e66a6" Type="GeneProduct" GroupRef="a3479">
+    <Graphics CenterX="482.0447761194029" CenterY="312.16866066493094" Width="80.0" Height="20.0" ZOrder="32768" FontWeight="Bold" FontSize="12" Valign="Middle" />
+    <Xref Database="Entrez Gene" ID="3725" />
+  </DataNode>
+  <DataNode TextLabel="BST2" GraphId="f5a44" Type="GeneProduct">
+    <Graphics CenterX="481.84325239015516" CenterY="500.47942499052056" Width="80.0" Height="20.0" ZOrder="32768" FontWeight="Bold" FontStyle="Italic" FontSize="12" Valign="Middle" />
+    <Xref Database="Entrez Gene" ID="684" />
+  </DataNode>
+  <DataNode TextLabel="MAPK" GraphId="fa0ee" Type="GeneProduct">
+    <Graphics CenterX="482.0" CenterY="186.2037037037033" Width="80.0" Height="20.0" ZOrder="32768" FontWeight="Bold" FontSize="12" Valign="Middle" />
+    <Xref Database="" ID="" />
+  </DataNode>
+  <DataNode TextLabel="IFITM1" GraphId="fe7ca" Type="Protein" GroupRef="a75f3">
+    <BiopaxRef>b0c</BiopaxRef>
+    <Graphics CenterX="288.47405828002826" CenterY="140.1741293532338" Width="80.00000000000001" Height="19.999999999999993" ZOrder="32768" FontWeight="Bold" FontSize="12" Valign="Middle" />
+    <Xref Database="Ensembl" ID="ENSG00000185885" />
+  </DataNode>
+  <Interaction GraphId="id129dc2d8">
+    <Graphics ZOrder="12288" LineStyle="Broken" LineThickness="1.0">
+      <Point X="482.04477611940285" Y="341.81542683408514" GraphRef="c29dd" RelX="0.0" RelY="1.0" />
+      <Point X="482.587064676617" Y="388.5952183526823" />
+      <Anchor Position="1.0" Shape="Circle" GraphId="d9158" />
+    </Graphics>
+    <Xref Database="" ID="" />
+  </Interaction>
+  <Interaction GraphId="id45e4561d">
+    <Graphics ZOrder="12288" LineThickness="2.0" Color="ff0000">
+      <Point X="482.587064676617" Y="388.5952183526823" GraphRef="d9158" RelX="0.0" RelY="0.0" />
+      <Point X="482.3965770367636" Y="428.64142353283665" GraphRef="cc4b9" RelX="0.0" RelY="-1.0" ArrowHead="mim-transcription-translation" />
+    </Graphics>
+    <Xref Database="" ID="" />
+  </Interaction>
+  <Interaction GraphId="id73290d59">
+    <Graphics ZOrder="12288" LineStyle="Broken" LineThickness="1.0">
+      <Point X="481.2190436705362" Y="107.26149016820668" GraphRef="f9a4d" RelX="0.0" RelY="1.0" />
+      <Point X="482.0" Y="176.2037037037033" GraphRef="fa0ee" RelX="0.0" RelY="-1.0" ArrowHead="Arrow" />
+    </Graphics>
+    <Xref Database="" ID="" />
+  </Interaction>
+  <Interaction GraphId="id8043327d">
+    <Graphics ZOrder="12288" LineStyle="Broken" LineThickness="1.0">
+      <Point X="482.0" Y="196.2037037037033" GraphRef="fa0ee" RelX="0.0" RelY="1.0" />
+      <Point X="482.04477611940285" Y="282.08333333333434" GraphRef="c9a35" RelX="0.0" RelY="-1.0" ArrowHead="Arrow" />
+    </Graphics>
+    <Xref Database="" ID="" />
+  </Interaction>
+  <Interaction GraphId="id9c5b5fe7">
+    <Graphics ConnectorType="Elbow" ZOrder="12288" LineStyle="Broken" LineThickness="1.0">
+      <Point X="288.4740582800283" Y="197.97512437810946" GraphRef="c5877" RelX="0.0" RelY="1.0" ArrowHead="Arrow" />
+      <Point X="482.587064676617" Y="388.5952183526823" GraphRef="d9158" RelX="0.0" RelY="0.0" />
+    </Graphics>
+    <Xref Database="" ID="" />
+  </Interaction>
+  <Interaction GraphId="idb975819d">
+    <Graphics ZOrder="12288" LineThickness="2.0" Color="ff0000">
+      <Point X="482.587064676617" Y="388.5952183526823" GraphRef="d9158" RelX="0.0" RelY="0.0" />
+      <Point X="481.84325239015516" Y="490.47942499052056" GraphRef="f5a44" RelX="0.0" RelY="-1.0" ArrowHead="mim-transcription-translation" />
+    </Graphics>
+    <Xref Database="" ID="" />
+  </Interaction>
+  <Interaction GraphId="ide76157d6">
+    <Graphics ConnectorType="Elbow" ZOrder="12288" LineStyle="Broken" LineThickness="1.0">
+      <Point X="435.8177169707021" Y="95.20306207059947" GraphRef="f9a4d" RelX="-1.0" RelY="0.5" ArrowHead="Arrow" />
+      <Point X="288.47405828002826" Y="130.1741293532338" GraphRef="fe7ca" RelX="0.0" RelY="-1.0" />
+    </Graphics>
+    <Xref Database="" ID="" />
+  </Interaction>
+  <GraphicalLine GraphId="d1fbf">
+    <Graphics ZOrder="12288" LineStyle="Broken" LineThickness="1.0">
+      <Point X="673.6111111111117" Y="164.3518518518512" />
+      <Point X="751.157407407408" Y="163.19444444444377" ArrowHead="Arrow" />
+    </Graphics>
+  </GraphicalLine>
+  <GraphicalLine GraphId="eeed6">
+    <Graphics ZOrder="12288" LineThickness="2.0" Color="ff0000">
+      <Point X="680.5555555555561" Y="194.44444444444426" />
+      <Point X="747.6851851851858" Y="194.44444444444426" ArrowHead="mim-transcription-translation" />
+    </Graphics>
+  </GraphicalLine>
+  <Label TextLabel="Activation" GraphId="bc383">
+    <Graphics CenterX="803.2407407407412" CenterY="167.82407407407345" Width="90.0" Height="25.0" ZOrder="28672" FillColor="ffffff" FontWeight="Bold" FontSize="12" Valign="Middle" />
+  </Label>
+  <Label TextLabel="SARS-CoV-2 &#xA;induced &#xA;interferons" GraphId="f9a4d">
+    <BiopaxRef>b0c</BiopaxRef>
+    <Graphics CenterX="481.2190436705362" CenterY="83.14463397299227" Width="90.8026533996682" Height="48.23371239042883" ZOrder="28672" FillColor="ffffff" FontWeight="Bold" FontSize="12" Valign="Middle" Color="ff0000" />
+  </Label>
+  <Label TextLabel="Positive regulation of gene expression" GraphId="b75b1">
+    <Graphics CenterX="884.6990740740745" CenterY="207.9166666666667" Width="242.17592592592587" Height="25.0" ZOrder="32769" FillColor="ffffff" FontWeight="Bold" FontSize="12" Valign="Middle" />
+  </Label>
+  <Label TextLabel="Transcription factors" GraphId="ce5f9">
+    <Graphics CenterX="596.8217444523455" CenterY="312.357261312486" Width="129.13251204296003" Height="25.0" ZOrder="32770" FillColor="ffffff" FontWeight="Bold" FontSize="12" Valign="Middle" Color="00cc33" />
+  </Label>
+  <Label TextLabel="Effectors to fight virus" GraphId="c4dde">
+    <Graphics CenterX="175.43202637605742" CenterY="153.6733199083943" Width="157.28997867804156" Height="25.0" ZOrder="32771" FillColor="ffffff" FontWeight="Bold" FontSize="12" Valign="Middle" Color="00cc33" />
+  </Label>
+  <Shape GraphId="d4ee9">
+    <Graphics CenterX="842.9212962962966" CenterY="193.03703703703707" Width="362.76851851851893" Height="113.92592592592558" ZOrder="16384" FontSize="12" Valign="Middle" ShapeType="Rectangle" Rotation="0.0" />
+  </Shape>
+  <Group GroupId="a75f3" GraphId="c5877" Style="Group" />
+  <Group GroupId="a3479" GraphId="c9f2a" Style="Group" />
+  <InfoBox CenterX="0.0" CenterY="0.0" />
+  <Biopax>
+    <bp:PublicationXref xmlns:bp="http://www.biopax.org/release/biopax-level3.owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:id="b0c">
+      <bp:ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></bp:ID>
+      <bp:DB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PubMed</bp:DB>
+      <bp:TITLE rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Blood single cell immune profiling reveals the interferon-MAPK pathway mediated adaptive immune response for COVID-19</bp:TITLE>
+      <bp:SOURCE rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://doi.org/10.1101/2020.03.15.20033472</bp:SOURCE>
+      <bp:YEAR rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2020</bp:YEAR>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lulin Huang</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yi Shi</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bo Gong</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Li Jiang</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Xiaoqi Liu</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Jialiang Yang</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Juan Tang</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chunfang You</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Qi Jiang</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bo Long</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tao Zeng</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mei Luo</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fanwei Zeng</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fanxin Zeng</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Shuqiang Wang</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Xingxiang Yang</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Zhenglin Yang</bp:AUTHORS>
+    </bp:PublicationXref>
+    <bp:openControlledVocabulary xmlns:bp="http://www.biopax.org/release/biopax-level3.owl#">
+      <bp:TERM xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">interferon mediated signaling pathway</bp:TERM>
+      <bp:ID xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PW:0000894</bp:ID>
+      <bp:Ontology xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathway Ontology</bp:Ontology>
+    </bp:openControlledVocabulary>
+    <bp:openControlledVocabulary xmlns:bp="http://www.biopax.org/release/biopax-level3.owl#">
+      <bp:TERM xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">infectious disease pathway</bp:TERM>
+      <bp:ID xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PW:0001028</bp:ID>
+      <bp:Ontology xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathway Ontology</bp:Ontology>
+    </bp:openControlledVocabulary>
+  </Biopax>
+</Pathway>

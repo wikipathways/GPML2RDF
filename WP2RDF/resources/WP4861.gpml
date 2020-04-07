@@ -36,7 +36,7 @@
     <Xref Database="Ensembl" ID="ENSG00000175197"/>
   </DataNode>
   <DataNode TextLabel="nsp15" GraphId="fa46a" Type="GeneProduct">
-    <Graphics CenterX="380.0" CenterY="422.0" Width="62.0" Height="25.0" ZOrder="32768" FontSize="12" Valign="Middle" Color="cc0000"/>
+    <Graphics CenterX="380.0" CenterY="422.0" Width="62.0" Height="25.0" ZOrder="32768" FontSize="12" Valign="Middle" FillColor="ff6666" ShapeType="Oval"/>
     <Xref Database="Wikidata" ID="Q87917579"/>
   </DataNode>
   <DataNode TextLabel="EIF2AK2 / PKR" GraphId="b5c21" Type="GeneProduct">

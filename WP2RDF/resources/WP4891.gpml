@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Pathway xmlns="http://pathvisio.org/GPML/2013a" Name="COVID-19 AOP" Version="20200407" Organism="Homo sapiens">
+  <Comment Source="WikiPathways-description">Experimental pathway to investigate overlap of Covid-19 downstream effects and adverse outcome pathways related to lung injury.</Comment>
+  <Comment Source="WikiPathways-description">Experimenting with links in line with bioinformatics analysis of COVID-19 genes and AOP knowledge. Work in progress!</Comment>
+  <Graphics BoardWidth="1280.8604410682851" BoardHeight="578.1669629967955"/>
+  <DataNode TextLabel="CCL2" Type="GeneProduct">
+    <Graphics CenterX="643.6499897907235" CenterY="421.9801425011836" Width="80.0" Height="20.0" ZOrder="32768" FontSize="12" Valign="Middle"/>
+    <Xref Database="Entrez Gene" ID="6347"/>
+  </DataNode>
+  <DataNode TextLabel="IL6" Type="GeneProduct">
+    <Graphics CenterX="1065.9596199015798" CenterY="351.8841805110245" Width="80.0" Height="20.0" ZOrder="32768" FontSize="12" Valign="Middle"/>
+    <Xref Database="Entrez Gene" ID="3569"/>
+  </DataNode>
+  <DataNode TextLabel="TNF" Type="GeneProduct">
+    <Graphics CenterX="799.0370545944917" CenterY="357.0985137325098" Width="80.0" Height="20.0" ZOrder="32768" FontSize="12" Valign="Middle"/>
+    <Xref Database="Entrez Gene" ID="7124"/>
+  </DataNode>
+  <DataNode TextLabel="IL10" Type="GeneProduct">
+    <Graphics CenterX="65.0" CenterY="185.0" Width="80.0" Height="20.0" ZOrder="32768" FontSize="12" Valign="Middle"/>
+    <Xref Database="Entrez Gene" ID="3586"/>
+  </DataNode>
+  <DataNode TextLabel="IL1B" Type="GeneProduct">
+    <Graphics CenterX="798.0837597183937" CenterY="324.6289107511259" Width="80.0" Height="20.0" ZOrder="32768" FontSize="12" Valign="Middle"/>
+    <Xref Database="Entrez Gene" ID="3553"/>
+  </DataNode>
+  <DataNode TextLabel="IL2" Type="GeneProduct">
+    <Graphics CenterX="929.6384526197454" CenterY="357.4887953794166" Width="80.0" Height="20.0" ZOrder="32768" FontSize="12" Valign="Middle"/>
+    <Xref Database="Entrez Gene" ID="3558"/>
+  </DataNode>
+  <DataNode TextLabel="CCL3" Type="GeneProduct">
+    <Graphics CenterX="643.6499897907221" CenterY="326.9257821502243" Width="80.0" Height="20.0" ZOrder="32768" FontSize="12" Valign="Middle"/>
+    <Xref Database="Entrez Gene" ID="6348"/>
+  </DataNode>
+  <DataNode TextLabel="CXCL10" Type="GeneProduct">
+    <Graphics CenterX="65.0" CenterY="215.83814048790734" Width="80.0" Height="20.0" ZOrder="32768" FontSize="12" Valign="Middle"/>
+    <Xref Database="Entrez Gene" ID="3627"/>
+  </DataNode>
+  <DataNode TextLabel="TMPRSS2" Type="GeneProduct">
+    <Graphics CenterX="362.42800134218345" CenterY="356.42034611512946" Width="80.0" Height="20.0" ZOrder="32768" FontSize="12" Valign="Middle"/>
+    <Xref Database="Entrez Gene" ID="7113"/>
+  </DataNode>
+  <DataNode TextLabel="IL2RA" Type="GeneProduct">
+    <Graphics CenterX="929.6384526197447" CenterY="327.316063797132" Width="80.0" Height="20.0" ZOrder="32768" FontSize="12" Valign="Middle"/>
+    <Xref Database="Entrez Gene" ID="3559"/>
+  </DataNode>
+  <DataNode TextLabel="IL7" Type="GeneProduct">
+    <Graphics CenterX="65.0" CenterY="247.6871530460064" Width="80.0" Height="20.0" ZOrder="32768" FontSize="12" Valign="Middle"/>
+    <Xref Database="Entrez Gene" ID="3574"/>
+  </DataNode>
+  <DataNode TextLabel="CSF3" Type="GeneProduct">
+    <Graphics CenterX="1065.006325025482" CenterY="326.3051917269403" Width="80.0" Height="20.0" ZOrder="32768" FontSize="12" Valign="Middle"/>
+    <Xref Database="Entrez Gene" ID="1440"/>
+  </DataNode>
+  <DataNode TextLabel="IL8" Type="GeneProduct">
+    <Graphics CenterX="643.6499897907222" CenterY="356.35189685084293" Width="80.0" Height="20.0" ZOrder="32768" FontSize="12" Valign="Middle"/>
+    <Xref Database="Entrez Gene" ID="3576"/>
+  </DataNode>
+  <DataNode TextLabel="AGT" GraphId="b6003" Type="GeneProduct">
+    <Graphics CenterX="496.8425788718233" CenterY="329.3378079375145" Width="80.0" Height="20.0" ZOrder="32768" FontSize="12" Valign="Middle"/>
+    <Xref Database="Entrez Gene" ID="183"/>
+  </DataNode>
+  <DataNode TextLabel="SARS-CoV-2 and&#10;COVID-19 Pathway" GraphId="be0b0" Type="Pathway">
+    <Graphics CenterX="367.2451747352916" CenterY="298.1312962182835" Width="136.82116728183377" Height="57.69769256580463" ZOrder="32768" FontWeight="Bold" FontSize="12" Valign="Middle" ShapeType="None" Color="14961e"/>
+    <Xref Database="WikiPathways" ID="WP4846"/>
+  </DataNode>
+  <DataNode TextLabel="Toll-like&#10;receptor signaling" GraphId="cd4a3" Type="Pathway">
+    <Graphics CenterX="645.6072785555441" CenterY="295.74805902803865" Width="117.75526975989933" Height="39.58508991996632" ZOrder="32768" FontWeight="Bold" FontSize="12" Valign="Middle" ShapeType="None" Color="14961e"/>
+    <Xref Database="WikiPathways" ID="WP75"/>
+  </DataNode>
+  <DataNode TextLabel="ACE2" GraphId="f33e8" Type="GeneProduct">
+    <Graphics CenterX="362.42800134218334" CenterY="328.1542042850395" Width="80.0" Height="20.0" ZOrder="32768" FontSize="12" Valign="Middle"/>
+    <Xref Database="Entrez Gene" ID="59272"/>
+  </DataNode>
+  <Interaction>
+    <Graphics ZOrder="12288" LineThickness="1.0">
+      <Point X="402.42800134218334" Y="328.1542042850395" GraphRef="f33e8" RelX="1.0" RelY="0.0"/>
+      <Point X="456.8425788718233" Y="329.3378079375145" GraphRef="b6003" RelX="-1.0" RelY="0.0"/>
+    </Graphics>
+    <Xref Database="" ID=""/>
+  </Interaction>
+  <Label TextLabel="MIE" GraphId="e8044">
+    <Comment>MIE in AOP:320 and AOP:319</Comment>
+    <Graphics CenterX="360.3454631645684" CenterY="380.36465556260066" Width="90.0" Height="25.0" ZOrder="28672" FillColor="ffffff" FontWeight="Bold" FontSize="14" Valign="Middle"/>
+  </Label>
+  <Shape GraphId="a11c4">
+    <Graphics CenterX="366.5418798591975" CenterY="329.5900271294729" Width="130.60139802525367" Height="116.80197488380242" ZOrder="16384" FontSize="12" Valign="Middle" ShapeType="RoundedRectangle" Rotation="0.0"/>
+  </Shape>
+  <Shape GraphId="d2977">
+    <Comment>Associated with the MIE in Lung fibrosis AOP:173</Comment>
+    <BiopaxRef>bab</BiopaxRef>
+    <Graphics CenterX="646.3243297945738" CenterY="332.93343737728065" Width="130.60139802525367" Height="122.48879537941748" ZOrder="32769" FontSize="12" Valign="Middle" ShapeType="RoundedRectangle" Rotation="0.0"/>
+  </Shape>
+  <InfoBox CenterX="0.0" CenterY="0.0"/>
+  <Biopax>
+    <bp:openControlledVocabulary xmlns:bp="http://www.biopax.org/release/biopax-level3.owl#">
+      <bp:TERM xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">viral infectious disease</bp:TERM>
+      <bp:ID xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DOID:934</bp:ID>
+      <bp:Ontology xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Disease</bp:Ontology>
+    </bp:openControlledVocabulary>
+    <bp:openControlledVocabulary xmlns:bp="http://www.biopax.org/release/biopax-level3.owl#">
+      <bp:TERM xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">respiratory system disease pathway</bp:TERM>
+      <bp:ID xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PW:0001308</bp:ID>
+      <bp:Ontology xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathway Ontology</bp:Ontology>
+    </bp:openControlledVocabulary>
+    <bp:openControlledVocabulary xmlns:bp="http://www.biopax.org/release/biopax-level3.owl#">
+      <bp:TERM xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">severe acute respiratory syndrome</bp:TERM>
+      <bp:ID xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DOID:2945</bp:ID>
+      <bp:Ontology xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Disease</bp:Ontology>
+    </bp:openControlledVocabulary>
+    <bp:PublicationXref xmlns:bp="http://www.biopax.org/release/biopax-level3.owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:id="bab">
+      <bp:ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">29149350</bp:ID>
+      <bp:DB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PubMed</bp:DB>
+      <bp:TITLE rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A Data Fusion Pipeline for Generating and Enriching Adverse Outcome Pathway Descriptions.</bp:TITLE>
+      <bp:SOURCE rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Toxicol Sci</bp:SOURCE>
+      <bp:YEAR rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2018</bp:YEAR>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Nymark P</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rieswijk L</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ehrhart F</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Jeliazkova N</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tsiliki G</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sarimveis H</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Evelo CT</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hongisto V</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Kohonen P</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Willighagen E</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Grafström RC</bp:AUTHORS>
+    </bp:PublicationXref>
+  <bp:openControlledVocabulary xmlns:bp="http://www.biopax.org/release/biopax-level3.owl#"><bp:TERM>signaling pathway</bp:TERM><bp:ID>PW:0000003</bp:ID><bp:Ontology>Pathway Ontology</bp:Ontology></bp:openControlledVocabulary></Biopax>
+</Pathway>

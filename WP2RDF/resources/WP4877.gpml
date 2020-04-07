@@ -117,7 +117,7 @@
     <Xref Database="Ensembl" ID="ENSG00000112062" />
   </DataNode>
   <DataNode TextLabel="S" GraphId="d2f78" Type="GeneProduct" GroupRef="e4295">
-    <Graphics CenterX="117.54537597234264" CenterY="278.30596369922284" Width="90.0" Height="25.0" ZOrder="32768" FontSize="12" Valign="Middle" />
+    <Graphics CenterX="117.54537597234264" CenterY="278.30596369922284" Width="90.0" Height="25.0" ZOrder="32768" FillColor="ff6666" FontSize="12" Valign="Middle" ShapeType="Oval" />
     <Xref Database="" ID="" />
   </DataNode>
   <DataNode TextLabel="RPS6KA3" GraphId="d5b14" Type="GeneProduct" GroupRef="cf158">
@@ -126,7 +126,7 @@
     <Xref Database="Ensembl" ID="ENSG00000177189" />
   </DataNode>
   <DataNode TextLabel="3a" GraphId="d81db" Type="GeneProduct" GroupRef="c71b7">
-    <Graphics CenterX="448.57389801209905" CenterY="235.9550561797765" Width="90.0" Height="25.0" ZOrder="32768" FontSize="12" Valign="Middle" />
+    <Graphics CenterX="448.57389801209905" CenterY="235.9550561797765" Width="90.0" Height="25.0" ZOrder="32768" FillColor="ff6666" FontSize="12" Valign="Middle" ShapeType="Oval" />
     <Xref Database="Uniprot-TrEMBL" ID="P59632" />
   </DataNode>
   <DataNode TextLabel="FOS" GraphId="dd907" Type="GeneProduct" GroupRef="df530">
@@ -163,39 +163,39 @@
     <Xref Database="Ensembl" ID="ENSG00000132155" />
   </DataNode>
   <DataNode TextLabel="3b" GraphId="e07b9" Type="GeneProduct" GroupRef="e4295">
-    <Graphics CenterX="118.25610802635829" CenterY="303.30596369922284" Width="90.0" Height="25.0" ZOrder="32772" FontSize="12" Valign="Middle" />
+    <Graphics CenterX="118.25610802635829" CenterY="303.30596369922284" Width="90.0" Height="25.0" ZOrder="32772" FillColor="ff6666" FontSize="12" Valign="Middle" ShapeType="Oval" />
     <Xref Database="Uniprot-TrEMBL" ID="P59633" />
   </DataNode>
   <DataNode TextLabel="VLP" GraphId="adc0b" Type="GeneProduct" GroupRef="e4295">
-    <Graphics CenterX="117.54537597234267" CenterY="328.30596369922284" Width="90.0" Height="25.0" ZOrder="32773" FontSize="12" Valign="Middle" />
+    <Graphics CenterX="117.54537597234267" CenterY="328.30596369922284" Width="90.0" Height="25.0" ZOrder="32773" FillColor="ff6666" FontSize="12" Valign="Middle" ShapeType="Oval" />
     <Xref Database="" ID="" />
   </DataNode>
   <DataNode TextLabel="7a" GraphId="e0783" Type="GeneProduct" GroupRef="c71b7">
-    <Graphics CenterX="448.57389801209905" CenterY="260.9550561797766" Width="90.0" Height="25.0" ZOrder="32774" FontSize="12" Valign="Middle" />
+    <Graphics CenterX="448.57389801209905" CenterY="260.9550561797766" Width="90.0" Height="25.0" ZOrder="32774" FillColor="ff6666" FontSize="12" Valign="Middle" ShapeType="Oval" />
     <Xref Database="Uniprot-TrEMBL" ID="P59635" />
   </DataNode>
   <DataNode TextLabel="S" GraphId="aaeac" Type="GeneProduct" GroupRef="f15c9">
-    <Graphics CenterX="1035.5293863439992" CenterY="287.86949006050355" Width="90.0" Height="25.0" ZOrder="32778" FontSize="12" Valign="Middle" />
+    <Graphics CenterX="1035.5293863439992" CenterY="287.86949006050355" Width="90.0" Height="25.0" ZOrder="32778" FillColor="ff6666" FontSize="12" Valign="Middle" ShapeType="Oval" />
     <Xref Database="" ID="" />
   </DataNode>
   <DataNode TextLabel="3a" GraphId="eb7e4" Type="GeneProduct" GroupRef="f15c9">
-    <Graphics CenterX="1035.5293863439992" CenterY="312.86949006050355" Width="90.0" Height="25.0" ZOrder="32779" FontSize="12" Valign="Middle" />
+    <Graphics CenterX="1035.5293863439992" CenterY="312.86949006050355" Width="90.0" Height="25.0" ZOrder="32779" FillColor="ff6666" FontSize="12" Valign="Middle" ShapeType="Oval" />
     <Xref Database="Uniprot-TrEMBL" ID="P59632" />
   </DataNode>
   <DataNode TextLabel="7a" GraphId="dcc03" Type="GeneProduct" GroupRef="f15c9">
-    <Graphics CenterX="1035.529386343999" CenterY="412.86949006050355" Width="90.0" Height="25.0" ZOrder="32780" FontSize="12" Valign="Middle" />
+    <Graphics CenterX="1035.529386343999" CenterY="412.86949006050355" Width="90.0" Height="25.0" ZOrder="32780" FillColor="ff6666" FontSize="12" Valign="Middle" ShapeType="Oval" />
     <Xref Database="Uniprot-TrEMBL" ID="P59635" />
   </DataNode>
   <DataNode TextLabel="N" GraphId="f4482" Type="GeneProduct" GroupRef="f15c9">
-    <Graphics CenterX="1035.529386343999" CenterY="362.8694900605036" Width="90.0" Height="25.0" ZOrder="32781" FontSize="12" Valign="Middle" />
+    <Graphics CenterX="1035.529386343999" CenterY="362.8694900605036" Width="90.0" Height="25.0" ZOrder="32781" FillColor="ff6666" FontSize="12" Valign="Middle" ShapeType="Oval" />
     <Xref Database="" ID="" />
   </DataNode>
   <DataNode TextLabel="3b" GraphId="e339e" Type="GeneProduct" GroupRef="f15c9">
-    <Graphics CenterX="1035.5293863439992" CenterY="387.86949006050355" Width="90.0" Height="25.0" ZOrder="32782" FontSize="12" Valign="Middle" />
+    <Graphics CenterX="1035.5293863439992" CenterY="387.86949006050355" Width="90.0" Height="25.0" ZOrder="32782" FillColor="ff6666" FontSize="12" Valign="Middle" ShapeType="Oval" />
     <Xref Database="Uniprot-TrEMBL" ID="P59633" />
   </DataNode>
   <DataNode TextLabel="6" GraphId="c2ab1" Type="GeneProduct" GroupRef="f15c9">
-    <Graphics CenterX="1035.5293863439992" CenterY="337.8694900605036" Width="90.0" Height="25.0" ZOrder="32783" FontSize="12" Valign="Middle" />
+    <Graphics CenterX="1035.5293863439992" CenterY="337.8694900605036" Width="90.0" Height="25.0" ZOrder="32783" FillColor="ff6666" FontSize="12" Valign="Middle" ShapeType="Oval" />
     <Xref Database="Uniprot-TrEMBL" ID="P59634" />
   </DataNode>
   <State GraphRef="d5b14" TextLabel="" GraphId="a3cf3">
@@ -529,6 +529,21 @@
   <Group GroupId="f0475" GraphId="f9084" Style="Group" />
   <InfoBox CenterX="0.0" CenterY="0.0" />
   <Biopax>
+    <bp:openControlledVocabulary xmlns:bp="http://www.biopax.org/release/biopax-level3.owl#">
+      <bp:TERM xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">signaling pathway</bp:TERM>
+      <bp:ID xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PW:0000003</bp:ID>
+      <bp:Ontology xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathway Ontology</bp:Ontology>
+    </bp:openControlledVocabulary>
+    <bp:openControlledVocabulary xmlns:bp="http://www.biopax.org/release/biopax-level3.owl#">
+      <bp:TERM xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">viral infectious disease</bp:TERM>
+      <bp:ID xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DOID:934</bp:ID>
+      <bp:Ontology xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Disease</bp:Ontology>
+    </bp:openControlledVocabulary>
+    <bp:openControlledVocabulary xmlns:bp="http://www.biopax.org/release/biopax-level3.owl#">
+      <bp:TERM xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">severe acute respiratory syndrome</bp:TERM>
+      <bp:ID xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DOID:2945</bp:ID>
+      <bp:Ontology xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Disease</bp:Ontology>
+    </bp:openControlledVocabulary>
     <bp:PublicationXref xmlns:bp="http://www.biopax.org/release/biopax-level3.owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:id="a72">
       <bp:ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">31226023 </bp:ID>
       <bp:DB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PubMed</bp:DB>
@@ -546,21 +561,6 @@
     <bp:openControlledVocabulary xmlns:bp="http://www.biopax.org/release/biopax-level3.owl#">
       <bp:TERM xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">p38 MAPK signaling pathway</bp:TERM>
       <bp:ID xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PW:0000198</bp:ID>
-      <bp:Ontology xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathway Ontology</bp:Ontology>
-    </bp:openControlledVocabulary>
-    <bp:openControlledVocabulary xmlns:bp="http://www.biopax.org/release/biopax-level3.owl#">
-      <bp:TERM xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">viral infectious disease</bp:TERM>
-      <bp:ID xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DOID:934</bp:ID>
-      <bp:Ontology xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Disease</bp:Ontology>
-    </bp:openControlledVocabulary>
-    <bp:openControlledVocabulary xmlns:bp="http://www.biopax.org/release/biopax-level3.owl#">
-      <bp:TERM xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">severe acute respiratory syndrome</bp:TERM>
-      <bp:ID xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DOID:2945</bp:ID>
-      <bp:Ontology xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Disease</bp:Ontology>
-    </bp:openControlledVocabulary>
-    <bp:openControlledVocabulary xmlns:bp="http://www.biopax.org/release/biopax-level3.owl#">
-      <bp:TERM xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">signaling pathway</bp:TERM>
-      <bp:ID xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PW:0000003</bp:ID>
       <bp:Ontology xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathway Ontology</bp:Ontology>
     </bp:openControlledVocabulary>
   </Biopax>

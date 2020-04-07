@@ -17,7 +17,7 @@ The large viral Spike protein (S or surface glycoprotein) forms trimers. It inte
     <Xref Database="" ID="" />
   </DataNode>
   <DataNode TextLabel="S2 subunit" GraphId="bdee3" Type="Protein">
-    <Graphics CenterX="854.0185185185182" CenterY="280.0092592592596" Width="71.0" Height="25.0" ZOrder="32768" FontSize="12" Valign="Middle" />
+    <Graphics CenterX="854.0185185185182" CenterY="280.0092592592596" Width="71.0" Height="25.0" ZOrder="32768" FontSize="12" Valign="Middle" FillColor="ff6666" ShapeType="Oval"/>
     <Xref Database="" ID="" />
   </DataNode>
   <DataNode TextLabel="orf1ab" GraphId="cda8f" Type="Protein">
@@ -122,12 +122,12 @@ The large viral Spike protein (S or surface glycoprotein) forms trimers. It inte
   <DataNode TextLabel="surface&#xA;glycoprotein S" GraphId="e7798" Type="Protein">
     <BiopaxRef>aa3</BiopaxRef>
     <BiopaxRef>e1a</BiopaxRef>
-    <Graphics CenterX="694.0" CenterY="191.25" Width="90.0" Height="49.5" ZOrder="32790" FontSize="12" Valign="Middle" />
+    <Graphics CenterX="694.0" CenterY="191.25" Width="90.0" Height="49.5" ZOrder="32790" FontSize="12" Valign="Middle" FillColor="ff6666" ShapeType="Oval" />
     <Xref Database="Uniprot-TrEMBL" ID="P0DTC2" />
   </DataNode>
   <DataNode TextLabel="membrane&#xA;glycoprotein M" GraphId="b3da4" Type="Protein">
     <BiopaxRef>aa3</BiopaxRef>
-    <Graphics CenterX="657.0" CenterY="265.25" Width="90.0" Height="49.5" ZOrder="32791" FontSize="12" Valign="Middle" />
+    <Graphics CenterX="657.0" CenterY="265.25" Width="90.0" Height="49.5" ZOrder="32791" FontSize="12" Valign="Middle" FillColor="ff6666" ShapeType="Oval" />
     <Xref Database="Uniprot-TrEMBL" ID="P0DTC5" />
   </DataNode>
   <DataNode TextLabel="orf1ab" GraphId="d244b" Type="Protein">
@@ -212,7 +212,7 @@ The large viral Spike protein (S or surface glycoprotein) forms trimers. It inte
   </DataNode>
   <DataNode TextLabel="envelope&#xA;protein E" GraphId="f6241" Type="Protein">
     <BiopaxRef>aa3</BiopaxRef>
-    <Graphics CenterX="657.0" CenterY="328.75" Width="90.0" Height="49.5" ZOrder="32829" FontSize="12" Valign="Middle" />
+    <Graphics CenterX="657.0" CenterY="328.75" Width="90.0" Height="49.5" ZOrder="32829" FontSize="12" Valign="Middle" FillColor="ff6666" ShapeType="Oval"/>
     <Xref Database="Uniprot-TrEMBL" ID="P0DTC4" />
   </DataNode>
   <DataNode TextLabel="ORF10" GraphId="cdb2d" Type="Protein">

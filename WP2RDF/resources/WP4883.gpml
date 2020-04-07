@@ -1,0 +1,765 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Pathway xmlns="http://pathvisio.org/GPML/2013a" Name="SARS-CoV-2 and Angiotensin-converting enzyme 2 (ACE2) receptor : Molecular mechanisms and potential therapeutic target" Data-Source="Literature" Version="20200331" Author="Rex D A B" Maintainer="Rex D A B" Email="rexprem@gmail.com" Last-Modified="04012020" Organism="Homo sapiens">
+  <Comment>Literature curation of biological processes involved in the COVID-19 disease after SARS-Cov-2 infection and molecular mechanism and potential therapeutic target</Comment>
+  <Comment Source="WikiPathways-description">initial entry of severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) into cells, The large viral Spike (S) protein needs to be primed by host proteases. For SARS-CoV-2 that is the serine protease TMPRSS2. after binding to its functional receptor, angiotensin-converting enzyme 2 (ACE2). After endocytosis of the viral complex, surface ACE2 is further down-regulated, resulting in unopposed angiotensin II accumulation. Local activation of the activation of angiotensin pathway system may mediate lung injury responses to viral insults. ACE denotes angiotensin-converting enzyme, and ARB angiotensin-receptor blocker. </Comment>
+  <Comment Source="WikiPathways-description">Initial entry of severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) into cells, The large viral Spike (S) protein needs to be primed by host proteases. For SARS-CoV-2 that is the serine protease TMPRSS2. after binding to its functional receptor, angiotensin-converting enzyme 2 (ACE2). After endocytosis of the viral complex, surface ACE2 is further down-regulated, resulting in unopposed angiotensin II accumulation. Local activation of the reninÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œangiotensinÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œaldosterone system may mediate lung injury responses to viral insults. ACE denotes angiotensin-converting enzyme, and ARB angiotensin-receptor blocker. 
+
+Source :
+Figure 1. Interaction between SARS-CoV-2 and the ReninÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œAngiotensinÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œAldosterone System (Vaduganathan et al., 2020)
+Figure 1. Potential approaches to address ACE2-mediated COVID-19 (Zhang et al., 2020)
+Vaduganathan, M., Vardeny, O., Michel, T., Mcmurray, J. J. V., Pfeffer, M. A. &amp; Solomon, S. D. 2020. ReninÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œAngiotensinÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œAldosterone System Inhibitors in Patients with Covid-19. New England Journal of Medicine.
+Zhang, H., Penninger, J. M., Li, Y., Zhong, N. &amp; Slutsky, A. S. 2020. Angiotensin-converting enzyme 2 (ACE2) as a SARS-CoV-2 receptor: molecular mechanisms and potential therapeutic target. Intensive Care Med, 46, 586-590.
+</Comment>
+  <Comment Source="WikiPathways-description">Initial entry of severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) into cells, The large viral Spike (S) protein needs to be primed by host proteases. For SARS-CoV-2 that is the serine protease TMPRSS2. after binding to its functional receptor, angiotensin-converting enzyme 2 (ACE2). After endocytosis of the viral complex, surface ACE2 is further down-regulated, resulting in unopposed angiotensin II accumulation. Local activation of the reninÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œangiotensinÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œaldosterone system may mediate lung injury responses to viral insults. ACE denotes angiotensin-converting enzyme, and ARB angiotensin-receptor blocker. 
+Source :
+Figure 1. Interaction between SARS-CoV-2 and the ReninÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œAngiotensinÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œAldosterone System (Vaduganathan et al., 2020)
+Figure 1. Potential approaches to address ACE2-mediated COVID-19 (Zhang et al., 2020)
+Vaduganathan, M., Vardeny, O., Michel, T., Mcmurray, J. J. V., Pfeffer, M. A. &amp; Solomon, S. D. 2020. ReninÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œAngiotensinÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œAldosterone System Inhibitors in Patients with Covid-19. New England Journal of Medicine.
+Zhang, H., Penninger, J. M., Li, Y., Zhong, N. &amp; Slutsky, A. S. 2020. Angiotensin-converting enzyme 2 (ACE2) as a SARS-CoV-2 receptor: molecular mechanisms and potential therapeutic target. Intensive Care Med, 46, 586-590.
+</Comment>
+  <Comment Source="WikiPathways-description">Initial entry of severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) into cells, The large viral Spike (S) protein needs to be primed by host proteases. For SARS-CoV-2 that is the serine protease TMPRSS2. after binding to its functional receptor, angiotensin-converting enzyme 2 (ACE2). After endocytosis of the viral complex, surface ACE2 is further down-regulated, resulting in unopposed angiotensin II accumulation. Local activation of the reninÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œangiotensinÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œaldosterone system may mediate lung injury responses to viral insults. ACE denotes angiotensin-converting enzyme, and ARB angiotensin-receptor blocker. 
+Source :
+Figure 1. Interaction between SARS-CoV-2 and the ReninÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œAngiotensinÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œAldosterone System (Vaduganathan et al., 2020)
+Figure 1. Potential approaches to address ACE2-mediated COVID-19 (Zhang et al., 2020)
+
+Hoffmann, M., Kleine-Weber, H., Schroeder, S., Kruger, N., Herrler, T., Erichsen, S., Schiergens, T. S., Herrler, G., Wu, N. H., Nitsche, A., Muller, M. A., Drosten, C. &amp; Pohlmann, S. 2020. SARS-CoV-2 Cell Entry Depends on ACE2 and TMPRSS2 and Is Blocked by a Clinically Proven Protease Inhibitor. Cell.
+Vaduganathan, M., Vardeny, O., Michel, T., Mcmurray, J. J. V., Pfeffer, M. A. &amp; Solomon, S. D. 2020. ReninÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œAngiotensinÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œAldosterone System Inhibitors in Patients with Covid-19. New England Journal of Medicine.
+Zhang, H., Penninger, J. M., Li, Y., Zhong, N. &amp; Slutsky, A. S. 2020. Angiotensin-converting enzyme 2 (ACE2) as a SARS-CoV-2 receptor: molecular mechanisms and potential therapeutic target. Intensive Care Med, 46, 586-590.
+</Comment>
+  <Comment Source="WikiPathways-description">Initial entry of severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) into cells, The large viral Spike (S) protein needs to be primed by host proteases. For SARS-CoV-2 that is the serine protease TMPRSS2.  After binding to its functional receptor, angiotensin-converting enzyme 2 (ACE2). After endocytosis of the viral complex, surface ACE2 is further down-regulated, resulting in unopposed angiotensin II accumulation. </Comment>
+  <BiopaxRef>a33</BiopaxRef>
+  <BiopaxRef>f06</BiopaxRef>
+  <Graphics BoardWidth="1809.6257796257792" BoardHeight="1107.0948339787424"/>
+  <DataNode TextLabel="" GraphId="a17d4" Type="GeneProduct">
+    <Graphics CenterX="1543.1684912142678" CenterY="984.4771066858258" Width="84.33961117861466" Height="29.661603888214103" ZOrder="32768" FontWeight="Bold" FontSize="12" Valign="Middle" LineThickness="2.0" Color="3300ff"/>
+    <Xref Database="" ID=""/>
+  </DataNode>
+  <DataNode TextLabel="REN" GraphId="c91b1" Type="GeneProduct">
+    <BiopaxRef>a33</BiopaxRef>
+    <Graphics CenterX="1046.8712256600725" CenterY="544.8829894880419" Width="67.0" Height="24.0" ZOrder="32768" FontSize="12" Valign="Middle" ShapeType="RoundedRectangle" LineThickness="2.0"/>
+    <Xref Database="Entrez Gene" ID="5972"/>
+  </DataNode>
+  <DataNode TextLabel="MAS1" GraphId="c93ee" Type="GeneProduct">
+    <BiopaxRef>a33</BiopaxRef>
+    <Graphics CenterX="823.5684688262485" CenterY="759.0598628230752" Width="93.09259259259287" Height="37.53703703703692" ZOrder="32768" FontWeight="Bold" FontSize="12" Valign="Middle"/>
+    <Xref Database="Entrez Gene" ID="4142"/>
+  </DataNode>
+  <DataNode TextLabel="Angiotensin-2" GraphId="d23b7">
+    <Graphics CenterX="1003.8329694323144" CenterY="666.561815110818" Width="112.5" Height="30.499999999999975" ZOrder="32768" FontWeight="Bold" FontSize="12" Valign="Middle" LineThickness="2.0"/>
+    <Xref Database="" ID=""/>
+  </DataNode>
+  <DataNode TextLabel="Angiotensin-1" GraphId="d391a">
+    <BiopaxRef>a33</BiopaxRef>
+    <Graphics CenterX="1003.8329694323144" CenterY="595.0618151108182" Width="112.5" Height="27.5" ZOrder="32768" FontWeight="Bold" FontSize="12" Valign="Middle" LineThickness="2.0"/>
+    <Xref Database="" ID=""/>
+  </DataNode>
+  <DataNode TextLabel="ACE" GraphId="e5d6d" Type="Protein">
+    <BiopaxRef>a33</BiopaxRef>
+    <Graphics CenterX="1049.0829694323143" CenterY="627.0994474717869" Width="68.0" Height="26.052104208416814" ZOrder="32768" FontWeight="Bold" FontSize="12" Valign="Middle" ShapeType="RoundedRectangle" LineThickness="2.0"/>
+    <Xref Database="Entrez Gene" ID="1636"/>
+  </DataNode>
+  <DataNode TextLabel="AGT" GraphId="f53bd" Type="GeneProduct">
+    <BiopaxRef>a33</BiopaxRef>
+    <Graphics CenterX="1002.606101104912" CenterY="497.7052717683073" Width="115.30249110320253" Height="35.5" ZOrder="32768" FontWeight="Bold" FontSize="12" Valign="Middle" LineThickness="2.0"/>
+    <Xref Database="Entrez Gene" ID="183"/>
+  </DataNode>
+  <DataNode TextLabel="AT1R" GraphId="f6bb2" Type="GeneProduct">
+    <BiopaxRef>a33</BiopaxRef>
+    <Graphics CenterX="1004.4391537377669" CenterY="756.1955194643336" Width="93.09259259259287" Height="37.53703703703718" ZOrder="32768" FontWeight="Bold" FontSize="12" Valign="Middle"/>
+    <Xref Database="Entrez Gene" ID="185"/>
+  </DataNode>
+  <DataNode TextLabel="TMPRSS2" GraphId="b141b" Type="GeneProduct">
+    <BiopaxRef>af3</BiopaxRef>
+    <BiopaxRef>a33</BiopaxRef>
+    <Graphics CenterX="366.9016046593006" CenterY="763.2832579459334" Width="93.09259259259287" Height="24.93097879877113" ZOrder="33760" FontWeight="Bold" FontSize="12" Valign="Middle"/>
+    <Xref Database="Ensembl" ID="ENSG00000184012"/>
+  </DataNode>
+  <DataNode TextLabel="ACE2" GraphId="bf1a9" Type="GeneProduct">
+    <BiopaxRef>a33</BiopaxRef>
+    <BiopaxRef>af3</BiopaxRef>
+    <Graphics CenterX="654.3408867926238" CenterY="762.0851377523172" Width="93.0925925925929" Height="38.69444444444459" ZOrder="36121" FontWeight="Bold" FontSize="12" Valign="Middle"/>
+    <Xref Database="Entrez Gene" ID="59272"/>
+  </DataNode>
+  <DataNode TextLabel="Soluble ACE2" GraphId="dac5e" Type="GeneProduct">
+    <BiopaxRef>a33</BiopaxRef>
+    <BiopaxRef>af3</BiopaxRef>
+    <Graphics CenterX="654.6945584863875" CenterY="861.2242495446147" Width="93.0925925925929" Height="38.69444444444459" ZOrder="36182" FontWeight="Bold" FontSize="12" Valign="Middle" Color="0000ff"/>
+    <Xref Database="Entrez Gene" ID="59272"/>
+  </DataNode>
+  <Interaction>
+    <Graphics ZOrder="12288" LineThickness="1.0">
+      <Point X="654.3408867926238" Y="781.4323599745395" GraphRef="bf1a9" RelX="0.0" RelY="1.0"/>
+      <Point X="654.6945584863875" Y="841.8770273223925" GraphRef="dac5e" RelX="0.0" RelY="-1.0" ArrowHead="mim-transcription-translation"/>
+    </Graphics>
+    <Xref Database="" ID=""/>
+  </Interaction>
+  <Interaction GraphId="a4b4f" GroupRef="bde0d">
+    <Graphics ZOrder="12288" LineThickness="1.0" Color="ff0000">
+      <Point X="779.4289348956614" Y="353.04432417202094" GraphRef="c8009" RelX="-0.5" RelY="-1.0"/>
+      <Point X="761.3668122270742" Y="330.9868995633188" ArrowHead="mim-catalysis"/>
+    </Graphics>
+    <Xref Database="" ID=""/>
+  </Interaction>
+  <Interaction GraphId="id1244a43c">
+    <Graphics ZOrder="12288" LineThickness="2.0" Color="ff0000">
+      <Point X="1535.5205568278766" Y="899.6724286785354"/>
+      <Point X="1535.5205568278766" Y="955.565502797612" ArrowHead="mim-inhibition"/>
+    </Graphics>
+    <Xref Database="" ID=""/>
+  </Interaction>
+  <Interaction GraphId="id2338925">
+    <Graphics ZOrder="12288" LineThickness="1.0">
+      <Point X="823.7990545830527" Y="943.7238435977428" GraphRef="feb8f" RelX="0.0" RelY="1.0"/>
+      <Point X="823.799054583051" Y="1023.569613722108" GraphRef="aa191" RelX="0.0" RelY="-1.0" ArrowHead="mim-conversion"/>
+    </Graphics>
+    <Xref Database="" ID=""/>
+  </Interaction>
+  <Interaction GraphId="id27ade87d">
+    <Graphics ZOrder="12288" LineThickness="2.0" Color="ff0000">
+      <Point X="650.8773099310836" Y="290.8353684179781" GraphRef="f7666" RelX="1.0" RelY="-0.5"/>
+      <Point X="702.5507366014184" Y="352.0458271780328" GraphRef="aae40" RelX="-1.0" RelY="-0.5" ArrowHead="mim-inhibition"/>
+    </Graphics>
+    <Xref Database="" ID=""/>
+  </Interaction>
+  <Interaction GraphId="id2c3a414b">
+    <Graphics ZOrder="12288" LineThickness="1.0">
+      <Point X="823.5684688262485" Y="777.8283813415936" GraphRef="c93ee" RelX="0.0" RelY="1.0"/>
+      <Point X="823.7990545830526" Y="839.8442139681136" GraphRef="ac9d2" RelX="0.0" RelY="-1.0" ArrowHead="mim-conversion"/>
+    </Graphics>
+    <Xref Database="" ID=""/>
+  </Interaction>
+  <Interaction GraphId="id2fc925af">
+    <Graphics ConnectorType="Elbow" ZOrder="12288" LineStyle="Broken" LineThickness="1.0">
+      <Point X="700.8871830889202" Y="752.4115266412061" GraphRef="bf1a9" RelX="1.0" RelY="-0.5"/>
+      <Point X="725.6872302457423" Y="698.3673758550106"/>
+      <Point X="749.8837703768659" Y="644.3232250688148" GraphRef="e2dcb" RelX="-1.0" RelY="0.0" ArrowHead="Arrow"/>
+    </Graphics>
+    <Xref Database="" ID=""/>
+  </Interaction>
+  <Interaction GraphId="id3739bd1">
+    <Graphics ConnectorType="Elbow" ZOrder="12288" LineStyle="Broken" LineThickness="1.0">
+      <Point X="1049.0829694323143" Y="640.1254995759955" GraphRef="e5d6d" RelX="0.0" RelY="1.0"/>
+      <Point X="1026.4579694323143" Y="644.4270015698587"/>
+      <Point X="1003.8329694323143" Y="651.311815110818" GraphRef="d23b7" RelX="0.0" RelY="-1.0" ArrowHead="Arrow"/>
+    </Graphics>
+    <Xref Database="" ID=""/>
+  </Interaction>
+  <Interaction GraphId="id4093d262">
+    <Graphics ConnectorType="Elbow" ZOrder="12288" LineStyle="Broken" LineThickness="1.0">
+      <Point X="1046.8712256600725" Y="556.8829894880419" GraphRef="c91b1" RelX="0.0" RelY="1.0"/>
+      <Point X="1003.8329694323143" Y="581.3118151108182" GraphRef="d391a" RelX="0.0" RelY="-1.0" ArrowHead="Arrow"/>
+    </Graphics>
+    <Xref Database="" ID=""/>
+  </Interaction>
+  <Interaction GraphId="id45cf6f5e">
+    <Graphics ZOrder="12288" LineThickness="1.0">
+      <Point X="1003.8331558258325" Y="603.8385965469655"/>
+      <Point X="1003.8329694323143" Y="651.311815110818" GraphRef="d23b7" RelX="0.0" RelY="-1.0" ArrowHead="mim-conversion"/>
+    </Graphics>
+    <Xref Database="" ID=""/>
+  </Interaction>
+  <Interaction GraphId="id501a4bdc">
+    <Graphics ZOrder="12288" LineStyle="Broken" LineThickness="1.0">
+      <Point X="784.1176277179616" Y="690.3849264363072" GraphRef="c8f49" RelX="0.0" RelY="1.0"/>
+      <Point X="817.4287566401866" Y="714.2226392190591" GraphRef="ce5f1" RelX="-0.5" RelY="1.0" ArrowHead="Arrow"/>
+    </Graphics>
+    <Xref Database="" ID=""/>
+  </Interaction>
+  <Interaction GraphId="id695320d0">
+    <Graphics ZOrder="12288" LineThickness="1.0">
+      <Point X="1002.6061011049119" Y="515.4552717683073" GraphRef="f53bd" RelX="0.0" RelY="1.0"/>
+      <Point X="1003.8329694323143" Y="581.3118151108182" GraphRef="d391a" RelX="0.0" RelY="-1.0" ArrowHead="mim-conversion"/>
+    </Graphics>
+    <Xref Database="" ID=""/>
+  </Interaction>
+  <Interaction GraphId="id770baa8e">
+    <Graphics ZOrder="12288" LineThickness="2.0" Color="ff0000">
+      <Point X="901.1704177864956" Y="249.16021676541226" GraphRef="a6cb9" RelX="-1.0" RelY="0.0"/>
+      <Point X="852.6104380939555" Y="306.5443241720211" GraphRef="aae40" RelX="0.5" RelY="-1.0" ArrowHead="mim-inhibition"/>
+    </Graphics>
+    <Xref Database="" ID=""/>
+  </Interaction>
+  <Interaction GraphId="id7806bdcd">
+    <Graphics ZOrder="12288" LineThickness="2.0" Color="ff0000">
+      <Point X="677.5849559744057" Y="250.97722826013526" GraphRef="e73a9" RelX="0.5" RelY="1.0"/>
+      <Point X="752.5706370989308" Y="306.5443241720211" GraphRef="aae40" RelX="-0.5" RelY="-1.0" ArrowHead="mim-inhibition"/>
+    </Graphics>
+    <Xref Database="" ID=""/>
+  </Interaction>
+  <Interaction GraphId="id93eee6dc">
+    <Graphics ZOrder="12288" LineThickness="1.0">
+      <Point X="1004.4391537377669" Y="774.9640379828522" GraphRef="f6bb2" RelX="0.0" RelY="1.0"/>
+      <Point X="1004.2724870710952" Y="841.5539997158046" GraphRef="ed257" RelX="0.0" RelY="-1.0" ArrowHead="mim-conversion"/>
+    </Graphics>
+    <Xref Database="" ID=""/>
+  </Interaction>
+  <Interaction GraphId="id965b8019">
+    <Graphics ZOrder="12288" LineStyle="Broken" LineThickness="1.0">
+      <Point X="883.0492081533566" Y="691.038234324349" GraphRef="e50ab" RelX="0.0" RelY="1.0"/>
+      <Point X="824.0113212158324" Y="714.2226392190591" GraphRef="ce5f1" RelX="0.0" RelY="1.0" ArrowHead="Arrow"/>
+    </Graphics>
+    <Xref Database="" ID=""/>
+  </Interaction>
+  <Interaction GraphId="idb0d71735">
+    <Graphics ZOrder="12288" LineThickness="1.0">
+      <Point X="1004.5829694323143" Y="937.8039997158041" GraphRef="e6fd2" RelX="0.0" RelY="1.0"/>
+      <Point X="1005.0363759599578" Y="1024.7369982124546" GraphRef="eeb66" RelX="0.0" RelY="-1.0" ArrowHead="mim-conversion"/>
+    </Graphics>
+    <Xref Database="" ID=""/>
+  </Interaction>
+  <Interaction GraphId="idd9b42fd0">
+    <Graphics ZOrder="12288" LineThickness="2.0" Color="ff0000">
+      <Point X="798.6086591148296" Y="221.666200624398" GraphRef="f1603" RelX="0.0" RelY="1.0"/>
+      <Point X="802.5905375964431" Y="306.5443241720211" GraphRef="aae40" RelX="0.0" RelY="-1.0" ArrowHead="TBar"/>
+    </Graphics>
+    <Xref Database="" ID=""/>
+  </Interaction>
+  <Interaction GraphId="idf45aaf4a">
+    <Graphics ConnectorType="Curved" ZOrder="12288" LineThickness="1.0">
+      <Point X="446.0829694323145" Y="668.602206657385" GraphRef="de4ce" RelX="1.0" RelY="0.0"/>
+      <Point X="567.0829694323144" Y="629.602206657385" GraphRef="e2279" RelX="-1.0" RelY="0.0" ArrowHead="Arrow"/>
+    </Graphics>
+    <Xref Database="" ID=""/>
+  </Interaction>
+  <Interaction GraphId="idff61de3">
+    <Graphics ZOrder="12288" LineThickness="3.0">
+      <Point X="824.0113212158324" Y="714.2226392190591" GraphRef="ce5f1" RelX="0.0" RelY="1.0"/>
+      <Point X="823.5684688262485" Y="740.2913443045567" GraphRef="c93ee" RelX="0.0" RelY="-1.0"/>
+    </Graphics>
+    <Xref Database="" ID=""/>
+  </Interaction>
+  <Interaction GraphId="e79fe">
+    <Graphics ZOrder="33753" LineThickness="3.0">
+      <Point X="654.6586916665607" Y="709.4892698485896" GraphRef="c9c32" RelX="0.0" RelY="1.0"/>
+      <Point X="654.3408867926238" Y="742.7379155300949" GraphRef="bf1a9" RelX="0.0" RelY="-1.0"/>
+    </Graphics>
+    <Xref Database="" ID=""/>
+  </Interaction>
+  <Interaction GraphId="c33df">
+    <Graphics ZOrder="36022" LineThickness="3.0">
+      <Point X="1732.0062096811976" Y="646.5847376695255" GraphRef="fca35" RelX="0.0" RelY="1.0"/>
+      <Point X="1731.8396698302058" Y="669.6774651667531" GraphRef="a7420" RelX="0.0" RelY="-1.0"/>
+    </Graphics>
+    <Xref Database="" ID=""/>
+  </Interaction>
+  <Interaction GraphId="fd6ab">
+    <Graphics ZOrder="36078" LineThickness="2.0" Color="ff0000">
+      <Point X="1536.219476388907" Y="744.2589361872764"/>
+      <Point X="1536.390940496938" Y="786.9945438631825" ArrowHead="mim-catalysis"/>
+    </Graphics>
+    <Xref Database="" ID=""/>
+  </Interaction>
+  <Interaction GraphId="a0ca7">
+    <Graphics ZOrder="36127" LineThickness="2.0" Color="ff0000">
+      <Point X="1009.2245260029276" Y="283.58758622047765" GraphRef="bc4cd" RelX="-1.0" RelY="-0.5"/>
+      <Point X="902.6303385914679" Y="352.0458271780328" GraphRef="aae40" RelX="1.0" RelY="-0.5" ArrowHead="mim-inhibition"/>
+    </Graphics>
+    <Xref Database="" ID=""/>
+  </Interaction>
+  <Interaction GraphId="e7a20">
+    <Graphics ZOrder="36130" LineThickness="3.0">
+      <Point X="1004.9175782911425" Y="708.1896278325094" GraphRef="c43c5" RelX="0.0" RelY="1.0"/>
+      <Point X="1004.4391537377669" Y="737.427000945815" GraphRef="f6bb2" RelX="0.0" RelY="-1.0"/>
+    </Graphics>
+    <Xref Database="" ID=""/>
+  </Interaction>
+  <Interaction GraphId="fb77b" GroupRef="e7ec2">
+    <Graphics ZOrder="36134" LineThickness="1.0" Color="ff0000">
+      <Point X="341.5829694323145" Y="631.811815110818" GraphRef="d22c8" RelX="-0.5" RelY="-1.0"/>
+      <Point X="322.0829694323145" Y="604.8118151108182" ArrowHead="mim-catalysis"/>
+    </Graphics>
+    <Xref Database="" ID=""/>
+  </Interaction>
+  <Interaction GraphId="d822b" GroupRef="a8495">
+    <Graphics ZOrder="36149" LineThickness="1.0" Color="ff0000">
+      <Point X="632.5829694323144" Y="592.8118151108182" GraphRef="b9761" RelX="-0.5" RelY="-1.0"/>
+      <Point X="613.0829694323144" Y="565.8118151108182" ArrowHead="mim-catalysis"/>
+    </Graphics>
+    <Xref Database="" ID=""/>
+  </Interaction>
+  <Interaction GraphId="abf9d" GroupRef="f3874">
+    <Graphics ZOrder="36168" LineThickness="1.0" Color="ff0000">
+      <Point X="1537.979543066739" Y="599.387890103773" GraphRef="aa484" RelX="-0.5" RelY="-1.0"/>
+      <Point X="1518.479543066739" Y="572.3878901037732" ArrowHead="mim-catalysis"/>
+    </Graphics>
+    <Xref Database="" ID=""/>
+  </Interaction>
+  <GraphicalLine GraphId="a1f0b" GroupRef="bde0d">
+    <Graphics ZOrder="12288" LineThickness="1.0" Color="ff0000">
+      <Point X="753.5539348956614" Y="423.91932417202094" GraphRef="c8009" RelX="-1.0" RelY="0.5"/>
+      <Point X="723.5433280926068" Y="447.5617699009968" ArrowHead="mim-catalysis"/>
+    </Graphics>
+  </GraphicalLine>
+  <GraphicalLine GraphId="a214e" GroupRef="bde0d">
+    <Graphics ZOrder="12288" LineThickness="1.0" Color="ff0000">
+      <Point X="805.3039348956614" Y="353.04432417202094" GraphRef="c8009" RelX="0.0" RelY="-1.0"/>
+      <Point X="805.0539348956613" Y="314.5443241720211" ArrowHead="mim-catalysis"/>
+    </Graphics>
+  </GraphicalLine>
+  <GraphicalLine GraphId="a84bd" GroupRef="bde0d">
+    <Graphics ZOrder="12288" LineThickness="1.0" Color="ff0000">
+      <Point X="831.1789348956614" Y="353.04432417202094" GraphRef="c8009" RelX="0.5" RelY="-1.0"/>
+      <Point X="849.0539348956614" Y="327.54432417202105" ArrowHead="mim-catalysis"/>
+    </Graphics>
+  </GraphicalLine>
+  <GraphicalLine GraphId="ba748" GroupRef="bde0d">
+    <Graphics ZOrder="12288" LineThickness="1.0" Color="ff0000">
+      <Point X="805.3039348956614" Y="447.54432417202094" GraphRef="c8009" RelX="0.0" RelY="1.0"/>
+      <Point X="806.0102171272599" Y="478.5676826564525" ArrowHead="mim-catalysis"/>
+    </Graphics>
+  </GraphicalLine>
+  <GraphicalLine GraphId="cd0db" GroupRef="bde0d">
+    <Graphics ZOrder="12288" LineThickness="1.0" Color="ff0000">
+      <Point X="857.0539348956614" Y="423.91932417202094" GraphRef="c8009" RelX="1.0" RelY="0.5"/>
+      <Point X="888.2337501053269" Y="442.8523973190247" ArrowHead="mim-catalysis"/>
+    </Graphics>
+  </GraphicalLine>
+  <GraphicalLine GraphId="cfcc4" GroupRef="bde0d">
+    <Graphics ZOrder="12288" LineThickness="1.0" Color="ff0000">
+      <Point X="857.0539348956614" Y="400.29432417202094" GraphRef="c8009" RelX="1.0" RelY="0.0"/>
+      <Point X="894.6303385914679" Y="400.7561223241168" ArrowHead="mim-catalysis"/>
+    </Graphics>
+  </GraphicalLine>
+  <GraphicalLine GraphId="d6127" GroupRef="bde0d">
+    <Graphics ZOrder="12288" LineThickness="1.0" Color="ff0000">
+      <Point X="753.5539348956614" Y="376.66932417202094" GraphRef="c8009" RelX="-1.0" RelY="-0.5"/>
+      <Point X="720.7397913277864" Y="357.09798444209883" ArrowHead="mim-catalysis"/>
+    </Graphics>
+  </GraphicalLine>
+  <GraphicalLine GraphId="de2b9" GroupRef="bde0d">
+    <Graphics ZOrder="12288" LineThickness="1.0" Color="ff0000">
+      <Point X="831.1789348956614" Y="447.54432417202094" GraphRef="c8009" RelX="0.5" RelY="1.0"/>
+      <Point X="858.3830038366706" Y="472.7031435876814" ArrowHead="mim-catalysis"/>
+    </Graphics>
+  </GraphicalLine>
+  <GraphicalLine GraphId="efab2" GroupRef="bde0d">
+    <Graphics ZOrder="12288" LineThickness="1.0" Color="ff0000">
+      <Point X="753.5539348956614" Y="400.29432417202094" GraphRef="c8009" RelX="-1.0" RelY="0.0"/>
+      <Point X="710.5507366014184" Y="401.46685437813244" ArrowHead="mim-catalysis"/>
+    </Graphics>
+  </GraphicalLine>
+  <GraphicalLine GraphId="f1abd" GroupRef="bde0d">
+    <Graphics ZOrder="12288" LineThickness="1.0" Color="ff0000">
+      <Point X="779.4289348956614" Y="447.54432417202094"/>
+      <Point X="756.0539348956607" Y="480.55033619606803" ArrowHead="mim-catalysis"/>
+    </Graphics>
+  </GraphicalLine>
+  <GraphicalLine GraphId="f4dae" GroupRef="bde0d">
+    <Graphics ZOrder="12288" LineThickness="1.0" Color="ff0000">
+      <Point X="857.0539348956614" Y="376.66932417202094"/>
+      <Point X="892.053934895661" Y="363.54432417202054" ArrowHead="mim-catalysis"/>
+    </Graphics>
+  </GraphicalLine>
+  <GraphicalLine GraphId="fded3" GroupRef="e7ec2">
+    <Graphics ZOrder="36135" LineThickness="1.0" Color="ff0000">
+      <Point X="322.0829694323145" Y="685.061815110818" GraphRef="d22c8" RelX="-1.0" RelY="0.5"/>
+      <Point X="291.0829694323145" Y="700.811815110818" ArrowHead="mim-catalysis"/>
+    </Graphics>
+  </GraphicalLine>
+  <GraphicalLine GraphId="a4061" GroupRef="e7ec2">
+    <Graphics ZOrder="36136" LineThickness="1.0" Color="ff0000">
+      <Point X="361.0829694323145" Y="631.811815110818" GraphRef="d22c8" RelX="0.0" RelY="-1.0"/>
+      <Point X="362.0829694323145" Y="593.8118151108182" ArrowHead="mim-catalysis"/>
+    </Graphics>
+  </GraphicalLine>
+  <GraphicalLine GraphId="a7840" GroupRef="e7ec2">
+    <Graphics ZOrder="36137" LineThickness="1.0" Color="ff0000">
+      <Point X="380.5829694323145" Y="631.811815110818" GraphRef="d22c8" RelX="0.5" RelY="-1.0"/>
+      <Point X="400.0829694323145" Y="602.8118151108182" ArrowHead="mim-catalysis"/>
+    </Graphics>
+  </GraphicalLine>
+  <GraphicalLine GraphId="b64bd" GroupRef="e7ec2">
+    <Graphics ZOrder="36138" LineThickness="1.0" Color="ff0000">
+      <Point X="361.0829694323145" Y="702.811815110818" GraphRef="d22c8" RelX="0.0" RelY="1.0"/>
+      <Point X="362.7263743325002" Y="743.3925982039517" ArrowHead="mim-catalysis"/>
+    </Graphics>
+  </GraphicalLine>
+  <GraphicalLine GraphId="dcaef" GroupRef="e7ec2">
+    <Graphics ZOrder="36139" LineThickness="1.0" Color="ff0000">
+      <Point X="400.0829694323145" Y="685.061815110818" GraphRef="d22c8" RelX="1.0" RelY="0.5"/>
+      <Point X="424.0829694323145" Y="700.811815110818" ArrowHead="mim-catalysis"/>
+    </Graphics>
+  </GraphicalLine>
+  <GraphicalLine GraphId="df984" GroupRef="e7ec2">
+    <Graphics ZOrder="36140" LineThickness="1.0" Color="ff0000">
+      <Point X="400.0829694323145" Y="667.311815110818" GraphRef="d22c8" RelX="1.0" RelY="0.0"/>
+      <Point X="438.0829694323145" Y="667.811815110818" ArrowHead="mim-catalysis"/>
+    </Graphics>
+  </GraphicalLine>
+  <GraphicalLine GraphId="ef71c" GroupRef="e7ec2">
+    <Graphics ZOrder="36141" LineThickness="1.0" Color="ff0000">
+      <Point X="322.0829694323145" Y="649.561815110818" GraphRef="d22c8" RelX="-1.0" RelY="-0.5"/>
+      <Point X="293.0829694323145" Y="629.8118151108181" ArrowHead="mim-catalysis"/>
+    </Graphics>
+  </GraphicalLine>
+  <GraphicalLine GraphId="d45f1" GroupRef="e7ec2">
+    <Graphics ZOrder="36142" LineThickness="1.0" Color="ff0000">
+      <Point X="380.5829694323145" Y="702.811815110818" GraphRef="d22c8" RelX="0.5" RelY="1.0"/>
+      <Point X="397.0829694323145" Y="727.811815110818" ArrowHead="mim-catalysis"/>
+    </Graphics>
+  </GraphicalLine>
+  <GraphicalLine GraphId="ce34d" GroupRef="e7ec2">
+    <Graphics ZOrder="36143" LineThickness="1.0" Color="ff0000">
+      <Point X="322.0829694323145" Y="667.311815110818" GraphRef="d22c8" RelX="-1.0" RelY="0.0"/>
+      <Point X="284.0829694323145" Y="665.811815110818" ArrowHead="mim-catalysis"/>
+    </Graphics>
+  </GraphicalLine>
+  <GraphicalLine GraphId="e0292" GroupRef="e7ec2">
+    <Graphics ZOrder="36144" LineThickness="1.0" Color="ff0000">
+      <Point X="341.5829694323145" Y="702.811815110818" GraphRef="d22c8" RelX="-0.5" RelY="1.0"/>
+      <Point X="323.0829694323145" Y="729.811815110818" ArrowHead="mim-catalysis"/>
+    </Graphics>
+  </GraphicalLine>
+  <GraphicalLine GraphId="bb2c1" GroupRef="e7ec2">
+    <Graphics ZOrder="36145" LineThickness="1.0" Color="ff0000">
+      <Point X="400.0829694323145" Y="649.561815110818" GraphRef="d22c8" RelX="1.0" RelY="-0.5"/>
+      <Point X="426.0829694323145" Y="635.8118151108181" ArrowHead="mim-catalysis"/>
+    </Graphics>
+  </GraphicalLine>
+  <GraphicalLine GraphId="c0bb0" GroupRef="a8495">
+    <Graphics ZOrder="36150" LineThickness="1.0" Color="ff0000">
+      <Point X="613.0829694323144" Y="646.0618151108182" GraphRef="b9761" RelX="-1.0" RelY="0.5"/>
+      <Point X="582.0829694323144" Y="661.811815110818" ArrowHead="mim-catalysis"/>
+    </Graphics>
+  </GraphicalLine>
+  <GraphicalLine GraphId="fd18b" GroupRef="a8495">
+    <Graphics ZOrder="36151" LineThickness="1.0" Color="ff0000">
+      <Point X="652.0829694323144" Y="592.8118151108182" GraphRef="b9761" RelX="0.0" RelY="-1.0"/>
+      <Point X="653.0829694323144" Y="554.8118151108182" ArrowHead="mim-catalysis"/>
+    </Graphics>
+  </GraphicalLine>
+  <GraphicalLine GraphId="db390" GroupRef="a8495">
+    <Graphics ZOrder="36152" LineThickness="1.0" Color="ff0000">
+      <Point X="671.5829694323144" Y="592.8118151108182" GraphRef="b9761" RelX="0.5" RelY="-1.0"/>
+      <Point X="691.0829694323144" Y="563.8118151108182" ArrowHead="mim-catalysis"/>
+    </Graphics>
+  </GraphicalLine>
+  <GraphicalLine GraphId="efe7e" GroupRef="a8495">
+    <Graphics ZOrder="36153" LineThickness="1.0" Color="ff0000">
+      <Point X="652.0829694323144" Y="663.8118151108182" GraphRef="b9761" RelX="0.0" RelY="1.0"/>
+      <Point X="653.7263743325001" Y="704.3925982039517" ArrowHead="mim-catalysis"/>
+    </Graphics>
+  </GraphicalLine>
+  <GraphicalLine GraphId="f8f1e" GroupRef="a8495">
+    <Graphics ZOrder="36154" LineThickness="1.0" Color="ff0000">
+      <Point X="691.0829694323144" Y="646.0618151108182" GraphRef="b9761" RelX="1.0" RelY="0.5"/>
+      <Point X="715.0829694323144" Y="661.811815110818" ArrowHead="mim-catalysis"/>
+    </Graphics>
+  </GraphicalLine>
+  <GraphicalLine GraphId="b15a8" GroupRef="a8495">
+    <Graphics ZOrder="36155" LineThickness="1.0" Color="ff0000">
+      <Point X="691.0829694323144" Y="628.3118151108182" GraphRef="b9761" RelX="1.0" RelY="0.0"/>
+      <Point X="729.0829694323144" Y="628.8118151108181" ArrowHead="mim-catalysis"/>
+    </Graphics>
+  </GraphicalLine>
+  <GraphicalLine GraphId="fd423" GroupRef="a8495">
+    <Graphics ZOrder="36156" LineThickness="1.0" Color="ff0000">
+      <Point X="613.0829694323144" Y="610.5618151108182" GraphRef="b9761" RelX="-1.0" RelY="-0.5"/>
+      <Point X="584.0829694323144" Y="590.8118151108182" ArrowHead="mim-catalysis"/>
+    </Graphics>
+  </GraphicalLine>
+  <GraphicalLine GraphId="dda5b" GroupRef="a8495">
+    <Graphics ZOrder="36157" LineThickness="1.0" Color="ff0000">
+      <Point X="671.5829694323144" Y="663.8118151108182" GraphRef="b9761" RelX="0.5" RelY="1.0"/>
+      <Point X="688.0829694323144" Y="688.811815110818" ArrowHead="mim-catalysis"/>
+    </Graphics>
+  </GraphicalLine>
+  <GraphicalLine GraphId="f663d" GroupRef="a8495">
+    <Graphics ZOrder="36158" LineThickness="1.0" Color="ff0000">
+      <Point X="613.0829694323144" Y="628.3118151108182" GraphRef="b9761" RelX="-1.0" RelY="0.0"/>
+      <Point X="575.0829694323144" Y="626.8118151108181" ArrowHead="mim-catalysis"/>
+    </Graphics>
+  </GraphicalLine>
+  <GraphicalLine GraphId="a8921" GroupRef="a8495">
+    <Graphics ZOrder="36159" LineThickness="1.0" Color="ff0000">
+      <Point X="632.5829694323144" Y="663.8118151108182" GraphRef="b9761" RelX="-0.5" RelY="1.0"/>
+      <Point X="614.0829694323144" Y="690.811815110818" ArrowHead="mim-catalysis"/>
+    </Graphics>
+  </GraphicalLine>
+  <GraphicalLine GraphId="ec664" GroupRef="a8495">
+    <Graphics ZOrder="36160" LineThickness="1.0" Color="ff0000">
+      <Point X="691.0829694323144" Y="610.5618151108182" GraphRef="b9761" RelX="1.0" RelY="-0.5"/>
+      <Point X="717.0829694323144" Y="596.8118151108182" ArrowHead="mim-catalysis"/>
+    </Graphics>
+  </GraphicalLine>
+  <GraphicalLine GraphId="d7de5" GroupRef="f3874">
+    <Graphics ZOrder="36169" LineThickness="1.0" Color="ff0000">
+      <Point X="1518.479543066739" Y="652.637890103773" GraphRef="aa484" RelX="-1.0" RelY="0.5"/>
+      <Point X="1487.479543066739" Y="668.387890103773" ArrowHead="mim-catalysis"/>
+    </Graphics>
+  </GraphicalLine>
+  <GraphicalLine GraphId="e4bb0" GroupRef="f3874">
+    <Graphics ZOrder="36170" LineThickness="1.0" Color="ff0000">
+      <Point X="1557.479543066739" Y="599.387890103773" GraphRef="aa484" RelX="0.0" RelY="-1.0"/>
+      <Point X="1558.479543066739" Y="561.3878901037731" ArrowHead="mim-catalysis"/>
+    </Graphics>
+  </GraphicalLine>
+  <GraphicalLine GraphId="d0085" GroupRef="f3874">
+    <Graphics ZOrder="36171" LineThickness="1.0" Color="ff0000">
+      <Point X="1576.979543066739" Y="599.387890103773" GraphRef="aa484" RelX="0.5" RelY="-1.0"/>
+      <Point X="1596.479543066739" Y="570.3878901037732" ArrowHead="mim-catalysis"/>
+    </Graphics>
+  </GraphicalLine>
+  <GraphicalLine GraphId="a86d7" GroupRef="f3874">
+    <Graphics ZOrder="36172" LineThickness="1.0" Color="ff0000">
+      <Point X="1557.479543066739" Y="670.387890103773" GraphRef="aa484" RelX="0.0" RelY="1.0"/>
+      <Point X="1559.1229479669246" Y="710.9686731969067" ArrowHead="mim-catalysis"/>
+    </Graphics>
+  </GraphicalLine>
+  <GraphicalLine GraphId="ac12c" GroupRef="f3874">
+    <Graphics ZOrder="36173" LineThickness="1.0" Color="ff0000">
+      <Point X="1596.479543066739" Y="652.637890103773" GraphRef="aa484" RelX="1.0" RelY="0.5"/>
+      <Point X="1620.479543066739" Y="668.387890103773" ArrowHead="mim-catalysis"/>
+    </Graphics>
+  </GraphicalLine>
+  <GraphicalLine GraphId="a6508" GroupRef="f3874">
+    <Graphics ZOrder="36174" LineThickness="1.0" Color="ff0000">
+      <Point X="1596.479543066739" Y="634.887890103773" GraphRef="aa484" RelX="1.0" RelY="0.0"/>
+      <Point X="1634.479543066739" Y="635.387890103773" ArrowHead="mim-catalysis"/>
+    </Graphics>
+  </GraphicalLine>
+  <GraphicalLine GraphId="ba3db" GroupRef="f3874">
+    <Graphics ZOrder="36175" LineThickness="1.0" Color="ff0000">
+      <Point X="1518.479543066739" Y="617.137890103773" GraphRef="aa484" RelX="-1.0" RelY="-0.5"/>
+      <Point X="1489.479543066739" Y="597.3878901037731" ArrowHead="mim-catalysis"/>
+    </Graphics>
+  </GraphicalLine>
+  <GraphicalLine GraphId="be4b6" GroupRef="f3874">
+    <Graphics ZOrder="36176" LineThickness="1.0" Color="ff0000">
+      <Point X="1576.979543066739" Y="670.387890103773" GraphRef="aa484" RelX="0.5" RelY="1.0"/>
+      <Point X="1593.479543066739" Y="695.387890103773" ArrowHead="mim-catalysis"/>
+    </Graphics>
+  </GraphicalLine>
+  <GraphicalLine GraphId="c4418" GroupRef="f3874">
+    <Graphics ZOrder="36177" LineThickness="1.0" Color="ff0000">
+      <Point X="1518.479543066739" Y="634.887890103773" GraphRef="aa484" RelX="-1.0" RelY="0.0"/>
+      <Point X="1480.479543066739" Y="633.387890103773" ArrowHead="mim-catalysis"/>
+    </Graphics>
+  </GraphicalLine>
+  <GraphicalLine GraphId="b87e8" GroupRef="f3874">
+    <Graphics ZOrder="36178" LineThickness="1.0" Color="ff0000">
+      <Point X="1537.979543066739" Y="670.387890103773" GraphRef="aa484" RelX="-0.5" RelY="1.0"/>
+      <Point X="1519.479543066739" Y="697.387890103773" ArrowHead="mim-catalysis"/>
+    </Graphics>
+  </GraphicalLine>
+  <GraphicalLine GraphId="cb18a" GroupRef="f3874">
+    <Graphics ZOrder="36179" LineThickness="1.0" Color="ff0000">
+      <Point X="1596.479543066739" Y="617.137890103773" GraphRef="aa484" RelX="1.0" RelY="-0.5"/>
+      <Point X="1622.479543066739" Y="603.3878901037731" ArrowHead="mim-catalysis"/>
+    </Graphics>
+  </GraphicalLine>
+  <Label TextLabel="Anti-atrophy" GraphId="ac9d2">
+    <Graphics CenterX="823.7990545830526" CenterY="852.3442139681136" Width="90.0" Height="25.0" ZOrder="28672" FillColor="ffffff" FontWeight="Bold" FontSize="12" Valign="Middle"/>
+  </Label>
+  <Label TextLabel="Angiotensin 1-9" GraphId="c8f49">
+    <BiopaxRef>a33</BiopaxRef>
+    <Graphics CenterX="784.1176277179616" CenterY="677.8849264363072" Width="90.0" Height="25.0" ZOrder="28672" FillColor="ffffff" FontWeight="Bold" FontSize="10" Valign="Middle" ShapeType="Rectangle" LineThickness="2.0"/>
+  </Label>
+  <Label TextLabel="Angiotensin 1-7" GraphId="e50ab">
+    <BiopaxRef>a33</BiopaxRef>
+    <Graphics CenterX="883.0492081533566" CenterY="678.538234324349" Width="89.99999999999996" Height="24.99999999999999" ZOrder="32769" FillColor="ffffff" FontWeight="Bold" FontSize="10" Valign="Middle" ShapeType="Rectangle" LineThickness="2.0"/>
+  </Label>
+  <Label TextLabel="Anti-fibrosis" GraphId="a5938">
+    <Graphics CenterX="823.7990545830527" CenterY="871.6034732273728" Width="90.0" Height="25.0" ZOrder="32770" FillColor="ffffff" FontWeight="Bold" FontSize="12" Valign="Middle"/>
+  </Label>
+  <Label TextLabel="Anti-Inflammation" GraphId="ff0c1">
+    <Graphics CenterX="823.7990545830527" CenterY="893.1775473014467" Width="112.83675045415066" Height="25.0" ZOrder="32771" FillColor="ffffff" FontWeight="Bold" FontSize="12" Valign="Middle"/>
+  </Label>
+  <Label TextLabel="Anti-oxidant" GraphId="dfd3c">
+    <Graphics CenterX="823.7990545830527" CenterY="912.7516213755206" Width="90.0" Height="25.0" ZOrder="32772" FillColor="ffffff" FontWeight="Bold" FontSize="12" Valign="Middle"/>
+  </Label>
+  <Label TextLabel="Vasodilation" GraphId="feb8f">
+    <Graphics CenterX="823.7990545830527" CenterY="931.2238435977428" Width="90.0" Height="25.0" ZOrder="32773" FillColor="ffffff" FontWeight="Bold" FontSize="12" Valign="Middle"/>
+  </Label>
+  <Label TextLabel="Tissue production" GraphId="aa191">
+    <Graphics CenterX="823.799054583051" CenterY="1036.069613722108" Width="174.3981481481477" Height="25.0" ZOrder="32774" FillColor="ffffff" FontWeight="Bold" FontSize="18" Valign="Middle" Color="ff3333"/>
+  </Label>
+  <Label TextLabel="Pro-atrophy" GraphId="ed257">
+    <Graphics CenterX="1004.2724870710952" CenterY="854.0539997158046" Width="90.0" Height="25.0" ZOrder="32775" FillColor="ffffff" FontWeight="Bold" FontSize="12" Valign="Middle"/>
+  </Label>
+  <Label TextLabel="Pro-fibrosis" GraphId="f4a55">
+    <Graphics CenterX="1003.8558204044282" CenterY="868.6836293454342" Width="90.0" Height="25.0" ZOrder="32776" FillColor="ffffff" FontWeight="Bold" FontSize="12" Valign="Middle"/>
+  </Label>
+  <Label TextLabel="Pro-Inflammation" GraphId="d3c8e">
+    <Graphics CenterX="996.9971726961493" CenterY="890.2577034195081" Width="109.82840652766981" Height="25.0" ZOrder="32777" FillColor="ffffff" FontWeight="Bold" FontSize="12" Valign="Middle"/>
+  </Label>
+  <Label TextLabel="Pro-oxidant" GraphId="f0338">
+    <Graphics CenterX="1006.4947092933178" CenterY="909.5169626787672" Width="90.0" Height="25.0" ZOrder="32778" FillColor="ffffff" FontWeight="Bold" FontSize="12" Valign="Middle"/>
+  </Label>
+  <Label TextLabel="Vasoconstriction" GraphId="e6fd2">
+    <Graphics CenterX="1004.5829694323144" CenterY="925.3039997158041" Width="111.0" Height="25.0" ZOrder="32779" FillColor="ffffff" FontWeight="Bold" FontSize="12" Valign="Middle"/>
+  </Label>
+  <Label TextLabel="Tissue Injury" GraphId="eeb66">
+    <Graphics CenterX="1005.0363759599579" CenterY="1037.2369982124546" Width="174.3981481481477" Height="25.0" ZOrder="32780" FillColor="ffffff" FontWeight="Bold" FontSize="18" Valign="Middle" Color="ff3333"/>
+  </Label>
+  <Label TextLabel="SARS-CoV-2" GraphId="fb5f0" GroupRef="bde0d">
+    <Graphics CenterX="808.0446756364017" CenterY="401.2109908386869" Width="90.0" Height="25.0" ZOrder="33759" FillColor="ffffff" FontWeight="Bold" FontSize="14" Valign="Middle"/>
+  </Label>
+  <Label TextLabel="ACE2 surface receptor&#10;blocker" GraphId="a6cb9">
+    <Graphics CenterX="986.0576886019635" CenterY="249.1602167654123" Width="169.7745416309357" Height="35.849640416210946" ZOrder="36014" FillColor="ffffff" FontWeight="Bold" FontSize="14" Valign="Middle" ShapeType="RoundedRectangle"/>
+  </Label>
+  <Label TextLabel="Soluble ACE2 " GraphId="f1603">
+    <Graphics CenterX="798.6086591148296" CenterY="209.166200624398" Width="169.7745416309357" Height="25.0" ZOrder="36015" FillColor="ffffff" FontWeight="Bold" FontSize="14" Valign="Middle" ShapeType="RoundedRectangle"/>
+  </Label>
+  <Label TextLabel="Spike vaccine" GraphId="e73a9">
+    <Graphics CenterX="635.1413205666718" CenterY="238.47722826013526" Width="169.7745416309357" Height="25.0" ZOrder="36016" FillColor="ffffff" FontWeight="Bold" FontSize="14" Valign="Middle" ShapeType="RoundedRectangle"/>
+  </Label>
+  <Label TextLabel="TMPRSS2 inhibitor" GraphId="f7666">
+    <Graphics CenterX="565.9900391156157" CenterY="297.0853684179781" Width="169.7745416309357" Height="25.0" ZOrder="36017" FillColor="ffffff" FontWeight="Bold" FontSize="14" Valign="Middle" ShapeType="RoundedRectangle"/>
+  </Label>
+  <Label TextLabel="SARS-CoV-2 and Angiotensin-converting enzyme 2 (ACE2) receptor : Molecular mechanisms and potential therapeutic target" GraphId="aea4d">
+    <Graphics CenterX="870.8472036339379" CenterY="138.6113721568375" Width="967.8710208300188" Height="44.80243790217699" ZOrder="36018" FillColor="ffffff" FontSize="17" Valign="Middle"/>
+  </Label>
+  <Label TextLabel="Receptor" GraphId="a7420">
+    <Graphics CenterX="1731.8396698302058" CenterY="679.6774651667531" Width="71.82630249875518" Height="20.0" ZOrder="36024" FillColor="ffffff" FontWeight="Bold" FontSize="15" Valign="Middle" ShapeType="Rectangle"/>
+  </Label>
+  <Label TextLabel="LEGEND" GraphId="b4783">
+    <Graphics CenterX="1631.413707720788" CenterY="520.3465632688487" Width="80.0" Height="20.0" ZOrder="36063" FillColor="ffffff" FontName="SansSerif" FontWeight="Bold" FontSize="15" Valign="Middle" Color="3300ff"/>
+  </Label>
+  <Label TextLabel="SARS-CoV-2 spike protein" GraphId="b56ca">
+    <Graphics CenterX="1682.5509166226734" CenterY="767.9950064203086" Width="191.25641285268904" Height="25.0" ZOrder="36079" FillColor="ffffff" FontSize="14" Valign="Middle"/>
+  </Label>
+  <Label TextLabel="Viral membrane" GraphId="c9399">
+    <Graphics CenterX="1652.1851815072416" CenterY="844.5332810254132" Width="191.25641285268904" Height="25.0" ZOrder="36081" FillColor="ffffff" FontSize="14" Valign="Middle"/>
+  </Label>
+  <Label TextLabel="Inhibition" GraphId="fd494">
+    <Graphics CenterX="1635.93730787419" CenterY="924.4372907459485" Width="191.25641285268904" Height="25.0" ZOrder="36083" FillColor="ffffff" FontSize="14" Valign="Middle"/>
+  </Label>
+  <Label TextLabel="Downregulation" GraphId="a709f">
+    <Graphics CenterX="1655.657842503595" CenterY="986.2357092792214" Width="191.25641285268904" Height="25.0" ZOrder="36084" FillColor="ffffff" FontSize="14" Valign="Middle"/>
+  </Label>
+  <Label TextLabel="Host proteases for S protein&#10;priming" GraphId="da681">
+    <Graphics CenterX="363.8756670273075" CenterY="553.7038497460361" Width="261.1629323117922" Height="25.0" ZOrder="36118" FillColor="009933" FontWeight="Bold" FontSize="14" Valign="Middle" Color="009900"/>
+  </Label>
+  <Label TextLabel="Entry for viral replication" GraphId="c9275">
+    <Graphics CenterX="648.3451980116695" CenterY="526.1191458960002" Width="169.7745416309357" Height="25.0" ZOrder="36122" FillColor="009933" FontWeight="Bold" FontSize="14" Valign="Middle" Color="009900"/>
+  </Label>
+  <Label TextLabel="Accumulation of Angiotensin" GraphId="e2dcb">
+    <Graphics CenterX="849.4716657526963" CenterY="644.3232250688148" Width="199.17579075166088" Height="25.0" ZOrder="36124" FillColor="009933" FontWeight="Bold" FontSize="14" Valign="Middle" Color="009900"/>
+  </Label>
+  <Label TextLabel="ARBs surface receptor&#10;blocker" GraphId="bc4cd">
+    <Graphics CenterX="1094.1117968183955" CenterY="291.79348329847824" Width="169.7745416309357" Height="32.8235883120024" ZOrder="36126" FillColor="ffffff" FontWeight="Bold" FontSize="14" Valign="Middle" ShapeType="RoundedRectangle"/>
+  </Label>
+  <Label TextLabel="Inhibitors" GraphId="c1285">
+    <Graphics CenterX="813.2340388250495" CenterY="178.2588599513651" Width="181.88105010597556" Height="25.0" ZOrder="36132" FillColor="009933" FontWeight="Bold" FontSize="14" Valign="Middle" Color="009900"/>
+  </Label>
+  <Label TextLabel="SARS-CoV-2" GraphId="ffc77" GroupRef="e7ec2">
+    <Graphics CenterX="364.760832841642" CenterY="666.0359063861861" Width="90.0" Height="25.0" ZOrder="36147" FillColor="ffffff" FontWeight="Bold" FontSize="10" Valign="Middle"/>
+  </Label>
+  <Label TextLabel="SARS-CoV-2" GraphId="b0481" GroupRef="a8495">
+    <Graphics CenterX="655.7608328416419" CenterY="627.0359063861863" Width="90.0" Height="25.0" ZOrder="36162" FillColor="ffffff" FontWeight="Bold" FontSize="10" Valign="Middle"/>
+  </Label>
+  <Label TextLabel="S1" GraphId="f9461">
+    <Graphics CenterX="1557.93730787419" CenterY="783.4372907459485" Width="191.25641285268904" Height="25.0" ZOrder="36163" FillColor="ffffff" FontSize="14" Valign="Middle"/>
+  </Label>
+  <Label TextLabel="S2&#10;" GraphId="b9809">
+    <Graphics CenterX="1555.93730787419" CenterY="753.4372907459485" Width="191.25641285268904" Height="25.0" ZOrder="36164" FillColor="ffffff" FontSize="14" Valign="Middle"/>
+  </Label>
+  <Label TextLabel="Activation of angiotensin pathway" GraphId="a4fca">
+    <Graphics CenterX="1203.3201499284608" CenterY="543.0947874910785" Width="242.40254276315616" Height="25.0" ZOrder="36165" FillColor="009933" FontWeight="Bold" FontSize="14" Valign="Middle" Color="009900"/>
+  </Label>
+  <Label TextLabel="Converting enzyme" GraphId="fea1c">
+    <Graphics CenterX="1164.0960708769649" CenterY="627.3816854291947" Width="242.40254276315616" Height="25.0" ZOrder="36166" FillColor="009933" FontWeight="Bold" FontSize="14" Valign="Middle" Color="009900"/>
+  </Label>
+  <Label TextLabel="SARS-CoV-2" GraphId="ca85a" GroupRef="f3874">
+    <Graphics CenterX="1561.1574064760666" CenterY="633.6119813791411" Width="90.0" Height="25.0" ZOrder="36181" FillColor="ffffff" FontWeight="Bold" FontSize="10" Valign="Middle"/>
+  </Label>
+  <Shape GraphId="a5aad">
+    <Graphics CenterX="809.160305343512" CenterY="406.23854961832046" Width="242.36641221374188" Height="200.88167938931332" ZOrder="16384" FontSize="12" Valign="Middle" ShapeType="Arc" Color="ff0033" Rotation="0.0"/>
+  </Shape>
+  <Shape GraphId="b698a">
+    <Graphics CenterX="829.541160924469" CenterY="236.48689956331881" Width="698.3486973947895" Height="145.0" ZOrder="16384" FontSize="12" Valign="Middle" ShapeType="RoundedRectangle" Rotation="0.0"/>
+  </Shape>
+  <Shape GraphId="c4aff">
+    <Attribute Key="org.pathvisio.CellularComponentProperty" Value="Organelle"/>
+    <Attribute Key="org.pathvisio.DoubleLineProperty" Value="Double"/>
+    <Graphics CenterX="709.0080953050594" CenterY="919.4864192823794" Width="934.9973226855907" Height="315.21682939272614" ZOrder="16384" FontSize="12" Valign="Middle" ShapeType="RoundedRectangle" LineThickness="3.0" Color="c0c0c0" Rotation="0.0"/>
+  </Shape>
+  <Shape GraphId="c585f">
+    <Graphics CenterX="1624.7401247401244" CenterY="757.7962577962577" Width="309.77130977130975" Height="521.8295218295218" ZOrder="16384" FontSize="12" Valign="Middle" ShapeType="Rectangle" Rotation="0.0"/>
+  </Shape>
+  <Shape GraphId="c8009" GroupRef="bde0d">
+    <Attribute Key="org.pathvisio.CellularComponentProperty" Value="Vesicle"/>
+    <Graphics CenterX="805.3039348956614" CenterY="400.29432417202094" Width="103.5" Height="94.5" ZOrder="16384" FontSize="12" Valign="Middle" ShapeType="Oval" LineThickness="3.0" Color="ffff33" Rotation="0.0"/>
+  </Shape>
+  <Shape GraphId="ce5f1">
+    <Graphics CenterX="824.0113212158324" CenterY="705.3625531181981" Width="26.33025830258301" Height="17.72017220172209" ZOrder="16384" FontSize="12" Valign="Middle" ShapeType="Arc" LineThickness="3.0" Rotation="0.0"/>
+  </Shape>
+  <Shape GraphId="c9c32">
+    <Graphics CenterX="654.6586916665607" CenterY="693.9892698485896" Width="30.0" Height="31.0" ZOrder="33754" FontSize="10" Valign="Middle" ShapeType="Arc" LineThickness="3.0" Rotation="0.0"/>
+  </Shape>
+  <Shape GraphId="fca35">
+    <Graphics CenterX="1732.0062096811976" CenterY="631.0847376695255" Width="30.0" Height="31.0" ZOrder="36023" FontSize="10" Valign="Middle" ShapeType="Arc" LineThickness="3.0" Rotation="0.0"/>
+  </Shape>
+  <Shape GraphId="a5743">
+    <Attribute Key="org.pathvisio.CellularComponentProperty" Value="Vesicle"/>
+    <Graphics CenterX="1538.5582238995648" CenterY="842.1518914243998" Width="64.39854191980584" Height="59.14800038919287" ZOrder="36080" FontSize="12" Valign="Middle" ShapeType="Oval" LineThickness="3.0" Color="ffff33" Rotation="0.0"/>
+  </Shape>
+  <Shape GraphId="c43c5">
+    <Graphics CenterX="1004.9175782911425" CenterY="686.1856198164772" Width="30.0" Height="44.0080160320642" ZOrder="36131" FontSize="10" Valign="Middle" ShapeType="Arc" LineThickness="3.0" Rotation="0.0"/>
+  </Shape>
+  <Shape GraphId="d22c8" GroupRef="e7ec2">
+    <Attribute Key="org.pathvisio.CellularComponentProperty" Value="Vesicle"/>
+    <Graphics CenterX="361.0829694323145" CenterY="667.311815110818" Width="78.0" Height="71.0" ZOrder="36146" FontSize="12" Valign="Middle" ShapeType="Oval" LineThickness="3.0" Color="ffff33" Rotation="0.0"/>
+  </Shape>
+  <Shape GraphId="b9761" GroupRef="a8495">
+    <Attribute Key="org.pathvisio.CellularComponentProperty" Value="Vesicle"/>
+    <Graphics CenterX="652.0829694323144" CenterY="628.3118151108182" Width="78.0" Height="71.0" ZOrder="36161" FontSize="12" Valign="Middle" ShapeType="Oval" LineThickness="3.0" Color="ffff33" Rotation="0.0"/>
+  </Shape>
+  <Shape GraphId="aa484" GroupRef="f3874">
+    <Attribute Key="org.pathvisio.CellularComponentProperty" Value="Vesicle"/>
+    <Graphics CenterX="1557.479543066739" CenterY="634.887890103773" Width="78.0" Height="71.0" ZOrder="36180" FontSize="12" Valign="Middle" ShapeType="Oval" LineThickness="3.0" Color="ffff33" Rotation="0.0"/>
+  </Shape>
+  <Group GroupId="bde0d" GraphId="aae40" Style="Group"/>
+  <Group GroupId="e7ec2" GraphId="de4ce" Style="Group"/>
+  <Group GroupId="f3874" GraphId="df490" Style="Group"/>
+  <Group GroupId="a8495" GraphId="e2279" Style="Group"/>
+  <InfoBox CenterX="0.0" CenterY="0.0"/>
+  <Biopax>
+    <bp:PublicationXref xmlns:bp="http://www.biopax.org/release/biopax-level3.owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:id="f06">
+      <bp:ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string"/>
+      <bp:DB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PubMed</bp:DB>
+      <bp:TITLE rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ReninÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œAngiotensinÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œAldosterone System Inhibitors in Patients with Covid-19</bp:TITLE>
+      <bp:SOURCE rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://www.nejm.org/doi/full/10.1056/NEJMsr2005760?query=RP</bp:SOURCE>
+      <bp:YEAR rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2020</bp:YEAR>
+      <bp:ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string"/>
+      <bp:DB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PubMed</bp:DB>
+      <bp:TITLE rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ReninÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œAngiotensinÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œAldosterone System Inhibitors in Patients with Covid-19</bp:TITLE>
+      <bp:SOURCE rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DOI: 10.1056/NEJMsr2005760</bp:SOURCE>
+      <bp:YEAR rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2020</bp:YEAR>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Muthiah Vaduganathan, M.D., M.P.H., Orly Vardeny, Pharm.D., Thomas Michel, M.D., Ph.D., John J.V. McMurray, M.D., Marc A. Pfeffer, M.D., Ph.D., and Scott D. Solomon, M.D.</bp:AUTHORS>
+    </bp:PublicationXref>
+    <bp:PublicationXref xmlns:bp="http://www.biopax.org/release/biopax-level3.owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:id="af3">
+      <bp:ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">32142651</bp:ID>
+      <bp:DB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PubMed</bp:DB>
+      <bp:TITLE rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SARS-CoV-2 Cell Entry Depends on ACE2 and TMPRSS2 and Is Blocked by a Clinically Proven Protease Inhibitor.</bp:TITLE>
+      <bp:SOURCE rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cell</bp:SOURCE>
+      <bp:YEAR rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2020</bp:YEAR>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hoffmann M</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Kleine-Weber H</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Schroeder S</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">KrÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼ger N</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Herrler T</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Erichsen S</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Schiergens TS</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Herrler G</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wu NH</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Nitsche A</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¼ller MA</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Drosten C</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¶hlmann S</bp:AUTHORS>
+    </bp:PublicationXref>
+    <bp:PublicationXref xmlns:bp="http://www.biopax.org/release/biopax-level3.owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:id="a33">
+      <bp:ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">32125455</bp:ID>
+      <bp:DB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PubMed</bp:DB>
+      <bp:TITLE rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Angiotensin-converting enzyme 2 (ACE2) as a SARS-CoV-2 receptor: molecular mechanisms and potential therapeutic target.</bp:TITLE>
+      <bp:SOURCE rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Intensive Care Med</bp:SOURCE>
+      <bp:YEAR rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2020</bp:YEAR>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Zhang H</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Penninger JM</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Li Y</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Zhong N</bp:AUTHORS>
+      <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Slutsky AS</bp:AUTHORS>
+    </bp:PublicationXref>
+  <bp:openControlledVocabulary xmlns:bp="http://www.biopax.org/release/biopax-level3.owl#"><bp:TERM>viral infectious disease</bp:TERM><bp:ID>DOID:934</bp:ID><bp:Ontology>Disease</bp:Ontology></bp:openControlledVocabulary></Biopax>
+</Pathway>

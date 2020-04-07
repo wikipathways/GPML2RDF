@@ -32,7 +32,7 @@
     <Xref Database="Ensembl" ID="ENSG00000184203" />
   </DataNode>
   <DataNode TextLabel="nsp15" GraphId="ac2d6" Type="GeneProduct">
-    <Graphics CenterX="319.0" CenterY="535.0" Width="90.0" Height="25.0" ZOrder="32768" FontSize="12" Valign="Middle" />
+    <Graphics CenterX="319.0" CenterY="535.0" Width="90.0" Height="25.0" ZOrder="32768" FillColor="ff6666" FontSize="12" Valign="Middle" ShapeType="Oval" />
     <Xref Database="" ID="" />
   </DataNode>
   <DataNode TextLabel="CEBPA" GraphId="ac30b" Type="GeneProduct" GroupRef="c51f9">
@@ -44,7 +44,7 @@
     <Xref Database="Ensembl" ID="ENSG00000100219" />
   </DataNode>
   <DataNode TextLabel="8a" GraphId="af963" Type="GeneProduct" GroupRef="d0d05">
-    <Graphics CenterX="1261.75" CenterY="399.25" Width="90.0" Height="25.0" ZOrder="32768" FontSize="12" Valign="Middle" />
+    <Graphics CenterX="1261.75" CenterY="399.25" Width="90.0" Height="25.0" ZOrder="32768" FillColor="ff6666" FontSize="12" Valign="Middle" ShapeType="Oval" />
     <Xref Database="" ID="" />
   </DataNode>
   <DataNode TextLabel="PPP1R1B" GraphId="b056f" Type="GeneProduct" GroupRef="a2977">
@@ -121,7 +121,7 @@
     <Xref Database="Ensembl" ID="ENSG00000172531" />
   </DataNode>
   <DataNode TextLabel="E" GraphId="d1804" Type="GeneProduct">
-    <Graphics CenterX="942.0" CenterY="348.0" Width="90.0" Height="25.0" ZOrder="32768" FontSize="12" Valign="Middle" />
+    <Graphics CenterX="942.0" CenterY="348.0" Width="90.0" Height="25.0" ZOrder="32768" FillColor="ff6666" FontSize="12" Valign="Middle" ShapeType="Oval" />
     <Xref Database="Uniprot-TrEMBL" ID="P59637" />
   </DataNode>
   <DataNode TextLabel="CEBPZ" GraphId="d1a5d" Type="GeneProduct" GroupRef="c51f9">
@@ -244,7 +244,7 @@
     <Xref Database="Ensembl" ID="ENSG00000055332" />
   </DataNode>
   <DataNode TextLabel="4a" GraphId="f3479" Type="GeneProduct">
-    <Graphics CenterX="388.0" CenterY="488.0" Width="90.0" Height="25.0" ZOrder="32776" FontSize="12" Valign="Middle" />
+    <Graphics CenterX="388.0" CenterY="488.0" Width="90.0" Height="25.0" ZOrder="32776" FillColor="ff6666" FontSize="12" Valign="Middle" ShapeType="Oval" />
     <Xref Database="" ID="" />
   </DataNode>
   <DataNode TextLabel="EIF2AK3" GraphId="ef303" Type="GeneProduct" GroupRef="d4416">
@@ -284,7 +284,7 @@
     <Xref Database="Ensembl" ID="ENSG00000012174" />
   </DataNode>
   <DataNode TextLabel="8b" GraphId="e98cd" Type="GeneProduct" GroupRef="d0d05">
-    <Graphics CenterX="1261.75" CenterY="424.25" Width="90.0" Height="25.0" ZOrder="32797" FontSize="12" Valign="Middle" />
+    <Graphics CenterX="1261.75" CenterY="424.25" Width="90.0" Height="25.0" ZOrder="32797" FillColor="ff6666" FontSize="12" Valign="Middle" ShapeType="Oval" />
     <Xref Database="" ID="" />
   </DataNode>
   <State GraphRef="adfd6" TextLabel="" GraphId="a37bc">

@@ -2,7 +2,7 @@
 <Pathway xmlns="http://pathvisio.org/GPML/2013a" Name="Downregulation of ACE2 expression by SARS-CoV infection and SARS-CoV Spike protein." Version="20200212" Organism="Homo sapiens">
   <Comment Source="WikiPathways-description">Schematic diagram of the renin-angiotensin system in acute lung failure and proposed SARS-CoV action. The renin-angiotensin system has a crucial role in severe acute lung injury and the SARS-CoV receptor ACE2 has a protective role in acute lung failure. Because ACE2 is a crucial SARS-CoV receptor, SARS-CoV Spike protein binding to ACE2 downmodulates ACE2 expression, and loss of ACE2 expression results in severe acute respiratory failure. The AT1R is the crucial receptor that mediates AngII-induced vascular permeability and severe acute lung injury.  SARS-CoV Spike–mediated lung failure can be rescued by inhibition of AT1R. This research was done in in vivo mice cells.</Comment>
   <BiopaxRef>c25</BiopaxRef>
-  <Graphics BoardWidth="499.0" BoardHeight="527.0" />
+  <Graphics BoardWidth="483.0" BoardHeight="512.0" />
   <DataNode TextLabel="AT1R" GraphId="ab2a6" Type="Protein">
     <Graphics CenterX="219.0" CenterY="371.0" Width="107.0" Height="30.5" ZOrder="32768" FontSize="12" Valign="Middle" />
     <Xref Database="Uniprot-TrEMBL" ID="P30556" />
@@ -12,7 +12,7 @@
     <Xref Database="ChEBI" ID="CHEBI:58506" />
   </DataNode>
   <DataNode TextLabel="SARS-CoV Spike" GraphId="cfddc" Type="Protein">
-    <Graphics CenterX="399.5" CenterY="108.75" Width="107.0" Height="30.5" ZOrder="32768" FontSize="12" Valign="Middle" />
+    <Graphics CenterX="399.5" CenterY="109.75" Width="107.0" Height="30.5" ZOrder="32768" FillColor="ff6666" FontSize="12" Valign="Middle" ShapeType="Oval" />
     <Xref Database="NCBI Protein" ID="694009" />
   </DataNode>
   <DataNode TextLabel="ACE2" GraphId="d051e" Type="Protein">
@@ -57,7 +57,7 @@
   </Interaction>
   <Interaction GraphId="idc652beda">
     <Graphics ZOrder="12288" LineThickness="1.0">
-      <Point X="399.5" Y="124.0" GraphRef="cfddc" RelX="0.0" RelY="1.0" />
+      <Point X="399.5" Y="125.0" GraphRef="cfddc" RelX="0.0" RelY="1.0" />
       <Point X="399.5" Y="192.75" GraphRef="d051e" RelX="0.0" RelY="-1.0" ArrowHead="mim-inhibition" />
     </Graphics>
     <Xref Database="" ID="" />
@@ -81,16 +81,6 @@
   </Label>
   <InfoBox CenterX="0.0" CenterY="0.0" />
   <Biopax>
-    <bp:openControlledVocabulary xmlns:bp="http://www.biopax.org/release/biopax-level3.owl#">
-      <bp:TERM xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">disease pathway</bp:TERM>
-      <bp:ID xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PW:0000013</bp:ID>
-      <bp:Ontology xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathway Ontology</bp:Ontology>
-    </bp:openControlledVocabulary>
-    <bp:openControlledVocabulary xmlns:bp="http://www.biopax.org/release/biopax-level3.owl#">
-      <bp:TERM xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">viral infectious disease</bp:TERM>
-      <bp:ID xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DOID:934</bp:ID>
-      <bp:Ontology xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Disease</bp:Ontology>
-    </bp:openControlledVocabulary>
     <bp:PublicationXref xmlns:bp="http://www.biopax.org/release/biopax-level3.owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:id="c25">
       <bp:ID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">16007097</bp:ID>
       <bp:DB rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PubMed</bp:DB>
@@ -122,5 +112,15 @@
       <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Jiang C</bp:AUTHORS>
       <bp:AUTHORS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Penninger JM</bp:AUTHORS>
     </bp:PublicationXref>
+    <bp:openControlledVocabulary xmlns:bp="http://www.biopax.org/release/biopax-level3.owl#">
+      <bp:TERM xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">disease pathway</bp:TERM>
+      <bp:ID xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PW:0000013</bp:ID>
+      <bp:Ontology xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pathway Ontology</bp:Ontology>
+    </bp:openControlledVocabulary>
+    <bp:openControlledVocabulary xmlns:bp="http://www.biopax.org/release/biopax-level3.owl#">
+      <bp:TERM xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">viral infectious disease</bp:TERM>
+      <bp:ID xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DOID:934</bp:ID>
+      <bp:Ontology xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Disease</bp:Ontology>
+    </bp:openControlledVocabulary>
   </Biopax>
 </Pathway>

@@ -28,7 +28,7 @@
     <Xref Database="Ensembl" ID="ENSG00000152348"/>
   </DataNode>
   <DataNode TextLabel="nsp6" GraphId="d70d9" Type="GeneProduct">
-    <Graphics CenterX="746.0" CenterY="592.0" Width="60.0" Height="25.0" ZOrder="32768" FontSize="12" Valign="Middle" Color="cc0000"/>
+    <Graphics CenterX="746.0" CenterY="592.0" Width="60.0" Height="25.0" ZOrder="32768" FontSize="12" Valign="Middle" FillColor="ff6666" ShapeType="Oval"/>
     <Xref Database="" ID=""/>
   </DataNode>
   <DataNode TextLabel="PIK3R4" GraphId="df8ef" Type="GeneProduct" GroupRef="c733e">
@@ -76,7 +76,7 @@
     <Xref Database="Ensembl" ID="ENSG00000083290"/>
   </DataNode>
   <DataNode TextLabel="nsp6" GraphId="b45d2" Type="GeneProduct">
-    <Graphics CenterX="749.0" CenterY="740.0" Width="60.0" Height="25.0" ZOrder="32775" FontSize="12" Valign="Middle" Color="cc0000"/>
+    <Graphics CenterX="749.0" CenterY="740.0" Width="60.0" Height="25.0" ZOrder="32775" FontSize="12" Valign="Middle" FillColor="ff6666" ShapeType="Oval"/>
     <Xref Database="" ID=""/>
   </DataNode>
   <Shape GraphId="fa1d9">
