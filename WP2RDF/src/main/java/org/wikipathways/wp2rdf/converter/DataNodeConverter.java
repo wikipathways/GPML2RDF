@@ -144,6 +144,10 @@ public class DataNodeConverter {
 								break;
 							case "Complex":
 								datanodeRes.addProperty(RDF.type, Wp.Complex);
+								// add id mapping step
+
+								GpmlConverter.getUnifiedIdentifiers(model, mapper, idXref, datanodeRes);
+
 								break;
 							default:
 								break;

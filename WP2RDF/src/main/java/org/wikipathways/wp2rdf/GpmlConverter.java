@@ -177,6 +177,13 @@ public class GpmlConverter {
 		outputBridgeDbMapping(model, mapper, idXref, internalWPDataNodeResource,
 			"Rh", "http://identifiers.org/rhea/", Wp.bdbRhea
 		);
+
+		// Complexes
+
+		// Complex Portal
+		outputBridgeDbMapping(model, mapper, idXref, internalWPDataNodeResource,
+			"Cpx", "http://identifiers.org/complexportal/", Wp.bdbComplexPortal
+		);
 	}
 
 	private static void outputBridgeDbMapping(Model model, IDMapper mapper, Xref idXref,
