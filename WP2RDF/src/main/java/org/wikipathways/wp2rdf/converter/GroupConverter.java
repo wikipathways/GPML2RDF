@@ -19,11 +19,14 @@ package org.wikipathways.wp2rdf.converter;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.bridgedb.IDMapper;
+import org.bridgedb.Xref;
 import org.pathvisio.core.biopax.PublicationXref;
 import org.pathvisio.core.model.GroupStyle;
 import org.pathvisio.core.model.MGroup;
 import org.pathvisio.core.model.PathwayElement;
 import org.pathvisio.core.model.PathwayElement.Comment;
+import org.wikipathways.wp2rdf.GpmlConverter;
 import org.wikipathways.wp2rdf.ontologies.Gpml;
 import org.wikipathways.wp2rdf.ontologies.Wp;
 import org.wikipathways.wp2rdf.utils.DataHandlerGpml;
@@ -33,6 +36,7 @@ import org.wikipathways.wp2rdf.utils.Utils;
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.Resource;
 import com.hp.hpl.jena.sparql.vocabulary.FOAF;
+import com.hp.hpl.jena.vocabulary.DC;
 import com.hp.hpl.jena.vocabulary.DCTerms;
 import com.hp.hpl.jena.vocabulary.RDF;
 import com.hp.hpl.jena.vocabulary.RDFS;
@@ -49,13 +53,19 @@ public class GroupConverter {
 	 * conversion only WP vocabulary
 	 * semantic information about a complex group
 	 */
-	public static void parseComplexWp(MGroup group, Model model, DataHandlerWp data) {
+	public static void parseComplexWp(MGroup group, Model model, IDMapper  mapper, DataHandlerWp data) {
+		PathwayElement embeddedComplexDataNode = null;
 		if(group.getGroupStyle().equals(GroupStyle.COMPLEX)) {
 			List<Resource> participants = new ArrayList<Resource>();
 			for(PathwayElement e : group.getGroupElements()) {
-				Resource r = data.getDataNodes().get(e.getXref());
-				if(r != null) {
-					participants.add(r);
+				if (e.getDataNodeType().equals("Complex") ) {
+					// if it has a DataNode participant of @Type=Complex
+					embeddedComplexDataNode = e;
+				} else {
+					Resource r = data.getDataNodes().get(e.getXref());
+					if(r != null) {
+						participants.add(r);
+					}
 				}
 			}
 			// TODO: what about complexes with only one data node?
@@ -85,6 +95,22 @@ public class GroupConverter {
 					groupRes.addProperty(Wp.participants, r);
 					complexBinding.addProperty(Wp.participants, r);
 					r.addProperty(DCTerms.isPartOf, groupRes);
+				}
+				// there is (potentially) one special participant
+				if (embeddedComplexDataNode != null) {
+					Xref idXref = embeddedComplexDataNode.getXref();
+					if (idXref != null && idXref.getId() != null && idXref.getId().trim().length() > 0) {
+						try {
+							GpmlConverter.getUnifiedIdentifiers(model, mapper, idXref, groupRes);
+						} catch (Exception exception) {
+							// System.out.println("Error while adding complex identifier: " + exception.getMessage());
+						}
+						groupRes.addProperty(RDFS.label, embeddedComplexDataNode.getTextLabel());
+						String idURL = idXref.getDataSource().getIdentifiersOrgUri(idXref.getId());
+						groupRes.addProperty(DC.identifier, model.createResource(idURL));
+						groupRes.addLiteral(DC.source, idXref.getDataSource().getFullName());
+						groupRes.addLiteral(DCTerms.identifier, idXref.getId());
+					}
 				}
 				
 				for(PublicationXref xref : group.getBiopaxReferenceManager().getPublicationXRefs()) {

@@ -335,7 +335,7 @@ public class GpmlConverter {
 		}
 		for(PathwayElement e : p.getDataObjects()) {
 			if(e.getObjectType().equals(ObjectType.GROUP)) {
-				GroupConverter.parseComplexWp((MGroup) e, pathwayModel, data);
+				GroupConverter.parseComplexWp((MGroup) e, pathwayModel, mapper, data);
 			}
 		}
 		for(PathwayElement e : p.getDataObjects()) {
