@@ -3,7 +3,7 @@
 wpid=$1
 match="/${wpid}/,/Tests/p"
 
-WPID=${wpid} mvn clean test -Dtest=org.wikipathways.wp2rdf.COVIDPathwayTest \
+mvn clean test -DWPID=${wpid} -Dtest=org.wikipathways.wp2rdf.COVIDPathwayTest \
   | sed -n ${match} \
   | grep -v ".bridge" \
   | grep -v "=== ${wpid}" \
