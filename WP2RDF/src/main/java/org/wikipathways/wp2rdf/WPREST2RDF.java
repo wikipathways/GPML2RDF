@@ -130,6 +130,7 @@ public class WPREST2RDF {
 		IDMapperStack mapper = WPREST2RDF.maps();
 
 		boolean doAll = System.getProperty("doAll", "false").equals("true");
+		boolean doOne = !System.getProperty("doOne", "SKIP").equals("SKIP");
 
 		File cacheFolder = new File("/tmp/wp-cache");
 		if (!cacheFolder.exists()) cacheFolder.mkdir();
@@ -155,7 +156,8 @@ public class WPREST2RDF {
 		Map<String,List<String>> includedPathways = new HashMap<>();
 		Map<String,List<String>> otherPathways = new HashMap<>();
 		try {
-			for (String tagName : INCLUDED_TAGS) {
+			if (doOne) {
+				String tagName = System.getProperty("doOne");
 				WSCurationTag[] curatedTags = client.getCurationTagsByName(tagName);
 				for (WSCurationTag tag : curatedTags) {
 					String pwId = tag.getPathway().getId();
@@ -166,19 +168,32 @@ public class WPREST2RDF {
 					tags.add(tag.getName());
 					includedPathways.put(pwId, tags);
 				}
-			}
-			for (String tagName : EXTRA_TAGS) {
-				WSCurationTag[] curatedTags = client.getCurationTagsByName(tagName);
-				for (WSCurationTag tag : curatedTags) {
-					String pwId = tag.getPathway().getId();
-					List<String> tags = includedPathways.get(pwId);
-					if (tags == null) {
-						tags = new ArrayList<String>();
-						tags.add(tag.getName());
-						otherPathways.put(pwId, tags);
-					} else {
+			} else {
+				for (String tagName : INCLUDED_TAGS) {
+					WSCurationTag[] curatedTags = client.getCurationTagsByName(tagName);
+					for (WSCurationTag tag : curatedTags) {
+						String pwId = tag.getPathway().getId();
+						List<String> tags = includedPathways.get(pwId);
+						if (tags == null) {
+							tags = new ArrayList<String>();
+						}
 						tags.add(tag.getName());
 						includedPathways.put(pwId, tags);
+					}
+				}
+				for (String tagName : EXTRA_TAGS) {
+					WSCurationTag[] curatedTags = client.getCurationTagsByName(tagName);
+					for (WSCurationTag tag : curatedTags) {
+						String pwId = tag.getPathway().getId();
+						List<String> tags = includedPathways.get(pwId);
+						if (tags == null) {
+							tags = new ArrayList<String>();
+							tags.add(tag.getName());
+							otherPathways.put(pwId, tags);
+						} else {
+							tags.add(tag.getName());
+							includedPathways.put(pwId, tags);
+						}
 					}
 				}
 			}
