@@ -33,6 +33,7 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.Set;
 
+import org.bridgedb.DataSource;
 import org.bridgedb.IDMapperException;
 import org.bridgedb.IDMapperStack;
 import org.bridgedb.bio.Organism;
@@ -127,6 +128,11 @@ public class WPREST2RDF {
 	public static void main(String[] args) throws NumberFormatException, ConverterException, IOException, ClassNotFoundException, IDMapperException {
 		URL url = new URL("http://webservice.wikipathways.org");
 		WikiPathwaysClient client = new WikiPathwaysClient(url);
+
+		// set up the BridgeDb ID mappings databases
+		DataSource.register("Cpx", "Complex Portal").asDataSource();
+		DataSource.register("Pbd", "Digital Object Identifier").asDataSource();
+		DataSource.register("Pbm", "PubMed").asDataSource();
 		IDMapperStack mapper = WPREST2RDF.maps();
 
 		boolean doAll = System.getProperty("doAll", "false").equals("true");
