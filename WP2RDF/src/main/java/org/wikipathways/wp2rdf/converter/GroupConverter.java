@@ -67,7 +67,7 @@ public class GroupConverter {
 				Resource groupRes = model.createResource(Utils.WP_RDF_URL + "/Pathway/" + data.getPwyId() + "_r" + data.getRevision() + "/Complex/" + graphId);
 				groupRes.addProperty(RDF.type, Wp.DataNode);
 				groupRes.addProperty(RDF.type, Wp.Complex);
-				groupRes.addProperty(Wp.isAbout, Utils.WP_RDF_URL + "/Pathway/" + data.getPwyId() + "_r" + data.getRevision() + "/Group/" + graphId);
+				groupRes.addProperty(Wp.isAbout, model.createResource(Utils.WP_RDF_URL + "/Pathway/" + data.getPwyId() + "_r" + data.getRevision() + "/Group/" + graphId));
 				groupRes.addProperty(DCTerms.isPartOf, data.getPathwayRes());
 				if(group.getTextLabel() != null && !group.getTextLabel().equals("")) groupRes.addLiteral(RDFS.label, group.getTextLabel().replace("\n", " "));
 
@@ -78,7 +78,7 @@ public class GroupConverter {
 				complexBinding.addProperty(RDF.type, Wp.Binding);
 				complexBinding.addProperty(RDF.type, Wp.ComplexBinding);
 				complexBinding.addProperty(Wp.participants, groupRes);
-				complexBinding.addProperty(Wp.isAbout, Utils.WP_RDF_URL + "/Pathway/" + data.getPwyId() + "_r" + data.getRevision() + "/Group/" + graphId);
+				complexBinding.addProperty(Wp.isAbout, model.createResource(Utils.WP_RDF_URL + "/Pathway/" + data.getPwyId() + "_r" + data.getRevision() + "/Group/" + graphId));
 				complexBinding.addProperty(DCTerms.isPartOf, data.getPathwayRes());
 				
 				for(Resource r : participants) {
