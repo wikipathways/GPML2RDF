@@ -23,6 +23,8 @@ public abstract class AbstractWPConvertorTest extends AbstractConvertorTest {
 		DataSource.register("Cpx", "Complex Portal")
 		  .identifiersOrgBase("http://identifiers.org/complexportal/")
 		  .asDataSource();
+		DataSource.register("Pbd", "Digital Object Identifier").asDataSource();
+		DataSource.register("Pbm", "PubMed").asDataSource();
 		InputStream input = AbstractConvertorTest.class.getClassLoader().getResourceAsStream(gpmlFile);
 		Pathway pathway = PathwayReader.readPathway(input);
 		Assert.assertNotNull(pathway);
