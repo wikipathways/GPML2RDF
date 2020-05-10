@@ -57,6 +57,7 @@ import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
 import com.hp.hpl.jena.rdf.model.Property;
 import com.hp.hpl.jena.rdf.model.Resource;
+import com.hp.hpl.jena.vocabulary.OWL;
 import com.hp.hpl.jena.vocabulary.RDFS;
 
 /**
@@ -183,6 +184,13 @@ public class GpmlConverter {
 		// Complex Portal
 		outputBridgeDbMapping(model, mapper, idXref, internalWPDataNodeResource,
 			"Cpx", "http://identifiers.org/complexportal/", Wp.bdbComplexPortal
+		);
+
+		// Literature references
+
+		// DOI
+		outputBridgeDbMapping(model, mapper, idXref, internalWPDataNodeResource,
+			"Pbd", "https://doi.org/", OWL.sameAs
 		);
 	}
 

@@ -303,6 +303,7 @@ public class WPREST2RDF {
 		voidModel.setNsPrefix("gpml", "http://vocabularies.wikipathways.org/gpml#");
 		voidModel.setNsPrefix("skos", "http://www.w3.org/2004/02/skos/core#");
 		voidModel.setNsPrefix("dcat", "http://www.w3.org/ns/dcat#");
+		voidModel.setNsPrefix("owl", "http://www.w3.org/2002/07/owl#");
 
 		// populate void.ttl
 		Calendar now = Calendar.getInstance();

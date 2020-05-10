@@ -36,6 +36,7 @@ import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.sparql.vocabulary.FOAF;
 import com.hp.hpl.jena.vocabulary.DC;
 import com.hp.hpl.jena.vocabulary.DCTerms;
+import com.hp.hpl.jena.vocabulary.OWL;
 import com.hp.hpl.jena.vocabulary.RDF;
 import com.hp.hpl.jena.vocabulary.RDFS;
 import com.hp.hpl.jena.vocabulary.XSD;
@@ -73,6 +74,7 @@ public class Utils {
 		model.setNsPrefix("prov", Prov.getURI());
 		model.setNsPrefix("dcterms", DCTerms.getURI());
 		model.setNsPrefix("freq", Freq.getURI());
+		model.setNsPrefix("owl", OWL.getURI());
 	}
 	
 	public static String colorToHex(Color color) {

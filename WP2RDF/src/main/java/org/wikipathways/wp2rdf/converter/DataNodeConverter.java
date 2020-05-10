@@ -174,6 +174,8 @@ public class DataNodeConverter {
 								pubmedRes.addProperty(FOAF.page, model.createResource(Utils.PUBMED_URL + pubXref.getPubmedId().trim()));
 								pubmedRes.addProperty(DCTerms.isPartOf, data.getPathwayRes());
 							
+								Xref litXref = new Xref(pubXref.getPubmedId().trim(), DataSource.register("Pbm", "PubMed").asDataSource());
+								GpmlConverter.getUnifiedIdentifiers(model, mapper, litXref, pubmedRes);
 							}
 						}
 
