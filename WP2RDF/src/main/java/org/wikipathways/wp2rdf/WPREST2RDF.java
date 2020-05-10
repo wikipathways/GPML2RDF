@@ -130,7 +130,9 @@ public class WPREST2RDF {
 		WikiPathwaysClient client = new WikiPathwaysClient(url);
 
 		// set up the BridgeDb ID mappings databases
-		DataSource.register("Cpx", "Complex Portal").asDataSource();
+		DataSource.register("Cpx", "Complex Portal")
+		  .identifiersOrgBase("http://identifiers.org/complexportal/")
+		  .asDataSource();
 		DataSource.register("Pbd", "Digital Object Identifier").asDataSource();
 		DataSource.register("Pbm", "PubMed").asDataSource();
 		IDMapperStack mapper = WPREST2RDF.maps();
