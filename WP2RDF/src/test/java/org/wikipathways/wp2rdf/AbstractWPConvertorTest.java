@@ -25,6 +25,7 @@ public abstract class AbstractWPConvertorTest extends AbstractConvertorTest {
 		  .asDataSource();
 		DataSource.register("Pbd", "Digital Object Identifier").asDataSource();
 		DataSource.register("Pbm", "PubMed").asDataSource();
+		DataSource.register("Gpl", "Guide to Pharmacology Targets").asDataSource();
 		InputStream input = AbstractConvertorTest.class.getClassLoader().getResourceAsStream(gpmlFile);
 		Pathway pathway = PathwayReader.readPathway(input);
 		Assert.assertNotNull(pathway);
