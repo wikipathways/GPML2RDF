@@ -2,7 +2,7 @@
 name: SPARQL endpoint interoperability
 about: Describe this issue template's purpose here.
 title: ''
-labels: enhancement
+labels: enhancement, SPARQL
 assignees: ''
 
 ---
@@ -14,3 +14,7 @@ assignees: ''
  - [ ] shares IRIs for metabolites
  - [ ] shares IRIs for complexes
  - [ ] shares IRIs for publications
+
+# Write up examples SPARQL query
+
+- [ ] write examples for the [WikiPathways SPARQL book](https://wikipathways.github.io/WikiPathways-SPARQL-book/)
