@@ -14,7 +14,7 @@ There are two dependencies. You can made them available to Maven using the below
 #### WikiPathways API client 
 
 ```shell
-git clone git@github.com:wikipathways/wikipathways-api-client-java.git
+git clone https://github.com/wikipathways/wikipathways-api-client-java.git
 cd wikipathways-api-client-java
 mvn clean install
 mvn install:install-file -Dfile=org.wikipathways.client/org.wikipathways.webservice.api.bundle.jar \
@@ -24,7 +24,7 @@ mvn install:install-file -Dfile=org.wikipathways.client/org.wikipathways.webserv
 #### PathVisio Core
 
 ```shell
-git clone git@github.com:PathVisio/pathvisio.git
+git clone https://github.com/PathVisio/pathvisio.git
 cd pathvisio
 git checkout -b series/3.3.0 v3.3.0
 ant clean core.jar
