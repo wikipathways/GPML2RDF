@@ -19,6 +19,7 @@ package org.wikipathways.wp2rdf.converter;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
+import org.bridgedb.DataSource;
 import org.bridgedb.IDMapperException;
 import org.bridgedb.IDMapperStack;
 import org.bridgedb.Xref;
@@ -72,15 +73,16 @@ public class DataNodeConverter {
 				if (elem.getXref().getId() != null && elem.getXref().getId().trim().length() > 0) {
 					Xref xref = elem.getXref();
 					String xrefid = xref.getId(); 
-					String url = elem.getDataSource().getIdentifiersOrgUri(xrefid);
-					String foafURL = elem.getDataSource().getKnownUrl(xrefid);
+					DataSource datasource = elem.getDataSource(); 
+					String url = datasource.getIdentifiersOrgUri(xrefid);
+					String foafURL = datasource.getKnownUrl(xrefid).replaceAll(" ", "_");
 					if ("HMDB".equals(xref.getDataSource().getFullName())) {
 						if (xrefid.length() == 11) {
 							// OK, all is fine
 						} else if (xrefid.length() > 4) {
 							xrefid = "HMDB00" + xrefid.substring(4);
 						} // else, something really weird
-						url = elem.getDataSource().getIdentifiersOrgUri(xrefid);
+						url = datasource.getIdentifiersOrgUri(xrefid);
 					}
 					if(url != null && !url.equals("")) {
 						Resource datanodeRes = data.getDataNodes().get(xref);
