@@ -82,6 +82,9 @@ public class WPREST2RDF {
 		add("Curation:RareDiseases");
 		add("Curation:SGD_Approved");
 		add("Curation:WormBase_Approved");
+		// the additional curation tags
+		add("Curation:NeedsWork");
+		add("Curation:Hypothetical");
 	}};
 
 	@SuppressWarnings("serial")
