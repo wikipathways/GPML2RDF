@@ -75,7 +75,7 @@ public class WPREST2RDF {
 	private static final List<String> EXTRA_TAGS = new ArrayList<String>() {{
 		// the additional Community tags
 		add("Curation:AOP");
-		add("Curation:Blau");
+		add("Curation:IEM");
 		add("Curation:CIRM_Related");
 		add("Curation:COVID19");
 		add("Curation:LIPID_MAPS");
