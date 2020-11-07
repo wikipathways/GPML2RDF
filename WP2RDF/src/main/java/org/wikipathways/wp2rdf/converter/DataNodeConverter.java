@@ -75,7 +75,10 @@ public class DataNodeConverter {
 					String xrefid = xref.getId(); 
 					DataSource datasource = elem.getDataSource(); 
 					String url = datasource.getIdentifiersOrgUri(xrefid);
-					String foafURL = datasource.getKnownUrl(xrefid).replaceAll(" ", "_");
+					String foafURL = null;
+					if (datasource.getKnownUrl(xrefid) != null) {
+						foafURL = datasource.getKnownUrl(xrefid).replaceAll(" ", "_");
+					}
 					if ("HMDB".equals(xref.getDataSource().getFullName())) {
 						if (xrefid.length() == 11) {
 							// OK, all is fine
