@@ -78,7 +78,7 @@ public class WPREST2RDF {
 		add("Curation:IEM");
 		add("Curation:CIRM_Related");
 		add("Curation:COVID19");
-		add("Curation:lipids");
+		add("Curation:Lipids");
 		add("Curation:RareDiseases");
 		add("Curation:SGD_Approved");
 		add("Curation:WormBase_Approved");
