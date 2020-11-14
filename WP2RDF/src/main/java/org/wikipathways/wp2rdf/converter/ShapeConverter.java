@@ -68,7 +68,7 @@ public class ShapeConverter {
 		shapeRes.addLiteral(Gpml.WIDTH, elem.getMWidth());
 		if(elem.getFillColor() != null) shapeRes.addLiteral(Gpml.FILL_COLOR, Utils.colorToHex(elem.getFillColor()));
 		shapeRes.addLiteral(Gpml.ZORDER, elem.getZOrder());
-		shapeRes.addLiteral(Gpml.SHAPE_TYPE, elem.getShapeType().getName());
+		if (elem.getShapeType() != null) shapeRes.addLiteral(Gpml.SHAPE_TYPE, elem.getShapeType().getName());
 		shapeRes.addLiteral(Gpml.SHAPE, elem.getRotation());
 		
 		for(String s : elem.getBiopaxRefs()) {
