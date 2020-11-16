@@ -135,8 +135,8 @@
                 <optional>true</optional>
         </dependency>
         <dependency>
-                <groupId>org.pathvisio</groupId>
-                <artifactId>wikipathways-client</artifactId>
+                <groupId>org.wikipathways</groupId>
+                <artifactId>webservice.api.lib</artifactId>
                 <version>3.3.0-GPMLRDF</version>
                 <optional>true</optional>
         </dependency>
