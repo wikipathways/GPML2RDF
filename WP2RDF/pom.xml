@@ -15,7 +15,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <bridgedb.version>3.0.1</bridgedb.version>
+        <bridgedb.version>3.0.2</bridgedb.version>
     </properties>
 
     <build>
