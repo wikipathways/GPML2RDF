@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Collections;
 
-import org.bridgedb.DataSource;
 import org.bridgedb.IDMapperException;
 import org.bridgedb.IDMapperStack;
 import org.bridgedb.bio.DataSourceTxt;
@@ -20,12 +19,7 @@ public abstract class AbstractWPConvertorTest extends AbstractConvertorTest {
 	public static void loadModelAsWPRDF(String gpmlFile, String wpid, String revision) throws ConverterException, FileNotFoundException, ClassNotFoundException, IOException, IDMapperException {
 		DataSourceTxt.init();
 		// the next line is needed until BridgeDb gets updated
-		DataSource.register("Cpx", "Complex Portal")
-		  .identifiersOrgBase("http://identifiers.org/complexportal/")
-		  .asDataSource();
-		DataSource.register("Pbd", "Digital Object Identifier").asDataSource();
-		DataSource.register("Pbm", "PubMed").asDataSource();
-		DataSource.register("Gpl", "Guide to Pharmacology Targets").asDataSource();
+		// none at this moment
 		InputStream input = AbstractConvertorTest.class.getClassLoader().getResourceAsStream(gpmlFile);
 		Pathway pathway = PathwayReader.readPathway(input);
 		Assert.assertNotNull(pathway);
