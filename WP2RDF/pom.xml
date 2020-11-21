@@ -132,7 +132,7 @@
         <dependency>
                 <groupId>org.pathvisio</groupId>
                 <artifactId>pathvisio-core</artifactId>
-                <version>3.4.0</version>
+                <version>3.4.0-bridgedb-3.0.1</version>
                 <optional>true</optional>
         </dependency>
         <dependency>
