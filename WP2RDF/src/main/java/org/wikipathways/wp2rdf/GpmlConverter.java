@@ -86,9 +86,6 @@ public class GpmlConverter {
 		    }
 		};
 
-		DataSource.register("Wd", "Wikidata");
-		DataSource.register("Ck", "KEGG Compound");
-		DataSource.register("Lm", "LIPID MAPS");
 		File[] bridgeDbFiles = dir.listFiles(filter);
 		IDMapperStack mapper = new IDMapperStack();
 		for (File bridgeDbFile : bridgeDbFiles) {
