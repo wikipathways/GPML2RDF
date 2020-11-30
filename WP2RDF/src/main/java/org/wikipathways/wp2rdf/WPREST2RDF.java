@@ -404,7 +404,7 @@ public class WPREST2RDF {
 		linkset.addProperty(RDF.type, Void.Linkset);
 		linkset.addProperty(Void.subjectsTarget, voidBase);
 		linkset.addProperty(DCTerms.title, "WPRDF to Wikidata Linkset");
-		linkset.addProperty(Void.objectsTarget, voidModel.createResource("https://www.wikidata.org/entity/Q2013"));
+		linkset.addProperty(Void.objectsTarget, voidModel.createResource("http://www.wikidata.org/entity/Q2013"));
 		linkset.addProperty(Void.linkPredicate, Wp.bdbWikidata);
 	}
 
