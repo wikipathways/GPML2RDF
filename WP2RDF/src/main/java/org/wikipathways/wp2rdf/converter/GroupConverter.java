@@ -106,10 +106,12 @@ public class GroupConverter {
 							// System.out.println("Error while adding complex identifier: " + exception.getMessage());
 						}
 						groupRes.addProperty(RDFS.label, embeddedComplexDataNode.getTextLabel());
-						String idURL = idXref.getDataSource().getIdentifiersOrgUri(idXref.getId());
-						groupRes.addProperty(DC.identifier, model.createResource(idURL));
-						groupRes.addLiteral(DC.source, idXref.getDataSource().getFullName());
-						groupRes.addLiteral(DCTerms.identifier, idXref.getId());
+						if (idXref.getDataSource() != null) {
+							String idURL = idXref.getDataSource().getIdentifiersOrgUri(idXref.getId());
+							groupRes.addProperty(DC.identifier, model.createResource(idURL));
+							groupRes.addLiteral(DC.source, idXref.getDataSource().getFullName());
+							groupRes.addLiteral(DCTerms.identifier, idXref.getId());
+						}
 					}
 				}
 				
