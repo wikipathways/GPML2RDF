@@ -1,18 +1,13 @@
 package org.wikipathways.wp2rdf;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
-
-import org.bridgedb.IDMapperException;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import org.pathvisio.core.model.ConverterException;
 
 public class WP101Test extends AbstractWPConvertorTest {
 
 	@BeforeClass
-	public static void createModel() throws ConverterException, FileNotFoundException, ClassNotFoundException, IOException, IDMapperException {
+	public static void createModel() throws Exception {
 		loadModelAsWPRDF("WP101_79360.gpml", "WP101", "79360");
 	}
 

@@ -75,10 +75,13 @@ public class GpmlConverter {
 	
 	
 	
-	public static IDMapperStack createBridgeDbMapper(Properties prop) throws ClassNotFoundException, IDMapperException{
+	public static IDMapperStack createBridgeDbMapper(Properties prop) throws Exception {
 		Class.forName("org.apache.derby.jdbc.ClientDriver");
 		Class.forName("org.bridgedb.rdb.IDMapperRdb");
 		DataSourceTxt.init();
+		if (prop.getProperty("bridgefiles") == null) {
+			throw new Exception("Expected a bridgefiles property, but did not find one.");
+		}
 		File dir = new File(prop.getProperty("bridgefiles")); //TODO Get Refactor to get them directly from bridgedb.org -> could be done with wget? Or from Dockerised version of bridgeDb?
 		FilenameFilter filter = new FilenameFilter() {
 		    public boolean accept(File dir, String name) {

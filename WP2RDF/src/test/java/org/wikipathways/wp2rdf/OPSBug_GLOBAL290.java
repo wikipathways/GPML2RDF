@@ -1,18 +1,13 @@
 package org.wikipathways.wp2rdf;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
-
-import org.bridgedb.IDMapperException;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import org.pathvisio.core.model.ConverterException;
 
 public class OPSBug_GLOBAL290 extends AbstractWPConvertorTest {
 
 	@BeforeClass
-	public static void createModel() throws ConverterException, FileNotFoundException, ClassNotFoundException, IOException, IDMapperException {
+	public static void createModel() throws Exception {
 		loadModelAsWPRDF("test-ChEBI-oldIDStyle.gpml", "WP4", "1"); // not really WP4
 	}
 

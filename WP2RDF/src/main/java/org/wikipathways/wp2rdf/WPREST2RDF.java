@@ -125,7 +125,7 @@ public class WPREST2RDF {
 		add(Organism.ZeaMays);
 	}};
 
-	public static void main(String[] args) throws NumberFormatException, ConverterException, IOException, ClassNotFoundException, IDMapperException {
+	public static void main(String[] args) throws Exception {
 		URL url = new URL("http://webservice.wikipathways.org");
 		WikiPathwaysClient client = new WikiPathwaysClient(url);
 
@@ -427,7 +427,7 @@ public class WPREST2RDF {
 		linkset.addProperty(Void.linkPredicate, Wp.bdbWikidata);
 	}
 
-	public static IDMapperStack maps () throws FileNotFoundException, IOException, ClassNotFoundException, IDMapperException{
+	public static IDMapperStack maps () throws Exception {
 		final Properties prop = new Properties();
 		String derbyFolder = System.getProperty("OPSBRIDGEDB", "OPSBRIDGEDB");
 		prop.load(new FileInputStream("/tmp/" + derbyFolder + "/config.properties"));

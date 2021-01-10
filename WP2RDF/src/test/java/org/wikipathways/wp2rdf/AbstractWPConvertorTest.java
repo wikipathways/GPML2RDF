@@ -1,22 +1,18 @@
 package org.wikipathways.wp2rdf;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.io.InputStream;
 import java.util.Collections;
 
-import org.bridgedb.IDMapperException;
 import org.bridgedb.IDMapperStack;
 import org.bridgedb.bio.DataSourceTxt;
 import org.junit.Assert;
 import org.junit.Test;
-import org.pathvisio.core.model.ConverterException;
 import org.pathvisio.core.model.Pathway;
 import org.wikipathways.wp2rdf.io.PathwayReader;
 
 public abstract class AbstractWPConvertorTest extends AbstractConvertorTest {
 
-	public static void loadModelAsWPRDF(String gpmlFile, String wpid, String revision) throws ConverterException, FileNotFoundException, ClassNotFoundException, IOException, IDMapperException {
+	public static void loadModelAsWPRDF(String gpmlFile, String wpid, String revision) throws Exception {
 		DataSourceTxt.init();
 		// the next line is needed until BridgeDb gets updated
 		// none at this moment
