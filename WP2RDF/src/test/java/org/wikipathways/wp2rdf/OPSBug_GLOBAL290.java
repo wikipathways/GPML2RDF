@@ -14,13 +14,13 @@ public class OPSBug_GLOBAL290 extends AbstractWPConvertorTest {
 	@Test
 	public void properIdentifierDotOrgURI() throws Exception {
 		String turtle = toString(model);
-		Assert.assertFalse(turtle.contains("http://identifiers.org/chebi/47776"));
-		Assert.assertTrue(turtle.contains("http://identifiers.org/chebi/CHEBI:47776"));
+		Assert.assertFalse(turtle.contains("https://identifiers.org/chebi/47776"));
+		Assert.assertTrue(turtle.contains("https://identifiers.org/chebi/CHEBI:47776"));
 	}
 
 	@Test
 	public void properIdentifierDotOrgURIFormat() throws Exception {
 		String turtle = toString(model);
-		Assert.assertFalse(turtle.contains("http://identifiers.org/obi.chebi/"));
+		Assert.assertFalse(turtle.contains("https://identifiers.org/obi.chebi/"));
 	}
 }

@@ -291,7 +291,7 @@ public class WPREST2RDF {
 		// set prefixes
 		voidModel.setNsPrefix("prov", "http://www.w3.org/ns/prov#");
 		voidModel.setNsPrefix("foaf", "http://xmlns.com/foaf/0.1/");
-		voidModel.setNsPrefix("hmdb", "http://identifiers.org/hmdb/");
+		voidModel.setNsPrefix("hmdb", "https://identifiers.org/hmdb/");
 		voidModel.setNsPrefix("freq", "http://purl.org/cld/freq/");
 		voidModel.setNsPrefix("pubmed", "http://www.ncbi.nlm.nih.gov/pubmed/");
 		voidModel.setNsPrefix("wp", "http://vocabularies.wikipathways.org/wp#");
@@ -300,7 +300,7 @@ public class WPREST2RDF {
 		voidModel.setNsPrefix("dcterms", "http://purl.org/dc/terms/");
 		voidModel.setNsPrefix("rdfs", "http://www.w3.org/2000/01/rdf-schema#");
 		voidModel.setNsPrefix("pav", "http://purl.org/pav/");
-		voidModel.setNsPrefix("ncbigene", "http://identifiers.org/ncbigene/");
+		voidModel.setNsPrefix("ncbigene", "https://identifiers.org/ncbigene/");
 		voidModel.setNsPrefix("xsd", "http://www.w3.org/2001/XMLSchema#");
 		voidModel.setNsPrefix("rdf", "http://www.w3.org/1999/02/22-rdf-syntax-ns#");
 		voidModel.setNsPrefix("gpml", "http://vocabularies.wikipathways.org/gpml#");
@@ -347,7 +347,7 @@ public class WPREST2RDF {
 		voidBase.addLiteral(DCTerms.title, "WikiPathways RDF " + date);
 		voidBase.addLiteral(DCTerms.description, "WikiPathways RDF data dump of the Curated and Reactome pathways created on " + date + ".");
 		voidBase.addLiteral(Void.uriSpace, "http://rdf.wikipathways.org/wp/");
-		voidBase.addLiteral(Void.uriSpace, "http://identifiers.org");
+		voidBase.addLiteral(Void.uriSpace, "https://identifiers.org");
 		voidBase.addProperty(Pav.importedBy, authorResource);
 		voidBase.addProperty(Pav.importedFrom, apiResource);
 		voidBase.addProperty(Pav.importedOn, nowLiteral);
@@ -380,16 +380,16 @@ public class WPREST2RDF {
 			voidModel.createProperty("http://www.w3.org/ns/dcat#theme"),
 			voidModel.createResource("http://semanticscience.org/resource/SIO_001107")
 		);
-		voidBase.addProperty(Void.exampleResource, voidModel.createResource("http://identifiers.org/ncbigene/2678"));
-		voidBase.addProperty(Void.exampleResource, voidModel.createResource("http://identifiers.org/pubmed/15215856"));
-		voidBase.addProperty(Void.exampleResource, voidModel.createResource("http://identifiers.org/hmdb/HMDB02005"));
-		voidBase.addProperty(Void.exampleResource, voidModel.createResource("http://rdf.wikipathways.org/WP15"));
-		voidBase.addProperty(Void.exampleResource, voidModel.createResource("http://identifiers.org/obo.chebi/17242"));
+		voidBase.addProperty(Void.exampleResource, voidModel.createResource("https://identifiers.org/ncbigene/2678"));
+		voidBase.addProperty(Void.exampleResource, voidModel.createResource("https://identifiers.org/pubmed/15215856"));
+		voidBase.addProperty(Void.exampleResource, voidModel.createResource("https://identifiers.org/hmdb/HMDB02005"));
+		voidBase.addProperty(Void.exampleResource, voidModel.createResource("https://rdf.wikipathways.org/WP15"));
+		voidBase.addProperty(Void.exampleResource, voidModel.createResource("https://identifiers.org/obo.chebi/17242"));
 
 		for (Organism organism : SPECIES.keySet()) {
 			voidBase.addProperty(
 				DCTerms.subject,
-				voidModel.createResource("http://identifiers.org/taxonomy/" + organism.taxonomyID().getId())
+				voidModel.createResource("https://identifiers.org/taxonomy/" + organism.taxonomyID().getId())
 			);
 		}
 		voidBase.addProperty(Void.vocabulary, Biopax_level3.NAMESPACE);

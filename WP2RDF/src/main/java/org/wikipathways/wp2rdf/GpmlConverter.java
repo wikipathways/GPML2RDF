@@ -104,34 +104,34 @@ public class GpmlConverter {
 //		System.out.println(idXref);
 		//ENSEMBL
 		outputBridgeDbMapping(model, mapper, idXref, internalWPDataNodeResource,
-			"En", "http://identifiers.org/ensembl/", Wp.bdbEnsembl
+			"En", "https://identifiers.org/ensembl/", Wp.bdbEnsembl
 		);
 		//Uniprot
 		outputBridgeDbMapping(model, mapper, idXref, internalWPDataNodeResource,
-			"S", "http://identifiers.org/uniprot/", Wp.bdbUniprot
+			"S", "https://identifiers.org/uniprot/", Wp.bdbUniprot
 		);
 		//Entrez Gene
 		outputBridgeDbMapping(model, mapper, idXref, internalWPDataNodeResource,
-			"L", "http://identifiers.org/ncbigene/", Wp.bdbEntrezGene
+			"L", "https://identifiers.org/ncbigene/", Wp.bdbEntrezGene
 		);
 		//HGNC Symbols
 		outputBridgeDbMapping(model, mapper, idXref, internalWPDataNodeResource,
-			"H", "http://identifiers.org/hgnc.symbol/", Wp.bdbHgncSymbol
+			"H", "https://identifiers.org/hgnc.symbol/", Wp.bdbHgncSymbol
 		);
 
 		// Metabolites
 
 		//HMDB
 		outputBridgeDbMapping(model, mapper, idXref, internalWPDataNodeResource,
-			"Ch", "http://identifiers.org/hmdb/", Wp.bdbHmdb
+			"Ch", "https://identifiers.org/hmdb/", Wp.bdbHmdb
 		);
 		//CHEMSPIDER
 		outputBridgeDbMapping(model, mapper, idXref, internalWPDataNodeResource,
-			"Cs", "http://identifiers.org/chemspider/", Wp.bdbChemspider
+			"Cs", "https://identifiers.org/chemspider/", Wp.bdbChemspider
 		);
 		//ChEBI
 		outputBridgeDbMapping(model, mapper, idXref, internalWPDataNodeResource,
-			"Ce", "http://identifiers.org/chebi/", Wp.bdbChEBI
+			"Ce", "https://identifiers.org/chebi/", Wp.bdbChEBI
 		);
 		// Wikidata
 		outputBridgeDbMapping(model, mapper, idXref, internalWPDataNodeResource,
@@ -143,11 +143,11 @@ public class GpmlConverter {
 		);
 		// Kegg Compound
 				outputBridgeDbMapping(model, mapper, idXref, internalWPDataNodeResource,
-					"Ck", "http://identifiers.org/kegg.compound/", Wp.bdbKeggCompound
+					"Ck", "https://identifiers.org/kegg.compound/", Wp.bdbKeggCompound
 				); 
 		// LipidMaps
 				outputBridgeDbMapping(model, mapper, idXref, internalWPDataNodeResource,
-					"Lm", "http://identifiers.org/lipidmaps/", Wp.bdbLipidMaps
+					"Lm", "https://identifiers.org/lipidmaps/", Wp.bdbLipidMaps
 				); 
 		// InChIKey
 		if (mapper != null) {
@@ -158,9 +158,9 @@ public class GpmlConverter {
 				while (iter.hasNext()){
 					Xref unifiedId = (Xref) iter.next();
 					String inchikey = unifiedId.getId();
-					Resource inchiResource = model.createResource("http://identifiers.org/inchikey/" + inchikey);
+					Resource inchiResource = model.createResource("https://identifiers.org/inchikey/" + inchikey);
 					internalWPDataNodeResource.addProperty(Wp.bdbInChIKey, inchiResource);
-					Resource neutralResource = model.createResource("http://identifiers.org/inchikey/" + inchikey.substring(0,inchikey.length()-1) + "N");
+					Resource neutralResource = model.createResource("https://identifiers.org/inchikey/" + inchikey.substring(0,inchikey.length()-1) + "N");
 					internalWPDataNodeResource.addProperty(RDFS.seeAlso, neutralResource);
 				}
 			} catch (Exception exception) {
@@ -172,18 +172,18 @@ public class GpmlConverter {
 
 		// Reactome
 		outputBridgeDbMapping(model, mapper, idXref, internalWPDataNodeResource,
-			"Re", "http://identifiers.org/reactome/", Wp.bdbReactome
+			"Re", "https://identifiers.org/reactome/", Wp.bdbReactome
 		);
 		// Rhea
 		outputBridgeDbMapping(model, mapper, idXref, internalWPDataNodeResource,
-			"Rh", "http://identifiers.org/rhea/", Wp.bdbRhea
+			"Rh", "https://identifiers.org/rhea/", Wp.bdbRhea
 		);
 
 		// Complexes
 
 		// Complex Portal
 		outputBridgeDbMapping(model, mapper, idXref, internalWPDataNodeResource,
-			"Cpx", "http://identifiers.org/complexportal/", Wp.bdbComplexPortal
+			"Cpx", "https://identifiers.org/complexportal/", Wp.bdbComplexPortal
 		);
 
 		// Literature references
