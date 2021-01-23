@@ -107,7 +107,8 @@ public class GroupConverter {
 						}
 						groupRes.addProperty(RDFS.label, embeddedComplexDataNode.getTextLabel());
 						if (idXref.getDataSource() != null) {
-							String idURL = idXref.getDataSource().getIdentifiersOrgUri(idXref.getId()).replace("http://identifiers", "https://identifiers");
+							String idURL = idXref.getDataSource().getIdentifiersOrgUri(idXref.getId());
+							if (idURL != null) idURL = idURL.replace("http://identifiers", "https://identifiers");
 							groupRes.addProperty(DC.identifier, model.createResource(idURL));
 							groupRes.addLiteral(DC.source, idXref.getDataSource().getFullName());
 							groupRes.addLiteral(DCTerms.identifier, idXref.getId());

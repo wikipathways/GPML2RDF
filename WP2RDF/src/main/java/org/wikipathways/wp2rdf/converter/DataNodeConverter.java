@@ -74,7 +74,8 @@ public class DataNodeConverter {
 					Xref xref = elem.getXref();
 					String xrefid = xref.getId(); 
 					DataSource datasource = elem.getDataSource(); 
-					String url = datasource.getIdentifiersOrgUri(xrefid).replace("http://identifiers", "https://identifiers");
+					String url = datasource.getIdentifiersOrgUri(xrefid);
+					if (url != null) url = url.replace("http://identifiers", "https://identifiers");
 					String foafURL = null;
 					if (datasource.getKnownUrl(xrefid) != null) {
 						foafURL = datasource.getKnownUrl(xrefid).replaceAll(" ", "_");
@@ -86,6 +87,7 @@ public class DataNodeConverter {
 							xrefid = "HMDB00" + xrefid.substring(4);
 						} // else, something really weird
 						url = datasource.getIdentifiersOrgUri(xrefid);
+						if (url != null) url = url.replace("http://identifiers", "https://identifiers");
 					}
 					if(url != null && !url.equals("")) {
 						Resource datanodeRes = data.getDataNodes().get(xref);
