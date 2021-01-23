@@ -74,7 +74,7 @@ public class DataNodeConverter {
 					Xref xref = elem.getXref();
 					String xrefid = xref.getId(); 
 					DataSource datasource = elem.getDataSource(); 
-					String url = datasource.getIdentifiersOrgUri(xrefid);
+					String url = datasource.getIdentifiersOrgUri(xrefid).replace("http://identifiers", "https://identifiers");
 					String foafURL = null;
 					if (datasource.getKnownUrl(xrefid) != null) {
 						foafURL = datasource.getKnownUrl(xrefid).replaceAll(" ", "_");
