@@ -51,7 +51,7 @@ public class Utils {
 	
 	public static final String WP_RDF_URL = "http://rdf.wikipathways.org";
 	public static final String WP_URL = "http://www.wikipathways.org";
-	public static final String IDENTIFIERS_ORG_URL = "http://identifiers.org";
+	public static final String IDENTIFIERS_ORG_URL = "https://identifiers.org";
 	public static final String PURL_TAX_URL = "http://purl.obolibrary.org/obo/NCBITaxon_";
 	public static final String PUBMED_URL = "http://www.ncbi.nlm.nih.gov/pubmed/";
 	public static final String PURL_OBO_LIB = "http://purl.obolibrary.org/obo/";
