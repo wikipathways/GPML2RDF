@@ -18,9 +18,7 @@ package org.wikipathways.wp2rdf;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileWriter;
-import java.io.IOException;
 import java.io.Writer;
 import java.net.URL;
 import java.text.SimpleDateFormat;
@@ -33,11 +31,8 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.Set;
 
-import org.bridgedb.DataSource;
-import org.bridgedb.IDMapperException;
 import org.bridgedb.IDMapperStack;
 import org.bridgedb.bio.Organism;
-import org.pathvisio.core.model.ConverterException;
 import org.pathvisio.core.model.Pathway;
 import org.pathvisio.wikipathways.webservice.WSCurationTag;
 import org.pathvisio.wikipathways.webservice.WSPathwayInfo;
@@ -53,6 +48,7 @@ import org.wikipathways.wp2rdf.utils.Utils;
 import com.hp.hpl.jena.rdf.model.Literal;
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
+import com.hp.hpl.jena.rdf.model.Property;
 import com.hp.hpl.jena.rdf.model.Resource;
 import com.hp.hpl.jena.sparql.vocabulary.FOAF;
 import com.hp.hpl.jena.vocabulary.DCTerms;
@@ -419,12 +415,52 @@ public class WPREST2RDF {
 		// create link sets
 
 		// WPRDF - Wikidata
-		Resource linkset = voidModel.createResource(domain + date + "/linkset/wikidata");
+		createLinkSet(voidModel.createResource(domain + date + "/linkset/wikidata"), voidBase,
+			voidModel.createResource("http://www.wikidata.org/entity/Q2013"), Wp.bdbWikidata, license, nowLiteral
+		);
+		// WPRDF - ChEBI
+		createLinkSet(voidModel.createResource(domain + date + "/linkset/chebi"), voidBase,
+			voidModel.createResource("http://identifiers.org/chebi/CHEBI:138307"), Wp.bdbChEBI, license, nowLiteral
+		);
+		// WPRDF - Ensembl
+		createLinkSet(voidModel.createResource(domain + date + "/linkset/ensembl"), voidBase,
+			voidModel.createResource("http://identifiers.org/ensembl/ENSG00000100031"), Wp.bdbEnsembl, license, nowLiteral
+		);
+		// WPRDF - InChIKey
+		createLinkSet(voidModel.createResource(domain + date + "/linkset/inchikey"), voidBase,
+			voidModel.createResource("http://identifiers.org/inchikey/ADVPTQAUNPRNPO-REOHCLBHSA-N"), Wp.bdbInChIKey, license, nowLiteral
+		);
+		// WPRDF - LIPID MAPS
+		createLinkSet(voidModel.createResource(domain + date + "/linkset/lipidmaps"), voidBase,
+			voidModel.createResource("http://identifiers.org/lipidmaps/LMFA01050243"), Wp.bdbLipidMaps, license, nowLiteral
+		);
+		// WPRDF - PubChem
+		createLinkSet(voidModel.createResource(domain + date + "/linkset/pubchem"), voidBase,
+			voidModel.createResource("http://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID101770"), Wp.bdbPubChem, license, nowLiteral
+		);
+		// WPRDF - UniProt
+		createLinkSet(voidModel.createResource(domain + date + "/linkset/uniprot"), voidBase,
+			voidModel.createResource("http://identifiers.org/uniprot/17928"), Wp.bdbUniprot, license, nowLiteral
+		);
+		// WPRDF - Rhea
+		createLinkSet(voidModel.createResource(domain + date + "/linkset/rhea"), voidBase,
+			voidModel.createResource("http://identifiers.org/rhea/35868"), Wp.bdbRhea, license, nowLiteral
+		);
+		// WPRDF - Complex Portal
+		createLinkSet(voidModel.createResource(domain + date + "/linkset/complexportal"), voidBase,
+			voidModel.createResource("http://identifiers.org/complexportal/CPX-373"), Wp.bdbComplexPortal, license, nowLiteral
+		);
+    }
+
+	private static void createLinkSet(Resource linkset, Resource voidBase, Resource objectTarget,
+			Property linkPredicate, Resource license, Literal creationDate) {
 		linkset.addProperty(RDF.type, Void.Linkset);
 		linkset.addProperty(Void.subjectsTarget, voidBase);
 		linkset.addProperty(DCTerms.title, "WPRDF to Wikidata Linkset");
-		linkset.addProperty(Void.objectsTarget, voidModel.createResource("http://www.wikidata.org/entity/Q2013"));
-		linkset.addProperty(Void.linkPredicate, Wp.bdbWikidata);
+		linkset.addProperty(Void.objectsTarget, objectTarget);
+		linkset.addProperty(Void.linkPredicate, linkPredicate);
+		linkset.addProperty(DCTerms.license, license);
+		linkset.addLiteral(Pav.createdOn, creationDate);
 	}
 
 	public static IDMapperStack maps () throws Exception {
