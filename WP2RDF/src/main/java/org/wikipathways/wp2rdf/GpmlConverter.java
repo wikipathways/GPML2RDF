@@ -255,6 +255,10 @@ public class GpmlConverter {
 				}
 				Resource unifiedlIdResource = model.createResource(uriPrefix+unifiedDataNodeIdentifier);
 				internalWPDataNodeResource.addProperty(predicate, unifiedlIdResource);
+			} else if ("Pbd".equals(sourceCode)) {
+				String unifiedDataNodeIdentifier = unifiedId.getId();
+  			    Resource unifiedlIdResource = model.createResource(uriPrefix+unifiedDataNodeIdentifier);
+			    internalWPDataNodeResource.addProperty(predicate, unifiedlIdResource);
 			} else {
 				String unifiedDataNodeIdentifier = URLEncoder.encode(unifiedId.getId(), "UTF-8");
   			    Resource unifiedlIdResource = model.createResource(uriPrefix+unifiedDataNodeIdentifier);
