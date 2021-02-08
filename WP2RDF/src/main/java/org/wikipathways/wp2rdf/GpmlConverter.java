@@ -219,7 +219,7 @@ public class GpmlConverter {
 					internalWPDataNodeResource.addProperty(predicate, unifiedlIdResource);
 				}
 			} else {
-				Resource unifiedlIdResource = model.createResource(uriPrefix + idXref.getId());
+				Resource unifiedlIdResource = model.createResource(uriPrefix + idXref.getId().replaceAll(" ", "_"));
 				internalWPDataNodeResource.addProperty(predicate, unifiedlIdResource);
 			}
 		}
