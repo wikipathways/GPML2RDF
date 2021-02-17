@@ -415,48 +415,57 @@ public class WPREST2RDF {
 		// create link sets
 
 		// WPRDF - Wikidata
-		createLinkSet(voidModel.createResource(domain + date + "/linkset/wikidata"), voidBase,
+		createLinkSet(voidModel.createResource(domain + date + "/linkset/wikidata"), 
+			"WPRDF to Wikidata Linkset", voidBase,
 			voidModel.createResource("http://www.wikidata.org/entity/Q2013"), Wp.bdbWikidata, license, nowLiteral
 		);
 		// WPRDF - ChEBI
-		createLinkSet(voidModel.createResource(domain + date + "/linkset/chebi"), voidBase,
+		createLinkSet(voidModel.createResource(domain + date + "/linkset/chebi"), 
+			"WPRDF to ChEBI Linkset", voidBase,
 			voidModel.createResource("http://identifiers.org/chebi/CHEBI:138307"), Wp.bdbChEBI, license, nowLiteral
 		);
 		// WPRDF - Ensembl
-		createLinkSet(voidModel.createResource(domain + date + "/linkset/ensembl"), voidBase,
+		createLinkSet(voidModel.createResource(domain + date + "/linkset/ensembl"), 
+            "WPRDF to Ensembl Linkset", voidBase,
 			voidModel.createResource("http://identifiers.org/ensembl/ENSG00000100031"), Wp.bdbEnsembl, license, nowLiteral
 		);
 		// WPRDF - InChIKey
-		createLinkSet(voidModel.createResource(domain + date + "/linkset/inchikey"), voidBase,
+		createLinkSet(voidModel.createResource(domain + date + "/linkset/inchikey"), 
+			"WPRDF to InChIKey Linkset", voidBase,
 			voidModel.createResource("http://identifiers.org/inchikey/ADVPTQAUNPRNPO-REOHCLBHSA-N"), Wp.bdbInChIKey, license, nowLiteral
 		);
 		// WPRDF - LIPID MAPS
-		createLinkSet(voidModel.createResource(domain + date + "/linkset/lipidmaps"), voidBase,
+		createLinkSet(voidModel.createResource(domain + date + "/linkset/lipidmaps"), 
+			"WPRDF to LIPID MAPS Linkset", voidBase,
 			voidModel.createResource("http://identifiers.org/lipidmaps/LMFA01050243"), Wp.bdbLipidMaps, license, nowLiteral
 		);
 		// WPRDF - PubChem
-		createLinkSet(voidModel.createResource(domain + date + "/linkset/pubchem"), voidBase,
+		createLinkSet(voidModel.createResource(domain + date + "/linkset/pubchem"), 
+			"WPRDF to PubChem Linkset", voidBase,
 			voidModel.createResource("http://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID101770"), Wp.bdbPubChem, license, nowLiteral
 		);
 		// WPRDF - UniProt
-		createLinkSet(voidModel.createResource(domain + date + "/linkset/uniprot"), voidBase,
+		createLinkSet(voidModel.createResource(domain + date + "/linkset/uniprot"), 
+			"WPRDF to UniProt Linkset", voidBase,
 			voidModel.createResource("http://identifiers.org/uniprot/17928"), Wp.bdbUniprot, license, nowLiteral
 		);
 		// WPRDF - Rhea
-		createLinkSet(voidModel.createResource(domain + date + "/linkset/rhea"), voidBase,
+		createLinkSet(voidModel.createResource(domain + date + "/linkset/rhea"), 
+			"WPRDF to Rhea Linkset", voidBase,
 			voidModel.createResource("http://identifiers.org/rhea/35868"), Wp.bdbRhea, license, nowLiteral
 		);
 		// WPRDF - Complex Portal
-		createLinkSet(voidModel.createResource(domain + date + "/linkset/complexportal"), voidBase,
+		createLinkSet(voidModel.createResource(domain + date + "/linkset/complexportal"), 
+			"WPRDF to Complex Portal Linkset", voidBase,
 			voidModel.createResource("http://identifiers.org/complexportal/CPX-373"), Wp.bdbComplexPortal, license, nowLiteral
 		);
     }
 
-	private static void createLinkSet(Resource linkset, Resource voidBase, Resource objectTarget,
+	private static void createLinkSet(Resource linkset, String title, Resource voidBase, Resource objectTarget,
 			Property linkPredicate, Resource license, Literal creationDate) {
 		linkset.addProperty(RDF.type, Void.Linkset);
 		linkset.addProperty(Void.subjectsTarget, voidBase);
-		linkset.addProperty(DCTerms.title, "WPRDF to Wikidata Linkset");
+		linkset.addProperty(DCTerms.title, title);
 		linkset.addProperty(Void.objectsTarget, objectTarget);
 		linkset.addProperty(Void.linkPredicate, linkPredicate);
 		linkset.addProperty(DCTerms.license, license);
