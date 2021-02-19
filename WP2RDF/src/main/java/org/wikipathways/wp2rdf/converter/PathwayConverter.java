@@ -101,7 +101,7 @@ public class PathwayConverter {
 			}
 		}
 		for(PublicationXref x : p.getMappInfo().getBiopaxReferenceManager().getPublicationXRefs()) {
-			PublicationXrefConverter.parsePublicationXrefWp(x, pwyRes, model);
+			PublicationXrefConverter.parsePublicationXrefWp(x, pwyRes, model, null);
 		}
 		
 		return pwyRes;

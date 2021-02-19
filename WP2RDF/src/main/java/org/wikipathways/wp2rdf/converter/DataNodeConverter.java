@@ -171,17 +171,7 @@ public class DataNodeConverter {
 						}
 						// TODO: what to do about those - are they pathway specific?
 						for(PublicationXref pubXref : elem.getBiopaxReferenceManager().getPublicationXRefs()) {
-							if(pubXref.getPubmedId() != null && !pubXref.getPubmedId().trim().equals("")) {
-								String pubmedUrl = Utils.IDENTIFIERS_ORG_URL + "/pubmed/" + pubXref.getPubmedId().trim();
-								Resource pubmedRes = model.createResource(pubmedUrl.trim());
-								datanodeRes.addProperty(DCTerms.bibliographicCitation, pubmedRes);
-								pubmedRes.addProperty(RDF.type, Wp.PublicationReference);
-								pubmedRes.addProperty(FOAF.page, model.createResource(Utils.PUBMED_URL + pubXref.getPubmedId().trim()));
-								pubmedRes.addProperty(DCTerms.isPartOf, data.getPathwayRes());
-							
-								Xref litXref = new Xref(pubXref.getPubmedId().trim(), DataSource.register("Pbm", "PubMed").asDataSource());
-								GpmlConverter.getUnifiedIdentifiers(model, mapper, litXref, pubmedRes);
-							}
+							PublicationXrefConverter.parsePublicationXrefWp(pubXref, datanodeRes, model, mapper);
 						}
 
 						datanodeRes.addProperty(Wp.isAbout, model.createResource(Utils.WP_RDF_URL + "/Pathway/" + data.getPwyId() + "_r" + data.getRevision() +
