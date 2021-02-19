@@ -106,6 +106,8 @@ public class Wp {
     
     public static final Resource TranscriptionTranslation = m_model.createResource( "http://vocabularies.wikipathways.org/wp#TranscriptionTranslation" );
     
+    public static final Resource Translocation = m_model.createResource( "http://vocabularies.wikipathways.org/wp#Translocation" );
+
     public static final Resource mkutmon = m_model.createResource( "http://vocabularies.wikipathways.org/wp#mkutmon" );
     
     public static final Resource ryan = m_model.createResource( "http://vocabularies.wikipathways.org/wp#ryan" );

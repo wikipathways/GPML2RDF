@@ -387,6 +387,8 @@ public class InteractionConverter {
 			return Wp.Stimulation;
 		} else if (lt.equals(MIMShapes.MIM_TRANSLATION)) {
 			return Wp.TranscriptionTranslation;
+		} else if (lt.equals(MIMShapes.MIM_TRANSLOCATION)) {
+			return Wp.Translocation;
 		} else if (lt.equals(MIMShapes.MIM_BINDING)) {
 			return Wp.Binding;
 		} else if (lt.equals(MIMShapes.MIM_NECESSARY_STIMULATION)) {
