@@ -49,14 +49,14 @@ public class PublicationXrefConverter {
 	 */
 	public static void parsePublicationXrefWp(PublicationXref xref, Resource parent, Model model, IDMapperStack mapper) {
 		if (xref.getPubmedId() == null && xref.getSource() == null) return;
-		String pmid = xref.getPubmedId().trim();
-		String source = xref.getSource().trim();
+		String pmid = xref.getPubmedId() == null ? "" : xref.getPubmedId().trim();
+		String source = xref.getSource() == null ? "" : xref.getSource().trim();
 		if (pmid.contains("10.") || source.contains("10.")) {
 			if (!pmid.contains("10.")) pmid = source;
 			if (pmid.startsWith("DOI: ")) pmid = pmid.substring(4).trim();
 			if (pmid.startsWith("https://doi.org/")) pmid = pmid.replace("https://doi.org/","").trim();
 			if (pmid.startsWith("http://doi.org/")) pmid = pmid.replace("http://doi.org/","").trim();
-			if (pmid.startsWith("10.")) {
+			if (pmid.startsWith("10.") && !pmid.contains(" ")) {
 				Resource pubXrefRes = model.createResource("https://doi.org/" + pmid);
 				pubXrefRes.addProperty(RDF.type, Wp.PublicationReference);
 				parent.addProperty(DCTerms.references, pubXrefRes);
