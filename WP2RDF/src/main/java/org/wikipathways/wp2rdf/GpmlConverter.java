@@ -57,6 +57,8 @@ import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
 import com.hp.hpl.jena.rdf.model.Property;
 import com.hp.hpl.jena.rdf.model.Resource;
+import com.hp.hpl.jena.vocabulary.DCTerms;
+import com.hp.hpl.jena.vocabulary.DC_10;
 import com.hp.hpl.jena.vocabulary.OWL;
 import com.hp.hpl.jena.vocabulary.RDFS;
 
@@ -256,9 +258,12 @@ public class GpmlConverter {
 				Resource unifiedlIdResource = model.createResource(uriPrefix+unifiedDataNodeIdentifier);
 				internalWPDataNodeResource.addProperty(predicate, unifiedlIdResource);
 			} else if ("Pbd".equals(sourceCode)) {
-				String unifiedDataNodeIdentifier = unifiedId.getId();
+				String dataNodeIdentifier = unifiedId.getId().toUpperCase();
+				String unifiedDataNodeIdentifier = URLEncoder.encode(dataNodeIdentifier, "UTF-8");
   			    Resource unifiedlIdResource = model.createResource(uriPrefix+unifiedDataNodeIdentifier);
 			    internalWPDataNodeResource.addProperty(predicate, unifiedlIdResource);
+			    unifiedlIdResource.addProperty(DCTerms.identifier, model.createLiteral(dataNodeIdentifier));
+			    unifiedlIdResource.addProperty(DC_10.source, model.createLiteral("DOI"));
 			} else {
 				String unifiedDataNodeIdentifier = URLEncoder.encode(unifiedId.getId(), "UTF-8");
   			    Resource unifiedlIdResource = model.createResource(uriPrefix+unifiedDataNodeIdentifier);

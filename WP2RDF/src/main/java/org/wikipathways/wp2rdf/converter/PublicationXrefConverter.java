@@ -16,10 +16,7 @@
 //
 package org.wikipathways.wp2rdf.converter;
 
-import java.io.UnsupportedEncodingException;
-
 import org.bridgedb.DataSource;
-import org.bridgedb.IDMapperException;
 import org.bridgedb.IDMapperStack;
 import org.bridgedb.Xref;
 import org.pathvisio.core.biopax.PublicationXref;
@@ -33,6 +30,7 @@ import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.Resource;
 import com.hp.hpl.jena.sparql.vocabulary.FOAF;
 import com.hp.hpl.jena.vocabulary.DCTerms;
+import com.hp.hpl.jena.vocabulary.DC_10;
 import com.hp.hpl.jena.vocabulary.RDF;
 
 /**
@@ -73,6 +71,8 @@ public class PublicationXrefConverter {
 			parent.addProperty(DCTerms.references, pubXrefRes);
 			pubXrefRes.addProperty(DCTerms.isPartOf, parent);
 			pubXrefRes.addProperty(FOAF.page, model.createResource(Utils.PUBMED_URL + pmid));
+			pubXrefRes.addProperty(DCTerms.identifier, model.createLiteral(pmid));
+			pubXrefRes.addProperty(DC_10.source, model.createLiteral("PubMed"));
 			if (mapper != null) {
 				Xref litXref = new Xref(pmid, DataSource.register("Pbm", "PubMed").asDataSource());
 				try {
