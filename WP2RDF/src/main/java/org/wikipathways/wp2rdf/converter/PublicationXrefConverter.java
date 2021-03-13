@@ -30,7 +30,7 @@ import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.Resource;
 import com.hp.hpl.jena.sparql.vocabulary.FOAF;
 import com.hp.hpl.jena.vocabulary.DCTerms;
-import com.hp.hpl.jena.vocabulary.DC_10;
+import com.hp.hpl.jena.vocabulary.DC_11;
 import com.hp.hpl.jena.vocabulary.RDF;
 
 /**
@@ -72,7 +72,7 @@ public class PublicationXrefConverter {
 			pubXrefRes.addProperty(DCTerms.isPartOf, parent);
 			pubXrefRes.addProperty(FOAF.page, model.createResource(Utils.PUBMED_URL + pmid));
 			pubXrefRes.addProperty(DCTerms.identifier, model.createLiteral(pmid));
-			pubXrefRes.addProperty(DC_10.source, model.createLiteral("PubMed"));
+			pubXrefRes.addProperty(DC_11.source, model.createLiteral("PubMed"));
 			if (mapper != null) {
 				Xref litXref = new Xref(pmid, DataSource.register("Pbm", "PubMed").asDataSource());
 				try {
