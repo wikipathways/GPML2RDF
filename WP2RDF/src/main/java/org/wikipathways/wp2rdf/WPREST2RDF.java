@@ -286,6 +286,7 @@ public class WPREST2RDF {
 	private static void populateVOID(Model voidModel, String downloadFilePattern, String domain) {
 		// set prefixes
 		voidModel.setNsPrefix("biopax", "http://www.biopax.org/release/biopax-level3.owl#");
+		voidModel.setNsPrefix("cito", "http://purl.org/spar/cito/");
 		voidModel.setNsPrefix("dcat", "http://www.w3.org/ns/dcat#");
 		voidModel.setNsPrefix("dcterms", "http://purl.org/dc/terms/");
 		voidModel.setNsPrefix("freq", "http://purl.org/cld/freq/");
