@@ -19,7 +19,7 @@ package org.wikipathways.wp2rdf.converter;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.bridgedb.IDMapper;
+import org.bridgedb.IDMapperStack;
 import org.bridgedb.Xref;
 import org.pathvisio.core.biopax.PublicationXref;
 import org.pathvisio.core.model.GroupStyle;
@@ -53,7 +53,7 @@ public class GroupConverter {
 	 * conversion only WP vocabulary
 	 * semantic information about a complex group
 	 */
-	public static void parseComplexWp(MGroup group, Model model, IDMapper  mapper, DataHandlerWp data) {
+	public static void parseComplexWp(MGroup group, Model model, IDMapperStack  mapper, DataHandlerWp data) {
 		PathwayElement embeddedComplexDataNode = null;
 		if(group.getGroupStyle().equals(GroupStyle.COMPLEX)) {
 			List<Resource> participants = new ArrayList<Resource>();
@@ -117,14 +117,13 @@ public class GroupConverter {
 				}
 				
 				for(PublicationXref xref : group.getBiopaxReferenceManager().getPublicationXRefs()) {
+					PublicationXrefConverter.parsePublicationXrefWp(xref, groupRes, model, mapper);
+					// the next block is for backwards compatibility but should be removed in 2022
 					if(xref.getPubmedId() != null && !xref.getPubmedId().trim().equals("")) {
 						String pubmedUrl = Utils.IDENTIFIERS_ORG_URL + "/pubmed/" + xref.getPubmedId().trim();
 						Resource pubmedRes = model.createResource(pubmedUrl);
 						groupRes.addProperty(DCTerms.bibliographicCitation, pubmedRes);
-						complexBinding.addProperty(DCTerms.bibliographicCitation, model.createResource(pubmedUrl));
-						pubmedRes.addProperty(RDF.type, Wp.PublicationReference);
-						pubmedRes.addProperty(FOAF.page, model.createResource(Utils.PUBMED_URL + xref.getPubmedId().trim()));
-						pubmedRes.addProperty(DCTerms.isPartOf, data.getPathwayRes());
+						complexBinding.addProperty(DCTerms.bibliographicCitation, pubmedRes);
 					}
 				}
 				
