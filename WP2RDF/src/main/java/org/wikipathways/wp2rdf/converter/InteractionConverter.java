@@ -42,7 +42,6 @@ import org.wikipathways.wp2rdf.utils.Utils;
 
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.Resource;
-import com.hp.hpl.jena.sparql.vocabulary.FOAF;
 import com.hp.hpl.jena.vocabulary.DC;
 import com.hp.hpl.jena.vocabulary.DCTerms;
 import com.hp.hpl.jena.vocabulary.RDF;
@@ -146,7 +145,7 @@ public class InteractionConverter {
 							intRes.addProperty(Wp.isAbout, model.createResource(Utils.WP_RDF_URL + "/Pathway/" + data.getPwyId() + "_r" + data.getRevision() + "/Interaction/" + l.getGraphId()));
 							data.getPathwayElements().put(l, intRes);
 							for(PublicationXref xref : l.getBiopaxReferenceManager().getPublicationXRefs()) {
-								PublicationXrefConverter.parsePublicationXrefWp(xref, intRes, model, mapper);
+								PublicationXrefConverter.parsePublicationXrefWp(xref, intRes, data.getPathwayRes(), model, mapper);
 							}
 						}
 						
@@ -195,7 +194,7 @@ public class InteractionConverter {
 									data.getPathwayElements().put(l, intRes);
 									for(PublicationXref xref : l.getBiopaxReferenceManager().getPublicationXRefs()) {
 										if(xref.getPubmedId() != null && !xref.getPubmedId().trim().equals("")) {
-											PublicationXrefConverter.parsePublicationXrefWp(xref, intRes, model, mapper);
+											PublicationXrefConverter.parsePublicationXrefWp(xref, intRes, data.getPathwayRes(), model, mapper);
 										}
 									}
 								}
@@ -312,7 +311,7 @@ public class InteractionConverter {
 				
 				
 				for(PublicationXref xref : l.getBiopaxReferenceManager().getPublicationXRefs()) {
-					PublicationXrefConverter.parsePublicationXrefWp(xref, intRes, model, null);
+					PublicationXrefConverter.parsePublicationXrefWp(xref, intRes, data.getPathwayRes(), model, null);
 				}
 				
 				for(MLine regLine : regLines) {
@@ -360,7 +359,7 @@ public class InteractionConverter {
 				regIntRes.addProperty(DCTerms.isPartOf, data.getPathwayRes());
 				regIntRes.addProperty(Wp.isAbout, model.createResource(Utils.WP_RDF_URL + "/Pathway/" + data.getPwyId() + "_r" + data.getRevision() + "/Interaction/" + l.getGraphId()));
 				for(PublicationXref xref : l.getBiopaxReferenceManager().getPublicationXRefs()) {
-					PublicationXrefConverter.parsePublicationXrefWp(xref, regIntRes, model, null);
+					PublicationXrefConverter.parsePublicationXrefWp(xref, regIntRes, data.getPathwayRes(), model, null);
 				}
 				regIntRes.addProperty(Wp.participants, parentInt);
 				regIntRes.addProperty(Wp.participants, regulator);

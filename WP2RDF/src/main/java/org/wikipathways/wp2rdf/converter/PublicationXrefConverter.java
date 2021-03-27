@@ -21,6 +21,7 @@ import org.bridgedb.IDMapperStack;
 import org.bridgedb.Xref;
 import org.pathvisio.core.biopax.PublicationXref;
 import org.wikipathways.wp2rdf.GpmlConverter;
+import org.wikipathways.wp2rdf.ontologies.CITO;
 import org.wikipathways.wp2rdf.ontologies.Gpml;
 import org.wikipathways.wp2rdf.ontologies.Wp;
 import org.wikipathways.wp2rdf.utils.DataHandlerGpml;
@@ -45,7 +46,7 @@ public class PublicationXrefConverter {
 	 * conversion only WP vocabulary
 	 * semantic information about a publication xref
 	 */
-	public static void parsePublicationXrefWp(PublicationXref xref, Resource parent, Model model, IDMapperStack mapper) {
+	public static void parsePublicationXrefWp(PublicationXref xref, Resource parent, Resource pathway, Model model, IDMapperStack mapper) {
 		if (xref.getPubmedId() == null && xref.getSource() == null) return;
 		String pmid = xref.getPubmedId() == null ? "" : xref.getPubmedId().trim();
 		String source = xref.getSource() == null ? "" : xref.getSource().trim();
@@ -58,6 +59,7 @@ public class PublicationXrefConverter {
 				Resource pubXrefRes = model.createResource("https://doi.org/" + pmid);
 				pubXrefRes.addProperty(RDF.type, Wp.PublicationReference);
 				parent.addProperty(DCTerms.references, pubXrefRes);
+				pathway.addProperty(CITO.cites, pubXrefRes);
 				pubXrefRes.addProperty(DCTerms.isPartOf, parent);
 				pubXrefRes.addProperty(FOAF.page, pubXrefRes);
 			}
@@ -69,6 +71,7 @@ public class PublicationXrefConverter {
 			Resource pubXrefRes = model.createResource(Utils.IDENTIFIERS_ORG_URL + "/pubmed/" + pmid);
 			pubXrefRes.addProperty(RDF.type, Wp.PublicationReference);
 			parent.addProperty(DCTerms.references, pubXrefRes);
+			pathway.addProperty(CITO.cites, pubXrefRes);
 			pubXrefRes.addProperty(DCTerms.isPartOf, parent);
 			pubXrefRes.addProperty(FOAF.page, model.createResource(Utils.PUBMED_URL + pmid));
 			pubXrefRes.addProperty(DCTerms.identifier, model.createLiteral(pmid));

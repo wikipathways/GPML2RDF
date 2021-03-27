@@ -171,7 +171,7 @@ public class DataNodeConverter {
 						}
 						// TODO: what to do about those - are they pathway specific?
 						for(PublicationXref pubXref : elem.getBiopaxReferenceManager().getPublicationXRefs()) {
-							PublicationXrefConverter.parsePublicationXrefWp(pubXref, datanodeRes, model, mapper);
+							PublicationXrefConverter.parsePublicationXrefWp(pubXref, datanodeRes, data.getPathwayRes(), model, mapper);
 						}
 
 						datanodeRes.addProperty(Wp.isAbout, model.createResource(Utils.WP_RDF_URL + "/Pathway/" + data.getPwyId() + "_r" + data.getRevision() +
