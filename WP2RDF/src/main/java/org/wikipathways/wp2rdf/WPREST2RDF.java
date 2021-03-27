@@ -285,24 +285,24 @@ public class WPREST2RDF {
 
 	private static void populateVOID(Model voidModel, String downloadFilePattern, String domain) {
 		// set prefixes
-		voidModel.setNsPrefix("prov", "http://www.w3.org/ns/prov#");
-		voidModel.setNsPrefix("foaf", "http://xmlns.com/foaf/0.1/");
-		voidModel.setNsPrefix("hmdb", "https://identifiers.org/hmdb/");
-		voidModel.setNsPrefix("freq", "http://purl.org/cld/freq/");
-		voidModel.setNsPrefix("pubmed", "http://www.ncbi.nlm.nih.gov/pubmed/");
-		voidModel.setNsPrefix("wp", "http://vocabularies.wikipathways.org/wp#");
-		voidModel.setNsPrefix("void", "http://rdfs.org/ns/void#");
 		voidModel.setNsPrefix("biopax", "http://www.biopax.org/release/biopax-level3.owl#");
-		voidModel.setNsPrefix("dcterms", "http://purl.org/dc/terms/");
-		voidModel.setNsPrefix("rdfs", "http://www.w3.org/2000/01/rdf-schema#");
-		voidModel.setNsPrefix("pav", "http://purl.org/pav/");
-		voidModel.setNsPrefix("ncbigene", "https://identifiers.org/ncbigene/");
-		voidModel.setNsPrefix("xsd", "http://www.w3.org/2001/XMLSchema#");
-		voidModel.setNsPrefix("rdf", "http://www.w3.org/1999/02/22-rdf-syntax-ns#");
-		voidModel.setNsPrefix("gpml", "http://vocabularies.wikipathways.org/gpml#");
-		voidModel.setNsPrefix("skos", "http://www.w3.org/2004/02/skos/core#");
 		voidModel.setNsPrefix("dcat", "http://www.w3.org/ns/dcat#");
+		voidModel.setNsPrefix("dcterms", "http://purl.org/dc/terms/");
+		voidModel.setNsPrefix("freq", "http://purl.org/cld/freq/");
+		voidModel.setNsPrefix("foaf", "http://xmlns.com/foaf/0.1/");
+		voidModel.setNsPrefix("gpml", "http://vocabularies.wikipathways.org/gpml#");
+		voidModel.setNsPrefix("hmdb", "https://identifiers.org/hmdb/");
+		voidModel.setNsPrefix("ncbigene", "https://identifiers.org/ncbigene/");
 		voidModel.setNsPrefix("owl", "http://www.w3.org/2002/07/owl#");
+		voidModel.setNsPrefix("pav", "http://purl.org/pav/");
+		voidModel.setNsPrefix("prov", "http://www.w3.org/ns/prov#");
+		voidModel.setNsPrefix("pubmed", "http://www.ncbi.nlm.nih.gov/pubmed/");
+		voidModel.setNsPrefix("rdf", "http://www.w3.org/1999/02/22-rdf-syntax-ns#");
+		voidModel.setNsPrefix("rdfs", "http://www.w3.org/2000/01/rdf-schema#");
+		voidModel.setNsPrefix("skos", "http://www.w3.org/2004/02/skos/core#");
+		voidModel.setNsPrefix("void", "http://rdfs.org/ns/void#");
+		voidModel.setNsPrefix("wp", "http://vocabularies.wikipathways.org/wp#");
+		voidModel.setNsPrefix("xsd", "http://www.w3.org/2001/XMLSchema#");
 
 		// populate void.ttl
 		Calendar now = Calendar.getInstance();
