@@ -24,6 +24,7 @@ import org.bridgedb.IDMapper;
 import org.bridgedb.IDMapperException;
 import org.bridgedb.bio.DataSourceTxt;
 import org.wikipathways.wp2rdf.ontologies.Biopax_level3;
+import org.wikipathways.wp2rdf.ontologies.CITO;
 import org.wikipathways.wp2rdf.ontologies.Freq;
 import org.wikipathways.wp2rdf.ontologies.Gpml;
 import org.wikipathways.wp2rdf.ontologies.Pav;
@@ -58,6 +59,7 @@ public class Utils {
 	
 	public static void setModelPrefix(Model model){
 		model.setNsPrefix("biopax", Biopax_level3.getURI());
+		model.setNsPrefix("cito", CITO.URI);
 		model.setNsPrefix("gpml", Gpml.getURI());
 		model.setNsPrefix("wp", Wp.getURI());
 		model.setNsPrefix("xsd", XSD.getURI());
