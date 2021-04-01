@@ -1,4 +1,4 @@
-/* Copyright (C) 2013  Egon Willighagen <egonw@users.sf.net>
+/* Copyright (C) 2021  Egon Willighagen <egonw@users.sf.net>
  *
  * License: new BSD.
  */
