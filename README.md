@@ -40,6 +40,7 @@ mvn install:install-file -Dfile=modules/org.pathvisio.core.jar -DgroupId=org.pat
 There is a `pom.xml` and you can compile the code with:
 
 ```shell
+cd WP2RDF
 mvn clean install
 ```
 
