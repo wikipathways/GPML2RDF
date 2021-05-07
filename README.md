@@ -18,7 +18,8 @@ git clone https://github.com/wikipathways/wikipathways-api-client-java.git
 cd wikipathways-api-client-java
 cd org.wikipathways.client
 ant test
-mvn install:install-file -Dfile=org.wikipathways.client/org.wikipathways.webservice.api.bundle.jar \
+cd ..
+mvn install:install-file -Dfile=org.wikipathways.client/org.wikipathways.webservice.api.lib.jar \
   -DgroupId=org.pathvisio -DartifactId=wikipathways-client -Dversion=3.2.1.wprdf -Dpackaging=jar
 ```
 
