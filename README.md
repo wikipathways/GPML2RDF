@@ -29,7 +29,7 @@ mvn install:install-file -Dfile=org.wikipathways.client/org.wikipathways.webserv
 ```shell
 git clone https://github.com/egonw/pathvisio-1.git
 cd pathvisio-1
-git checkout -b bridgedb/version3 bridgedb/version3
+git checkout -b bridgedb/version3 origin/bridgedb/version3
 ant clean core.jar
 mvn install:install-file -Dfile=modules/org.pathvisio.core.jar -DgroupId=org.pathvisio \
   -DartifactId=pathvisio-core -Dversion=3.4.0-bridgedb-3.0.1-1 -Dpackaging=jar
