@@ -10,6 +10,7 @@ are available from the WikiPathways RDF Portal: http://rdf.wikipathways.org/
 Clone or download this repository, and then import as an "Existing Java Project" in Eclipse.
 
 There are two dependencies. You can made them available to Maven using the below instructions.
+Start from the GPML2RDF folder for both WikiPathways API client, and PathVisio Core
 
 #### WikiPathways API client 
 
