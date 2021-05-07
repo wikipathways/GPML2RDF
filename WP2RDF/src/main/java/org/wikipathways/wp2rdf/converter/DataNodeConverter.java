@@ -147,7 +147,8 @@ public class DataNodeConverter {
 								
 								break;
 							case "Pathway":
-								// TODO
+								datanodeRes.addProperty(RDF.type, Wp.Pathway);
+								// TODO: unified identifiers (e.g. for Reactome pathways!)
 								break;
 							case "Complex":
 								datanodeRes.addProperty(RDF.type, Wp.Complex);
