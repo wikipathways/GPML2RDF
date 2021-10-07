@@ -112,11 +112,15 @@ public class PathwayConverter {
 	/**
 	 * conversion only GPML vocabulary
 	 */
-	public static Resource parsePathwayInfoGpml(Pathway p, String wpId, String revision, Model model) {
+	public static Resource parsePathwayInfoGpml(Pathway p, String wpId, String revision, Model model, List<String> tags) {
 
 		Resource pwyRes = model.createResource(Utils.WP_RDF_URL + "/Pathway/" + wpId + "_r" + revision.trim().replaceAll(" ", "_"));
 		pwyRes.addProperty(RDFS.seeAlso, model.createResource("https://www.wikipathways.org/instance/" + wpId + "_r" + revision.trim().replaceAll(" ", "_")));
 		
+		if (tags.contains("Curation:AnalysisCollection")) {
+			pwyRes.addProperty(RDFS.seeAlso, model.createResource("https://scholia.toolforge.org/wikipathways/" + wpId));
+		}
+
 		// Required Attributes
 		pwyRes.addLiteral(Gpml.ORGANISM, p.getMappInfo().getOrganism());
 		pwyRes.addLiteral(Gpml.BOARD_HEIGHT, p.getMappInfo().getMBoardHeight());

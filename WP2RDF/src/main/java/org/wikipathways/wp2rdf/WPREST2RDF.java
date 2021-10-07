@@ -234,8 +234,15 @@ public class WPREST2RDF {
 						continue;
 					}
 
+					List<String> tags = includedPathways.get(pwInfo.getId());
+					if (tags == null) tags = otherPathways.get(pwInfo.getId());
+
 					// New conversion of the pathway in GPML vocabulary
-					GpmlConverter.convertGpml(p, pwInfo.getId(), pwInfo.getRevision(), pathwayModel);
+					if (tags == null) {
+						GpmlConverter.convertGpml(p, pwInfo.getId(), pwInfo.getRevision(), pathwayModel, Collections.<String>emptyList());
+					} else {
+						GpmlConverter.convertGpml(p, pwInfo.getId(), pwInfo.getRevision(), pathwayModel, tags);
+					}
 
 					String folder = "output/gpml/" + SPECIES.get(organism).replace(" ", "_") + "/";
 					new File(folder).mkdirs();
@@ -246,8 +253,6 @@ public class WPREST2RDF {
 					// New conversion of the pathway in WP vocabulary
 					pathwayModel = ModelFactory.createDefaultModel();
 					Utils.setModelPrefix(pathwayModel);
-					List<String> tags = includedPathways.get(pwInfo.getId());
-					if (tags == null) tags = otherPathways.get(pwInfo.getId());
 					if (tags == null) {
 						GpmlConverter.convertWp(p, pwInfo.getId(), pwInfo.getRevision(), pathwayModel, mapper, Collections.<String>emptyList());
 					} else {

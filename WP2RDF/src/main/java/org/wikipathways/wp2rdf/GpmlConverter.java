@@ -276,15 +276,15 @@ public class GpmlConverter {
 		}
 	}
 
-	public static Model convertGpml(Pathway p, String wpId, String revision) {
+	public static Model convertGpml(Pathway p, String wpId, String revision, List<String> tags) {
 		Model pathwayModel = ModelFactory.createDefaultModel();
 		Utils.setModelPrefix(pathwayModel);
-		convertGpml(p, wpId, revision, pathwayModel);
+		convertGpml(p, wpId, revision, pathwayModel, tags);
 		return pathwayModel;
 	}
 	
-	public static void convertGpml(Pathway p, String wpId, String revision, Model pathwayModel) {
-		Resource pathwayRes = PathwayConverter.parsePathwayInfoGpml(p, wpId, revision, pathwayModel);
+	public static void convertGpml(Pathway p, String wpId, String revision, Model pathwayModel, List<String> tags) {
+		Resource pathwayRes = PathwayConverter.parsePathwayInfoGpml(p, wpId, revision, pathwayModel, tags);
 		DataHandlerGpml data = new DataHandlerGpml(p, pathwayRes);
 		
 		for(PathwayElement e : p.getDataObjects()) {
