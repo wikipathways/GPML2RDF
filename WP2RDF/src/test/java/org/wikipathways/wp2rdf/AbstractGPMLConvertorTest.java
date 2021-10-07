@@ -1,6 +1,7 @@
 package org.wikipathways.wp2rdf;
 
 import java.io.InputStream;
+import java.util.Collections;
 
 import org.junit.Assert;
 import org.pathvisio.core.model.ConverterException;
@@ -13,7 +14,7 @@ public abstract class AbstractGPMLConvertorTest extends AbstractConvertorTest {
 		InputStream input = AbstractConvertorTest.class.getClassLoader().getResourceAsStream(gpmlFile);
 		Pathway pathway = PathwayReader.readPathway(input);
 		Assert.assertNotNull(pathway);
-		model = GpmlConverter.convertGpml(pathway, wpid, revision);
+		model = GpmlConverter.convertGpml(pathway, wpid, revision, Collections.<String>emptyList());
 		Assert.assertNotNull(model);
 		// System.out.println("===== " + gpmlFile + " =====");
 		// String ttlContent = toString(model);
