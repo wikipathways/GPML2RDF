@@ -1,7 +1,7 @@
-// WP2RDF
+// Copyright 2015-2021 BiGCaT Bioinformatics authors
+// 
 // Conversion from GPML pathways to RDF
-// Copyright 2015 BiGCaT Bioinformatics
-//
+// 
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
@@ -71,7 +71,7 @@ import com.hp.hpl.jena.vocabulary.RDFS;
  * @author mkutmon
  * @author ryanmiller
  * @author DeniseSl22
- *
+ * @author egonw
  */
 public class GpmlConverter {
 	
@@ -87,6 +87,7 @@ public class GpmlConverter {
 		File dir = new File(prop.getProperty("bridgefiles")); //TODO Get Refactor to get them directly from bridgedb.org -> could be done with wget? Or from Dockerised version of bridgeDb?
 		FilenameFilter filter = new FilenameFilter() {
 		    public boolean accept(File dir, String name) {
+		    	if (name == null) return false;
 		        return name.toLowerCase().endsWith(".bridge");
 		    }
 		};
