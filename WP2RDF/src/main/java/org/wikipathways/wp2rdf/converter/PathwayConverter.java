@@ -115,7 +115,7 @@ public class PathwayConverter {
 	public static Resource parsePathwayInfoGpml(Pathway p, String wpId, String revision, Model model) {
 
 		Resource pwyRes = model.createResource(Utils.WP_RDF_URL + "/Pathway/" + wpId + "_r" + revision.trim().replaceAll(" ", "_"));
-		pwyRes.addProperty(OWL2.sameAs, model.createResource("https://www.wikipathways.org/instance/" + wpId + "_r" + revision.trim().replaceAll(" ", "_")));
+		pwyRes.addProperty(RDFS.seeAlso, model.createResource("https://www.wikipathways.org/instance/" + wpId + "_r" + revision.trim().replaceAll(" ", "_")));
 		
 		// Required Attributes
 		pwyRes.addLiteral(Gpml.ORGANISM, p.getMappInfo().getOrganism());
