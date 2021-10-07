@@ -480,11 +480,15 @@ public class WPREST2RDF {
 
 	public static IDMapperStack maps () throws Exception {
 		final Properties prop = new Properties();
-		String derbyFolder = System.getProperty("OPSBRIDGEDB", "OPSBRIDGEDB");
-		prop.load(new FileInputStream("/tmp/" + derbyFolder + "/config.properties"));
-		IDMapperStack mapper = GpmlConverter.createBridgeDbMapper(prop);
-		return mapper;
-		
+		String derbyFolder = "/tmp/" + System.getProperty("OPSBRIDGEDB", "OPSBRIDGEDB");
+		if (new File(derbyFolder).exists()) {
+  	        prop.load(new FileInputStream(derbyFolder + "/config.properties"));
+		    IDMapperStack mapper = GpmlConverter.createBridgeDbMapper(prop);
+		    return mapper;
+		} else {
+			System.out.println("WARN: BridgeDb config file folder does not exist: " + derbyFolder);
+		}
+		return new IDMapperStack();
 	}
 
 }
