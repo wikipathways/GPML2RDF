@@ -42,7 +42,8 @@ public class CommentConverter {
 		commentRes.addProperty(RDF.type, Gpml.COMMENT);
 		
 		if(comment.getSource() != null) commentRes.addLiteral(Gpml.SOURCE, comment.getSource());
-		commentRes.addLiteral(Gpml.COMMENT_TEXT, comment.getComment());
+		String commentStr = comment.getComment();
+		if (commentStr != null) commentRes.addLiteral(Gpml.COMMENT_TEXT, commentStr);
 		
 		parent.addProperty(Gpml.HAS_COMMENT, commentRes);
 		commentRes.addProperty(DCTerms.isPartOf, parent);
