@@ -44,6 +44,12 @@ cd WP2RDF
 mvn clean install
 ```
 
+A single archive with all dependencies can be created with:
+
+```shell
+mvn -Dmaven.test.skip=true assembly:assembly
+```
+
 ### Try different pathways
 
 Add GPML file in resources directory --> Open WP2RDF class --> Change pathwayFile location
