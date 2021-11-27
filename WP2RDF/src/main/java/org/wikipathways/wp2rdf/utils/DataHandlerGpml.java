@@ -19,14 +19,13 @@ package org.wikipathways.wp2rdf.utils;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.apache.jena.rdf.model.Resource;
 import org.pathvisio.core.biopax.PublicationXref;
 import org.pathvisio.core.model.Pathway;
 import org.pathvisio.core.model.PathwayElement;
 import org.pathvisio.core.model.PathwayElement.Comment;
 import org.pathvisio.core.model.PathwayElement.MAnchor;
 import org.pathvisio.core.model.PathwayElement.MPoint;
-
-import com.hp.hpl.jena.rdf.model.Resource;
 
 /**
  * 

@@ -1,6 +1,8 @@
 package org.wikipathways.wp2rdf.ontologies;
 
-import com.hp.hpl.jena.rdf.model.*;
+import org.apache.jena.rdf.model.Model;
+import org.apache.jena.rdf.model.ModelFactory;
+import org.apache.jena.rdf.model.Resource;
 
 /**
  * Vocabulary definitions from http://www.biopax.org/release/biopax-level3.owl 

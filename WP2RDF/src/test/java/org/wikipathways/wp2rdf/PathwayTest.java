@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Collections;
 
+import org.apache.jena.rdf.model.Model;
 import org.bridgedb.IDMapperException;
 import org.junit.Assert;
 import org.junit.BeforeClass;
@@ -13,8 +14,6 @@ import org.junit.Test;
 import org.pathvisio.core.model.ConverterException;
 import org.pathvisio.core.model.Pathway;
 import org.wikipathways.wp2rdf.io.PathwayReader;
-
-import com.hp.hpl.jena.rdf.model.Model;
 
 public class PathwayTest {
 

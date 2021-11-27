@@ -21,15 +21,14 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Collections;
 
+import org.apache.jena.rdf.model.Model;
+import org.apache.jena.rdf.model.ModelFactory;
 import org.bridgedb.IDMapperException;
 import org.pathvisio.core.model.ConverterException;
 import org.pathvisio.core.model.Pathway;
 import org.pathvisio.core.view.MIMShapes;
 import org.wikipathways.wp2rdf.io.PathwayReader;
 import org.wikipathways.wp2rdf.utils.Utils;
-
-import com.hp.hpl.jena.rdf.model.Model;
-import com.hp.hpl.jena.rdf.model.ModelFactory;
 
 /**
  * 

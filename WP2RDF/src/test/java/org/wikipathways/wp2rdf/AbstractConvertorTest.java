@@ -2,11 +2,10 @@ package org.wikipathways.wp2rdf;
 
 import java.io.ByteArrayOutputStream;
 
+import org.apache.jena.rdf.model.Model;
+import org.apache.jena.rdf.model.Resource;
 import org.junit.Assert;
 import org.junit.Test;
-
-import com.hp.hpl.jena.rdf.model.Model;
-import com.hp.hpl.jena.rdf.model.Resource;
 
 public abstract class AbstractConvertorTest {
 
