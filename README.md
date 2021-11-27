@@ -47,7 +47,7 @@ mvn clean install
 A single archive with all dependencies can be created with:
 
 ```shell
-mvn -Dmaven.test.skip=true assembly:assembly
+mvn package
 ```
 
 ### Try different pathways
