@@ -18,6 +18,7 @@ package org.wikipathways.wp2rdf;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.Writer;
 import java.net.URL;
@@ -245,7 +246,7 @@ public class WPREST2RDF {
 
 					String folder = "output/gpml/" + SPECIES.get(organism).replace(" ", "_") + "/";
 					new File(folder).mkdirs();
-					FileWriter output = new FileWriter(folder + pwInfo.getId() +".ttl");
+					FileOutputStream output = new FileOutputStream(folder + pwInfo.getId() +".ttl");
 					pathwayModel.write(output, "TURTLE");
 					output.close();
 
@@ -260,7 +261,7 @@ public class WPREST2RDF {
 
 					folder = "output/wp/" + SPECIES.get(organism).replace(" ", "_") + "/";
 					new File(folder).mkdirs();
-					output = new FileWriter(folder + pwInfo.getId() +".ttl");
+					output = new FileOutputStream(folder + pwInfo.getId() +".ttl");
 					pathwayModel.write(output, "TURTLE");
 					output.close();
 				}
@@ -269,7 +270,7 @@ public class WPREST2RDF {
 		
 		// create VoID files
 		String folder = "output/";
-		Writer output = new FileWriter(folder + "void.ttl");
+		FileOutputStream output = new FileOutputStream(folder + "void.ttl");
 		Model voidWp = ModelFactory.createDefaultModel();
 		populateVOID(
 			voidWp, "https://jenkins.bigcat.unimaas.nl/job/GPML%20to%20GPML%20+%20WP%20RDF/ws/WP2RDF/output/#CODE#/*zip*/#CODE#.zip",
@@ -277,7 +278,7 @@ public class WPREST2RDF {
 		);
 		voidWp.write(output, "TURTLE");
 		output.close();
-		output = new FileWriter(folder + "void_for_data.wp.org.ttl");
+		output = new FileOutputStream(folder + "void_for_data.wp.org.ttl");
 		voidWp = ModelFactory.createDefaultModel();
 		populateVOID(
 			voidWp, "http://data.wikipathways.org/#DATE#/rdf/wikipathways-#DATE#-rdf-#CODE#.zip",
