@@ -61,6 +61,7 @@ public class PublicationXrefConverter {
 				pathway.addProperty(CITO.cites, pubXrefRes);
 				pubXrefRes.addProperty(DCTerms.isPartOf, parent);
 				pubXrefRes.addProperty(FOAF.page, pubXrefRes);
+				pubXrefRes.addProperty(DC_11.source, model.createLiteral("DOI"));
 			}
 			return;
 		}
