@@ -95,13 +95,19 @@ public class PublicationXrefConverter {
 	public static void parsePublicationXrefGpml(PublicationXref xref, Resource parent, Model model, DataHandlerGpml data) {
 		Resource pubXrefRes = null;
 		if (xref.getPubmedId() != null && xref.getPubmedId().trim().length() != 0) {
-			pubXrefRes = model.createResource(Utils.IDENTIFIERS_ORG_URL + "/pubmed/" + xref.getPubmedId().trim());
+			try {
+				Integer.parseInt(xref.getPubmedId().trim());
+				pubXrefRes = model.createResource(Utils.IDENTIFIERS_ORG_URL + "/pubmed/" + xref.getPubmedId().trim());
+				pubXrefRes.addLiteral(Gpml.DATABASE, "Pubmed");
+			} catch (NumberFormatException exception) {
+				// invalid Pubmed ID
+				pubXrefRes = model.createResource(data.getPathwayRes().getURI() + "/pub/" + xref.getId().trim());
+			}
 		} else {
 			pubXrefRes = model.createResource(data.getPathwayRes().getURI() + "/pub/" + xref.getId().trim());
 		}
 		pubXrefRes.addProperty(RDF.type, Gpml.PUBLICATION_XREF);
 		pubXrefRes.addLiteral(Gpml.ID, xref.getPubmedId() != null ? xref.getPubmedId() : "");
-		pubXrefRes.addLiteral(Gpml.DATABASE, "Pubmed");
 		
 		pubXrefRes.addProperty(DCTerms.isPartOf, parent);			
 		parent.addProperty(Gpml.HAS_PUBLICATION_XREF, pubXrefRes);
