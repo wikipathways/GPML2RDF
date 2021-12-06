@@ -23,6 +23,7 @@ import org.apache.jena.vocabulary.RDF;
 import org.pathvisio.core.model.PathwayElement;
 import org.wikipathways.wp2rdf.ontologies.Gpml;
 import org.wikipathways.wp2rdf.utils.DataHandlerGpml;
+import org.wikipathways.wp2rdf.utils.Utils;
 
 /**
  * 
@@ -38,7 +39,7 @@ public class InfoBoxConverter {
 	public static void parseInfoBoxGpml(PathwayElement e, Model model, DataHandlerGpml data) {
 		String graphId = e.getGraphId();
 		if(e.getGraphId() == null) {
-			graphId = data.getPathway().getUniqueGraphId();
+			graphId = Utils.md5sum(""+e.hashCode());
 		}
 		Resource infoboxRes = model.createResource(data.getPathwayRes().getURI() + "/InfoBox/" + graphId);
 

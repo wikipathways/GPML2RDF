@@ -23,6 +23,7 @@ import org.apache.jena.vocabulary.RDF;
 import org.pathvisio.core.model.PathwayElement.MPoint;
 import org.wikipathways.wp2rdf.ontologies.Gpml;
 import org.wikipathways.wp2rdf.utils.DataHandlerGpml;
+import org.wikipathways.wp2rdf.utils.Utils;
 
 /**
  * 
@@ -38,7 +39,7 @@ public class PointConverter {
 	public static void parsePointGpml(MPoint point, Model model, Resource lineRes, DataHandlerGpml data, String arrowHead) {
 		String graphId = point.getGraphId();
 		if(graphId == null) {
-			graphId = data.getPathway().getUniqueGraphId();
+			graphId = Utils.md5sum(""+point.hashCode());
 		}
 		Resource pointRes = model.createResource(lineRes.getURI() + "/Point/" + graphId);
 

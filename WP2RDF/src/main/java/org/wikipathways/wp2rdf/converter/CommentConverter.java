@@ -23,6 +23,7 @@ import org.apache.jena.vocabulary.RDF;
 import org.pathvisio.core.model.PathwayElement.Comment;
 import org.wikipathways.wp2rdf.ontologies.Gpml;
 import org.wikipathways.wp2rdf.utils.DataHandlerGpml;
+import org.wikipathways.wp2rdf.utils.Utils;
 
 /**
  * 
@@ -36,12 +37,14 @@ public class CommentConverter {
 	 * conversion only GPML vocabulary
 	 */
 	public static void parseCommentGpml(Comment comment, Model model, Resource parent, DataHandlerGpml data) {
-		Resource commentRes = model.createResource(data.getPathwayRes().getURI() + "/Comment/" + data.getPathway().getUniqueGraphId());
-		
-		commentRes.addProperty(RDF.type, Gpml.COMMENT);
-		
-		if(comment.getSource() != null) commentRes.addLiteral(Gpml.SOURCE, comment.getSource());
 		String commentStr = comment.getComment();
+		String commentid = (commentStr != null)
+			? Utils.md5sum(commentStr) : Utils.md5sum(""+comment.hashCode());
+		Resource commentRes = model.createResource(data.getPathwayRes().getURI() + "/Comment/" + commentid);
+
+		commentRes.addProperty(RDF.type, Gpml.COMMENT);
+
+		if(comment.getSource() != null) commentRes.addLiteral(Gpml.SOURCE, comment.getSource());
 		if (commentStr != null) commentRes.addLiteral(Gpml.COMMENT_TEXT, commentStr);
 		
 		parent.addProperty(Gpml.HAS_COMMENT, commentRes);

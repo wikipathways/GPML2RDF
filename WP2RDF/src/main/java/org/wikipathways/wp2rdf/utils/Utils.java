@@ -18,6 +18,9 @@ package org.wikipathways.wp2rdf.utils;
 
 import java.awt.Color;
 import java.io.File;
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.sparql.vocabulary.FOAF;
@@ -77,7 +80,17 @@ public class Utils {
 		model.setNsPrefix("freq", Freq.getURI());
 		model.setNsPrefix("owl", OWL.getURI());
 	}
-	
+
+	public static String md5sum(String input) {
+        try {
+            MessageDigest digest = MessageDigest.getInstance("MD5");
+            digest.update(input.getBytes());
+            return new BigInteger(1, digest.digest()).toString(16);
+        } catch (NoSuchAlgorithmException ex) {
+            return "";
+        }
+    }
+
 	public static String colorToHex(Color color) {
 		String red = padding(Integer.toBinaryString(color.getRed()), 8, '0');
 		String green = padding(Integer.toBinaryString(color.getGreen()), 8, '0');
