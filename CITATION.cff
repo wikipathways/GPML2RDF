@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the WikiPathways RDF paper."
+title: WikiPathways GPMLRDF and WPRDF Generator
+url: "https://github.com/wikipathways/GPML2RDF"
+preferred-citation:
+  type: article
+  title: "Using the Semantic Web for Rapid Integration of WikiPathways with Other Biological Online Data Resources"
+  authors:
+  - family-names: Waagmeester
+    given-names: Andra
+  - family-names: Summer-Kutmon
+    given-names: Martina
+  - family-names: Riutta
+    given-names: Anders
+  - family-names: Miller
+    given-names: Ryan
+  - family-names: Willighagen
+    given-names: Egon
+  - family-names: Evelo
+    given-names: Chris T
+  - family-names: Pico
+    given-names: Alexander R.
+  doi: 10.1371/JOURNAL.PCBI.1004989
+  year: 2016
+  month: 6
+  day: 23
+  journal: PLOS Computational Biology
+  volume: 12
+  issue: 6
+  url: https://doi.org/10.1371/JOURNAL.PCBI.1004989
