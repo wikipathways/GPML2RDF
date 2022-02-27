@@ -1,0 +1,5 @@
+PREFIX wp: <http://vocabularies.wikipathways.org/wp#>
+
+SELECT DISTINCT ?wikidata WHERE {
+  ?metabolite a wp:Metabolite ; wp:bdbWikidata ?wikidata .
+}
