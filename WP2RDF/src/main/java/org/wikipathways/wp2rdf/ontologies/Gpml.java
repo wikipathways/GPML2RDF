@@ -247,6 +247,9 @@ public class Gpml {
     public static final Property SOURCE = m_model.createProperty( "http://vocabularies.wikipathways.org/gpml#source" );
     
     /** <p>The type of a State.</p> */
+    public static final Property STATE_OF = m_model.createProperty( "http://vocabularies.wikipathways.org/gpml#stateOf" );
+
+    /** <p>The type of a State.</p> */
     public static final Property STATE_TYPE = m_model.createProperty( "http://vocabularies.wikipathways.org/gpml#stateType" );
     
     /** <p>The style of a group.</p> */
