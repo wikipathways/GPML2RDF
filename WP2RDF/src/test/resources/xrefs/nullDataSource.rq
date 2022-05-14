@@ -5,7 +5,7 @@ prefix xsd:     <http://www.w3.org/2001/XMLSchema#>
 
 SELECT DISTINCT  ?identifier ?pathway ?label
 WHERE {
-        ?concept dc:source "null"^^xsd:string .
+        ?concept dc:source "null" .
         ?concept dc:identifier ?identifier .
         ?concept dcterms:isPartOf ?pathway .
         ?concept rdfs:label ?label
