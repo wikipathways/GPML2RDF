@@ -15,8 +15,8 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <bridgedb.version>3.0.10</bridgedb.version>
-        <jena.version>4.3.0</jena.version>
+        <bridgedb.version>3.0.13</bridgedb.version>
+        <jena.version>4.5.0</jena.version>
     </properties>
 
     <build>
