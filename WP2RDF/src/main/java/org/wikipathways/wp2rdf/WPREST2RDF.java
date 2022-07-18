@@ -82,7 +82,8 @@ public class WPREST2RDF {
 		// the additional curation tags
 		add("Curation:NeedsWork");
 		add("Curation:Hypothetical");
-	}};
+		add("Curation:Homology_Converted");
+    }};
 
 	@SuppressWarnings("serial")
 	private static final List<String> BLACKLIST_TAGS = new ArrayList<String>() {{
