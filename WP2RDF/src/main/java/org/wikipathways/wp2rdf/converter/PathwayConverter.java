@@ -97,6 +97,12 @@ public class PathwayConverter {
 				if(o.getSource().equals("WikiPathways-description")) 
 				{
 					pwyRes.addProperty(DCTerms.description, o.getComment());
+				} else if(o.getSource().equals("HomologyConvert"))
+				{
+					pwyRes.addProperty(
+						Wp.ontologyTag,
+						model.createResource("http://vocabularies.wikipathways.org/wp#Curation:Homology_Converted")
+					);
 				}
 			}
 		}
