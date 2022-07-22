@@ -97,7 +97,7 @@ public class PathwayConverter {
 				if(o.getSource().equals("WikiPathways-description")) 
 				{
 					pwyRes.addProperty(DCTerms.description, o.getComment());
-				} else if(o.getSource().equals("HomologyConvert"))
+				} else if(o.getSource().equals("HomologyConvert") || o.getSource().equals("HomologyMapper"))
 				{
 					pwyRes.addProperty(
 						Wp.ontologyTag,
