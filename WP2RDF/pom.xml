@@ -19,6 +19,20 @@
         <jena.version>4.5.0</jena.version>
     </properties>
 
+    <repositories>
+        <repository>
+            <id>sonatypeSnapshots</id>
+            <name>Sonatype Snapshots</name>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </repository>
+    </repositories>
+
     <build>
 		<resources>
 			<resource>
