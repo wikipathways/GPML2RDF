@@ -79,7 +79,7 @@ public class GpmlConverter {
 	public static IDMapperStack createBridgeDbMapper(Properties prop) throws Exception {
 		Class.forName("org.apache.derby.jdbc.ClientDriver");
 		Class.forName("org.bridgedb.rdb.IDMapperRdb");
-		DataSourceTxt.init();
+		if (!DataSource.fullNameExists("Ensembl")) DataSourceTxt.init();
 		if (prop.getProperty("bridgefiles") == null) {
 			throw new Exception("Expected a bridgefiles property, but did not find one.");
 		}
