@@ -13,7 +13,7 @@ import org.wikipathways.wp2rdf.io.PathwayReader;
 public abstract class AbstractWPConvertorTest extends AbstractConvertorTest {
 
 	public static void loadModelAsWPRDF(String gpmlFile, String wpid, String revision) throws Exception {
-		DataSourceTxt.init();
+		if (!DataSource.fullNameExists("Ensembl")) DataSourceTxt.init();
 		// the next line is needed until BridgeDb gets updated
 		// none at this moment
 		InputStream input = AbstractConvertorTest.class.getClassLoader().getResourceAsStream(gpmlFile);

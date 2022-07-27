@@ -108,7 +108,7 @@ public class Utils {
 	
 	public static IDMapper setUpIDMapper(File file) throws IDMapperException, ClassNotFoundException {
 		Class.forName("org.bridgedb.rdb.IDMapperRdb");  
-		DataSourceTxt.init();
+		if (!DataSource.fullNameExists("Ensembl")) DataSourceTxt.init();
 		IDMapper mapper = BridgeDb.connect("idmapper-pgdb:" + file.getAbsolutePath());
 		return mapper;
 	}
