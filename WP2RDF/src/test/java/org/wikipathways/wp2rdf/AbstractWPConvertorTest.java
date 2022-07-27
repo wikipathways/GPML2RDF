@@ -3,6 +3,7 @@ package org.wikipathways.wp2rdf;
 import java.io.InputStream;
 import java.util.Collections;
 
+import org.bridgedb.DataSource;
 import org.bridgedb.IDMapperStack;
 import org.bridgedb.bio.DataSourceTxt;
 import org.junit.Assert;
