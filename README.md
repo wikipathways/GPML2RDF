@@ -12,18 +12,6 @@ Clone or download this repository, and then import as an "Existing Java Project"
 There are two dependencies. You can made them available to Maven using the below instructions.
 Start from the GPML2RDF folder for both WikiPathways API client, and PathVisio Core
 
-#### WikiPathways API client 
-
-```shell
-git clone https://github.com/wikipathways/wikipathways-api-client-java.git
-cd wikipathways-api-client-java
-cd org.wikipathways.client
-ant test
-cd ..
-mvn install:install-file -Dfile=org.wikipathways.client/org.wikipathways.webservice.api.lib.jar \
-  -DgroupId=org.pathvisio -DartifactId=wikipathways-client -Dversion=3.2.1.wprdf -Dpackaging=jar
-```
-
 #### PathVisio Core
 
 ```shell
@@ -33,6 +21,15 @@ git checkout -b bridgedb/version3 origin/bridgedb/version3
 ant clean core.jar
 mvn install:install-file -Dfile=modules/org.pathvisio.core.jar -DgroupId=org.pathvisio \
   -DartifactId=pathvisio-core -Dversion=3.4.0-bridgedb-3.0.1-1 -Dpackaging=jar
+```
+
+#### WikiPathways API client 
+
+```shell
+git clone https://github.com/wikipathways/wikipathways-api-client-java.git
+cd wikipathways-api-client-java
+cd org.wikipathways.client
+mvn -Dmaven.test.failure.ignore=true clean install
 ```
 
 ### Compiling
