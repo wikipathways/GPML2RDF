@@ -55,7 +55,7 @@ public class StateConverter {
 		stateRes.addLiteral(Gpml.LINE_STYLE, elem.getLineStyle() != LineStyle.DASHED ? "Solid" : "Broken");
 		if (elem.getGraphRef() != null) {
 		    stateRes.addLiteral(Gpml.GRAPH_REF, elem.getGraphRef());
-		    stateRes.addLiteral(Gpml.STATE_OF, model.createResource(data.getPathwayRes().getURI() + "/DataNode/" + elem.getGraphRef()));
+		    stateRes.addProperty(Gpml.STATE_OF, model.createResource(data.getPathwayRes().getURI() + "/DataNode/" + elem.getGraphRef()));
 		}
 		stateRes.addLiteral(Gpml.TEXTLABEL, elem.getTextLabel());
 		stateRes.addLiteral(Gpml.REL_X, elem.getRelX());
