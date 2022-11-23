@@ -89,6 +89,22 @@ public class PathwayConverter {
 		pwyRes.addLiteral(DCTerms.identifier, wpId);
 		pwyRes.addLiteral(DC.title, model.createLiteral(name, "en"));
 		pwyRes.addLiteral(DC.source, "WikiPathways");
+
+		Resource svgResourse = model.createResource(
+			"https://www.wikipathways.org//wpi/wpi.php?action=downloadFile&type=svg&pwTitle=Pathway:" + wpId +
+			"&oldid=" + revision.trim().replaceAll(" ", "_")
+		);
+		svgResourse.addProperty(RDF.type, FOAF.Image);
+		svgResourse.addLiteral(DCTerms.identifier, "image/svg+xml");
+		pwyRes.addProperty(FOAF.img, svgResourse);
+
+		Resource pngResourse = model.createResource(
+			"https://www.wikipathways.org//wpi/wpi.php?action=downloadFile&type=png&pwTitle=Pathway:" + wpId +
+			"&oldid=" + revision.trim().replaceAll(" ", "_")
+		);
+		pngResourse.addProperty(RDF.type, FOAF.Image);
+		pngResourse.addLiteral(DCTerms.identifier, "image/png");
+		pwyRes.addProperty(FOAF.img, pngResourse);
 		
 		for(Comment o : p.getMappInfo().getComments()) 
 		{
