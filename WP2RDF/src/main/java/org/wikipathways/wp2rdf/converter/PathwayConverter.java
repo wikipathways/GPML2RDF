@@ -95,7 +95,7 @@ public class PathwayConverter {
 			"&oldid=" + revision.trim().replaceAll(" ", "_")
 		);
 		svgResourse.addProperty(RDF.type, FOAF.Image);
-		svgResourse.addLiteral(DCTerms.identifier, "image/svg+xml");
+		svgResourse.addLiteral(DCTerms.format, "image/svg+xml");
 		pwyRes.addProperty(FOAF.img, svgResourse);
 
 		Resource pngResourse = model.createResource(
@@ -103,7 +103,7 @@ public class PathwayConverter {
 			"&oldid=" + revision.trim().replaceAll(" ", "_")
 		);
 		pngResourse.addProperty(RDF.type, FOAF.Image);
-		pngResourse.addLiteral(DCTerms.identifier, "image/png");
+		pngResourse.addLiteral(DCTerms.format, "image/png");
 		pwyRes.addProperty(FOAF.img, pngResourse);
 		
 		for(Comment o : p.getMappInfo().getComments()) 
