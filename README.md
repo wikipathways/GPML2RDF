@@ -21,7 +21,7 @@ cd pathvisio-1
 git checkout -b bridgedb/version3 origin/bridgedb/version3
 ant clean core.jar
 mvn install:install-file -Dfile=modules/org.pathvisio.core.jar -DgroupId=org.pathvisio \
-  -DartifactId=pathvisio-core -Dversion=3.4.0-bridgedb-3.0.1-1 -Dpackaging=jar
+  -DartifactId=pathvisio-core -Dversion=3.4.0-bridgedb-3.0.18-1 -Dpackaging=jar
 ```
 
 #### WikiPathways API client 

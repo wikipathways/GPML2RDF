@@ -15,8 +15,8 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <bridgedb.version>3.0.17</bridgedb.version>
-        <jena.version>4.5.0</jena.version>
+        <bridgedb.version>3.0.18</bridgedb.version>
+        <jena.version>4.6.1</jena.version>
     </properties>
 
     <repositories>
@@ -163,7 +163,7 @@
         <dependency>
                 <groupId>org.pathvisio</groupId>
                 <artifactId>pathvisio-core</artifactId>
-                <version>3.4.0-bridgedb-3.0.1-1</version>
+                <version>3.4.0-bridgedb-3.0.18-1</version>
                 <optional>true</optional>
         </dependency>
         <dependency>
