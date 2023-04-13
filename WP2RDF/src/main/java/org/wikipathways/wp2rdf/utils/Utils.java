@@ -80,6 +80,7 @@ public class Utils {
 		model.setNsPrefix("dcterms", DCTerms.getURI());
 		model.setNsPrefix("freq", Freq.getURI());
 		model.setNsPrefix("owl", OWL.getURI());
+		model.setNsPrefix("obo", "http://purl.obolibrary.org/obo/");
 	}
 
 	public static String md5sum(String input) {

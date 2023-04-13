@@ -57,6 +57,7 @@ public class PathwayConverter {
 		Resource pwyRes = model.createResource(url + "_r" + revision.trim().replaceAll(" ", "_"));
   		Xref orgTaxId = Organism.fromLatinName(p.getMappInfo().getOrganism()).taxonomyID();
   		Resource pwyOrgRes = model.createResource(Utils.PURL_TAX_URL + orgTaxId.getId().replaceAll(" ", "_"));
+        pwyOrgRes.addLiteral(model.createProperty("http://purl.obolibrary.org/obo/NCIT_C179773"), model.createLiteral(orgTaxId.getId().replaceAll(" ", "")));
 		
   		versionlessRes.addProperty(Pav.hasVersion, pwyRes);
 		
