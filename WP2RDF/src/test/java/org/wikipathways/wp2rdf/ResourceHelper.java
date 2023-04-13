@@ -26,15 +26,15 @@
  */
 package org.wikipathways.wp2rdf;
 
+import java.io.IOException;
 import java.io.InputStream;
-import java.util.Scanner;
+import java.nio.charset.StandardCharsets;
 
 public class ResourceHelper {
 
-	public static String resourceAsString(String resource) {
+	public static String resourceAsString(String resource) throws IOException {
 		InputStream iStream = ClassLoader.getSystemResourceAsStream(resource);
-		Scanner scanner = new Scanner(iStream).useDelimiter("\\A");
-	    return scanner.hasNext() ? scanner.next() : "";
+		return new String(iStream.readAllBytes(), StandardCharsets.UTF_8);
 	}
 
 }
