@@ -18,10 +18,10 @@ Start from the GPML2RDF folder for both the WikiPathways API client, and PathVis
 ```shell
 git clone https://github.com/egonw/pathvisio-1.git
 cd pathvisio-1
-git checkout -b bridgedb/version3 origin/bridgedb/version3
+git checkout -b patch/bridgedb3.0.21 origin/patch/bridgedb3.0.21
 ant clean core.jar
 mvn install:install-file -Dfile=modules/org.pathvisio.core.jar -DgroupId=org.pathvisio \
-  -DartifactId=pathvisio-core -Dversion=3.4.0-bridgedb-3.0.18-1 -Dpackaging=jar
+  -DartifactId=pathvisio-core -Dversion=3.4.0-bridgedb-3.0.21-1 -Dpackaging=jar
 ```
 
 #### WikiPathways API client 
