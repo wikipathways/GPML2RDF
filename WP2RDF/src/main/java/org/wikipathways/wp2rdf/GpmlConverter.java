@@ -327,7 +327,7 @@ public class GpmlConverter {
 		Resource pathwayRes = PathwayConverter.parsePathwayInfoWp(p, wpId, revision, pathwayModel, tags);
 		DataHandlerWp data = new DataHandlerWp(p, wpId, revision, pathwayRes);
 		
-		//IDMapperStack mapper = WPREST2RDF.maps();
+		if (mapper == null) mapper = new IDMapperStack(); // use an empty stack if a null was passed
 		
 		for(PathwayElement e : p.getDataObjects()) {
 			if(e.getObjectType().equals(ObjectType.DATANODE)) {

@@ -127,7 +127,7 @@ public class WPREST2RDF {
 		WikiPathwaysClient client = new WikiPathwaysClient(url);
 
 		// set up the BridgeDb ID mappings databases
-		IDMapperStack mapper = WPREST2RDF.maps();
+//		IDMapperStack mapper = WPREST2RDF.maps();
 
 		boolean doAll = System.getProperty("doAll", "false").equals("true");
 		boolean doOne = !System.getProperty("doOne", "SKIP").equals("SKIP");
@@ -255,9 +255,9 @@ public class WPREST2RDF {
 					pathwayModel = ModelFactory.createDefaultModel();
 					Utils.setModelPrefix(pathwayModel);
 					if (tags == null) {
-						GpmlConverter.convertWp(p, pwInfo.getId(), pwInfo.getRevision(), pathwayModel, mapper, Collections.<String>emptyList());
+						GpmlConverter.convertWp(p, pwInfo.getId(), pwInfo.getRevision(), pathwayModel, null, Collections.<String>emptyList());
 					} else {
-						GpmlConverter.convertWp(p, pwInfo.getId(), pwInfo.getRevision(), pathwayModel, mapper, tags);
+						GpmlConverter.convertWp(p, pwInfo.getId(), pwInfo.getRevision(), pathwayModel, null, tags);
 					}
 
 					folder = "output/wp/" + SPECIES.get(organism).replace(" ", "_") + "/";
