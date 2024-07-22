@@ -216,10 +216,14 @@ public class DataNodeConverter {
 		if (elem.getShapeType() != null)
 			datanodeRes.addLiteral(Gpml.SHAPE_TYPE, elem.getShapeType().getName());
 		datanodeRes.addLiteral(Gpml.TYPE, elem.getDataNodeType());
-		
-		if(elem.getXref() != null && elem.getXref().getId() != null && elem.getXref().getDataSource() != null) {
-			datanodeRes.addLiteral(Gpml.XREF_ID, elem.getXref().getId());
-			datanodeRes.addLiteral(Gpml.XREF_DATASOURCE, elem.getXref().getDataSource().getFullName());
+
+		if(elem.getXref() != null) {
+			datanodeRes.addLiteral(Gpml.XREF_ID,
+				elem.getXref().getId() == null ? "" : elem.getXref().getId()
+			);
+			datanodeRes.addLiteral(Gpml.XREF_DATASOURCE,
+				elem.getXref().getDataSource() == null ? "" : elem.getXref().getDataSource().getFullName()
+			);
 		}
 		
 		for(String s : elem.getBiopaxRefs()) {
