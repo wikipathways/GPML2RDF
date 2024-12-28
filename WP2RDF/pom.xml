@@ -15,7 +15,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <bridgedb.version>3.0.26</bridgedb.version>
+        <bridgedb.version>3.1.4</bridgedb.version>
         <jena.version>4.8.0</jena.version>
         <apache.cli.version>1.5.0</apache.cli.version>
     </properties>
@@ -164,13 +164,13 @@
         <dependency>
                 <groupId>org.pathvisio</groupId>
                 <artifactId>pathvisio-core</artifactId>
-                <version>3.4.0-bridgedb-3.0.22-1</version>
+                <version>3.4.0</version>
                 <optional>true</optional>
         </dependency>
         <dependency>
                 <groupId>org.wikipathways</groupId>
                 <artifactId>webservice.api.lib</artifactId>
-                <version>3.3.0-GPMLRDF-3</version>
+                <version>3.4.0</version>
                 <optional>true</optional>
         </dependency>
         <dependency>
