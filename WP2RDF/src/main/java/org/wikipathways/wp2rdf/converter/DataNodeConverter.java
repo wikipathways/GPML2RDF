@@ -112,57 +112,60 @@ public class DataNodeConverter {
 
 							datanodeRes.addProperty(RDF.type, Wp.DataNode);
 							
+							// add unified identifiers for selected types
 							switch (elem.getDataNodeType()) {
 							case "GeneProduct":
-								datanodeRes.addProperty(RDF.type, Wp.GeneProduct);
 								// add id mapping step
-								
 								GpmlConverter.getUnifiedIdentifiers(model, mapper, idXref, datanodeRes);
-								
 								break;
-								
 							case "Protein":
-								datanodeRes.addProperty(RDF.type, Wp.Protein);
 								// add id mapping step
-								
 								GpmlConverter.getUnifiedIdentifiers(model, mapper, idXref, datanodeRes);
-								
 								break;
-								
 							case "Metabolite":
-								datanodeRes.addProperty(RDF.type, Wp.Metabolite);
 								// add id mapping step
-								
 								GpmlConverter.getUnifiedIdentifiers(model, mapper, idXref, datanodeRes);
-								
 								break;
-								
 							case "Rna":
-								datanodeRes.addProperty(RDF.type, Wp.Rna);
 								// add id mapping step
-								
 								GpmlConverter.getUnifiedIdentifiers(model, mapper, idXref, datanodeRes);
-
-								
 								break;
 							case "Pathway":
-								datanodeRes.addProperty(RDF.type, Wp.Pathway);
 								// TODO: unified identifiers (e.g. for Reactome pathways!)
 								break;
 							case "Complex":
-								datanodeRes.addProperty(RDF.type, Wp.Complex);
 								// add id mapping step
-
 								GpmlConverter.getUnifiedIdentifiers(model, mapper, idXref, datanodeRes);
-
 								break;
 							default:
 								break;
 							}
 									
-							
 							data.getDataNodes().put(elem.getXref(), datanodeRes);
 							data.getPathwayElements().put(elem, datanodeRes);
+						}
+						// add types
+						switch (elem.getDataNodeType()) {
+						case "GeneProduct":
+							datanodeRes.addProperty(RDF.type, Wp.GeneProduct);
+							break;
+						case "Protein":
+							datanodeRes.addProperty(RDF.type, Wp.Protein);
+							break;
+						case "Metabolite":
+							datanodeRes.addProperty(RDF.type, Wp.Metabolite);
+							break;
+						case "Rna":
+							datanodeRes.addProperty(RDF.type, Wp.Rna);
+							break;
+						case "Pathway":
+							datanodeRes.addProperty(RDF.type, Wp.Pathway);
+							break;
+						case "Complex":
+							datanodeRes.addProperty(RDF.type, Wp.Complex);
+							break;
+						default:
+							break;
 						}
 						// FOAF URL
 						if (foafURL != null) {
