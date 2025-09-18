@@ -127,7 +127,7 @@ public class WPREST2RDF {
 		WikiPathwaysClient client = new WikiPathwaysClient(url);
 
 		// set up the BridgeDb ID mappings databases
-//		IDMapperStack mapper = WPREST2RDF.maps();
+		IDMapperStack mapper = WPREST2RDF.maps();
 
 		boolean doAll = System.getProperty("doAll", "false").equals("true");
 		boolean doOne = !System.getProperty("doOne", "SKIP").equals("SKIP");
