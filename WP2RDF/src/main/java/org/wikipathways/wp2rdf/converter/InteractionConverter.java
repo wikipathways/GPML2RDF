@@ -260,6 +260,7 @@ public class InteractionConverter {
 			}
 		}
 		if(lineTypes.size() > 1) {
+			System.out.println("WARNING: too many line types: " + lineTypes);
 			return null;
 		} else if (lineTypes.size() == 1) {
 			return lineTypes.get(0);
