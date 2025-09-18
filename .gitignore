@@ -3,3 +3,5 @@ bin/
 *.class
 derby.log
 .metadata/
+WP2RDF/.classpath
+WP2RDF/.project
