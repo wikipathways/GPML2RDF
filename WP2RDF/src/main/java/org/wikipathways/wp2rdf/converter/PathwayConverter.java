@@ -55,7 +55,11 @@ public class PathwayConverter {
 		String url = Utils.IDENTIFIERS_ORG_URL + "/wikipathways/" + wpId.trim() ;
 		Resource versionlessRes = model.createResource(url);
 		Resource pwyRes = model.createResource(url + "_r" + revision.trim().replaceAll(" ", "_"));
-  		Xref orgTaxId = Organism.fromLatinName(p.getMappInfo().getOrganism()).taxonomyID();
+		Organism orgName = Organism.fromLatinName(p.getMappInfo().getOrganism());
+		if (orgName == null) {
+			throw new RuntimeException("Undefined organism: " + p.getMappInfo().getOrganism());
+		}
+  		Xref orgTaxId = orgName.taxonomyID();
   		Resource pwyOrgRes = model.createResource(Utils.PURL_TAX_URL + orgTaxId.getId().replaceAll(" ", "_"));
         pwyOrgRes.addLiteral(model.createProperty("http://purl.obolibrary.org/obo/NCIT_C179773"), model.createLiteral(orgTaxId.getId().replaceAll(" ", "")));
 		
