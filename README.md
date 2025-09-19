@@ -18,7 +18,7 @@ Start from the GPML2RDF folder for both the WikiPathways API client, and PathVis
 ```shell
 git clone https://github.com/PathVisio/pathvisio.git
 cd pathvisio
-git switch 3.4.0-alpha origin/3.4.0-alpha
+git switch main
 ant clean core.jar
 mvn install:install-file -Dfile=modules/org.pathvisio.core.jar -DgroupId=org.pathvisio \
   -DartifactId=pathvisio-core -Dversion=3.4.0 -Dpackaging=jar
