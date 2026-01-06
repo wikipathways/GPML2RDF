@@ -112,6 +112,9 @@ public class GpmlConverter {
 		outputBridgeDbMapping(model, mapper, idXref, internalWPDataNodeResource,
 			"S", "https://identifiers.org/uniprot/", Wp.bdbUniprot
 		);
+		outputBridgeDbMapping(model, mapper, idXref, internalWPDataNodeResource,
+			"S", "http://purl.uniprot.org/uniprot/", OWL.sameAs
+		);
 		//Entrez Gene
 		outputBridgeDbMapping(model, mapper, idXref, internalWPDataNodeResource,
 			"L", "https://identifiers.org/ncbigene/", Wp.bdbEntrezGene
@@ -148,9 +151,18 @@ public class GpmlConverter {
 					"Ck", "https://identifiers.org/kegg.compound/", Wp.bdbKeggCompound
 				); 
 		// LipidMaps
-				outputBridgeDbMapping(model, mapper, idXref, internalWPDataNodeResource,
-					"Lm", "https://identifiers.org/lipidmaps/", Wp.bdbLipidMaps
-				); 
+		outputBridgeDbMapping(model, mapper, idXref, internalWPDataNodeResource,
+			"Lm", "https://identifiers.org/lipidmaps/", Wp.bdbLipidMaps
+		);
+		outputBridgeDbMapping(model, mapper, idXref, internalWPDataNodeResource,
+			"Lm", "https://www.lipidmaps.org/rdf/", OWL.sameAs
+		);
+
+		// SwissLipids (OWL SameAs only)
+		outputBridgeDbMapping(model, mapper, idXref, internalWPDataNodeResource,
+			"Sl", "https://swisslipids.org/rdf/SLM_", OWL.sameAs
+		);
+
 		// InChIKey
 		if (mapper != null) {
 			try {
@@ -179,6 +191,9 @@ public class GpmlConverter {
 		// Rhea
 		outputBridgeDbMapping(model, mapper, idXref, internalWPDataNodeResource,
 			"Rh", "https://identifiers.org/rhea/", Wp.bdbRhea
+		);
+		outputBridgeDbMapping(model, mapper, idXref, internalWPDataNodeResource,
+			"Rh", "http://rhea-db.org/rhea/", OWL.sameAs
 		);
 
 		// Complexes
@@ -264,6 +279,11 @@ public class GpmlConverter {
 			    internalWPDataNodeResource.addProperty(predicate, unifiedlIdResource);
 			    unifiedlIdResource.addProperty(DCTerms.identifier, model.createLiteral(dataNodeIdentifier));
 			    unifiedlIdResource.addProperty(DC_11.source, model.createLiteral("DOI"));
+			} else if ("Sl".equals(sourceCode)) {
+				String unifiedDataNodeIdentifier = unifiedId.getId();
+				unifiedDataNodeIdentifier = unifiedDataNodeIdentifier.substring(4);
+				Resource unifiedlIdResource = model.createResource(uriPrefix+unifiedDataNodeIdentifier);
+				internalWPDataNodeResource.addProperty(predicate, unifiedlIdResource);
 			} else {
 				String unifiedDataNodeIdentifier = URLEncoder.encode(unifiedId.getId(), "UTF-8");
   			    Resource unifiedlIdResource = model.createResource(uriPrefix+unifiedDataNodeIdentifier);
